@@ -50,8 +50,11 @@ To put that to the test - let's say that, rather than damage being constant, it'
 
 We end up with this plot for the first 20 seconds - now, Fervor passes Damage 1 at 9.2 seconds and Damage 2 at 12.5 seconds.
 This of course is still a massive simplification but shows the general principle.
+As before, the y-axis is very compact to make the changes more visible.
+Noticing the difference between these in a reall battle will prove to be more challenging.
 
-So, all-in-all: there's no precise time when Fervor becomes optimal as no team has constant damage through the fight.
+So, all-in-all: there's no precise time when Fervor becomes optimal as no team deals constant damage through the fight.
 I would consider 12-15 seconds being a reasonable general timeframe for which Fervor starts to win out.
-Fervor also has nice interactions with stuff like AS Val mod and Python, which is not accounted for here.
-On the other hand, for something like Core 8 strikers, the extra edge Damage 2 gives in the first 4-6 seconds could save your tanks a lot of health.
+Many boss fights can stretch beyond 30 seconds, where Fervor's benefit is invaluable.
+It also has nice interactions with stuff like AS Val mod and Python, which is not accounted for here.
+On the other hand, for short fights with high-damage enemies, the extra edge Damage 2 gives in the first 4-6 seconds may be useful.
