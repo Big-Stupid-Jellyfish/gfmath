@@ -3,6 +3,7 @@
 By /u/BigStupidJellyfish_, [Youtube](https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ). [Back to home](https://big-stupid-jellyfish.github.io/gfmath/).
 
 Note: I originally wrote this on 2020-July leading up to Isomer ranking, but the same ideas here can be useful against other enemies in the 30-60 accuracy range with low damage.
+For general content, you should also keep in mind how much armor each SG has relative to the enemies' damage.
 
 [Album of images](https://imgur.com/a/POHBYIl).
 
@@ -16,7 +17,7 @@ But, even when choosing whatever, is there a slightly better pick?
 
 The zombies we're expecting look something like this:
 
-| Unit | Acc | DMG |
+| Unit | ACC | DMG |
 |--|--|--|
 | Smasher (BOSS) | 60 | 32 |
 | Unarmed | 60 | 7 |
@@ -27,12 +28,16 @@ Different combinations of HP/eva however will let some shotguns perform better t
 
 ![Shotgun survivability](https://i.imgur.com/Fk0OKni.png)
 
+Here, the number of hits each shotgun can take is plotted by enemy accuracy.
+More hits tankable = better survivability.
+In the case of Isomer ranking, the gas damage will greatly accelerate death compared to the listed numbers, but the overall proportion should remain about constant.
+
 This plot assumes 100 affection/+10 max calibrated gold armor, and that all hits deal 1 damage.
 No skills are considered (even ones that buff armor, evasion, or shields), so keep in mind that those will influence matters if the fight lasts long enough to trigger.
 That said, SG skills usually don't come online until after 10 seconds when hopefully the main enemy force is already dead.
-Notably, depending on the timing of S.A.T.8's shield, she can take very little to no damage.
+Notably, depending on the timing of S.A.T.8's shield, she can take very little to no damage per fight.
 
-As a bar graph, sorted by survivability vs 60 accuracy:
+As a bar graph, sorted by survivability versus 60 accuracy:
 
 ![Shotgun survivability (bar form)](https://i.imgur.com/cZojBzE.png)
 
