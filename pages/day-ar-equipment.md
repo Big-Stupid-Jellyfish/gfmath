@@ -18,6 +18,9 @@ Green equipment has their own name set (PSO-1, EOT 516, COG M150 for these scope
 
 Fairies used are assumed to be at 5* with the Damage 1 talent. G41 stars in all these comparisons as the “standard” AR.
 
+* TOC
+{:toc}
+
 ## Optimizing against Evasion
 
 Most enemies’ stats, including evasion, can be viewed on [https://gf.hometehomete.com/en/maps/](https://gf.hometehomete.com/en/maps/) by mission. Typical SF mobs have 12-16 evasion, with scouts sitting around 80. SF bosses are usually between 30 and 60 evasion.
