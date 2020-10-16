@@ -1,4 +1,4 @@
-## Information
+# Information
 
 Girls' Frontline, by the numbers.
 
