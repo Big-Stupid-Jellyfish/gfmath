@@ -1,3 +1,5 @@
+# GFMath: Daytime AR equipment comparison
+
 For the plots alone, see https://imgur.com/a/OmZbYV3
 
 Setting aside special equipment and dolls with unusual slots (AR-15, for example), the standard equipment set for day ARs is a gold crit scope, HV ammo, and optional X-exo. The case for HV ammo and X-exos are trivial to make (being the only in-slot equipment to improve or not reduce damage), but crit scopes do have a few competitors that almost never get mentioned. Night battles are going to be ignored here as you basically always use a PEQ there.
@@ -14,10 +16,10 @@ Green equipment has their own name set (PSO-1, EOT 516, COG M150 for these scope
 
 Fairies used are assumed to be at 5* with the Damage 1 talent. G41 stars in all these comparisons as the “standard” AR.
 
-# Optimizing against Evasion
+## Optimizing against Evasion
 
 Most enemies’ stats, including evasion, can be viewed on https://gf.hometehomete.com/en/maps/ by mission. Typical SF mobs have 12-16 evasion, with scouts sitting around 80. SF bosses are usually between 30 and 60 evasion.
 
-[](https://i.imgur.com/MwTr15t.png)
+![](https://i.imgur.com/MwTr15t.png)
 
 On her own, G41 with a crit scope maintains a solid lead until just before 60 evasion, where the accuracy bonus of an ITI becomes worthwhile. Adding UMP45+M4A1 pushes this crossover point past 100 evasion due to the crit rate bonus being more valuable with a crit scope. In either case, an EOT seems to provide no unique value at low, moderate, or high enemy evasion.
