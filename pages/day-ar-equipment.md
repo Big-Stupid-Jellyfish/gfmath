@@ -1,4 +1,6 @@
-# GFMath: Daytime AR equipment comparison
+---
+title: GFMath: Daytime AR equipment comparison
+---
 
 By /u/BigStupidJellyfish_, [Youtube](https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ). [Back to home](https://big-stupid-jellyfish.github.io/gfmath/).
 
