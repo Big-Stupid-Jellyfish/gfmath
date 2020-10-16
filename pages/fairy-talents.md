@@ -2,7 +2,7 @@
 
 By /u/BigStupidJellyfish_, [Youtube](https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ). [Back to home](https://big-stupid-jellyfish.github.io/gfmath/).
 
-[Album of plots](https://imgur.com/a/n1q74k9)
+[Album of plots](https://imgur.com/a/n1q74k9).
 
 Fairy calibration is hell, so it's best to get a good talent and stick with it. Damage 1/2 and Fervor have the widest utility and thus are almost always considered the best talents to have. The ROF boost of Aim on your rifles might be nice, but when you don't have rifles in your team, it's worthless. If you get the choice between these 3 talents, which one should you take?
 
