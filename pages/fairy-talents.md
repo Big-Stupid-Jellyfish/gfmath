@@ -22,7 +22,7 @@ Using Damage 2 as the "reference" talent, Fervor starts off dealing 1.1/1.15 = 9
 Extending this even further out, after 60 seconds, Fervor will be above Damage 2 by 11.66% (the theoretical maximum at infinite time is 1.1^3 /1.15 = 1.1573 = 15.73% more).
 
 This is all assuming the echelon does *constant* damage over time, which is obviously not the case in a real battle considering all the different skills out there.
-To get an idea of how skills change things, here's the simulator numbers for two arbitrary generic teams:
+To get an idea of how skills change things, here's the simulator numbers for total damage dealt by two arbitrary generic teams:
 
 STAR/M4/AN/45/P22/Artillery:
 
