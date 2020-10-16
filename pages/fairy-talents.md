@@ -41,7 +41,7 @@ WA/SVD/Px4/Five-Seven/Mk23/Artillery:
 | 20s | 416843 | 435808 | +4.55% |
 
 Rather imprecisely, it looks like Fervor starts to pass Damage 2 closer to 12 seconds in.
-This is most likely lower than the constant-damage assumption's time because of skills (like HGs) kicking in around 6-14s making Fervor's higher multiplier at 8 seconds and beyond more valuable, and Damage 2's higher early multiplier less valuable.
+This is lower than the constant-damage assumption's time because of skills (like HGs) kicking in around 6-14s making Fervor's higher multiplier at 8 seconds and beyond more valuable, and Damage 2's higher early multiplier less valuable.
 Early burst damage skills like Vector's molotov on the other hand would push things further in Damage 2's favor.
 
 To put that to the test - let's say that, rather than damage being constant, it's 1 for time<6s, 1.75 for 6-14s, and 1 afterwards (75% is used as a fairly typical self-buff skill).
