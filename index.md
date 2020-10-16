@@ -7,3 +7,4 @@ Contact: [/u/BigStupidJellyfish](https://old.reddit.com/user/BigStupidJellyfish_
 # Index
 
 * [GFMath: Daytime AR equipment comparison](pages/day-ar-equipment.md)
+* [GFMath: Picking Fairy Talents (Fervor vs Damage 2)](pages/fairy-talents.md)
