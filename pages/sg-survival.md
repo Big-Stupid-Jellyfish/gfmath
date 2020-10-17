@@ -1,4 +1,9 @@
-# GFMath: Picking the Tankiest Shotguns
+---
+layout: default
+title: GFMath: Picking the Tankiest Shotguns
+---
+
+# Picking the Tankiest Shotguns
 
 By /u/BigStupidJellyfish_, [Youtube](https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ). [Back to home](https://big-stupid-jellyfish.github.io/GFMath/).
 
