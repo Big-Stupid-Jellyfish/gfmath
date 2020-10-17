@@ -70,4 +70,17 @@ The fairy + talent + Mk23 tiles here gives an effective 103% FP buff.
 As always, simulate and test your setups for best results.
 
 These were made using the recently buffed AP ammunition, so the RFs see no dropoff until after 195 armor.
+
+## Extras
+
 [Bonus plot](https://i.imgur.com/0BBoCtX.png) with pre-buff AP.
+
+![](https://i.imgur.com/O5Bgun2.png)
+
+C-MS included, versus 0 EVA armor.
+6P62 never stood a chance.
+
+![](https://i.imgur.com/UlAdKXz.png)
+
+C-MS included, some evasion.
+C-MS never stood a chance.
