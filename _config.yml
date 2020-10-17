@@ -1,1 +1,19 @@
 theme: jekyll-theme-cayman
+
+# Setup
+title:        GFMath
+tagline:      Girls' Frontline, by the numbers.
+baseurl:      ""
+paginate:     1
+locale:       "en"
+
+# About/contact
+author:
+  name:       BigStupidJellyfish_
+
+# Gems
+gems:
+  - jekyll-paginate
+
+#Others
+markdown: kramdown
