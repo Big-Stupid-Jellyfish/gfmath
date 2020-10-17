@@ -1,4 +1,9 @@
-# GFMath: Picking Fairy Talents (Fervor vs Damage 2)
+---
+layout: default
+title: GFMath: Picking Fairy Talents (Fervor vs Damage 2)
+---
+
+# Picking Fairy Talents (Fervor vs Damage 2)
 
 By /u/BigStupidJellyfish_, [Youtube](https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ). [Back to home](https://big-stupid-jellyfish.github.io/GFMath/).
 
