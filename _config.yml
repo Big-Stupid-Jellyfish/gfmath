@@ -8,7 +8,7 @@ locale:       "en"
 # About/contact
 author:
   name:       BigStupidJellyfish
-  url:        "www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"
+  url:        https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ
 
 # Gems
 gems:
