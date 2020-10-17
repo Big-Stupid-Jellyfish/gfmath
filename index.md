@@ -1,6 +1,5 @@
 ---
 title: GFMath
-layout: default
 ---
 
 # Information
