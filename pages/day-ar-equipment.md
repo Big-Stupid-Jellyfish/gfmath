@@ -22,6 +22,7 @@ For reference:
 Green equipment has their own name set (PSO-1, EOT 516, COG M150 for these scope types, respectively). The impact of the rate of fire penalty will vary per AR based on what breakpoints are near their default ROF and other buffs they may have.
 
 Fairies used are assumed to be at 5* with the Damage 1 talent. G41 stars in all these comparisons as the “standard” AR.
+These numbers are all for direct-fire ARs; grenadiers would be a separate matter.
 
 * TOC
 {:toc}
