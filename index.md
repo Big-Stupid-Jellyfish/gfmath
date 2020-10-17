@@ -7,6 +7,7 @@ title: GFMath
 Girls' Frontline, by the numbers.
 
 Contact: [/u/BigStupidJellyfish](https://old.reddit.com/user/BigStupidJellyfish_/), [Youtube](https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ).
+GFL EN UID: 538721.
 
 # Index
 
