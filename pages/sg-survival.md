@@ -1,6 +1,6 @@
 # GFMath: Picking the Tankiest Shotguns
 
-By /u/BigStupidJellyfish_, [Youtube](https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ). [Back to home](https://big-stupid-jellyfish.github.io/gfmath/).
+By /u/BigStupidJellyfish_, [Youtube](https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ). [Back to home](https://big-stupid-jellyfish.github.io/GFMath/).
 
 Note: I originally wrote this on 2020-July leading up to Isomer ranking, but the same ideas here can be useful against other enemies in the 30-60 accuracy range with low damage.
 For general content, you should also keep in mind how much armor each SG has relative to the enemies' damage.
