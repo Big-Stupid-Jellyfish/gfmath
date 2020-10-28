@@ -1,1 +1,6 @@
 theme: jekyll-theme-cayman
+title: GFMath
+tagline: Girls' Frontline, by the numbers.
+author:
+    name: BigStupidJellyfish
+markdown: kramdown
