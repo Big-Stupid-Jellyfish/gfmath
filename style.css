@@ -1,0 +1,269 @@
+
+:root {
+	--emerald: #177B6A;
+	--mediumemerald: #59A699;
+	--lightemerald: #A2DDD3;
+	--palestemerald: #CEEEE9;
+	--devilgray: #666;
+	--darkgray: #444;
+	--mediumgray: #aaa;
+}
+
+body {
+	background-color: var(--lightemerald);
+	color: #555;
+	font-family: 'Lato', Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+}
+
+/* Links */
+a { color: var(--emerald); }
+/* a:visited { color: #AC0C22; } was interfering with nav links */
+a:hover { color: var(--mediumemerald); text-decoration: none; }
+a:active { color: var(--mediumemerald); text-decoration: none; }
+
+header {
+	background-color: var(--emerald);
+	height: 50px;
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+	/* "Times New Roman" must be in quotation marks because of the white space*/
+	font-family: Goudy Old Style, "Times New Roman", Serif;
+	margin-bottom: 0;
+	/* Not sure why padding on bottom has to be so huge in order for it to look nice */
+	padding: 15px 15px 50px 15px;
+}
+header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+nav {
+	background-color: var(--emerald);
+	text-align: center;
+	padding: 0;
+}
+
+nav li {
+	list-style-type: none;
+}
+
+
+nav a {
+	display: inline-block;
+	width: 15%;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin: 0;
+	text-align: center;
+	text-decoration: none;
+	color: var(--lightemerald);
+	font-size: 1.2em;
+	
+}
+
+nav a:hover {
+	background-color: var(--mediumemerald);
+	color: #fff;
+	/* background-color: rgba(255,255,255,0.2); */
+}
+
+nav a:active {
+	color: var(--emerald);
+}
+
+main {
+	padding: 3em;
+}
+
+h1, h2, h3 {
+	font-family: "Computer Modern", sans serif;
+	font-weight: normal;
+}
+
+h1 {
+	margin-top: 0;
+	color: var(--emerald);
+}
+
+h2 { color: var(--mediumemerald); }
+h3 { color: var(--devilgray); }
+
+
+
+#wrapper {
+	background-color: #fff;
+	width: 80%;
+	min-width: 960px;
+	max-width: 2048px;
+	margin-left: auto;
+	margin-right: auto;
+	/* box-shadow: horizontal offset, vertical offset, blur radius (optional), default spread distance (optional), color */
+	/*box-shadow: 3px 3px 2px var(--mediumblue);*/
+}
+
+footer {
+	margin-top: 2em;
+	font-family: Goudy Old Style, "Times New Roman", Serif;
+	font-size: 90%;
+	font-style: italic;
+	text-align: center;
+	padding: 20px;
+}
+
+button {
+	padding: 0.5em;
+	background-color: var(--mediumemerald);
+	color: #fff;
+	border: none;
+}
+button:hover {
+	background-color: var(--lightemerald);
+}
+
+button:active {
+	background-color: var(--palestemerald);
+}
+
+.accentbox {
+	background-color: var(--palestemerald);
+	padding: 1em;
+	font-size: 1.2em;
+	color: var(--emerald);
+}
+
+/* Little formatting stuff */
+
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+
+/* Columns */
+
+.column {
+  float: left;
+  width: 50%;
+}
+.column p {
+	padding: 0.5em;
+}
+
+/* Clears floats after the columns */
+.columns:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/* Image gallery */
+/* https://www.w3schools.com/css/tryit.asp?filename=trycss_image_pic_gallery */
+
+.gallerypic {
+	background-color: var(--palestemerald);
+	padding: 10px;
+}
+
+.gallerypic:hover {
+	opacity: 75%;
+}
+
+.gallerypic img {
+	width: 100%;
+	height: auto;
+}
+
+.gallerypicdesc {
+	padding: 0.2em;
+	text-align: left;
+	color: var(--emerald);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.gallery {
+	padding: 0 6px;
+	float: left;
+	width: 32.99999%;
+}
+
+
+/* Override the style for if we have a small thing */
+@media only screen and (max-width: 64em) {
+	body {
+		margin: 0;
+		background-color: #fff;
+	}
+	
+	#wrapper {
+		min-width: 0;
+		width: auto;
+		box-shadow: none;
+	}
+	
+	main {
+		margin-left: 0;
+	}
+	
+	nav {
+		float: none;
+		width: 100%;
+	}
+	
+	nav a {
+		width: 100%;
+	}
+	
+	footer {
+		margin-left: 0;
+	}
+}
+
+@media only screen and (max-width: 37.5em) {
+	
+	main {
+		padding: 1em 1.5em 0.2em 1.5em;
+		font-size: 90%;
+	}
+	
+	h1 { font-size: 1.7em; }
+	
+	nav a {
+		display: block;
+		margin: 0;
+		padding: 15px 0 15px 0;
+		width: 100%;
+		border-bottom: 2px solid var(--deepblue);
+	}
+	
+	.accentbox {
+		/* Override specificity */
+		width: 100%!important;
+	}
+	
+	/* Change 2 columns to 1 */
+	.column {
+		float: none;
+		width: 100%;
+	}
+	
+	/* No room for my pretty face */
+	.me {
+		display: none;
+	}
+	
+	label { float:none; text-align: left;}
+	input[type="submit"] { margin-left: 0;}
+	
+	#mobile { display: inline; }
+	#desktop { display: none; }
+}
