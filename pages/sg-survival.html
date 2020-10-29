@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="portfolio">
+		<meta name="description" content="Girls Frontline, by the numbers">
+		<title>GFMath</title>
+		<link rel="stylesheet" href="../style.css">
+		
+		<!-- Font -->
+		<link href="http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf" rel="stylesheet">
+		
+		<!-- Favicon
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="favicon/site.webmanifest"> -->
+	</head>
+
+	<body>		
+		<div id="wrapper">
+		
+			<header>
+				<a href="../index.html">GFMath</a>
+			</header>
+			<nav role="navigation">
+				<a href="../index.html"><li>Home</li></a>
+				<a href="https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"><li>YouTube</li></a>
+				<a href="https://www.twitch.tv/fenhydra"><li>Twitch</li></a>
+			</nav>
+			
+			<main>
+				<h1>Picking Fairy Talents (Fervor vs Damage 2)</h1>
+				<center><em>By BigStupidJellyfish | 2020-July-03</em></center>
+				
+				<p>Note: I originally wrote this leading up to Isomer ranking, but the same ideas here can be useful against other enemies in the 30-60 accuracy range with low damage. For general content, you should also keep in mind how much armor each SG has relative to the enemies' damage.</p>
+				<p><a href="https://imgur.com/a/POHBYIl">Album of images</a>.</p>
+				<h2 id="background">Background</h2>
+				<p>Word on the street is you need a few shotguns for ELID teams in Isomer ranking. Most people say S.A.T.8 is the best, and for the rest just use whatever - after all, the zombies don't have that much damage so any shotgun can tank them. But, even when choosing whatever, is there a slightly better pick?</p>
+				<hr />
+				<p>The zombies we're expecting look something like this:</p>
+				<table>
+				<thead>
+				<tr class="header">
+				<th>Unit</th>
+				<th>ACC</th>
+				<th>DMG</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr class="odd">
+				<td>Smasher (BOSS)</td>
+				<td>60</td>
+				<td>32</td>
+				</tr>
+				<tr class="even">
+				<td>Unarmed</td>
+				<td>60</td>
+				<td>7</td>
+				</tr>
+				<tr class="odd">
+				<td>Armed</td>
+				<td>30</td>
+				<td>26</td>
+				</tr>
+				</tbody>
+				</table>
+				<p>Clearly, the minion zombies have low enough damage for any shotgun to handle it. Different combinations of HP/eva however will let some shotguns perform better than others.</p>
+				<div class="figure">
+				<img src="https://i.imgur.com/Fk0OKni.png" alt="Shotgun survivability" width="100%"/>
+				<p class="caption">Shotgun survivability</p>
+				</div>
+				<p>Here, the number of hits each shotgun can take is plotted by enemy accuracy. More hits tankable = better survivability. In the case of Isomer ranking, the gas damage will greatly accelerate death compared to the listed numbers, but the overall proportion should remain about constant.</p>
+				<p>This plot assumes 100 affection/+10 max calibrated gold armor, and that all hits deal 1 damage. No skills are considered (even ones that buff armor, evasion, or shields), so keep in mind that those will influence matters if the fight lasts long enough to trigger. That said, SG skills usually don't come online until after 10 seconds when hopefully the main enemy force is already dead. Notably, depending on the timing of S.A.T.8's shield, she can take very little to no damage per fight.</p>
+				<p>As a bar graph, sorted by survivability versus 60 accuracy:</p>
+				<div class="figure">
+				<img src="https://i.imgur.com/cZojBzE.png" alt="Shotgun survivability (bar form)" width="100%"/>
+				<p class="caption">Shotgun survivability (bar form)</p>
+				</div>
+				<h2 id="conclusions">Conclusions</h2>
+				<p>Super-Shorty is actually pretty good versus 30 accuracy due to her high base evasion, but falls to the middle of the pack at 60. S.A.T.8 overall has the best defensive stats. M1887 and Dana are close behind, while Type97S and M1014 appear to be the top 4* picks. SPAS-12 and Elphelt have identical HP/evasion making them harder to make out in this plot. RMB-93, NS2000, and USAS-12 take the bottom 3 overall spots in survivability.</p>
+				<p>S.A.T.8 gets the short end of the stick here (despite still being the overall best) because her shield isn't accounted for. That is incredibly relevant with its insane ICD, so consider her survivability as being far higher in the field.</p>
+				<p>KSG and Super-Shorty have skills that boost their evasion and armor, giving them a further edge 10-16 seconds in. Elphelt has a reasonably useful offensive skill at 10s (not link-dependent), and USAS's offensive skill kicks off immediately (link-dependent).</p>
+				<div class="figure">
+				<img src="https://i.imgur.com/oXxDTfU.png" width="100%"/>
+
+				</div>
+				<p>Before you get too concerned about leveling specific shotguns, see the same plot but with a zero-scaled y-axis. The actual difference in survivability isn't that major between most shotguns. This also all assumes SG armor is sufficient to reduce all damage taken to 1. Stuff like KSG and FP-6 will stack armor better, and Super-Shorty will have a tougher time hitting thresholds in some fights.</p>
+				<p>Perhaps RMB-93 should sit this one out, but otherwise you can probably just use what you have.</p>
+				<h2 id="variations">Variations</h2>
+				<div class="figure">
+				<img src="https://i.redd.it/4jpr8ibixo851.png" width="100%"/>
+
+				</div>
+				<p>The original plot, with some images and overlapping lines.</p>
+				<div class="figure">
+				<img src="https://i.imgur.com/LTxzyKu.png" width="100%"/>
+
+				</div>
+				<p>An extended survivability curve for 10-100 enemy accuracy. The y-axis is not zero-scaled and is logarithmic for better visual separation. As before, the absolute difference is pretty small.</p>
+
+			
+			<div class="clearfix"></div>
+			
+			</main>
+			
+			<footer>
+				
+			</footer>
+		</div>
+		
+
+	</body>
+
+</html>
