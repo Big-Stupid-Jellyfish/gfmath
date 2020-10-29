@@ -18,7 +18,6 @@ body {
 
 /* Links */
 a { color: var(--emerald); }
-/* a:visited { color: #AC0C22; } was interfering with nav links */
 a:hover { color: var(--mediumemerald); text-decoration: none; }
 a:active { color: var(--mediumemerald); text-decoration: none; }
 
@@ -28,10 +27,8 @@ header {
 	text-align: center;
 	font-size: 2em;
 	font-weight: bold;
-	/* "Times New Roman" must be in quotation marks because of the white space*/
 	font-family: Goudy Old Style, "Times New Roman", Serif;
 	margin-bottom: 0;
-	/* Not sure why padding on bottom has to be so huge in order for it to look nice */
 	padding: 15px 15px 50px 15px;
 }
 header a {
@@ -66,7 +63,6 @@ nav a {
 nav a:hover {
 	background-color: var(--mediumemerald);
 	color: #fff;
-	/* background-color: rgba(255,255,255,0.2); */
 }
 
 nav a:active {
@@ -149,9 +145,6 @@ button:active {
 	font-size: 1.2em;
 	color: var(--emerald);
 }
-
-/* Little formatting stuff */
-
 
 .clearfix:after {
 	content: "";
@@ -272,8 +265,7 @@ button:active {
 		float: none;
 		width: 100%;
 	}
-	
-	/* No room for my pretty face */
+
 	.me {
 		display: none;
 	}
