@@ -54,9 +54,9 @@
 				<li>Most skills, including SAT8's shield, are ignored.
 				<li>Selfbuff EVA SMGs use the uptime-averaged evasion. If specifically looking to drag with them, performance will be lower.
 				<li>SGs are assumed to have the best armor equipped, but no external buffs or their own skills. An armor fairy with an armor stack team will extend their plateau by quite a bit.
-				<li>Attacks are assumed to have 15% variance (this is why the armor falloff isn't that dramatic). Judge has none, so these plots are less useful for her.
+				<li>Attacks are assumed to have 15% damage variance (this is why the armor falloff isn't that dramatic). Judge has none, so these plots are less useful for her.
 				<li>The number of attacks survivable assumes a single 1-link attacker - divide by 5 if the enemy has 5 links and so on.
-				<li>Link protection is somewhat accounted for (damage > 1 link -> 1 link damage) but heavy damage protection is not.
+				<li>Link protection is somewhat accounted for (damage > 1 link -> 1 link damage) but heavy damage protection is not. This isn't a perfectly accurate simulation of link protection and will become less accurate for high damage values.
 				</ul>
 				<p>It's important to keep in mind that, in order to make the plots readable for all damage values, the y-axis is logarithmic.
 				A constant change distance represents a constant factor of multiplication rather than a linear change in value.
@@ -74,13 +74,15 @@
 				<p>SAT8 and other shotguns are the next best, sitting between 1925 (SPAS-12) and 2299 (Super Shorty).
 				M4A1 fits in decently here at 2062, making her a decently viable tank for a slow way to grind her levels 115->120.
 				A typical SMG like UMP45 does quite poorly here, being able to take on average 826 hits.
+				
+				<p>Note that SGs are also less viable here due to increased repair costs, which are not accounted for in these plots.
 
 				<div class="figure">
 				<img src="https://i.imgur.com/fbwp3MQ.png"  width="40%"/>
 
 				</div>
 
-				<p>Here's a zoomed-in view with some specific numbers - M16, SAT8, M4A1, and UMP45 labeled top to bottom.
+				<p>Here's a zoomed-in view with some specific numbers - M16, SAT8, M4A1, and UMP45/Thompson labeled top to bottom.
 
 				<div class="figure">
 				<img src="https://i.imgur.com/ckAxlVY.png"  width="100%"/>
@@ -108,11 +110,11 @@
 
 				</div>
 
-				<p>The nightmares here, for the most part, have 24 DMG/23 ACC.
+				<p>The nightmares on this map, for the most part, have 24 DMG/23 ACC.
 				For some mysterious reason, a single pack of 5 in the mass has 24 acc, but let's set those aside.
 
-				<p>The lack of armor make M16 and M4A1 fall off quite hard here, and the high base damage makes SMGs quite questionable.
-				As C-MS/MP7/etc have their skills accounted for here, expect their unsupplied performance to be closer to something like UMP45's.
+				<p>M16 and M4A1's low armor causes them to fall off quite hard here, and the Nightmare's relatively high damage makes SMGs quite questionable.
+				As C-MS/MP7/etc have their skills accounted for here, expect their unsupplied performance to be closer to someone like UMP45's.
 
 				<div class="figure">
 				<img src="https://i.imgur.com/u17IElP.png"  width="40%"/>
