@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="portfolio">
+		<meta name="description" content="Girls Frontline, by the numbers">
+		<title>GFMath</title>
+		<link rel="stylesheet" href="../style.css">
+		
+		<!-- Font -->
+		<link href="http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf" rel="stylesheet">
+		
+		<!-- Favicon
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="favicon/site.webmanifest"> -->
+	</head>
+
+	<body>		
+		<div id="wrapper">
+		
+			<header>
+				<a href="../index.html">GFMath</a>
+			</header>
+			<nav role="navigation">
+				<a href="../index.html"><li>Home</li></a>
+				<a href="https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"><li>YouTube</li></a>
+				<a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a>
+			</nav>
+			
+			<main>
+				<h1>SG vs SMG - The Ultimate Showdown</h1>
+				<center><em>By BigStupidJellyfish | 2020-October-30</em></center>
+				<!-- <p>If you just want to see the plots, head over to <a href="">this album</a>.</p> -->
+				
+				<h2>DRAFT (v1)</h2>
+				
+				<p>The six gun types in Girls' Frontline can be largely categorized into three roles: offensive (AR, RF, MG), defensive (SMG, SG), and support (HG).
+				Some dolls like M16, Python, and SMG offtanks can mix between these roles, but if you need to block attacks, you usually start with an SMG or SG.
+
+				<p>SMGs typically provide tile buffs to ARs behind them and survive with high HP and evasion.
+				On the other hand, SGs support MGs, have extreme amounts of HP, and back that up with armor.
+
+				<p>To keep complexity manageable, let's set aside the backline buffs and focus only on the idea of having a single tank who you wish to survive the longest.
+
+				<p>Intuition would suggest SGs excel when their armor is greater than the enemy's damage and fall off quickly afterwards, while SMGs suffer as enemy accuracy increases.
+				But how exactly does this line up?
+
+				<p>I've put together, for a range of enemy accuracy values, plots of doll survivability versus enemy damage. Knowing the accuracy of your foe (determining the plot) and damage (horizontal position), you can see which dolls will last the longest.
+
+				<p>Notes on assumptions:
+				<ul>
+				<li>Most skills, including SAT8's shield, are ignored.
+				<li>Selfbuff EVA SMGs use the uptime-averaged evasion. If specifically looking to drag with them, performance will be lower.
+				<li>SGs are assumed to have the best armor equipped, but no external buffs or their own skills. An armor fairy with an armor stack team will extend their plateau by quite a bit.
+				<li>Attacks are assumed to have 15% variance (this is why the armor falloff isn't that dramatic). Judge has none, so these plots are less useful for her.
+				<li>The number of attacks survivable assumes a single 1-link attacker - divide by 5 if the enemy has 5 links and so on.
+				<li>Link protection is somewhat accounted for (damage > 1 link -> 1 link damage) but heavy damage protection is not.
+				</ul>
+				<p>It's important to keep in mind that, in order to make the plots readable for all damage values, the y-axis is logarithmic.
+				A constant change distance represents a constant factor of multiplication rather than a linear change in value.
+
+				<h2>Proof M16>Others for 0-2</h2>
+				
+				<div class="figure">
+				<img src="https://i.imgur.com/sGetGsi.png"  width="100%"/>
+
+				</div>
+
+				<p>The 9544 CE Vespid*32 node right at the start has 9 DMG and 20 ACC.
+				This places us just left of 10 damage on this plot, where M16 clearly stands above the rest (3388 attacks survivable, 105 volleys from these Vespids).
+				
+				<p>SAT8 and other shotguns are the next best, sitting between 1925 (SPAS-12) and 2299 (Super Shorty).
+				M4A1 fits in decently here at 2062, making her a decently viable tank for a slow way to grind her levels 115->120.
+				A typical SMG like UMP45 does quite poorly here, being able to take on average 826 hits.
+
+				<div class="figure">
+				<img src="https://i.imgur.com/fbwp3MQ.png"  width="40%"/>
+
+				</div>
+
+				<p>Here's a zoomed-in view with some specific numbers - M16, SAT8, M4A1, and UMP45 labeled top to bottom.
+
+				<div class="figure">
+				<img src="https://i.imgur.com/ckAxlVY.png"  width="100%"/>
+
+				</div>
+
+				<p>Moving on to the next node, 8449 CE Dragoons have 10 damage/31 accuracy and the rippers 5/17.
+
+				<p>Versus the rippers, UMP45's standing improves a bit to 1705 hits, though any armor does better.
+
+				<div class="figure">
+				<img src="https://i.imgur.com/NFGPxy9.png"  width="100%"/>
+
+				</div>
+
+				<p>With the Dragoons' increased accuracy, M16 maintains a solid lead with 2400 versus SAT8's 1910 hits tankable.
+				While she can only live 1531 hits, M4A1 still triples UMP45's 513.
+
+				<p>The Jaegers have 14 DMG/28 acc, giving similar results to the Dragoons except being somewhat harsher on non-armored dolls.
+
+				<h2>Dragging 11-5</h2>
+
+				<div class="figure">
+				<img src="https://i.imgur.com/Wkd22BI.png"  width="100%"/>
+
+				</div>
+
+				<p>The nightmares here, for the most part, have 24 DMG/23 ACC.
+				For some mysterious reason, a single pack of 5 in the mass has 24 acc, but let's set those aside.
+
+				<p>The lack of armor make M16 and M4A1 fall off quite hard here, and the high base damage makes SMGs quite questionable.
+				As C-MS/MP7/etc have their skills accounted for here, expect their unsupplied performance to be closer to something like UMP45's.
+
+				<div class="figure">
+				<img src="https://i.imgur.com/u17IElP.png"  width="40%"/>
+
+				</div>
+				
+				<p>Here's a zoomed-in view with a few hard numbers.</p>
+
+				<h2>Bosses</h2>
+
+				<div class="figure">
+				<img src="https://i.imgur.com/4qbzPUk.png"  width="100%"/>
+
+				</div>
+
+				<p>As the epitome of high single shot damage, 8-4E Dreamer does 260 DMG per hit with 100 ACC.
+				The SMG lines start flattening out at extreme damage values due to link protection - each shot from dreamer will lose out a bit due to overkill against them.
+				SAT8's monstrous health pool stops working to her advantage around here.
+
+				<div class="figure">
+				<img src="https://i.imgur.com/Zrec97E.png"  width="100%"/>
+
+				</div>
+
+				<p>From the top down, the highlighted values are for MP7, C-MS, UMP45, and SAT8.
+				While SAT8 may manage to dodge a shot or two, she'll ultimately die far faster than any SMG.
+				Even M4A1 will on average last longer.</p>
+				
+				<h2>Garden of Old EX</h2>
+				
+				One of the trickier bits of this quite challenging map in the Gunslinger Girls collab is the moustached snipers.
+				They have high damage (52), lots of accuracy (162), and will destroy your dolls with a charged shot skill if left alive.
+				
+				<div class="figure">
+				<img src="https://i.imgur.com/C4MI134.png"  width="100%"/>
+
+				</div>
+				
+				If you can kill them before their skill, shotguns end up with an edge over SMGs.
+				Some armor buffs will help them out even more.
+				On the other hand, they won't buff the ARs you may wish to use for your backline and suffer greatly if the snipers get their skill off.
+				
+				<div class="figure">
+				<img src="https://i.imgur.com/BnejQ3k.png"  width="60%"/>
+
+				</div>
+				
+				Some specific numbers: SAT8, PM-06 (Night)/MP7, C-MS, and UMP45 from top to bottom.
+
+			</div>
+
+			
+			<div class="clearfix"></div>
+			
+			</main>
+			
+			<footer>
+				
+			</footer>
+		</div>
+		
+
+	</body>
+
+</html>
