@@ -201,6 +201,7 @@ button:active {
 }
 
 .gallery {
+	margin-top: 15px;
 	padding: 0 6px;
 	float: left;
 	width: 32.99999%;
