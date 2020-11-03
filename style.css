@@ -57,7 +57,7 @@ nav a {
 	text-decoration: none;
 	color: var(--lightemerald);
 	font-size: 1.2em;
-	
+
 }
 
 nav a:hover {
@@ -214,40 +214,40 @@ button:active {
 		margin: 0;
 		background-color: #fff;
 	}
-	
+
 	#wrapper {
 		min-width: 0;
 		width: auto;
 		box-shadow: none;
 	}
-	
+
 	main {
 		margin-left: 0;
 	}
-	
+
 	nav {
 		float: none;
 		width: 100%;
 	}
-	
+
 	nav a {
 		width: 100%;
 	}
-	
+
 	footer {
 		margin-left: 0;
 	}
 }
 
 @media only screen and (max-width: 37.5em) {
-	
+
 	main {
 		padding: 1em 1.5em 0.2em 1.5em;
 		font-size: 90%;
 	}
-	
+
 	h1 { font-size: 1.7em; }
-	
+
 	nav a {
 		display: block;
 		margin: 0;
@@ -255,12 +255,12 @@ button:active {
 		width: 100%;
 		border-bottom: 2px solid var(--deepblue);
 	}
-	
+
 	.accentbox {
 		/* Override specificity */
 		width: 100%!important;
 	}
-	
+
 	/* Change 2 columns to 1 */
 	.column {
 		float: none;
@@ -270,10 +270,23 @@ button:active {
 	.me {
 		display: none;
 	}
-	
+
 	label { float:none; text-align: left;}
 	input[type="submit"] { margin-left: 0;}
-	
+
 	#mobile { display: inline; }
 	#desktop { display: none; }
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr {
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    text-align: left;
 }
