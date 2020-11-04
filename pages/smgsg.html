@@ -6,10 +6,10 @@
 		<meta name="description" content="Girls Frontline, by the numbers">
 		<title>GFMath</title>
 		<link rel="stylesheet" href="../style.css">
-		
+
 		<!-- Font -->
 		<link href="http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf" rel="stylesheet">
-		
+
 		<!-- Favicon
 		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -17,9 +17,9 @@
 		<link rel="manifest" href="favicon/site.webmanifest"> -->
 	</head>
 
-	<body>		
+	<body>
 		<div id="wrapper">
-		
+
 			<header>
 				<a href="../index.html">GFMath</a>
 			</header>
@@ -28,14 +28,12 @@
 				<a href="https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"><li>YouTube</li></a>
 				<a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a>
 			</nav>
-			
+
 			<main>
-				<h1>SG vs SMG - The Ultimate Showdown</h1>
-				<center><em>By BigStupidJellyfish | 2020-October-30</em></center>
+				<h1>Effective Survival Strategies</h1>
+				<center><em>By BigStupidJellyfish | 2020-November-XX</em></center>
 				<!-- <p>If you just want to see the plots, head over to <a href="">this album</a>.</p> -->
-				
-				<h2>DRAFT (v1)</h2>
-				
+
 				<p>The six gun types in Girls' Frontline can be largely categorized into three roles: offensive (AR, RF, MG), defensive (SMG, SG), and support (HG).
 				Some dolls like M16, Python, and SMG offtanks can mix between these roles, but if you need to block attacks, you usually start with an SMG or SG.
 
@@ -45,137 +43,364 @@
 				<p>To keep complexity manageable, let's set aside the backline buffs and focus only on the idea of having a single tank who you wish to survive the longest.
 
 				<p>Intuition would suggest SGs excel when their armor is greater than the enemy's damage and fall off quickly afterwards, while SMGs suffer as enemy accuracy increases.
-				But how exactly does this line up?
+				But how exactly does this actually work out?
 
-				<p>I've put together, for a range of enemy accuracy values, plots of doll survivability versus enemy damage. Knowing the accuracy of your foe (determining the plot) and damage (horizontal position), you can see which dolls will last the longest.
+				<p>I've put together, for any given enemy accuracy value, plots of doll survivability versus enemy damage. Knowing the accuracy of your foe (determining the plot) and damage (horizontal position), you can see which dolls will last the longest.
 
 				<p>Notes on assumptions:
 				<ul>
-				<li>Most skills, including SAT8's shield, are ignored.
-				<li>Selfbuff EVA SMGs use the uptime-averaged evasion. If specifically looking to drag with them, performance will be lower.
-				<li>SGs are assumed to have the best armor equipped, but no external buffs or their own skills. An armor fairy with an armor stack team will extend their plateau by quite a bit.
-				<li>Attacks are assumed to have 15% damage variance (this is why the armor falloff isn't that dramatic). Judge has none, so these plots are less useful for her.
+				<li>Attacks are assumed to have 15% damage variance (this is why the armor falloff isn't that dramatic). Judge has none, so these plots are less relevant for her.
 				<li>The number of attacks survivable assumes a single 1-link attacker - divide by 5 if the enemy has 5 links and so on.
-				<li>Link protection is somewhat accounted for (damage > 1 link -> 1 link damage) but heavy damage protection is not. This isn't a perfectly accurate simulation of link protection and will become less accurate for high damage values.
+				<li>Link protection is somewhat accounted for, but heavy damage protection is not. Plots covering lower damage values/high HP dolls use a less accurate simulation of link protection for better visuals (link protection is less significant when enemy FP is low).
 				</ul>
 				<p>It's important to keep in mind that, in order to make the plots readable for all damage values, the y-axis is logarithmic.
 				A constant change distance represents a constant factor of multiplication rather than a linear change in value.
+				When in doubt, look at the axis labels to the left for the hard numbers.
 
-				<h2>Proof M16>Others for 0-2</h2>
-				
-				<div class="figure">
-				<img src="https://i.imgur.com/sGetGsi.png"  width="100%"/>
-
-				</div>
-
-				<p>The 9544 CE Vespid*32 node right at the start has 9 DMG and 20 ACC.
-				This places us just left of 10 damage on this plot, where M16 clearly stands above the rest (3388 attacks survivable, 105 volleys from these Vespids).
-				
-				<p>SAT8 and other shotguns are the next best, sitting between 1925 (SPAS-12) and 2299 (Super Shorty).
-				M4A1 fits in decently here at 2062, making her a decently viable tank for a slow way to grind her levels 115->120.
-				A typical SMG like UMP45 does quite poorly here, being able to take on average 826 hits.
-				
-				<p>Note that SGs are also less viable here due to increased repair costs, which are not accounted for in these plots.
+				<h2>Dragging 0-2</h2>
 
 				<div class="figure">
-				<img src="https://i.imgur.com/fbwp3MQ.png"  width="40%"/>
-
+				<img src="https://i.imgur.com/oqyTNWO.png"  width="100%"/>
 				</div>
 
-				<p>Here's a zoomed-in view with some specific numbers - M16, SAT8, M4A1, and UMP45/Thompson labeled top to bottom.
+				<p>We all know M16 is the best option for dragging 0-2, especially if you have her unique equipment.
+				But how large is the difference?
+				Are there other viable options?
+
+				<p>Looking up the enemy information <a href="https://gf.hometehomete.com/en/maps/">online</a>, the enemies have between 17 and 31 accuracy, with 20 being a reasonable middle ground.
+				The Jaguar with 298 accuracy will be ignored as it should get shot immediately anyways.
+
+				<p>Damage-wise, the Rippers are rather weak with a FP stat of 5-6.
+				Vespids deal 9 here, Dragoons 10, and Jaegers 14.
 
 				<div class="figure">
-				<img src="https://i.imgur.com/ckAxlVY.png"  width="100%"/>
-
+				<img src="https://i.imgur.com/PcREEze.png"  width="100%"/>
 				</div>
 
-				<p>Moving on to the next node, 8449 CE Dragoons have 10 damage/31 accuracy and the rippers 5/17.
+				<p>With her SPEQ, M16 clearly holds a substantial lead over other options, being able to take well over 3k hits from any of the mobs.
+				Without, her performance suffers against the Jaegers compared to most shotguns, but she still does very well against the rest (Jaegers are only encountered on one node here anyways).
 
-				<p>Versus the rippers, UMP45's standing improves a bit to 1705 hits, though any armor does better.
+				<p>M4A1 and Super-Shorty manage to nearly tie each other for second place, with their mix of armor, HP, and evasion giving decent numbers.
+				The much higher evasion of SMGs doesn't help them here, with all shown here performing far worse than any other option.
+				Interestingly, MP5's survivability is rather poor, despite the ridiculous +58 EVA from her SPEQ.
 
-				<div class="figure">
-				<img src="https://i.imgur.com/NFGPxy9.png"  width="100%"/>
-
-				</div>
-
-				<p>With the Dragoons' increased accuracy, M16 maintains a solid lead with 2400 versus SAT8's 1910 hits tankable.
-				While she can only live 1531 hits, M4A1 still triples UMP45's 513.
-
-				<p>The Jaegers have 14 DMG/28 acc, giving similar results to the Dragoons except being somewhat harsher on non-armored dolls.
+				<p>Two considerations not accounted for here are repair costs and XP - SGs are more expensive to repair, but getting levels on M4A1 (mod3) or some random shotgun may be more valuable than M16's crazy durability.
 
 				<h2>Dragging 11-5</h2>
 
 				<div class="figure">
-				<img src="https://i.imgur.com/Wkd22BI.png"  width="100%"/>
-
+				<img src="https://i.imgur.com/JloGFZI.png"  width="100%"/>
 				</div>
 
 				<p>The nightmares on this map, for the most part, have 24 DMG/23 ACC.
 				For some mysterious reason, a single pack of 5 in the mass has 24 acc, but let's set those aside.
 
-				<p>M16 and M4A1's low armor causes them to fall off quite hard here, and the Nightmare's relatively high damage makes SMGs quite questionable.
-				As C-MS/MP7/etc have their skills accounted for here, expect their unsupplied performance to be closer to someone like UMP45's.
+				<p>M16 and M4A1's low armor cause them to fall off hard here, and the Nightmare's relatively high damage make SMGs questionable.
 
 				<div class="figure">
-				<img src="https://i.imgur.com/u17IElP.png"  width="40%"/>
-
+				<img src="https://i.imgur.com/8Y6350h.png"  width="100%"/>
 				</div>
-				
-				<p>Here's a zoomed-in view with a few hard numbers.</p>
 
-				<h2>Bosses</h2>
+				<p>While taking off armor on your SG helped on 0-2, the Nightmares here do just enough damage that this ends up being a bad idea.
+				Just about any shotgun will be in the area of AA-12 and Super Shorty (with equipment), surpassing M16/M4/SMG tanks.
+
+				<h2>Example from Ranking: The CT Playpen</h2>
+
+				<p>Back in the ranking map for the Continuum Turbulence event, the upper right sector of the map had numerous forward-spawning Doppelsöldners, Strelets, and Rodeleros.
+				The typical strategy was to have two specialized teams capable of taking these enemies roam around that sector, racking up kills and collecting supply nodes, earning it the nickname of the playpen.
 
 				<div class="figure">
-				<img src="https://i.imgur.com/4qbzPUk.png"  width="100%"/>
+				<img src="https://i.imgur.com/Oh6O5ZJ.png"  width="100%"/>
 
 				</div>
+				<center>
+				<em>My first playpen team (para fairy). 2 HGs kite up and retreat to buy time while Grape kills the doppels. SAT8 moves up to tank after.</em>
+				</center>
 
-				<p>As the epitome of high single shot damage, 8-4E Dreamer does 260 DMG per hit with 100 ACC.
-				The SMG lines start flattening out at extreme damage values due to link protection - each shot from dreamer will lose out a bit due to overkill against them.
-				SAT8's monstrous health pool stops working to her advantage around here.
+				<p>These playpen teams had a few key components:
+				<ul>
+				<li>Rifles capable of taking out 2 doppels quickly (Grape alone was excellent here)
+				<li>A grenadier AR to mop up remaining strelets (somewhat optional, but helped minimize damage taken)
+				<li>A tank for these remaining strelets
+				<li>At least one HG for vision and buffs
+				</ul>
+				<p>Because of the specific needs of these battles, typical formations struggle to handle one aspect of the fight or another.
+
+				<p>Lacking AP and only targeting the frontlines, ARSMG teams will get torn apart by the Doppelsöldner sure-hit grenades and their devastating AOE shortly after.
+
+				<p>Even if given a Grape to snipe the Doppels, RFHG formations would get overwhelmed by the masses of Strelets afterward, with handguns quickly losing HP.
+
+				<p>Being a night map, MGSG formations would be nearly helpless against the Strelet's 15 EVA, and would be unlikely to shoot the Doppels early enough with their near-random targeting.
+
+				<p>Taunt/twin fairies could be very effective for keeping your dolls alive, but using Parachute/Illumination fairies allowed for higher scoring potential so I'll be ignoring those fairies here.
 
 				<div class="figure">
-				<img src="https://i.imgur.com/Zrec97E.png"  width="100%"/>
-
+				<img src="https://i.imgur.com/w2q6tTR.png"  width="100%"/>
 				</div>
 
-				<p>From the top down, the highlighted values are for MP7, C-MS, UMP45, and SAT8.
-				While SAT8 may manage to dodge a shot or two, she'll ultimately die far faster than any SMG.
-				Even M4A1 will on average last longer.</p>
-				
-				<h2>Garden of Old EX</h2>
-				
-				One of the trickier bits of this quite challenging map in the Gunslinger Girls collab is the moustached snipers.
-				They have high damage (52), lots of accuracy (162), and will destroy your dolls with a charged shot skill if left alive.
-				
+				<center>
+				<em>My second playpen team (illumination fairy). Welrod buys time as the rifles shoot 1 doppel and Contender redirects them to the 2nd. M16 tanks afterwards while the rifles work through the Strelets.</em>
+				</center>
+
+				<p>In both of these teams, the initial Doppel grenades are entirely avoided by retreating, leaving only the Strelet shots for analysis (against Rodeleros, proper kiting also lets you avoid their beams).
+
+				<p>On this map, Strelets deal 14 damage with 20 accuracy.
+
 				<div class="figure">
-				<img src="https://i.imgur.com/C4MI134.png"  width="100%"/>
-
+				<img src="https://i.imgur.com/LmKqLV8.png"  width="100%"/>
 				</div>
-				
-				If you can kill them before their skill, shotguns end up with an edge over SMGs.
-				Some armor buffs will help them out even more.
-				On the other hand, they won't buff the ARs you may wish to use for your backline and suffer greatly if the snipers get their skill off.
-				
+
+				<p>This chart makes it pretty clear why SMGs weren't being used.
+				Even C-MS, with her 100% uptime evasion boost, would die 3-4 times faster than the armored options.
+				Note: due to the many complex circumstances in these battles, SAT8's shield skill is not represented.
+				If it can be triggered in the battles, her lifespan will vastly increase.
+
+				<p>M16's SPEQ is critical this time, instead of being a nice bonus like it is in 0-2.
+					Without it, she barely lasts longer than an SMG.
+
 				<div class="figure">
-				<img src="https://i.imgur.com/BnejQ3k.png"  width="60%"/>
-
+				<img src="https://i.imgur.com/qtkijqA.png"  width="100%"/>
 				</div>
-				
-				Some specific numbers: SAT8, PM-06 (Night)/MP7, C-MS, and UMP45 from top to bottom.
+				<center>
+				<em>Blue dots represent your dolls. The yellow line is your typical starting range, the purple line your extended starting range (with a doll in the front).</em>
+				</center>
+
+				<p>But why weren't the same formations used in Isomer?
+					In Isomer ranking, most Paradeus zone teams used were straight 2RF3HG teams with no dedicated tank role.
+
+				<p>Repairs were more accessible in Isomer from the many heliports about, but the enemies were also much more spread out, extending further back.
+				This gives more pure RFHG formations enough time to shoot down most enemies before they get to shoot, lessening the need to tank shots (as a more minor point, these Strelets tended to have 8-9 FP and 15-17 ACC, making them somewhat weaker).
+
+				<h2>Upping the Damage</h2>
+
+				<p>So far, shotguns and other armor have had a very nice showing.
+				But not all enemies are kind enough to keep their damage values low.</p>
+
+				<p>One variation of the KCCO Cerynitis (the backline gunner guys) has 58 FP and 50 AP, encountered in Isomer ranking and Target Practice (Aegis and Deer, max strength).
+				Elsewhere in the Continuum Turbulence campaign some have a straight 142 FP/0 AP.</p>
+
+				<p>Looking at these results, evasive SMGs start to pull ahead if you cannot stack absolutely ridiculous amounts of armor.</p>
+
+				<div class="figure">
+				<img src="https://i.imgur.com/5Vwz8aG.png"  width="100%"/>
+				</div>
+
+				<p>As for what each level of armor stacking means:</p>
+
+				<center>
+				<table style="width:80%">
+				  <tr>
+				    <th>Configuration</th>
+				    <th>Support</th>
+				    <th>Final Armor</th>
+				  </tr>
+				  <tr>
+				    <td>Moderate stack</td>
+				    <td>5* Armor II Armor fairy, no skills</td>
+				    <td>48</td>
+				  </tr>
+				  <tr>
+				    <td>High stack</td>
+				    <td>As above, but with 2 15% and 1 20% armor buffer</td>
+				    <td>72</td>
+				  </tr>
+					<tr>
+				    <td>Extreme stack</td>
+				    <td>As above, but with Armor fairy skill</td>
+				    <td>108</td>
+				  </tr>
+				</table>
+				</center>
+
+				<p>In all cases, KSG's skill is ignored due to its long ICD and low uptime.
+				The armor fairy's skill only lasts for 20 seconds, so it may be unreliable for longer battles.</p>
+
+				<div class="figure">
+				<img src="https://i.imgur.com/URrQKqV.png"  width="100%"/>
+				</div>
+
+				<p>Keeping the doll settings the same as before, here's the chart for the other Cerynitis variant with 142 FP, no armor piercing, and a fair bit less accuracy.</p>
+
+				<p>In the case of ranking, neither SMGs or SGs ended up seeing use in the KCCO sector.</p>
+
+				<h2>Extreme Damage - Bosses</h2>
+
+				<p>Some bosses like Dreamer go even higher.
+				Due to link protection, high health isn't nearly as much of an advantage.
+				Let's try throwing some handguns in and seeing what happens.</p>
+
+				<center>
+					<table style="width:60%">
+						<tr>
+							<th>Boss</th>
+							<th>Encounter</th>
+							<th>FP</th>
+							<th>ACC</th>
+						</tr>
+						<tr>
+							<td>Dreamer</td>
+							<td>7-6</td>
+							<td>200</td>
+							<td>65</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>7-4E</td>
+							<td>240</td>
+							<td>70</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>8-6</td>
+							<td>240</td>
+							<td>80</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>8-4E</td>
+							<td>260</td>
+							<td>100</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>Singularity ranking</td>
+							<td>180</td>
+							<td>80</td>
+						</tr>
+						<tr>
+							<td>Destroyer</td>
+							<td>5-6</td>
+							<td>236</td>
+							<td>24</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>5-4E</td>
+							<td>294</td>
+							<td>30</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>8-6</td>
+							<td>300</td>
+							<td>45</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>8-4E</td>
+							<td>300</td>
+							<td>60</td>
+						</tr>
+						<tr>
+							<td>Alchemist</td>
+							<td>Freaky Pandemic E1-4</td>
+							<td>214</td>
+							<td>45</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>6-6</td>
+							<td>162</td>
+							<td>40</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>6-4E</td>
+							<td>162</td>
+							<td>40</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>6-4N</td>
+							<td>250</td>
+							<td>60</td>
+						</tr>
+					</table>
+				</center>
+
+				<div class="figure">
+				<img src="https://i.imgur.com/W2qA2Og.png"  width="100%"/>
+				</div>
+				<center>
+				<em>As I've restricted the range of damage values shown, this plot is linear.</em>
+				</center>
+
+				<p>As 7-6 is the most likely map of the above to be played with relative frequency (thanks, HOC quests), this chart is for 65 enemy accuracy.
+					In that case, we're looking right at 200 enemy FP, where we see both UMP45 and C-MS leading above the HG options selected.
+					All of these do better than AA-12 and Super Shorty at the bottom of the pile.</p>
+
+				<p>Having the chance at taking 2 hits for a single link is a major advantage for UMP45 (195 HP/link) and C-MS (185 HP/link) over the handguns who will always lose a link when hit.
+				Similarly, AA-12's 269 HP/link is just about the only thing keeping her and Super Shorty remotely competitive - this Dreamer will always need at least 2 shots to take a link down, meaning they can take at minimum 10 shots.</p>
+
+
+				<h2>Taunt, Twin, and Shield fairies</h2>
+
+				<p>These fairies provide some form of "health pool" that regenerates per-fight, allowing for near-unlimited survivability if they can make it through each combat at the cost of fairy commands.
+				This makes it hard to fairly compare them to a doll who loses HP each time, but we can compare between them.</p>
+
+				<div class="figure">
+				<img src="https://i.imgur.com/Roq9NWU.png"  width="100%"/>
+				</div>
+
+				<p>For low enemy accuracy, the evasive twin will generally outlast the taunt dummy (they're all close here, but the sequence is evasive twin>UMP45 shield>Taunt).
+				Past 40 enemy FP, the armor twin looks worse than either.
+				Factoring in the 80% evasion boost from the Shield fairy brings the shield's durability on UMP45 just in line with the taunt dummy/evasive twin here.</p>
+
+				<!-- <div class="figure">
+				<img src="img/surv/fairy-plot-50acc.png"  width="100%"/>
+			</div> -->
+
+				<p>However, as enemy accuracy picks up, the shield fairy's shield and the evasive twin fall off substantially:</p>
+
+				<div class="figure">
+				<img src="https://i.imgur.com/Bdn6zhY.png"  width="100%"/>
+				</div>
+				<center>
+					<em>Note that the survivability for Shield fairy+UMP45 only counts the shield HP. UMP45 herself can take a fair amount more hits afterwards, but this doesn't reset for each fight.</em>
+				</center>
+
+				<!-- <div class="figure">
+				<img src="img/surv/fairy-plot-100acc.png"  width="100%"/>
+			</div> -->
+
+				<p>AOE damage, surehit attacks, AP, and more will complicate matters.
+				Be sure to thoroughly inspect your foes beforehand.</p>
+
+				<h2>Additional Comments</h2>
+
+				<h3>Link Protection</h3>
+
+				<p>The plots in <em>Upping the Damage</em> may look a little rougher with some plateaus spread throughout - this is because they use a more accurate approximation of link protection, which is more relevant for higher damage numbers.
+				The first set of plots for 0-2/11-5/etc don't use this method as it isn't as significant of a factor and lets the plots look nicer there.</p>
+
+				<p>Each plateau is the result of a range of damage values where essentially every possible set of damage rolls lead to a consistent number of shots taking out each link (before accuracy comes in).</p>
+
+				<h3>Skills</h3>
+
+				<p>Many dolls have more complicated skills with bothersome components such as initial cooldowns, durations, and uptime.
+				Force shield SMGs, for example, could block critical attacks and massively extend their lifespan, or activate just in time for the very last Vespid to be shot dead.
+				As a result, these comparisons are largely made with dolls that can be more accurately simulated - C-MS, for example, have 100% uptime evasion-boosting skills.
+				Most shotguns used here have ICDs long enough to be safely set aside for most fights (except for SAT8's, but at least in the CT example she usually starts in the back and can't use her skill immediately).</p>
+
+				<p>Anyways, the key idea here is that these charts do not give a 100% accurate representation of each doll's field performance, but can be used to get a better idea of how some of them stand relative to each other in different encounters.</p>
+
+				<h3>Offensive Strategies</h3>
+
+				<p>There is also plenty of merit to focusing on offense - if you kill the enemies before they get a shot off, you may take no damage at all!
+					However, the value of using HGs and other DPS-type units on your frontlne is a very different and complex topic best left for another day.</p>
 
 			</div>
 
-			
+
 			<div class="clearfix"></div>
-			
+
 			</main>
-			
+
 			<footer>
-				
+
 			</footer>
 		</div>
-		
+
 
 	</body>
 
