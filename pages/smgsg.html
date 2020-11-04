@@ -43,14 +43,15 @@
 				<p>To keep complexity manageable, let's set aside the backline buffs and focus only on the idea of having a single tank who you wish to survive the longest.
 
 				<p>Intuition would suggest SGs excel when their armor is greater than the enemy's damage and fall off quickly afterwards, while SMGs suffer as enemy accuracy increases.
-				But how exactly does this actually work out?
+				But how exactly does the math work out?
 
 				<p>I've put together, for any given enemy accuracy value, plots of doll survivability versus enemy damage. Knowing the accuracy of your foe (determining the plot) and damage (horizontal position), you can see which dolls will last the longest.
+					Higher values on these plots indicates better survivability.</p>
 
 				<p>Notes on assumptions:
 				<ul>
 				<li>Attacks are assumed to have 15% damage variance (this is why the armor falloff isn't that dramatic). Judge has none, so these plots are less relevant for her.
-				<li>The number of attacks survivable assumes a single 1-link attacker - divide by 5 if the enemy has 5 links and so on.
+				<li>The number of attacks survivable assumes a single 1-link attacker - divide by 5 if the enemy has 5 links, and so on.
 				<li>Link protection is somewhat accounted for, but heavy damage protection is not. Plots covering lower damage values/high HP dolls use a less accurate simulation of link protection for better visuals (link protection is less significant when enemy FP is low).
 				</ul>
 				<p>It's important to keep in mind that, in order to make the plots readable for all damage values, the y-axis is logarithmic.
@@ -422,12 +423,12 @@
 				<p>Many dolls have more complicated skills with bothersome components such as initial cooldowns, durations, and uptime.
 				Force shield SMGs, for example, could block critical attacks and massively extend their lifespan, or activate just in time for the very last Vespid to be shot dead.
 				As a result, these comparisons are largely made with dolls that can be more accurately simulated - C-MS, for example, has a 100% uptime evasion-boosting skill.
-				Most shotguns used here have ICDs long enough to be safely set aside for most fights (except for SAT8's, but at least in the CT example she usually starts in the back and can't use her skill immediately).
-				Field testing becomes more important in evaluating the dolls with less straightforward skills.</p>
+				Most shotguns used here have ICDs long enough to be safely set aside for most fights (except for SAT8's, but at least in the CT example she often starts in the back and can't use her skill immediately).
+				Field testing becomes more important in evaluating dolls with less straightforward skills.</p>
 
 				<p>Anyways, the key idea here is that these charts do not give a 100% accurate representation of each doll's field performance, but can be used to get a better idea of how some of them stand relative to each other in different encounters.</p>
 
-				<p>A number of enemies in the upcoming event Shattered Connexion, for example, are most commonly fought with force-shield SMGs which go unmentioned in these charts.</p>
+				<p>A number of enemies in the upcoming event Shattered Connexion, for example, are most commonly fought with a force-shield SMG in front which go unmentioned in these charts.</p>
 
 				<p>EN is finally starting to get some more dolls with HP shielding (P22 and HS2000 being the big ones), which can also massively change matters.</p>
 
