@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="portfolio">
+		<meta name="description" content="Girls Frontline, by the numbers">
+		<title>GFMath</title>
+		<link rel="stylesheet" href="../style.css">
+
+		<!-- Font -->
+		<link href="http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf" rel="stylesheet">
+
+		<!-- Favicon
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="favicon/site.webmanifest"> -->
+	</head>
+
+	<body>
+		<div id="wrapper">
+
+			<header>
+				<a href="../index.html">GFMath</a>
+			</header>
+			<nav role="navigation">
+				<a href="../index.html"><li>Home</li></a>
+				<a href="https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"><li>YouTube</li></a>
+				<a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a>
+			</nav>
+
+			<main>
+				<h1>AR Damage over time - how good are the Type sisters?</h1>
+				<center><em>By BigStupidJellyfish | 2020-November-07 | Draft</em></center>
+				<!-- <p>If you just want to see the plots, head over to <a href="">this album</a>.</p> -->
+
+				<p>There are many self-buffing ARs in the game, with all sorts of combinations of stats, buffs, and cooldowns.
+					The Type sisters (Type95 and Type97) stand out with their skills taking only <em>2 seconds</em> to activate and lasting for 15 after that.
+					Most self-buffing ARs activate between 4 and 6 seconds, with skills usually lasting 5-10 seconds.</p>
+
+				<p>But how valuable are these early activations? How much are the longer ICD dolls hurt by the delay?
+					Today, we'll look at how some different ARs perform in cumulative damage dealt, relative to everyone's favorite standard, the G41 scale.</p>
+
+				<p>She herself buffs damage by 75% with an ICD of 4s and a 10s duration, a very generic effect.
+				By using this as a reference point, we can see the impact of other timings on damage output.</p>
+
+
+				<h2>Daytime</h2>
+
+				<div class="figure">
+				<img src="https://i.imgur.com/wdYrzvE.png" width="100%"/>
+				</div>
+
+				<p>Thanks to main character syndrome and a neural upgrade, ST AR-15 tops the charts for almost any time.
+					Besides her, the type sisters quickly claim their lead after their skills activate, and hold it until 6-8 seconds when G41 catches back up.</p>
+
+				<p>AN-94's passive isn't accounted for here, which may give her an edge early on and when her skill is on cooldown. Note that her curve before 6 seconds is almost identical to AK-12's, and is hidden under it.</p>
+
+				<p>FNC's 3 star statline and skill multiplier make it hard for her to keep up with the rest.</p>
+
+				<!-- <p>EM-2's skill is a little tricky to include with how these are calculated. According to <a href="https://gfl.matsuda.tips/combatsim/">a simulator</a>, she maxes out at a 24.7% net increase 8 seconds in that quickly drops to 12.8% with G41's next shot and continues to fall from there (passing back below around 10.5 seconds).</p> -->
+
+				<h2>Nighttime</h2>
+
+				<div class="figure">
+				<img src="https://i.imgur.com/BpSkWhT.png" width="100%"/>
+				</div>
+
+				<p>At night, dolls put on their PEQs and AN-94 is swapped out for Groza (OTs-14).
+					Between dolls that went straight from a critscope to PEQ, little changes relative to each other.
+				As the type sisters lose their SPEQ, they drop down a good amount.</p>
+
+				<p>AR-15 gets a significant advantage as she keeps her critscope, and AK-12 goes down a little bit as her critical rate buff is less valuable.
+				While Groza never beats out AR-15 here, keep in mind that this is considering a 0-armor target.
+				If you want to know how armor changes matters, <a href="ar-night-armor.html">head on over here</a> for my analysis.
+				As long as the fight goes past 6-7 seconds, she performs very well compared to the rest of the ARs here.
+
+				<h2>Keep in mind...</h2>
+
+				<p>Your dolls probably aren't in echelons all by themselves (unless it's some cheap farm route), so other skills and tilebuffs will change how things work out.
+					Add a Fervor talent for even more fun.</p>
+
+				<p>Enemy stats will also vary per encounter.</p>
+
+				<p>When in doubt, you can always use <a href="https://gfl.matsuda.tips/combatsim/">a combat simulator</a> to get the specifics.</p>
+
+				<p>These plots use the average total damage per time interval.
+					Critical hits, different number of frames between attacks, accuracy rolls, and so on will make the percent difference vary per combat.
+					The frame timings of each attack may also cause slight differences with simulators.
+					Think of this as a more general average relationship.
+				</p>
+			</div>
+
+
+			<div class="clearfix"></div>
+
+			</main>
+
+			<footer>
+
+			</footer>
+		</div>
+
+
+	</body>
+
+</html>
