@@ -1,165 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="keywords" content="portfolio">
-		<meta name="description" content="Girls Frontline, by the numbers">
-		<title>GFMath: Rico Skill Analysis & Commentary</title>
-		<link rel="stylesheet" href="../style.css">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="portfolio">
+	<meta name="description" content="Girls Frontline, by the numbers">
+	<title>GFMath: Rico Skill Analysis & Commentary</title>
+	<link rel="stylesheet" href="../style.css">
 
-		<!-- Font -->
-		<link href="http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf" rel="stylesheet">
+	<!-- Font -->
+	<link href="http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf" rel="stylesheet">
 
-		<!-- Favicon
-		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-		<link rel="manifest" href="favicon/site.webmanifest"> -->
-	</head>
+	<!-- Favicon
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="manifest" href="favicon/site.webmanifest"> -->
+</head>
 
-	<body>
-		<div id="wrapper">
+<body>
+<div id="wrapper">
 
-			<header>
-				<a href="../index.html">GFMath</a>
-			</header>
-			<nav role="navigation">
-				<a href="../index.html"><li>Home</li></a>
-				<a href="https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"><li>YouTube</li></a>
-				<a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a>
-			</nav>
+<header>
+	<a href="../index.html">GFMath</a>
+</header>
+<nav role="navigation">
+	<a href="../index.html"><li>Home</li></a>
+	<a href="https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"><li>YouTube</li></a>
+	<a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a>
+</nav>
 
-			<main>
-				<h1>Rico Skill Analysis & Commentary</h1>
-				<center><em>By BigStupidJellyfish | 2020-December-04 | Draft 1</em></center>
-				<!-- <p>If you just want to see the plots, head over to <a href="">this album</a>.</p> -->
+<main>
+<h1>Rico Skill Analysis & Commentary</h1>
+<center><em>By BigStupidJellyfish | 2020-December-04 | Draft 1</em></center>
+<!-- <p>If you just want to see the plots, head over to <a href="">this album</a>.</p> -->
 
-        <blockquote>Passive: Obtain a Tarot Card every 3 attacks, up to a maximum of 3 Tarot Cards.
-        Each Tarot Card increases her damage by 15% for 5s.
-        Active: Consume all Tarot Cards and fire a shot that will not miss, dealing 3x damage do the furthest target and possible critical damage.
-        Additionally, deal additional damage to enemies within a 1-unit radius around the target. The additional damage is equal to 0.5x the number of Tarot Cards consumed, up to a maximum of 1.5x damage.</blockquote>
-        <center><em>—Rico's skill text.</em></center>
+<blockquote>Passive: Obtain a Tarot Card every 3 attacks, up to a maximum of 3 Tarot Cards.
+Each Tarot Card increases her damage by 15% for 5s.
+Active: Consume all Tarot Cards and fire a shot that will not miss, dealing 3x damage do the furthest target and possible critical damage.
+Additionally, deal additional damage to enemies within a 1-unit radius around the target. The additional damage is equal to 0.5x the number of Tarot Cards consumed, up to a maximum of 1.5x damage.</blockquote>
+<center><em>—Rico's skill text.</em></center>
 
-				<p>Rico's skill has two components. With her passive, she builds up to 3 Tarot Cards, giving her a constant 45% damage increase if she maintains maximum stacks.
-        When her skill activates, she shoots the furthest enemy with a miniature bamboo shot (that can crit), plus explosion damage to nearby enemies.
-        The high uptime passive, explosive bamboo shot, and 45% critical damage SPEQ make Rico a very powerful rifle.</p>
+<p>Rico's skill has two components. With her passive, she builds up to 3 Tarot Cards, giving her a constant 45% damage increase if she maintains maximum stacks.
+When her skill activates, she shoots the furthest enemy with a miniature bamboo shot (that can crit), plus explosion damage to nearby enemies.
+The high uptime passive, explosive bamboo shot, and 45% critical damage SPEQ make Rico a very powerful rifle.</p>
 
-        <p>One idea I've heard mentioned a few times is turning her skill to force manual and letting the stacks build up - as her active ability consumes all Tarot Cards, it lowers her damage afterwards.
-        Today, I'm going to investigate the value of this, and how she stacks up with and without her active component.
-				A third option is to have her skill on force manual, activating it at specific times, but that's nearly impossible to have a general discussion on and would be a nightmare to collect good data for.</p>
+<p>One idea I've heard mentioned a few times is turning her skill to force manual and letting the stacks build up - as her active ability consumes all Tarot Cards, it lowers her damage afterwards.
+Today, I'm going to investigate the value of this, and how she stacks up with and without her active component.
+A third option is to have her skill on force manual, activating it at specific times, but that's nearly impossible to have a general discussion on and would be a nightmare to collect good data for.</p>
 
-				<h2>Simulations First</h2>
+<h2>Simulations First</h2>
 
-				<p>I'm pulling these numbers from <a href="https://hycdes.com/pages/GFT_Echelon-EN.html">this sim</a> which is more up-to-date on dolls, averaging the results of 100 trials.
-				For the full team numbers, it's M14 mod, 5-7, Calico mod, and P22.
-				I'll be using the same dolls for the target practice tests.</p>
+<p>I'm pulling these numbers from <a href="https://hycdes.com/pages/GFT_Echelon-EN.html">this sim</a> which is more up-to-date on dolls, averaging the results of 100 trials.
+For the full team numbers, it's M14 mod, 5-7, Calico mod, and P22.
+I'll be using the same dolls for the target practice tests.</p>
 
-				<p>On their own, autoskill gains a substantial lead over leaving it off:</p>
+<p>On their own, autoskill gains a substantial lead over leaving it off:</p>
 
-				<div class="figure">
-				<img src="images/manual-labor/solo-skill-vanilla.png" width="49%"/> <img src="images/manual-labor/solo-skill-command.png" width="49%"/>
-				</div>
-				<center><em>Purple Rico: autoskill. Blue Rico: manual/no activation. No fairy (left), Command fairy (right).</em></center>
+<div class="figure">
+	<img src="images/manual-labor/solo-skill-vanilla.png" width="49%"/> <img src="images/manual-labor/solo-skill-command.png" width="49%"/>
+</div>
+<center><em>Purple Rico: autoskill. Blue Rico: manual/no activation. No fairy (left), Command fairy (right).</em></center>
 
-				<p>In a team with M14, Rico has a slight advantage with autoskill and about ties with no skill activations:</p>
+<p>In a team with M14, Rico has a slight advantage with autoskill and about ties with no skill activations:</p>
 
-				<div class="figure">
-				<img src="images/manual-labor/skill-auto-command-222459.png" width="49%"/> <img src="images/manual-labor/skill-manual-command-209328.png" width="49%"/>
-				</div>
-				<center><em>Full team, Fervor Command. Rico on autoskill dealing 222,459 damage (left), manual dealing 209,328 damage (right).</em></center>
+<div class="figure">
+	<img src="images/manual-labor/skill-auto-command-222459.png" width="49%"/> <img src="images/manual-labor/skill-manual-command-209328.png" width="49%"/>
+</div>
+<center><em>Full team, Fervor Command. Rico on autoskill dealing 222,459 damage (left), manual dealing 209,328 damage (right).</em></center>
 
-				<div class="figure">
-				<img src="images/manual-labor/skill-auto-nofairy-100611.png" width="49%"/> <img src="images/manual-labor/skill-manual-nofairy-94047.png" width="49%"/>
-				</div>
-				<center><em>Full team, no fairy. Rico on autoskill dealing 100,611 damage (left), manual dealing 94,047 damage (right).</em></center>
+<div class="figure">
+	<img src="images/manual-labor/skill-auto-nofairy-100611.png" width="49%"/> <img src="images/manual-labor/skill-manual-nofairy-94047.png" width="49%"/>
+</div>
+<center><em>Full team, no fairy. Rico on autoskill dealing 100,611 damage (left), manual dealing 94,047 damage (right).</em></center>
 
-				<p>These are all with 1 enemy group, so it shouldn't be adding splash damage.
-				On the other hand, potential overkill from her charged shot is counted.
-				So: autoskill gives higher theoretical DPS, ignoring splash and overkill.
-				This holds when she's on her own and in the team above.</p>
+<p>These are all with 1 enemy group, so it shouldn't be adding splash damage.
+On the other hand, potential overkill from her charged shot is counted.
+So: autoskill gives higher theoretical DPS, ignoring splash and overkill.
+This holds when she's on her own and in the team above.</p>
 
-				<p>Let's consider for a moment why this is.
-				To help figure this out, I've got some tables on relative per-shot damage for Rico's first few attacks under some different circumstances.</p>
+<p>Let's consider for a moment why this is.
+To help figure this out, I've got some tables on relative per-shot damage for Rico's first few attacks under some different circumstances.</p>
 
-				<p>First, the unrealistic assumption of her being able to maintain maximum stacks permanently.</p>
-				<center>
-				<table style="width:auto">
-				<tr>
-<td colspan="4" align="center" valign="middle">Starting at max stacks, never decaying</td>
-</tr>
-<tr>
-<td align="left">Attack</td>
-<td align="left">Auto</td>
-<td align="left">Manual</td>
-<td align="left">Event (auto)</td>
-</tr>
-<tr>
-<td align="right">1</td>
-<td align="right">3</td>
-<td align="right">1.45</td>
-<td align="left">Nuke</td>
-</tr>
-<tr>
-<td align="right">2</td>
-<td align="right">1</td>
-<td align="right">1.45</td>
-<td align="left">&nbsp;</td>
-</tr>
-<tr>
-<td align="right">3</td>
-<td align="right">1</td>
-<td align="right">1.45</td>
-<td align="left">&nbsp;</td>
-</tr>
-<tr>
-<td align="right">4</td>
-<td align="right">1.15</td>
-<td align="right">1.45</td>
-<td align="left">Card</td>
-</tr>
-<tr>
-<td align="right">5</td>
-<td align="right">1.15</td>
-<td align="right">1.45</td>
-<td align="left">&nbsp;</td>
-</tr>
-<tr>
-<td align="right">6</td>
-<td align="right">1.15</td>
-<td align="right">1.45</td>
-<td align="left">&nbsp;</td>
-</tr>
-<tr>
-<td align="right">7</td>
-<td align="right">1.3</td>
-<td align="right">1.45</td>
-<td align="left">Card</td>
-</tr>
-<tr>
-<td align="right">8</td>
-<td align="right">1.3</td>
-<td align="right">1.45</td>
-<td align="left">&nbsp;</td>
-</tr>
-<tr>
-<td align="right">9</td>
-<td align="right">1.3</td>
-<td align="right">1.45</td>
-<td align="left">&nbsp;</td>
-</tr>
-<tr>
-<td align="right">10</td>
-<td align="right">1.45</td>
-<td align="right">1.45</td>
-<td align="left">Card</td>
-</tr>
-<tr>
-<td align="left">Total damage</td>
-<td align="right" bgcolor="#99d1ce"><strong>13.8</strong></td>
-<td align="right" bgcolor="#99d1ce"><strong>14.5</strong></td>
-<td align="left">&nbsp;</td>
-</tr>
-</table></center>
+<p>First, the unrealistic assumption of her being able to maintain maximum stacks permanently.</p>
+<center>
+	<table style="width:auto">
+		<tr>
+			<td colspan="4" align="center" valign="middle">Starting at max stacks, never decaying</td>
+		</tr>
+		<tr>
+			<td align="left">Attack</td>
+			<td align="left">Auto</td>
+			<td align="left">Manual</td>
+			<td align="left">Event (auto)</td>
+		</tr>
+		<tr>
+			<td align="right">1</td>
+			<td align="right">3</td>
+			<td align="right">1.45</td>
+			<td align="left">Nuke</td>
+		</tr>
+		<tr>
+			<td align="right">2</td>
+			<td align="right">1</td>
+			<td align="right">1.45</td>
+			<td align="left">&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="right">3</td>
+			<td align="right">1</td>
+			<td align="right">1.45</td>
+			<td align="left">&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="right">4</td>
+			<td align="right">1.15</td>
+			<td align="right">1.45</td>
+			<td align="left">Card</td>
+		</tr>
+		<tr>
+			<td align="right">5</td>
+			<td align="right">1.15</td>
+			<td align="right">1.45</td>
+			<td align="left">&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="right">6</td>
+			<td align="right">1.15</td>
+			<td align="right">1.45</td>
+			<td align="left">&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="right">7</td>
+			<td align="right">1.3</td>
+			<td align="right">1.45</td>
+			<td align="left">Card</td>
+		</tr>
+		<tr>
+			<td align="right">8</td>
+			<td align="right">1.3</td>
+			<td align="right">1.45</td>
+			<td align="left">&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="right">9</td>
+			<td align="right">1.3</td>
+			<td align="right">1.45</td>
+			<td align="left">&nbsp;</td>
+		</tr>
+		<tr>
+			<td align="right">10</td>
+			<td align="right">1.45</td>
+			<td align="right">1.45</td>
+			<td align="left">Card</td>
+		</tr>
+		<tr>
+			<td align="left">Total damage</td>
+			<td align="right" bgcolor="#99d1ce"><strong>13.8</strong></td>
+			<td align="right" bgcolor="#99d1ce"><strong>14.5</strong></td>
+			<td align="left">&nbsp;</td>
+		</tr>
+	</table>
+</center>
 
 <p>Under these assumptions, attacks before her nuke and after the auto setting climbs back to 1.45 will be the same either way, so I've left those out.</p>
 
@@ -171,115 +172,115 @@ Anyways, if she can always maintain max stacks her DPS looks pretty good. But is
 <center>
 	<table style="width:auto">
 		<tr>
-		<td colspan="3" align="center" valign="middle" height="17">Unbuffed</td>
-		<td colspan="2" align="center" valign="middle">With constant 80% ROF buff</td>
+			<td colspan="3" align="center" valign="middle" height="17">Unbuffed</td>
+			<td colspan="2" align="center" valign="middle">With constant 80% ROF buff</td>
 		</tr>
 		<tr>
-		<td align="left" height="17">Attack</td>
-		<td align="left">Auto</td>
-		<td align="left">Manual</td>
-		<td align="left">Auto</td>
-		<td align="left">Manual</td>
+			<td align="left" height="17">Attack</td>
+			<td align="left">Auto</td>
+			<td align="left">Manual</td>
+			<td align="left">Auto</td>
+			<td align="left">Manual</td>
 		</tr>
 		<tr>
-		<td align="right" height="17">1</td>
-		<td align="right">1</td>
-		<td align="right">1</td>
-		<td align="right">1</td>
-		<td align="right">1</td>
+			<td align="right" height="17">1</td>
+			<td align="right">1</td>
+			<td align="right">1</td>
+			<td align="right">1</td>
+			<td align="right">1</td>
 		</tr>
 		<tr>
-		<td align="right" height="17">2</td>
-		<td align="right">1</td>
-		<td align="right">1</td>
-		<td align="right">1</td>
-		<td align="right">1</td>
+			<td align="right" height="17">2</td>
+			<td align="right">1</td>
+			<td align="right">1</td>
+			<td align="right">1</td>
+			<td align="right">1</td>
 		</tr>
 		<tr>
-		<td align="right" height="17">3</td>
-		<td align="right">1.15</td>
-		<td align="right">1.15</td>
-		<td align="right">1.15</td>
-		<td align="right">1.15</td>
+			<td align="right" height="17">3</td>
+			<td align="right">1.15</td>
+			<td align="right">1.15</td>
+			<td align="right">1.15</td>
+			<td align="right">1.15</td>
 		</tr>
 		<tr>
-		<td align="right" height="17">4</td>
-		<td align="right">3</td>
-		<td align="right">1.15</td>
-		<td align="right">1.15</td>
-		<td align="right">1.15</td>
+			<td align="right" height="17">4</td>
+			<td align="right">3</td>
+			<td align="right">1.15</td>
+			<td align="right">1.15</td>
+			<td align="right">1.15</td>
 		</tr>
 		<tr>
-		<td align="right" height="17">5</td>
-		<td align="right">1</td>
-		<td align="right">1.15</td>
-		<td align="right">1.15</td>
-		<td align="right">1.15</td>
+			<td align="right" height="17">5</td>
+			<td align="right">1</td>
+			<td align="right">1.15</td>
+			<td align="right">1.15</td>
+			<td align="right">1.15</td>
 		</tr>
 		<tr>
-		<td align="right" height="17">6</td>
-		<td align="right">1</td>
-		<td align="right">1.3</td>
-		<td align="right">1.3</td>
-		<td align="right">1.3</td>
+			<td align="right" height="17">6</td>
+			<td align="right">1</td>
+			<td align="right">1.3</td>
+			<td align="right">1.3</td>
+			<td align="right">1.3</td>
 		</tr>
 		<tr>
-		<td align="right" height="17">7</td>
-		<td align="right">1.15</td>
-		<td align="right">1.15</td>
-		<td align="right">3</td>
-		<td align="right">1.3</td>
+			<td align="right" height="17">7</td>
+			<td align="right">1.15</td>
+			<td align="right">1.15</td>
+			<td align="right">3</td>
+			<td align="right">1.3</td>
 		</tr>
 		<tr>
-		<td align="right" height="17">8</td>
-		<td align="right">1.15</td>
-		<td align="right">1.15</td>
-		<td align="right">1</td>
-		<td align="right">1.3</td>
+			<td align="right" height="17">8</td>
+			<td align="right">1.15</td>
+			<td align="right">1.15</td>
+			<td align="right">1</td>
+			<td align="right">1.3</td>
 		</tr>
 		<tr>
-		<td align="right" height="17">9</td>
-		<td align="right">1.15</td>
-		<td align="right">1.3</td>
-		<td align="right">1</td>
-		<td align="right">1.45</td>
+			<td align="right" height="17">9</td>
+			<td align="right">1.15</td>
+			<td align="right">1.3</td>
+			<td align="right">1</td>
+			<td align="right">1.45</td>
 		</tr>
 		<tr>
-		<td align="right" height="17">10</td>
-		<td align="right">1.3</td>
-		<td align="right">1.15</td>
-		<td align="right">1.15</td>
-		<td align="right">1.3</td>
+			<td align="right" height="17">10</td>
+			<td align="right">1.3</td>
+			<td align="right">1.15</td>
+			<td align="right">1.15</td>
+			<td align="right">1.3</td>
 		</tr>
 		<tr>
-		<td align="right" height="17">11</td>
-		<td align="right">1.15</td>
-		<td align="right">1.15</td>
-		<td align="right">1.15</td>
-		<td align="right">1.3</td>
+			<td align="right" height="17">11</td>
+			<td align="right">1.15</td>
+			<td align="right">1.15</td>
+			<td align="right">1.15</td>
+			<td align="right">1.3</td>
 		</tr>
 		<tr>
-		<td align="right" height="17">12</td>
-		<td align="right">1.15</td>
-		<td align="right">1.3</td>
-		<td align="right">1.15</td>
-		<td align="right">1.45</td>
+			<td align="right" height="17">12</td>
+			<td align="right">1.15</td>
+			<td align="right">1.3</td>
+			<td align="right">1.15</td>
+			<td align="right">1.45</td>
 		</tr>
 		<tr>
-		<td align="right" height="17">13</td>
-		<td align="right">3</td>
-		<td align="right">1.15</td>
-		<td align="right">1.3</td>
-		<td align="right">1.3</td>
+			<td align="right" height="17">13</td>
+			<td align="right">3</td>
+			<td align="right">1.15</td>
+			<td align="right">1.3</td>
+			<td align="right">1.3</td>
 		</tr>
 		<tr>
-		<td align="left" height="17">Total damage</td>
-		<td align="right" bgcolor="#99d1ce"><strong>18.2</strong></td>
-		<td align="right" bgcolor="#99d1ce"><strong>15.1</strong></td>
-		<td align="right" bgcolor="#d3ebe9"><strong>16.5</strong></td>
-		<td align="right" bgcolor="#d3ebe9"><strong>16.15</strong></td>
+			<td align="left" height="17">Total damage</td>
+			<td align="right" bgcolor="#99d1ce"><strong>18.2</strong></td>
+			<td align="right" bgcolor="#99d1ce"><strong>15.1</strong></td>
+			<td align="right" bgcolor="#d3ebe9"><strong>16.5</strong></td>
+			<td align="right" bgcolor="#d3ebe9"><strong>16.15</strong></td>
 		</tr>
-</table>
+	</table>
 </center>
 
 <p>Autoskill has the lead for damage dealt in these first 13 shots. If you want to ignore the last attack on the left where her skill triggers again, it still adds up to 15.2 (auto)/13.95 (manual).
@@ -299,83 +300,83 @@ However, she can't manage that even with a constant 80% ROF buff.
 HG buff skills could help while they're active, but those don't last forever.
 With how her skillshot works, she will also get more shots out with autoskill on.</p>
 
-				<h2>Target Practice</h2>
+<h2>Target Practice</h2>
 
-				<center>
-				<embed type="video/mp4" src="images/manual-labor/RicoAegis.webm" width="873px" height="480px">
-				</center>
-				<center><em>A sample fight (no fairy, autoskill). I don't kite at all for consistency purposes.</em></center>
-				<!--<embed type="video/mp4" src="https://imgur.com/HIInj6i.mp4" width="873px" height="480px">-->
-				<p>To find if there's a difference between Rico's skill settings, and which is better if there is, it's time to collect some experimental data.
-				Rico will be kept in the same generic RFHG squad as used above, and I'll record data for various enemy+fairy combinations.
-				For some middle ground between my sanity and the reliability of the results, I'm running 20 trials with each combination.</p>
+<center>
+	<embed type="video/mp4" src="images/manual-labor/RicoAegis.webm" width="873px" height="480px">
+</center>
+<center><em>A sample fight (no fairy, autoskill). I don't kite at all for consistency purposes.</em></center>
+<!--<embed type="video/mp4" src="https://imgur.com/HIInj6i.mp4" width="873px" height="480px">-->
+<p>To find if there's a difference between Rico's skill settings, and which is better if there is, it's time to collect some experimental data.
+Rico will be kept in the same generic RFHG squad as used above, and I'll record data for various enemy+fairy combinations.
+For some middle ground between my sanity and the reliability of the results, I'm running 20 trials with each combination.</p>
 
-				<p>Most of the analysis uses box-and-whisker plots to represent the target practice data.
-				The central mark in each box is the median, and its top and bottom represent the 75th/25th percentile values.
-				Whiskers extend to encompass nearly all the data points, while outliers past that are marked individually.</p>
+<p>Most of the analysis uses box-and-whisker plots to represent the target practice data.
+The central mark in each box is the median, and its top and bottom represent the 75th/25th percentile values.
+Whiskers extend to encompass nearly all the data points, while outliers past that are marked individually.</p>
 
-				<!-- <p>I've also added a text label for the median to the right of each box.</p> (no longer) -->
+<!-- <p>I've also added a text label for the median to the right of each box.</p> (no longer) -->
 
-				<!-- <p>On paper, the case for ignoring her skillshot is rather weak.
-					None of that could account for overkill and other live-combat circumstances.
-					Time for some full-team testing.</p> -->
+<!-- <p>On paper, the case for ignoring her skillshot is rather weak.
+None of that could account for overkill and other live-combat circumstances.
+Time for some full-team testing.</p> -->
 
-					<div class="figure">
-					<img src="images/manual-labor/plot-time.png" width="100%"/>
-					</div>
-					<!--  <center><em>Clear time of some target practice foes.</em></center> -->
+<div class="figure">
+	<img src="images/manual-labor/plot-time.png" width="100%"/>
+</div>
+<!--  <center><em>Clear time of some target practice foes.</em></center> -->
 
-					<div class="figure">
-					<img src="images/manual-labor/plot-dtaken.png" width="100%"/>
-					</div>
-					<!--  <center><em>Damage taken per fight.</em></center> -->
+<div class="figure">
+	<img src="images/manual-labor/plot-dtaken.png" width="100%"/>
+</div>
+<!--  <center><em>Damage taken per fight.</em></center> -->
 
-					<div class="figure">
-					<img src="images/manual-labor/plot-ddealt.png" width="100%"/>
-					</div>
-					<!--  <center><em>Rico's damage dealt.</em></center> -->
+<div class="figure">
+	<img src="images/manual-labor/plot-ddealt.png" width="100%"/>
+</div>
+<!--  <center><em>Rico's damage dealt.</em></center> -->
 
-					<p>Strength 5, except for the Wraiths which are put to 4 (they walk past otherwise). Twisted Faith is fought at night to make it slightly more challenging, Aegis & Deer is the same either way, and the Wraiths were set to day.</p>
+<p>Strength 5, except for the Wraiths which are put to 4 (they walk past otherwise). Twisted Faith is fought at night to make it slightly more challenging, Aegis & Deer is the same either way, and the Wraiths were set to day.</p>
 
-					<p>There are hard ways to analyze these results and there are easy ways.
-					Generally, if the boxes are overlapping a lot, there is not likely to be a statistically significant difference in performance.
-					To make it more precise, we could add notches to the box-and-whisker plots above.</p>
+<p>There are hard ways to analyze these results and there are easy ways.
+Generally, if the boxes are overlapping a lot, there is not likely to be a statistically significant difference in performance.
+To make it more precise, we could add notches to the box-and-whisker plots above.</p>
 
-					<blockquote>Notches are used to compare groups; if the notches of two boxes do not overlap, this suggests that the medians are significantly different.</blockquote>
-					<center><em>—ggplot2 documentation on the notch option</em></center>
+<blockquote>Notches are used to compare groups; if the notches of two boxes do not overlap, this suggests that the medians are significantly different.</blockquote>
+<center><em>—ggplot2 documentation on the notch option</em></center>
 
-					<p>Then, we can visually compare the notches and see for which configurations there is a statistically significant difference in performance, and which way it leans.
-					Now, the sad news is, these notches can look pretty funny if their width extends past the main box making it awkard to present.
-					This becomes more exaggerated if the data is skewed to one side of the median, a particularly large problem for the damage taken charts when the median damage is near zero.
-					Keeping them mostly secret from the world, you can preview this look <a href="https://imgur.com/a/OvD9akx">in the album here</a> with some extra text pointing out the significant changes.
-					These recommendations are made with 95% confidence.</p>
+<p>Then, we can visually compare the notches and see for which configurations there is a statistically significant difference in performance, and which way it leans.
+Now, the sad news is, these notches can look pretty funny if their width extends past the main box making it awkard to present.
+This becomes more exaggerated if the data is skewed to one side of the median, a particularly large problem for the damage taken charts when the median damage is near zero.
+Keeping them mostly secret from the world, you can preview this look <a href="https://imgur.com/a/OvD9akx">in the album here</a> with some extra text pointing out the significant changes.
+These recommendations are made with 95% confidence.</p>
 
-					<p>In short - overall performance is quite close between auto/manual skill on Rico, but most significant differences observed favored autoskill.
-					No significant differences in the team's damage taken (perhaps the most important metric) were observed.
-					Rico herself seemed to contribute as much, if not slightly more, damage with autoskill compared to manual across the board.
-					In the nine configurations tested, Rico cleared faster on autoskill in 4 of them, slower in 1, and was about equal in the remaining 4.</p>
+<p>In short - overall performance is quite close between auto/manual skill on Rico, but most significant differences observed favored autoskill.
+No significant differences in the team's damage taken (perhaps the most important metric) were observed.
+Rico herself seemed to contribute as much, if not slightly more, damage with autoskill compared to manual across the board.
+In the nine configurations tested, Rico cleared faster on autoskill in 4 of them, slower in 1, and was about equal in the remaining 4.</p>
 
-					<h2>Conclusions</h2>
+<h2>Conclusions</h2>
 
-					<p>While there are <em>far</em> more possible fights out there and team compositions, there's not much of a case for ignoring her active component so far.
-					Anyways, who can say no to a surehit explosive shot?</p>
+<p>While there are <em>far</em> more possible fights out there and team compositions, there's not much of a case for ignoring her active component so far.
+Anyways, who can say no to a surehit explosive shot?</p>
 
-					<p>Some further considerations:</p>
-					<ul>
-						<li>Holding her active until 6 seconds in or for a new enemy to enter range may be beneficial. This will be very fight-dependent.</li>
-						<li>Enemy evasion, density, armor, and so on are important factors in determining her skill's effect, as is team composition and buffs. More tests with different teams and enemy groups would be useful.</li>
-					</ul>
+<p>Some further considerations:</p>
+<ul>
+	<li>Holding her active until 6 seconds in or for a new enemy to enter range may be beneficial. This will be very fight-dependent.</li>
+	<li>Enemy evasion, density, armor, and so on are important factors in determining her skill's effect, as is team composition and buffs. More tests with different teams and enemy groups would be useful.</li>
+</ul>
 
-			<div class="clearfix"></div>
+<div class="clearfix"></div>
 
-			</main>
+</main>
 
-			<footer>
+<footer>
 
-			</footer>
-		</div>
+</footer>
+</div>
 
 
-	</body>
+</body>
 
 </html>
