@@ -10,6 +10,42 @@
 
   gtag('config', 'G-805N997DPC');
 </script>
+<!-- TODO: find a better method than this abomination -->
+<script type="text/javascript">
+function toggleContentCU() {
+  var contentId = document.getElementById("contentCU");
+  contentId.style.display == "block" ? contentId.style.display = "none" :
+  contentId.style.display = "block";
+}
+</script>
+<script type="text/javascript">
+function toggleContentAW() {
+  var contentId = document.getElementById("contentAW");
+  contentId.style.display == "block" ? contentId.style.display = "none" :
+  contentId.style.display = "block";
+}
+</script>
+<script type="text/javascript">
+function toggleContentDD() {
+  var contentId = document.getElementById("contentDD");
+  contentId.style.display == "block" ? contentId.style.display = "none" :
+  contentId.style.display = "block";
+}
+</script>
+<script type="text/javascript">
+function toggleContentSI() {
+  var contentId = document.getElementById("contentSI");
+  contentId.style.display == "block" ? contentId.style.display = "none" :
+  contentId.style.display = "block";
+}
+</script>
+<script type="text/javascript">
+function toggleContentCT() {
+  var contentId = document.getElementById("contentCT");
+  contentId.style.display == "block" ? contentId.style.display = "none" :
+  contentId.style.display = "block";
+}
+</script>
 	<meta charset="utf-8">
 	<meta name="keywords" content="portfolio">
 	<meta name="description" content="Girls Frontline, by the numbers">
@@ -54,6 +90,8 @@ Resources and production tickets are purchasable with gems, but they're easy to 
 
 <h3>Rewards</h3>
 
+
+
 <table>
 <tr><td>Chapter</td><td>Map</td><td>Rewards</td><td>Estimated gem value</td></tr>
 <tr><td>1</td><td>1</td><td>4 Resources x1000</td><td>-</td></tr>
@@ -71,11 +109,29 @@ Resources and production tickets are purchasable with gems, but they're easy to 
 
 <h3>Notable Farmable Dolls/Equipment</h3>
 
-<p>As Cube is entirely at night, the dolls in it are a massive pain to farm.
+<p>With Cube being set entirely at night, the dolls in it are a massive pain to farm.
 Luckily, the permanent campaign doesn't have anything particularly necessary.
 Z-63 is a decent 3* molotov and 6P62 is funny as she's an AR that can equip AP rounds (<a href="./ar-night-armor.html">she underperforms compared to almost every alternative though</a>).</p>
 
 <p>All unique drops: (3*) Z-62, 6P62, 62 Shiki, ASh-12.7, ARX-160, (4*) Gr PSG-1.</p>
+
+<button onclick="toggleContentCU()">Show limited drops by map</button>
+<div id="contentCU" style="display:none">
+<table>
+<tr><td>Chapter</td><td>Map</td><td>Limited drops</td></tr>
+<tr><td>1</td><td>1</td><td>-</td></tr>
+<tr><td></td><td>2</td><td>Z-62, 6P62, 62 Shiki</td></tr>
+<tr><td></td><td>3</td><td>ASh-12.7, 6P62, Z-62, 62 Shiki</td></tr>
+<tr><td></td><td>4</td><td>Gr PSG-1, 6P62, Z-62, ASh-12.7, ARX-160, 62 Shiki</td></tr>
+<tr><td>2</td><td>1</td><td>-</td></tr>
+<tr><td></td><td>2</td><td>-</td></tr>
+<tr><td></td><td>3</td><td>Gr PSG-1, ASh-12.7, 6P62, Z-62, 62 Shiki</td></tr>
+<tr><td></td><td>4</td><td>Gr PSG-1, ASh-12.7, 6P62, Z-62, ARX-160, 62 Shiki</td></tr>
+</table>
+</div>
+
+<!-- <div class="clearfix"></div> -->
+
 
 <h2>Arctic Warfare (400 gems)</h2>
 
@@ -107,6 +163,25 @@ Most interestingly: Super SASS will have a neural upgrade eventually, OTs-44 had
 I recommend the farming routes <a href="https://www.youtube.com/watch?v=UuwGWSiPKeI">shown in this video</a>. They can all be found in Chapter 1, maps 3 and 4.</p>
 
 <p>All unique drops: (3*) Type81R, Super SASS, MT-9, OTs-44, RPD, Type59, (4*) Gr G28.</p>
+
+<button onclick="toggleContentAW()">Show limited drops by map</button>
+<div id="contentAW" style="display:none">
+<table>
+<tr><td>Chapter</td><td>Map</td><td>Limited drops</td></tr>
+<tr><td>1</td><td>1</td><td>-</td></tr>
+<tr><td></td><td>2</td><td>Type81R, RPD, Super SASS, MT-9</td></tr>
+<tr><td></td><td>3</td><td>Type81R, Super SASS, MT-9, OTs-44</td></tr>
+<tr><td></td><td>4</td><td>Gr G28, RPD, OTs-44, Type59</td></tr>
+<tr><td>2</td><td>1</td><td>-</td></tr>
+<tr><td></td><td>2</td><td>-</td></tr>
+<tr><td></td><td>3</td><td>-</td></tr>
+<tr><td></td><td>4</td><td>-</td></tr>
+<tr><td>3</td><td>1</td><td>-</td></tr>
+<tr><td></td><td>2</td><td>-</td></tr>
+<tr><td></td><td>3</td><td>Gr G28, MT-9, Super SASS, Type59</td></tr>
+<tr><td></td><td>4</td><td>Gr G28, Type81R, OTs-44, Type59, RPD</td></tr>
+</table>
+</div>
 
 <h2>Deep Dive (400 gems)</h2>
 
@@ -140,6 +215,25 @@ UMP45 and UMP9 are excellent dolls in their own right, so you'd be able to get s
 
 <p>All unique drops: (3*) AR70, SSG 69, F1, Gr HK45, EVO 3, (4*) PzB39, (equip) UMP UX Exoskeleton.</p>
 
+<button onclick="toggleContentDD()">Show limited drops by map</button>
+<div id="contentDD" style="display:none">
+<table>
+<tr><td>Chapter</td><td>Map</td><td>Limited drops</td></tr>
+<tr><td>1</td><td>1</td><td>AR70, SSG 69</td></tr>
+<tr><td></td><td>2</td><td>F1, EVO 3, Gr HK45</td></tr>
+<tr><td></td><td>3</td><td>F1, SSG 69</td></tr>
+<tr><td></td><td>4</td><td>PzB39, AR70, EVO 3</td></tr>
+<tr><td>2</td><td>1</td><td>-</td></tr>
+<tr><td></td><td>2</td><td>-</td></tr>
+<tr><td></td><td>3</td><td>UMP UX Exoskeleton</td></tr>
+<tr><td></td><td>4</td><td>UMP UX Exoskeleton</td></tr>
+<tr><td>3</td><td>1</td><td>Gr HK45, AR70, EVO 3, SSG 69</td></tr>
+<tr><td></td><td>2</td><td>UMP UX Exoskeleton</td></tr>
+<tr><td></td><td>3</td><td>PzB39, F1, Gr HK45</td></tr>
+<tr><td></td><td>4</td><td>UMP UX Exoskeleton</td></tr>
+</table>
+</div>
+
 <h2>Singularity (1356 gems)</h2>
 
 <h3>Rewards</h3>
@@ -153,7 +247,7 @@ UMP45 and UMP9 are excellent dolls in their own right, so you'd be able to get s
 <tr><td></td><td>Stroke Dead-Center III</td><td>Memory Fragment x100</td><td>44</td></tr>
 <tr><td></td><td>Stroke Dead-Center IV</td><td>Enhancement Capsule x20</td><td>-</td></tr>
 <tr><td></td><td>Compression Initiates I</td><td>Battery x100</td><td>-</td></tr>
-<tr><td></td><td>Compression Initiates I</td><td>Calibration tickets x100</td><td>64</td></tr>
+<tr><td></td><td>Compression Initiates II</td><td>Calibration tickets x100</td><td>64</td></tr>
 <tr><td></td><td>Compression Initiates III</td><td>Basic data x200</td><td>6</td></tr>
 <tr><td></td><td>Compression Initiates IV</td><td>Core x10</td><td>-</td></tr>
 <tr><td></td><td>Re-Ignition I</td><td>Core x10</td><td>-</td></tr>
@@ -198,6 +292,53 @@ MP7 is a good maintank for longer/boss battles, best farmed in Re-Ignition IV (C
 You can get Thunder from Stroke Dead-Center II (Chapter 1), but she has few practical uses.</p>
 
 <p>All unique drops: (3*) Serdyukov, M12, wz.29, TMP, P226, Gepard M1, (4*) Thunder, (5*) MP7, (equipment) EOT XPS3 for 416.</p>
+
+<button onclick="toggleContentSI()">Show limited drops by map</button>
+<div id="contentSI" style="display:none">
+<table>
+<tr><td>Chapter</td><td>Map</td><td>Limited drops</td></tr>
+<tr><td>1</td><td>Starting Point</td><td>-</td></tr>
+<tr><td></td><td>Splinter Point</td><td>-</td></tr>
+<tr><td></td><td>Stroke Dead-Center I</td><td>P226</td></tr>
+<tr><td></td><td>Stroke Dead-Center II</td><td>Thunder, TMP, Serdyukov</td></tr>
+<tr><td></td><td>Stroke Dead-Center III</td><td>M12, Gepard M1</td></tr>
+<tr><td></td><td>Stroke Dead-Center IV</td><td>P226, TMP, wz.29</td></tr>
+<tr><td></td><td>Compression Initiates I</td><td>-</td></tr>
+<tr><td></td><td>Compression Initiates II</td><td>-</td></tr>
+<tr><td></td><td>Compression Initiates III</td><td>Serdyukov, P226</td></tr>
+<tr><td></td><td>Compression Initiates IV</td><td>M12, Gepard M1, wz.29</td></tr>
+<tr><td></td><td>Re-Ignition I</td><td>TMP</td></tr>
+<tr><td></td><td>Re-Ignition II</td><td>M12, Gepard M1</td></tr>
+<tr><td></td><td>Re-Ignition III</td><td>P226, TMP, wz.29</td></tr>
+<tr><td></td><td>Re-Ignition IV</td><td>MP7, Serdyukov, Gepard M1, wz.29</td></tr>
+<tr><td></td><td>Messenger</td><td>Memory Fragment x100</td></tr>
+<tr><td>2</td><td>Splinter Point</td><td>-</td></tr>
+<tr><td></td><td>Queen's Gambit I</td><td>-</td></tr>
+<tr><td></td><td>Queen's Gambit II</td><td>-</td></tr>
+<tr><td></td><td>Queen's Gambit III</td><td>wz.29</td></tr>
+<tr><td></td><td>Queen's Gambit IV</td><td>Serdyukov, M12</td></tr>
+<tr><td></td><td>Castling I</td><td>Serdyukov</td></tr>
+<tr><td></td><td>Castling II</td><td>M12</td></tr>
+<tr><td></td><td>Castling III</td><td>Gepard M1</td></tr>
+<tr><td></td><td>Castling IV</td><td>Thunder, TMP, P226</td></tr>
+<tr><td></td><td>Promotion I</td><td>-</td></tr>
+<tr><td></td><td>Promotion II</td><td>-</td></tr>
+<tr><td></td><td>Promotion III</td><td>-</td></tr>
+<tr><td></td><td>Promotion IV</td><td>EOT XPS3</td></tr>
+<tr><td></td><td>Minor Pieces Draw I</td><td>-</td></tr>
+<tr><td></td><td>Minor Pieces Draw II</td><td>-</td></tr>
+<tr><td></td><td>Minor Pieces Draw III</td><td>EOT XPS3</td></tr>
+<tr><td></td><td>Minor Pieces Draw IV</td><td>EOT XPS3</td></tr>
+<tr><td></td><td>Survivor</td><td>Serdyukov, M12</td></tr>
+<tr><td>3</td><td>Last Resort I</td><td>wz.29, M12, TMP</td></tr>
+<tr><td></td><td>Last Resort II</td><td>Serdyukov, P226, Gepard M1</td></tr>
+<tr><td></td><td>Last Resort III</td><td>TMP, M12, Gepard M1</td></tr>
+<tr><td></td><td>Last Resort IV</td><td>Serdyukov, P226, wz.29</td></tr>
+<tr><td></td><td>Last Resort V</td><td>TMP, P226, Gepard M1</td></tr>
+<tr><td></td><td>Endgame</td><td>MP7, Serdyukov, M12, wz.29</td></tr>
+<tr><td></td><td>Goodbye, Dragon Palace</td><td>Gepard M1, wz.29</td></tr>
+</table>
+</div>
 
 <h2>Continuum Turbulence (1181 gems)</h2>
 
@@ -270,6 +411,61 @@ While not extraordinary, she's a lot cheaper to get than any production SG.
 Mk 12 and A91 are farmable here, but they are very optional.</p>
 
 <p>All unique drops: (3*) T65, Type56R, OTs-39, MP-443, Gr MG23, (4*) Mk 12, A91, (5*) M870, Python.</p>
+
+<button onclick="toggleContentCT()">Show limited drops by map</button>
+<div id="contentCT" style="display:none">
+<table>
+<tr><td>Chapter</td><td>Map</td><td>Limited drops</td></tr>
+<tr><td>1</td><td>Safe House</td><td>-</td></tr>
+<tr><td></td><td>Waste</td><td>-</td></tr>
+<tr><td></td><td>Nightfall</td><td>-</td></tr>
+<tr><td></td><td>Auxiliary Power</td><td>T62, Type56R</td></tr>
+<tr><td></td><td>Reserve Outpost</td><td>Gr MG23</td></tr>
+<tr><td></td><td>Farewell, Scarecrow</td><td>Mk 12, OTs-39, MP-443</td></tr>
+<tr><td></td><td>Bloodless Battlefield</td><td>-</td></tr>
+<tr><td></td><td>The Last Day</td><td>A91, T65, Type56R</td></tr>
+<tr><td></td><td>Peace Negotiations</td><td>Gr MG23</td></tr>
+<tr><td></td><td>Fortunate?</td><td>OTs-39, MP-443</td></tr>
+<tr><td></td><td>Sangvis Elite Outpost</td><td>T65, Type56R</td></tr>
+<tr><td></td><td>Neural Fragments</td><td>Python, Gr MG23</td></tr>
+<tr><td></td><td>Darkest Desire</td><td>M870, OTs-39, MP-443</td></tr>
+<tr><td></td><td>Final Destination</td><td>-</td></tr>
+<tr><td></td><td>Ground Zero</td><td>-</td></tr>
+<tr><td>2</td><td>Unknown Enemy</td><td>T65, Type56R</td></tr>
+<tr><td></td><td>Support</td><td>Gr MG23</td></tr>
+<tr><td></td><td>Roaring Sun</td><td>-</td></tr>
+<tr><td></td><td>Griffin Expendables</td><td>A91, OTs-39, MP-443</td></tr>
+<tr><td></td><td>Defense Outpost 2</td><td>T65, Type56R</td></tr>
+<tr><td></td><td>Howl of Terror</td><td>-</td></tr>
+<tr><td></td><td>Defense Outpost 3</td><td>Mk 12, Gr MG23</td></tr>
+<tr><td></td><td>Defense Outpost 4</td><td>M870, T65, Type56R</td></tr>
+<tr><td></td><td>Exploratory Attack</td><td>Gr MG23</td></tr>
+<tr><td></td><td>For the Future</td><td>T65, Type56R</td></tr>
+<tr><td></td><td>Just Kidding</td><td>OTs-39, MP-443</td></tr>
+<tr><td></td><td>General Offensive</td><td>Python, OTs-39, MP-443</td></tr>
+<tr><td></td><td>Black Doll</td><td>-</td></tr>
+<tr><td></td><td>Short-lived Peace</td><td>-</td></tr>
+<tr><td></td><td>Safe and Sound</td><td>-</td></tr>
+<tr><td></td><td>Final Fight</td><td>-</td></tr>
+<tr><td>3</td><td>ELID-Infected</td><td>-</td></tr>
+<tr><td></td><td>Signal Flare</td><td>T65, Type56R</td></tr>
+<tr><td></td><td>Red Zone</td><td>Gr MG23</td></tr>
+<tr><td></td><td>Yellow Zone</td><td>OTs-39, MP-443</td></tr>
+<tr><td></td><td>Final Order</td><td>-</td></tr>
+<tr><td></td><td>Mark</td><td>A91, T65, Type56R</td></tr>
+<tr><td></td><td>Vengeance</td><td>Mk 12, T65, Type56R</td></tr>
+<tr><td></td><td>A New Hope</td><td>OTs-39, MP-443</td></tr>
+<tr><td></td><td>Sum of All Wraths</td><td>-</td></tr>
+<tr><td></td><td>Vile Rats</td><td>T65, Type56R</td></tr>
+<tr><td></td><td>Luck</td><td>-</td></tr>
+<tr><td></td><td>Bad News</td><td>Gr MG23</td></tr>
+<tr><td></td><td>IED</td><td>OTs-39, MP-443</td></tr>
+<tr><td></td><td>Victor</td><td>-</td></tr>
+<tr><td></td><td>Stumbling Block</td><td>Python, T65, OTs-39, Gr MG23</td></tr>
+<tr><td></td><td>White Doll</td><td>M870, Type56R, MP-443</td></tr>
+<tr><td>Extra</td><td>Exile</td><td>-</td></tr>
+</table>
+</div>
 
 </main>
 </div>
