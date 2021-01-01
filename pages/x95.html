@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-805N997DPC');
+		</script>
+		<meta charset="utf-8">
+		<meta name="keywords" content="portfolio">
+		<meta name="description" content="Girls Frontline, by the numbers">
+		<title>GFMath: Bullying the Weak (X95 Equipment & Skill Analysis)</title>
+		<link rel="stylesheet" href="../style.css">
+
+		<!-- Font -->
+		<link href="http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf" rel="stylesheet">
+
+		<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+		<!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
+	</head>
+
+	<body>
+		<div id="wrapper">
+
+			<header>
+				<a href="../index.html">GFMath</a>
+			</header>
+			<nav role="navigation">
+				<a href="../index.html"><li>Home</li></a>
+				<a href="https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"><li>YouTube</li></a>
+				<a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a>
+			</nav>
+
+			<main>
+				<h1>Bullying the Weak (X95 Equipment & Skill Analysis)</h1>
+				<center><em>By BigStupidJellyfish | 2021-January-01</em></center>
+
+        <p>While SR-3MP may be the most popular direct-fire offtank in GFL, X95 makes for an interesting alternative.</p>
+
+        <p>First obtainable as a drop during <em>Isomer</em>, X95 is a 5* SMG who targets low-HP enemies during her skill and gains a damage boost proportional to their missing health percentage. Compared to Shrimp, she has 3 more base FP, 1 more accuracy, and the same EVA/ROF/HP. She trades Shrimp's crit rate tiles for accuracy, gives a 3% smaller ROF boost, and hits the whole backline with them while on 8. Her skill will almost always give a smaller boost than Shrimp's 260% multiplier.</p>
+
+        <p>As done <a href="shrimp-equip.html">before</a>, let's start with an equipment chart for X95.</p>
+
+				<div class="figure">
+				<img src="images/x95/short-chart.png" width="100%"/>
+				</div>
+				<center><em>Equipment optimization chart. Given X95's net accuracy buff received and her target's evasion, pick the equipment in the matching shaded area.</em></center>
+
+        <p>One new addition here - if you've oathed X95, instead refer to the boundaries set by the dashed lines. The colored zones correspond to the solid (unoathed) lines.
+        It would appear that oathing her doesn't change much when deciding between EOTs/ITIs, but the small accuracy bonus it provides does give VFLs a <em>slightly</em> better chance of being the best choice.</p>
+
+        <p>Now, to keep this from being an entire copy-and-paste of the Shrimp thing, let's get some data and see if we can estimate the mean effective damage boost from X95's skill. I'll do the same for Shrimp as a way to estimate the base error.</p>
+
+				<p>Note: my X95 is oathed. To keep the comparison fair, I'll use equipment at slightly less than max enhancement to "de-oath" her without use of any unethical affection-modification techniques. She gains 2 FP, 1 acc, and 3 EVA (see <a href="https://gfl.zzzzz.kr/doll.php?id=251&lang=en">this handy site</a>) from oath. A +9 maximum calibrated ITI gives +28 accuracy, so X95 will use a properly maxed out sight and have a 1 acc advantage over her unoathed state. Before external buffs, this changes her hitrate against 15 evasion from 75% to 75.41%, so it's very minor.</p>
+
+				<p>In some fights against the large nightmare group, X95 gets knocked down to 4 links towards the end. She stayed at 5 links in the other battles.
+				<p>Random targeting, overkill, corpse whipping, that 1 point of accuracy, and such make it hard to get any exact results.
+				The situation isn't entirely doomed, as we can run several trials to lower variance.
+				Comparing her results with some other reference options will also help.</p>
+
+				<table style="width:100%">
+					<tr>
+						<th>Enemy group</th>
+						<th>Backline options tested</th>
+						<th>Fairy used</th>
+					</tr>
+					<tr>
+						<td>Nightmare (x155)</td>
+						<td>AN-94/M4A1/G41 and G36/AUG/G41</td>
+						<td>Artillery (5*, Damage II)</td>
+					</tr>
+					<tr>
+						<td>Nightmare (x72)</td>
+						<td>AN-94/M4A1/G41</td>
+						<td>None</td>
+					</tr>
+					<tr>
+						<td>Aegis (x12), Nemeum (x24)</td>
+						<td>AN-94/M4A1/G41</td>
+						<td>None</td>
+					</tr>
+				</table>
+
+				<p>Luckily, X95's total damage dealt is linear with respect to average percent of enemy HP missing. This lets me compare her damage dealt in the fight, the fight length, and <a href="https://gfl.matsuda.tips/combatsim/">simulator numbers</a> at two different percents to find her effective damage multiplier and the average percent health missing of the stuff she shot.
+				The runs with Shrimp gave a rough idea of the error between real combat and the simulator.
+				Shrimp's multiplier by this method was between 222-246%, taking a 5-20% hit from the expected value depending on the encounter.
+				It got less accurate the lower the effective HP/link of the enemies were, as expected.</p>
+
+				<h2>Conclusion</h2>
+
+				<p>Here's the summary of my estimated values for X95:</p>
+
+				<table style="width:100%">
+					<tr>
+						<th>Enemy</th>
+						<th>Damage multiplier</th>
+						<th>Mean Missing HP%</th>
+					</tr>
+					<tr>
+						<td>Nightmares x155</td>
+						<td>189-214%</td>
+						<td>63-71%</td>
+					</tr>
+					<tr>
+						<td>Nightmares x72</td>
+						<td>179%</td>
+						<td>60%</td>
+					</tr>
+					<tr>
+						<td>Aegis x12, Nemeum x24</td>
+						<td>113%</td>
+						<td>38%</td>
+					</tr>
+				</table>
+
+				<p>Target practice enemies are limited, making it difficult to generalize these results.
+				Against low armor, her performance was somewhere in the middle between Shrimp's and weaker direct-fire offtanks like Honey Badger and C-MS (damage mode).
+				X95's skill provided an effective damage buff around 160-200%.
+				Versus high armor, she suffers more and contributed very little against the Aegis/Nemeum node tested.
+				Armor in general is an enemy of ARSMG teams, so this is a fight you should ring RFHG/MGSG for anyways.</p>
+
+				<p>While Shrimp has a clear advantage in straight damage, X95 does fairly well herself.
+				She offers a unique targeting method and different tiles.
+				For typical content, if you're simulating some teams, I'd put in 60-70% HP missing for X95 when comparing options.</p>
+
+				<p>As usual, further tests would be useful to see how all this varies against different enemies. These results were based on a total of 58 battles, rather arbitrarily distributed between nodes.</p>
+			<div class="clearfix"></div>
+
+			</main>
+
+			<footer>
+
+			</footer>
+		</div>
+
+
+	</body>
+
+</html>
