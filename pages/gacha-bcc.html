@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-805N997DPC');
+		</script>
+		<meta charset="utf-8">
+		<meta name="keywords" content="portfolio">
+		<meta name="description" content="Girls Frontline, by the numbers">
+		<title>GFMath: Black Cards & Completionism</title>
+		<link rel="stylesheet" href="../style.css">
+
+		<!-- Font -->
+		<link href="http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf" rel="stylesheet">
+
+		<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+		<!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
+	</head>
+
+	<body>
+		<div id="wrapper">
+
+			<header>
+				<a href="../index.html">GFMath</a>
+			</header>
+			<nav role="navigation">
+				<a href="../index.html"><li>Home</li></a>
+				<a href="https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"><li>YouTube</li></a>
+				<a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a>
+			</nav>
+
+			<main>
+				<h1>Black Cards & Completionism</h1>
+				<center><em>By BigStupidJellyfish | 2021-February-07</em></center>
+
+<p>A while back, I made a simple program to simulate costume gacha rolls. The idea was that you supplied it a list of the skins possible, how many tokens you were spending, and if it was a 100 or 60 token set. Then, it would tell you how many of the skins you got in a sample roll, the number of black cards rolled, and how many exchange tickets you got. While somewhat amusing, singular samples don't give the best insight on what you can expect when you actually get to gambling.</p>
+
+<p>After rewriting the program, I turned it into something that was easy to compile the results from over many trials. I assumed two major goals: to get all skins in the set, and to get a lot of black cards. The logic it follows: if you roll all skins in the set, buy duplicates of the cheapest skin with all exchange tickets. If the set is completable with exchange tickets, do that before buying black cards. If the set is impossible to complete, hold on to the exchange tickets as you'll have to make the difficult decision as to which dolls you neglect on your own.</p>
+
+<p>Running this for a million sets of rolls or so, and we can get a pretty solid picture of how many black cards you can expect to get, and how likely getting a full set is.</p>
+
+<h2>With lots of tokens</h2>
+
+<div class="figure">
+	<img src="images/gacha/fancy-chart.png" width="100%"/>
+</div>
+
+<p>I have charts for three perspectives. Top: the black cards obtained for complete set rolls (when your rolls + exchange tickets can complete the set). Middle: partial set rolls (when your rolls + exchange tickets are insufficient to complete the set). Bottom: the overall result, containing all attempts. What percentage is complete/incomplete is noted in the chart titles. Bin width is always one.
+The above chart is just the overall result, for simplicity.</p>
+
+<p>The upcoming Wedding gacha has 6 skins, two of which are Live2D. Supposing you have 5500 tokens to spend on it, we get something like this. Or, without all the edits:</p>
+
+<div class="figure">
+	<img src="images/gacha/graph-5500-6-2l2d.png" width="100%"/>
+</div>
+<center><em>5500 tokens, 6-costume set (2 L2D).</em></center>
+
+<p>So something like 8-15 black cards is the most likely outcome.
+Having two live2Ds in the set make it a bit harder to complete.
+While you can buy a missing live2D with the tickets, missing a live2D plus any other skin (especially the second live2D) means you can't get everything.
+If that happens, you're looking at ~2-7 black cards from rolled duplicates and 600 exchange tickets to triage as you wish.
+Your options are to get one missing L2D (gaining no more black cards), get missing non-L2D skin(s) (gaining 0-5 black cards depending on what you rolled), and passing on all remaining skins for 5-6 more black cards.</p>
+
+<div class="figure">
+	<img src="images/gacha/graph-5500-5-1l2d.png" width="100%"/>
+</div>
+<center><em>5500 tokens, 5-costume set (1 L2D).</em></center>
+
+<p>Dropping down to the typical 5-costume set, we see a slight overall increase in black cards as there's one less unique skin to roll.
+Consistency improves quite a bit, up to a 97% chance of completing the costume set using 5500 tokens.</p>
+
+<div class="figure">
+	<img src="images/gacha/graph-6400-6-2l2d.png" width="100%"/>
+</div>
+<center><em>6400 tokens, 6-costume set (2 L2D).</em></center>
+
+<p>Another variation: going up to the next exchange ticket threshold (6370 tokens > 700 tickets, rounding up to 6400 tokens).
+Mean black cards goes up quite decently, with the most likely outcome increasing from 12 to 15.
+The odds of being able to complete the set also improve dramatically, from 88 to 96%.</p>
+
+<h2>On a budget</h2>
+
+<p>Next, some more budget-friendly comparisons. Let's take the ideal black-card farming setup of a 4-costume gacha, no live2D. Using the distribution in the recent Summer set with ADS's Yukata (200-200-100-100 exchange tickets), we get for 2000 tokens spent:</p>
+
+<div class="figure">
+	<img src="images/gacha/graph-2000-4-0l2d.png" width="100%"/>
+</div>
+<center><em>2000 tokens, 4-costume set.</em></center>
+
+<p>3000 tokens:</p>
+
+<div class="figure">
+	<img src="images/gacha/graph-3000-4-0l2d.png" width="100%"/>
+</div>
+<center><em>3000 tokens, 4-costume set.</em></center>
+
+<p>Finally, 4000 tokens:</p>
+
+<div class="figure">
+	<img src="images/gacha/graph-4000-4-0l2d.png" width="100%"/>
+</div>
+<center><em>4000 tokens, 4-costume set.</em></center>
+
+<p>Note that reaching 5460 tokens spent will guarantee completion, even with the worst possible luck rolling zero skins. Buying all four skins would cost exactly 600 exchange tickets.</p>
+
+<p>What about bigger sets on a budget? Let's consider the wedding gacha again for an upper bound of sorts. The charts for 3000 tokens:</p>
+
+<div class="figure">
+	<img src="images/gacha/graph-3000-6-2l2d.png" width="100%"/>
+</div>
+<center><em>3000 tokens, 6-costume set (2 L2D).</em></center>
+
+<p>Odds of completing the set are rather awful compared to a 4-costume set. You need to roll both live2Ds, and most of the other costumes.
+All-in-all, the expected number of black cards is 0-5 - much lower than the 2-8 expected if spending the same amount on a 4-costume gacha.
+On the bright side, if you do manage to roll a live2D skin you like, you don't have to spend 8 black cards later to get it.
+If you're looking to get a complete costume set, you'll likely be left disappointed.</p>
+
+<h2>Additional Notes</h2>
+
+<p>This assumes a 2% costume rate, with all costumes having equal odds. Especially as there are no official ways of viewing roll data, there is no guarantee this is the case.</p>
+
+<p>You may have noticed the histograms are wide. There are few certain things in this world, and even with a lot of tokens there's some heavy variability.
+It doesn't show up on the plot, but the highest number of black cards obtained in the 2000 tokens spent chart in my simulations was <em>18</em> (220 chances, 22 skins - 10% of the rolls were costumes. Odds of getting at least this lucky are on the order of 10<sup>-9</sup>).
+A not-completely invisible segment of the 5500 token rolls resulted in 0 total black cards gained, if prioritizing completing the set.</p>
+
+<p>The "expected number" of black cards I mention is a very rough estimate, made with low confidence. Roll at your own risk.</p>
+
+<p>Radiant collection is a whole 'nother deal. However, I don't really recommend it.
+In a rate-up, compared to the original run, you are half as likely to get a skin from the set while paying 60% of the price - this is a worse deal.
+You get no exchange tickets, which has a negative effect on your black card production as well as your chances of completing the set or getting any specific skin.
+You <em>do</em> get some radiant skins, but you should also be careful on assigning much value to something you didn't actually want going in.
+It's an easy way to trick people into paying more and is used all the time in these types of games (see also: package bloat with rings/tokens accompanying skins and batteries accompanying data).</p>
+
+<!-- <p>There are plenty of other combinations of tokens and skin sets, so feel free to request some other charts in the <a href="">thread</a> if you're curious.</p>-->
+
+
+			<div class="clearfix"></div>
+
+			</main>
+
+			<footer>
+
+			</footer>
+		</div>
+
+
+	</body>
+
+</html>
