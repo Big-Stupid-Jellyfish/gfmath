@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-805N997DPC');
+		</script>
+		<meta charset="utf-8">
+		<meta name="keywords" content="portfolio">
+		<meta name="description" content="Girls Frontline, by the numbers">
+		<title>GFMath: What's in the Dummy?</title>
+		<link rel="stylesheet" href="../style.css">
+
+		<!-- Font
+		<link href="http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf" rel="stylesheet">-->
+
+		<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+		<!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
+	</head>
+
+	<body>
+		<div id="wrapper">
+
+			<header>
+				<a href="../index.html">GFMath</a>
+			</header>
+			<nav role="navigation">
+				<a href="../index.html"><li>Home</li></a>
+				<a href="https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"><li>YouTube</li></a>
+				<a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a>
+			</nav>
+
+			<main>
+				<h1>What's in the Dummy?</h1>
+				<center><em>By BigStupidJellyfish | 2021-February-27</em></center>
+
+				<h2 id="evasion">Evasion<sup><small><a href="dummy.html#evasion">&#35;</a></small></sup></h2>
+				<p>A while back, I realized the total damage dealt statistic in target practice was very useful.
+				With it, you can often calculate some unknown variable in combat.
+				For example, I used this in my <a href="x95.html">analysis of X95's skill/equipment</a> to determine the average effective damage boost from her skill.</p>
+
+				<p>Another application, if you know everything about the doll shooting, is to calculate unknown stats of your target.
+				Let's start with evasion.
+				If you want to test your team's performance against enemies with no evasion, it's easy to set this up - just pick "None."
+				Common SF are close enough to "Low" that the precise numbers aren't a big deal.
+				But what if you want to get some numbers against enemies like Scouts?
+				SF bosses like Dreamer with 60+ evasion?
+				Even some of the newer KCCO/Paradeus enemies come with lots of it.</p>
+
+				<p>As it turns out, to further complicate matters, the dummy's evasion varies not only by setting but by strength.
+				After letting some dolls shoot it for 300 seconds each and doing a little math, here are the averaged results for each combination:</p>
+
+				<div class="figure">
+				<img src="images/dummy/eva-chart.png" width="100%"/>
+				</div>
+				<center><em>Estimated evasion of each setting, by dummy strength.</em></center>
+
+				<div class="figure">
+				<img src="images/dummy/eva-table.png" width="80%"/>
+				</div>
+				<center><em>Specific values, rounded to the nearest whole number.</em></center>
+
+				<div class="figure">
+				<img src="images/dummy/eva-guesses.png" width="80%"/>
+				</div>
+				<center><em>My rather arbitrary "best guess:" for sufficiently large evasions, the nearest multiple of 5.</em></center>
+
+				<p>Interestingly, the "Very High" setting doesn't take long to go beyond almost any normal enemy - Scouts tend to cap out around 80 EVA, and most of the more dodgy Paradeus/KCCO sit around 50-60 EVA.
+				On the other hand, even the highest setting still falls short of Patroller's evasive mode, where their evasion jumps into the thousands.</p>
+
+				<h2 id="armor">Armor<sup><small><a href="dummy.html#armor">&#35;</a></small></sup></h2>
+
+				<div class="figure">
+				<img src="images/dummy/armor-chart.png" width="100%"/>
+				</div>
+				<center><em>Estimated armor of each setting, by dummy strength.</em></center>
+
+				<div class="figure">
+				<img src="images/dummy/armor-table.png" width="80%"/>
+				</div>
+				<center><em>Specific values, rounded to the nearest whole number.</em></center>
+
+				<div class="figure">
+				<img src="images/dummy/armor-guesses.png" width="80%"/>
+				</div>
+				<center><em>My rather arbitrary "best guess:" for sufficiently high armor, the nearest multiple of 5.</em></center>
+
+				<p>Though not to the same extent as with evasion, Strength 4+ "Very High" armor is a fair bit beyond any enemy seen so far.
+				Theater Uhlans, for example, stop at 229 armor.
+				Almost all other enemies don't pass 200, and are easily pierced by fully enhanced AP ammo.</p>
+
+				<p>But if you ever wanted to know what 300 armor was like, here's the place for that.</p>
+
+				<h2 id="ehp">Effective HP<sup><small><a href="dummy.html#ehp">&#35;</a></small></sup></h2>
+
+				<p>An interesting consequence of this is that the table I made before on setting combinations to get different amounts of effective HP (<a href="extras.html#dummyehp">from here</a>) are less straightforward if you want to target a specific evasion as well</p>
+
+				<div class="figure">
+				<img src="https://i.imgur.com/OOVLEck.png" width="579px"/>
+				</div>
+
+				<p>For example, if you want a tough dummy (HP>100000) and around 50 evasion, no evasion setting at Strength 5 is very close.
+				Medium evasion is around 35, and High jumps up to 80 EVA.
+				Strength 3/High evasion would be your closest bet, where you then need to use a 5-linked dummy and adjust force field percent.</p>
+
+				<h2>Disclaimer/other comments</h2>
+
+				<p>I'm not aware of any datamined values for these settings, so the results are all experimental.
+				If any exact values have been determined, please do let me know and I'll update this page.</p>
+
+				<p>Results were averaged across 5-6 dolls for each point, and there was very little variation between dolls at each setting.</p>
+
+
+			<div class="clearfix"></div>
+
+			</main>
+
+			<footer>
+
+			</footer>
+		</div>
+
+
+	</body>
+
+</html>
