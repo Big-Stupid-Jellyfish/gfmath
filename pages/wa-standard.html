@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-805N997DPC');
+</script>
+		<meta charset="utf-8">
+		<meta name="keywords" content="portfolio">
+		<meta name="description" content="Girls Frontline, by the numbers">
+		<title>RF Damage over time: K31 & XM3 & such - GFMath</title>
+		<link rel="stylesheet" href="../style.css">
+
+		<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+		<!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
+	</head>
+
+	<body>
+		<div id="wrapper">
+
+			<header>
+				<a href="../index.html">GFMath</a>
+			</header>
+			<nav role="navigation">
+				<a href="../index.html"><li>Home</li></a>
+				<a href="https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"><li>YouTube</li></a>
+				<a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a>
+			</nav>
+
+			<main>
+				<h1>RF Damage over time: K31 & XM3 & such</h1>
+				<center><em>By BigStupidJellyfish | 2021-March-08</em></center>
+				<!-- <p>If you just want to see the plots, head over to <a href="">this album</a>.</p> -->
+
+				<p>For more context, check out <a href="g41-standard.html">my earlier article</a> comparing the damage output of some popular ARs over time.
+				As the other main DPS class, it's time for some rifles to get their own set of charts.
+				RF selfbuff skills are a lot more homogeneous, so there aren't many good candidates to include.
+				There are also many skillshot types that don't fit well into these types of comparisons.</p>
+
+				<h2 id="day">Daytime<sup><small><a href="wa-standard.html#day">&#35;</a></small></sup></h2>
+
+				<p>RFs are usually paired with lots of HGs, which can mix matters up a bit with their buffs.
+				For a fairly generic setup, let's suppose a HG trio of Calico mod + P22 + Grizzly is used with all of them.</p>
+
+				<div class="figure">
+				<img src="images/wa-standard/hg-day.png" width="100%"/>
+				</div>
+
+				<p>WA2000 and Lee Enfield are clear winners here with their high overall DPS.
+				IWS unusually has 10/16 uptime (rather than the 5/8 usually seen on rifles), which makes her stronger in the 10-18 second range while the longer ICD hurts her before that.</p>
+
+				<p>M14 fares quite a bit better than FNC did in the AR version. In addition to the long ICD, XM3's night-oriented skill putting her at the absolute bottom for day performance is very much expected.</p>
+
+				<p>This does not factor in any RF tiles that may change the HG's cooldowns. </p>
+
+				<p>For the raw standalone performance:</p>
+
+				<div class="figure">
+				<img src="images/wa-standard/day.png" width="100%"/>
+				</div>
+
+				<p>IWS doesn't do as well in the 10-18 second range here.
+				With HG buffers, her skill activates alongside the HG skills and is active for their entire duration plus some.</p>
+
+				<h2 id="night">Nighttime<sup><small><a href="wa-standard.html#night">&#35;</a></small></sup></h2>
+
+				<p>At night, accuracy becomes a bit more valuable and XM3 gets a real skill.
+				No drastic changes, though.</p>
+
+				<div class="figure">
+				<img src="images/wa-standard/hg-night.png" width="100%"/>
+				</div>
+
+				<p>Without buffs:</p>
+
+				<div class="figure">
+				<img src="images/wa-standard/night.png" width="100%"/>
+				</div>
+
+				<p>If we're talking about evasive enemies at night, it'd be hard not to mention M200.
+				Her solo DPS against such targets flies far above typical selfbuffing rifles, but isn't directly comparable due to her skill's different mechanics.
+				It fires at a fixed interval and doesn't benefit from ROF buffs, while using either of the Carcano sisters speeds up her skill just enough to fit in another shot.</p>
+
+				<div class="figure">
+				<img src="images/wa-standard/m200.png" width="100%"/>
+				</div>
+
+				<p>Selfbuff rifles will improve relative to M200 if you add ROF/ACC buffs, but she's still clearly an important doll to consider.</p>
+
+				<div class="figure">
+				<img src="images/wa-standard/m2002.png" width="100%"/>
+				</div>
+				<center><em>I don't particularly recommend this team. It's just an illustration of the principle.</em></center>
+
+				<h2 id="comments">Keep in mind...<sup><small><a href="wa-standard.html#comments">&#35;</a></small></sup></h2>
+
+				<p>Your dolls probably aren't in echelons all by themselves, so other skills and tilebuffs will change how things work out.
+					There are plenty of other possible HG/RF combinations out there.
+					Add a Fervor talent for even more fun.</p>
+
+				<p>Enemy stats will also vary per encounter.</p>
+
+				<p>When in doubt, you can always use <a href="https://gfl.matsuda.tips/combatsim/">a combat simulator</a> to get the specifics.</p>
+
+				<p>These plots use the average total damage per time interval.
+					Critical hits, different number of frames between attacks, accuracy rolls, and so on will make the percent difference vary per combat.
+					The frame timings of each attack may also cause slight differences with simulators.
+					Think of this as a more general average relationship.
+					The gray vertical lines in each chart indicate the windows where WA2000's skill is active - dashed when it activates, dotted when the duration runs out.
+				</p>
+
+				<p>Overkilling is a bigger concern with rifles as well - IWS, for example, may underperform compared to these charts when going against larger groups due to her abnormally high FP/low ROF.</p>
+
+				<p>All dolls have their SPEQs equipped and fully enhanced/calibrated as appropriate in these charts.</p>
+			</div>
+
+
+			<div class="clearfix"></div>
+
+			</main>
+
+			<footer>
+
+			</footer>
+		</div>
+
+
+	</body>
+
+</html>
