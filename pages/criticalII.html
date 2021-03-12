@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-805N997DPC');
+		</script>
+		<meta charset="utf-8">
+		<meta name="keywords" content="portfolio">
+		<meta name="description" content="Girls Frontline, by the numbers">
+		<title>Critical Parachute talents - GFMath</title>
+		<link rel="stylesheet" href="../style.css">
+
+		<!-- Font
+		<link href="http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf" rel="stylesheet">-->
+
+		<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+		<!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
+	</head>
+
+	<body>
+		<div id="wrapper">
+
+			<header>
+				<a href="../index.html">GFMath</a>
+			</header>
+			<nav role="navigation">
+				<a href="../index.html"><li>Home</li></a>
+				<a href="https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"><li>YouTube</li></a>
+				<a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a>
+			</nav>
+
+			<main>
+				<h1>Critical Parachute talents</h1>
+				<center><em>By BigStupidJellyfish | 2021-March-12</em></center>
+
+				<p>Damage I, Damage II, and Fervor are pretty much always recommended as the go-to talents for your fairies.
+				Fairies are expensive to raise, so you'll end up moving them between echelons constantly.
+				The class-specific talents are decent on paper but become much less useful when you're trying to use your Aim taunt fairy on an ARSMG team.</p>
+
+				<p>A topic of discussion I've heard come up a few times relates to the Critical II talent.
+				High-end strategies in the upcoming Polarized Light ranking may use a team with a high rarity (4-5★) parachute fairy that takes several fights in a row under the debuff to declog helipads.
+				While it's not hard to work out the numbers between Crit II and a straight damage talent for any given doll, I thought I'd show the overall relationship here to get a better understanding of the matter.</p>
+
+				<h2 id="normal">Normal combat<sup><small><a href="criticalII.html#normal">&#35;</a></small></sup></h2>
+
+				<div class="figure">
+				<img src="images/criticalII/normal.png" width="100%"/>
+				</div>
+				<center><em>Relative advantage of Crit II over Damage II, by crit rate & damage.</em></center>
+
+				<p>This is a sort of heatmap - for any combination of crit rate + crit damage, the DPS improvement of Crit II over Damage II is shown as a color.
+				More yellow = Crit II is better, more blue = Damage II is better. The dark lines show boundaries at intervals of a 5% performance difference, and the gray lines mark common crit rates/crit damage stats (with white text labels).</p>
+
+				<p>In normal fights, even with the crazy crit damage boost a 5★ para provides, Crit II drops off quite quickly around 75% base crit rate.
+				Rifles, even with no crit rate boosts, will be over 5% worse off with Crit II compared to Damage II (thus also being better off with Damage I).</p>
+
+				<p>In the same situation, most ARs would be at 210% crit damage.
+				Crit II is a little more viable here (~5% advantage) but will fall off quickly if the ARs get crit rate boosts from stuff like M4A1 or UMP45.</p>
+
+				<h2 id="debuff">Under Debuff<sup><small><a href="criticalII.html#debuff">&#35;</a></small></sup></h2>
+
+				<p>But we already knew Crit II likely wasn't some amazing generalist talent.
+				It's rarely mentioned outside of the Fury Fairy/Jill combo due to its limitations.
+				Let's get to the para debuff charts:</p>
+
+				<div class="figure">
+				<img src="images/criticalII/debuff.png" width="100%"/>
+				</div>
+				<center><em>At SL10, the para debuff reduces damage, accuracy, evasion, armor, and crit rate by 40%.</em></center>
+
+				<p>Using your parachute skill applies a 40% crit rate debuff which shifts the hot zone right and widens it up.
+				Now, with the crit damage boost of a para fairy, rifles are looking good with Crit II while ARs are at least breaking even.
+				The massive debuff also results in Crit II keeping an advantage even with some substantial crit rate buffs - at a 120% base crit rate, Crit II is still about 5% better than Damage II on rifles (when your para is 5★, less good at lower rarities).
+				Using the classic M4A1+UMP45 combination in an ARSMG echelon gets the buffed ARs to 110% crit rate (pre-debuff), where Crit II is a little over 5% better than Damage II.
+
+				<h2 id="conclusion">Conclusion & Other comments<sup><small><a href="criticalII.html#conclusion">&#35;</a></small></sup></h2>
+
+				<p>There are few cases where a Critical II talent Parachute fairy is beneficial over a regular damage talent, when not under debuff.
+				Under para debuff, at high rarity, it's usually better than Damage II.
+				If you have a high rarity para fairy that you intend on largely using for debuffed fights, Critical II could be a viable option.
+				I wouldn't really recommend it otherwise, especially not on other fairies.
+				In normal fights, without substantial critical damage buffs, Crit II is either always worse than Damage II or better by 1-2% in a small window.
+				At night, Crit II becomes much worse on most ARs: using PEQs, they're stuck around a 20% crit rate.
+				A straight damaging talent will ultimately be far more flexible and almost always just straight up better.</p>
+
+				<p>The percent differences here aren't that big. Lucky damage rolls, oaths, better kiting, targeting RNG, and such can more than account for a 0-5% performance difference.</p>
+
+				<p>For sufficiently long fights, Fervor approaches a 15.7% advantage over Damage II.
+				As you may be able to tell from the maximum values on the scales, Crit II won't be able to match up to this.
+				For shorter fights, it'll depend a lot more on the length of the fight.
+				Read more <a href="fairy-talents.html">here</a> if you want to see how that breaks down.
+				Despite using Damage II for this comparison, I'd typically be inclined to prefer Fervor over Damage II.
+				The variable buff makes it awkward to compare Crit II with Fervor here.</p>
+
+				<p>Keep in mind that calibration tickets are rarely given out, and cost rather absurd amounts of energy to acquire through Defense Drill.
+				It can take many tickets and resources to change talents.
+				Results are not guaranteed.
+				Be very careful before spending calibration tickets, especially if you already have a strong talent (like Damage I/II/Fervor).</p>
+
+				<p>At lower rarities, you can't rely on any talent - there's only a percent chance of them activating and resetting talent RNG no longer works.
+				Don't bother with calibrating low-rarity fairies.
+				If you want a specific talent, I personally like to roll for copies of the fairy without raising any until I find one with the right talent (though this can take some storage space).</p>
+
+				<p>Crit damage is <em>technically</em> less efficient against armor.
+				However, almost nothing has armor significantly above fully enhanced & calibrated AP (195 AP including the 15 base).
+				It's not something worth worrying about.
+				Rounding/Armor/AP may slightly change the percentages in specific cases.</p>
+
+				<h2 id="acc">Extra: Accuracy II<sup><small><a href="criticalII.html#acc">&#35;</a></small></sup></h2>
+
+				<p>If Critical II is potentially usable, is Accuracy II any good? Let's take a quick look:</p>
+
+				<div class="figure">
+				<img src="images/criticalII/acc-normal.png" width="100%"/>
+				</div>
+
+				<p>Scouts, one of the more evasive regular enemies out there, tend to cap out at around 80 EVA.
+					FAL is the least accurate AR I'd consider at least usable and has 46 accuracy without any external buffs (she also has a grenade that ignores evasion, but think of this as a lower bound).
+					Even pairing these extremes against each other, Acc II isn't looking good compared to Damage II.
+					<em>Maybe</em> it's ~2% better on average while under a SL10 para debuff.</p>
+
+				<div class="figure">
+				<img src="images/criticalII/acc-debuff.png" width="100%"/>
+				</div>
+				<center><em>Accuracy stat here is pre-debuff but includes tile/skill buffs.</em></center>
+
+				<p>At a glance, Acc II might look a little tempting for rifles at night.
+				Even with some HGs like Calico/P22 who have strong accuracy tiles (alongside other potent buffs), many rifles will have around 15-20 accuracy.
+				Still, enemies would need to have upwards of 40 EVA for there to be a remotely notable improvement with Acc II, at which point you may as well use M200/use other forms of surehit/reset for the tiniest bit better accuracy RNG.</p>
+
+				<!-- <p>For non-para fairies that may not have as impressive crit damage buffs and don't debuff your crit rate, keep an eye on <a href="criticalII.html#normal">the first charts</a> and the 150-175% crit damage lines.
+				There, Critical II is a disadvantage for pretty much any reasonable configuration.</p> -->
+
+
+			<div class="clearfix"></div>
+
+			</main>
+
+			<footer>
+
+			</footer>
+		</div>
+
+
+	</body>
+
+</html>
