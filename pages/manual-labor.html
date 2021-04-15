@@ -48,9 +48,9 @@ Active: Consume all Tarot Cards and fire a shot that will not miss, dealing 3x d
 Additionally, deal additional damage to enemies within a 1-unit radius around the target. The additional damage is equal to 0.5x the number of Tarot Cards consumed, up to a maximum of 1.5x damage.</blockquote>
 <center><em>—Rico's skill text.</em></center>
 
-<p><em>Update, 2021-February-06: it seems likely Rico's stacks are multiplicative (like most things in the game), which would correspond to a 52.1% damage increase at full stacks. Assuming the simulator used implements her skill accurately, this shouldn't have a major impact on what I've written. It will influence the tables, though they are already very rough approximations.</em></p>
+<p><em>Update, 2021-April-15: all tables/text have been updated to reflect Rico's stacks being multiplicative.</em></p>
 
-<p>Rico's skill has two components. With her passive, she builds up to 3 Tarot Cards, giving her a constant 45% damage increase if she maintains maximum stacks.
+<p>Rico's skill has two components. With her passive, she builds up to 3 Tarot Cards, giving her a constant 52% damage increase if she maintains maximum stacks.
 When her skill activates, she shoots the furthest enemy with a miniature bamboo shot (that can crit), plus explosion damage to nearby enemies.
 The high uptime passive, explosive bamboo shot, and 45% critical damage SPEQ make Rico a very powerful rifle.</p>
 
@@ -106,73 +106,73 @@ To help figure this out, I've got some tables on relative per-shot damage for Ri
 		<tr>
 			<td align="right">1</td>
 			<td align="right">3</td>
-			<td align="right">1.45</td>
+			<td align="right">1.52</td>
 			<td align="left">Nuke</td>
 		</tr>
 		<tr>
 			<td align="right">2</td>
 			<td align="right">1</td>
-			<td align="right">1.45</td>
+			<td align="right">1.52</td>
 			<td align="left">&nbsp;</td>
 		</tr>
 		<tr>
 			<td align="right">3</td>
 			<td align="right">1</td>
-			<td align="right">1.45</td>
+			<td align="right">1.52</td>
 			<td align="left">&nbsp;</td>
 		</tr>
 		<tr>
 			<td align="right">4</td>
 			<td align="right">1.15</td>
-			<td align="right">1.45</td>
+			<td align="right">1.52</td>
 			<td align="left">Card</td>
 		</tr>
 		<tr>
 			<td align="right">5</td>
 			<td align="right">1.15</td>
-			<td align="right">1.45</td>
+			<td align="right">1.52</td>
 			<td align="left">&nbsp;</td>
 		</tr>
 		<tr>
 			<td align="right">6</td>
 			<td align="right">1.15</td>
-			<td align="right">1.45</td>
+			<td align="right">1.52</td>
 			<td align="left">&nbsp;</td>
 		</tr>
 		<tr>
 			<td align="right">7</td>
-			<td align="right">1.3</td>
-			<td align="right">1.45</td>
+			<td align="right">1.32</td>
+			<td align="right">1.52</td>
 			<td align="left">Card</td>
 		</tr>
 		<tr>
 			<td align="right">8</td>
-			<td align="right">1.3</td>
-			<td align="right">1.45</td>
+			<td align="right">1.32</td>
+			<td align="right">1.52</td>
 			<td align="left">&nbsp;</td>
 		</tr>
 		<tr>
 			<td align="right">9</td>
-			<td align="right">1.3</td>
-			<td align="right">1.45</td>
+			<td align="right">1.32</td>
+			<td align="right">1.52</td>
 			<td align="left">&nbsp;</td>
 		</tr>
 		<tr>
 			<td align="right">10</td>
-			<td align="right">1.45</td>
-			<td align="right">1.45</td>
+			<td align="right">1.52</td>
+			<td align="right">1.52</td>
 			<td align="left">Card</td>
 		</tr>
 		<tr>
 			<td align="left">Total damage</td>
-			<td align="right" bgcolor="#99d1ce"><strong>13.8</strong></td>
-			<td align="right" bgcolor="#99d1ce"><strong>14.5</strong></td>
+			<td align="right" bgcolor="#99d1ce"><strong>13.9384</strong></td>
+			<td align="right" bgcolor="#99d1ce"><strong>15.2088</strong></td>
 			<td align="left">&nbsp;</td>
 		</tr>
 	</table>
 </center>
 
-<p>Under these assumptions, attacks before her nuke and after the auto setting climbs back to 1.45 will be the same either way, so I've left those out.</p>
+<p>Under these assumptions, attacks before her nuke and after the auto setting climbs back to 1.52 will be the same either way, so I've left those out.</p>
 
 <p>The damage used per attack is relative to her base FP. Accuracy is ignored, so her sure-hit skill will become better with evasion.
 Anyways, if she can always maintain max stacks her DPS looks pretty good. But is that a realistic assumption?</p>
@@ -230,65 +230,65 @@ Anyways, if she can always maintain max stacks her DPS looks pretty good. But is
 		<tr>
 			<td align="right" height="17">6</td>
 			<td align="right">1</td>
-			<td align="right">1.3</td>
-			<td align="right">1.3</td>
-			<td align="right">1.3</td>
+			<td align="right">1.32</td>
+			<td align="right">1.32</td>
+			<td align="right">1.32</td>
 		</tr>
 		<tr>
 			<td align="right" height="17">7</td>
 			<td align="right">1.15</td>
 			<td align="right">1.15</td>
 			<td align="right">3</td>
-			<td align="right">1.3</td>
+			<td align="right">1.32</td>
 		</tr>
 		<tr>
 			<td align="right" height="17">8</td>
 			<td align="right">1.15</td>
 			<td align="right">1.15</td>
 			<td align="right">1</td>
-			<td align="right">1.3</td>
+			<td align="right">1.32</td>
 		</tr>
 		<tr>
 			<td align="right" height="17">9</td>
 			<td align="right">1.15</td>
-			<td align="right">1.3</td>
+			<td align="right">1.32</td>
 			<td align="right">1</td>
-			<td align="right">1.45</td>
+			<td align="right">1.52</td>
 		</tr>
 		<tr>
 			<td align="right" height="17">10</td>
-			<td align="right">1.3</td>
+			<td align="right">1.32</td>
 			<td align="right">1.15</td>
 			<td align="right">1.15</td>
-			<td align="right">1.3</td>
+			<td align="right">1.32</td>
 		</tr>
 		<tr>
 			<td align="right" height="17">11</td>
 			<td align="right">1.15</td>
 			<td align="right">1.15</td>
 			<td align="right">1.15</td>
-			<td align="right">1.3</td>
+			<td align="right">1.32</td>
 		</tr>
 		<tr>
 			<td align="right" height="17">12</td>
 			<td align="right">1.15</td>
-			<td align="right">1.3</td>
+			<td align="right">1.32</td>
 			<td align="right">1.15</td>
-			<td align="right">1.45</td>
+			<td align="right">1.52</td>
 		</tr>
 		<tr>
 			<td align="right" height="17">13</td>
 			<td align="right">3</td>
 			<td align="right">1.15</td>
-			<td align="right">1.3</td>
-			<td align="right">1.3</td>
+			<td align="right">1.32</td>
+			<td align="right">1.32</td>
 		</tr>
 		<tr>
 			<td align="left" height="17">Total damage</td>
-			<td align="right" bgcolor="#99d1ce"><strong>18.2</strong></td>
-			<td align="right" bgcolor="#99d1ce"><strong>15.1</strong></td>
-			<td align="right" bgcolor="#d3ebe9"><strong>16.5</strong></td>
-			<td align="right" bgcolor="#d3ebe9"><strong>16.15</strong></td>
+			<td align="right" bgcolor="#99d1ce"><strong>18.22</strong></td>
+			<td align="right" bgcolor="#99d1ce"><strong>15.17</strong></td>
+			<td align="right" bgcolor="#d3ebe9"><strong>16.55</strong></td>
+			<td align="right" bgcolor="#d3ebe9"><strong>16.43</strong></td>
 		</tr>
 	</table>
 </center>
