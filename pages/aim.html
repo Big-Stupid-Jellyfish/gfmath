@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-805N997DPC');
+</script>
+		<meta charset="utf-8">
+		<meta name="keywords" content="portfolio">
+		<meta name="description" content="Girls Frontline, by the numbers">
+		<title>Taking Aim - GFMath</title>
+		<link rel="stylesheet" href="../style.css">
+
+		<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+		<!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
+	</head>
+
+	<body>
+		<div id="wrapper">
+
+			<header>
+				<a href="../index.html">GFMath</a>
+			</header>
+			<nav role="navigation">
+				<a href="../index.html"><li>Home</li></a>
+				<a href="https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"><li>YouTube</li></a>
+				<a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a>
+			</nav>
+
+			<main>
+				<h1>Taking Aim</h1>
+				<center><em>By BigStupidJellyfish | 2021-July-06</em></center>
+
+				<p>Fairy talents seem to be a popular topic here, as I've written about <a href="fairy-talents.html">Fervor vs Damage II</a>, possible uses for <a href="criticalII.html">Critical II on a Parachute</a>, and <a href="criticalII.html#acc">a footnote on Accuracy II</a>.
+        As RFHG-based echelons have dominated the meta for quite a while, it's about time to talk about the rifle-specific talent, Aim.</p>
+
+        <blockquote><p>Aim [Activation rate 30%/50%/70%/90%/100%]</p>
+
+        <p>Increase all ally RF's damage by 8% and rate of fire by 10%</p></blockquote>
+
+        <h2 id="aimvfervor">Value over time<sup><small><a href="aim.html#aimvfervor">&#35;</a></small></sup></h2>
+
+        <p>For a basic starting point, let's assume handgun damage contribution is negligible and there are no rounding/frame breakpoints associated with ROF.
+        Aim would therefore be a net 1.08*1.1=18.8% DPS increase, a constant 3.3% improvement over Damage II's 15% FP.</p>
+
+        <div class="figure">
+				<img src="images/aim/talent-comparison.png" width="100%"/>
+				</div>
+
+        <p>This is a big enough upgrade that Aim holds out much longer against Fervor, and it would appear to be favored for all battles under 20 seconds.</p>
+
+        <p>Even under these assumptions, no such chart will be exactly correct.
+        Different skill timings and values will favor front-loaded or rear-loaded damage more.
+        This chart is made using a basic model of a standard RFHG echelon: a 5* selfbuffer (75% DPS increase) on a 5 second ICD, 5/8 uptime plus three buffing handguns (25% DPS increase each) on a 6 second ICD, 8/12 uptime.
+        If you want damage numbers for some other specific situation, you can always use a damage simulator.</p>
+
+        <h2 id="rof">ROF makes it harder<sup><small><a href="aim.html#rof">&#35;</a></small></sup></h2>
+
+        <p>Let's circle back to an earlier assumption I made - that there are no rounding/frame breakpoints associated with ROF.
+        This is <em>very</em> wrong.</p>
+
+        <p>The ROF stat is converted into a frame delay between attacks with the formula <a href="https://gfl.matsuda.tips/post/basicformula">floor(1500/ROF)</a>, and multiple ROF values can lead to shooting on the exact same frame.
+        <a href="https://docs.google.com/spreadsheets/d/1k74SCGGMHtwbl8gmTaETLsa8t12A7dWdj0V1tjdMD4Y/edit#gid=0">This chart</a> shows how these values line up.
+        As a result, a 10% increase in ROF will almost never improve DPS by 10%.
+        Sometimes it'll do more, and other times less.</p>
+
+        <p>Thankfully, for a given base ROF (base stat+equipment) and total buffs from other sources (product of: sum of tiles, product of skills, fairy skill), we can figure out the exact DPS increase Aim has compared to Damage II.</p>
+
+        <div class="figure">
+				<img src="images/aim/by-base.png" width="100%"/>
+				</div>
+
+        <p>If ROF behaved nicely, the chart would be a solid blue-green (+3.3%), except for the dark blue region where the rifle would be at or near the ROF cap and would not gain much from Aim's ROF buff.
+        That is clearly not the case, and instead there are a number of brighter green/yellow bands where Aim is particularly effective (up to a net 9.7% gain from Damage II), as well as darker areas where Aim is slightly worse or barely better than Damage II.</p>
+
+        <p>This chart cannot quite be condensed into a simple line - the Aim talent is multiplicative with all other buffs (tiles and skills), so a simple DPS versus pre-talent ROF chart can't account for cases where some extra decimal in the other buffs is translated into an extra point of ROF by the Aim boost.
+        If you were to completely ignore that problem (please don't), it would look <a href="https://i.imgur.com/KzCPyYI.png">something like this</a>.</p>
+
+        <p>Additional note: M200 and SSG3000 do not benefit from ROF buffs during their skill.
+        Aim is much worse in echelons that use them.</p>
+
+        <h2 id="hg">Handgun DPS<sup><small><a href="aim.html#hg">&#35;</a></small></sup></h2>
+
+        <p>There are plenty of occasions where handgun DPS is totally trivial - Hydras, Minotaurus, Cerynitis, Aegis, and many others have so much armor that any handgun not named Python will be dealing either one or two damage each hit.
+        In those cases, it's safe to completely disregard the effects of these talents on your handguns and the above charts should apply fully.
+        However, battles against softer targets or echelons with Python may have a nonzero handgun damage contribution, and the sometimes-narrow margins in favor of Aim we saw earlier could completely disappear.</p>
+
+        <p>For a very rough approximation, let's look at the results of two battles and see where they end up: the Core 8 Strelet/Doppels (day) and the Core 8 Gladiator/Gunners (night).</p>
+
+        <div class="figure">
+				<img src="images/aim/theater-test.jpg" width="100%"/>
+				</div>
+
+        <p>Discounting HOC damage, the handguns did 13.6% of the damage against the Strelet/Doppel group, and 4.1% of the damage against the Gladiator/Gunners (only HS2000 had a PEQ, the others used Suppressors and contributed almost no damage).
+        This is with standard kiting. Keep in mind that these numbers should be taken with a grain of salt - targeting, evasion, force shields, and all sorts of factors can have a big effect on how much damage is inflicted by each doll.</p>
+
+        <p>If we take the simple case and say Aim makes rifles deal 18.8% more than no talent, in these cases:</p>
+        <ul>
+          <li>Doppel/Strelet: 1.08*1.1*0.863+1*0.137=approximately a 16.22% DPS improvement from Aim (compared to no talent)</li>
+          <li>Gladiator/Gunner: 1.08*1.1*0.959+1*0.041=approximately a 18.03% DPS improvement from Aim (compared to no talent)</li>
+        </ul>
+        <p>Those respectively imply a 1.06% and 2.63% lead over Damage II.
+        This loss is large enough to convert some ROF buff+stat combinations into a net loss for Aim, but not nearly enough to take away the 7-8% lead it has on paper with other combinations.
+        Using a DPS-oriented handgun like Python will further tip the scales in favor of Damage II/Fervor.</p>
+
+        <p>To summarize this section, I'd say that Aim may not have a significant advantage over Damage II with certain team compositions against weaker enemies.
+        Such fights are likely to be on the easier side anyways, so I don't think it should be a major consideration.
+        Much more worthwhile is being mindful of the ROF breakpoints, which can really make or break the talent.
+        There is also the matter of fight duration, as boss battles or other long fights will probably still do better with Fervor.
+        Even a 9% advantage over Damage II (net 25.4% DPS increase) will eventually fall behind the 33% DPS increase from full Fervor stacks.</p>
+
+        <h2 id="budget">Budgeting & Conclusion<sup><small><a href="aim.html#budget">&#35;</a></small></sup></h2>
+
+        <p>Aim is a rather difficult talent to analyze, largely thanks to how ROF works in this game.
+        I would expect it to usually be better than Damage II in RFHG echelons (but not always!).
+        Evaluating it against Fervor is significantly harder, considering how much the value of Aim can change by echelon.
+        Fervor could pass Aim as soon as 12 seconds in or take much longer, in the range of 20-25 seconds, to catch up.</p>
+
+        <p>Perhaps the biggest downside of Aim is that the fairy it's on is stuck to RFHG echelons (and, considering all the frame issues, only specific ones).
+        Any ARSMG/MGSG/5HG/mixed echelon will be at a substantial disadvantage, effectively having no talent.
+        Putting Aim on your sole Command, Artillery, or Taunt fairy is almost certainly a mistake.
+        Rolling for a specific talent can also cost absurd amounts of calibration tickets and resources - spending 3000 tickets for a single talent is entirely possible.</p>
+
+        <p>The case for Aim is strongest when you are raising a dupe fairy that you expect to primarily use in RFHG echelons (Beach/Taunt/Illumination come to mind), especially if it came out of production with the right talent.
+        In those situations, you can only use the Aim copy when the time is right and use the other copy for the rest of the situations you encounter.
+        Aim would only be a problem if you really needed both fairy copies on non-RFHG echelons, for high-performance situations, which is getting into incredibly obscure territory.</p>
+
+        <p>If you don't want to think much about talents, just pick Fervor/Damage II/Damage I.
+        This applies for every fairy, although Armor II on an Armor fairy may be a good idea.
+        These will all provide a strong bonus to your damage output no matter the situation.</p>
+
+        <p>FP and ROF have some potential to add extra value (versus armor and versus large/weak groups/Orthrus shields, respectively), but buffs on these talents are close enough that it shouldn't make a significant difference.
+        Also, rifles are never good for breaking Orthrus shields.</p>
+
+        <p>Special thanks to /u/Rhasta_la_vista and /u/UnironicWeeaboo for their input on a talent discussion that led me on this track.</p>
+
+			<div class="clearfix"></div>
+
+			</main>
+
+			<footer>
+
+			</footer>
+		</div>
+
+
+	</body>
+
+</html>
