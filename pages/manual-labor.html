@@ -53,9 +53,10 @@ The high uptime passive, explosive bamboo shot, and 45% critical damage SPEQ mak
 
 <p>One idea I've heard mentioned a few times is turning her skill to force manual and letting the stacks build up - as her active ability consumes all Tarot Cards, it lowers her damage afterwards.
 Today, I'm going to investigate the value of this, and how she stacks up with and without her active component.
-A third option is to have her skill on force manual, activating it at specific times, but that's nearly impossible to have a general discussion on and would be a nightmare to collect good data for.</p>
+A third option is to have her skill on force manual, activating it at specific times, but that's nearly impossible to have a general discussion on and would be a nightmare to collect good data for.
+That said, it is theoretically always the best option as long as you're willing to manually control her skill activations - you can then emulate either of the above strategies or something in-between, depending on the situation.</p>
 
-<h2>Simulations First</h2>
+<h2 id="simulations">Simulations First<sup><small><a href="manual-labor.html#simulations">&#35;</a></small></sup></h2>
 
 <p>I'm pulling these numbers from <a href="https://hycdes.com/pages/GFT_Echelon-EN.html">this sim</a> which is more up-to-date on dolls, averaging the results of 100 trials.
 For the full team numbers, it's M14 mod, 5-7, Calico mod, and P22.
@@ -307,7 +308,7 @@ However, she can't manage that even with a constant 80% ROF buff.
 HG buff skills could help while they're active, but those don't last forever.
 With how her skillshot works, she will also get more shots out with autoskill on.</p>
 
-<h2>Target Practice</h2>
+<h2 id="tp1">Target Practice<sup><small><a href="manual-labor.html#tp1">&#35;</a></small></sup></h2>
 
 <!--<center>
 	<embed type="video/mp4" src="images/manual-labor/RicoAegis.webm" width="873px" height="480px">
@@ -352,11 +353,12 @@ Time for some full-team testing.</p> -->
 Generally, if the boxes are overlapping a lot, there is not likely to be a statistically significant difference in performance.
 To make it more precise, we could add notches to the box-and-whisker plots above.</p>
 
+<!--
 <blockquote>Notches are used to compare groups; if the notches of two boxes do not overlap, this suggests that the medians are significantly different.</blockquote>
-<center><em>—ggplot2 documentation on the notch option</em></center>
+<center><em>—ggplot2 documentation on the notch option</em></center> -->
 
 <p>Then, we can visually compare the notches and see for which configurations there is a statistically significant difference in performance, and which way it leans.
-Now, the sad news is, these notches can look pretty funny if their width extends past the main box making it awkard to present.
+Now, the sad news is, these notches can look pretty funny if their width extends past the main box making it awkward to present.
 This becomes more exaggerated if the data is skewed to one side of the median, a particularly large problem for the damage taken charts when the median damage is near zero.
 Keeping them mostly secret from the world, you can preview this look <a href="https://imgur.com/a/OvD9akx">in the album here</a> with some extra text pointing out the significant changes.
 These recommendations are made with 95% confidence.</p>
@@ -366,7 +368,8 @@ No significant differences in the team's damage taken (perhaps the most importan
 Rico herself seemed to contribute as much, if not slightly more, damage with autoskill compared to manual across the board.
 In the nine configurations tested, Rico cleared faster on autoskill in 4 of them, slower in 1, and was about equal in the remaining 4.</p>
 
-<h2>Conclusions</h2>
+<!-- <h2>Conclusions</h2> -->
+<h2 id="conclusions">Conclusions<sup><small><a href="manual-labor.html#conclusions">&#35;</a></small></sup></h2>
 
 <p>While there are <em>far</em> more possible fights out there and team compositions, there's not much of a case for ignoring her active component so far.
 Anyways, who can say no to a surehit explosive shot?</p>
@@ -376,6 +379,38 @@ Anyways, who can say no to a surehit explosive shot?</p>
 	<li>Holding her active until 6 seconds in or so for a new enemy to enter range may be beneficial. This will be very fight-dependent.</li>
 	<li>Enemy evasion, density, armor, and so on are important factors in determining her skill's effect, as is team composition and buffs. More tests with different teams and enemy groups would be useful.</li>
 </ul>
+
+<h2 id="tp2">More Target Practice<sup><small><a href="manual-labor.html#tp2">&#35;</a></small></sup></h2>
+
+<p><em>(2021-07-26 update)</em> Target Saving is now a thing (and has been for a while), so it's about time to test a few more echelon compositions against some tougher enemies.</p>
+
+<p>Team 1 (left): Rico/Lee/Calico mod/Stechkin mod/P22/Warrior.
+It's possible to fit some more ROF in an echelon, but this is on the high side.</p>
+<!-- With all skills active, Rico should have 101 ROF (14f) and Lee 109 (13f).</p> -->
+
+<p>Team 2 (right): Rico/Carcano M1891/Python/Calico mod/P22/Beach, a fairly standard Pink/Python setup.</p>
+
+<div class="figure">
+<img src="images/manual-labor/rico2-time.png" width="100%"/>
+</div>
+
+<p>Clear times were usually about equal, but there were two cases where the clear time was significantly faster with autoskill and zero without.</p>
+
+<div class="figure">
+<img src="images/manual-labor/rico2-taken.png" width="100%"/>
+</div>
+
+<p>There were no significant performance advantages either way, but depending on your confidence level, Rico with autoskill may have lead to less damage being taken against the Brute/Strikers in each team.</p>
+
+<div class="figure">
+<img src="images/manual-labor/rico2-dealt.png" width="100%"/>
+</div>
+
+<p>Autoskill was equal or better in most cases, but Rico did do significantly more damage in the left team against the Aegis/Hydra group.</p>
+
+<p>"Relative damage contribution" is Rico's damage divided by the other rifle's damage - while not a perfect metric, a better-performing rifle is likely to contribute more total damage and normalizing against the other rifle helps keep the numbers comparable.</p>
+
+<p>The previous trends observed seem to still hold - the overall performance is close, but you're more likely to get a better outcome with autoskill on compared to only using her passive.</p>
 
 <div class="clearfix"></div>
 
