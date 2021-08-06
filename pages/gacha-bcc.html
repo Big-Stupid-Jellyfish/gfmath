@@ -36,7 +36,7 @@
 
 			<main>
 				<h1>Black Cards & Completionism</h1>
-				<center><em>By BigStupidJellyfish | 2021-February-07</em></center>
+				<center><em>By BigStupidJellyfish | 2021-February-07 | Updated 2021-August-08</em></center>
 
 <p>A while back, I made a simple program to simulate costume gacha rolls. The idea was that you supplied it a list of the skins possible, how many tokens you were spending, and if it was a 100 or 60 token set. Then, it would tell you how many of the skins you got in a sample roll, the number of black cards rolled, and how many exchange tickets you got. While somewhat amusing, singular samples don't give the best insight on what you can expect when you actually get to gambling.</p>
 
@@ -44,7 +44,7 @@
 
 <p>Running this for a million sets of rolls or so, and we can get a pretty solid picture of how many black cards you can expect to get, and how likely getting a full set is.</p>
 
-<h2>With lots of tokens</h2>
+<h2 id="lots">With lots of tokens<sup><small><a href="gacha-bcc.html#lots">&#35;</a></small></sup></h2>
 
 <div class="figure">
 	<img src="images/gacha/fancy-chart-lq.jpg" width="100%"/>
@@ -83,7 +83,7 @@ Consistency improves quite a bit, up to a 97% chance of completing the costume s
 Mean black cards goes up quite decently, with the most likely outcome increasing from 12 to 15.
 The odds of being able to complete the set also improve dramatically, from 88 to 96%.</p>
 
-<h2>On a budget</h2>
+<h2 id="budget">On a budget<sup><small><a href="gacha-bcc.html#budget">&#35;</a></small></sup></h2>
 
 <p>Next, some more budget-friendly comparisons. Let's take the ideal black-card farming setup of a 4-costume gacha, no live2D. Using the distribution in the recent Summer set with ADS's Yukata (200-200-100-100 exchange tickets), we get for 2000 tokens spent:</p>
 
@@ -120,7 +120,7 @@ All-in-all, the expected number of black cards is 0-5 - much lower than the 2-8 
 On the bright side, if you do manage to roll a live2D skin you like, you don't have to spend 8 black cards later to get it.
 If you're looking to get a complete costume set, you'll likely be left disappointed.</p>
 
-<h2>Additional Notes</h2>
+<h2 id="notes">Additional Notes<sup><small><a href="gacha-bcc.html#notes">&#35;</a></small></sup></h2>
 
 <p>This assumes a 2% costume rate, with all costumes having equal odds. Especially as there are no official ways of viewing roll data, there is no guarantee this is the case.</p>
 
@@ -137,7 +137,23 @@ You <em>do</em> get some radiant skins, but you should also be careful on assign
 It's an easy way to trick people into paying more and is used all the time in these types of games (see also: package bloat with rings/tokens accompanying skins and batteries accompanying data).</p>
 
 <!-- <p>There are plenty of other combinations of tokens and skin sets, so feel free to request some other charts in the <a href="">thread</a> if you're curious.</p>-->
+<h2 id="extra1">Extra: completion chance only<sup><small><a href="gacha-bcc.html#extra1">&#35;</a></small></sup></h2>
 
+<p><em>(Added 2021-August-08)</em> Suppose you don't care at all about black card income, and would rather focus purely on getting the complete skin set.
+Adapting the program used above, we can instead get charts relating the chance of completion to total tokens spent, in increments of 100 tokens.</p>
+<div class="figure">
+<img src="images/gacha/bytokens-4skins.png" width="100%"/>
+</div>
+<div class="figure">
+<img src="images/gacha/bytokens-5skins.png" width="100%"/>
+</div>
+<div class="figure">
+<img src="images/gacha/bytokens-6skins.png" width="100%"/>
+</div>
+<p>The chart for 6 skin/2 L2D gachas is extended a bit due to their much higher difficulty of completion - while 5500 tokens is enough on a 5 costume/1 L2D gacha 97% of the time, it only works 88% of the time with an extra L2D.
+Spending 6400+ tokens is not out of the question there.</p>
+
+<p>Keep in mind that if you care about a <em>specific</em> skin and don't need the rest, you're best off rolling up to 910/1820/5460 tokens for the guaranteed exchange (100/200/600 tickets) or just using black cards later.</p>
 
 			<div class="clearfix"></div>
 
