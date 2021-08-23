@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-805N997DPC');
+</script>
+<meta charset="utf-8">
+<meta name="keywords" content="portfolio">
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>Are Two ARs or Three ARs Better? - GFMath</title>
+<link rel="stylesheet" href="../style.css">
+
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
+</head>
+
+<body>
+<div id="wrapper">
+
+<header>
+<a href="../index.html">GFMath</a>
+</header>
+<nav role="navigation">
+<a href="../index.html"><li>Home</li></a>
+<a href="https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"><li>YouTube</li></a>
+<a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a>
+</nav>
+
+<main>
+<h1>Are Two ARs or Three ARs Better? Does it matter?</h1>
+<center><em>By BigStupidJellyfish | 2021-August-23</em></center>
+
+<p>Every starting player is recommended to use an ARSMG echelon with M4A1, AR-15, and Sopmod II in the back plus two SMGs in front (most commonly, RO/UMP45+Vector/Skorpion).
+This is a great idea: all three ARs are very strong and usable even in endgame content.
+M4A1 also provides excellent bonuses to the other ARs from her tiles.</p>
+
+<p>But how do other 3AR2SMG teams perform at day? Should you switch the middle AR out for a HG?
+Handguns and ARs fundamentally do very different things in an echelon, so there's no absolute answer.</p>
+
+<p>This is not a general guide for teambuilding or an introduction to the echelon type - for that, I recommend something like <a href="https://gfl.matsuda.tips/post/banned-in-california">this excellent writeup</a>, even if it's a bit old.</p>
+
+<h2 id="theory">Theory<sup><small><a href="#theory">&#35;</a></small></sup></h2>
+
+<p>Let's start by considering a very simplified echelon: 3 copies of G41 + UMP45 or 2 copies, UMP45, and Grizzly for the HG option. UMP45's damage is ignored as she will probably be kiting.
+The initial DPS with a handgun is lower - UMP45's tiles don't affect Grizzly and adding 30% damage tiles to two ARs is clearly worse than 100% of a new AR (setting aside some high armor scenario).
+With this model, it'll take about 8 seconds for the team with Grizzly to catch up in total damage dealt:</p>
+<div class="figure">
+<img src="images/2v3ar/dot-standard.png" width="100%"/>
+</div>
+<p>One important aspect of this chart is Grizzly's own damage contribution.
+If you don't have the HG fully equipped or don't consider her own DPS, the 2AR1HG setup has more difficulty competing.
+With no equipment on Grizzly, <a href="images/2v3ar/dot-nohgequip.png">it drops to something like this</a>.
+Suppressors and HP ammo are generally not recommended to craft for newer players (HV ammo/crit scopes/AP ammo/exos are higher priority), and an under-equipped handgun will hurt performance.</p>
+
+<p>Stronger position 1/7 ARs or a stronger handgun may hasten the crossover point, while a stronger position 4 AR or weaker HG will push it back.
+Similar deal with SMG tiles - strong tiles like UMP45's favor 3AR, even more so if your offtank also covers position 4 (<a href="images/2v3ar/dot-suomi.png">see an example here with Suomi only</a>, or <a href="images/2v3ar/dot-js945.png">this one with JS 9 & UMP45 for tiles</a>).
+Crit-oriented setups will also lower the relative damage contribution of a handgun - with a few tiles like UMP45's or JS 9's, ARs could be dealing 200%+ damage crits with every shot while most handguns only have a 40% crit rate with a maxed suppressor.</p>
+
+<p>The increased FP is much more valuable than the third AR's DPS when looking at armor:</p>
+<div class="figure">
+<img src="images/2v3ar/dot-armor.png" width="100%"/>
+</div>
+<p>Note that this chart has a much wider vertical scale - while the differences were minor before (<10%), using a handgun leads to a massive (+25-50%) advantage.
+Exact values will vary based on how close your FP is to their armor with and without skills active.</p>
+
+<!-- <p>Handguns with FP tiles that cover your offtank are more valuable, and ARs that have strong tiles for your SMGs will similarly do better.</p> -->
+
+<p>These are all very theoretical values.
+A damage-buffing handgun like Grizzly, for example, may increase damage lost to overkill and link protection.
+ARs have tiles themselves, and some handguns will buff other things too (like accuracy or evasion).
+There are many other AR/SMG combinations that will produce different results.</p>
+
+<p>To summarize: theoretically, 2AR1HG backlines have worse initial DPS but do better after 7-10 seconds compared to 3AR backlines.
+This will vary quite a bit with each setup and situation.</p>
+
+<p>Next, I'll go over why we shouldn't trust these types of results or use them to guide your echelon building, particularly when comparing significantly different options.</p>
+
+<h2 id="dpssim">Damage Simulators<sup><small><a href="#dpssim">&#35;</a></small></sup></h2>
+
+<p>Combat effectiveness is <a href="ce.html">a useless number</a> that doesn't tell you how good a team is.
+Most of the issues with CE are not tied to how it is calculated - no matter how the formula is adjusted, you can never assign a single number to an echelon that represents its abilities in real combat, as you need different things for each battle.
+Using a damage simulator to get some "damage" number and compare teams with that falls into many of the same traps and cannot be used to accurately compare all echelons.</p>
+
+<p>I've written more about <a href="empirical-results.html">some of the issues with damage simulators earlier</a>.
+A few of the more relevant problems:
+damage simulators generally assume a single infinite-health dummy with constant properties (evasion/armor), plus an optional link multiplier to apply to AOE attacks.
+There are no real fights in the game that work like this, and instead come with a whole host of mechanics simulators can't account for (to name a few: overkill, link protection, corpse whipping, (allied) evasion, kiting, taking damage, priority targets, killing enemies before they attack).
+Many dolls have skills that simulators cannot properly model, and the number of these are only increasing over time.
+Grenade and other AOE skills usually lead to massively inflated numbers.</p>
+
+<p>So, you should almost never pick your team based on which one is given a higher "DPS" by a simulator.
+In terms of 2AR+1HG vs 3AR backlines, there are a few matters of particular concern:</p>
+
+<ul>
+	<li>HG tiles and skills will increase the theoretical DPS of your SMGs, but your maintank is probably moving constantly and won't get many shots off. They'll also lose links over time and contribute even less.
+	A molotov offtank may deal lots of damage against swarms, in which case FP tiles are very useful. They also may do little damage against sparse/single-linked enemies in which case FP tiles on them are almost useless.</li>
+	<li>6-second HG skills will massively boost the damage reported from non-Zas grenades. Whether or not this grenade hits that many targets and needs that damage buff to kill links is an entirely different matter.</li>
+	<li>Many handguns do not work here - ROF buffers will often lead to significant overcap (especially after we get the <a href="newquip.html#2chip">#2 Chip</a>), and others have defensive skills that contribute very little.</li>
+	<li>Tiles are additive, so stacking FP with them does a bit less than you may expect - for example, if already using UMP45, adding Grizzly's tiles increases DPS by (1+0.3+0.2)/1.2=+25% despite her tiles boosting FP by 30%.
+</ul>
+
+<p>In practice, it's entirely possible for the trends a damage simulator predicts to entirely disappear or even reverse.
+Experimental results are not covered here as there are simply too many variables involved in some sort of "general-use ARSMG" to get any broadly applicable results.
+There also are not many good ways to test multiple sequential battles.
+If you do want to see some tests I've done for various situations, I've <a href="2v3ar-extras.html">thrown them all on this extras page</a>.</p>
+
+<p>To summarize: damage simulator numbers are generally not a good way to evaluate and compare echelons.
+While 2AR1HG lineups have bigger numbers on paper, it does not appear to translate into real performance in many scenarios.</p>
+
+<h2 id="recommendation">General Recommendations<sup><small><a href="#recommendation">&#35;</a></small></sup></h2>
+
+<p>I don't believe there's a clear "general" advantage either way between strong FP buffing handguns and good ARs as the go-to choice for position 4.
+There are situations where you'd want to use something like 416, AK-12, Angelica, or G11 there.
+There are others where you'd prefer Python, SAA mod, Grizzly, or K5.</p>
+
+<p>I would tend to prefer an appropriate AR when:</p>
+<ul>
+	<li>You will be fighting several different enemies and want your backline to cover more roles with their skills.</li>
+	<li>You want early DPS/the battles are short.</li>
+	<ul>
+		<li>Extreme case: Orthrus. 3 ROF/multihit ARs will do <em>far</em> better than 2 ROF/multihit ARs plus a handgun.</li>
+	</ul>
+	<li>You have strong SMG tiles and/or crit damage.</li>
+	<li>You are fighting larger or low-HP enemy groups.</li>
+	<li>The AR's tiles are useful (e.g., 416 mods' FP on an offtank).</li>
+</ul>
+
+<p>And I'd favor a strong FP-buffing HG when:</p>
+<ul>
+	<li>You are only fighting one or two enemies and don't have a use for a third AR's skill.</li>
+	<li>You are expecting longer battles against tough enemies that don't need early DPS (bosses).</li>
+	<li>You will be going against armor (and can't use a RFHG/MGSG echelon).</li>
+	<li>You are (primarily) fighting some enemy that targets your backline and can be manipulated favorably.</li>
+	<ul>
+		<li>Rodeleros are the easiest example - handguns move faster and cost less DPS to dodge their lasers with.</li>
+		<li>This can be useful against Jaguars, but their targeting depends on skill bar order/acquire sequence so it's mostly only practical to manipulate in Theater/target practice. They also don't show up that much, especially in harder groups.</li>
+	</ul>
+	<li>Your SMG tiles are weak.</li>
+	<li>Your HG offers particularly valuable tiles or a skill for a situation (e.g., Python's FP on Uzi to deal with ELID swarms or HS2000's echelon-wide shield for some AOE attack).</li>
+</ul>
+
+<p>"General use"/main story chapters will fall more into the first set of situations, so I would default to that and just keep an eye out for specific situations that may prefer a handgun instead.
+If you have a use for a FP or ROF buffer, M4A1 or AUG/Angelica (respectively) are nice options for the middle.
+Just be careful not to use them only because they have AR-buffing tiles.</p>
+
+<p>This gets into more general teambuilding ideas, but a few other things to keep in mind:</p>
+<ul>
+	<li>Teams generally aren't built in isolation. Keep in mind what other echelons are needed and what your armory can provide.
+	Putting all your best FP buffers in a few ARSMG echelons will make it harder to deploy effective RFHG echelons.</li>
+	<li>To save resources, don't use ARSMGs at all. Have you seen how much a SMG takes to resupply? A few cheap echelon types that can be viable in various situations and will save you much more than 30/30 ammo/rations are:</li>
+	<ul>
+		<li>M4A1 mod+2 HGs</li>
+		<li>5 HG </li>
+		<li>1 AR or RF + 1-4 HGs</li>
+		<li><5 HG</li>
+	</ul>
+	<li>ARSMG echelons see limited use in the current meta. Don't think too hard about how to optimize them when you could be duping more Hanyangs/Grapes/P22s.</li>
+	<li>After you've built 1 ARSMG and 1 RFHG echelon, you can start to move away from thinking in terms of fixed teams. Raise useful dolls (<a href="https://gfl.matsuda.tips/dolls/">1</a>, <a href="https://docs.google.com/spreadsheets/d/10LJdksnM3zipOb72IneJD7WVp3765JYJEGg0LnodzDI/edit?usp=sharing">2</a>) and build teams for each situation using what you have available.</li>
+</ul>
+
+<p>This is all with respect to day battles.
+You'll need a handgun for vision in non-theater night battles no matter what, so that just becomes a matter of where you put the handgun (frontline or backline).</p>
+
+<h2 id="bonus-rf">Bonus: why not 3RF2HG?<sup><small><a href="#bonus-rf">&#35;</a></small></sup></h2>
+
+<p>It's commonly accepted that 2RF3HG echelons are better than 3RF2HG echelons.
+As usual, you can plug random teams into damage simulators and get random DPS numbers, which may favor either type.
+There are a number of other reasons to prefer 2RF3HG echelons, though.</p>
+
+<p>Backline HGs (Stechkink, Python, etc) are strong and not being able to use them sucks. Rifles can also benefit from more of these than ARSMG echelons can.
+Most people don't have that many copies of Px4/P22/Webley, so tile coverage is not great with only two handguns and ROF options are very limited (which will make larger enemy groups hard to deal with).
+You get another HG to kite and absorb damage with. Handguns don't last long so this is important.
+Multiplicative buffs are great to stack. This is a good part of what makes 5HG echelons viable (the rest of it is Deagle/Python existing).</p>
+
+<div class="clearfix"></div>
+
+</main>
+
+<footer>
+
+</footer>
+</div>
+
+
+</body>
+
+</html>
