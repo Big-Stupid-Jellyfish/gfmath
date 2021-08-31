@@ -27,7 +27,7 @@ header {
 	text-align: center;
 	font-size: 2em;
 	font-weight: bold;
-	font-family: Goudy Old Style, "Times New Roman", Serif;
+	font-family: "Georgia", "Times New Roman", Times, Serif;
 	margin-bottom: 0;
 	padding: 15px 15px 50px 15px;
 }
@@ -75,6 +75,7 @@ main {
 
 h1, h2, h3 {
 	font-family: "Computer Modern", sans serif;
+	/* font-family: Goudy Old Style, "Times New Roman", Serif; */
 	font-weight: normal;
 }
 
