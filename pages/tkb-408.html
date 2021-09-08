@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-805N997DPC');
+</script>
+<meta charset="utf-8">
+<meta name="keywords" content="portfolio">
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>TKB-408 Analysis - GFMath</title>
+<link rel="stylesheet" href="../style.css">
+
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
+</head>
+
+<body>
+<div id="wrapper">
+
+<header>
+<a href="../index.html">GFMath</a>
+</header>
+<nav role="navigation">
+<a href="../index.html"><li>Home</li></a>
+<a href="https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"><li>Youtube</li></a>
+<!-- <a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a> -->
+</nav>
+
+<main>
+<h1>TKB-408 First Impressions/Analysis</h1>
+<center><em>By BigStupidJellyfish | 2021-September-08</em></center>
+
+<p>TKB-408 is a 5-star AR originally released in the point event "Maples by the Bridge."
+She is a night AR with a slightly atypical skill:</p>
+
+<blockquote><p><strong>Polar Night Radiance</strong> ICD 5s, CD 16s</p>
+
+<p>During nighttime, increase damage and crit damage by 70% (28% during daytime) for 8 seconds.
+If there are 3 or more different gun types present, increase crit rate by 30% while this skill is active (crit rate buff only limited to nighttime).</p>
+</blockquote>
+
+<p>If you just want to know if she's good or not: she's rather bad.
+Classic night ARs (OTs-14) are almost always going to perform better, and even those see limited use nowadays considering all the better options out there.
+If you want the details, read on.</p>
+
+<h2 id="dps">Direct-fire DPS<sup><small><a href="#dps">&#35;</a></small></sup></h2>
+
+<p>If she were set to a flat 100% crit rate, her active is a 189% DPS increase with 8/16 uptime.
+Typical night ARs (AS Val, OTs-14) have a 200% selfbuff with 6/16 uptime, so she'd trade a slight amount of damage for a 33% longer duration.</p>
+
+<p>Her skill gives the maximum benefit with a pre-skill crit rate of 77%, where its crit rate buff is maximized and her overall DPS increases by 213%.</p>
+
+<p>That isn't practical to hit.
+With a PEQ, a Crit II Fury fairy, and its active skill, her crit rate would be only 0.2*1.5*1.25*1.2=45%.
+Add M4A1 and UMP45 tiles to get to 72%.
+That's close, but it's a contrived setup and Fury is usually significantly worse compared to Command/Para/Artillery.</p>
+
+<p>Assuming no crit rate buffs, her crit rate is 20% pre-skill/26% with active.
+In that case, her skill is about a 116% DPS increase.
+For another reference point, G41's skill is a 75% DPS increase with 10/16 uptime.
+TKB does ~23% more DPS with her skill but it ends 20% faster, ignoring ICD.</p>
+
+<p>That looks a bit closer, but now we've downgraded a shiny new night specialist AR to the level of an ancient bog-standard AR.</p>
+
+<h3>Damage over time</h3>
+
+<p>Let's look at her damage contribution relative to some other ARs over time (<a href="g41-standard.html">like in this earlier writeup</a>).
+This can be useful to see how much of an impact her ICD and skill duration has on her overall damage output.
+Starting with no tiles/other buffs, TKB in the orange:</p>
+
+<div class="figure">
+<img src="images/tkb-408/dot-night.png" width="100%"/>
+</div>
+
+<p>AS Val is assumed to have FP buff uptime from Python+a Fervor fairy, although the actual FP buffs are not applied here to keep the model simple.</p>
+
+<p>It's worth mentioning that OTs-14 has a bit higher ROF (75 vs 72) but fires <a href="https://docs.google.com/spreadsheets/d/1k74SCGGMHtwbl8gmTaETLsa8t12A7dWdj0V1tjdMD4Y/edit">on the same frame</a>, causing her to lag behind a bit here when combined with her lower base damage.
+Most ROF buffs will put OTs-14 on a higher frame than TKB, significantly improving her relative DPS.
+<a href="images/tkb-408/dot-night-rof.png">One example with +15% ROF</a>: TKB is now essentially always worse than OTs-14.
+AR-15 and Angelica also go down a bit relatively as they can't benefit from ROF in-skill.</p>
+
+<p>Buffing crit damage doesn't help her relative value much, especially with things like AR-15 and AS Val on the table:</p>
+
+<div class="figure">
+<img src="images/tkb-408/dot-night-para.png" width="100%"/>
+</div>
+<p>I could resize the chart to fit AS Val but I think this gets the point across.</p>
+
+<p>So: TKB may have a slight advantage over OTs-14 in very short battles (<6 seconds) and long ones (>12 seconds) when no ROF buffs are involved.
+However, she does not come close to the top night ARs and at best is ~10% better than generic stuff like G41.
+The slightly improved skill duration vs typical night ARs is not worth the cost to its strength.</p>
+
+<p>Note that while these charts correctly convert ROF into actual fire rate, it smooths out their DPS.
+Depending on which exact frame you check in a given battle, the relative numbers may fluctuate if one doll's shot just connected and the other's is still in flight.
+Some ARs may also get an extra shot in at the end of their skill, or fall barely short of one, which will change relative numbers a bit as well.</p>
+
+
+
+<h3>Damage against armor</h3>
+
+<p>Crit damage is calculated after applying damage reduction from armor.
+While this is <a href="px4.html#armor">not even remotely a concern</a> with Px4 Storm in RFHG echelons, ARs tend to lack the AP & FP to ignore this mechanic.</p>
+
+<div class="figure">
+<img src="images/tkb-408/dot-night-armor.png" width="100%"/>
+</div>
+<p>TKB in the blue this time.
+This is with a 5* Damage II Artillery (1.55*1.15=78% total FP buff).
+Varying FP buffs will shift the x-axis around but overall trends would be similar.</p>
+
+<p>TKB still does better against armor than G41, but a pure FP buff like what OTs-14/AS Val have is clearly superior against armor.</p>
+
+<p>Keep in mind that this is in-skill DPS - dolls with short/burst skills will generally be rated higher than ones with high uptime here.
+Using uptime-averaged DPS or something similar has its own problems though as almost all ARs will be totally blocked by armor out-of-skill and few fights last multiple skill cycles.</p>
+
+<p>WA2000 included for reference. Don't use ARs to fight Hydras.</p>
+
+<h2 id="conclusion">Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+
+<p>Night ARs as a whole see limited use in the current RFHG-dominated meta.
+If you do need them, AS Val+Python+AR-15 will cover 99% of your needs.
+When TKB is only sometimes better than old night ARs like OTs-14 and not far off from day ARs like G41, it's hard to imagine you'd be hurting to fill teams without her.
+A number of other ARs (e.g., AS Val, AR-15, Angelica) will benefit as much or more than TKB from realistic levels of crit buffs, so she doesn't even get to claim that specialty.</p>
+
+<p>To be fair, TKB's skill is at least functional.
+She's hardly in the category of dolls like JS05 or 100 Shiki who have downright awful skills.
+If you want a night AR that shoots things, don't care about the details, and already have her raised, it's possible to use TKB.</p>
+
+<p>With lackluster performance even in her niche, I <strong>do not recommend raising TKB-408</strong>.</p>
+
+<h2 id="considerations">Other considerations<sup><small><a href="#considerations">&#35;</a></small></sup></h2>
+
+<p>Her tiles are decent to put on an offtank (+25% FP, +50% ACC), but are awkward to position as you'd often have a HG on 4 at night.
+She can still sit there if using Desert Eagle/HP-35/C-93/P22 or similar as your handgun.
+If on 1 or 7, her tiles are a non-factor for any sane echelon.</p>
+
+<!--
+<p>In the future with Galil mod, it may be possible to use her with a crit scope at night against regular enemies.
+Her skill would be better there, and I'd probably prefer her to OTs-14.
+I don't know how viable Galil mod setups are in general though, and AS Val is still a thing.</p> -->
+
+<p>I am assuming her skill text means "3 or more," so HG+AR+SMG would work.
+Some translations, including the in-game text, have said "more than 3" which would make that component of her skill very awkward to trigger and decrease her value a bit more.</p>
+
+<p>Charts here are without affection bonuses.
+Having max affection/oaths may slightly change the exact percentages, but it won't be anything major.</p>
+
+<p>Any possible Galil mod interactions aren't covered as we don't have her mod on EN yet and I'm not sure of the viability of such setups in general.
+I'm also not entertaining the idea of running her with a crit scope against 0 evasion enemies - running a dedicated team to fight 0 evasion (armored) enemies and picking <em>ARs</em> for your DPS is simply absurd. RFs and MGs exist.</p>
+
+Speaking of the future, as a new AR without a popular following, TKB is less likely to receive a SPEQ or neural upgrade in the future.
+Crit synergy in general will be less interesting for ARs once we get the <a href="newquip.html#2chip">#2 Chip</a> equipment.</p>
+
+
+<h2 id="formations">Echelon ideas<sup><small><a href="#formations">&#35;</a></small></sup></h2>
+
+<p>While she isn't a priority, here are some example formations you can use TKB in.
+Echelons should always be built depending on the enemy, your armory, and various other requirements so please don't copy these 1:1.</p>
+
+<p>An AS Val variant, if you have a strong aversion to AR-15/Sopmod/good night ARs:</p>
+<table style="width:50%">
+<!--<tr><td colspan="3"><center>Fairy: Command/Para</center></td></tr>-->
+<tr><td>AS Val mod</td><td>Vector</td><td>-</td></tr>
+<tr><td>Python</td><td>UMP45</td><td>-</td></tr>
+<tr><td>TKB-408</td><td>-</td><td>-</td></tr>
+</table>
+
+<p>An example making use of her tiles:</p>
+
+<table style="width:50%">
+<!--<tr><td colspan="3"><center>Fairy: depends</center></td></tr>-->
+<tr><td>ST AR-15</td><td>Uzi mod</td><td>-</td></tr>
+<tr><td>TKB-408</td><td>UMP45</td><td>-</td></tr>
+<tr><td>HP-35</td><td>-</td><td>-</td></tr>
+</table>
+
+<p>An older-style night ARSMG, if you like to kite:</p>
+
+<table style="width:50%">
+<tr><td>OTs-14</td><td>JS 9/Lusa</td><td>-</td></tr>
+<tr><td>TKB-408</td><td>Mk23</td><td>-</td></tr>
+<tr><td>9A-91</td><td>-</td><td>-</td></tr>
+</table>
+
+<p>though nowadays you might as well put P22 on 2 so all the usual maintank options have full tile coverage (UMP45/MP5/C-MS/etc).</p>
+
+<p>You may need more AOE:</p>
+<table style="width:50%">
+<tr><td>HK416</td><td>Uzi mod</td><td>-</td></tr>
+<tr><td>Python</td><td>C-MS</td><td>-</td></tr>
+<tr><td>TKB-408</td><td>-</td><td>-</td></tr>
+</table>
+
+<p>These will be updated with pictures once I have a copy of her to screenshot.</p>
+</main></div></body></html>
