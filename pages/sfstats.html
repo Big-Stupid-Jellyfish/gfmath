@@ -26,11 +26,11 @@
 <div id="wrapper">
 
 <header>
-	<a href="../index.html">GFMath</a>
+	<a href="../index">GFMath</a>
 </header>
 <nav role="navigation">
-	<a href="../index.html"><li>Home</li></a>
-	<a href="https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"><li>YouTube</li></a>
+	<a href="../index"><li>Home</li></a>
+	<a href="https://www.youtube.com/c/BigStupidJellyfish"><li>Youtube</li></a>
 </nav>
 
 <main>
@@ -46,50 +46,62 @@ They are only an estimation of the actual rates, and individual luck will vary.<
 <p>SF unit sizes are not uniformly distributed, and instead follow a bell-shaped curve.
 Below are the frequencies of each size from my pulls:</p>
 <div class="figure">
-<img src="https://i.imgur.com/4vf199l.png" width="100%"/>
+<img src="https://i.imgur.com/kaoVxCM.png" width="100%"/>
 </div>
 <p>Assuming equal odds for L/S and XL/XS, I would estimate the true odds to be something like:</p>
 <center>
-<table style="width:50%">
+<table style="width:80%">
   <tr>
     <th>Size</th>
-    <th>Rate</th>
+    <th>Estimated Rate</th>
+		<th>Lower bound</th>
+		<th>Upper bound</th>
   </tr>
   <tr>
     <td>Medium</td>
     <td>60%</td>
+		<td>53.9%</td>
+		<td>65.4%</td>
   </tr>
 	<tr>
 		<td>Large/Small</td>
 		<td>18%</td>
+		<td>15.6%</td>
+		<td>20.7%</td>
 	</tr>
 	<tr>
 		<td>Extra Large/Extra Small</td>
 		<td>2%</td>
+		<td>1.3%</td>
+		<td>3.5%</td>
 	</tr>
 </table>
 </center>
+<p>Upper and lower bounds are listed with 95% confidence.</p>
 
 <p>I'll need more data to confirm, but I do not currently believe the rate varies by base rarity (i.e. for 1 or 2 star mooks).</p>
 
 <h2 id="shiny">Shiny rate<sup><small><a href="#shiny">&#35;</a></small></sup></h2>
 
-<p>I do not currently have enough data for a good estimate on the shiny rate.
-As of last update, I have 3 shinies from 259 total pulls (1.158% rate).
-Due to the very low expected rate, quite a bit more data is needed to have any level of confidence on the true rate.</p>
+<p>I do not currently have enough data to get a good estimate on the shiny rate.
+As of last update, I have 4 shinies from 331 total pulls (1.208% rate).
+The true rate could plausibly be anywhere from 0.33-2.63% based on this.</p>
+<!--Due to the very low expected rate, quite a bit more data is needed to have any level of confidence on the true rate.</p>-->
 
 <h2 id="decoding">Coalition Drill: Decoding Practice rates<sup><small><a href="#decoding">&#35;</a></small></sup></h2>
 
 <div class="figure">
-<img src="https://i.imgur.com/PcjQHEZ.png" width="100%"/>
+<img src="https://i.imgur.com/60vAK1x.png" width="100%"/>
 </div>
-<p>The chances of getting Basic/Advanced Training Keycodes are also not even.
-My personal results are shown above, which indicate a 25% advanced rate is very likely.</p>
+<p>The chances of getting Basic/Advanced Training Keycodes are also not even, with 25% seeming to be the commonly accepted number.
+<!--My personal results are shown above, which indicate a 25% advanced rate is very likely.</p>-->
+My results are a bit above that, although not enough to prove the true rate is something else - with 95% confidence, I'd estimate the true rate to be between 25.3% and 36.2% based on my results.</p>
 
-<p>Keep in mind - as there is no good reason to believe these rates vary by user or time, given enough simulations, the odds of having a different overall advanced keycode rate approach zero.
-For example, assuming a true 25% advanced rate over 100 attempts (~2 months), less than 10% of people will have an advanced rate below 20%. After 500 attempts, less than 0.4% of people would.</p>
+<!-- <p>Keep in mind - as there is no good reason to believe these rates vary by user or time, given enough simulations, the odds of having a different overall advanced keycode rate approach zero.
+For example, assuming a true 25% advanced rate over 100 attempts (~2 months), less than 10% of people will have an advanced rate below 20%. After 500 attempts, less than 0.4% of people would.</p> -->
 
-<p>SF skills take around 1.75:1 Basic:Advanced keycodes to train, so if you fully level all skills you'll build up a surplus of basic keycodes over time (as they're handed out at a 3:1 ratio).
+<p>SF skills take around 1.75:1 Basic:Advanced keycodes to train, so if you fully level all skills you'll build up a surplus of basic keycodes over time (as they're handed out at around a 3:1 ratio).
+The advanced rate would need to be around 36% for the data types to be even.
 The most efficient svarog bundle only including 1000 basic keycodes doesn't help either.</p>
 
 <p>(My understanding is that 25% is the commonly accepted rate on foreign servers, although I'm not certain on its basis. If the odds have been datamined, please do let me know and I can simplify this section.)</p>
