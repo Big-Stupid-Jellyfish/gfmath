@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-805N997DPC');
+</script>
+<meta charset="utf-8">
+<meta name="keywords" content="portfolio">
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>Using C-MS for DPS - GFMath</title>
+<link rel="stylesheet" href="../style.css">
+
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
+</head>
+
+<body>
+<div id="wrapper">
+
+<header>
+<a href="../index">GFMath</a>
+</header>
+<nav role="navigation">
+<a href="../index"><li>Home</li></a>
+<a href="https://www.youtube.com/c/BigStupidJellyfish"><li>Youtube</li></a>
+<!-- <a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a> -->
+</nav>
+
+<main>
+<h1>Using C-MS for DPS</h1>
+<center><em>By BigStupidJellyfish | 2021-September-21</em></center>
+
+<p><em>(This is a rework of <a href="https://old.reddit.com/r/girlsfrontline/comments/gb1aqt/gfmath_using_cms_for_dps/">a really old project of mine</a> that I finally decided to update and put on this site.
+  This is a look into specific aspects of her DPS qualities. For a general review of C-MS, the <a href="https://docs.google.com/spreadsheets/d/10LJdksnM3zipOb72IneJD7WVp3765JYJEGg0LnodzDI/edit">usual</a> <a href="https://gfl.matsuda.tips/doll/g213">analytic</a> <a href="https://gamepress.gg/girlsfrontline/t-doll/c-ms">sites</a> may be useful.)</em></p>
+
+
+<blockquote><p><strong>Fickle Temper</strong> ICD 1s/CD 1s</p>
+
+<p>
+  Press skill to switch between different ammo types with different effects.
+  <font color="#94C3F7">Subsonic rounds</font> (default): Increase evasion by 65%/<font color="#DE3C39">Spoon Tip rounds</font>: Increase damage by 85%/<font color="FFB600">Standard rounds</font>: Increase accuracy by 200%.
+</p>
+</blockquote>
+
+<p>We all know that C-MS is a very solid evasive tank.
+  She has a reasonable amount of HP (925), good base evasion (75), strong tiles (15% FP, 5% ROF, covers all from 5) and an evasion selfbuff that is active from the very start of combat and has no downtime.
+  In that role, you can simply set her to force manual, let her sit in her default <font color="#94C3F7">Subsonic rounds</font>, and let her tank.
+</p>
+
+<p>
+  C-MS also has two other modes to her skill - her skill can cycle through a FP and an accuracy selfbuff, allowing her to act more like a direct-fire offtank.
+  The multipliers are lower compared to popular picks like SR-3MP and X95, but she has better uptime and the unique ability to equip AP ammo as a SMG.
+  So, let's investigate these two modes and see which is better, and how she compares to other options in DPS mode.
+</p>
+
+<p>
+  Autoskill will cause C-MS to constantly rotate skills, so when using these modes, you'll need to manually cycle her to the desired setting and then leave her be.
+  For simplicity, these charts assume she is already set to the desired mode.
+</p>
+
+<h2 id="modeselection">Spoon Tip vs Standard rounds<sup><small><a href="#modeselection">&#35;</a></small></sup></h2>
+<p>With C-MS on her own and no other buffs, here's a daytime DPS chart comparing each skill option with VFLs, EOTs, and ITIs.</p>
+<div class="figure">
+  <img src="images/cms-dps/day.png" width="100%"/>
+</div>
+<p>
+  C-MS' <font color="#DE3C39">Spoon Tip rounds</font>, the damage buff, are the solid lines with one for each equipment option.
+  Her <font color="FFB600">Standard rounds</font>, the accuracy buff, are dashed.
+  SR-3MP's in-skill DPS is included as the dotted line for comparison, though she's only shown with an ITI.
+</p>
+
+<p>AK-12's 15% ROF tile interestingly brings C-MS to the same frame (15f) even with the ROF penalty of an EOT or ITI, so here's a chart with that included:</p>
+<div class="figure">
+  <img src="images/cms-dps/dayk12.png" width="100%"/>
+</div>
+<p>
+  Nothing too dramatic, but an EOT is now viable for a bit longer and can be used at up to 20 enemy evasion.
+  See <a href="images/cms-dps/roftable.png">this table</a> for all the buff percentages this happens for.
+</p>
+
+<p>Finally, a chart at night where they're all forced to use PEQs:</p>
+<div class="figure">
+  <img src="images/cms-dps/night.png" width="100%"/>
+</div>
+<p>So: unless we're talking 100+ evasion at day/40+ evasion at night, C-MS should use her <font color="#DE3C39">Spoon Tip rounds</font> with a VFL/EOT/ITI as appropriate when you want her to deal damage.
+The accuracy from her <font color="FFB600">Standard rounds</font> is simply not enough to be competitive, despite the much higher multiplier.
+</p>
+
+<p>For more detail on her equipment selection, here's a chart showing the best equipment for her by net external accuracy buff and enemy evasion:</p>
+<div class="figure">
+  <img src="images/cms-dps/equip.png" width="100%"/>
+</div>
+<p>As seen above, some amounts of ROF buffing will make <a href="images/cms-dps/equipk12.png">EOTs much better</a>.
+Be careful not to build your team around this.
+It's only a slight adjustment in the relative value of two equipment options.</p>
+
+<h2 id="comparison">Compared to other DPS SMGs<sup><small><a href="#comparison">&#35;</a></small></sup></h2>
+<p></p>Either way, her in-skill DPS looks quite poor compared to SR-3MP.
+To see if the advantage from her permanent uptime makes up for that, let's look at some damage-over-time charts.
+</p>
+<!--<p>Against unarmored enemies, C-MS will essentially always fall short of standard DPS SMG options like SR-3MP, Honey Badger, and X95 for single-target DPS.
+</p>-->
+
+<p>First, here's one throwing together a bunch of potential DPS SMGs (X-Exo+ITI on all except JS 9 who used an <a href="extras#smgcharts">X-Exo+EOT</a>):</p>
+<div class="figure">
+  <img src="images/cms-dps/multiple.png" width="100%"/>
+</div>
+<p>
+  Not the best look for C-MS. She has a decent edge over Honey Badger, but even then Badger's tiles could make up the difference (especially if you don't have an AR in position 4).
+</p>
+<p>
+  As noted, I used a wild estimate for X95's net average damage boost based on <a href="x95">an earlier study of mine</a> and JS 9 has full damage stacks.
+  While JS 9 can buff her damage and is included for comparison, I would recommend against using her as a DPS SMG due to her much better tanking abilities and enemy group limitations.
+  Real battle conditions will cause results to vary significantly.
+  Numerical rankings are taken at 20 seconds and will change depending on your timeframe of choice (even here, X95 is almost always above JS 9 but barely falls behind at 20 seconds).
+</p>
+
+<p>
+  C-MS is using HP ammo here. It's nearly a 50% increase over her base FP, so using AP ammo against unarmored enemies will make her <a href="https://i.imgur.com/3ltidff.png">much worse</a>.
+</p>
+
+<p>If you're worried about super evasive enemies, I present three dolls for your consideration: <a href="https://iopwiki.com/wiki/HK416">option one</a>, <a href="https://iopwiki.com/wiki/M200">option two</a>, <a href="https://iopwiki.com/wiki/AS_Val">option three</a>.
+SMGs have awful accuracy. Don't use them against Patrollers.</p>
+
+<p>Before we totally write off the idea of DPS C-MS, keep in mind that her ability to equip AP ammo can occasionally be useful.
+  Perhaps the most notable case was against the Theater Advanced 8 "backwards tarantulas" wave (<a href="https://imgur.com/tnMRU9Z">example</a>, though I always just used HOCs for them).
+  Molotov/hand grenade SMGs may not be able to hit the whole swarm, and regular DPS SMGs like SR-3MP can get blocked by the armor:
+</p>
+<center>
+<div class="figure">
+  <img src="images/cms-dps/tarantulas.png" width="70%"/>
+</div>
+</center>
+<p>Setup: VFLs, 0 evasion, 109 armor, 5* Damage I Artillery.
+  With armor in the picture, C-MS does more damage, more consistently.
+  SR-3MP naturally does even worse if your fairy doesn't give quite so much FP.
+</p>
+
+<h2 id="conclusion">Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>C-MS can be a decent DPS SMG against low evasion, armored enemies.
+  In all other cases she'll be significantly outclassed by standard options.
+  Her accuracy mode is not worth it for realistic enemy statlines/situations - use her evasion mode if she's tanking, and her damage mode for DPS.
+</p>
+
+<p>
+  Even then, her utility as a DPS is questionable.
+  At day, RFHG/MGSG echelons will tear up armor.
+  At night, RFHG echelons can still handle a little evasion alongside armor.
+  Things like HOCs/Airstrike/piercing (Kord/Hanyang) counter Tarantula swarms and will be more useful in other battles too.
+</p>
+
+<p>
+  Direct-fire SMGs are, as a class, awkward to use.
+  They need their links to deal damage, so if they take a few hits their DPS potential will drop significantly.
+  Any kiting will stop them from shooting and lower their damage contribution.
+  Large groups are usually better handled with molotov/hand grenade SMGs like Uzi mod and Vector, who also remain effective at low links.
+</p>
+
+<p>
+  Really, just stick to using C-MS as a tank.
+  She does a great job there.
+  You can also disregard all the DPS optimization stuff and just give her a suppressor for the bonus evasion.
+</p>
+
+<p>(C-MS is also good for <a href="ce#stack">CE stacking</a>, but don't do that.)</p>
+</main></div></body></html>
