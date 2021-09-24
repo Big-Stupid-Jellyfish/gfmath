@@ -26,33 +26,44 @@
 <div id="wrapper">
 
 <header>
-	<a href="../index.html">GFMath</a>
+	<a href="../index">GFMath</a>
 </header>
 <nav role="navigation">
-	<a href="../index.html"><li>Home</li></a>
-	<a href="https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"><li>YouTube</li></a>
+	<a href="../index"><li>Home</li></a>
+	<a href="https://www.youtube.com/c/BigStupidJellyfish"><li>Youtube</li></a>
 </nav>
 
 <main>
 <h1>Picking Fairy Talents (Fervor vs Damage 2)</h1>
-<center><em>By BigStupidJellyfish | 2020-August-31 | Last updated 2021-07-24</em></center>
+<center><em>By BigStupidJellyfish | 2020-August-31 | Last updated 2021-09-23</em></center>
 
 <p><a href="https://imgur.com/a/n1q74k9">Album of plots</a>.</p>
 <p>Fairy calibration is hell, so it's best to get a good talent and stick with it. Damage 1/2 and Fervor have the widest utility and thus are almost always considered the best talents to have. The ROF boost of Aim on your rifles might be nice, but when you don't have rifles in your team, it's worthless. If you get the choice between these 3 talents, which one should you take?</p>
+
+<p>Let's start out with something simple. Assuming your team does constant damage over time, here's a chart of the relative total damage each talent lets you deal (compared to Damage II):</p>
 <div class="figure">
 <img src="https://i.imgur.com/6cfgGps.png" width="100%"/>
-
 </div>
-<p>Here's a quite zoomed-in view of the cumulative damage each talent deals, relative to Damage 2. If the total relative damage is greater than 1 at some time, that talent is better than Damage 2 for fights of that length.</p>
+
+<p>It's zoomed in quite a bit to show detail. If the total relative damage is greater than 1 at some time, that talent is better than Damage 2 for fights of that length.</p>
+
 <div class="figure">
 <img src="https://i.imgur.com/tRMvBjZ.png" width="100%"/>
-
 </div>
 <p>However, the absolute differences in performance are quite small - here's the same chart, but zoomed out and over 60 seconds.</p>
+
 <p>Just by looking at the talents, it's clear that Damage 2 is best for short fights and Fervor for long/boss fights with it ramping all the way up to a 33% damage boost after 16 seconds. The main purpose of this plot is to show the specific breakpoints when Fervor becomes better than damage 1/2.</p>
+
 <p>Using Damage 2 as the &quot;reference&quot; talent, Fervor starts off dealing 1.1/1.15 = 95.6% of what Damage 2 does. After 8 seconds, it starts increasing, passing Damage 1 9.77 seconds in and Damage 2 at 14.66 seconds in. After the first 20 seconds of the fight, Fervor will have boosted damage by 3.5% overall compared to Damage 2.</p>
+
 <p>Extending this even further out, after 60 seconds, Fervor will be above Damage 2 by 11.66% (the theoretical maximum at infinite time is 1.1^3 /1.15 = 1.1573 = 15.73% more).</p>
-<p>This is all assuming the echelon does <em>constant</em> damage over time, which is obviously not the case in a real battle considering all the different skills out there. To get an idea of how skills change things, here's the simulator numbers for total damage dealt by two arbitrary generic teams:</p>
+
+<p>
+	This is all assuming the echelon does <em>constant</em> damage over time, which is obviously not the case in a real battle considering all the different skills out there.
+	Most buff skills activate ~6 seconds in, so they'll line up decently with the second stack of Fervor and get extra value.
+	To get an idea of how skills change things, here's the simulator numbers for total damage dealt by two arbitrary generic teams:
+</p>
+
 <p>STAR/M4/AN/45/P22/Artillery:</p>
 <table>
 	<thead>
@@ -134,8 +145,8 @@ Fervor becomes better slightly earlier in that case, passing Damage II at 12.29 
 <h2>Additional Notes</h2>
 
 <!-- <em>(2020-11-19 comment)</em> -->
-<p>As an interesting extreme case, the fastest team in the recent <a href="https://twitter.com/GFLcorner/status/1328828784825524225">Grape Juiced speedrun</a> was an M4 exodia with Python, Clear, Contender, and Stechkin buffing with a Warrior fairy.
-While Damage 2 and Fervor talents both worked to achieve a time of 10.57 seconds (killing Grape in 5 M4 cannon shots), Fervor appeared to be required for a faster time (10.50-10.53 seconds).
+<p>As an interesting extreme case, the fastest team in the <a href="https://twitter.com/GFLcorner/status/1328828784825524225">Grape Juiced speedrun</a> was an M4 exodia with Python, Clear, Contender, and Stechkin buffing with a Warrior fairy.
+While Damage 2 and Fervor talents both worked to achieve a competitive time of 10.57 seconds (killing Grape in 5 M4 cannon shots), Fervor appeared to be required for the very top times (10.50-10.53 seconds).
 This strategy required kiting Python for the first 5 or 6 seconds to delay her distribution of the FP and ROF stack from the Warrior skill, so initial DPS was even lower and more of it was concentrated past 6 seconds.
 It's a very specific case, but it means Fervor can pass Damage 2 as early as 10.5 seconds into battle.</p>
 
@@ -145,8 +156,9 @@ The cases I can think of where this may slightly change are:</p>
 <ul>
 	<li>Armor Fairy: may prefer Armor II over a damage talent to better stack armor. May prefer Fervor over Damage II as many armor-stacking battles (Judge) are long.</li>
 	<li>Airstrike Fairy: may prefer Damage II over Fervor as its skill lends itself to shorter fights against weaker enemies. Airstrike has overall very limited use due to increasingly tough enemies, so calibrating this to a specific talent is probably a waste.</li>
-	<li>Parachute Fairy: <a href="criticalII.html">may benefit from Critical II</a> on a duplicate to specialize in debuffed fights. I would still strongly recommend Fervor/Damage II/Damage I on your first 1-4 parachutes.</li>
-	<li>Taunt/Illumination/Beach/Parachute fairy: a dupe copy <i>may</i> be able to use Aim, as the fairies are rather dupable and see good use in RFHG echelons. <a href="aim.html">This evaluation is rather complicated</a> and I certainly would not recommend Aim on your first copy.</li>
+	<li>Parachute Fairy: <a href="criticalII">may benefit from Critical II</a> on a duplicate to specialize in debuffed fights. I would still strongly recommend Fervor/Damage II/Damage I on your first 1-4 parachutes.</li>
+	<li>Taunt/Illumination/Beach/Parachute fairy: a dupe copy <i>may</i> be able to use Aim, as the fairies are rather dupable and see good use in RFHG echelons. <a href="aim">This evaluation is rather complicated</a> and I certainly would not recommend Aim on your first copy.</li>
+	<li>I'm fairly convinced that <a href="aim#assault">Assault is a bad talent</a>, even on ARSMG-oriented fairies like Shield. Don't take it.</li>
 	<li>To get the absolute highest base FP multiplier, a Fervor Artillery fairy could be nice (for stuff like charged shot/nuke RFs). On the other hand, Damage II may be useful for slightly lowering requirements in farming maps like 13-4.</li>
 </ul>
 <p>These are all on the rather extreme end of min-maxing.
