@@ -55,6 +55,8 @@ There may be <em>some</em> opinion here and there, but I will try to keep this a
 	<li><a href="#overcap">Stat overcap</a></li>
 	<li><a href="#mp5">MP5's SPEQ</a></li>
 	<li><a href="#hydras">FP vs ROF buffs on rifles & high armor</a></li>
+	<li><a href="#capes">Capes & their MS penalty</a></li>
+	<li><a href="#additive">Additive vs Multiplicative buffs</a></li>
 </ul>
 <h2 id="hr">There is a 3% minimum hit rate<sup><small><a href="#hr">&#35;</a></small></sup></h2>
 
@@ -412,6 +414,14 @@ It's also worth keeping in mind tile differences - in a RFSMG echelon, MP5's til
 
 <p><strong>Status:</strong> decent AP is so close to (or past) enemy armor values and rifles have such high base FP that it doesn't matter.</p>
 
+<p>A quick summary of how armor works:</p>
+<ul>
+	<li>Enemy armor stat - AP = effective armor (min. 0)</li>
+	<li>Post-buff damage * damage variance - effective armor = final damage (min. 1)</li>
+	<li>Crit damage = final damage * critical damage multiplier</li>
+	<li>If AP>armor, final damage += min(AP-armor,2)</li>
+	<li>Base AP of all dolls: 15</li>
+</ul>
 <p>Fully enhanced and calibrated gold ammo gives +180 AP. On top of the 15 AP all dolls start with, that's 195 armor gone.
 Even without any buffs or fairies, rifles tend to have 120-170 base FP.
 Hydras with their 199 armor are only blocking four points of damage, which is usually less than 3% of their FP.
@@ -428,7 +438,7 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 <p>See also: <a href="https://www.youtube.com/watch?v=cUHNbUeqX3M">a demonstration</a> of various ~200 armor enemies being killed without <em>any</em> AP ammo equipped, with a fairy FP buff equivalent to a ~3-star Artillery Fairy.</p>
 
 <p>
-	(This doesn't mean you should neglect AP ammo - it certainly makes things much easier, but enemies don't suddenly become immortal just because they have a few more points of armor than you can fully pierce.)
+	(This doesn't mean you should neglect AP ammo - it certainly makes things much easier. It's just that enemies don't suddenly become immortal because they have a few more points of armor than you can fully pierce.)
 </p>
 
 <h2 id="capes">Capes can be bad on RFs because of the MS penalty<sup><small><a href="#capes">&#35;</a></small></sup></h2>
@@ -440,13 +450,14 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 </p>
 <ol>
 	<li value="0">Use Calico mod (non-allied nodes). This will cover 99% of such cases.</li>
-	<li>Reset until RNG targeting doesn't hit your rifles.</li>
+	<li>Reset until RNG targeting/AOE effects don't hit your rifles.</li>
 	<li>Rebuild into a Hanyang mod exodia.</li>
 	<li>Use a dupe Calico mod.</li>
+	<li>Just move the rifles anyways as needed. Worked fine on many PL deathstacks (when slow field was active).</li>
 	<li>Craft a 5* Combo and use it to kill the boss before their big attack.</li>
 	<li>Put M500 mod or HS2000 by your rifles to protect them.</li>
 	<li>Retreat your DPS, let SGs tank, and have your HOCs do the damage.</li>
-	<li>Put another team with Auspicious fairy nearby.</li>
+	<li>Put another team with Auspicious fairy nearby and eat its peach.</li>
 	<li>Use 5HG instead.</li>
 	<li>Use ARHG instead.</li>
 	<li>Use ARSMG instead.</li>
@@ -465,6 +476,29 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 	Even if you really need movespeed on your rifles for some reason, there are other options that sacrifice less.
 </p>
 
+<h2 id="additive">X stacks additively<sup><small><a href="#additive">&#35;</a></small></sup></h2>
+
+<p><strong>Status:</strong> X probably stacks multiplicatively.</p>
+
+<p>
+	There are a lot of stacking buffs in this game, often from the same source (examples: Rico's passive, Fervor, Combo's active).
+	While the skills generally don't specify, almost all of these effects stack multiplicatively:
+</p>
+<ul>
+	<li>Past 16 seconds, Fervor multiplies your FP by 1.1<sup>3</sup> for a 33.1% FP buff.</li>
+	<li>With three stacks, Rico buffs her FP by 1.15<sup>3</sup> for a 52% buff.</li>
+	<li>Two stacks of the SF Weaken chip reduce enemy FP to (1-0.12)<sup>2</sup>=77.44% of its base value.</li>
+	<li>Multiple HG FP buff skills multiply.</li>
+	<li>HG FP buff skills multiply with fairy talents and selfbuffs</li>
+</ul>
+<p>
+	Exceptions are possible, but if you aren't sure, it's much safer to assume it's multiplicative.
+	The only thing that comes to my mind as additive are tiles, which are clearly written out on the formation screen anyways.
+</p>
+
+<p>
+	Some things have even been commonly believed to be additive, only for <a href="https://www.youtube.com/watch?v=UApxdBOoc-Q">further testing</a> to reveal it was multiplicative.
+</p>
 </div>
 
 <div class="clearfix"></div>
