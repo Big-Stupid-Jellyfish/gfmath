@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-805N997DPC');
+</script>
+<meta charset="utf-8">
+<meta name="keywords" content="portfolio">
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>Core Rates: additional notes - GFMath</title>
+<link rel="stylesheet" href="../style.css">
+
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+</head>
+
+<body>
+<div id="wrapper">
+
+<header>
+	<a href="../index.html">GFMath</a>
+</header>
+<nav role="navigation">
+	<a href="../index.html"><li>Home</li></a>
+	<a href="https://www.youtube.com/c/BigStupidJellyfish"><li>Youtube</li></a>
+</nav>
+
+<main>
+<h1>Core Rates: additional notes</h1>
+<center><em>By BigStupidJellyfish | Last updated 2021-October-17</em></center>
+
+<p>
+	This page contains some extra commentary on <a href="core-rates">core rates</a> that are less relevant/interesting to most players.
+</p>
+
+<p>
+	My personal data is a bit rough (just going by what's in rescued_doll.csv) and has a few issues:
+</p>
+<ol>
+	<li>
+		I <em>very</em> rarely use Rescue Fairy (SL5).
+		This may slightly increase the core rate on some maps.
+	</li>
+	<li>
+		Runs may very rarely fail or be cancelled partway through.
+		This may slightly decrease the core rate.
+		11-6 is most vulnerable to this, as I've tried a few Rescue setups that ultimately didn't pan out there.
+	</li>
+	<li>
+		Some runs do not have the "mission attempt" recorded.
+		These are excluded as I get the number of runs by counting the number of unique mission attempts.
+		<!-- Not all my runs are recorded, but that shouldn't change drop rates in the ones that are. -->
+	</li>
+	<li>
+		If no dolls drop at all, the run won't be counted.
+		This should be an exceptionally rare occurrence, however.
+		(Example: if the chance for each node & mission clear is equal and 12-4E drops 4.4 dolls/attempt (of 5 checks), the probability of failing all 5 checks in a row is 0.002%. If any specific drop is guaranteed this can't happen.)
+	</li>
+</ol>
+<p>
+	With any luck these factors are minor enough to not have a significant effect and maybe even cancel each other out.
+	But don't take these numbers as exact to the twentieth decimal place or anything.
+</p>
+
+<p>
+	I suspect some incorrect claims on core rates come from a problematic assumption in analyzing collected data - namely that there is a set number of drops per run.
+	Many enemies don't always drop something, so using the number of drops to calculate core rate is incorrect. Some examples based on my own data:
+</p>
+<center>
+<table style="width:100%">
+<tr>
+<th>Map</th>
+<th>Total cores</th>
+<th>Total runs</th>
+<th>Total drops</th>
+<th>Drops/run</th>
+<th>Cores/run</th>
+<th>Cores/5 drops</th>
+<th>Cores/4 drops</th>
+</tr>
+<tr>
+<td>11-5</td>
+<td>554</td>
+<td>1469</td>
+<td>5035</td>
+<td>3.43</td>
+<td>0.38</td>
+<td>0.55</td>
+<td>0.44</td>
+</tr>
+<tr>
+<td>12-4E</td>
+<td>8484</td>
+<td>9465</td>
+<td>41689</td>
+<td>4.40</td>
+<td>0.90</td>
+<td>1.02</td>
+<td>0.81</td>
+</tr>
+</table>
+</center>
+<div class="clearfix"></div>
+<p>
+	Dividing the cores in my data by (total drops/5) on 11-5 matches up with one core rate figure I've heard, but overstates the true core rate by 40-50% as it seems the enemies there have a relatively low chance of dropping anything.
+	I've also heard 1-1.2 commonly cited as the core rate on 12-4E, and assuming 5 drops/run gives a number closer to that.
+</p>
+<p>
+	You can verify this for yourself - try counting the number of dolls you have after a few runs of 12-4E.
+	Sometimes you'll gain 4 dolls, other times you'll gain 5.
+</p>
+
+</main>
+<footer>
+</footer>
+</div>
+</body>
+</html>
