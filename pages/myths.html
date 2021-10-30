@@ -438,6 +438,7 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 <p>See also: <a href="https://www.youtube.com/watch?v=cUHNbUeqX3M">a demonstration</a> of various ~200 armor enemies being killed without <em>any</em> AP ammo equipped, with a fairy FP buff equivalent to a ~3-star Artillery Fairy.</p>
 
 <p>
+	Ultimately, enemy armor is just not a relevant consideration when building high-end RFHG echelons.
 	(This doesn't mean you should neglect AP ammo - it certainly makes things much easier. It's just that enemies don't suddenly become immortal because they have a few more points of armor than you can fully pierce.)
 </p>
 
@@ -499,6 +500,118 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 <p>
 	Some things have even been commonly believed to be additive, only for <a href="https://www.youtube.com/watch?v=UApxdBOoc-Q">further testing</a> to reveal it was multiplicative.
 </p>
+
+<h2 id="nightyang">Hanyang's low accuracy makes her worse at night than at day<sup><small><a href="#nightyang">&#35;</a></small></sup></h2>
+
+<p><strong>Status:</strong> false.</p>
+
+<center>
+<table style="width:60%">
+<tr>
+<th>Stat</th>
+<th>Type88 mod3</th>
+<th>Lee Enfield</th>
+</tr>
+<tr>
+<td>Skill mult</td>
+<td>100% (night)/35% (day)</td>
+<td>75%</td>
+</tr>
+<tr>
+<td>ACC</td>
+<td>69</td>
+<td>78</td>
+</tr>
+<tr>
+<td>Targets hit per shot</td>
+<td>Arbitrarily many</td>
+<td>1</td>
+</tr>
+</table>
+</center>
+
+<p>
+	Here's a very rough, conservative example.
+	Suppose that Hanyang's laser beams attempt to hit exactly two enemies, and you're comparing her with Lee.
+	Relevant handguns are Calico and P22, for a 110% accuracy tile. No fairy. You're shooting scouts.
+</p>
+<ul>
+	<li>Hanyang's DPS is multiplied by 2 (skill) * 2 (targets) * 69*2.1*0.1/(80+69*2.1*0.1) accuracy = 0.6134x base damage</li>
+	<li>Lee's DPS is multiplied by 1.75 (skill) * 1 (target) * 78*2.1*0.1/(80+78*2.1*0.1) accuracy = 0.2974x base damage</li>
+</ul>
+<p>
+	For Lee Enfield to be the better choice here, you'd have to believe that her base stats are ~2x better than Hanyang's (hint: they're not) or that you <em>really</em> care about pre-skill DPS (you probably shouldn't).
+</p>
+<p>
+	So: if you're not fighting a boss or using a totally stupid setup, Hanyang is extremely likely to outperform standard selfbuffing rifles at night. Usually by a significant margin, too.
+</p>
+<p>
+	Comparing Hanyang's night performance to day performance is pointless as you don't get to pick the environment for real content.
+	But if you could, please do seriously ask yourself if a 35% multiplier vs 100% is less of a problem than a slightly lower acc stat at night.
+</p>
+
+<p>
+	(These numbers are without affection. If you really care about DPS minmaxing and you oathed her, she has 80 acc and fits right in with most other rifles.)
+</p>
+
+<!-- I find it rather interesting how many people *completely* ignore accuracy until a unit has even a slightly lower base stat/multiplier/debuff.
+If you don't care about M14's SPEQ, why care about Type88's acc stat? -->
+
+<h2 id="dmgchart">This doll is doing more damage on the chart, so she's better<sup><small><a href="#dmgchart">&#35;</a></small></sup></h2>
+
+<p><strong>Status:</strong> it's possible, but it isn't conclusive evidence.</p>
+
+<p>
+	Some things about the in-game damage bar chart:
+</p>
+<ul>
+	<li>Dolls can interact.</li>
+	<ul>
+		<li>One obvious case of this is with SL8. In normal RFHG echelons, she may appear to underperform by a little when compared to the other rifle.
+			This is expected, and a good thing - her tiles give the other rifle an extra 10% damage, so they will do a bit more relative damage.
+		</li>
+	</ul>
+	<li>It counts damage <em>inflicted</em>. A few implications of that:</li>
+	<ul>
+		<li>It may be underrepresenting contributions against enemies with high evasion/armor/force shields.</li>
+		<li>Shooting partially wounded enemies will contribute less damage, but may give the same outcome as if shot order was flipped.
+			Suppose you have a horde of 100 HP enemies, and two rifles that each deal 75 damage.
+		One rifle hits the back enemy, leaving it at 25 HP (75 damage dealt).
+		Immediately after, the second rifle shoots it, killing it (25 damage dealt).
+		This pattern continues, with a 75/25% damage split.
+		If the second rifle was the one to hit first, it would be a 25/75% split with the same overall outcome.
+		They're contributing equally, perform equally, but one is displayed as being 3 times better than the other.
+		</li>
+	</ul>
+	<li>Battle conditions are very dynamic, so a snapshot at any given time doesn't say much about the whole battle or other battles.</li>
+	<li>Not all damage is created equal - taking out some Doppels is much more important than cleaning up a few Strelets in front.
+		On the other hand, chip damage against that same doppel is worthless if Grape snipes it shortly after.
+	</li>
+	<li>RNG. Damage variance, crits, accuracy, random targeting, kiting variations, and so on all contribute to making battle outcomes vary significantly.</li>
+	<li>Differences may not be significant.
+		Let's say your ARSMG runs into an easy mob fight.
+		Uzi's initial grenade deletes nearly the whole thing, and she ends the fight with 60% of the damage done.
+		This may make her appear strong, but if you even just removed Uzi without replacement, your ARs would still be strong enough to gun down everything a second later with no damage taken.
+		Uzi claimed most of the damage done, but it didn't actually impact the fight outcome.
+	</li>
+	<li>
+		Enemy shields and other weird mechanics (looking at you, Orthrus) aren't represented well.
+		Ever seen NAN% damage when fighting a Patroller?
+		Try plugging that into your comparison calculations.
+	</li>
+</ul>
+
+<!-- <p>
+	While not a trivial process, I recommend something along these lines to better test options:
+</p>
+<ol>
+	<li>Identify the options and the scope you wish to use them in.</li>
+	<li>Find a few enemies you believe best represent this scope and save them to Target Saving</li>
+	<li>With each option, battle these enemies several (5-20) times and record the battle results (time, damage taken, relevant damage contributions)</li>
+	<li>Compare results between options, and pick the one that works best</li>
+</ol> -->
+<!-- Probably not much point to including this.... it seems no one ever goes through the trouble to properly verify teambuilding ideas. -->
+
 </div>
 
 <div class="clearfix"></div>
