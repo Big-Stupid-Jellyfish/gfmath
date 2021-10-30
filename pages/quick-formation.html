@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-805N997DPC');
+</script>
+<meta charset="utf-8">
+<meta name="keywords" content="portfolio">
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>Quick Formation - GFMath</title>
+<link rel="stylesheet" href="../style.css">
+
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+</head>
+
+<body>
+<div id="wrapper">
+
+<header>
+<a href="../index">GFMath</a>
+</header>
+<nav role="navigation">
+<a href="../index"><li>Home</li></a>
+<a href="https://www.youtube.com/c/BigStupidJellyfish"><li>Youtube</li></a>
+</nav>
+
+<main>
+<h1>Quick Formation</h1>
+<center><em>By BigStupidJellyfish | 2021-October-31</em></center>
+
+<p>
+	Earlier, I <a href="ce">wrote about one of the big tools - CE - that Girls' Frontline gives you to evaluate echelons</a>.
+	It, along with the "Analysis of Echelon data" system, is sadly completely useless for evaluating teams.
+</p>
+
+<div class="figure">
+	<img src="images/quick-formation/qf.png" width="50%"/>
+</div>
+
+<p>
+	When editing your formation, there's another interesting button that was somewhat recently added - "Quick Formation."
+</p>
+
+<!-- For certain definitions of recently. Think it's been here for at least a year. -->
+
+<div class="figure">
+	<img src="images/quick-formation/in-game-explanation.png" width="100%"/>
+</div>
+
+<p>
+	Clicking it brings up a list of formation templates it attempts to automatically fill based on what dolls you have available.
+	It works a little differently to the CE/echelon analysis systems, so I'll go over how it works and how good the formations it generates are.
+</p>
+
+<h2 id="general-points">General points<sup><small><a href="#general-points">&#35;</a></small></sup></h2>
+<ul>
+	<li>The system is deterministic. Given your exact armory state, each option will output the same team each time.</li>
+	<li>
+		The system picks dolls with the highest individual CE that fit the team's constraints.
+		To keep some semblance of consistency, I'll be generating teams without any equipment.
+		It will favor dolls that have equipment over those that don't, so a partially equipped armory may give very different results.
+	</li>
+</ul>
+<p>
+	
+</p>
+<div class="figure">
+	<img src="images/quick-formation/no-equipment.png" width="49%"/>
+	<img src="images/quick-formation/ads-equipment.png" width="49%"/>
+</div>
+<center>
+	Left: the default selection (for my armory) with all equipment removed. Right: the result after equipping only ADS.
+	Not pictured: also equipping M4 makes it generate an ADS/M4/AS Val backline.
+</center>
+<div class="figure">
+	<img src="images/quick-formation/admission-of-guilt.png" width="50%"/>
+</div>
+<center>The game admits it uses individual CE.</center>
+<ul>
+	<li>The system has some awareness of skills. A few formations (like the Wide-Area Assault formation) favor dolls with some internally defined class of skill. In that case, it's grenades.
+		That's a promising feature compared to Combat Effectiveness, which cares only for the skill's level.
+	</li>
+	<li>The system does not pick equipment/fairies. You'll have to assign those yourself, although the bulk equipment preset option introduced around the same time is nice (after you define equipment sets for every single doll).</li>
+	<li>It can't take dolls out of logistics or from other echelons. I'm not stopping my logistics for this, so you won't see any of these dolls in my generated teams (unless, like Contender & HS2k, they're a dupe):</li>
+</ul>
+<div class="figure">
+	<img src="images/quick-formation/logistics.png" width="80%"/>
+</div>
+<center><em>My current logistics echelons - these dolls won't be selected no matter what.</em></center>
+
+<p>
+	They're mostly useless dolls, so if anything we're doing the system a favor by removing them as options.
+</p>
+<p>
+	Let's investigate each option, look at what sort of teams it generates, and see if they're any good.
+</p>
+
+<h2 id="balanced">Balanced Formation<sup><small><a href="#balanced">&#35;</a></small></sup></h2>
+<blockquote><p>A standard and well-balanced AR+SMG formation.</p></blockquote>
+<div class="figure">
+	<img src="images/quick-formation/01-balanced.jpg" width="75%"/>
+</div>
+<p>
+	At a glance, this template looks alright. ARSMG echelons have wide utility against early content, and most players build one or two of these before getting into the rifles and handguns.
+</p>
+<p>
+	Without removing dolls, here are the first six teams it generates for me:
+</p>
+<div class="figure">
+	<img src="images/quick-formation/build1f.png" width="100%"/>
+</div>
+<p>
+	For the most part, these aren't entirely unreasonable ARSMG echelons.
+	You could probably use any of them against easier unarmored enemies (mid story or early event) and do alright, especially with solid equipment and a fairy.
+	On the bright side:
+</p>
+<ul>
+	<li>It places AUG/M4A1/Angelica correctly, and its pos 1/7 AR placements are reasonable for tile coverage.</li>
+	<li>SMG placement is usually reasonable (not putting JS 9/X95/Shrimp/Uzi in the middle).</li>
+	<li>ARSMG echelons usually don't matter that much so it's hard to go massively wrong here.</li>
+</ul>
+<p>
+	But there are also a number of issues.
+</p>
+<ul>
+	<li>In some (but not all!) situations, you may want <a href="2v3ar">a FP buffing handgun</a> for your backline. This will never generate such a team.</li>
+	<li>It picks a lot of direct-fire offtanks. I don't recommend those in most cases because they need good equipment to fix their accuracy and lose effectiveness over time as they take damage.</li>
+	<!-- <ul>
+		<li>Even within the subclass, C-MS <a href="cms-dps">does not work</a> as one. Use her for tanking.</li>
+	</ul> -->
+	<li>It also will double up on the maintanks (JS 9+RO, MP7+Dorothy, UMP45+C-MS). That's alright in some situations, but I wouldn't default to it.</li>
+	<li>It can pick grenade ARs (Sopmod, Zas), but misses 416 mod for some reason. If you need a grenade and aren't using 416, you're <em>probably</em> doing something wrong.</li>
+	<!-- <li>JS 9 & X95 have decent ROF tiles, but do very little for AUG/Angelica. If you need this many ARSMG teams and don't have specific requirements they're probably better separated.</li> -->
+	<li>I'd usually use Dorothy to complement a maintank SMG, so putting her in the center is odd.</li>
+	<li>OTs-14 and AS Val are night ARs. They should not be used at day. <a href="https://gfl.matsuda.tips/doll/g135#notes">Not even alongside Shrimp</a>.</li>
+	<li>Force shielders are overall a bit niche. Even then, I'd almost always prefer MP5 mod (skill) and often G36c (tiles) over Thompson.</li>
+	<li>My mod1 UMP45 dupe would generally be a much better pick than many of the SMGs in echelons 4 onwards.</li>
+	<li>It takes generating 5 teams for ADS to get picked.</li>
+</ul>
+
+
+<h3>Are any of these usable?</h3>
+<p>
+	As-is, I'd only really be willing to deploy Echelon 3 as a sort of backup boss team (if that even makes any sense). Echelon 1 is good if you replace AS Val, and M4/STAR are strong enough that they'd probably carry anyways.
+	Either way, you'd be better off assembling your own ARSMG echelons than using this.
+</p>
+<!-- You could argue that echelon 1 (even with as val) > echelon 3. I'm speaking more from a "usable conceptually, how sane is the team" perspective.
+If you want to talk pure effectiveness these are all awful just use type88/grape/ksvk/a gunboat or something lol -->
+
+<h2 id="ap">Specialized Armor-Piercing Formation<sup><small><a href="#ap">&#35;</a></small></sup></h2>
+<blockquote><p>A standard RF+HG formation with good armor-piercing capability and damage output but relatively low survivability.</p></blockquote>
+<div class="figure">
+	<img src="images/quick-formation/02-ap.jpg" width="75%"/>
+</div>
+<p>As promised, this template looks normal for RFHGs.</p>
+<div class="figure">
+	<img src="images/quick-formation/build2f.png" width="100%"/>
+</div>
+<p>But red flags start popping up rather fast:</p>
+<ul>
+	<li>Why is Python in the frontlines of Echelon 1?</li>
+	<li>Why isn't R93 on 7 and M14 on 1? R93 will likely deal more damage so you'd want more tiles on her, and the CDR tiles are better that way.</li>
+	<li>Why not add some crit rate (Python/Five-Seven/PPK) to Echelon 2 to maximize your DPS?</li>
+	<!-- <li>This probably isn't a big deal, but Jill's long ICD makes me a bit more interested in setting her up with the full 30% CDR tiles.</li> -->
+	<li>Buffers are almost always better than debuffers or odd utility. Welrod/PA-15/P30 don't fit, and MP-446 is only passable.</li>
+	<li>Do you really want IWS firing once every two-and-a-half seconds? Twisting your echelon to include 4 ROF buffers for her is overkill, but at least include something!</li>
+	<li>Why does echelon 5 have Strawberry but not Python?</li>
+	<li>Grape is amazing against many late-game enemies, but is lackluster against more basic stuff.</li>
+	<li>If I had to use PA-15, I'd rather put her in the back and use two HGs with Mk23-like tiles in the front for full tile coverage.</li>
+	<li>M200+Grape is a classic combo, but MP-446 and P30 are far from ideal. M200 also has limited use outside of night Paradeus/Archers.</li>
+	<li>Contender can be useful in specific situations (if you need retargeting/are fighting bosses) but isn't something I'd slap in a general echelon.</li>
+	<li>Mosin and QBU are somewhat questionable for general use compared to standard selfbuffers (Rico/Type88/SL8/Lee/SVD/etc)?</li>
+	<li>Why doesn't every team have a grape and P22? I have enough to fill the teams.</li>
+	<ul>
+		<li>In fact, where's P22?</li>
+	</ul>
+</ul>
+<p>It also doesn't know about the ROF cap, so depending on your available dolls it may generate stuff like this:</p>
+<div class="figure">
+	<img src="images/quick-formation/overcap.png" width="100%"/>
+</div>
+<p>
+	And bringing WA2000 to 201 ROF (effectively 116) isn't exactly the best strategy out there.
+	(You can see some similar issues with its ARSMG echelons, like pairing RO+JS 9+Angelica.)
+</p>
+<h3>Are any of these usable?</h3>
+<p>
+	Echelon 1 is reasonable <em>after</em> swapping SAA & Python.
+	Echelons 3/5/6 have Grape so they'll kill doppels fine.
+	Otherwise, not really.
+	If positioning was a lot more cursed I'd think we were CE stacking for Core 8 considering the dolls used and general lack of synergy.
+</p>
+<h2 id="burst">Specialized High-Burst Formation<sup><small><a href="#burst">&#35;</a></small></sup></h2>
+<blockquote><p>A standard MG+SG formation with high burst damage and survivability but consumes a lot of resources.</p></blockquote>
+<div class="figure">
+	<img src="images/quick-formation/03-burst.jpg" width="75%"/>
+</div>
+<p>
+	First: 2SG is mostly for <em>specific</em> enemies or purposes (Judge, Pyxis, M500 mod shieldspam).
+	In many of those cases you should start with the armor requirement and work backwards.
+	This formation type has lower burst damage than 3MG1HG1SG/4MG1HG echelons.
+</p>
+
+<div class="figure">
+	<img src="images/quick-formation/build3f.png" width="100%"/>
+</div>
+<ul>
+	<li>
+		I'd forgive it more if this was after the first few echelons, but it's not picking MGs for burst damage at all. QJY, Lewis, Negev, and HMG21 are all second volley+ MGs, often with questionable value even then.
+		They're more reasonable picks for armor stacking, but the description makes no mention of that as a priority.
+	</li>
+	<li>Where's Kord? M1895 CB? LTLX?</li>
+	<li>Why is it picking MG4 (pre-mod)? Bren? UKM-2000!?</li>
+	<li>Putting both SGs on 3/9 can be a little questionable as you'll often have to kite one to stop melee units from passing through middle.</li>
+	<ul>
+		<li>This hard positioning "requirement" makes many SG tiles (which are usually much more important than non-armor MG tiles) worse. See: SAT8 in #1, KSG in #2, Dana in #3, Saiga in #4, M37 in #5, and Type97S in #6.</li>
+	</ul>
+</ul>
+<h3>Are any of these usable?</h3>
+<p>
+	For Pyxis/Judge, these are all probably usable given a strong enough fairy.
+	Those fights are trivial with a strong enough fairy and 2 SGs, so that's not saying much.
+	You can also usually kill those with significantly cheaper teams (e.g., M4+2HG+2SG or 1MG+2HG+2SG).
+	<!-- Echelon 1 may be able to handle the Theater 5/6 SWAP SF stack. -->
+</p>
+<h2 id="lw">Light-Weight Mixed Formation<sup><small><a href="#lw">&#35;</a></small></sup></h2>
+<blockquote><p>A mixed MG+SG+HG formation with relatively low resource consumption. Damage output is increased at the cost [of survivability.?]</p></blockquote>
+<div class="figure">
+	<img src="images/quick-formation/04-light.jpg" width="75%"/>
+</div>
+<p>
+	No echelon with three MGs can be called light-weight. Adding a shotgun makes it even worse.
+	Low resource consumption is 5HG.
+</p>
+<div class="figure">
+	<img src="images/quick-formation/build4f.png" width="100%"/>
+</div>
+<ul>
+	<li>Using P22 a lot is nice, but placing her on 5 is not.</li>
+	<li>While some cases are debateable, Echelon 6 has clearly incorrect MG tiles. M2HB and Ameli can be swapped at no cost.</li>
+	<li>MG selection is about as bad as the first MGSG preset. MG4 even appears two teams earlier!</li>
+	<li>Still missing many of the best MGs & SGs.</li>
+	<li>Still not using 6 P22.</li>
+</ul>
+<h3>Are any of these usable?</h3>
+<p>
+	If you have enough armor, any team can work.
+	If you slide P22 down Echelon 1 is passable.
+	Otherwise, no, these all suck as-is.
+	We're long past the AW/DD days.
+</p>
+<h2 id="hs">High-Speed Mixed Formation<sup><small><a href="#hs">&#35;</a></small></sup></h2>
+<blockquote><p>A slightly uncommon but versatile mixed formation that allows for flexible adjustments depending on unit buff tiles[.?]</p></blockquote>
+<div class="figure">
+	<img src="images/quick-formation/05-speed.jpg" width="75%"/>
+</div>
+<p>
+	Compared to the balanced preset, this moves the SMG from 8 to 2 and allows for HGs on 1/2/7.
+	However, it produces nearly identical teams with only slight rearrangements:
+</p>
+<div class="figure">
+	<img src="images/quick-formation/build5f.png" width="100%"/>
+</div>
+<ul>
+	<li>Not a single HG was picked for the first 6 teams generated, probably because of their low individual CE. It would have been neat to see it include HP-35/P22/C-93/etc, but you'd have to put almost all your ARs in other teams or equip just your HGs to see that.</li>
+	<li>SMG placement got worse. Uzi should not be in the center.</li>
+	<li>As these are still completely generic ARSMG echelons, there's little reason for a b-formation.</li>
+	<li>ARSMG echelons are still mostly useless.</li>
+</ul>
+<h3>Are any of these usable?</h3>
+<p>
+	This is the "balanced" preset but worse. I would not deploy any of these teams.
+</p>
+
+<h2 id="wa">Wide-Area Assault Formation<sup><small><a href="#wa">&#35;</a></small></sup></h2>
+<blockquote><p>A formation built around grenadier AR units most effective against large swarms of tightly-packed enemies.</p></blockquote>
+<div class="figure">
+	<img src="images/quick-formation/06-area.jpg" width="75%"/>
+</div>
+<p>
+	We now have the balanced preset, but with the possibility of a HG on 4 and a focus on grenades.
+</p>
+<div class="figure">
+	<img src="images/quick-formation/build6f.png" width="100%"/>
+</div>
+<ul>
+	<li>It gets desperate for grenadiers fast - G3 appears as soon as echelon 2, echelon 3 is just awful, and it starts grabbing my 8-1N Zas copies to fill Echelon 4.</li>
+	<li>Despite being <em>at least</em> somewhat better than an unleveled AR70, 416 mod never got picked.</li> <!-- is joke -->
+	<li>Grenades do more damage to large groups and enemies with lots of links.
+		After a grenade hits, you have smaller groups and less links.
+		Adding more grenades will not do as much.
+		Having three grenade ARs in your backline is just stupid.
+	</li>
+	<ul>
+		<li>Disclaimer: against sufficiently large nightmare/zombie hordes, multiple grenades may still be good due to the sheer volume of enemies.
+			That's a much more advanced enemy type than what these formations will get you to so I'm not valuing that as much.
+		</li>
+	</ul>
+	<li>Its fallback 2AR1HG backline isn't any better - you're still doubling down on a pure grenadier setup.</li>
+	<li>If there's a desperate need for more individual grenade damage, a pure FP buffer like Grizzly will probably be better than Python (setting aside tile differences, like here where it picked MP7 to put on 8).</li>
+	<li>If you really want AOE, where's Vector? Why Shrimp?</li>
+	<li>For real AOE just use Type88/KSVK/Kord/HOCs.</li>
+</ul>
+<h3>Are any of these usable?</h3>
+<p>
+	Multiple AR grenadiers are usually bad.
+	Not using 416 is bad.
+	Using FP HGs to buff AR grenades is often pointless.
+	Do not use these echelons.
+</p>
+<h2 id="night">Specialized Night Battle Formation<sup><small><a href="#night">&#35;</a></small></sup></h2>
+<blockquote><p>A formation in which HGs support the damage-dealing ARs by providing buffs and night vision. Suitable for most Night [missions.?]</p></blockquote>
+<div class="figure">
+	<img src="images/quick-formation/07-night.jpg" width="75%"/>
+</div>
+<p>
+	Balanced + option for HG on 4 + option for HG on 8.
+	Nothing too crazy.
+</p>
+<div class="figure">
+	<img src="images/quick-formation/build7f.png" width="100%"/>
+</div>
+<ul>
+	<li>It doesn't seem to place any extra weight on night skills - 9A-91, Groza #2, T91, or even <a href="tkb-408">TKB</a> don't appear here.
+	AS Val shows up in the first team, but she did that in the day presets too.</li>
+	<li>Why no AS Val+Python team?</li>
+	<li>Especially as there aren't RF CDR tiles in play, Jill's ICD is a bit on the long side.</li>
+	<li>PEQs hurt crit rate, so AK-12 is not as nice here.</li>
+	<li>Sopmod is at a huge advantage with her double scope slots. I'd generally pick her much sooner than AK-12 and AN-94 at night.</li>
+	<li>Armor shows up more at night so K2 is odd. If you think we're still in SC, using G36/having a backline HG is odd.</li>
+	<li>Echelon 5: Zas implies AOE/mobs, Contender implies boss.</li>
+	<li>If we assume we're fighting a boss with Echelon 5 (because of Contender), 64 Shiki gives a 55% damage buff to herself, MP7 and a maintank Dorothy at the end of her skill. At least put a Shrimp there or something.</li>
+	<li>As her tile isn't buffing a molotov or anything substantial, I'm not a huge fan of Python in Echelon 2.</li>
+	<li>While she's generally better in RFHG echelons, I'd probably put Grizzly at least in my top 6 night ARSMG handguns. Not seeing her at all is odd.</li>
+	<!-- <li>Now it doesn't pick ADS until the 6th echelon.</li> -->
+</ul>
+<h3>Are any of these usable?</h3>
+<p>
+	Perhaps one day Quick Formation will learn what night skills are.
+	At that point, you can continue to avoid it because it'll pick TKB.
+	Until then, you can also ignore it because it's just more ARSMGs with a handgun in the back which usually isn't anything special.
+</p>
+<h2 id="sniping">Basic Sniping Formation<sup><small><a href="#sniping">&#35;</a></small></sup></h2>
+<blockquote><p>The inclusion of SMGs lends the formation more versatility and is particularly helpful in early-game.</p></blockquote>
+<div class="figure">
+	<img src="images/quick-formation/08-basicsniper.jpg" width="75%"/>
+</div>
+<p>
+	That description would be a candidate for my <a href="myths">collection of myths</a>, except for the part where everyone already knows it's wrong.
+	Once you have your starter ARSMG to lv90/x5, you can just CR or drag up a functional RFHG echelon and kite.
+	Add taunt if you need to stall for a bit more DPS.
+</p>
+<div class="figure">
+	<img src="images/quick-formation/build8f.png" width="100%"/>
+</div>
+<ul>
+	<li>2SMG1HG2RF is not an echelon type. If you really need the tanking capabilities of a specific SMG, use that SMG and otherwise follow 2RF+3HG-style formations.</li>
+	<li>If you're really going to slap in random SMGs, why not use Lusa at least once? Her tiles are cool.</li>
+	<li>If you're going to use a force shielder in a RFSMG, why on earth would you not start with MP5 mod?</li>
+	<li>I know it's CE-based, but the obsession with Henrietta is strange. I don't even have her skill leveled much.</li>
+	<li>Despite the option to have a HG on 8 here, it never picks one. 2RF2HG1SMG isn't always great, but it's better than 2RF1HG2SMG.</li>
+</ul>
+
+<h2 id="hb">High-Burst Sniping Formation<sup><small><a href="#hb">&#35;</a></small></sup></h2>
+<blockquote><p>A formation built around RF units with high burst damage. Most effective against powerful elite enemies.</p></blockquote>
+<div class="figure">
+	<img src="images/quick-formation/09-burstsniper.jpg" width="75%"/>
+</div>
+<p>
+	A normal RFHG formation but with skillshots.
+</p>
+<div class="figure">
+	<img src="images/quick-formation/build9f.png" width="100%"/>
+</div>
+<ul>
+	<li>Bamboo/nuke-style rifles are for specific enemies. Build specific teams to fight those specific enemies, don't rely on templates and CE-sorted selections.</li>
+	<li>As with the grenadiers, doll quality drops quickly. JS05 should never be picked, and selection after that isn't much better (not counting Rico as "after;" Springfield/TAC-50 are at least decent).</li>
+	<li>For the biggest nukes, use damage-buffing skills. Welrod, Sei, PA-15, and P30 do not contribute to the team.</li>
+	<li>Most skillshots can't crit so Px4 Storm is not as strong here (though her tiles may somewhat make up for this as long as you value both rifles similarly).</li>
+	<li>While it seems to know not to pick Grape for "elite" enemies, many of the enemies that seem "elite" to new players actually aren't and Grape will annihilate them (e.g., Doppels/Hydras/Minotaurus).</li>
+	<li>Actual elites (Uhlans, bosses) are often better handled with conventional selfbuffers.</li>
+</ul>
+
+<h2 id="conclusion">Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	The game can't evaluate echelons properly, and it can't build them right either.
+	It's best to learn how to do so yourself - <a href="https://gfl.matsuda.tips/blog/#formation-building-echelons">here's one set of teambuilding guides</a> if you're just getting started.
+	You should consider the map, enemies, fairies, and what the team needs to do.
+	Generic presets can't take that into account.
+</p>
+
+<p>
+	If you absolutely must use this, the "balanced" and "specialized armor-piercing" formations generate teams the closest to what you may actually want to use.
+</p>
+
+<!-- <p>
+	It never seems to pick Type88, so killing deathstacks with any of its generated teams will likely be a struggle.
+</p> -->
+
+<!--
+<p>
+	While building teams without a purpose in mind is mostly nonsense, here's my take on a few somewhat better variations of each preset's idea (sticking to its tile/class constraints, which hurts many of them):
+</p>
+<div class="figure">
+	<img src="images/quick-formation/suggestions.jpg" width="100%"/>
+</div>
+<p>
+	These are still nowhere near perfect and many of the templates are simply not sensible.
+	A few variations were made just to keep things different.
+	Please don't deploy them as presented without good reason.
+	Lusa is only included in the "Basic sniping formation" to match the system's insistence on 2SMG - otherwise, Px4/P22 are usually much better.
+</p>
+-->
+
+<p>
+	Here's about all you can reasonably say for preset echelons:
+</p>
+<ul>
+	<li>Your first team should be an ARSMG with M4A1, ST AR-15, M4 SOPMOD II, RO635, and an offtank SMG of your choice (Skorpion/Vector/Uzi).</li>
+	<li>Your second team should be a RFHG with two selfbuffing rifles (M14, Lee, WA2000, K31, SVD, Tabuk,...) and three buffing handguns (Grizzly, K5, Mk23, PPK, Calico, P22,...).</li>
+	<li>Soon after that you should switch to raising useful units for specific situations rather than full echelons (416 mod/K11/Uzi mod for dragging, Grape, Type88, handguns, and so on).</li>
+	<li>For Judge/Pyxis, bring 2SG+whatever you need to get enough armor & kill them.</li>
+	<li>If you have a specific enemy you can't figure out how to kill:</li>
+	<ul>
+		<li>Save it to Target Saving so you can try things out at no cost</li>
+		<li>See if you can find demonstrations or similar examples on Youtube</li>
+		<li>Craft more fairies</li>
+		<li>Ask online for advice (<a href="https://old.reddit.com/r/girlsfrontline/search/?q=Weekly+Commanders+Lounge+author%3AAutoModerator&sort=new&restrict_sr=on&t=month">Reddit megathreads</a> or #gf-ask-help in <a href="https://discord.gg/gfen">the official discord</a> are popular places).</li>
+	</ul>
+</ul>
+
+<p>
+	There are many other common echelon types Quick Formation doesn't even attempt to cover.
+	A few examples:
+</p>
+<ul>
+	<li>Deagle/Python 5HG - for cheap clearing, boss killing, and more</li>
+	<ul>
+		<li>Additionally, all sorts of partial 0-2 RF/AR+0-4 HG farming echelons</li>
+	</ul>
+	<li>Type88-based deathstack killer, optional Grape or KSVK</li>
+	<ul>
+		<li>Critical disclaimer: deathstacks almost always require hyper-specialized teams. There is no one-size-fits-all anti-deathstack echelon.</li>
+	</ul>
+	<li>MG/HG "gunboat"/anti-Typhon formations</li>
+	<li>ROF/multihit ARSMG</li>
+	<li>FP-based (night) ARSMG for light armor and other enemies</li>
+	<li>Various Python-centric echelons</li>
+	<li>All sorts of situational mixed formations (RF/MG, AR/SG, AR/RF, etc)</li>
+	<li>Double Jupiter or M4 exodia</li>
+	<li>Red bean defusal squad</li>
+	<!-- <li>Bleeding Jane RFHG</li> -->
+</ul>
+
+</main></div></body></html>
