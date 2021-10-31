@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-805N997DPC');
+</script>
+<meta charset="utf-8">
+<meta name="keywords" content="portfolio">
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>Type88: Formation and Skins - GFMath</title>
+<link rel="stylesheet" href="../style.css">
+
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+</head>
+
+<body>
+<div id="wrapper">
+
+<header>
+<a href="../index">GFMath</a>
+</header>
+<nav role="navigation">
+<a href="../index"><li>Home</li></a>
+<a href="https://www.youtube.com/c/BigStupidJellyfish"><li>Youtube</li></a>
+</nav>
+
+<main>
+<h1>Type88: Formation and Skins</h1>
+<center><em>By BigStupidJellyfish | 2021-October-15</em></center>
+
+<!-- The term doesn't really come up in the writeup so I'll mention it here - hanyangle = hanyang angle = angle of fire from different positions in the formation. Pretty funny, right? -->
+
+<p>
+	Today, I'd like to investigate two ideas about Type88's mod:
+</p>
+<ol>
+	<li>The bullet positioning may change for some of her skins, resulting in more/less enemies being pierced.</li>
+	<li>Typical RFHG formations have a rifle on positions 1 and 7. Type88's pierce may be (on average) better suited for most enemies on one of these over the other.</li>
+</ol>
+<p>
+	The most straightforward and useful way of investigating these is to do some tests, so on we go!
+	We'll be checking three main metrics to see if she does better or worse overall:
+</p>
+<ol>
+	<li>Clear time. Pretty self-explanatory, faster is generally better.</li>
+	<li>Total team damage taken. Less is more.</li>
+	<li>Damage contribution. This has the potential to get weird if corpsewhipping/overkill becomes a problem, but otherwise helps tell us how much of the battle Type88 is responsible for.
+		If we see her damage contribution go up significantly with a specific skin or from a specific position, it's probably better for her.
+	</li>
+</ol>
+<p>
+	No singular metric is conclusive, they all have their own problems, and are at least somewhat random so we'll need to look at the overall picture rather than any one test result.
+</p>
+
+<h2 id="skin">Skin<sup><small><a href="#skin">&#35;</a></small></sup></h2>
+<p>
+	Going in, I don't expect this to be a massive difference.
+	I used her default mod3 art for my first Polarized Light ranking run, and everything went fine.
+	I used her default art for the second run, and everything <a href="https://i.imgur.com/deBgWg6.png">also went fine</a>. <!-- Though I did score a bit better. -->
+	<!-- Additional note... deathstacks were pretty easy either way tbh. If I had to guess having both grape+hanyang oathed is OP. -->
+	If you're losing a battle, it's probably not because of the skin one of your dolls is using.
+</p>
+<!-- Even with the 1f faster 416 childern's day nade. You're probably doing something you shouldn't be if that matters. -->
+
+<p>
+	Personal anecdotes aside, let's get to the test results. First set of experiments: all at night, Type88 paired with WA2000.
+	Type88 is still <a href="daynyang">quite good at day</a>, but having her carry more will make it easier to detect differences in her performance.
+</p>
+
+<div class="figure">
+	<img src="images/hanyangle/skin-1.png" width="100%"/>
+</div>
+
+<p>
+	And two more with Taunt active:
+</p>
+
+<div class="figure">
+	<img src="images/hanyangle/skin-2.png" width="100%"/>
+</div>
+<p>
+	In general, it looks like there is some chance her performance with <a href="https://iopwiki.com/images/9/94/Hanyang_Type_88_costume1.png">East Lake Lotus</a> is a little better than the other two skins.
+	Using her mod skin as a reference, here's the average changes in each metric by skin:
+</p>
+<center>
+	<table style="width:100%">
+	  <tr>
+		<th>Skin</th>
+		<th>Clear time</th>
+		<th>Damage taken</th>
+		<th>Damage contribution</th>
+	  </tr>
+	  <tr>
+		<td>Mod art</td>
+		<td>N/A (+0%)</td>
+		<td>N/A (+0%)</td>
+		<td>N/A (+0%)</td>
+	  </tr>
+	  <tr>
+		<td>East Lake Lotus</td>
+		<td><font color="2aa889">-1.5%</font></td>
+		<td><font color="2aa889">-5.9%</font></td>
+		<td><font color="2aa889">+3.2%</font></td>
+	  </tr>
+	  <tr>
+		<td>Default art</td>
+		<td><font color="2aa889">-0.1%</font></td>
+		<td><font color="2aa889">-4.0%</font></td>
+		<td><font color="2aa889">+1.9%</font></td>
+	  </tr>
+	</table>
+</center>
+<p>
+	which <em>could</em> suggest her East Lake Lotus skin is marginally better (which lines up with the usual claims I hear). <!-- !! Not that any specific numbers are ever provided! -->
+	These are very slight differences, and are very susceptible to RNG - nothing like <a href="vector-vs-uzi">some other sets of tests</a> where many of the box plots had no overlap at all due to the scale of the performance differences.
+	I'm not yet convinced, so let's get a new echelon, new enemies, and see if we observe the same stuff.
+</p>
+<div class="figure">
+	<img src="images/hanyangle/skin-3.png" width="100%"/>
+</div>
+<div class="figure">
+	<img src="images/hanyangle/skin-4.png" width="100%"/>
+</div>
+<center>
+	<table style="width:100%">
+	  <tr>
+		<th>Skin</th>
+		<th>Clear time</th>
+		<th>Damage taken</th>
+		<th>Damage contribution</th>
+	  </tr>
+	  <tr>
+		<td>Mod art</td>
+		<td>N/A (+0%)</td>
+		<td>N/A (+0%)</td>
+		<td>N/A (+0%)</td>
+	  </tr>
+	  <tr>
+		<td>East Lake Lotus</td>
+		<td><font color="2aa889">-1.2%</font></td>
+		<td><font color="c23127">+4.1%</font></td>
+		<td><font color="c23127">-0.4%</font></td>
+	  </tr>
+	  <tr>
+		<td>Default art</td>
+		<td><font color="c23127">+0.3%</font></td>
+		<td><font color="c23127">+6.8%</font></td>
+		<td><font color="2aa889">+0.3%</font></td>
+	  </tr>
+	</table>
+</center>
+
+<p>
+	This time, there's no overall winner.
+	More tests and study would be helpful, but so far <strong>I see no strong evidence to suggest changing Type88's skin gives a significant performance advantage</strong>.
+	Even if there is a functional difference and one of them is better, the difference is miniscule.
+	It will not matter for 99.95% of cases.
+	Feel free to use the skin you like best.
+</p>
+
+<p>
+	Note: in the future Hanyang will get a free christmas skin.
+	I may add tests with that in the future.
+</p>
+<!-- She also has an April Fool's chibi. Chances are slim of that ever getting added here. -->
+
+<!-- If you care that much, you'll get ***far*** more out of oathing her for +10% stats (if you haven't already) -->
+<!-- May update this section in the future with more stuff. -->
+
+<p>
+	Extra: if you'd like to see what test results look like when there certainly is no difference (and compare those to this), <a href="g41-vs-g41">check out this page</a> where I compare G41 to G41.
+	<!-- If you want to see significant differences, <a href="vector-vs-uzi">see this Vector/Uzi comparison</a>. --> <!-- already referenced -->
+</p>
+<h2 id="position">Echelon position<sup><small><a href="#position">&#35;</a></small></sup></h2>
+<p>
+	IMPORTANT: the laser beam visual has nothing to do with its actual target.
+	Damage is dealt to all enemies along and beyond the line between Type88 and her target.
+	A future client update will correct the visuals, but as of writing this, it's not on EN.
+	See the following video for a demonstration with updated visuals.
+</p>
+
+<center>
+<iframe width="640" height="360"
+src="https://www.youtube.com/watch?v=2Jj_k79TIaw">
+</iframe>
+</center>
+
+<p>
+	It's possible to handwave all this and just say "test things out for your specific fight."
+	You could also argue that all skills should always be on manual, because there are some cases where you may want to slightly delay some activation and manual skills lets you perfectly control those.
+	Neither of those are ways 99.9% of players play the game, so let's see if there are any general trends and recommendations to be made.
+</p>
+
+<p>
+	As for the experiment.
+	Step 1: find a rifle that has identical tiles so we don't have that as a confounding variable when we swap their places.
+	Options: Gepard M1, SRS, TAC-50, Mk 12, M82A1, KSVK, Falcon, M200, and Zas M76.
+	I <em>really</em> don't care about a 3% difference in RF tiles so I'll be pairing her with SRS for these fights.
+	Mk 12 could work but she restricts HG choice a bit more as a half ROF selfbuffer.
+</p>
+
+<p>
+	Step 2: take a bunch of fights that seem at least moderately relevant to endgame content and see what happens.
+</p>
+
+<div class="figure">
+	<img src="images/hanyangle/position-1.png" width="100%"/>
+</div>
+<ul>
+	<li>Pos7 may be better in both cases, primarily from clear times. The other metrics <em>could</em> be consistent with this, but not by enough to be meaningful.</li>
+</ul>
+
+<p>
+	To avoid unfair comparisons against melee units, I'll switch out Stechkin for Px4 Storm in the next tests.
+	With a Calico/P22 frontline, melee units like Zombies and Guards could walk up to Hanyang on 7 and make her switch to melee mode.
+	This wasn't a problem against the Scouts/Strelets, but came up enough against the next few to be worth changing.
+</p>
+
+
+<div class="figure">
+	<img src="images/hanyangle/position-2.png" width="100%"/>
+</div>
+<ul>
+	<li>Pos1 may be better against the Guard/Brute and Prowler/Vespid groups</li>
+	<li>Performance looks similar against the zombie horde</li>
+</ul>
+<p>
+	For another non-standard comp, I'll use Type88/Mk 12/P22/Five-Seven/Px4 Storm for the next set.
+	This makes CDR tiles exactly equal, covers Type88 from both positions, and Mk 12's partial ROF buff will keep their shots far apart.
+</p>
+<div class="figure">
+	<img src="images/hanyangle/position-3.png" width="100%"/>
+</div>
+<ul>
+	<li>Pos7 seems to have a significant advantage against the Guard/Striker group</li>
+	<li>Pos1 may be better against the Guard/Jaeger and Scout/Brutes</li>
+	<li>It looks very equal against the Brutes</li>
+</ul>
+<h2 id="conclusion">Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	As far as I can see, concerns about Hanyang's skins are much ado about nothing.
+	Maybe her Christmas skin will be different, but it's not something to worry about at the moment.
+</p>
+
+<p>
+	Much more interesting is her formation placement.
+	In a very rough sense, I'd put the score somewhere about 4-3-2 (favoring pos1-pos7-equal).
+	As there do appear to be substantial performance differences but no obvious way to distinguish them beforehand, this is something you may be best off testing on a case-by-case basis when dealing with particularly high-requirement battles.
+</p>
+
+<p>
+	Some topics for further investigation:
+</p>
+<ul>
+	<li>Putting Hanyang on position 4. This gets a bit harder to test when trying to keep tiles equal between positions.</li>
+	<li>Intentionally triggering Hanyang's melee mode. This gets more into the range of active in-battle controls, making it much harder to analyze.
+		All I know right now is it was pretty handy on one of the triple Typhon deathstacks in PL.</li>
+	<li>Kord positioning. Her piercing acts similarly, but MGSG echelons use very different formations and go against different types of enemies.</li>
+</ul>
+
+</main></div></body></html>
