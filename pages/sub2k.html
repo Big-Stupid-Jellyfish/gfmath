@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-805N997DPC');
+</script>
+<meta charset="utf-8">
+<meta name="keywords" content="portfolio">
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>SUB-2000 Analysis - GFMath</title>
+<link rel="stylesheet" href="../style.css">
+
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+</head>
+
+<body>
+<div id="wrapper">
+
+<header>
+<a href="../index">GFMath</a>
+</header>
+<nav role="navigation">
+<a href="../index"><li>Home</li></a>
+<a href="https://www.youtube.com/c/BigStupidJellyfish"><li>Youtube</li></a>
+</nav>
+
+<main>
+<h1>SUB-2000 Analysis</h1>
+<center><em>By BigStupidJellyfish | 2021-October-15</em></center>
+
+<blockquote><p><strong>Final Glory</strong> ICD 5s/CD 12s</p>
+
+	<p>
+	  For every 2- and 3-star Doll in the echelon, add 5% to the firepower, rate of fire, accuracy, evasion, and armor of all 2- and 3-star Dolls for 8 seconds.
+	  The bonus increases with the number of 2- and 3-star Dolls present, to a maximum of 25%.
+	</p>
+</blockquote>
+
+<p>Tiles: 20% FP, 20% ACC, 10% crit rate. Covers all from 8.</p>
+
+<p>
+	As (one of) the final login doll(s), SUB-2000 actually comes with a unique skill.
+	She's a bit like a HG disguised as a SMG - her tiles buff all types, and her skill isn't far off from a typical HG buff skill.
+	To put the legions of generic login dolls to use, her skill encourages building a full team of them.
+</p>
+
+<p>
+	Actual motivation - she's not <a href="https://hycdes.com/pages/GFT_Echelon.html">on Hycdes</a> at the time of writing, so here's some sort of DPS analysis/charting for reference.
+</p>
+
+<h2 id="level1">Level 1<sup><small><a href="#level1">&#35;</a></small></sup></h2>
+<p>
+	The eternal question with Sub2k is this: is this 2/3-star echelon <em>more effective</em> than a similar 4/5-star echelon for some purpose?
+	One simple way of looking at this is to gauge the DPS increase she offers.
+	As she's basically a handgun, I'll consider P22 as the alternative choice.
+</p>
+
+<p>
+	3-star ARs have around a 60% selfbuff (FNC).
+	5-star ARs have around a 75% selfbuff (G41).
+	Assuming all stats are equal (this is not a good assumption), an ARSMG with Sub2k may expect a (1.6*1.2*1.25*1.25)-1=200% DPS boost in-skill.
+	An ARSMG with P22 may expect a (1.75*1.3*1.2)-1=184% DPS boost.
+	There's some accuracy/crit rate stuff and other tiles will influence exact numbers, but for now let's say it is probably minor.
+</p>
+
+<p>
+	At a glance she may be competitive, and could even have a slight edge.
+	Let's investigate further.
+</p>
+
+<h2 id="level2">Level 2<sup><small><a href="#level2">&#35;</a></small></sup></h2>
+<p>
+	This time, let's compare the cumulative damage-over-time from both FNC and G41, when buffed by Sub2k/P22.
+</p>
+
+<div class="figure">
+	<img src="images/sub2k/subplot-soloDPS.png" width="100%"/>
+</div>
+
+<p>
+	Here's the starting point - FNC's total damage output, relative to G41.
+	This thankfully lines up with <a href="g41-standard">my earlier charting</a>.
+	The sub-plot (get it?) in the top right shows the periods FNC's and G41's skills are active.
+</p>
+
+<div class="figure">
+	<img src="images/sub2k/subplot-buffedDPS.png" width="100%"/>
+</div>
+
+<p>
+	Now, we give FNC a maxed Sub2k (assuming 5 low-rarity dolls) and G41 a P22.
+	While Sub2k's weaker tiles put her at an initial disadvantage, the 25% FP/25% ROF skill is obviously stronger than P22's 25% FP skill.
+	In the 6-16s range, FNC goes between -20% and -10% of G41's damage contribution.
+	Not great, but better than the -30 to -20% range she saw on her own.
+</p>
+
+<p>
+	This isn't a perfect comparison: G41 and FNC have different skill timings, P22/Sub2k have different tile shapes and defensive buffs, ROF may be more or less desirable on some dolls, and Sub2k is tankier due to her SMG HP.
+	However, it should be reasonably convincing that Sub2k is not some crazy DPS machine.
+	Another way of considering this: if FNC's DPS lags behind G41's by 10-30%, improving her maximum damage output by ~5% (3x damage/2.84x damage as noted in <a href="#level1">level 1</a>) is not sufficient to make her a better choice.
+</p>
+
+<p>
+	One other thing to cover our bases.
+	What if FNC just has bad DPS relative to other low-rarity options, and there's some other amazing 3-star ARSMG we can build?
+</p>
+
+<div class="figure">
+	<img src="images/sub2k/otherARs.png" width="100%"/>
+</div>
+
+<p>
+	At a glance, you might think we've got something - HK33 seems substantially better than FNC, especially without Warrior's skill/aura applied. <!-- Including a chart with warrior in case there's one AR that really pops up with some ROF due to breakpoint fun -->
+	There's just one problem - HK33 has 73 ROF, and a 60% ROF selfbuff.
+	That's 116 ROF in-skill already, entirely wasting half of Sub2k's skill.
+</p>
+
+<p>
+	(Note: R5 is used as a G41 equivalent because Hycdes has G41's post-rework SPEQ. That would make things absurdly unfair.)
+</p>
+
+<p>
+	In case you aren't convinced, let's do another with some rifles.
+	This time, the comparison is between 1 RF+3 HG buffs and 1 RF+2 HG buffs+Sub2k.
+	CDR tiles are ignored for simplicity (but they are a real thing Sub2k doesn't benefit from.)
+	I'm not terribly familiar with the login rifle pool so here's 9 of them thrown in Hycdes at once:
+</p>
+
+<div class="figure">
+	<img src="images/sub2k/otherRFs.png" width="100%"/>
+</div>
+
+<p>
+	So T-CMS and Scout look good.
+	Both buff FP and T-CMS has slightly higher base ROF, so I'll pick her for this.
+	I'm assuming you already modded your M14, and I'll use Lee Enfield as the 5-star FP rifle of choice.
+	Sans SPEQ to be a little conservative.
+</p>
+
+<p>Handguns: for the Sub2k team, we'll use her, Astra, and Serdyukov. For the high-rarity team, Calico/Stechkin/P22 is standard enough.</p>
+
+<div class="figure">
+	<img src="images/sub2k/subplot-rfhg.png" width="100%"/>
+</div>
+
+<p>
+	As CDR tiles are ignored, there's a slight spike in favor of T-CMS when Sub2k's skill activates a second before most handguns.
+	Either way, baseline and in-skill DPS lag behind by an even larger margin than in the AR comparison.
+	The somewhat nicer buff from Sub2k is not nearly enough to make up for how lackluster low-rarity rifles and handguns are.
+</p>
+
+<p>
+	These are already accounted for in the chart, but also consider the tiles: the 3-star echelon chosen gets 44% FP, 20% ROF, 10% crit chance, and 60% accuracy.
+	The 5-star echelon gets 46% FP, 56% ROF, and 110% accuracy.
+	To really go hard on on-paper DPS, there's also Px4 Storm.
+</p>
+
+<!--
+	This isn't even with Calico's modskill or Stechkin's SPEQ.
+	Enemy settings are 0 armor, 15 evasion. Over-penetration ignored.
+-->
+
+<h2 id="level3">Level 3<sup><small><a href="#level3">&#35;</a></small></sup></h2>
+
+<p>
+	The next step would be a full backline, simulated in a wider range of conditions.
+	Frontline DPS numbers are often not relevant as you should be kiting them and they'll lose links over time anyways.
+</p>
+
+<p>
+	I'll likely update this section if Sub2k gets added to a simulator, but I'm convinced enough by the previous level at the moment that I don't feel the need to include whole teams.
+	If a single doll's DPS is worse with Sub2k, adding two more on each side won't change anything.
+	Many actual echelons will also want things like grenadiers, and simulator numbers are just about completely useless for those.
+</p>
+
+<h2 id="level4">Level 4<sup><small><a href="#level4">&#35;</a></small></sup></h2>
+<p>
+	Final step: real combat.
+	-10 or -30% performance may seem scary, but most content has enough wiggle room that you will still be able to get by with Sub2k-based echelons.
+	For a few examples taken from some fun enemies in Theater 3-6's Core 8:
+</p>
+
+<center>
+<iframe width="640" height="360"
+src="https://www.youtube.com/watch?v=oMyRQo5QP0c">
+</iframe>
+</center>
+
+<p>
+	Of course, better echelons will be able to do the same things more consistently, faster, with less damage taken, and/or with lower fairy/equipment/skill requirements.
+</p>
+
+<h2 id="conclusion">Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+
+<p>
+	Ultimately, I don't see a good case for using Sub2k.
+	She does have a powerful buff, but 2- and 3-star dolls suck.
+	Most of them are extremely unlikely mod candidates, so they have little future potential.
+	Some that were at least usable already got mods, and if you're raising a non-modded M14 alongside your previously modded M14 <em>just</em> for Sub2k I'd have serious concerns about your priorities.
+	If you haven't already invested in such dolls, you'd need to spend 5 dolls worth of training data/resources to get something off the ground - it's not just a 1-doll substitution from your normal teams.
+	While not an inherently awful class, modern content asks for much more than just a bunch of selfbuffers.
+</p>
+<p>
+	Some other factors to keep in mind:
+</p>
+<ul>
+	<li>2 and 3-star dolls have <em>really</em> boring skills. If you want something beyond selfbuffers and AP grenades, Sub2k teams won't help. Some examples of what you're missing out on:</li>
+	<ul>
+		<li>Grape's 45x shot</li>
+		<li>M4 cannon</li>
+		<li>416's 6s double grenade</li>
+		<li>Calico's slow field/speed</li>
+		<li>AS Val/M200's perfect accuracy</li>
+		<li>P22/HS2000 shielding</li>
+		<li>Kord/Type88's piercing</li>
+		<li>LTLX's knockback/buff cleanse</li>
+		<li>Infinite M500 shields</li>
+		<li>Px4 Storm's massive crit buff</li>
+		<li>Multihit ARs</li>
+		<li>Force shield SMGs</li>
+		<li>C-MS' 0s ICD evasion buff</li>
+	</ul>
+	<!-- <li>There are <em>some</em> low-rarity dolls with relatively interesting skills. A mostly complete list of these:</li>
+	<ul>
+		<li>SUB-2000</li>
+		<li>M9 for having a flashbang skill as a HG</li>
+		<li>M1 Garand - not part of the skill, but she auto-retargets to backline</li>
+		<li>Falcon, with her atypical bamboo skill and potential data sim ranking uses</li>
+		<li>Vepr - budget Ribeyrolles</li>
+		<li>WKp - perhaps more on the "strange" side than interesting</li>
+		<li>GM6 Lynx as a budget Kar</li>
+		<li>QSB-91 as a bamboo/multihit/shield piercing HG</li>
+	</ul> -->
+	<li>It's not just skill multipliers and skill contents. High-rarity dolls also tend to have an advantage on tiles (shape and multipliers) as well as base stats.</li>
+	<ul>
+		<li>Consider Ingram (880 HP/68 EVA/12% FP tiles) vs UMP45 (950 HP/74 EVA/20% FP+30% crit rate tiles+[near-useless] skill2+extra oath affection). No matter how you look at it, UMP45 is better (waifu reasons notwithstanding).</li>
+	</ul>
+	<li>Skill effectiveness drops off sharply if you introduce any impurities to the echelon. Neglecting the accuracy buff, Sub2k drops from an average 56% DPS buff to 44% and then 32% if you have 1 or 2 high-rarity dolls in the echelon.
+		At those levels, it becomes even more compelling to swap her for a regular buffing handgun and the whole idea falls apart.
+	</li>
+	<li>It's based on current rarity. M14 mod doesn't work.</li>
+	<li>1-star collab units also don't count.</li>
+	<li>Sub2k occupies the typical offtank spot in ARSMG echelons. You could put an offtank on 2 or 5 and just kite each battle, but it's a little awkward if you also want a molotov.</li>
+	<li>While not covered here, the low-rarity MG/SG pool is just absolutely horrific. Please do not try to use Sub2k there.</li>
+	<ul>
+		<li>At least somewhat usable MGs: M2HB, M1919A4, LWMMG. Largest armor tile: 12% (Gr MG23).</li>
+		<li>3-star shotguns tend to have absolute bottom-of-the-barrel effective HP, with pitiful armor to boot. (The highest, RMB-93, has 22 base armor. All others have 20 or 21, the lowest any SG will go.) There are no decent defensive skills amongst them, nor are there any effective offensive skills.</li>
+	</ul>
+</ul>
+<p>
+	You may be able to meme around and kill some trickier enemies, especially if your fairies are great.
+	But don't expect anything meta-defining or better than the tools you probably already have on hand.
+</p>
+
+
+</main></div></body></html>
