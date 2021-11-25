@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-805N997DPC');
+</script>
+<meta charset="utf-8">
+<meta name="keywords" content="portfolio">
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>Accuracy and Evasion - GFMath</title>
+<link rel="stylesheet" href="../style.css">
+
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
+</head>
+
+<body>
+<div id="wrapper">
+
+<header>
+<a href="../index">GFMath</a>
+</header>
+<nav role="navigation">
+<a href="../index"><li>Home</li></a>
+<a href="https://www.youtube.com/c/BigStupidJellyfish"><li>Youtube</li></a>
+<!-- <a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a> -->
+</nav>
+
+<main>
+<h1>Accuracy and Evasion</h1>
+<center><em>By BigStupidJellyfish | 2021-November-25</em></center>
+
+<h2>Contents<sup><small><a href="#">&#35;</a></small></sup></h2>
+<ul>
+	<li><a href="#introduction">Introduction</a></li>
+	<li><a href="#ehp">Effective HP</a></li>
+	<li><a href="#applications">Applications</a></li>
+	<li><a href="#myth">"Stacking evasion has diminishing returns"</a></li>
+	<li><a href="#danya">Still, don't use IDW</a></li>
+	<li><a href="#acc">The other side</a></li>
+	<li><a href="#exodia">A problem with IWS Exodia</a></li>
+	<li><a href="#conclusion">In conclusion</a></li>
+</ul>
+
+<h2 id="introduction">Introduction<sup><small><a href="#introduction">&#35;</a></small></sup></h2>
+
+<p>
+	Evasion and accuracy stats are used to determine how often your dolls will hit, and how often they will get hit in combat.
+	The formula for hit rate is pretty simple:
+</p>
+
+<div class="figure">
+	<img src="images/evasion/formula-hitrate.png" width="50%"/>
+</div>
+
+<p>
+	But there's a number of interesting aspects to this. Let's plot this equation to get a visual.
+</p>
+<div class="figure">
+	<img src="images/evasion/hitrate.png" width="100%"/>
+</div>
+<p>
+	You can find specific enemy stats <a href="https://pengupengupengu.github.io/gflmaps/">here</a>.
+	In 3D:
+</p>
+<div class="figure">
+	<img src="images/evasion/hitrate3d.png" width="100%"/>
+</div>
+<p>
+	Find where your accuracy & the enemy's evasion meet, and the color is your chance of each bullet hitting (warmer = more likely to hit, the reverse also works for the odds you'll get hit).
+	Dodge chance is simply 1 minus the hit rate, or EVA/(EVA+ACC). At night, your final accuracy <a href="https://docs.google.com/document/d/1RvHYM2qVEkAexBE4oag6AQ9sUvNQFAKgA-Mfk5aIK60/edit#">gets a little more complicated</a><sup>1</sup>:
+</p>
+<div class="figure">
+	<img src="images/evasion/formula-night.png" width="75%"/>
+</div>
+<p>
+	Where ⌊<em>x</em>⌋ is the floor function. A 100% PEQ will completely negate the night penalty, while no PEQ means you get the full 90% penalty. Sadly, enemies have their own little Night Vision chip and are not affected by this penalty.
+	On your end, here's what this PEQ formula looks like:
+</p>
+<div class="figure">
+	<img src="images/evasion/nvg.png" width="100%"/>
+</div>
+<p>
+	And you can probably see why calibrating gold PEQs isn't recommended: hit rate barely improves at that point, assuming your base accuracy is significantly above your target evasion.
+</p>
+<p>
+	Example: the Centaurus (KCCO Dogs) in Core 8 have <a href="https://pengupengupengu.github.io/gflmaps/#campaign=6006&mission=648">51 accuracy</a>.
+	A fully equipped lv115 UMP45 with a 56% evasion buff (Artillery aura) has 203 evasion.
+	Each attack will then have a 51/(51+203)=51/254≈20.08% chance to hit her.
+</p>
+<p>
+	This works both ways, for friendlies and enemies, <a href="myths#hr">with no minimum</a>.
+	Today, I'd like to go over a few less-obvious aspects of this.
+</p>
+
+<p>
+	<sup>1</sup>: That document is quite old, and a few bits are out of date. All dolls have 15 base AP now, and HOCs have a 40% hit rate floor (bonus: <a href="https://old.reddit.com/r/girlsfrontline/comments/onxnav/weekly_commanders_lounge_july_20_2021/h611guq/">experimentally verified</a>).
+</p>
+<h2 id="ehp">Effective HP<sup><small><a href="#ehp">&#35;</a></small></sup></h2>
+
+<div class="figure">
+	<img src="images/evasion/formula-ehp.png" width="50%"/>
+</div>
+<p>
+	Let's move away from talking about evasion and hit rates, and instead introduce another number: effective HP (or EHP for short).
+	Consider a particularly bad shotgun with 1000 HP and 0 evasion.
+	All attacks made will hit, so once enemies fire off 1000 damage you'll die.
+	Now, suppose instead that shotgun had a bit more evasion, just enough to match that enemy's accuracy.
+	On average, 50% of their shots will miss, requiring the enemy to attack for 2000 points of damage this time.
+</p>
+
+<p>
+	Effective HP is very nice to work with: twice the EHP, twice the survivability, twice as good.
+</p>
+
+<h2 id="applications">Applications<sup><small><a href="#applications">&#35;</a></small></sup></h2>
+
+<p>
+	I've been collecting some data on the damage taken from 8-2 drag runs.
+	The following chart shows the estimated number of total attacks the maintank took, by support configuration.
+	Using one or two Architects significantly reduced the number of attacks that need to be tanked, lowering damage and speeding the grind up.
+</p>
+<div class="figure">
+	<img src="images/evasion/8-2-MT.png" width="75%"/>
+</div>
+<p>
+	Repairing your maintank can be a pain, so it would be nice if you could last the whole run without doing so.
+	If you have <a href="8-2">sufficient armor</a>, you can reduce all damage to 1, and getting more EHP than expected attacks taken will let you survive.
+	Let's say you have a friend or two with Architect support and assume you want to be able to survive 8k attacks.
+	All spawns there have 20 accuracy, which makes this much easier.
+	A few examples:
+</p>
+<ul>
+	<li>lv96 L Aegis: 1309 HP, 66 EVA. EHP = 1309/(20/(20+66)) = 5628 EHP. Not quite enough.</li>
+	<ul>
+		<li>Add Defend: EHP = 1309/(20/(20+66*2)) = 9948 EHP, a 77% increase and enough EHP to survive with a decent safety margin.</li>
+	</ul>
+	<li>lv92 L Manticore: 1539 HP, 79 EVA. 1539/(20/(20+79)) = 7618 EHP, or 13697 with Defend (+80%). Possibly survivable without Defend, but with Defend it's easy.</li>
+	<li>lv93 L Nemeum: 932 HP, 50 EVA. Even with Defend, it has only 5592 EHP.</li>
+</ul>
+
+<p>
+Or for more a more competitively-relevant example, here's a comparison between the force shielders against Dog/Archers.
+Assuming max level/100 affection/best exo & suppressor equipped, their EHPs against a Centaurus' 51 accuracy are:
+</p>
+
+<center>
+<table style="width:100%">
+<tr>
+<th>Configuration</th>
+<th>Dodge chance (base)</th>
+<th>Dodge chance (+100% EVA)</th>
+<th>Effective HP (base)</th>
+<th>Effective HP (+100% EVA)</th>
+</tr>
+<tr>
+<td>MP5: T-Exo</td>
+<td>70.2%</td>
+<td>82.5%</td>
+<td>3037</td>
+<td>5171</td>
+</tr>
+<tr>
+<td>MP5: SPEQ</td>
+<td>73.7%</td>
+<td>84.9%</td>
+<td>3441</td>
+<td>5993</td>
+</tr>
+<tr>
+<td>G36c: T-Exo</td>
+<td>69.1%</td>
+<td>81.7%</td>
+<td>3285</td>
+<td>5546</td>
+</tr>
+<tr>
+<td>Thompson: T-Exo</td>
+<td>67.1%</td>
+<td>80.3%</td>
+<td>3617</td>
+<td>6041</td>
+</tr>
+</table>
+</center>
+
+<p>Orthrus are a bit more accurate.
+Here's the same table with 143 enemy accuracy.</p>
+
+<center>
+<table style="width:100%">
+<tr>
+<th>Configuration</th>
+<th>Dodge chance (base)</th>
+<th>Dodge chance (+100% EVA)</th>
+<th>Effective HP (base)</th>
+<th>Effective HP (+100% EVA)</th>
+</tr>
+<tr>
+<td>MP5: T-Exo</td>
+<td>45.6%</td>
+<td>62.7%</td>
+<td>1664</td>
+<td>2424</td>
+</tr>
+<tr>
+<td>MP5: SPEQ</td>
+<td>50.0%</td>
+<td>66.7%</td>
+<td>1810</td>
+<td>2715</td>
+</tr>
+<tr>
+<td>G36c: T-Exo</td>
+<td>44.4%</td>
+<td>61.5%</td>
+<td>1824</td>
+<td>2633</td>
+</tr>
+<tr>
+<td>Thompson: T-Exo</td>
+<td>42.1%</td>
+<td>59.3%</td>
+<td>2055</td>
+<td>2921</td>
+</tr>
+</table>
+</center>
+
+<p>
+	This doesn't account for tile differences or MP5's skill2, but it's useful to see how they all compare in durability.
+	Most interestingly, Thompson's large HP pool seems to outweigh her lower evasion, with the highest EHP across the board.
+	(G36c still sees more use in ARSMGs due to her better tiles, and MP5 for her RF tiles and second skill.)
+</p>
+
+<h2 id="myth">"Stacking evasion has diminishing returns"<sup><small><a href="#myth">&#35;</a></small></sup></h2>
+
+<p>
+	You may have noticed that the Defend chip gave rather substantial survivability increases, even with a Manticore whose base evasion was ~4x the enemy's accuracy.
+	This is not some trick or fluke.
+</p>
+
+<p>
+	As your evasion gets higher and higher relative to enemy accuracy, your dodge chance will approach 100%.
+	While this does mean changes in dodge chance will be smaller percentage point-wise, that's not actually the metric you should be looking at.
+</p>
+
+<p>
+	Your effective HP will be quite good with a 99% dodge chance, but adding "just" 1 percentage point to that takes you to 100% dodge chance where your EHP would be infinite.
+	Not that you can actually get infinite EHP, but even consider the difference between a 90% dodge chance and 95% - you take half as many hits with a 95% dodge rate, and will live twice as long on average.
+</p>
+
+<p>
+	We can define a survivability increase like so:
+</p>
+
+<div class="figure">
+	<img src="images/evasion/formula-survival.png" width="100%"/>
+</div>
+
+<p>
+	For a visual perspective, here's a chart of the gain in survivability (EHP) a few different EVA buffs give you against a 20-accuracy enemy, depending on what your evasion stat was beforehand.
+</p>
+
+<div class="figure">
+	<img src="images/evasion/survivalincrease.png" width="100%"/>
+</div>
+
+<p>
+	This scales about as expected if going against higher accuracies:
+</p>
+
+<div class="figure">
+	<img src="images/evasion/survivalincreasehighacc.png" width="100%"/>
+</div>
+
+<p>
+	If you start with 0 evasion, evasion buffs obviously don't help you at all (0*anything=0).
+	With low base evasion, you gain very little survivability from this - there's not much of a difference between getting hit 98% of the time and 95% of the time.
+	As your base evasion increases, the gain from this buff will increase, approaching a +100% EHP improvement for +100% EVA, +80% EHP for 80% EVA, and so on.
+	If you want a bit more proof this does cap out: supposing some constant enemy accuracy <em>a</em> (and a 100% EVA buff),
+</p>
+
+<div class="figure">
+	<img src="images/evasion/formula-limit.png" width="70%"/>
+</div>
+
+<h2 id="danya">Still, don't use IDW<sup><small><a href="#danya">&#35;</a></small></sup></h2>
+
+<p>
+	This shows that increasing evasion can do <em>something</em>.
+	This does not show that this thing is useful, or that it is better than other things you could be doing (like increasing damage).
+	Consider two options:
+</p>
+<ol>
+	<li>Increase your SMG maintank's evasion by 300%, massively boosting their survivability against weaker enemies</li>
+	<li>Increase your backline's DPS by 300%, killing all enemies before they get even a single attack off</li>
+</ol>
+<p>
+	Guess which one reduces damage better<sup>2</sup>.
+	Welrod was benched for a reason many moons ago when <a href="px4">Px4 Storm</a> was released.
+	A number of especially scary attacks are surehit, and no amount of evasion will save you (unless you're ROmod).
+</p>
+
+<p>
+	(If you don't care about minimizing damage and only need to win the fight, past some point you'll have enough evasion to get to the end anyways and further evasion buffs don't affect that outside of a minor consistency boost.
+	This could be viewed as proper 'diminishing returns,' but I don't think this is a relevant perspective for most content.)
+	<!-- Additive increases to evasion are also a smaller percentage increase the bigger your base stat, but that's not a relevant consideration. Equip T-Exos because you tank better with them, not because they're >x% better than X-Exos. -->
+</p>
+
+<p>
+	<sup>2</sup>: In most cases. There are no absolute rules here, considering the incredibly wide range of encounters and echelons out there.
+</p>
+<h3>Experiment: Killing Strelets</h3>
+
+<p>
+	Starting with a team skeleton of G41, Type95, and C-MS, let's try killing a Strelet mob and see how it works for varying offensive/defensive combinations.
+	To fill out the rest of the team, I'll use:
+</p>
+<ul>
+	<li>Defensive support</li>
+	<ol>
+		<li>Shield Fairy</li>
+		<li>El Fail</li>
+		<li>Makarov</li>
+	</ol>
+	<li>Offensive support</li>
+	<ol>
+		<li>Command Fairy</li>
+		<li>Mk23</li>
+		<li>SAA</li>
+	</ol>
+</ul>
+<p>
+	Tile differences, link protection, and various other factors make this rather unscientific.
+	Strelets have low accuracy stats (here, 19), so evasion stacking is more viable.
+	Other enemies like Cerynitis or SWAP SF can have 150+ accuracy, making evasion tanking substantially less effective.
+	In normal combat you can also kite, significantly reducing the amount of time you're sitting there and taking attacks.
+	Cross-ish formation for easy tile-fitting. Don't try this at home.
+</p>
+
+<div class="figure">
+	<img src="images/evasion/strelets.png" width="100%"/>
+</div>
+
+<p>
+	The teams with 0/1 defensive picks performed similarly well, but after that adding more debuffs and evasion seemed counterproductive - not only did fight time increase dramatically, but the damage taken also increased.
+</p>
+
+<p>
+	This is all against a very forgiving enemy with low accuracy.
+	Stacking evasion against Doppelsöldners, Uhlans, Minotaurus, Cerynitis, and many more enemies will end very badly.
+</p>
+<h2 id="acc">The other side<sup><small><a href="#acc">&#35;</a></small></sup></h2>
+
+<p>
+	Now, let's look at this from the other side.
+	Enemies themselves have evasion, and you'd like to kill them as quickly as possible.
+	The previous results are invertible - the higher your accuracy is relative to their evasion the less it matters - but I'll rework the chart anyways as it can help to have a visual.
+</p>
+
+<div class="figure">
+	<img src="images/evasion/dpsincrease.png" width="100%"/>
+</div>
+
+<p>
+	Here's the average DPS increase a few common accuracy buffs give, by your starting accuracy, against a 15-evasion enemy.
+	If your base acc is double their evasion (30 acc), even a 100% acc buff is reduced to a 20% DPS increase.
+	Past 70 accuracy and this buff is only 1/10th as strong.
+</p>
+
+<p>
+	As you may expect, the equation for net DPS increase is just about the inverse of the survivability increase:
+</p>
+<div class="figure">
+	<img src="images/evasion/formula-dps.png" width="50%"/>
+</div>
+
+<p>
+	Going from a 70% hit rate to a 80% hit rate is an 80%/70% = 1.1428 = 14.28% DPS improvement, on average.
+</p>
+
+<p>
+	If you ever wanted to know why SRS isn't very popular at day, this is it.
+	She has a 60% FP/40% ACC selfbuff, and vs typical 15 evasion stuff that 40% acc is in the range of a 5% DPS boost given her 87 base ACC.
+	A 1.6*1.05=68% net DPS buff isn't awful, but typical 5-stars have a 75% multiplier (and it's even less if you have other accuracy sources).
+	At night, she does better: 8 accuracy vs 15 evasion means a ~25% DPS boost from that same acc component, for a ~2x net skill DPS boost (but even then, there are other options like M200/Type88/4 Shiki/heavy acc tiles).
+</p>
+
+<p>
+	On the other hand, accuracy tends to be given in much larger amounts.
+	It's easy enough to get 100-150% acc from tiles, and another 60% or so from a fairy.
+	At night, rifles will have more around 10 base accuracy, so they gain much more from accuracy buffs.
+</p>
+
+<h2 id="exodia">A problem with IWS Exodia<sup><small><a href="#exodia">&#35;</a></small></sup></h2>
+
+<blockquote>
+	<p>
+		<strong>Giant Eagle Assault</strong>. Initial CD 6s/Skill CD 16s
+	</p>
+
+	<p>
+		In return for decreasing rate of fire by 35%, increase damage by 180% for 10 seconds.
+	</p>
+</blockquote>
+
+<p>
+	IWS captured the hearts of many players back around launch, as her skill had <em>big</em> numbers.
+	A popular idea was to pair her with 4 ROF-buffing HGs, and use IWS as the sole damage-dealer.
+	Even on paper its DPS output wasn't great, so this idea has largely fallen by the wayside.
+	Even still, exodia-style formations do see some use, albeit with other dolls instead of IWS (M4 exodia in SC ranking, Type88 exodia in PL ranking).
+</p>
+
+<p>
+	IWS' skill works out to an [(1-0.35)*2.8]-1=82% net DPS buff ignoring any frame shenanigans, which is slightly above the typical 5-star standard (of 75%, but also nowhere near as much as the FP buff could lead you to think).
+	One major problem with this type of formation is link protection - each bullet can kill at most one enemy link.
+	If IWS has more than enough FP to oneshot a given 5-linked enemy, even a single bullet missing will leave them alive at one link and need another shot to actually kill them.
+</p>
+<div class="figure">
+	<img src="images/evasion/linkkiller.png" width="100%"/>
+</div>
+<p>
+	Here are the odds of all shots connecting from a given volley (5 dummies).
+	The x-axis has been expanded to better show the trend, as otherwise even with 100 accuracy you'd only oneshot a 15-evasion enemy ~50% of the time (as (100/(100+15))^5=49.7%).
+	Oneshot probability increases much more linearly with typical accuracy values (80-100 for rifles, before buffs), suggesting that accuracy is more useful to buff if you're fighting low-HP enemies (of course, ROF even more so in many situations):
+</p>
+
+<div class="figure">
+	<img src="images/evasion/linkkillerbuffed.png" width="100%"/>
+</div>
+
+<p>
+	M4-based exodias avoid this problem by having surehit, Type88-based ones by having piercing/multihit.
+	An alternative interpretation of this is that you can't realistically buff acc to reliably oneshot evasive enemies, and thus shouldn't build IWS exodias.
+</p>
+<h2 id="conclusion">In conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+
+<p>
+	Free evasion is never bad, but it's less exciting when you don't have much of it to start with.
+	Luckily, no currently released MGs waste their tilebuff on SG EVA.
+	Killing faster is generally better mitigation than evading harder, so take damage buffs over evasion buffs when possible.
+	If there's minimal opportunity cost, some extra evasion can be appreciated by most ARSMG formations.
+	Don't sleep on P22's middle column buff, and try to double dip on that & the shields whenever possible.
+</p>
+
+<p>
+	Having high evasion doesn't mean you can't get hit.
+	Even with a proper evasion stack, it may feel like you're getting hit more than you should.
+	This is to be expected - people are quite bad with probability in general, especially so with extreme numbers.
+	Consider how many people believe XCOM's 95% shots are not actually 95% (<a href="https://sinepost.wordpress.com/2012/11/11/is-xcom-truly-random/">they are</a>), just because of a few unlucky times they lost a unit after missing one of those.
+</p>
+<p>
+	On the offensive, the more accuracy the better.
+	Exact thresholds will vary by personal preference, but you can stop worrying once you have a few times more accuracy than your target has evasion.
+</p>
+
+<p>
+	For more math stuff including things like the reasons flares suck and converting between accuracy debuffs/evasion buffs, <a href="https://gfl.matsuda.tips/post/Accuracy">this writeup remains an excellent resource</a>.
+</p>
+
+<!-- <h2 id="ads">More like this / <a href="#">back to top</a></h2> -->
+<h2 id="ads">More like this</h2>
+
+<a href="smgsg">
+	<div class="gallery">
+	  <div class="gallerypic">
+		<img src="images/icon/smgsg.jpg" width="33%" height="400">
+		<div class="gallerypicdesc"><b>Effective Survival Strategies</b><br/>Durability comparisons</div>
+	  </div>
+	</div>
+</a>
+
+<a href="dummy">
+	<div class="gallery">
+		<div class="gallerypic">
+		<img src="images/icon/dummysettings.jpg" width="33%" height="400">
+		<div class="gallerypicdesc"><b>What's in the Dummy?</b><br/>Evasion & Armor settings</div>
+		</div>
+	</div>
+</a>
+
+<a href="cms-dps">
+	<div class="gallery">
+	  <div class="gallerypic">
+		<img src="images/icon/cms-dps.png" width="33%" height="400">
+		<div class="gallerypicdesc"><b>Using C-MS for DPS</b><br/>Mode & equipment analysis</div>
+	  </div>
+	</div>
+</a>
+
+<div class="clearfix"></div>
+</main></div></body></html>
