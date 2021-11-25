@@ -88,6 +88,7 @@ gtag('config', 'G-805N997DPC');
 <div class="figure">
 	<img src="images/evasion/nvg.png" width="100%"/>
 </div>
+<!-- Disclaimer: this chart made without the floor function, to make it smoother. With floor, it's just slightly bumpier (uglier) without really giving more information. -->
 <p>
 	And you can probably see why calibrating gold PEQs isn't recommended: hit rate barely improves at that point, assuming your base accuracy is significantly above your target evasion.
 </p>
@@ -115,6 +116,7 @@ gtag('config', 'G-805N997DPC');
 	All attacks made will hit, so once enemies fire off 1000 damage you'll die.
 	Now, suppose instead that shotgun had a bit more evasion, just enough to match that enemy's accuracy.
 	On average, 50% of their shots will miss, requiring the enemy to attack for 2000 points of damage this time.
+	EHP is a measure of how much HP a 0-evasion tank would need to last as long on average.
 </p>
 
 <p>
@@ -133,7 +135,7 @@ gtag('config', 'G-805N997DPC');
 </div>
 <p>
 	Repairing your maintank can be a pain, so it would be nice if you could last the whole run without doing so.
-	If you have <a href="8-2">sufficient armor</a>, you can reduce all damage to 1, and getting more EHP than expected attacks taken will let you survive.
+	If you have <a href="8-2">sufficient armor</a>, you can reduce all damage to 1, and getting more EHP than expected attacks taken should allow you to survive without any repairs.
 	Let's say you have a friend or two with Architect support and assume you want to be able to survive 8k attacks.
 	All spawns there have 20 accuracy, which makes this much easier.
 	A few examples:
@@ -238,7 +240,7 @@ Here's the same table with 143 enemy accuracy.</p>
 <p>
 	This doesn't account for tile differences or MP5's skill2, but it's useful to see how they all compare in durability.
 	Most interestingly, Thompson's large HP pool seems to outweigh her lower evasion, with the highest EHP across the board.
-	(G36c still sees more use in ARSMGs due to her better tiles, and MP5 for her RF tiles and second skill.)
+	(Despite this, G36c usually still sees more use in ARSMGs due to her better tiles, and MP5 in most teams for her RF tiles and second skill.)
 </p>
 
 <h2 id="myth">"Stacking evasion has diminishing returns"<sup><small><a href="#myth">&#35;</a></small></sup></h2>
@@ -352,7 +354,7 @@ Here's the same table with 143 enemy accuracy.</p>
 </div>
 
 <p>
-	The teams with 0/1 defensive picks performed similarly well, but after that adding more debuffs and evasion seemed counterproductive - not only did fight time increase dramatically, but the damage taken also increased.
+	The teams with 0 or 1 defensive picks performed similarly well, but after that adding more debuffs and evasion seemed counterproductive - not only did fight time increase dramatically, but the damage taken also increased.
 </p>
 
 <p>
@@ -417,7 +419,7 @@ Here's the same table with 143 enemy accuracy.</p>
 	IWS captured the hearts of many players back around launch, as her skill had <em>big</em> numbers.
 	A popular idea was to pair her with 4 ROF-buffing HGs, and use IWS as the sole damage-dealer.
 	Even on paper its DPS output wasn't great, so this idea has largely fallen by the wayside.
-	Even still, exodia-style formations do see some use, albeit with other dolls instead of IWS (M4 exodia in SC ranking, Type88 exodia in PL ranking).
+	However, exodia-style formations do see some use with other dolls instead of IWS (M4 exodia in SC ranking, Type88 exodia in PL ranking).
 </p>
 
 <p>
@@ -425,6 +427,7 @@ Here's the same table with 143 enemy accuracy.</p>
 	One major problem with this type of formation is link protection - each bullet can kill at most one enemy link.
 	If IWS has more than enough FP to oneshot a given 5-linked enemy, even a single bullet missing will leave them alive at one link and need another shot to actually kill them.
 </p>
+<!-- It could be the case that IWS' continuous retargeting in-skill helps mitigate this slightly, i.e. she almost kills one enemy, moves to another new farthest, HGs finish that one off, etc. Haven't tested it to say for sure though. -->
 <div class="figure">
 	<img src="images/evasion/linkkiller.png" width="100%"/>
 </div>
