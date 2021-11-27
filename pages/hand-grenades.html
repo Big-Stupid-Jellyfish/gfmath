@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-805N997DPC');
+</script>
+<meta charset="utf-8">
+<meta name="keywords" content="portfolio">
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>Hand Grenades - GFMath</title>
+<link rel="stylesheet" href="../style.css">
+
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
+</head>
+
+<body>
+<div id="wrapper">
+
+<header>
+<a href="../index.html">GFMath</a>
+</header>
+<nav role="navigation">
+<a href="../index.html"><li>Home</li></a>
+<a href="https://www.youtube.com/c/BigStupidJellyfish"><li>Youtube</li></a>
+<!-- <a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a> -->
+</nav>
+
+<main>
+<h1>Hand Grenades</h1>
+<center><em>By BigStupidJellyfish | 2021-November-27</em></center>
+
+<p>A bit ago, I conducted a few tests comparing <a href="vector-vs-uzi">Vector & Uzi</a>, finding that Uzi's lower initial impact damage was usually more than offset by her additional damage over time and she would often perform significantly better than Vector.
+Towards the start, I dismissed the thought of hand grenades with only a brief comment:</p>
+
+<blockquote>Molotovs tend to be recommended over hand grenades - they have similar damage multipliers, but the extra damage over time from a molotov is often preferred over the extra area from a hand grenade (2.5 vs 1.5 units).
+</blockquote>
+
+<p>But after further consideration, I'd like to revisit that statement.
+It's a fairly common bit of advice you'll see online, but <a href="myths">that's not always the best source of information</a>.
+Let's do some tests.
+</p>
+
+<h2 id="doll-selection">Dolls picked<sup><small><a href="#doll-selection">&#35;</a></small></sup></h2>
+
+<p>This is a bit constrained by what I have available/have data for, but there are two sets of reasonably close dolls I have to work with:</p>
+<ul>
+	<li>Z-62 (molotov) vs PPS-43 (hand grenade)</li>
+	<ul>
+		<li>Z-62: 53 FP, 6x molotov (5.3x SL8), 12% FP/10% EVA tiles</li>
+		<li>PPS-43: 58 FP, 6x hand grenade (5.1x SL8), 12% FP tiles</li>
+	</ul>
+	<li>KLIN (molotov) vs PP-19 (hand grenade)</li>
+	<ul>
+		<li>KLIN: 50 FP, 6.5x molotov (5.8x SL8), 25% ROF tile</li>
+		<li>PP-19: 51 FP, 6.5x hand grenade (5.5x SL8), 24% FP tile</li>
+	</ul>
+</ul>
+<p>All dolls are SL8, which unfortunately changes the relative multipliers a little.</p>
+
+<h2 id="3star">3-star Testing<sup><small><a href="#3star">&#35;</a></small></sup></h2>
+
+<p>From position 8, these dolls have effectively identical tiles.
+PPS-43 has a near 10% base FP advantage, so this may skew results slightly in favor of hand grenades.</p>
+
+<p>
+	To start, let's take a few zombie swarms of varying size from Farewell, Tallinn I - Combat EX II (Shattered Connexion).
+	Between G11's tiles and the Airstrike fairy used here, Z-62 and PPS-43 are both getting an 89% net FP buff.
+</p>
+
+<div class="figure">
+	<img src="images/hand-grenades/team1-3.png" width="100%"/>
+</div>
+
+<p>
+	So far: Z-62's performance was equal or better than PPS-43's, often by a significant margin.
+	Next, let's compare using a few SF enemies as Zombie hordes don't represent a super large percentage of content.
+</p>
+
+<div class="figure">
+	<img src="images/hand-grenades/team2-3.png" width="100%"/>
+</div>
+<p>
+	This time, there isn't much for performance differences.
+	PPS-43 is possibly slightly faster in one fight, possibly slower in another.
+	Damage taken and damage contributions are similar.
+</p>
+
+<p>
+	There's a pretty simple explanation - outside of Suee's Damage II talent, neither offtank are getting any relevant buffs.
+	G41 and ART only buff the maintank, and P7's tiles are near-useless.
+	Any differences in performance will be much harder to detect when the dolls in question are weak relative to the rest of the team.
+</p>
+
+<p>
+	Let's continue with the testing, taking a few semi-SWAP mobs from Isomer campaign.
+	We're giving the offtanks a ~110% FP buff this time.
+</p>
+<div class="figure">
+	<img src="images/hand-grenades/team3-3.png" width="100%"/>
+</div>
+<p>
+	A.416 was a bit OP against the SF here (usually dealing ~50% of the damage), so this was cut short and only a few mobs were tested.
+	It's less useful to analyze which grenade type is better against mobs that are already dead.
+</p>
+<p>
+	Z-62 has a possible clear time advantage against the second group, and possibly a bit less damage taken against the first.
+	There were also some pretty awful grenades thrown:
+</p>
+<div class="figure">
+	<img src="images/hand-grenades/bestnade.png" width="75%"/>
+</div>
+<center><em>Lowest recorded damage: 3782/6.8% with Z-62 (not pictured).</em></center>
+<h2 id="4star">4-star Testing<sup><small><a href="#4star">&#35;</a></small></sup></h2>
+
+<p>Statlines are closer here but tiles are a bit different - PP-19 gives FP, KLIN ROF.
+I'll try to pick dolls that can benefit similarly from either to keep the comparison as skill-focused as possible.</p>
+
+<p>
+	To start, I'll use the same zombie set as with the 3* SMGs.
+	Ribeyrolles & G11 would have far too much ROF for KLIN to help, so I'll use a different echelon.
+	KLIN & PP-19 get a bit more FP buffs here - with one stack of Fervor, they are at a 114% net FP buff.
+</p>
+
+<div class="figure">
+	<img src="images/hand-grenades/team1-4.png" width="100%"/>
+</div>
+
+<p>
+	As with the 3* set, the molotov (KLIN) looks very good here.
+	They did about equal for the smallest Zombie group, but PP-19 performed much worse against the other two enemies by all three metrics.
+</p>
+
+<p>
+	Next, some SF groups taken from the later Singularity stages and the Strelet mob from earlier Theaters:
+</p>
+<div class="figure">
+	<img src="images/hand-grenades/team3-4.png" width="100%"/>
+</div>
+<p>
+	No fairy vs the SF, Artillery vs the Strelets.
+	PP-19 looks substantially better against the Scout/Strikers, KLIN has a major lead against the Strelets, and they are otherwise about equal.
+</p>
+
+<h2 id="3star-modified">Modified 3-star Testing<sup><small><a href="#3star-modified">&#35;</a></small></sup></h2>
+
+<p>
+	I took long enough to write this that PP-19's mod is now released, but I haven't yet convinced myself how these compare.
+	Let's do some more tests with PPS-43 and Z-62, this time attempting to equalize their impact damage.
+	With both at SL8, PPS has a bit more FP (35 vs 30) and a lower multiplier (5.1 vs 5.3).
+	After adding partially leveled HP ammo, PPS is at (35+17)*5.1=266 average impact damage and Z-62 does (30+20)*5.3=265 impact damage, all before external buffs.
+	That difference will not be even remotely detectable.
+</p>
+
+<div class="figure">
+	<img src="images/hand-grenades/team4-3.png" width="100%"/>
+</div>
+
+<p>
+	Even in the shortest fight where Z-62's molotov would have the least time to burn, PPS-43 performed equal-or-worse than Z-62.
+	PPS seemed to deal more damage against the Brute/Vespid group, but clear time was no better and that team took more damage.
+</p>
+<h2 id="conclusion">Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+
+<p>
+	Further testing and detailed video analysis would be helpful to better understand the impact molotovs and hand grenades have in specific fights.
+	Based on my observations so far, I do not see a compelling use case for hand grenades, as molotovs seem to do as well or better.
+	In table form, I'd mark it something like this (looking at each metric individually, which isn't a perfect method of analysis):
+	<!-- We also don't have a 5* hand grenade yet (so there's no competition with Vector) and Uzi's mod is generally <a href="vector-vs-uzi">even better</a>. -->
+</p>
+<center>
+	<table style="width:70%">
+	  <tr>
+		<th>Result</th>
+		<th>Count</th>
+		<th>Percent</th>
+	  </tr>
+	  <tr>
+		<td>Molotovs better</td>
+		<td>24</td>
+		<td>42%</td>
+	  </tr>
+	  <tr>
+		<td>Hand grenades better</td>
+		<td>5</td>
+		<td>9%</td>
+	  </tr>
+	  <tr>
+		<td>About equal</td>
+		<td>28</td>
+		<td>49%</td>
+	  </tr>
+	  <tr>
+		<td>Total</td>
+		<td>57</td>
+		<td>100%</td>
+	  </tr>
+	</table>
+</center>
+<p>
+	It's not a massive edge overall, but the difference seems consistent enough to argue against using hand grenades unless there are extenuating circumstances in a specific battle.
+</p>
+<!-- <p>
+	Perhaps PP-19's future mod will make her more competitive, but at that point she'll have to match up against Uzi's mod.
+</p> -->
+<div class="figure">
+	<img src="images/hand-grenades/fate.png" width="100%"/>
+</div>
+<center><em>Don't actually do this.</em></center>
+
+<p>
+	Other notes:
+</p>
+<ul>
+	<li>PP-19 now has a mod. The findings here regarding hand grenades won't necessarily apply to her, as she gets cooler tiles and a second skill. I may analyze her separately later on. If so, there will be a link right <em>here</em> to that.</li>
+	<li>While a 2.5-radius hand grenade covers 2.7x the area of a 1.5-radius molotov, enemies stop walking when they get in range and can bunch up in a line.
+		If all enemies are in such a vertical line, it would only hit ~1.6x as many enemies in theory.
+	</li>
+	<li>
+		If the enemies are moving, the burning area from a molotov could hit new enemies that walk into it, possibly including enemies that were outside the additional range of a hand grenade.
+	</li>
+	<li>
+		Molotovs actually have a slight edge for impact damage - their DOT triggers immediately, so Vector's grenade would deal 7x+1x damage on impact. The 3- and 4-star SMGs tested hear have equal modifiers (SL10) before adding this damage, but PP-19 mod makes up for this a bit with a 7.5x skill multiplier.
+	</li>
+	<!-- <li>
+		I may do another piece on PP-19 mod to see how exactly she stacks up relative to Uzi mod/Vector.
+	</li> -->
+</ul>
+
+<h2 id="ads">More like this</h2>
+
+<a href="vector-vs-uzi">
+	<div class="gallery">
+		<div class="gallerypic">
+		<img src="images/icon/vector-vs-uzi.jpg" width="33%" height="400">
+		<div class="gallerypicdesc"><b>Vector vs Uzi</b><br/>Which to pick</div>
+		</div>
+	</div>
+</a>
+
+<a href="2v3ar">
+	<div class="gallery">
+		<div class="gallerypic">
+		<img src="images/icon/2v3ar.jpg" width="33%" height="400">
+		<div class="gallerypicdesc"><b>Are 2 ARs or 3 ARs Better?</b><br/>Does it matter?</div>
+		</div>
+	</div>
+</a>
+
+<a href="g41-standard">
+	<div class="gallery">
+	  <div class="gallerypic">
+		<img src="images/icon/g41-standard.jpg" width="33%" height="400">
+		<div class="gallerypicdesc"><b>AR Damage over time</b><br/>How good are the Type sisters?</div>
+	  </div>
+	</div>
+</a>
+
+<div class="clearfix"></div>
+
+</main></div></body></html>
