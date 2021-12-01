@@ -35,8 +35,8 @@ gtag('config', 'G-805N997DPC');
 </nav>
 
 <main>
-<h1>TKB-408 First Impressions/Analysis</h1>
-<center><em>By BigStupidJellyfish | 2021-September-08</em></center>
+<h1>TKB-408 Analysis</h1>
+<center><em>By BigStupidJellyfish | 2021-September-08 | Last updated 2021-November-30</em></center>
 
 <p>TKB-408 is a 5-star AR originally released in the point event "Maples by the Bridge."
 She is a night AR with a slightly atypical skill:</p>
@@ -83,9 +83,16 @@ Starting with no tiles/other buffs, TKB in the orange:</p>
 <p>AS Val is assumed to have FP buff uptime from Python+a Fervor fairy, although the actual FP buffs are not applied here to keep the model simple.</p>
 
 <p>It's worth mentioning that OTs-14 has a bit higher ROF (75 vs 72) but fires <a href="https://docs.google.com/spreadsheets/d/1k74SCGGMHtwbl8gmTaETLsa8t12A7dWdj0V1tjdMD4Y/edit">on the same frame</a>, causing her to lag behind a bit here when combined with her lower base damage.
-Most ROF buffs will put OTs-14 on a higher frame than TKB, significantly improving her relative DPS.
+Many ROF buffs will put OTs-14 on a higher frame than TKB, significantly improving her relative DPS.
 <a href="images/tkb-408/dot-night-rof.png">One example with +15% ROF</a>: TKB is now essentially always worse than OTs-14.
 AR-15 and Angelica also go down a bit relatively as they can't benefit from ROF in-skill.</p>
+
+<p>
+	For the full list of (somewhat practical) tiles and if they help OTs-14 more:
+</p>
+<div class="figure">
+<img src="images/tkb-408/roftiles.png" width="100%"/>
+</div>
 
 <p>Buffing crit damage doesn't help her relative value much, especially with things like AR-15 and AS Val on the table:</p>
 
@@ -98,7 +105,7 @@ AR-15 and Angelica also go down a bit relatively as they can't benefit from ROF 
 However, she does not come close to the top night ARs and at best is ~10% better than generic stuff like G41.
 The slightly improved skill duration vs typical night ARs is not worth the cost to its strength.</p>
 
-<p>Note that while these charts correctly convert ROF into actual fire rate, it smooths out their DPS.
+<p>Note that these charts smooth out each doll's DPS.
 Depending on which exact frame you check in a given battle, the relative numbers will fluctuate if one doll's shot just connected and the other's is still in flight, or when one of the million different random factors of real battles comes into play.
 Some ARs may also get an extra shot in at the end of their skill, or fall barely short of one, which will change relative numbers a bit as well.</p>
 
@@ -107,16 +114,15 @@ Some ARs may also get an extra shot in at the end of their skill, or fall barely
 <h3>Damage against armor</h3>
 
 <p>Crit damage is calculated after applying damage reduction from armor.
-While this is <a href="px4#armor">not even remotely a concern</a> with Px4 Storm in RFHG echelons, ARs tend to lack the AP & FP to ignore this mechanic.</p>
+While this is <a href="px4#armor">not even remotely a concern</a> with Px4 Storm in RFHG echelons, ARs tend to lack the AP & FP needed to ignore this mechanic.</p>
 
 <div class="figure">
 <img src="images/tkb-408/dot-night-armor.png" width="100%"/>
 </div>
-<p>TKB in the blue this time.
-This is with a 5* Damage II Artillery (1.55*1.15=78% total FP buff).
+<p>TKB in the blue this time, with a 5* Damage II Artillery (1.55*1.15=78% total FP buff).
 Varying FP buffs will shift the x-axis around but overall trends would be similar.</p>
 
-<p>TKB still does better against armor than G41, but a pure FP buff like what OTs-14/AS Val have is clearly superior against armor.</p>
+<p>TKB does better against armor than G41, but a pure FP buff like what OTs-14/AS Val have is clearly superior against armor.</p>
 
 <p>Keep in mind that this is in-skill DPS - dolls with short/burst skills will generally be rated higher than ones with high uptime here.
 Using uptime-averaged DPS or something similar has its own problems though as almost all ARs will be totally blocked by armor out-of-skill and few fights last multiple skill cycles.</p>
@@ -150,9 +156,9 @@ I don't know how viable Galil mod setups are in general though, and AS Val is st
 <!-- <p>I am assuming her skill text means "3 or more," so HG+AR+SMG would work.
 Some translations, including the in-game text, have said "more than 3" which would make that component of her skill very awkward to trigger.
 If that is the case, ignore that sentence and never try to fit a random RF into an echelon that doesn't need one just to slightly boost the crit rate of an AR at night.</p> -->
-<p>The charts and analysis above include the crit rate boost from her skill.
-As it requires more than 3 doll types in the echelon, standard AR/HG/SMG night echelons would not give her that crit rate buff and she'd be slightly weaker.
-A 30% crit buff on top of a 20% base is not much anyways (only bringing her to 26% crit rate) so this shouldn't significantly change her analysis.
+<p>The charts and analysis above include lines with the crit rate boost from her skill.
+It requires more than 3 doll types in the echelon, so standard AR/HG/SMG night echelons would not give her that crit rate buff and she'd be follow the slightly weaker <4 gun type lines.
+A 30% crit buff on top of a 20% base is not much anyways (only bringing her to 26% crit rate) so this shouldn't affect your decision making.
 I do not recommend trying to build teams around that component of her skill.
 An out-of-place RF/MG/SG will hurt echelon performance far more than a minor crit rate buff on a subpar AR would help.
 It's a similar deal to SL8 - missing out on a HG's 30%+ tiles and 25%+ DPS buff skill for 5% damage on 1 RF is an awful trade.</p>
@@ -160,51 +166,97 @@ It's a similar deal to SL8 - missing out on a HG's 30%+ tiles and 25%+ DPS buff 
 <p>Charts here are without affection bonuses.
 Having max affection/oaths may slightly change the exact percentages, but it won't be anything major.</p>
 
-<p>Any possible Galil mod interactions aren't covered as we don't have her mod on EN yet and I'm not sure of the viability of such setups in general.
-I'm also not entertaining the idea of running her with a crit scope against 0 evasion enemies - running a dedicated team to fight 0 evasion (armored) enemies and picking <em>ARs</em> for your DPS is simply absurd. RFs and MGs exist.</p>
+<p>
+	<!-- Any possible Galil mod interactions aren't covered as we don't have her mod on EN yet and I'm not sure of the viability of such setups in general. -->
+	Any possible Galil mod interactions aren't covered as I'm not convinced of the viability of such setups in general.
+	I'm also not entertaining the idea of running her with a crit scope against 0 evasion enemies - running a dedicated team to fight 0 evasion (armored) enemies and picking <em>ARs</em> for your DPS is simply absurd. RFs and MGs exist.
+</p>
 
-Speaking of the future, as a new AR without a popular following, TKB is less likely to receive a SPEQ or neural upgrade in the future.
-Crit synergy in general will be less interesting for ARs once we get the <a href="newquip#2chip">#2 Chip</a> equipment.</p>
-
+<p>
+	Speaking of the future, as a new AR without a popular following, TKB is less likely to receive a SPEQ or neural upgrade in the future.
+	Crit synergy in general will be less interesting for ARs once we get the <a href="newquip#2chip">#2 Chip</a> equipment.
+</p>
 
 <h2 id="formations">Echelon ideas<sup><small><a href="#formations">&#35;</a></small></sup></h2>
 
 <p>While she isn't a priority, here are some example formations you can use TKB in.
 Echelons should always be built depending on the enemy, your armory, and various other requirements so please don't copy these 1:1.</p>
 
-<p>An AS Val variant, if you have a strong aversion to AR-15/Sopmod/good night ARs:</p>
-<table style="width:50%">
-<!--<tr><td colspan="3"><center>Fairy: Command/Para</center></td></tr>-->
+<p>Left: an AS Val variant, if you have a strong aversion to AR-15/Sopmod/good night ARs. Right: an example making use of her tiles.</p>
+<!-- <table style="width:50%">
 <tr><td>AS Val mod</td><td>Vector</td><td>-</td></tr>
 <tr><td>Python</td><td>UMP45</td><td>-</td></tr>
 <tr><td>TKB-408</td><td>-</td><td>-</td></tr>
-</table>
+</table> -->
+<div class="figure">
+<img src="images/tkb-408/just-use-star.png" width="49%"/>
+<img src="images/tkb-408/could-be-worse.png" width="49%"/>
+</div>
 
-<p>An example making use of her tiles:</p>
-
-<table style="width:50%">
 <!--<tr><td colspan="3"><center>Fairy: depends</center></td></tr>-->
+<!-- <table style="width:50%">
 <tr><td>ST AR-15</td><td>Uzi mod</td><td>-</td></tr>
 <tr><td>TKB-408</td><td>UMP45</td><td>-</td></tr>
 <tr><td>HP-35</td><td>-</td><td>-</td></tr>
-</table>
+</table> -->
 
-<p>An older-style night ARSMG, if you like to kite:</p>
+<p>Left: an older-style night ARSMG, if you like to kite. Right: you may need more AOE.</p>
 
-<table style="width:50%">
+<!-- <table style="width:50%">
 <tr><td>OTs-14</td><td>JS 9/Lusa</td><td>-</td></tr>
 <tr><td>TKB-408</td><td>Mk23</td><td>-</td></tr>
 <tr><td>9A-91</td><td>-</td><td>-</td></tr>
-</table>
+</table> -->
+<div class="figure">
+<img src="images/tkb-408/very-old.png" width="49%"/>
+<img src="images/tkb-408/more-boom.png" width="49%"/>
+</div>
+<!-- <p>though nowadays you might as well put P22 on 2 so all the usual maintank options have full tile coverage (UMP45/MP5/C-MS/etc).</p> -->
 
-<p>though nowadays you might as well put P22 on 2 so all the usual maintank options have full tile coverage (UMP45/MP5/C-MS/etc).</p>
-
-<p>You may need more AOE:</p>
-<table style="width:50%">
+<!-- <table style="width:50%">
 <tr><td>HK416</td><td>Uzi mod</td><td>-</td></tr>
 <tr><td>Python</td><td>C-MS</td><td>-</td></tr>
 <tr><td>TKB-408</td><td>-</td><td>-</td></tr>
-</table>
+</table> -->
+<!-- <p>These will be updated with pictures once I have a copy of her to screenshot.</p> -->
 
-<p>These will be updated with pictures once I have a copy of her to screenshot.</p>
+<h2 id="ads">More like this</h2>
+
+<a href="augelica">
+	<div class="gallery">
+	  <div class="gallerypic">
+		<img src="images/icon/augelica.jpg" width="33%" height="400">
+		<div class="gallerypicdesc"><b>AUG and Angelica</b><br/>Random spray vs AR targeting</div>
+	  </div>
+	</div>
+</a>
+
+<a href="sub2k">
+	<div class="gallery">
+	  <div class="gallerypic">
+		<img src="images/icon/sub2k.jpg" width="33%" height="400">
+		<div class="gallerypicdesc"><b>SUB-2000 Analysis</b><br/>DPS at low rarities</div>
+	  </div>
+	</div>
+</a>
+
+<a href="ar-armor-fairy">
+	<div class="gallery">
+	  <div class="gallerypic">
+		<img src="images/icon/ar-armor-fairy.jpg" alt="Fairy comparison" width="33%" height="400">
+		<div class="gallerypicdesc"><b>ARs Against Armor, by Fairy</b><br/>Command versus Artillery</div>
+	  </div>
+	</div>
+</a>
+
+<!-- <a href="2v3ar">
+	<div class="gallery">
+		<div class="gallerypic">
+		<img src="images/icon/2v3ar.jpg" width="33%" height="400">
+		<div class="gallerypicdesc"><b>Are 2 ARs or 3 ARs Better?</b><br/>Does it matter?</div>
+		</div>
+	</div>
+</a> -->
+
+<div class="clearfix"></div>
 </main></div></body></html>
