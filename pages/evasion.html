@@ -68,6 +68,7 @@ gtag('config', 'G-805N997DPC');
 	<img src="images/evasion/hitrate.png" width="100%"/>
 </div>
 <p>
+	Hit rate increases rapidly at first, but will slow down the higher your accuracy is relative to enemy evasion.
 	You can find specific enemy stats <a href="https://pengupengupengu.github.io/gflmaps/">here</a>.
 	In 3D:
 </p>
@@ -76,7 +77,15 @@ gtag('config', 'G-805N997DPC');
 </div>
 <p>
 	Find where your accuracy & the enemy's evasion meet, and the color is your chance of each bullet hitting (warmer = more likely to hit, the reverse also works for the odds you'll get hit).
-	Dodge chance is simply 1 minus the hit rate, or EVA/(EVA+ACC). At night, your final accuracy <a href="https://docs.google.com/document/d/1RvHYM2qVEkAexBE4oag6AQ9sUvNQFAKgA-Mfk5aIK60/edit#">gets a little more complicated</a><sup>1</sup>:
+	Dodge chance is simply 1 minus the hit rate, or EVA/(EVA+ACC).
+</p>
+<p>
+	Example: the Centaurus (KCCO Archers) in Core 8 have <a href="https://pengupengupengu.github.io/gflmaps/#campaign=6006&mission=648">51 accuracy</a>.
+	A fully equipped lv115 UMP45 with a 56% evasion buff (Artillery aura) has 203 evasion.
+	Each attack will then have a 51/(51+203)=51/254≈20.08% chance to hit her.
+</p>
+<p>
+	At night, your final accuracy <a href="https://docs.google.com/document/d/1RvHYM2qVEkAexBE4oag6AQ9sUvNQFAKgA-Mfk5aIK60/edit#">gets a little more complicated</a><sup>1</sup>:
 </p>
 <div class="figure">
 	<img src="images/evasion/formula-night.png" width="75%"/>
@@ -92,11 +101,7 @@ gtag('config', 'G-805N997DPC');
 <p>
 	And you can probably see why calibrating gold PEQs isn't recommended: hit rate barely improves at that point, assuming your base accuracy is significantly above your target evasion.
 </p>
-<p>
-	Example: the Centaurus (KCCO Archers) in Core 8 have <a href="https://pengupengupengu.github.io/gflmaps/#campaign=6006&mission=648">51 accuracy</a>.
-	A fully equipped lv115 UMP45 with a 56% evasion buff (Artillery aura) has 203 evasion.
-	Each attack will then have a 51/(51+203)=51/254≈20.08% chance to hit her.
-</p>
+
 <p>
 	This works both ways, for friendlies and enemies, <a href="myths#hr">with no minimum</a>.
 	Today, I'd like to go over a few less-obvious aspects of this.
@@ -111,7 +116,7 @@ gtag('config', 'G-805N997DPC');
 	<img src="images/evasion/formula-ehp.png" width="50%"/>
 </div>
 <p>
-	Let's move away from talking about evasion and hit rates, and instead introduce another number: effective HP (or EHP for short).
+	Let's move away from talking about evasion and hit rates, and introduce another number: effective HP (or EHP for short).
 	Consider a particularly bad shotgun with 1000 HP and 0 evasion.
 	All attacks made will hit, so once enemies fire off 1000 damage you'll die.
 	Now, suppose instead that shotgun had a bit more evasion, just enough to match that enemy's accuracy.
@@ -120,7 +125,7 @@ gtag('config', 'G-805N997DPC');
 </p>
 
 <p>
-	Effective HP is very nice to work with: twice the EHP, twice the survivability, twice as good.
+	Effective HP is very nice to work with: twice the EHP, twice the survivability, twice as good. It also lets you compare units with significantly different HP/EVA distributions.
 </p>
 
 <h2 id="applications">Applications<sup><small><a href="#applications">&#35;</a></small></sup></h2>
@@ -508,7 +513,7 @@ Here's the same table with 143 enemy accuracy.</p>
 <a href="cms-dps">
 	<div class="gallery">
 	  <div class="gallerypic">
-		<img src="images/icon/cms-dps.png" width="33%" height="400">
+		<img src="images/icon/cms-dps.jpg" width="33%" height="400">
 		<div class="gallerypicdesc"><b>Using C-MS for DPS</b><br/>Mode & equipment analysis</div>
 	  </div>
 	</div>
