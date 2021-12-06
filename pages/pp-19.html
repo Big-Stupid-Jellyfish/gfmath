@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-805N997DPC');
+</script>
+<meta charset="utf-8">
+<meta name="keywords" content="portfolio">
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>PP-19 mod analysis - GFMath</title>
+<link rel="stylesheet" href="../style.css">
+
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
+</head>
+
+<body>
+<div id="wrapper">
+
+<header>
+<a href="../index">GFMath</a>
+</header>
+<nav role="navigation">
+<a href="../index"><li>Home</li></a>
+<a href="https://www.youtube.com/c/BigStupidJellyfish"><li>Youtube</li></a>
+<!-- <a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a> -->
+</nav>
+
+<main>
+<h1>PP-19 Mod Analysis</h1>
+<center><em>By BigStupidJellyfish | 2021-December-05</em></center>
+
+
+
+
+<p>
+	Hand grenades <a href="hand-grenades">are a bit dissapointing</a>, but PP-19's mod offers a few nice extras.
+	Let's see if they're enough to make her worth it.
+</p>
+
+<blockquote>
+	<p>
+		<strong>Hand Grenade</strong> (Skill 1). Initial CD 3s/Skill CD 16s.
+	</p>
+
+	<p>
+		Launch a grenade that deals 7.5x damage to enemies within a 2.5-unit radius.
+	</p>
+</blockquote>
+
+<blockquote>
+	<p>
+		<strong>Savage Instinct</strong> (Skill 2). Initial CD 0s/Skill CD 0s.
+	</p>
+
+	<p>
+		Skill 1 now applies marks to units that it damages. If any marked units remain on the battlefield, her remaining Dummies will launch grenades in sequence at the marked units, dealing 3x damage in a 2.5-unit radius around the target.
+		(With the "PT-3 Stock" equipped, a check will be made every 6 seconds. If PP-19 has the highest HP on her <del>row</del> <strong>column</strong>, her damage is increased by 10%, otherwise her evasion is increased by 10%. These effects last for 15 seconds and can stack.)
+	</p>
+</blockquote>
+<h2>Contents<sup><small><a href="#">&#35;</a></small></sup></h2>
+<ul>
+	<li><a href="#facts">Facts about PP-19</a></li>
+	<li><a href="#tests">Experiments with PP-19</a></li>
+	<li><a href="#conclusion">In conclusion</a></li>
+	<li><a href="#extras">Extras</a></li>
+</ul>
+<h2 id="facts">Facts about PP-19<sup><small><a href="#facts">&#35;</a></small></sup></h2>
+
+<ul>
+	<li>PP-19's impact multiplier improves to 7.5x (vs 6.5x at 4 stars, 7x Vector, 6.5x Uzi mod)</li>
+	<li>Her last point of FP comes in at lv117 (29->30 at normal affection), and her last stat gain is one point of EVA at lv119 (83->84). For comparison:</li>
+	<ul>
+		<li>Vector has 32 FP, 75 EVA under the same conditions.</li>
+		<li>Uzi has 28 FP, 88 EVA. Her last stat increases are 1 FP at lv117 and 1 EVA at lv118.</li>
+		<li>This is before equipment, so percentage comparisons aren't useful yet.</li>
+	</ul>
+	<li>Her mod equipment includes a passive effect, granting damage or evasion buffs.</li>
+	<li>Her mod equipment provides a smaller FP bonus (+4) than a maxed EOT (+8), but it does give +20 EVA and an extra skill effect.</li>
+	<ul>
+		<li>If getting the FP buff, PP-19 will deal (29+19)*1.1*7.5=396 grenade damage (SPEQ) vs (29+23)*7.5=390 grenade damage (EOT) - almost the same.
+			SPEQ+EVA buff therefore means her grenade would be at a ~10% disadvantage.
+		</li>
+	</ul>
+	<li>From 8, PP-19's tiles got expanded to cover 4 & 7, a relative advantage for her when paired with 3AR backlines.</li>
+	<li>Her skill 2 activates immediately:</li>
+</ul>
+<div class="figure">
+	<img src="images/pp-19/t0.png" width="100%"/>
+</div>
+<ul>
+	<li>And it gives FP if she is alone (image taken ~1s into battle).</li>
+	<li>Her skill text is wrong:</li>
+</ul>
+<div class="figure">
+	<img src="images/pp-19/rowcolumn.png" width="100%"/>
+</div>
+<ul>
+	<li>Left: as written, LTLX is in the same column as PP-19. PP-19 is alone in her row and should gain FP, but instead gains AGI (EVA).</li>
+	<li>Right: as written, PP-19 is sharing her row with LTLX, who has more HP. She should gain EVA, but instead gains STR (FP).</li>
+	<li>Implications:</li>
+	<ul>
+		<li>PP-19 checks if she has the highest HP in her column.</li>
+		<li>PP-19 has a somewhat moderate 950 HP. There are a decent number of SMGs on each side of her.</li>
+		<li>Some notable SMGs that would (initially) give PP-19 an EVA buff: Thompson, Lusa, G36c, MP7, UMP45, RO635.</li>
+		<li>On the other side, A.Vector, C-MS, UMP9, MP5, and Dorothy would cause her to start off with the FP buff.</li>
+		<li>If your maintank is doing their job, they will lose more HP over time than PP-19 (favoring her FP buff). On the other hand, her lack of defensive skills means PP-19 will lose HP faster when targeted.</li>
+		<li>Cumulative damage from various battles can change which buff she receives.</li>
+		<!-- <li>You can go to your index/armory and sort by HP, though this is less useful for real map situations in which damage persists.</li> -->
+		<li>Game text once again proves to be unreliable.</li>
+	</ul>
+	<li>PP-19 may continue throwing grenades if all marked targets die, but it seems like she'll stop if the first grenade kills everything and leaves no marks (<a href="https://www.youtube.com/watch?v=wKGU8XCxDMc">example 1</a>, <a href="https://www.youtube.com/watch?v=Eq8fKxcIn9Q">example 2</a>).</li>
+	<li>Dummies need to be alive to throw grenades (<a href="https://www.youtube.com/watch?v=MWm0GK80qj4">example</a>). PP-19 will do worse on longer maps with more combat.</li>
+</ul>
+<h2 id="tests">Experiments with PP-19<sup><small><a href="#tests">&#35;</a></small></sup></h2>
+
+<p>
+	While all good bits of information to know, nothing in the previous section actually tells us how PP-19 does in real combat.
+	As usual, damage simulators won't help either.
+	It's time to test things out.
+</p>
+
+<p>
+	There are four things we'll compare: PP-19 (SPEQ), PP-19 (EOT), Vector, and Uzi mod.
+	This will hopefully show us which equipment is better and how she does either way versus standard explodey offtanks.
+</p>
+
+<p>
+	Test 1: a mix of enemies from Chapter 12. Fairy varies to keep fights similar in length. 
+</p>
+<div class="figure">
+	<img src="images/pp-19/test1.png" width="100%"/>
+</div>
+<p>
+	A few immediate thoughts:
+</p>
+<ul>
+	<li>In some fights, PP-19 didn't contribute that much damage but the team still did better. That would strongly suggest her extra tile on <a href="augelica">AUG</a> is putting in work.</li>
+	<li>UMP45 has more HP than PP-19, so she started each battle with an EVA buff. This means her SPEQ is expected to do worse than an EOT.</li>
+	<li>In two of the fights, PP-19 seemed equal-or-better than both Uzi and Vector.</li>
+	<li>Against the zombie horde, Uzi was best, with PP-19 trailing behind and doing about the same as Vector.</li>
+</ul>
+<p>
+	Another try against the same enemies, with MP5 instead of UMP45 (so PP's SPEQ gives her FP) and AK-15 instead of AUG:
+</p>
+<div class="figure">
+	<img src="images/pp-19/test2.png" width="100%"/>
+</div>
+<p>
+	The trends look about the same - PP-19 did better than Uzi/Vector in the left two fights and Uzi was best against the zombies.
+</p>
+
+<p>
+	While PP-19's tiles are an important aspect to consider, let's do a few tests with a 2AR1HG backline to focus more on the actual skills.
+	Switching to night battles so the swap is more justifiable (as they're <a href="2v3ar">a bit lacking at day</a>, though that requires us to resist the temptation to use HP-35).
+	I'm also dropping Vector as <a href="vector-vs-uzi">she's usually worse than Uzi</a> and that'll let the tests go faster.
+</p>
+
+<div class="figure">
+	<img src="images/pp-19/test3.png" width="100%"/>
+</div>
+<p>
+	Performance differences are a bit less clear, despite explosives being valuable in all three fights (damage contributions of 25-50%).
+	I'll call them about equal - there's a possible advantage for PP-19 (either equip) against the Aegis/Strikers, for Uzi against the Brute/Scouts, and for PP-19 (SPEQ) against the Nemeums, but not by much.
+</p>
+<p>
+	Taking the same team to Chapter 9N enemies and swapping Grizzly for Python (for even more FP tiles):
+</p>
+<div class="figure">
+	<img src="images/pp-19/test4.png" width="100%"/>
+</div>
+<p>
+	PP-19 looks equal-or-better than Uzi here, as does her SPEQ versus an EOT.
+	Shrimp added for fun against the manticores - the low link count there makes grenades less effective, though a HG like P22 would be even better.
+</p>
+<h2 id="conclusion">In conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+
+<p>
+	PP-19 looks like she can keep up with and even sometimes exceed Uzi's mod in performance, when starting fights at full HP.
+	She's particularly nice with 3AR backlines considering her expanded tiles, or 2AR ones including HP-35/other HGs with odd tiles.
+</p>
+<p>
+	However, ARSMG echelons see limited use in high-end content and PP-19 has no farming niche to herself like Uzi and Vector do.
+	Performance differences are not large enough to make her necessary, so it's fine to hold off on modding PP-19 until everything else interesting is done.
+</p>
+<p>
+	PP-19's mod SPEQ comes with an interesting extra skill. Performance differences between it and an EOT were overall small.
+	While it may be nice in some echelons, I'd only upgrade it if you have resources to burn - 
+	PP-19 still does well with an EOT, and has a decent chance of doing better that way when your maintank is beefier than her.
+	<!-- I'd also be inclined to prefer an EOT over it if your maintank has more base HP than PP-19 (which applies to a lot of them - UMP45, RO, and P90 being the big ones). -->
+</p>
+<p>
+	Other notes:
+</p>
+<ul>
+	<!-- <li>2AR1HG backlines make PP-19 a bit worse, relatively. At day, you <a href="2v3ar">probably shouldn't be using those</a>.</li> -->
+	<li>The cumulative damage to each SMG may be a significant factor to her performance, but can't be simulated well in target practice. If using her to clear maps, it may be worth paying attention to what buffs she gets as the battles go on.</li>
+	<li>My PP-19 is lv115, which adds a very slight (~2%) disadvantage for her.</li>
+	<!-- <li>Both Vector and Uzi are good options on certain farm maps (13-4 and 12-4E, respectively). PP-19 has no current popular role like this, and may be less valuable from that perspective.</li> -->
+	<li>PP-19 is blue because of her eye colors - I didn't think the dark greens would look as good. Uzi's yellow is from her costume shirt.</li>
+	<li>Her FP tiles are friendlier to chip setups than Vector's ROF, whenever those release.</li>
+	<li>Not being able to simulate carryover damage easily is a significant limitation. PP-19 will lose skill2 grenades as she loses dummies, whereas Uzi's molotov is as strong as ever while she's alive.
+		It's hard to say how much that matters compared to her improved tiles.
+	</li>
+	<!-- <li>PP-19 was set to her Frog Princess skin for all this.</li> -->
+</ul>
+
+<h2 id="extras">Extras<sup><small><a href="#extras">&#35;</a></small></sup></h2>
+<p>
+	PP-19's grenades are not quite instant. Here's my frame-by-frame analysis of two skill activations against a dummy:
+</p>
+<div class="figure">
+	<img src="images/pp-19/frame-analysis.png" width="100%"/>
+</div>
+<p>
+	Video reference <a href="https://www.youtube.com/watch?v=s6g0bs_veHM">here</a>.
+	There's some uncertainty (+/- a frame or so outside of the first few seconds).
+	I may replace this once we get the client update enabling an in-game timer (for more accurate frame counting).
+	Takeaways:
+</p>
+<ul>
+	<li>The first grenade takes about 2 seconds to impact after skill activation. I'd expect this to be fairly standard among offtanks, but keep in mind that it does not deal damage at 3s.</li>
+	<li>The second grenade appears slower than any other, with a 2.13s delay.</li>
+	<li>The third-fifth grenades are probably all thrown at the same speed (1.6s gaps).</li>
+	<li>In total, PP-19 takes 8.8s to throw her grenades and the last one will impact ~11.8s into the battle.</li>
+	<li>ROF tiles or other buffs may slightly alter timings/when her skill is activated.</li>
+</ul>
+<!-- <h2 id="ads">More like this / <a href="#">back to top</a></h2> -->
+<p>
+	PP-19 can't throw new grenades while moving, although any throw started beforehand will continue - <a href="https://www.youtube.com/watch?v=gqoB8R6vn7Y">see this demonstration</a>.
+	Battles that need her to move a lot may hurt her performance.
+</p>
+<p>
+	If she maintains a HP lead over your maintank, PP-19's second FP stack will come in at 6 seconds - that would be around frame 318 in the table above (not 180 as the recording is not perfectly aligned with battle start).
+	All her bonus grenades would benefit, assuming no manual control/kiting/delays.
+	The third FP stack would come in at frame 498, which may or may not apply to her final grenade depending on how quickly her skill activates.
+	I wouldn't expect that to be relevant.
+</p>
+<h2 id="ads">More like this</h2>
+
+<a href="augelica">
+	<div class="gallery">
+	  <div class="gallerypic">
+		<img src="images/icon/augelica.jpg" width="33%" height="400">
+		<div class="gallerypicdesc"><b>AUG and Angelica</b><br/>Random spray vs AR targeting</div>
+	  </div>
+	</div>
+</a>
+
+<a href="shrimp-equip">
+	<div class="gallery">
+	  <div class="gallerypic">
+		<img src="images/icon/shrimp-equip.jpg" alt="SR-3MP Equipment" width="33%" height="400">
+		<div class="gallerypicdesc"><b>Equipping SR-3MP for any situation</b><br/></div> <!-- Equipment optimization -->
+	  </div>
+	</div>
+</a>
+
+<a href="tkb-408">
+	<div class="gallery">
+	  <div class="gallerypic">
+		<img src="images/icon/tkb-408.jpg" width="33%" height="400">
+		<div class="gallerypicdesc"><b>TKB-408 Analysis</b><br/>Critical night focus</div>
+	  </div>
+	</div>
+</a>
+
+<div class="clearfix"></div>
+</main></div></body></html>
