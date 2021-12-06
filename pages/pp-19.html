@@ -13,7 +13,7 @@ gtag('config', 'G-805N997DPC');
 <meta charset="utf-8">
 <meta name="keywords" content="portfolio">
 <meta name="description" content="Girls Frontline, by the numbers">
-<title>PP-19 mod analysis - GFMath</title>
+<title>Testing PP-19's mod - GFMath</title>
 <link rel="stylesheet" href="../style.css">
 
 <link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
@@ -35,7 +35,8 @@ gtag('config', 'G-805N997DPC');
 </nav>
 
 <main>
-<h1>PP-19 Mod Analysis</h1>
+<!-- <h1>PP-19 Mod Analysis</h1> -->
+<h1>Testing PP-19's mod</h1>
 <center><em>By BigStupidJellyfish | 2021-December-05</em></center>
 
 
@@ -81,23 +82,23 @@ gtag('config', 'G-805N997DPC');
 	<ul>
 		<li>Vector has 32 FP, 75 EVA under the same conditions.</li>
 		<li>Uzi has 28 FP, 88 EVA. Her last stat increases are 1 FP at lv117 and 1 EVA at lv118.</li>
-		<li>This is before equipment, so percentage comparisons aren't useful yet.</li>
+		<li>This is before equipment, so percentage comparisons aren't useful yet. <a href="https://gfl.zzzzz.kr/doll.php?id=20136&lang=en">Stat info source</a>.</li>
 	</ul>
-	<li>Her mod equipment includes a passive effect, granting damage or evasion buffs.</li>
+	<!-- <li>Her mod equipment includes a passive effect, granting damage or evasion buffs.</li> -->
 	<li>Her mod equipment provides a smaller FP bonus (+4) than a maxed EOT (+8), but it does give +20 EVA and an extra skill effect.</li>
 	<ul>
-		<li>If getting the FP buff, PP-19 will deal (29+19)*1.1*7.5=396 grenade damage (SPEQ) vs (29+23)*7.5=390 grenade damage (EOT) - almost the same.
+		<li>If getting the FP buff, PP-19 will deal (29+19)*1.1*7.5=396 initial grenade damage (SPEQ) vs (29+23)*7.5=390 grenade damage (EOT) - almost the same.
 			SPEQ+EVA buff therefore means her grenade would be at a ~10% disadvantage.
 		</li>
 	</ul>
-	<li>From 8, PP-19's tiles got expanded to cover 4 & 7, a relative advantage for her when paired with 3AR backlines.</li>
-	<li>Her skill 2 activates immediately:</li>
+	<li>From position 8, PP-19's tiles got expanded and now cover 4 & 7, a relative advantage for her when paired with 3AR backlines.</li>
+	<li>Her skill 2 activates immediately (image taken ~1s into battle):</li>
 </ul>
 <div class="figure">
 	<img src="images/pp-19/t0.png" width="100%"/>
 </div>
 <ul>
-	<li>And it gives FP if she is alone (image taken ~1s into battle).</li>
+	<li>And it gives FP if she is alone.</li>
 	<li>Her skill text is wrong:</li>
 </ul>
 <div class="figure">
@@ -111,8 +112,8 @@ gtag('config', 'G-805N997DPC');
 		<li>PP-19 checks if she has the highest HP in her column.</li>
 		<li>PP-19 has a somewhat moderate 950 HP. There are a decent number of SMGs on each side of her.</li>
 		<li>Some notable SMGs that would (initially) give PP-19 an EVA buff: Thompson, Lusa, G36c, MP7, UMP45, RO635.</li>
-		<li>On the other side, A.Vector, C-MS, UMP9, MP5, and Dorothy would cause her to start off with the FP buff.</li>
-		<li>If your maintank is doing their job, they will lose more HP over time than PP-19 (favoring her FP buff). On the other hand, her lack of defensive skills means PP-19 will lose HP faster when targeted.</li>
+		<li>On the other side, A.Vector, C-MS, UMP9, MP5, and Dorothy would let her start off with the FP buff.</li>
+		<li>If your maintank is doing their job, they should lose more HP over time than PP-19 (favoring her FP buff). On the other hand, her lack of defensive skills means PP-19 will lose HP faster when targeted.</li>
 		<li>Cumulative damage from various battles can change which buff she receives.</li>
 		<!-- <li>You can go to your index/armory and sort by HP, though this is less useful for real map situations in which damage persists.</li> -->
 		<li>Game text once again proves to be unreliable.</li>
@@ -144,12 +145,12 @@ gtag('config', 'G-805N997DPC');
 </p>
 <ul>
 	<li>In some fights, PP-19 didn't contribute that much damage but the team still did better. That would strongly suggest her extra tile on <a href="augelica">AUG</a> is putting in work.</li>
-	<li>UMP45 has more HP than PP-19, so she started each battle with an EVA buff. This means her SPEQ is expected to do worse than an EOT.</li>
+	<li>UMP45 has more HP than PP-19, so she started each battle with an EVA buff. Her SPEQ accordingly does a little worse than an EOT here.</li>
 	<li>In two of the fights, PP-19 seemed equal-or-better than both Uzi and Vector.</li>
-	<li>Against the zombie horde, Uzi was best, with PP-19 trailing behind and doing about the same as Vector.</li>
+	<li>Against the zombie horde, Uzi was best with PP-19 trailing behind and doing about the same as Vector.</li>
 </ul>
 <p>
-	Another try against the same enemies, with MP5 instead of UMP45 (so PP's SPEQ gives her FP) and AK-15 instead of AUG:
+	Another try against the same enemies, with MP5 instead of UMP45 (so PP-19's SPEQ gives her FP) and AK-15 instead of AUG:
 </p>
 <div class="figure">
 	<img src="images/pp-19/test2.png" width="100%"/>
@@ -160,8 +161,8 @@ gtag('config', 'G-805N997DPC');
 
 <p>
 	While PP-19's tiles are an important aspect to consider, let's do a few tests with a 2AR1HG backline to focus more on the actual skills.
-	Switching to night battles so the swap is more justifiable (as they're <a href="2v3ar">a bit lacking at day</a>, though that requires us to resist the temptation to use HP-35).
-	I'm also dropping Vector as <a href="vector-vs-uzi">she's usually worse than Uzi</a> and that'll let the tests go faster.
+	Switching to night battles so the swap is more justifiable (they're <a href="2v3ar">a bit lacking at day</a>), though that requires us to resist the temptation to use HP-35.
+	I'm also dropping Vector as <a href="vector-vs-uzi">she's usually worse than Uzi</a>, the results here look consistent with that, and the tests will go faster.
 </p>
 
 <div class="figure">
@@ -179,17 +180,20 @@ gtag('config', 'G-805N997DPC');
 </div>
 <p>
 	PP-19 looks equal-or-better than Uzi here, as does her SPEQ versus an EOT.
-	Shrimp added for fun against the manticores - the low link count there makes grenades less effective, though a HG like P22 would be even better.
+	Shrimp added for fun against the manticores as the low link count there makes grenades less effective.
+	A HG like P22 would be even better.
 </p>
 <h2 id="conclusion">In conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
 
 <p>
-	PP-19 looks like she can keep up with and even sometimes exceed Uzi's mod in performance, when starting fights at full HP.
+	PP-19 looks like she can keep up with and sometimes even exceed Uzi's mod in performance, when starting fights at full HP.
 	She's particularly nice with 3AR backlines considering her expanded tiles, or 2AR ones including HP-35/other HGs with odd tiles.
 </p>
 <p>
 	However, ARSMG echelons see limited use in high-end content and PP-19 has no farming niche to herself like Uzi and Vector do.
 	Performance differences are not large enough to make her necessary, so it's fine to hold off on modding PP-19 until everything else interesting is done.
+	I would not recommend modding her if you're a newer or intermediate player.
+	Still, PP-19's mod is a substantial upgrade and you could do a lot worse with your fragments (looking at you, SV-98/Sten/G3/Bren/IDW/etc).
 </p>
 <p>
 	PP-19's mod SPEQ comes with an interesting extra skill. Performance differences between it and an EOT were overall small.
