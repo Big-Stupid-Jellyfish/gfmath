@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-805N997DPC');
+</script>
+<meta charset="utf-8">
+<meta name="keywords" content="portfolio">
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>AR #2 Chip Full Analysis - GFMath</title>
+<link rel="stylesheet" href="../style.css">
+
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
+</head>
+
+<body>
+<div id="wrapper">
+
+<header>
+<a href="../index">GFMath</a>
+</header>
+<nav role="navigation">
+<a href="../index"><li>Home</li></a>
+<a href="https://www.youtube.com/c/BigStupidJellyfish"><li>Youtube</li></a>
+<!-- <a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a> -->
+</nav>
+
+<main>
+<h1>AR #2 Chip Full Analysis</h1>
+<center><em>By BigStupidJellyfish | 2021-December-04</em></center>
+
+
+
+<p>
+	For a general review of all new equipment types, see <a href="newquip">this page</a>.
+	For a detailed look into the #2 processor chip, read on.
+</p>
+<div class="figure">
+<img src="images/chips/equip.png" width="15%"/>
+</div>
+<h2>Contents<sup><small><a href="#">&#35;</a></small></sup></h2>
+<ul>
+	<li><a href="#info">Basic information</a></li>
+	<li><a href="#principles">General principles</a></li>
+	<li><a href="#scopes">Scope selection</a></li>
+	<li><a href="#iti">ITIs</a></li>
+	<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+
+
+<h2 id="info">Basic information<sup><small><a href="#info">&#35;</a></small></sup></h2>
+
+<ul>
+	<li>A max calibrated/gold/+10 #2 chip provides +15 FP, +25 ROF, and -50% critical damage. As usual for equipment, these are additive and applied before fairy auras/tiles/skills/etc.</li>
+	<li>Chips use the exo slot, and can be equipped by ARs and SMGs.</li>
+	<li>-50% critical damage puts you at 100% net critical damage, so no increase at all on a crit. Fairy auras, skills, and such can bring this back up (example with Command: (1.5-0.5)*1.36=1.36=136% crit damage, a slight reduction from the baseline).</li>
+	<li>New equipment options do not make anything weaker. Your ST AR-15 can shoot things exactly the same way she could before. They can only make things less strong <em>relative</em> to new options.</li>
+	<li>This page focuses on ARs. For some example numbers on how it works with SMGs, see <a href="shrimp-equip#chips">this bit for Shrimp</a>. As SMGs can make use of an exo's evasion, a comprehensive comparison of their equipment is more challenging.</li>
+	<!-- <li>Some things covered here may be relatively minor optimizations. If you just want something good enough, craft more fairies - getting them to high rarities will let you steamroll most content even with suboptimal teams.</li> -->
+</ul>
+
+<h2 id="principles">General principles<sup><small><a href="#principles">&#35;</a></small></sup></h2>
+
+<p>
+	First question - is the critical damage penalty crippling?
+	Let's compare an EOT+Chip setup to a VFL+Exo, without any tiles or other stuff in play.
+</p>
+<div class="figure">
+<img src="images/newquip/chip2.png" width="100%"/>
+</div>
+<p>
+	Warmer colors mean an EOT+Chip is more DPS than a VFL+Exo. Minimum point on the chart is a +7% DPS improvement, maximum is +46% DPS (although those don't correspond to any real AR's stats).
+	AR stats are thus low enough for the additive bonuses (+15 FP, +25 ROF) to be worth more than the 50% crit damage in a vacuum.
+	Dolls with lower base stats benefit more, relatively, than those with higher base stats.
+</p>
+
+<p>
+	There are many complicating factors.
+	As with most things that mess with ROF, frame breakpoints will make things vary. Sometimes an EOT and ITI result in the same effective ROF, other times the EOT will make you slower.
+	<!-- ROF-based ARs will get much less value out of their skills when equipped with chips, as ROF does nothing past 116 points. -->
+</p>
+
+<p>
+	Raw FP buffs help a bit more against armor and is good for grenades.
+	ROF gives better performance against weaker mobs and is particularly strong against Orthrus.
+</p>
+
+<p>
+	ROF is capped at 116, so ARs that buff their own ROF will be often be worse off with chips.
+	As FP and ROF ARs put out similar pre-chip numbers, that means FP ARs should now generally be preferred as they can fully benefit from chips.
+</p>
+
+<p>
+	<!-- Classic ARSMG formations can get a lot of crit rate and damage with M4/UMP45/Command.
+	-50% crit damage is a big penalty, and could offset the extra stats in some cases. -->
+	At night, almost all ARs are stuck with PEQs and care much less about crits.
+	Chips are more universally useful there (and, with no scope alternatives, simpler to equip).
+</p>
+
+<p>
+	A number of exo-slot SPEQs were buffed to better compete with chips (<a href="https://media.discordapp.net/attachments/443533099632951306/857458294863953930/2021-06-23_20_12_49.png">full list of changes here</a>).
+	I may add more detailed analyses of those in the future, but you'll generally be fine using them in place of a chip (and as they tend to lack a crit damage penalty, no need to consider an EOT).
+</p>
+
+<h2 id="scopes">Scope selection<sup><small><a href="#scopes">&#35;</a></small></sup></h2>
+
+<p>
+	Chips are looking pretty good.
+	Now that we're ready to throw out most ROF-based ARs, let's see if VFLs will be unseated as the go-to AR scope.
+</p>
+<p>
+	A lot of factors combine to make some general rule-of-thumb or relationship impossible to give out.
+	Damage simulators have a long list of issues, but you may be best off in many cases just simulating the team and seeing which scope/chip combination gives the best numbers.
+	To help you distinguish between borderline and slam-dunk equipment selection cases, here are a few general charts.
+</p>
+
+<p>
+	A common claim is that you should pair the #2 chip with a VFL if you have 25% or more fairy crit damage, and an EOT otherwise.
+	This is a bit of an oversimplification that is almost always wrong and ignores a number of important factors.
+</p>
+
+<p>
+	If given a specific doll, enemy stats, and buff situation (acc/ROF/crit rate/crit damage), you can plot the DPS difference of a VFL/chip and EOT/chip setup.
+	A basic example:
+</p>
+
+<div class="figure">
+<img src="images/newquip/cdmg-basic.png" width="100%"/>
+</div>
+<p>
+	If your doll & fairy combination falls above the 0% line, use a VFL. If they're below, use an EOT.
+	Three variants: <a href="images/newquip/cdmg-eva">with more enemy evasion</a>, <a href="images/newquip/cdmg-eva">with M4A1 & UMP45's tiles</a>, <a href="images/newquip/cdmg-eva">with C-MS & JS 9's tiles</a>.
+	25% crit damage is sort of in the middle, but the crossover point can easily get as low as 10% or as high as 40%.
+</p>
+
+<p>
+	Even for a single doll it can vary: <a href="https://imgur.com/a/cx9DuKR">here's some charts with Medusa and her chip-like SPEQ</a> (+3 FP over a normal chip).
+	At level 90, she prefers a VFL much sooner because EOTs drop her down a frame.
+	At level 99+, they no longer do and EOTs work better.
+</p>
+
+<p>
+	You may also wonder if VFL+Exo setups could still be a thing at very high crit damage levels:
+</p>
+<div class="figure">
+<img src="images/chips/vflexo.png" width="100%"/>
+</div>
+<p>
+	G41's "Exo" is her SPEQ (so use that over chips), and AK-12's ROF/crit rate selfbuffs are sufficient for her to prefer VFL+Exo setups over a VFL+Chip (but this doesn't mean she does better than a different doll using an EOT/Chip).
+	Otherwise, the answer is no: a VFL+Chip will scale about as well as a VFL+Exo with crit damage, and it starts off much better.
+	This chart style works nicely in terms of compactness, but if it's a little hard to understand here's two excerpts broken down:
+</p>
+<div class="figure">
+<img src="images/chips/justdps.png" width="100%"/>
+</div>
+<p>
+	With the same conditions (15 enemy EVA, no tiles/aura).
+	"DPS" scaling is rather arbitrary - don't take the numbers there to mean anything.
+</p>
+
+<p>
+	While none of these line up too well with a supposed 25% threshold, the DPS difference for moderate crit damage auras usually aren't that big here.
+	You won't be too far off if you pick your scope based on a process like this:
+</p>
+<div class="figure">
+<img src="images/chips/infographic.png" width="100%"/>
+</div>
+<p>
+	(Keep in mind that this is still a bit of an oversimplification.)
+</p>
+<!-- <p>
+	<a href="images/newquip/val.png">AS Val prefers VFL/chip setups</a>.
+</p> -->
+
+<h2 id="iti">ITIs<sup><small><a href="#iti">&#35;</a></small></sup></h2>
+<p>
+	If EOTs are an option, ITIs should be at least somewhat on the table.
+	Naturally, accuracy and frames become the dominant factors.
+	Considering relatively generic AR stats, here's how they stack up in a few configurations:
+</p>
+<ul>
+	<li><a href="https://imgur.com/a/LJ8QrZi">No special support</a></li>
+	<li><a href="https://imgur.com/a/KIBT3YG">C-MS & JS 9 tiles</a> (+ROF, +Crit rate</li>
+	<li><a href="https://imgur.com/a/XrFYNHc">Damage II Taunt</a> (+ACC)</li>
+</ul>
+<p>
+	At 0 enemy evasion, EOTs are always better than ITIs - the FP buff is worth it, even if you lose a frame.
+	Against typical enemies with 15 EVA, ITIs are approximately equal to or worse than EOTs, making them not worth considering.
+	In the 24-50 evasion range, EOTs and ITIs will trade depending on if you lose a frame or not. You should probably check your specific setup in that case.
+	For 80+ EVA, ITIs are best.
+</p>
+<h2 id="conclusion">Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	The #2 Chip is very strong and will see use in many ARSMG formations.
+	It is not always optimal - high ROF, crit rate, and crit damage may lessen its value.
+	It can reasonably be paired with both VFLs & EOTs, depending on the situation.
+	FP selfbuffers now do much better than ROF ones.
+</p>
+<p>
+	ARSMG echelons as a whole ultimately see limited use in the current meta.
+	Don't expect this to make them top-tier, as Hydras still have 199 armor and many newer/upcoming enemies go even farther.
+</p>
+
+<h2 id="ads">More like this</h2>
+
+<a href="evasion">
+	<div class="gallery">
+	  <div class="gallerypic">
+		<img src="images/icon/evasion.jpg" width="33%" height="400">
+		<div class="gallerypicdesc"><b>Accuracy and Evasion</b><br/>A deep dive</div>
+	  </div>
+	</div>
+</a>
+
+<a href="fairy-talents">
+	<div class="gallery">
+	  <div class="gallerypic">
+		<img src="images/icon/fairy-talents.jpg" alt="" width="33%" height="100">
+		<div class="gallerypicdesc"><b>Picking Fairy Talents</b><br/>Fervor versus Damage II</div>
+	  </div>
+	</div>
+</a>
+
+<a href="newquip">
+	<div class="gallery">
+	  <div class="gallerypic">
+		<img src="images/icon/newquip.jpg" width="33%" height="400">
+		<div class="gallerypicdesc"><b>New Doll Equipment</b><br/>First thoughts, #2 Chip analysis</div>
+	  </div>
+	</div>
+</a>
+
+<div class="clearfix"></div>
+</main></div></body></html>

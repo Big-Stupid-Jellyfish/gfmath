@@ -77,8 +77,8 @@ There are some interesting ideas in them, but let's see if they are worth your t
 
 <p>
 	<em>(2021-12-14 update): Rather unexpectedly, these equipment pieces have been released on EN.
-	Good luck in your crafting.
-	A revamped #2 chip analysis is coming soon.</em>
+	A number of <a href="https://media.discordapp.net/attachments/443533099632951306/857458294863953930/2021-06-23_20_12_49.png">SPEQ balance adjustments</a> were also released accordingly.
+	Good luck in your crafting.</em>
 </p>
 
 <p>
@@ -129,75 +129,29 @@ Still, never try this at night.</p>
 <p>Equippable by AR/SMG. Replaces T/X-Exoskeletons.
 Stats at maximum calibration/enhancement: +15 FP, +25 ROF, -50% critical damage.</p>
 
-<p>This is an interesting one, giving major FP/ROF bonuses in exchange for a <em>lot</em> of critical damage. Here are some general ideas to keep in mind:</p>
+<p>This is an interesting one, giving major FP/ROF bonuses in exchange for a <em>lot</em> of critical damage. For a full analysis, <strong>see <a href="chips">my writeup here</a>.</strong> A few basic things:</p>
 <ul>
-	<li>Additive ROF/FP increases are more valuable when the base stat is low.</li>
-	<li><a href="https://docs.google.com/spreadsheets/d/1k74SCGGMHtwbl8gmTaETLsa8t12A7dWdj0V1tjdMD4Y/edit#gid=0">Frame breakpoints</a> will make the value of ROF vary.</li>
-	<li>More FP = better DPS versus armor.</li>
-	<li>More ROF = better Orthrus killing and better performance against large groups. Less useful against armor.</li>
-	<li>ROF is effectively capped at 116, so +ROF will be less valuable if you have SMGs with strong ROF tiles like Vector/JS 9/SR-3MP or an AR that selfbuffs ROF.</li>
-	<li>-50% crit damage is a big penalty for ARs - many typical formations get your ARs at or near 100% crit rate, and a command fairy can bring normal crit damage above 200%.</li>
-	<li>With no or very little crit damage, EOTs/ITIs may be more viable scopes (even more so against highly evasive enemies).</li>
-	<li>PEQs are generally mandatory at night making crits hard to benefit from.</li>
-	<li>Some dolls (G41, Angelica, M4A1, 416, and Agent 416 come to mind) have SPEQs in this slot, making the comparison harder.</li>
+	<li>Chips, when paired with the right scope, are around a 25% DPS buff over classic VFL+Exo combinations. Don't pass these up. (ROF selfbuffers see much less benefit, if any.) </li>
+	<li>At night you don't crit much anyways, making them even better picks (see tables 3 (Artillery fairy) & 4 (command fairy) <a href="https://gall.dcinside.com/mgallery/board/view/?id=micateam&no=1665096&exception_mode=recommend&page=1">here</a>).</li>
+	<li>Picking the right scope is rather complicated, and a <a href="https://hycdes.com/pages/GFT_Echelon.html">damage simulator</a> will usually be your best bet.</li>
+	<li>For a generic setups and a few common dolls, here's how an EOT and VFL compare as a function of fairy crit damage aura:</li>
 </ul>
-
-<p>There are several hundred too many doll/fairy/equipment/enemy combinations to do some comprehensive general analysis.
-For now, I'll put a few interesting results/charts below for your consideration.</p>
-<ul>
-	<li><a href="images/newquip/chip2.png">DPS improvement from #2 chip (EOT+Chip vs VFL+Exo) by AR base stats, no fairies/other dolls</a>.
-		This doesn't account for ROF-buffing skills that would bring it over cap.
-		The chart assumes no enemy evasion - higher values favor EOTs/ITIs more.
-		Here, EOT+Chip is always a net DPS increase over VFL+Exo.
-		You shouldn't seek out ARs specifically because of poor base stats - poor base stats are bad either way.
-		However, the chip is more likely to be useful on ARs with low base stats than other equipment combinations.
-		Note that the maximum/minimum values noted here occur at stat combinations no current AR possesses, as most will have some moderate balance of FP & ROF.</li>
-		<li><a href="images/newquip/an94.png">Equipment options on AN-94</a> for a few different setups. Day/15 EVA/0 Armor in all cases.
-		Sufficient crit damage buffs can make a crit scope+chip the best combination, <a href="images/newquip/an94scout.png">even against high evasion (here, 80 EVA)</a>.</li>
-		<li>While the +ROF can be good, the ROF cap can be a major limitation on the chip's usefulness:
-			<a href="images/newquip/t97.png">equipment comparison on Type 97</a>, and <a href="images/newquip/t9780.png">the same for 80 EVA</a>.
-			Her near-permanent ROF-buffing skill puts her to 108 ROF, and it only takes 6 more points of base ROF ((72+6)*1.5=117) to pass the cap at 116.
-			Interestingly, an ITI+Chip combination has potential at high enemy evasions when there are few to no crit bonuses.</li>
-		<li><a href="images/newquip/val.png">Equipment options on AS Val</a>. EOTs have a relative disadvantage due to her perfect accuracy.</li>
-		<li>On SMGs, it's a lot harder to compare as they have use for regular exoskeletons.
-		If you already have tanking taken care of (Taunt/Twin/Shield fairy, for example), (1) consider using HGs instead for stronger buffs on your backline, and (2) this will almost always improve your SMG's DPS as they rarely crit anyways (ITIs/EOTs are almost always better than VFLs due to low base accuracy).</li>
-		<li>Grenades cannot crit, so EOTs and chips are free damage.
-		This doesn't mean grenadiers should <em>always</em> use an EOT+Chip as grenades have more potential to overkill on some enemies (thus not benefitting from the extra FP), but it makes it a lot more likely to be best.</li>
-</ul>
-
-<p>For ARs that can benefit from the chip, the main options are VFL+Chip vs EOT+Chip.
-ITI+Chip <em>could</em> be good for some <a href="https://old.reddit.com/r/girlsfrontline/comments/p1aoy3/on_eots_itis_and_the_2_chip/">high-evasion scenarios/depending on ROF frames</a>, but it's best to just check the numbers for your specific case if there are that many scouts about.</p>
-
-<p>For a few common setups and dolls, here's how they compare as a function of fairy crit damage aura:</p>
 <div class="figure">
 <img src="images/newquip/cdmg-basic.png" width="100%"/>
 </div>
-<p>Setting aside RFB as an outlier due to her SPEQ, VFL+Chip becomes favored over EOT+Chip anywhere between 10% fairy crit damage (AN-94) and 36% fairy crit damage (FNC, M82, and G11).
-Increasing enemy evasion pushes these breakpoints further right as the accuracy from an EOT becomes better:</p>
-<div class="figure">
-<img src="images/newquip/cdmg-eva.png" width="100%"/>
-</div>
-<p>On the other hand, crit rate tiles as gotten from M4A1 & UMP45 will push things in the other direction.
-With both of them, all dolls checked will prefer a VFL for 25%+ fairy crit damage:</p>
-<div class="figure">
-<img src="images/newquip/cdmg-m445.png" width="100%"/>
-</div>
-<p>The 23% ROF buff from C-MS+JS 9 puts almost everyone up to the ROF cap even with an EOT, which brings them all closer together in the 20-25% crossover range:</p>
-<div class="figure">
-<img src="images/newquip/cdmg-cs9.png" width="100%"/>
-</div>
-<p>It may also be that some ARs would otherwise be dropped down a frame by an EOT, making it relatively worse.</p>
+<ul>
+	<li>For overall DPS optimization <a href="https://docs.google.com/spreadsheets/d/1M0FLOsxysAScY_ehWpf-vI8R2wohgxm8nqncXqZC2bQ/edit#gid=787582090">this spreadsheet</a>
+		<a href="https://docs.google.com/spreadsheets/d/1c0JhaSX9WyL3EB-7RCDE4NrfzR1YuWdYWidQ_06-PrQ/edit#gid=1239433445">or this one</a>, both by Mis, are probably the most comprehensive.</li>
+</ul>
 
-<p>For overall DPS optimization <a href="https://docs.google.com/spreadsheets/d/1M0FLOsxysAScY_ehWpf-vI8R2wohgxm8nqncXqZC2bQ/edit#gid=787582090">this spreadsheet</a> <a href="https://docs.google.com/spreadsheets/d/1c0JhaSX9WyL3EB-7RCDE4NrfzR1YuWdYWidQ_06-PrQ/edit#gid=1239433445">or this one</a>, both by mis, are probably the most comprehensive.</p>
+<p>
+	The #2 Chip is very strong and will see use in many ARSMG formations.
+	It is not always optimal - high ROF, crit rate, and crit damage may lessen its value.
+	It can reasonably be paired with both VFLs & EOTs, depending on the situation.
+</p>
+<!-- I recommend using <a href="https://hycdes.com/pages/GFT_Echelon.html">a combat simulator</a> to check numbers for each specific team/enemy combination you are interested in. -->
 
-<h3>Conclusion</h3>
-
-<p>The #2 Chip is very strong and will see use in many ARSMG formations.
-It is not always optimal - high ROF, crit rate, and crit damage may lessen its value.
-It can reasonably be paired with both VFLs & EOTs, depending on the situation.
-I recommend using <a href="https://hycdes.com/pages/GFT_Echelon.html">a combat simulator</a> to check numbers for each specific team/enemy combination you are interested in.</p>
-
-<p>At night, few ARs can get decent crit rates. There, the chip looks even better as long as it doesn't massively overcap ROF (see tables 3 (Artillery fairy) & 4 (command fairy) <a href="https://gall.dcinside.com/mgallery/board/view/?id=micateam&no=1665096&exception_mode=recommend&page=1">here</a>).</p>
+<!-- <p>At night, few ARs can get decent crit rates. There, the chip looks even better as long as it doesn't massively overcap ROF.</p> -->
 
 <h2 id="slap">MK1000 SLAP Rounds<sup><small><a href="newquip.html#slap">&#35;</a></small></sup></h2>
 <p>Equippable by MG. Replaces AP ammo.
