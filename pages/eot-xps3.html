@@ -36,13 +36,11 @@ gtag('config', 'G-805N997DPC');
 
 <main>
 <h1>EOT XPS3 Analysis</h1>
-<center><em>By BigStupidJellyfish | 2021-September-03</em></center>
-
-
+<center><em>By BigStupidJellyfish | 2021-September-03 | Updated 2021-December-15</em></center>
 
 <p>Farmable in the <a href="campaign-rewards#singu">permanent Singularity campaign</a>, 416 has a holographic sight SPEQ that offers +8 FP, +14 ACC, and +25% crit rate at max calibration/enhancement.
 It trades the ROF penalty of a typical EOT for some of the crit rate VFLs give.
-VFLs are almost always the best equipment for ARs (<a href="newquip#2chip">until we get the upcoming chip</a>), so let's see how much the lower crit rate matters.</p>
+VFLs are almost always the best equipment for ARs (<a href="chips">pre-chip</a>), so let's see how much the lower crit rate matters.</p>
 
 <div class="figure">
 <img src="images/eot-xps3/eot-pic.png" width="20%"/>
@@ -50,28 +48,46 @@ VFLs are almost always the best equipment for ARs (<a href="newquip#2chip">until
 
 <h2 id="dps">Direct-fire DPS<sup><small><a href="#dps">&#35;</a></small></sup></h2>
 
-<p>For direct-fire DPS, this chart shows the DPS improvement with the EOT XPS3 over a VFL as a function of your crit rate and damage.
-416's mod SPEQ is factored into the reference lines (standard crit damage is 160%, 5* para gives 224% net crit damage).</p>
+<p>
+	For direct-fire DPS, this chart shows the DPS improvement with the EOT XPS3 over a VFL as a function of your crit rate and damage.
+	416's mod SPEQ is factored into the reference lines, including its rework adding +25 FP (standard crit damage is 160%, 5* para gives 224% net crit damage).
+	Note that this rework makes VFLs a bit better, relatively - if she already has a lot of FP, adding 8 more does less.
+</p>
 
-<p>Warmer colors indicate the XPS3 will deal more DPS than a VFL, with a color scale to the right.
-Contour lines are overlaid - in the region below and right of the curve labeled "1", the XPS3 is better.
-Below 1.05, it does 5% or more DPS.</p>
+<p>
+	Warmer colors indicate the XPS3 will deal more DPS than a VFL, with a color scale to the right.
+	Contour lines are overlaid - in the region below and right of the curve labeled "1", the XPS3 is better.
+	Below 1.05, it does 5% or more DPS.
+</p>
 
 <div class="figure">
-<img src="images/eot-xps3/dpschart15.png" width="100%"/>
+<img src="images/eot-xps3/dpschart15-rework.png" width="100%"/>
 </div>
-<p>So, without crit damage auras, her SPEQ is always better than a VFL.
+<!-- <p>So, without crit damage auras, her SPEQ is always better than a VFL.
 For 200%+ final crit damage (fairy aura 25%+ on 160% base), a VFL will almost always be better.
-Having major crit rate tiles (e.g., JS 9 + UMP45 + M4A1) may still let the XPS3 compete.</p>
+Having major crit rate tiles (e.g., JS 9 + UMP45 + M4A1) may still let the XPS3 compete.</p> -->
+<p>
+	With no crit damage auras, her SPEQ is about equal to a VFL.
+	It's slightly better given 0 crit rate, worse given a bit, and back to better with a lot.
+	Strong crit damage from stuff like a Command/Parachute fairy will make VFLs about 5% better for direct-fire DPS.
+</p>
 
 <p>The increased accuracy is nice against more evasive enemies:</p>
 <div class="figure">
-<img src="images/eot-xps3/dpschart50.png" width="100%"/>
+<img src="images/eot-xps3/dpschart50-rework.png" width="100%"/>
 </div>
-<p>Here, the XPS3 is almost always better even with a 5* Para fairy.
-This advantage will be reduced if you have other accuracy buffs/tiles, so in many real echelons the true relative DPS will be somewhere between this chart and the first when shooting ~50 evasion enemies.</p>
+<!-- <p>Here, the XPS3 is almost always better even with a 5* Para fairy.
+This advantage will be reduced if you have other accuracy buffs/tiles, so in many real echelons the true relative DPS will be somewhere between this chart and the first when shooting ~50 evasion enemies.</p> -->
+<p>
+	Now, they trade even with a 5-star Parachute's massive 40% critical damage buff.
+	Below that, and the XPS3 is better for gun DPS.
+	This advantage will be reduced if you have other accuracy buffs/tiles, so in many real echelons the true relative DPS will be somewhere between this chart and the first when shooting more evasive enemies.
+</p>
 
-<p>(If you're wondering, the inflection point/corner on the contours for crit rate is at a ~47% crit rate buff - where a 68% crit chance (with VFL) is brought exactly to 100% and you get the largest DPS increase from one)</p>
+<p>
+	(If you're wondering, the inflection point/corner on the contours for crit rate is at a ~47% crit rate buff - where a 68% crit chance (with VFL) is brought exactly to 100% and you get the largest DPS increase from one.
+	For the pre-rework charts, see <a href="images/eot-xps3/dpschart15.png">vs 15 evasion</a> and <a href="images/eot-xps3/dpschart50.png">vs 50 evasion</a>.)
+</p>
 
 <h2 id="grenade">Grenade damage<sup><small><a href="#grenade">&#35;</a></small></sup></h2>
 
@@ -81,13 +97,15 @@ In terms of grenade damage, the comparison is both simpler and harder.</p>
 
 <p>The XPS3 is clearly better here: it gives +8 FP, while a VFL gives 0.
 Grenades don't crit, so the lower crit chance doesn't matter.
-Including affection, 416 would normally have 78 FP pre-scope so this is a ~10% increase in grenade damage.
+<!-- Including affection, 416 would normally have 78 FP pre-scope so this is a ~10% increase in grenade damage. -->
+Including affection, 416 would normally have 103 FP pre-scope so this is an ~8% increase in grenade damage.
 To complicate matters, her grenade damage is already good with a 16x multiplier at SL10/post-mod.
-Whether or not this 10% increase results in killing more things with the grenade will depend heavily on your echelon (and how much more FP it gives her), the enemy (their HP/link), and the state of the enemy at the time of grenade impact.</p>
+Whether or not this 8% increase results in killing more things with the grenade will depend heavily on your echelon (and how much more FP it gives her), the enemy (their HP/link), and the state of the enemy at the time of grenade impact.</p>
 
 <p>For one completely arbitrary estimate, suppose a net 40% external damage buff.
 This is on the conservative side as SMG tiles, fairy aura, and fairy talent can all contribute.
-416's grenade, with her SPEQ, would deal ~1750 damage/link (78*16*1.4).
+<!-- 416's grenade, with her SPEQ, would deal ~1750 damage/link (78*16*1.4). -->
+416's grenade, with her SPEQ, would deal ~2486 damage/link (111*16*1.4).
 For enemies with around that much HP/link or more, the XPS3 will be a better pick.
 Some arbitrary examples (listing the maximum seen if there's a range):</p>
 
@@ -107,7 +125,8 @@ Some arbitrary examples (listing the maximum seen if there's a range):</p>
 </center>
 
 <p>She can get much higher grenade damages than that - it's hardly an upper limit.
-For example: with UMP45, Grizzly, and an Artillery fairy the external FP multiplier would be more around 167%, for ~3330 grenade damage/link.</p>
+<!-- For example: with UMP45, Grizzly, and an Artillery fairy the external FP multiplier would be more around 167%, for ~3330 grenade damage/link.</p> -->
+For example: with UMP45, Grizzly, and an Artillery fairy the external FP multiplier would be more around 167%, for ~4741 grenade damage/link.</p> <!-- 55% aura, 50% tiles. No talent/grizzly skill counted, but those are real. -->
 
 <p>Even against weaker enemies, her secondary explosion will be able to appreciate the damage increase from an XPS3.
 With only a 3x multiplier, adding damage to it is much less likely to be lost to overkill.</p>
@@ -117,7 +136,7 @@ With only a 3x multiplier, adding damage to it is much less likely to be lost to
 <h2 id="conclusion">Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
 
 <p>If you have both, I recommend using her SPEQ in most situations.
-Even at high crit damage levels, any DPS loss is relatively minor.
+Even at high crit damage levels, the DPS loss is relatively minor.
 The improved grenade performance will be appreciated against tougher enemies and for her skill 2.</p>
 
 <p>The maps it drops from are rather annoying to farm and SPEQs are expensive to enhance, so I wouldn't necessarily recommend rushing it.
@@ -125,7 +144,8 @@ The improved grenade performance will be appreciated against tougher enemies and
 
 <p>One other point in favor of her SPEQ: 12-4E dragging.
 The dolls you drag often won't give that much crit rate or crit damage, so she's likely to do more direct-fire DPS with the XPS3.
-The extra grenade damage will also lower the FP buff requirement to guarantee oneshotting each mob with her primary explosion and will improve the secondary effect.</p>
+</p>
+<!-- The extra grenade damage will also lower the FP buff requirement to guarantee oneshotting each mob with her primary explosion and will improve the secondary effect.</p> -->
 
 <p>Regular EOTs are not mentioned here as the XPS3 is a direct upgrade over them and would always be preferred.</p>
 
