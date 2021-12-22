@@ -26,17 +26,16 @@ gtag('config', 'G-805N997DPC');
 <div id="wrapper">
 
 <header>
-<a href="../index.html">GFMath</a>
+<a href="../index">GFMath</a>
 </header>
 <nav role="navigation">
-	<a href="../index.html"><li>Home</li></a>
-	<a href="https://www.youtube.com/channel/UCXYXbrsfJJfvE5LJ9Bnu_fQ"><li>Youtube</li></a>
-	<!-- <a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a> -->
+	<a href="../index"><li>Home</li></a>
+	<a href="https://www.youtube.com/c/BigStupidJellyfish"><li>Youtube</li></a>
 </nav>
 
 <main>
 <h1>Are Two ARs or Three ARs Better? Does it matter?</h1>
-<center><em>By BigStupidJellyfish | 2021-August-23</em></center>
+<center><em>By BigStupidJellyfish | 2021-August-23 | Last updated 2021-December-22</em></center>
 
 <p>Every starting player is recommended to use an ARSMG echelon with M4A1, AR-15, and Sopmod II in the back plus two SMGs in front (most commonly, RO/UMP45+Vector/Skorpion).
 This is a great idea: all three ARs are very strong and usable even in endgame content.
@@ -51,7 +50,7 @@ Handguns and ARs fundamentally do very different things in an echelon, so there'
 
 <p>Let's start by considering a very simplified echelon: 3 copies of G41 + UMP45 or 2 copies, UMP45, and Grizzly for the HG option. UMP45's damage is ignored as she will probably be kiting.
 The initial DPS with a handgun is lower - UMP45's tiles don't affect Grizzly and adding 30% damage tiles to two ARs is clearly worse than 100% of a new AR (setting aside some high armor scenario).
-With this model, it'll take about 8 seconds for the team with Grizzly to catch up in total damage dealt:</p>
+With this model, it'll take about 9 seconds for the team with Grizzly to catch up in total damage dealt:</p>
 <div class="figure">
 <img src="images/2v3ar/dot-standard.png" width="100%"/>
 </div>
@@ -68,7 +67,8 @@ Crit-oriented setups will also lower the relative damage contribution of a handg
 <div class="figure">
 <img src="images/2v3ar/dot-armor.png" width="100%"/>
 </div>
-<p>Note that this chart has a much wider vertical scale - while the differences were minor before (<10%), using a handgun leads to a massive (+25-50%) advantage.
+<p>
+	<!-- Note that this chart has a much wider vertical scale - while the differences were minor before (<10%), using a handgun leads to a significant advantage. -->
 Exact values will vary based on how close your FP is to their armor with and without skills active.</p>
 
 <!-- <p>Handguns with FP tiles that cover your offtank are more valuable, and ARs that have strong tiles for your SMGs will similarly do better.</p> -->
@@ -77,6 +77,11 @@ Exact values will vary based on how close your FP is to their armor with and wit
 A damage-buffing handgun like Grizzly, for example, may increase damage lost to overkill and link protection.
 ARs have tiles themselves, and some handguns will buff other things too (like accuracy or evasion).
 There are many other AR/SMG combinations that will produce different results.</p>
+
+<p>
+	<em>(2021-12-22 update):</em> The introduction of <a href="chips">the #2 Processor chip</a> changes the numbers here a little - higher per-AR DPS means the damage contribution of the HG is less significant, favoring 3AR backlines a bit more on paper.
+	The above charts have been updated accordingly - the first chart, for example, went from a 7.7-second crossover point to a 8.9-second crossover.
+</p>
 
 <p>To summarize: theoretically, 2AR1HG backlines generally have worse initial DPS but do better after 7-10 seconds compared to 3AR backlines.
 This will vary quite a bit with each setup and situation.</p>
@@ -104,7 +109,7 @@ In terms of 2AR+1HG vs 3AR backlines, there are a few matters of particular conc
 	<li>HG tiles and skills will increase the theoretical DPS of your SMGs, but your maintank is probably moving constantly and won't get many shots off. They'll also lose links over time and contribute even less.
 	A molotov offtank may deal lots of damage against swarms, in which case FP tiles are very useful. They also may do little damage against sparse/single-linked enemies in which case FP tiles on them are almost useless.</li>
 	<li>6-second HG skills will massively boost the damage reported from non-Zas grenades. Whether or not this grenade hits that many targets and needs that damage buff to kill links is an entirely different matter.</li>
-	<li>Many handguns do not work here - ROF buffers will often lead to significant overcap (especially after we get the <a href="newquip#2chip">#2 Chip</a>), and others have defensive skills that contribute very little.</li>
+	<li>Many handguns do not work here - ROF buffers will generally lead to significant overcap (especially now that the <a href="newquip#2chip">#2 Chip</a> is a thing), and others have defensive skills that <a href="evasion#danya">contribute very little</a>.</li>
 	<li>ARSMG echelons are, in general, used for significantly shorter battles. Many common SF fights are over in 4-8 seconds, so a DPS advantage once you get to 7-10+ seconds won't show up much.</li>
 	<!-- <li>Tiles are additive, so stacking FP with them does a bit less than you may expect - for example, if already using UMP45, adding Grizzly's tiles increases DPS by (1+0.3+0.2)/1.2=+25% despite her tiles boosting FP by 30%. -->
 </ul>
@@ -113,7 +118,9 @@ In terms of 2AR+1HG vs 3AR backlines, there are a few matters of particular conc
 Experimental results are not covered here as there are simply too many variables involved in some sort of "general-use ARSMG" to get any broadly applicable results.
 There also are not many good ways to test multiple sequential battles.
 If you do want to see some tests I've done for various situations, I've <a href="2v3ar-extras"><strong>thrown them all on this extras page</strong></a>.
-In those tests, 3AR backlines usually outperformed 2AR1HG ones despite DPS simulators almost always assigning larger numbers to the 2AR1HG teams.</p>
+In those tests, 3AR backlines usually outperformed 2AR1HG ones despite DPS simulators almost always assigning larger numbers to the 2AR1HG teams.
+Similar results can be seen <a href="augelica">over here</a>, where AUG/Angelica/89 Shiki/Grizzly are compared as pos4 options.
+There, Grizzly was almost always the worst choice.</p>
 
 <p>
 	One interesting example here: coalition drills.
@@ -131,16 +138,22 @@ While 2AR1HG lineups tend to have bigger numbers on paper, it does not appear to
 
 <h2 id="recommendation">General Recommendations<sup><small><a href="#recommendation">&#35;</a></small></sup></h2>
 
-<p>I don't believe there's a clear overall advantage between strong FP buffing handguns and appropriate ARs as the go-to choice for position 4.
+<!-- <p>I don't believe there's a clear overall advantage between strong FP buffing handguns and appropriate ARs as the go-to choice for position 4.
 There are situations where you'd want to use something like 416, AK-12, Angelica, or G11 there.
 There are others where you'd prefer Python, SAA mod, Grizzly, or K5.
 Whichever way you go, the differences probably won't be massive.
-Don't expect previously unwinnable fights to become trivial after swapping Grizzly for AK-12.</p>
+Don't expect previously unwinnable fights to become trivial after swapping Grizzly for AK-12.</p> -->
+
+<p>
+	Despite what the damage simulator numbers may indicate, 3AR backlines have a number of advantages over 2AR1HG backlines and will usually perform better, assuming reasonably-selected dolls in both cases.
+	The differences are not massive, and are unlikely to make-or-break a fight.
+	Specific situations can still call for certain handguns.
+</p>
 
 <p>I would tend to prefer an appropriate AR when:</p>
 <ul>
 	<li>You will be fighting several different enemies and want your backline to cover more roles with their skills.</li>
-	<li>You want early DPS/the battles are short. This covers most main story levels (up to Chapter 9 or 10, when things become more RFHG-focused).</li>
+	<li>You want early DPS/the battles are short (<~12 seconds). This covers most main story levels up to Chapter 10 or 11, when things become more RFHG-focused anyways.</li>
 	<ul>
 		<li>Extreme case: Orthrus. 3 ROF/multihit ARs will do <em>far</em> better than 2 ROF/multihit ARs plus a handgun.</li>
 	</ul>
