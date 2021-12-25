@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-805N997DPC');
+</script>
+<meta charset="utf-8">
+<meta name="keywords" content="portfolio">
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>Arisaka Armor-Piercing Rounds - GFMath</title>
+<link rel="stylesheet" href="../style.css">
+
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
+</head>
+
+<body>
+<div id="wrapper">
+
+<header>
+<a href="../index">GFMath</a>
+</header>
+<nav role="navigation">
+<a href="../index"><li>Home</li></a>
+<a href="https://www.youtube.com/c/BigStupidJellyfish"><li>Youtube</li></a>
+<!-- <a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a> -->
+</nav>
+
+<main>
+<h1>Arisaka Armor-Piercing Rounds</h1>
+<center><em>By BigStupidJellyfish | 2021-December-25</em></center>
+
+<p>
+	After C14's release, the usual 3-star monthly login dolls have been replaced by new SPEQs, often including extra skills and special effects.
+	The first of these are the Arisaka AP rounds, equippable by 4 Shiki.
+	At maximum calibration/enhancement, they provide +180 AP and +10 FP - an upgrade over both the standard AP rounds and the <a href="newquip#aps">M1022 Sniper Rounds</a>.
+	Additionally, with them equipped, 4 Shiki will fire a piercing shot every second attack during her active skill and every third otherwise, instead of every third regardless of her active skill's state.
+	Her skill description is incorrect - <a href="https://www.youtube.com/watch?v=wl0oUaiS6OI">see this demonstration</a> showing her shots alternating while her skill is active.
+</p>
+
+<p>
+	Today, let's look into how she compares with this against three main competitors:
+</p>
+<ul>
+	<li>Type88 mod</li>
+	<li>Normal selfbuffers</li>
+	<li>4 Shiki, pre-SPEQ</li>
+</ul>
+<p>
+	Damage simulators are, as usual, useless here.
+	This will need some testing.
+</p>
+<h2 id="day">Daytime<sup><small><a href="#day">&#35;</a></small></sup></h2>
+<p>
+	Test set 1: no external crit damage, miscellaneous enemy groups.
+</p>
+<div class="figure">
+	<img src="images/arisaka/4shiki1.png" width="100%"/>
+</div>
+<p>
+	Type88 has a clear performance advantage, even when not maxed out.
+	Still, 4 Shiki's SPEQ is a clear improvement and she does about as well or better than SVD.
+</p>
+<p>
+	Test set 2: adding some crit damage with a Damage II Suee. It's a terrible fairy for combat, but I want the battles to last a bit longer so all dolls can get some value out of their skills.
+</p>
+<div class="figure">
+	<img src="images/arisaka/4shiki2.png" width="100%"/>
+</div>
+<p>
+	<!-- So getting more piercing shots is better, even if you're losing out on some crit damage (given a fight that benefits from piercing in the first place). -->
+	<!-- Even with a decent amount of bonus crit damage, extra piercing shots with 4 Shiki are worth it. -->
+	4 Shiki still does better with her SPEQ than with normal AP ammo across the board, despite the crit damage aura.
+	Type88, in either form, was still clearly the best between all options tested.
+</p>
+<p>
+	Some nightmares would get to munch on the pos 7 rifle, which Type88 avoided entirely with her melee mode.
+</p>
+<!-- <p>
+	Note: these Strelets & Gunners have fairly substantial (30-50) evasion.
+	Concerns about Type88's accuracy <a href="myths#hanyangacc">are incredibly overstated</a> in most circumstances.
+</p> -->
+<h2 id="night">Nighttime<sup><small><a href="#night">&#35;</a></small></sup></h2>
+<p>
+	4 Shiki's piercing shots have perfect accuracy, which helps her more at night.
+	On the other hand, Type88's skill multiplier goes up from 35% to 100%.
+	Let's see how these factors balance out.
+</p>
+<div class="figure">
+	<img src="images/arisaka/4shiki3.png" width="100%"/>
+</div>
+<p>
+	Against some relatively weak armor, Type88 takes the crown.
+	Taking the extreme opposite case, 4 Shiki jumps to the front against some scouts.
+	Either way, single-target rifles are not the way to go.
+</p>
+<div class="figure">
+	<img src="images/arisaka/4shiki4.png" width="100%"/>
+</div>
+<p>
+	Next, some enemies with more moderate levels of evasion.
+	Overall margins were smaller, with 4 Shiki looking best.
+</p>
+<p>
+	Final round:
+</p>
+<div class="figure">
+	<img src="images/arisaka/4shiki5.png" width="100%"/>
+</div>
+<p>
+	There seemed to be very few differences in performance against the zombies.
+	Against the Strelet/Gunners, 4 Shiki had a slight edge over Type88.
+	Both were preferable when compared to Mk 12.
+	<!-- My best guess is that (a) there weren't that many of them in a row to pierce, and (b) they don't have much (750) HP/link. -->
+	<!-- If your rifles are killing them in one or two hits total, performance is dictated more by ROF and damage contributions become much less reliable. -->
+</p>
+<h2 id="surehit">About Surehit<sup><small><a href="#surehit">&#35;</a></small></sup></h2>
+<p>
+	To better understand the impact of 4 Shiki's surehit component, let's run some example numbers.
+	Case 1: hit rates with P22/Calico/no accuracy aura, at night.
+	The number in parentheses for 4 Shiki is the average DPS increase surehit gives her, not counting the loss of crits.
+</p>
+<center>
+	<table style="width:100%">
+	  <tr>
+		<th>Doll</th>
+		<th>Base ACC</th>
+		<th>Hit rate vs 15 EVA</th>
+		<th>vs 24 EVA</th>
+		<th>vs 50 EVA</th>
+	  </tr>
+	  <tr>
+		<td>4 Shiki</td>
+		<td>78</td>
+		<td>51.6% (+94% DPS w/ surehit)</td>
+		<td>40.0% (+150%)</td>
+		<td>24.2% (+312%)</td>
+	  </tr>
+	  <tr>
+		<td>SVD</td>
+		<td>84</td>
+		<td>53.1%</td>
+		<td>41.5%</td>
+		<td>25.4%</td>
+	  </tr>
+	  <tr>
+		<td>Type88</td>
+		<td>73</td>
+		<td>50.0%</td>
+		<td>38.5%</td>
+		<td>23.1%</td>
+	  </tr>
+	</table>
+</center>
+<p>
+	Crits are in the range of 75-150% more damage, so this matches up with my observations of 4 Shiki's strong night performance.
+	Against decently dodgy enemies, her surehit was worth as much or more than the crits.
+	Taking the same conditions to day is less exciting:
+</p>
+<center>
+	<table style="width:100%">
+	  <tr>
+		<th>Doll</th>
+		<th>Base ACC</th>
+		<th>Hit rate vs 15 EVA</th>
+		<th>vs 24 EVA</th>
+		<th>vs 50 EVA</th>
+	  </tr>
+	  <tr>
+		<td>4 Shiki</td>
+		<td>78</td>
+		<td>91.6% (+9% DPS w/ surehit)</td>
+		<td>87.2% (+15%)</td>
+		<td>76.5% (+31%)</td>
+	  </tr>
+	  <tr>
+		<td>SVD</td>
+		<td>84</td>
+		<td>92.1%</td>
+		<td>88.0%</td>
+		<td>77.9%</td>
+	  </tr>
+	  <tr>
+		<td>Type88</td>
+		<td>73</td>
+		<td>91.1%</td>
+		<td>86.4%</td>
+		<td>75.4%</td>
+	  </tr>
+	</table>
+</center>
+<p>
+	Note that surehit also <a href="evasion#exodia">has benefits in terms of consistency and link protection</a>, which are hard to represent here.
+</p>
+<p>
+	... I should really re-investigate the value of accuracy buffs in RFHGs at night.
+</p>
+<h2 id="conclusion">Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+
+<p>
+	Piercing is almost always going to be weird.
+	Minor variations in <a href="https://old.reddit.com/r/girlsfrontline/comments/qkzc9s/weekly_commanders_lounge_november_02_2021/hjvcbmt/">hitbox spaghetti</a>, kiting variations, enemy positions, and so on have a much larger impact on battle outcomes than what you get with standard single-target dolls.
+	To be most correct, it's best to test out Type88, 4 Shiki, and whatever other alternatives you're considering if some specific fight needs major optimization.
+</p>
+<p>
+	For a general starting point, based on my tests, I'd categorize them something like this:
+</p>
+<ul>
+	<li>
+		4 Shiki's SPEQ is always preferable over standard AP ammo on her.
+		It is <em>technically</em> bad for DPS against a single target (unless it has lots of evasion) as the shots can't crit, but in that case you shouldn't be using 4 Shiki at all.
+		Use a standard selfbuffer or M200.
+	</li>
+	<li>
+		4 Shiki's pierce is very nice at night, against groups of enemies with substantial (~20+) evasion.
+		Otherwise, Type88 is likely to be better.
+	</li>
+	<li>
+		This seems to be <a href="myths#hanyangacc">commonly misunderstood</a>, so to be clear: even if 4 Shiki can do better than Type88 against groups of evasive enemies, Type88 will still generally do much better against said enemies compared to standard selfbuffers.
+		Hitting 2-5 enemies at once is more valuable than hitting 5-10% more of your shots.
+	</li>
+</ul>
+<p>
+	While 4 Shiki's daytime performance was disappointing, I was pleasantly surprised by how much her surehit helped at night.
+	M200 would be another interesting test subject for comparison, although she makes building a team fair to all options much harder.
+</p>
+
+<h3>Minor stuff</h3>
+<ul>
+	<li>The enemies tested against are not representative of the total range of things you'd use RFHG against. I focused on larger groups that can be handled without kiting (to get more consistent results).
+		This hopefully shouldn't be too big of a limitation, as many of the harder/kiting-intensive enemies come in smaller numbers and thus see little benefit from piercing (Doppels, Uhlans, Hydras).
+	</li>
+	<li>As with <a href="hanyangle">Type88</a>, I would expect 4 Shiki to favor certain positions in different battles. To keep HG tiles constant, she was on position 7 in these tests.</li>
+	<li>Bosses and other lone targets were not covered here. Don't use piercing dolls for single-target DPS.</li>
+	<li>4 Shiki does have a sideways tile, and that can give her an extra boost while on position 1.</li>
+	<li>Low-spec Type88 is lv110, SL10/1, not oathed. High-spec Type88 is lv116, SL10/10, oathed.</li>
+	<li>Type88 has an unusually high 6/8 uptime, while 4 Shiki has 5/8 plus her passive.</li> <!-- Good luck proving if one of those is actually better -->
+	<li>I've seen this asked before, so one other detail on her pierce:</li>
+</ul>
+<div class="figure">
+	<img src="images/arisaka/piercing-range.jpg" width="80%"/>
+</div>
+<center>
+	<em>
+		<p>
+			Her piercing shot does go beyond her target.
+		</p>
+	</em>
+	
+</center>
+
+<ul>
+	<li>
+		While technically released, I have yet to get any flare ammo.
+		These will slightly lessen the relative value of 4 Shiki's surehit.
+	</li>
+</ul>
+
+<h2 id="ads">More like this</h2>
+
+<a href="pp-19">
+	<div class="gallery">
+	  <div class="gallerypic">
+		<img src="images/icon/pp-19.jpg" width="33%" height="400">
+		<div class="gallerypicdesc"><b>Testing PP-19's mod</b><br/>Compared to Uzi & Vector</div>
+	  </div>
+	</div>
+</a>
+
+<a href="manual-labor">
+	<div class="gallery">
+	  <div class="gallerypic">
+		<img src="images/icon/manual-labor.jpg" width="33%" height="400">
+		<div class="gallerypicdesc"><b>Rico Skill Analysis</b><br/>Force manual vs Autoskill</div>
+	  </div>
+	</div>
+</a>
+
+<a href="aim">
+	<div class="gallery">
+		<div class="gallerypic">
+		<img src="images/icon/aim.jpg" width="33%" height="400">
+		<div class="gallerypicdesc"><b>Taking Aim</b><br/>(the talent)</div>
+		</div>
+	</div>
+</a>
+
+<div class="clearfix"></div>
+</main></div></body></html>
