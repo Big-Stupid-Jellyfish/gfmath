@@ -1,5 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
 <head>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
@@ -7,33 +12,43 @@
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-
 gtag('config', 'G-805N997DPC');
 </script>
-<meta charset="utf-8">
-<meta name="keywords" content="portfolio">
 <meta name="description" content="Girls Frontline, by the numbers">
 <title>Type88: Formation and Skins - GFMath</title>
-<link rel="stylesheet" href="../style.css">
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
 <link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
 <link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 </head>
-
-<body>
+<body class="is-preload">
+<!-- Wrapper -->
 <div id="wrapper">
-
-<header>
-<a href="../index">GFMath</a>
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<nav></nav>
+<nav></nav>
+<nav></nav>
+<nav></nav>
+<div class="col-6 col-12-xsmall">
+	<ul class="actions stacked">
+		<li><a href="https://www.youtube.com/c/BigStupidJellyfish" class="button primary small">Youtube</a></li>
+	</ul>
+</div>
+<nav></nav>
 </header>
-<nav role="navigation">
-<a href="../index"><li>Home</li></a>
-<a href="https://www.youtube.com/c/BigStupidJellyfish"><li>Youtube</li></a>
-</nav>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+	<h1>Type88: Formation and Skins</h1>
+</header>
 
-<main>
-<h1>Type88: Formation and Skins</h1>
 <center><em>By BigStupidJellyfish | 2021-October-15 | Updated 2021-December-21</em></center>
 
 <!-- The term doesn't really come up in the writeup so I'll mention it here - hanyangle = hanyang angle = angle of fire from different positions in the formation. Pretty funny, right? -->
@@ -191,6 +206,49 @@ gtag('config', 'G-805N997DPC');
 <p>
 	So the idea of her hitboxes being messed up by skins remains a myth.
 	Careful inspection may show <a href="https://i.imgur.com/AVRfPkW.png">miniscule pixel differences</a> in the laser graphic depending on how you look at it, but you need a lot more than that to establish a real combat performance difference.
+	<!-- Percentages in table form: -->
+</p>
+
+<!-- <center>
+	<table style="width:100%">
+	  <tr>
+		<th>Skin</th>
+		<th>Clear time</th>
+		<th>Damage taken</th>
+		<th>Damage contribution</th>
+	  </tr>
+	  <tr>
+		<td>Mod art</td>
+		<td>N/A (+0%)</td>
+		<td>N/A (+0%)</td>
+		<td>N/A (+0%)</td>
+	  </tr>
+	  <tr>
+		<td>East Lake Lotus</td>
+		<td><font color="2aa889">-0.04%</font></td>
+		<td><font color="2aa889">-3.26%*</font></td>
+		<td><font color="2aa889">+0.19%</font></td>
+	  </tr>
+	  <tr>
+		<td>Default art</td>
+		<td><font color="2aa889">-0.18%</font></td>
+		<td><font color="2aa889">-4.49%*</font></td>
+		<td><font color="c23127">-0.34%</font></td>
+	  </tr>
+	  <tr>
+		<td>Christmas skin</td>
+		<td><font color="c23127">TBD%</font></td>
+		<td><font color="c23127">TBD%*</font></td>
+		<td><font color="2aa889">TBD%</font></td>
+	  </tr>
+	</table>
+</center> -->
+<p>
+	These are all well within expected experimental variation. <!-- Damage will easily swing more with one or two unlucky runs.--> <strong>This does not suggest any skin will lead to faster clear times/less damage taken</strong>.
+</p>
+<p>
+	*Damage taken in particular is an unreliable metric when looking at percentage differences - it only takes an unlucky run or two to add on 200 damage taken with one configuration.
+	See also: my <a href="manual-labor#tp1">tests with Rico</a> where, despite autoskill doing better by damage contribution/clear time almost across the board, there were no significant differences in the team's damage taken.
 </p>
 <!-- She also has an April Fool's chibi. Chances are slim of that ever getting added here. -->
 
@@ -301,34 +359,53 @@ src="https://www.youtube.com/embed/2Jj_k79TIaw">
 </ul>
 
 <h2 id="ads">More like this</h2>
-
-<a href="daynyang">
-	<div class="gallery">
-	  <div class="gallerypic">
-		<img src="images/icon/hanyang.jpg" width="33%" height="400">
-		<div class="gallerypicdesc"><b>Hanyang at Day</b><br/>Comparisons for general use</div>
-	  </div>
-	</div>
-</a>
-
-<a href="aim">
-	<div class="gallery">
-		<div class="gallerypic">
-		<img src="images/icon/aim.jpg" width="33%" height="400">
-		<div class="gallerypicdesc"><b>Taking Aim</b><br/>(the talent)</div>
+	<section class="tiles">	
+		<a href="daynyang">
+			<div class="gallery">
+			  <div class="gallerypic">
+				<img src="images/icon/hanyang.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Hanyang at Day</b><br/>Comparisons for general use</div>
+			  </div>
+			</div>
+		</a>
+		
+		<a href="aim">
+			<div class="gallery">
+				<div class="gallerypic">
+				<img src="images/icon/aim.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Taking Aim</b><br/>(the talent)</div>
+				</div>
+			</div>
+		</a>
+		
+		<!-- <a href="manual-labor">
+			<div class="gallery">
+			  <div class="gallerypic">
+				<img src="images/icon/manual-labor.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Rico Skill Analysis</b><br/>Force manual vs Autoskill</div>
+			  </div>
+			</div>
+		</a> -->
+</section>
+	
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+				<li>BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
 		</div>
-	</div>
-</a>
+	</footer>
+</div>
 
-<a href="manual-labor">
-	<div class="gallery">
-	  <div class="gallerypic">
-		<img src="images/icon/manual-labor.jpg" width="33%" height="400">
-		<div class="gallerypicdesc"><b>Rico Skill Analysis</b><br/>Force manual vs Autoskill</div>
-	  </div>
-	</div>
-</a>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
-<div class="clearfix"></div>
-
-</main></div></body></html>
+</body>
+</html>

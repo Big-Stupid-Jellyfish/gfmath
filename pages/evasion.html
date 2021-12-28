@@ -1,5 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
 <head>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
@@ -7,35 +12,42 @@
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-
 gtag('config', 'G-805N997DPC');
 </script>
-<meta charset="utf-8">
-<meta name="keywords" content="portfolio">
 <meta name="description" content="Girls Frontline, by the numbers">
 <title>Accuracy and Evasion - GFMath</title>
-<link rel="stylesheet" href="../style.css">
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
 <link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
 <link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
-<!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 </head>
-
-<body>
+<body class="is-preload">
+<!-- Wrapper -->
 <div id="wrapper">
-
-<header>
-<a href="../index">GFMath</a>
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<nav></nav>
+<nav></nav>
+<nav></nav>
+<nav></nav>
+<div class="col-6 col-12-xsmall">
+	<ul class="actions stacked">
+		<li><a href="https://www.youtube.com/c/BigStupidJellyfish" class="button primary small">Youtube</a></li>
+	</ul>
+</div>
+<nav></nav>
 </header>
-<nav role="navigation">
-<a href="../index"><li>Home</li></a>
-<a href="https://www.youtube.com/c/BigStupidJellyfish"><li>Youtube</li></a>
-<!-- <a href="https://www.twitch.tv/bigstupidjellyfish_"><li>Twitch</li></a> -->
-</nav>
-
-<main>
-<h1>Accuracy and Evasion</h1>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+	<h1>Accuracy and Evasion</h1>
+</header>
 <center><em>By BigStupidJellyfish | 2021-November-25</em></center>
 
 <h2>Contents<sup><small><a href="#">&#35;</a></small></sup></h2>
@@ -58,9 +70,11 @@ gtag('config', 'G-805N997DPC');
 	The formula for hit rate is pretty simple:
 </p>
 
+<center>
 <div class="figure">
 	<img src="images/evasion/formula-hitrate.png" width="50%"/>
 </div>
+</center>
 
 <p>
 	But there's a number of interesting aspects to this. Let's plot this equation to get a visual.
@@ -88,9 +102,11 @@ gtag('config', 'G-805N997DPC');
 <p>
 	At night, your final accuracy <a href="https://docs.google.com/document/d/1RvHYM2qVEkAexBE4oag6AQ9sUvNQFAKgA-Mfk5aIK60/edit#">gets a little more complicated</a><sup>1</sup>:
 </p>
+<center>
 <div class="figure">
 	<img src="images/evasion/formula-night.png" width="75%"/>
 </div>
+</center>
 <p>
 	Where ⌊<em>x</em>⌋ is the floor function. A 100% PEQ will completely negate the night penalty, while no PEQ means you get the full 90% penalty. Sadly, enemies have their own little Night Vision chip and are not affected by this penalty.
 	On your end, here's what this PEQ formula looks like:
@@ -112,10 +128,11 @@ gtag('config', 'G-805N997DPC');
 	<sup>1</sup>: That document is quite old, and a few bits are out of date. All dolls have 15 base AP now, and HOCs have a 40% hit rate floor (bonus: <a href="https://old.reddit.com/r/girlsfrontline/comments/onxnav/weekly_commanders_lounge_july_20_2021/h611guq/">experimentally verified</a>).
 </p>
 <h2 id="ehp">Effective HP<sup><small><a href="#ehp">&#35;</a></small></sup></h2>
-
+<center>
 <div class="figure">
 	<img src="images/evasion/formula-ehp.png" width="50%"/>
 </div>
+</center>
 <p>
 	Let's move away from talking about evasion and hit rates, and introduce another number: effective HP (or EHP for short).
 	Consider a particularly bad shotgun with 1000 HP and 0 evasion.
@@ -136,9 +153,11 @@ gtag('config', 'G-805N997DPC');
 	The following chart shows the estimated number of total attacks the maintank took, by support configuration.
 	Using one or two Architects significantly reduced the number of attacks that need to be tanked, lowering damage and speeding the grind up.
 </p>
+<center>
 <div class="figure">
 	<img src="images/evasion/8-2-MT.png" width="75%"/>
 </div>
+</center>
 <p>
 	Repairing your maintank can be a pain, so it would be nice if you could last the whole run without doing so.
 	If you have <a href="8-2">sufficient armor</a>, you can reduce all damage to 1, and getting more EHP than expected attacks taken should allow you to survive without any repairs.
@@ -301,11 +320,11 @@ Here's the same table with 143 enemy accuracy.</p>
 <p>
 	We can define a survivability increase like so:
 </p>
-
+<center>
 <div class="figure">
 	<img src="images/evasion/formula-survival.png" width="100%"/>
 </div>
-
+</center>
 <p>
 	For a visual perspective, here's a chart of the gain in survivability (EHP) a few different EVA buffs give you against a 20-accuracy enemy, depending on what your evasion stat was beforehand.
 </p>
@@ -328,11 +347,11 @@ Here's the same table with 143 enemy accuracy.</p>
 	As your base evasion increases, the gain from this buff will increase, approaching a +100% EHP improvement for +100% EVA, +80% EHP for 80% EVA, and so on.
 	If you want a bit more proof this does cap out: supposing some constant enemy accuracy <em>a</em> (and a 100% EVA buff),
 </p>
-
+<center>
 <div class="figure">
 	<img src="images/evasion/formula-limit.png" width="70%"/>
 </div>
-
+</center>
 <h2 id="danya">Still, don't use IDW<sup><small><a href="#danya">&#35;</a></small></sup></h2>
 
 <p>
@@ -420,10 +439,11 @@ Here's the same table with 143 enemy accuracy.</p>
 <p>
 	As you may expect, the equation for net DPS increase is just about the inverse of the survivability increase:
 </p>
+<center>
 <div class="figure">
 	<img src="images/evasion/formula-dps.png" width="50%"/>
 </div>
-
+</center>
 <p>
 	Going from a 70% hit rate to a 80% hit rate is an 80%/70% = 1.1428 = 14.28% DPS improvement, on average.
 </p>
@@ -490,11 +510,11 @@ Here's the same table with 143 enemy accuracy.</p>
 	HOCs have their own accuracy equivalent, precision.
 	It's a similar equation, but with different coefficients and an actual floor:
 </p>
-
+<center>
 <div class="figure">
 	<img src="images/evasion/formula-hochr.png" width="80%"/>
 </div>
-
+</center>
 <p>
 	where max(a,b) returns the higher value between <em>a</em> and <em>b</em>. Visually:
 </p>
@@ -542,34 +562,55 @@ Here's the same table with 143 enemy accuracy.</p>
 </p>
 
 <!-- <h2 id="ads">More like this / <a href="#">back to top</a></h2> -->
+
 <h2 id="ads">More like this</h2>
-
-<a href="smgsg">
-	<div class="gallery">
-	  <div class="gallerypic">
-		<img src="images/icon/smgsg.jpg" width="33%" height="400">
-		<div class="gallerypicdesc"><b>Effective Survival Strategies</b><br/>Durability comparisons</div>
-	  </div>
+	<section class="tiles">	
+		<!-- <a href="smgsg">
+			<div class="gallery">
+			  <div class="gallerypic">
+				<img src="images/icon/smgsg.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Effective Survival Strategies</b><br/>Durability comparisons</div>
+			  </div>
+			</div>
+		</a> -->
+		
+		<a href="dummy">
+			<div class="gallery">
+				<div class="gallerypic">
+				<img src="images/icon/dummysettings.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>What's in the Dummy?</b><br/>Evasion & Armor settings</div>
+				</div>
+			</div>
+		</a>
+		
+		<a href="cms-dps">
+			<div class="gallery">
+			  <div class="gallerypic">
+				<img src="images/icon/cms-dps.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Using C-MS for DPS</b><br/>Mode & equipment analysis</div>
+			  </div>
+			</div>
+		</a>
+</section>
+	
+	<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
 	</div>
-</a>
-
-<a href="dummy">
-	<div class="gallery">
-		<div class="gallerypic">
-		<img src="images/icon/dummysettings.jpg" width="33%" height="400">
-		<div class="gallerypicdesc"><b>What's in the Dummy?</b><br/>Evasion & Armor settings</div>
-		</div>
-	</div>
-</a>
-
-<a href="cms-dps">
-	<div class="gallery">
-	  <div class="gallerypic">
-		<img src="images/icon/cms-dps.jpg" width="33%" height="400">
-		<div class="gallerypicdesc"><b>Using C-MS for DPS</b><br/>Mode & equipment analysis</div>
-	  </div>
-	</div>
-</a>
-
-<div class="clearfix"></div>
-</main></div></body></html>
+	
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	
+	</body>
+	</html>

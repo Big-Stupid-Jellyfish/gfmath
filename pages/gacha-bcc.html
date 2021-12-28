@@ -1,186 +1,276 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'G-805N997DPC');
-		</script>
-		<meta charset="utf-8">
-		<meta name="keywords" content="portfolio">
-		<meta name="description" content="Girls Frontline, by the numbers">
-		<title>Black Cards & Completionism (outdated) - GFMath</title>
-		<link rel="stylesheet" href="../style.css">
-
-		<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
-		<!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
-	</head>
-
-	<body>
-		<div id="wrapper">
-
-<header>
-	<a href="../index">GFMath</a>
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>Black Cards & Completionism (outdated) - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<nav></nav>
+<nav></nav>
+<nav></nav>
+<nav></nav>
+<div class="col-6 col-12-xsmall">
+	<ul class="actions stacked">
+		<li><a href="https://www.youtube.com/c/BigStupidJellyfish" class="button primary small">Youtube</a></li>
+	</ul>
+</div>
+<nav></nav>
 </header>
-<nav role="navigation">
-	<a href="../index"><li>Home</li></a>
-	<a href="https://www.youtube.com/c/BigStupidJellyfish"><li>Youtube</li></a>
-</nav>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+	<h1>Black Cards & Completionism</h1>
+</header>
 
-<main>
-<h1>Black Cards & Completionism</h1>
 <center><em>By BigStupidJellyfish | 2021-February-07 | Updated 2021-September-19</em></center>
 
 <p><strong><a href="gacha">This page has moved to a new URL! Click here for the latest updates.</a></strong></p>
 
 <p>Before Protocol Assimilation was introduced, the main money sink in Girls' Frontline was its costume gacha system.
-Free-to-play players can only save enough tokens for one or two banners a year, but new skin sets are introduced monthly and directly buying tokens gets expensive, fast.
-</p>
+	Free-to-play players can only save enough tokens for one or two banners a year, but new skin sets are introduced monthly and directly buying tokens gets expensive, fast.
+	</p>
+	
+	<p>Using a program to simulate the costume gacha system, I'll go over a few points of interest on what sort of outcomes you can expect.
+	Some things to keep in mind before getting into the details:
+	</p>
+	<ul>
+		<li>If you want a <em>specific</em> costume, you're best off spending enough tokens to exchange for it directly and avoiding all RNG. That's 910 tokens for a 100-ticket skin, 1820 for a 200-ticket, and 5460 for a 600-ticket (L2D) skin.</li>
+		<li>While your personal financial status will vary, I strongly recommend against spending money on this system. It takes a lot of money for very little gain.
+			The direct-purchase costumes in the store cost far less and, even if they aren't live2D, can have some nice animations.
+		</li>
+		<li>It's much better to save up and drop large amounts of tokens in one or two banners each year you really like than spending small amounts each month.
+			The exchange ticket system is important for skin collection, and black cards let you patch up holes in your collection or pick up single skins from sets you otherwise aren't interested in.
+		</li>
+		<li>Black card income numbers here assume you prioritize complete sets. You may be able to get more black cards by ignoring a skin you didn't roll and exchanging for more copies of a 100-ticket skin.</li>
+		<li>Exchange tickets are not spent for black cards if the set can't be completed in my models - at that point, I assume you'll spend all or most of them trying to salvage the set.</li>
+		<li>I assume a <a href="https://web.archive.org/web/20170514001925/http://gf.ppgame.com/web/pc/info.html?id=740">2% overall skin rate</a> and equal odds for all skins. While there's no good evidence to suggest otherwise, exact skin rates are ultimately not known.</li>
+		<!--
+			A stronger statement I'd be willing to make: I have never seen any remotely convincing evidence to suggest otherwise. 1 person's story of getting bad luck on 1 banner (or 2 banners, or 3 banners) is not evidence.
+			The gacha is enough of a ripoff with equal probabilities anyways.
+		-->
+	</ul>
+	
+	<p>
+		If you're just looking for general info on costumes/what sets there are in the future/anything else like that,
+		I recommend <a href="https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ/edit?usp=sharing">this excellent spreadsheet</a> by /u/ConductorBichir.
+	</p>
+	
+	<h2>Contents</h2>
+	<ul>
+		<li><a href="#completion">Completion chances</a></li>
+		<li><a href="#furniture">Furniture collection</a></li>
+		<li><a href="#farming">Black card farming</a></li>
+		<li><a href="#conclusion">Conclusion</a></li>
+		<li><a href="#blackcards">Black card probabilities</a></li>
+	</ul>
+	
+	<h2 id="completion">Completion chances<sup><small><a href="#completion">&#35;</a></small></sup></h2>
+	
+	<p>While it's simple enough to find how many tokens you need to exchange for a specific skin, I'd argue that you should mostly be rolling on gachas where you like all (or almost all) the skins.
+		In that case, you would probably like to get the full set.
+		There are three main categories skin gachas will fall into: 4-skin sets (skins costing 100/100/200/200 exchange tickets), 5-skin sets with 1 L2D (600/200/200/100/100), and 6-skin sets with 2 L2Ds (more recent, 600/600/200/200/100/100).
+		Let's take each of these and plot the odds of obtaining a complete skin set (through rolls & exchanges) as a function of our token investment:
+	</p>
+	<div class="figure">
+	<img src="images/gacha/bytokens-4skins.png" width="100%"/>
+	</div>
+	<p><a href="https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ/edit#gid=1123841265">Example set</a>.
+		These small gachas are relatively simple to complete, with 2730 tokens (for 300 exchange tickets) already being enough a little over 90% of the time.
+		Add another 910 to 3640 and it's almost impossible to fail.
+	</p>
+	<div class="figure">
+	<img src="images/gacha/bytokens-5skins.png" width="100%"/>
+	</div>
+	<p>
+		<a href="https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ/edit#gid=611833074">Example set</a>.
+		You'll need 5460 tokens to guarantee the live2D from these gachas, and at that point it looks like you'll have excellent odds at a complete set.
+		It's possible to still be short a skin - if you don't roll the live2D and any other skin, 600 exchange tickets won't be enough.
+		A reasonable amount of people may not need to exchange for the live2D at all and get by with 3700-5000 tokens, but I wouldn't count on that.
+	</p>
+	<div class="figure">
+	<img src="images/gacha/bytokens-6skins.png" width="100%"/>
+	</div>
+	<p>
+		<a href="https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ/edit#gid=1441699207">Example set</a>.
+		Some more recent skin sets introduce another live2D skin, which makes things a bit harder.
+		I've expanded the x-axis to show more, as spending 5460 tokens falls short of the full set a little over 10% of the time.
+		While those are still decent chances, I'd be prepared for the possibility of needing another thousand tokens or so to really get your odds up there.
+	</p>
+	
+	<p>
+		(Not many skin gachas follow this pattern <a href="https://i.imgur.com/MkaT1Za.png">but here's a chart</a> using the skin distribution of the Valhalla collab.)
+	</p>
+	
+	<h2 id="furniture">Furniture collection<sup><small><a href="#furniture">&#35;</a></small></sup></h2>
+	
+	<p>If your main priority is collecting skins and black cards, you probably won't have any exchange tickets to spare for furniture.
+	Assuming a 13-piece 5* set, uniform odds, and an <a href="https://iopwiki.com/wiki/Dormitory">8% overall furniture rate</a>, your chances of getting a complete furniture set will look something like this:</p>
+	<div class="figure">
+	<img src="https://i.imgur.com/xj6hlfN.png" width="100%"/>
+	</div>
+	<p>Note that the vertical axis doesn't go to 100% here - even with 6000 tokens spent, you'll only have a ~80% chance of getting a full furniture set.</p>
+	
+	<p>On the other hand, if furniture is your priority, exchange tickets make it <em>much</em> easier to complete a set.
+	Spending 2700+ tokens virtually guarantees a full set.</p>
+	<div class="figure">
+	<img src="https://i.imgur.com/NIc0KJa.png" width="100%"/>
+	</div>
+	<p>For a lower bound on the odds of a complete costume & furniture set, you can multiply the probability of completing the costume set from above with the odds of finishing the furniture set given no exchange tickets spent.
+	You may have leftover exchange tickets after completing the costumes to pick a furniture piece or two and improve your completion chances (though that cuts into your black card income).</p>
+	
+	<p>Alternative approach: without exchanges, this is pretty much the <a href="https://en.wikipedia.org/wiki/Coupon_collector%27s_problem">coupon collector's problem</a>.
+	The expected number of furniture pieces collected to have a complete set of 13 should be 13*H_13 = 13*3.18013 = 41.34 furniture pieces drawn.
+	Given the 8% rate, that'd take ~516 rolls on average (or 47 x11 rolls, 4700 tokens).</p>
+	
+	<h2 id="farming">Black card farming<sup><small><a href="#farming">&#35;</a></small></sup></h2>
+	
+	<p>One common piece of advice is this: to get black cards, you're best off spending a ton of tokens on a small (4-skin) gacha because you'll get more dupes.
+		While technically true, I don't recommend this strategy.
+	</p>
+	
+	<p>
+		Spending tokens on skins you don't want is obviously bad, so you should save for a set that has multiple costumes you like.
+		Now, consider three possible scenarios:</p>
+	<ol>
+		<li>You find a 4-costume set that you like everything in, and dump tokens for the skins & black cards. You roll all 4 skins, some dupes, and exchange for more black cards.</li>
+		<li>You find a 5-costume set that you like everything in, and dump tokens for the skins & black cards. You roll the 4 non-live2D skins, some dupes of those, and exchange for more black cards.</li>
+		<li>You find a 5-costume set that you like everything in, and dump tokens for the skins & black cards. You roll all 5 skins, some dupes of those, and exchange for more black cards.</li>
+	</ol>
+	<p>Case 1 & 2 are identical in terms of black card income. Case 3 trades <strong>1</strong> black card for <strong>1</strong> live2D skin that you like.
+	Considering that live2D skins cost 8 black cards to exchange for, it seems clear the 5-costume set is better to roll on.</p>
+	
+	<p>(It's also possible to not roll all 4 non-live2D skins, but that's unlikely if you're dropping enough tokens to farm black cards and can still apply to the 4-costume set.)</p>
+	
+	<h2 id="conclusion">Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+	<p>The only way to certainly avoid disappointment is to identify one or two skins you <em>really</em> want and roll until you get them or hit the pity mechanism.
+	To get full skin sets I would (very roughly) recommend bringing 4000/5500/6500 tokens for 4/5/6-costume sets, though these are much less certain.</p>
+	
+	<p>Costume reruns have been reworked to also include exchange ticket mechanics, and as such are a reasonable option.
+	The classic radiant (discounted) collection still isn't worth it:
+	in a rate-up, compared to the original run, you are half as likely to get a skin from the set while paying 60% of the price - this is a worse deal.
+	You get no exchange tickets, which has a negative effect on your black card production as well as your chances of completing the set or getting any specific skin.
+	You <em>do</em> get some radiant skins, but you should also be careful on assigning much value to something you didn't actually want going in.
+	It's an easy way to trick people into paying more and is used all the time in these types of games (see also: package bloat with rings/tokens accompanying skins and batteries accompanying data).</p>
+	
+	<p>
+		Based on my personal data, I would estimate that token income averages out to 13-14 tokens/day over sufficiently long periods of time, if playing actively and participating in events normally (but fully free to play).
+		For logistics, 6-4 overnight can help (+0.9 tokens/day).
+	</p>
+	
+	<h2 id="blackcards">Black card probabilities<sup><small><a href="#blackcards">&#35;</a></small></sup></h2>
+	
+	<p><em>(This bit takes up a lot more space so I've dumped it at the end.)</em></p>
+	
+	<p>The number of black cards you can get for a given investment varies enough that it doesn't help too much to just list the mean number of black cards for each level of investment.
+		I'll show some histograms for a variety of skin set/token combinations to better show the range of possibilities.
+	</p>
+	<div class="figure">
+		<img src="images/gacha/fancy-chart-lq.jpg" width="100%"/>
+	</div>
+	<p>This wedding set was my inspiration for this piece (and while my black card luck wasn't the best, <a href="https://i.imgur.com/oPV7dCg.jpg">I can't complain either</a>), so here's a fancy graphic of it.</p>
+	
+	<p>Downgrading to a 1-L2D set improves things a bit:</p>
+	<div class="figure">
+		<img src="images/gacha/graph-5500-5-1l2d.png" width="100%"/>
+	</div>
+	<center><em>5500 tokens, 5-costume set (1 L2D).</em></center>
+	
+	<p>On a budget, some 4-costume charts:</p>
+	<div class="figure">
+		<img src="images/gacha/graph-2000-4-0l2d.png" width="100%"/>
+	</div>
+	<center><em>2000 tokens, 4-costume set.</em></center>
+	<div class="figure">
+		<img src="images/gacha/graph-3000-4-0l2d.png" width="100%"/>
+	</div>
+	<center><em>3000 tokens, 4-costume set.</em></center>
+	<div class="figure">
+		<img src="images/gacha/graph-4000-4-0l2d.png" width="100%"/>
+	</div>
+	<center><em>4000 tokens, 4-costume set.</em></center>
+	
+	<p>If you like to dream big, here's 3k tokens on a double live2D set:</p>
+	<div class="figure">
+		<img src="images/gacha/graph-3000-6-2l2d.png" width="100%"/>
+	</div>
+	<center><em>3000 tokens, 6-costume set (2 L2D).</em></center>
+	
 
-<p>Using a program to simulate the costume gacha system, I'll go over a few points of interest on what sort of outcomes you can expect.
-Some points to keep in mind before getting into the details:
-</p>
-<ul>
-	<li>If you want a specific costume, you're best off spending enough tokens to exchange for it directly and avoiding all RNG. That's 910 tokens for a 100-ticket skink, 1820 for a 200-ticket, and 5460 for a 600-ticket (L2D) skin.</li>
-	<li>While your personal financial status will vary, I strongly recommend against spending money on this system. It takes a lot of money for very little gain.
-		The direct-purchase costumes in the store cost far less, and even if they aren't live2D, can have some nice animations.
-	</li>
-	<li>It's much better to save up and drop large amounts of tokens in one or two banners each year you really like than spending small amounts each time.
-		The exchange ticket system is important for skin collection, and black cards let you patch up holes in your collection or pick up single skins from sets you otherwise aren't interested in.
-	</li>
-	<li>Black card income numbers here assume you prioritize complete sets. You may be able to get more black cards by ignoring a skin you didn't roll and exchanging for more copies of a 100-ticket skin.</li>
-	<li>Exchange tickets are not spent for black cards if the set can't be completed in my models - at that point, I assume you'll spend all or most of them trying to salvage the set.</li>
-	<li>I assume a 2% overall skin rate and equal odds for all skins. While I have no evidence to suggest otherwise, exact skin rates are ultimately not known.</li>
-</ul>
-
-<p>If you're just looking for general info on costumes/what sets there are in the future/anything else like that,
-	I recommend <a href="https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ/edit?usp=sharing">this excellent spreadsheet</a> by /u/ConductorBichir.</p>
-
-<h2>Contents</h2>
-<ul>
-	<li><a href="#completion">Completion chances</a></li>
-	<li><a href="#furniture">Furniture collection</a></li>
-	<li><a href="#blackcards">Black cards</a></li>
-	<li><a href="#farming">Black card farming</a></li>
-	<li><a href="#conclusion">Conclusion</a></li>
-</ul>
-
-<h2 id="completion">Completion chances<sup><small><a href="#completion">&#35;</a></small></sup></h2>
-
-<p>While it's simple enough to find how many tokens you need to exchange for a specific skin, I'd argue that you should mostly be rolling on gachas where you like all (or almost all) the skins.
-	In that case, you would probably like to get the full set.
-	There are three main categories skin gachas will fall into: 4-skin sets (skins costing 100/100/200/200 exchange tickets), 5-skin sets with 1 L2D (600/200/200/100/100), and 6-skin sets with 2 L2Ds (more recent, 600/600/200/200/100/100).
-	Let's take each of these and plot the odds of obtaining a complete skin set (through rolls & exchanges) as a function of our token investment:
-</p>
-<div class="figure">
-<img src="images/gacha/bytokens-4skins.png" width="100%"/>
-</div>
-<p><a href="https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ/edit#gid=1123841265">Example set</a>.
-	These small gachas are relatively simple to complete, with 2730 tokens (for 300 exchange tickets) already being enough a little over 90% of the time.
-	Add another 910 to 3640 and it's almost impossible to fail.
-</p>
-<div class="figure">
-<img src="images/gacha/bytokens-5skins.png" width="100%"/>
-</div>
-<p>
-	<a href="https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ/edit#gid=611833074">Example set</a>.
-	You'll need 5460 tokens to guarantee the live2D from these gachas, and at that point it looks like you'll have excellent odds at a complete set.
-	It's possible to still be short a skin - if you don't roll the live2D and any other skin, 600 exchange tickets won't be enough (although this shouldn't happen 95% of the time).
-	A reasonable amount of people may not need to exchange for the live2D at all and get by with 3700-5000 tokens, but I wouldn't count on that.
-</p>
-<div class="figure">
-<img src="images/gacha/bytokens-6skins.png" width="100%"/>
-</div>
-<p>
-	<a href="https://docs.google.com/spreadsheets/d/10ceReDBnWKelZhSN0ztsK6EA2_14Ll8ktcXBHMMs9gQ/edit#gid=1441699207">Example set</a>.
-	Some more recent skin sets introduce another live2D skin, which makes things a bit harder.
-	I've expanded the x-axis to show more, as passing 5460 tokens falls short of the full set a little over 10% of the time.
-	While those are still decent chances, I'd be prepared for the possibility of needing another thousand tokens or so to really get your odds up there.
-</p>
-
-<h2 id="furniture">Furniture collection<sup><small><a href="#furniture">&#35;</a></small></sup></h2>
-
-<p>If your main priority is collecting skins and black cards, you probably won't have any exchange tickets to spare for furniture.
-Assuming a 13-piece 5* set, uniform odds, and an <a href="https://iopwiki.com/wiki/Dormitory">8% overall furniture rate</a>, your chances of getting a complete furniture set will look something like this:</p>
-<div class="figure">
-<img src="https://i.imgur.com/xj6hlfN.png" width="100%"/>
-</div>
-<p>Note that the vertical axis doesn't go to 100% here - even with 6000 tokens spent, you'll only have a ~80% chance of getting a full furniture set.</p>
-
-<p>On the other hand, if furniture is your priority, exchange tickets make it <em>much</em> easier to complete a set.
-Spending 2700+ tokens virtually guarantees a full set.</p>
-<div class="figure">
-<img src="https://i.imgur.com/NIc0KJa.png" width="100%"/>
-</div>
-<p>For a lower bound on the odds of a complete costume & furniture set, you can multiply the probability of completing the costume set from above with the odds of finishing the furniture set given no exchange tickets spent.
-You may have leftover exchange tickets after completing the costumes to pick a furniture piece or two and improve your completion chances (though that cuts into your black card income).</p>
-
-<p>Alternative approach: without exchanges, this is pretty much the <a href="https://en.wikipedia.org/wiki/Coupon_collector%27s_problem">coupon collector's problem</a>.
-The expected number of furniture pieces collected to have a complete set of 13 should be 13*H_13 = 13*3.18013 = 41.34 furniture pieces drawn.
-Given the 8% rate, that'd take ~516 rolls on average (or 47 x11 rolls, 4700 tokens).</p>
-
-<h2 id="blackcards">Black cards<sup><small><a href="#blackcards">&#35;</a></small></sup></h2>
-
-<p>The number of black cards you can get for a given investment varies enough that it doesn't help too much to just list the mean number of black cards for each level of investment.
-	I'll show some histograms for a variety of skin set/token combinations to better show the range of possibilities.
-</p>
-<div class="figure">
-	<img src="images/gacha/fancy-chart-lq.jpg" width="100%"/>
-</div>
-<p>This wedding set was my inspiration for this piece (and while my black card luck wasn't the best, <a href="https://i.imgur.com/oPV7dCg.jpg">I can't complain either</a>), so here's a fancy graphic of it.</p>
-
-<p>Downgrading to a 1-L2D set improves things a bit:</p>
-<div class="figure">
-	<img src="images/gacha/graph-5500-5-1l2d.png" width="100%"/>
-</div>
-<center><em>5500 tokens, 5-costume set (1 L2D).</em></center>
-
-<p>On a budget, some 4-costume charts:</p>
-<div class="figure">
-	<img src="images/gacha/graph-2000-4-0l2d.png" width="100%"/>
-</div>
-<center><em>2000 tokens, 4-costume set.</em></center>
-<div class="figure">
-	<img src="images/gacha/graph-3000-4-0l2d.png" width="100%"/>
-</div>
-<center><em>3000 tokens, 4-costume set.</em></center>
-<div class="figure">
-	<img src="images/gacha/graph-4000-4-0l2d.png" width="100%"/>
-</div>
-<center><em>4000 tokens, 4-costume set.</em></center>
-
-<p>If you like to dream big, here's 3k tokens on a double live2D set:</p>
-<div class="figure">
-	<img src="images/gacha/graph-3000-6-2l2d.png" width="100%"/>
-</div>
-<center><em>3000 tokens, 6-costume set (2 L2D).</em></center>
-
-<h2 id="farming">Black card farming<sup><small><a href="#farming">&#35;</a></small></sup></h2>
-
-<p>One common piece of advice is this: to get black cards, you're best off spending a ton of tokens on a small (4-skin) gacha because you'll get more dupes.
-	While technically true, I would strongly advise against following this strategy.
-</p>
-
-<p>
-	Spending tokens on skins you don't want is obviously bad, so you should save for a set that has costumes you do like.
-	Now, consider three possible scenarios.</p>
-<ol>
-	<li>You find a 4-costume set that you like everything in, and dump tokens for the skins & black cards. You roll all 4 skins, some dupes, and exchange for more black cards.</li>
-	<li>You find a 5-costume set that you like everything in, and dump tokens for the skins & black cards. You roll the 4 non-live2D skins, some dupes of those, and exchange for more black cards.</li>
-	<li>You find a 5-costume set that you like everything in, and dump tokens for the skins & black cards. You roll all 5 skins, some dupes of those, and exchange for more black cards.</li>
-</ol>
-<p>Case 1 & 2 are identical in terms of black card income. Case 3 trades <strong>1</strong> black card for <strong>1</strong> live2D skin that you like.
-Considering that live2D skins cost 8 black cards to exchange for, it seems clear to me that the 5-costume set is better to roll on.</p>
-
-<p>(It's also possible to not roll all 4 non-live2D skins, but that is unlikely if you're dropping enough tokens to farm black cards and can still apply to the 4-costume set.)</p>
-
-<h2 id="conclusion">Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
-<p>The only way to certainly avoid disappointment is to identify one or two skins you <em>really</em> want and roll until you get them or hit the pity mechanism.
-To get full skin sets I would (very roughly) recommend bringing 4000/5500/6500 tokens for 4/5/6-costume sets, though these are much less certain.</p>
-</html>
+	<h2 id="ads">More like this</h2>
+	<section class="tiles">	
+		<a href="hanyangle">
+			<div class="gallery">
+			  <div class="gallerypic">
+				<img src="images/icon/hanyangle.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Type88: Formation and Skins</b><br/>Performance analysis</div>
+			  </div>
+			</div>
+		</a>
+		
+		<a href="energy-packages">
+			<div class="gallery">
+				<div class="gallerypic">
+				<img src="images/icon/energy-packages.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Energy Package Analysis</b><br/>The best data deals</div>
+				</div>
+			</div>
+		</a>
+<!-- 		
+		<a href="limited-dolls">
+			<div class="gallery">
+				<div class="gallerypic">
+				<img src="images/icon/limited-dolls.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Limited Event Dolls</b><br/>and their last-seen dates</div>
+				</div>
+			</div>
+		</a> -->
+</section>
+	
+	<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+	
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	
+	</body>
+	</html>

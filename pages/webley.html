@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>Webley Analysis - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<nav></nav>
+<nav></nav>
+<nav></nav>
+<nav></nav>
+<div class="col-6 col-12-xsmall">
+	<ul class="actions stacked">
+		<li><a href="https://www.youtube.com/c/BigStupidJellyfish" class="button primary small">Youtube</a></li>
+	</ul>
+</div>
+<nav></nav>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+	<h1>Webley Analysis</h1>
+</header>
+<center><em>By BigStupidJellyfish | Last updated 2021-October-17</em></center>
+
+<blockquote>
+	<p>
+		<strong>Linked Order</strong>. Initial CD 6s/Skill CD 12s.
+	</p>
+
+	<p>
+		When placed in an echelon member slot, increase the echelon leader's damage and ROF by 22% for 8 seconds, while reducing the current cooldown time of the leader's skill by 25%.
+	</p>
+
+	<p>
+		When placed in the echelon leader position or if the leader is absent, raise all allies' damage by 25%, lasting for 8 seconds.
+	</p>
+</blockquote>
+
+<p>
+	At least for EN, Webley introduced the idea of making team positioning matter (outside of deciding who should get a little extra XP/affection).
+	There are some easy things to say about Webley:
+</p>
+<ul>
+	<li>Webley is a strong pos2 buffing HG.</li>
+	<li>She saw heavy use in PL ranking as part of several deathstack-killing RFHGs (Type88+KSVK, Type88+Grape, or just Type88-based ones).</li> <!-- Notice a trend there? -->
+	<li>She can give the leader a superbuff (giving FP+ROF+CDR) or, as leader, a normal FP buff to the whole team.</li>
+	<li>She has strong FP & ROF tiles: approximately a 39% DPS increase, though frame stuff will make it vary a bit. Some approximate numbers for comparison:</li>
+	<ul>
+		<li>Baseline 5-star HG tiles give a 30% DPS buff (Grizzly).</li>
+		<li>Some add accuracy (P22), which is a ~5% improvement at day (roughly a 37% effective buff).</li>
+		<li>Some add crit rate (Python), which varies a bit more by the team/fairy but will generally add 5-10% more DPS.</li>
+	</ul>
+	<li>You should raise your Webley. As she was originally a clear reward, you <a href="limited-dolls">may have to wait a bit to get one</a> if you missed her last appearance.</li>
+</ul>
+<p>
+	And a few more difficult questions:
+</p>
+<ul>
+	<li>How valuable are each of Webley's buffs, and in what situations?</li>
+	<li>In ordinary 2RF3HG echelons, should Webley be the leader?</li>
+	<ul>
+		<li>In specialist echelons?</li>
+	</ul>
+	<li>When is she better than P22? Px4 Storm?</li>
+</ul>
+<p>Let's investigate.</p>
+
+<h2 id="whichleader">Leader vs Team buff: Ordinary RFHGs<sup><small><a href="#whichleader">&#35;</a></small></sup></h2>
+
+<p>
+	You can use DPS simulators and get numbers from them, but whether or not those numbers actually mean anything is another problem (at the very least, the team-wide buff will have generally inflated numbers from frontline HGs also getting the buff and may undervalue the ROF component).
+	Trying to assign a general number to compare a team-wide FP buff to a specific FP+ROF+CDR buff seems a little extreme, so let's look at it from a different angle.
+	If we see a significant overall performance advantage either way in typical fights, it would make sense to recommend one option over the other as a default.
+	If there's a big difference each time but the better one changes, you'll need to think carefully about who's leader.
+	If they're about the same each time, just go with whichever chibi you think will look cuter on the map.
+</p>
+
+<p>
+	To start, I'll use an ordinary Rico/R93 RFHG with Webley in place of the usual P22.
+	SAA is used in place of Five-Seven/Stechkin to avoid overcap issues.
+</p>
+<p>
+	Simulator prediction: N/A. R93's and Rico's skills cannot be modeled well by a DPS sim.
+	CDR on Rico could be good if the fight drags on, and R93 has stellar overall DPS - either seems like a good candidate to buff more.
+</p>
+<div class="figure">
+<img src="images/webley/test1.png" width="100%"/>
+</div>
+<p>
+	From left to right, considering both clear times and damage taken:
+</p>
+<ol>
+	<li>Rico (as leader) appears to have a significant advantage.</li>
+	<li>All three options are about equal.</li>
+	<li>R93 does worse.</li>
+	<li>All three options are about equal.</li>
+</ol>
+
+<p>
+	Next, a typical WA/SVD setup (Mk23/Grizzly/Webley for the handguns).
+	WA2000 is oathed, so the rifles are not quite equal in performance.
+</p>
+<p>
+	Simulator prediction: SVD leader, 30006+34282=64288 damage; WA leader, 41995+27062=69057 damage; Webley leader, 36016+31738=67754 damage. 15 eva/10 seconds/rifle damage only/no fairy.
+</p>
+<div class="figure">
+<img src="images/webley/test2.png" width="100%"/>
+</div>
+<ol>
+	<li>All about equal.</li>
+	<li>All about equal.</li>
+	<li>Possible advantage for WA2000 (reduced damage taken), but close.</li>
+	<li>All about equal - by time, WA2000 looks stronger but by damage taken weaker.</li>
+</ol>
+
+<h2 id="cdr">CDR: Tiles and Skill<sup><small><a href="#cdr">&#35;</a></small></sup></h2>
+<p>
+	Most teambuilding is done without going deep into specifics, so the echelons used in my tests above were put together without much thought or calculation aside from making sure a doll wasn't being buffed to 200 ROF.
+	Let's go into a few details on both CDR tiles on Webley and her own skill's CDR component.
+</p>
+
+<p>
+	First of all: Webley's skill can activate before the rifles, but still provide its CDR bonus in some circumstances.
+	You can see an example of that <a href="https://www.youtube.com/watch?v=vd0AdFkNjGY">here with SVD</a>, but it's not unlimited: <a href="https://www.youtube.com/watch?v=0Nhw7Sxj9yM">here, no CDR is applied</a>.
+</p>
+
+<p>
+	This presents another issue with Hycdes - a google translate of their "Special" tab includes the comment
+</p>
+<blockquote>
+	<p>
+		In addition, the simulator's skills in the same frame are executed sequentially from positions 1 to 9. If Webley and her captain activate the skills in the same frame, the number of grids they occupy may affect the cooldown of the captain's skills.
+	</p>
+</blockquote>
+<p>
+	As we can observe Webley's skill applying the CDR even in some cases where her skill activates several frames earlier, this sim may understate her performance.
+	<!-- Frame-level optimizations are a bit on the deep side for a general analysis, so I won't go into it much. --> <!-- jk lol I will -->
+</p>
+<h2 id="conclusion">Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+
+<h2 id="notes">Notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<ul>
+	<li>To compensate for kiting not being practical when collecting large amounts of data, frontline HGs used no HP ammo.</li>
+	<li>When running 2 rifles with the same skill type (FP or ROF buff), Webley's skill can be an easy way to mitigate corpse whipping.</li>
+	<li>Single-DPS teams are not covered here - it should be rather obvious which mode Webley should be in for those, and that she's much better in that role compared to most buffing handguns.</li>
+	<li></li>
+</ul>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+				<li>BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
