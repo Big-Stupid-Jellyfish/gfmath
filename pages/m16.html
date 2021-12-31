@@ -1,0 +1,458 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<title>M16: Evasion plus Armor - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<nav></nav>
+<nav></nav>
+<nav></nav>
+<nav></nav>
+<div class="col-6 col-12-xsmall">
+	<ul class="actions stacked">
+		<li><a href="https://www.youtube.com/c/BigStupidJellyfish" class="button primary small">Youtube</a></li>
+	</ul>
+</div>
+<nav></nav>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>M16: Evasion plus Armor</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2021-December-28</em></center>
+
+<p>
+	The <a href="newquip">new equipment release</a> came along with some <a href="newquip#speqs">SPEQ rebalances</a> and other adjustments.
+	Some equipment pieces were reclassified, with one interesting result being that M16 can now equip both her night SPEQ and a normal armor plate at the same time.
+	Previously, you could only pick one or the other and were forced to use an exoskeleton in her other body slot.
+	With another option to explore, let's look into M16 and see what she can do.
+</p>
+
+<h2 id="skill">Skill<sup><small><a href="#skill">&#35;</a></small></sup></h2>
+<p>
+	For most dolls, skills are critical.
+	Despite the nice tiles, NZ75 and Welrod see no significant competitive use because of their defensive skills.
+	M16's is a bit of an exception:
+</p>
+<blockquote><p><strong>Stun Grenade</strong> ICD 5s/CD 16s</p>
+<p>
+	Launch a stun grenade that stuns enemies within a radius of 2.5 for 4 seconds.
+</p>
+</blockquote>
+<p>
+	Stun grenades have two main uses:
+</p>
+<ul>
+	<li>Specific red bean defusal strategies, usually stalling for force shield ICD</li>
+	<li>Damage mitigation in short-medium fights.</li>
+</ul>
+<p>
+	It's possible to use M16 for either of those, but there are likely to be better options for your specific case (higher rarity stun grenades like Type79, better mitigation with M500 mod/more FP buffs/etc).
+	Much of what makes M16 interesting doesn't involve this skill, so let's set this aside for today.
+	<!-- I'll expand on point 2 a bit later and otherwise get into what makes M16 unique. -->
+</p>
+<!--
+<div class="figure">
+	<img src="images/arisaka/4shiki2.png" width="100%"/>
+</div>
+-->
+
+<h2 id="survivability">Survivability<sup><small><a href="#survivability">&#35;</a></small></sup></h2>
+
+<p>
+	First, a quick stat comparison:
+</p>
+<center>
+	<table style="width:auto">
+	  <tr>
+		<th style="text-align:right;">Doll</th>
+		<th>HP</th>
+		<th>EVA</th>
+		<th>Armor</th>
+	  </tr>
+	  <tr>
+		<td style="text-align:right;">M16 (SPEQ+Armor)</td>
+		<td>605</td>
+		<td>55</td>
+		<td>31</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:right;">M16 (SPEQ+Exo)</td>
+		<td>605</td>
+		<td>92</td>
+		<td>20</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:right;">LTLX</td>
+		<td>1375</td>
+		<td>10</td>
+		<td>36</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:right;">S.A.T.8</td>
+		<td>1410</td>
+		<td>11</td>
+		<td>33</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:right;">Super Shorty</td>
+		<td>1210</td>
+		<td>18</td>
+		<td>31</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:right;">UMP45</td>
+		<td>950</td>
+		<td>131</td>
+		<td>0</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:right;">C-MS</td>
+		<td>925</td>
+		<td>124 (204 w/ skill)</td>
+		<td>0</td>
+	  </tr>
+	</table>
+</center>
+<p>
+	Assuming max level, 100 affection, no tiles/fairies.
+	Not quite as much armor as a SG, not quite as much evasion as a SMG, less HP than either.
+	Drawing on concepts introduced <a href="smgsg">in a really old survivability piece</a> and <a href="evasion#ehp">another perspective on effective HP (EHP)</a>, let's make some charts.
+</p>
+<div class="figure">
+	<img src="https://i.imgur.com/z53a6GY.png" width="100%"/>
+</div>
+<ul>
+	<li>
+		Case 1: no external buffs - <strong><a href="https://imgur.com/a/JYGkKZ0">full plot album with a range of enemy accuracies</a></strong>.
+		When her armor exceeds enemy FP, M16 is better than a SG when enemies don't have much accuracy (this is why she sees use in corpse dragging).
+		Note that her SPEQ+Armor configuration is largely hidden behind Super-Shorty in the 20 ACC plots.
+		SMGs pass her once enemy damage goes beyond 45-50.
+		Between her two equipment options, if you must use M16, a SPEQ+Exo is better for approximate enemy FPs <20 (when it reduces damage to 1) and >60-70 (when the increased armor is not very valuable).
+	</li>
+</ul>
+<div class="figure">
+	<img src="https://i.imgur.com/b0VMRLZ.png" width="100%"/>
+</div>
+<ul>
+	<li>
+		Case 2: the highest remotely reasonable way of stacking armor on M16 is to use RPK and an Armor fairy, putting her at 46 armor (or 50 with Armor II).
+		To keep things fair, I'll provide SGs the same fairy and armor tile (but no talent for either), and SMGs a shield fairy and 15% EVA tile. <strong><a href="https://imgur.com/a/oeNf4E9">Full plot album here</a></strong>.
+		LTLX's skill is not factored in, and an extra line for her with 3 armor tiles/armor fairy (no skill)/no talent is provided for another reference.
+		Now, M16 compares decently to UMP45/C-MS up to ~60 enemy FP.
+	</li>
+</ul>
+
+<p>
+	A more clear comparison between M16 and SGs, assuming you can get enough armor either way:
+</p>
+<div class="figure">
+	<img src="images/m16/ehp-by-acc.png" width="100%"/>
+</div>
+<p>
+	Most SGs will last longer than double-armor M16 for 30+ enemy accuracy, or 55+ accuracy if M16 can get away with an exo.
+	Adding EVA buffs across the board helps M16 <a href="images/m16/ehp-by-acc-buffed.png">much more</a> (<a href="evasion#myth">as discussed here</a>).
+</p>
+<p>
+	Assuming you have enough armor is a risky assumption - there's very little you can do to up M16's armor, and it doesn't start off great either.
+	With her SPEQ and an armor plate, M16 has 31 armor.
+	Adding a 5-star armor fairy and RPK, most likely weakening your team in the process, only brings her to 46.
+</p>
+
+<p>
+	Jaegers in 6-1 have 36 FP, and can hit for 42 on a high roll.
+	With 104 accuracy, <a href="https://i.imgur.com/Fff3Jgj.png">M16 does okay compared to a SMG with her SPEQ+Armor</a> (looking at enemy damage ~40), but not by much.
+	<!-- Needing a 5-star fairy to properly tank Chapter 6 enemies isn't a great sign, and that's up to 11 damage/hit without armor buffs. -->
+</p>
+
+<p>
+	Dragoons and Jaegers in 7-6 have 39 FP, or 45 on a high roll alongside 124 acc.
+	This is challenging territory to tank with M16, with a 5-star armor fairy looking even more important.
+	Yet this is still early-game content new players ideally rush through within days of starting to unlock Protocol Assimilation.
+	M16's SPEQ is critical to her even making it this far, but needs to be farmed from a moderately difficult night map.
+</p>
+
+<p>
+	SF keep scaling up (10-3: 42 FP/49 on a high roll is common), and other enemies are soon introduced with astronomically higher damage stats.
+	Cerynitis tend to have either 60+ FP & AP or 140+ FP, Hydras are untankable without force shields, SWAP SF get more armor piercing and ridiculous stats, Doppel grenades ignore evasion and armor, and so on.
+</p>
+
+<p>
+	For comparison, here are some levels of armor stacking achievable with LTLX:
+</p>
+<center>
+	<table style="width:auto">
+	  <tr>
+		<th style="text-align:center;">Condition</th>
+		<th>Armor</th>
+	  </tr>
+	  <tr>
+		<td style="text-align:center;">No buffs</td>
+		<td>36</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:center;">Armor fairy (no skill)</td>
+		<td>45</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:center;">Armor fairy & 15% armor tile</td>
+		<td>51</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:center;">Armor fairy (Armor II) & 3 15% armor tile</td>
+		<td>71</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:center;">Armor fairy (Armor II) & Negev/RPK/2 15% tiles</td>
+		<td>83</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:center;">Armor fairy (with skill, Armor II) & Negev/RPK/2 15% tiles</td>
+		<td>124</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:center;">Armor fairy (with skill, Armor II) & Negev/RPK/2 15% tiles & max stacks from skill</td>
+		<td>310</td>
+	  </tr>
+	</table>
+</center>
+<p>
+	In short: M16 can tank enemies with low FP and low accuracy quite well.
+	But by the time you'd have the equipment and fairies to set her up for this, you'll have progressed to a point in the game where most enemies are far more dangerous than that.
+</p>
+<h2 id="tiles">Tiles<sup><small><a href="#tiles">&#35;</a></small></sup></h2>
+<p>
+	M16 has Stechkin-shaped tiles that buff SMGs, offering 10% FP and 12% EVA, a near-trivial boost.
+	If using her as a main tank in place of something like UMP45 or C-MS, you're missing out on a 15-30% DPS boost for your entire backline, which is likely to mitigate far more damage than any extra M16 could hypothetically tank.
+	<!-- If you don't care about tiles, SGs will look far more attractive. -->
+</p>
+<p>
+	For similar reasons, using an armor fairy with M16 is questionable.
+	Taunt/Command/Beach/Twin are likely to give a both better DPS and better survivability for the team as a whole.
+</p>
+<h2 id="elephant">The elephant in the room<sup><small><a href="#elephant">&#35;</a></small></sup></h2>
+
+<p>
+	There's one big problem I haven't touched on yet. If <code>ceil(enemy fp * 1.15) - 3 ≤ final armor</code>, you can equip <a href="newquip#flash">flash shells</a> on your shotgun and be literally immortal.
+	Even if you don't have quite enough armor for full immortality, flash shells are a massive survivability increase. Matching armor:FP with them will negate more than half of enemy attacks.
+	M16's ancient use of tanking Strelets in CT is officially dead with these, as any SG becomes able to tank low-damage trash infinitely better than M16.
+</p>
+
+<p>
+	(There are also options like M500's crazy shield generation if you don't have flash shells yet or can't stack armor quite high enough.)
+</p>
+<!-- asterisk: skills. asterisk: AP. -->
+
+<h2 id="dps">DPS<sup><small><a href="#dps">&#35;</a></small></sup></h2>
+<p>
+	M16 was classically unusable as a DPS-focused doll due to her lack of an accessory (scope) slot and poor to average stats - even bottom-of-the-barrel 2- and 3-star ARs <a href="https://i.imgur.com/qg6dfKR.png">would do better</a>.
+	She can now equip the <a href="chips">#2 Processor chip</a>, which technically improves her DPS, but at the same time most other ARs also can and benefit even more from it.
+	Don't use M16 for DPS.
+</p>
+<h2 id="conclusion">Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	If you're a new player, M16 is useful for her exceptional performance as a tank in 0-2.
+	With a fully enhanced gold armor plate and whatever your best T-exo is, she'll last longer than the rest there.
+	The reclassification makes her a viable 12-4E option, too - you need 28+ armor to reduce all hits to 1, which she now does without a single external armor buff.
+	Flash shells don't work without supplies, so M16 can keep her niche as a corpse drag tank.
+	<!-- She'll get replaced by other options once you set up 12-4E, but that takes time. -->
+</p>
+<p>
+	But when it comes to more serious content, M16 is bad.
+	Having her SPEQ reclassified is nowhere near just compensation for the options available to other dolls.
+	She sadly remains without a use in modern content.
+</p>
+<p>
+	As always, see <a href="https://pengupengupengu.github.io/gflmaps/">GFLMaps</a> for enemy stat information on any map.
+</p>
+<h2 id="judge">Extra: Judge<sup><small><a href="#judge">&#35;</a></small></sup></h2>
+
+<p>
+	Most reasonable Judge kill strategies involve using two armored tanks with sufficient armor to reduce her phase 2 attacks to 1 damage.
+	Flashbangs make this trivial, but for fun let's see how well M16 can handle each Judge appearance.
+	Using her SPEQ & Armor lets M16 tank a Judge with up to 32 FP, and the 5-star Armor/RPK combo lets her go up to 47 Judge FP (51 with Armor II).
+	Here are all of Judge's major appearances and her corresponding stats:
+</p>
+
+<center>
+	<table style="width:auto">
+	  <tr>
+		<th style="text-align:center;">Map</th>
+		<th>FP</th>
+		<th>ACC</th>
+	  </tr>
+	  <tr>
+		<td style="text-align:center;">9-6</td>
+		<td><font color="#2aa889">30</font></td>
+		<td>100</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:center;">9-4E</td>
+		<td><font color="#edb443">42</font></td>
+		<td>100</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:center;">9-4N</td>
+		<td><font color="#c23127">55</font></td>
+		<td>100</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:center;">10-6</td>
+		<td><font color="#edb443">50</font></td>
+		<td>100</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:center;">Above the Hubbub II EX (Isomer)</td>
+		<td><font color="#c23127">58</font></td>
+		<td>100</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:center;">Above the Hubbub II Normal (Isomer)</td>
+		<td><font color="#2aa889">30</font></td>
+		<td>100</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:center;">Hornet's Nest (Singularity ranking, solo)</td>
+		<td><font color="#edb443">45</font></td>
+		<td>80</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:center;">Hornet's Nest (Singularity ranking, with Dreamer)</td>
+		<td><font color="#c23127">58</font></td>
+		<td>100</td>
+	  </tr>
+	</table>
+</center>
+<p>
+	FP values are colored based on how well M16 can survive.
+	Accuracy stat included to emphasize another issue - with Judge's typical 100 accuracy, most SGs would beat her in EHP anyways (and thus last longer, even before considering flashbangs/shield skills).
+</p>
+
+<h2 id="manticores">Extra: Manticores<sup><small><a href="#manticores">&#35;</a></small></sup></h2>
+
+<p>
+	Drawing direct comparisons between Griffin and Coalition units is mostly nonsensical, but let's throw up some out-of-context stats for fun anyways.
+</p>
+<center>
+	<table style="width:auto">
+	  <tr>
+		<th style="text-align:right;">Doll</th>
+		<th>HP</th>
+		<th>EVA</th>
+		<th>Armor</th>
+	  </tr>
+	  <tr>
+		<td style="text-align:right;">M16 (SPEQ+Armor)</td>
+		<td>605</td>
+		<td>55</td>
+		<td>31</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:right;">M16 (SPEQ+Exo)</td>
+		<td>605</td>
+		<td>92</td>
+		<td>20</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:right;">Manticore</td>
+		<td>1604</td>
+		<td>82</td>
+		<td>44</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:right;">Aegis</td>
+		<td>1353</td>
+		<td>68</td>
+		<td>38</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:right;">SWAP Aegis</td>
+		<td>1740</td>
+		<td>86</td>
+		<td>43</td>
+	  </tr>
+	  <tr>
+		<td style="text-align:right;">Nemeum</td>
+		<td>976</td>
+		<td>52</td>
+		<td>22</td>
+	  </tr>
+	</table>
+</center>
+<p>
+	<a href="https://docs.google.com/spreadsheets/d/1TYKbdjuOdOMsvaaIduWW_8FF0tm27BjwKbC4uggl1wE/">Stat source</a>.
+	Please don't actually use Nemeums to tank.
+	Point is - if you have some need for lots of evasion and armor, aren't concerned about cost, and can't use all the other Griffin options, coalition echelons do M16's gimmick much better.
+</p>
+<!-- <p>
+	13-4 is now a thing, though, and <a href="chips">processor chips</a> make it easier than ever to drag with more XP, faster clears, and <a href="core-rates">similar core rates</a> to 12-4E.
+	No tanks needed.
+</p> -->
+<h2 id="ads">More like this</h2>
+<section class="tiles">
+	<a href="tkb-408">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/tkb-408.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>TKB-408 Analysis</b><br/>Critical night focus</div>
+		  </div>
+		</div>
+	</a>
+	
+	<a href="chips">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/chips.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>AR #2 Chip Full Analysis</b><br/>Scope pairs, DPS comparison</div>
+		  </div>
+		</div>
+	</a>
+</section>
+</div>
+
+
+<footer id="footer">
+	<div class="inner">
+		<ul class="copyright">
+			<li>BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+		</ul>
+	</div>
+</footer>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
