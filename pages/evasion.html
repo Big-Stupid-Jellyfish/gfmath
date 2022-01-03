@@ -14,6 +14,10 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-805N997DPC');
 </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <meta name="description" content="Girls Frontline, by the numbers">
 <title>Accuracy and Evasion - GFMath</title>
 <meta charset="utf-8" />
@@ -71,11 +75,13 @@ gtag('config', 'G-805N997DPC');
 	The formula for hit rate is pretty simple:
 </p>
 
-<center>
+$$ \text{Hit rate}~(\%) = \frac{\text{ACC}}{\text{ACC}+\text{EVA}} \times 100\% $$
+<!-- \mathrm{Hit rate (%)} = \mathrm{\text{ACC}}{\mathrm{ACC}+\mathrm{EVA}} \times 100% -->
+<!-- <center>
 <div class="figure">
 	<img src="images/evasion/dark/formula-hitrate.png" width="50%"/>
 </div>
-</center>
+</center> -->
 
 <p>
 	But there's a number of interesting aspects to this. Let's plot this equation to get a visual.
@@ -103,13 +109,14 @@ gtag('config', 'G-805N997DPC');
 <p>
 	At night, your final accuracy <a href="https://docs.google.com/document/d/1RvHYM2qVEkAexBE4oag6AQ9sUvNQFAKgA-Mfk5aIK60/edit#">gets a little more complicated</a><sup>1</sup>:
 </p>
-<center>
+$$ \mathrm{ACC}_{\mathrm{Night}} = \left\lfloor \mathrm{ACC} \cdot (1 - 0.9 \cdot(1 - \mathrm{PEQ~correction})) \right\rfloor $$
+<!-- <center>
 <div class="figure">
 	<img src="images/evasion/dark/formula-night.png" width="75%"/>
 </div>
-</center>
+</center> -->
 <p>
-	Where ⌊<em>x</em>⌋ is the floor function. A 100% PEQ will completely negate the night penalty, while no PEQ means you get the full 90% penalty. Sadly, enemies have their own little Night Vision chip and are not affected by this penalty.
+	Where \( \lfloor x \rfloor \) is the floor function. A 100% PEQ will completely negate the night penalty, while no PEQ means you get the full 90% penalty. Sadly, enemies have their own little Night Vision chip and are not affected by this penalty.
 	On your end, here's what this PEQ formula looks like:
 </p>
 <div class="figure">
@@ -130,11 +137,12 @@ gtag('config', 'G-805N997DPC');
 </p>
 <span class="anchor" id="ehp"></span>
 <h2>Effective HP<sup><small><a href="#ehp">&#35;</a></small></sup></h2>
-<center>
+$$ \mathrm{EHP} = \frac{\mathrm{HP}}{\mathrm{Enemy~hit~rate}} = \frac{\mathrm{HP}}{1-\mathrm{Dodge~chance}} $$
+<!-- <center>
 <div class="figure">
 	<img src="images/evasion/dark/formula-ehp.png" width="50%"/>
 </div>
-</center>
+</center> -->
 <p>
 	Let's move away from talking about evasion and hit rates, and introduce another number: effective HP (or EHP for short).
 	Consider a particularly bad shotgun with 1000 HP and 0 evasion.
@@ -169,13 +177,21 @@ gtag('config', 'G-805N997DPC');
 	A few examples:
 </p>
 <ul>
+	<li>lv96 L Aegis: 1309 HP, 66 EVA. It has \( \frac{1309}{20/(20+66)} = 5628~\mathrm{EHP} \). Not quite enough.</li>
+	<ul>
+		<li>Add Defend: \( \frac{1309}{20/(20+66\cdot 2)} = 9948~\mathrm{EHP} \), a 77% increase and enough EHP to survive with a decent safety margin.</li>
+	</ul>
+	<li>lv92 L Manticore: 1539 HP, 79 EVA. \( \frac{1537}{20/(20+79)} = 7618~\mathrm{EHP} \), or 13697 with Defend (+80%). Possibly survivable without Defend, but with Defend it's easy.</li>
+	<li>lv93 L Nemeum: 932 HP, 50 EVA. Even with Defend, it has only 5592 EHP.</li>
+</ul>
+<!-- <ul>
 	<li>lv96 L Aegis: 1309 HP, 66 EVA. EHP = 1309/(20/(20+66)) = 5628 EHP. Not quite enough.</li>
 	<ul>
 		<li>Add Defend: EHP = 1309/(20/(20+66*2)) = 9948 EHP, a 77% increase and enough EHP to survive with a decent safety margin.</li>
 	</ul>
 	<li>lv92 L Manticore: 1539 HP, 79 EVA. 1539/(20/(20+79)) = 7618 EHP, or 13697 with Defend (+80%). Possibly survivable without Defend, but with Defend it's easy.</li>
 	<li>lv93 L Nemeum: 932 HP, 50 EVA. Even with Defend, it has only 5592 EHP.</li>
-</ul>
+</ul> -->
 
 <p>
 Or for more a more competitively-relevant example, here's a comparison between the force shielders against Dog/Archers.
@@ -323,11 +339,12 @@ Here's the same table with 143 enemy accuracy.</p>
 <p>
 	We can define a survivability increase like so:
 </p>
-<center>
+$$ \mathrm{Survivability~increase} = \frac{\mathrm{New~EHP}}{\mathrm{Old~EHP}} = \frac{\frac{\mathrm{HP}}{\mathrm{New~Enemy~hit~rate}}}{\frac{\mathrm{HP}}{\mathrm{Old~Enemy~hit~rate}}} = \frac{\mathrm{Old~Enemy~hit~rate}}{\mathrm{New~Enemy~hit~rate}} $$
+<!-- <center>
 <div class="figure">
 	<img src="images/evasion/dark/formula-survival.png" width="100%"/>
 </div>
-</center>
+</center> -->
 <p>
 	For a visual perspective, here's a chart of the gain in survivability (EHP) a few different EVA buffs give you against a 20-accuracy enemy, depending on what your evasion stat was beforehand.
 </p>
@@ -350,11 +367,12 @@ Here's the same table with 143 enemy accuracy.</p>
 	As your base evasion increases, the gain from this buff will increase, approaching a +100% EHP improvement for +100% EVA, +80% EHP for 80% EVA, and so on.
 	If you want a bit more proof this does cap out: supposing some constant enemy accuracy <em>a</em> (and a 100% EVA buff),
 </p>
-<center>
+$$ \lim\limits_{\mathrm{EVA}\to\infty} \frac{\frac{a}{a+\mathrm{EVA}}}{\frac{a}{a+2\cdot\mathrm{EVA}}} = \lim\limits_{\mathrm{\mathrm{EVA}}\to\infty} \frac{a+2\cdot\mathrm{EVA}}{a+\mathrm{EVA}} = 2 $$
+<!-- <center>
 <div class="figure">
 	<img src="images/evasion/dark/formula-limit.png" width="70%"/>
 </div>
-</center>
+</center> -->
 <p>
 	(You can similarly show that an accuracy buff can never provide a larger DPS increase than the buff itself, i.e., a 100% ACC buff is <em>at its absolute best</em> a 100% DPS buff.)
 </p>
@@ -447,11 +465,12 @@ Here's the same table with 143 enemy accuracy.</p>
 <p>
 	As you may expect, the equation for net DPS increase is just about the inverse of the survivability increase:
 </p>
-<center>
+$$ \mathrm{DPS~increase} = \frac{\mathrm{New~hit~rate}}{\mathrm{Old~hit~rate}} $$
+<!-- <center>
 <div class="figure">
 	<img src="images/evasion/dark/formula-dps.png" width="50%"/>
 </div>
-</center>
+</center> -->
 <p>
 	Going from a 70% hit rate to a 80% hit rate is an 80%/70% = 1.1428 = 14.28% DPS improvement, on average.
 </p>
@@ -520,13 +539,14 @@ Here's the same table with 143 enemy accuracy.</p>
 	HOCs have their own accuracy equivalent, precision.
 	It's a similar equation, but with different coefficients and an actual floor:
 </p>
-<center>
+$$ \mathrm{HOC~hit~rate~(\%)} = \mathrm{max}\left(\frac{\mathrm{Precision}\div 8}{\mathrm{Precision}\div 8+\mathrm{EVA}}\times100\%,~40\%\right) $$
+<!-- <center>
 <div class="figure">
 	<img src="images/evasion/dark/formula-hochr.png" width="80%"/>
 </div>
-</center>
+</center> -->
 <p>
-	where max(a,b) returns the higher value between <em>a</em> and <em>b</em>. Visually:
+	where \(\mathrm{max}(a,b)\) returns the higher value between <em>a</em> and <em>b</em>. Visually:
 </p>
 
 <div class="figure">
