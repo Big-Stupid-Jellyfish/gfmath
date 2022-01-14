@@ -14,6 +14,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-805N997DPC');
 </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <meta name="description" content="Girls Frontline, by the numbers">
 <title>AR Damage over time - GFMath</title>
 <meta charset="utf-8" />
@@ -37,102 +40,182 @@ gtag('config', 'G-805N997DPC');
 <section>
 <div class="inner">
 <header class="major">
-	<h1>AR Damage over time - how good are the Type sisters?</h1>
+	<h1>AR Damage Over Time: Chip Edition</h1>
 </header>
 			
-				<center><em>By BigStupidJellyfish | 2020-November-07</em></center>
-				<!-- <p>If you just want to see the plots, head over to <a href="">this album</a>.</p> -->
+<center><em>By BigStupidJellyfish | 2020-November-07 | Rewritten 2022-January-14</em></center>
 
-				<p>There are many self-buffing ARs in the game, with all sorts of combinations of stats, buffs, and cooldowns.
-					The Type sisters (Type95 and Type97) stand out with their skills taking only <em>2 seconds</em> to activate and lasting for 15 after that.
-					Most self-buffing ARs activate between 4 and 6 seconds, with skills usually lasting 5-10 seconds.</p>
+<p>
+	There are many self-buffing ARs in the game, with all sorts of combinations of stats, buffs, and cooldowns.
+	The relatively new <a href="chips">#2 Processor chip</a> has thrown a wrench into the established AR 'meta,' benefitting slower ARs much more.
+	A number of significant <a href="newquip#speqs">SPEQ adjustments</a> were also released.
+</p>
 
-				<p>But how valuable are these early activations? How much are the longer ICD dolls hurt by the delay?
-					Today, we'll look at how some different ARs perform in cumulative damage dealt, relative to everyone's favorite standard, the G41 scale.</p>
+<p>
+	G41 is a classic doll to use as a baseline for comparison (taking the role of "a generic selfbuffing AR").
+	With her own ranking SPEQ seeing a major power spike, let's redo some comparisons and see how some ARs are affected.
+</p>
 
-				<p>She herself buffs damage by 75% with an ICD of 4s and a 10s duration, a very generic effect.
-				By using this as a reference point, we can see the impact of other timings on damage output.</p>
+<p>
+	Before we get into things, a disclaimer: I've only selected dolls/configurations that translate rather simply into theoretical DPS numbers.
+	There are a <em>lot</em> of ARs whose skills rely on various external factors that can't be represented well here.
+	To name a few: literally any grenadier (416, Sopmod, ADS,...), AK-15, AK-Alfa, ACR, 64 Shiki, AN-94, G11 mod, and EM-2.
+	Even within the realm of dolls that mostly just shoot things, other skill details can complicate matters.
+	Consider RFB's targeting, which may significantly reduce incoming damage from Jaeger-style backlines, or G11's triple hit, which improves consistency and reduces the effect of link protection.
+	As always, for best results, test your teams in Target Saving.
+</p>
 
-				<span class="anchor" id="day"></span>
-<h2>Daytime<sup><small><a href="g41-standard.html#day">&#35;</a></small></sup></h2>
+<span class="anchor" id="day"></span>
+<h2>Daytime<sup><small><a href="#day">&#35;</a></small></sup></h2>
 
-				<div class="figure">
-				<img src="images/g41-standard/plot-day.png" width="100%"/>
-				</div>
+<p>
+	Starting off with some various 5-star ARs and a fairy that doesn't change anything:
+</p>
+<div class="figure">
+<img src="images/g41-standard/set1-artillery-day.jpg" width="100%"/>
+</div>
+<p>
+	This is a chart of the total damage dealt by each AR at a given moment, relative to that dealt by G41.
+	By 4 seconds, for example, Type95 is expected to have dealt ~16% more total damage than G41.
+	By 10 seconds, however, G41 will have more than caught up and will have dealt ~10% more overall damage than Type95.
+</p>
+<p>
+	While STAR can't use chips, she does get a decent boost out of an RMR <a href="newquip#rmr">if no crit rate tiles are involved</a>.
+	M4A1's profile may look abnormally flat - this assumes you're keeping the team around, and her skill1 has the exact same ICD/CD/duration/multiplier as G41's.
+	G36 does quite well in this chart, though her position is rather unstable - <a href="https://i.imgur.com/WpThxVd.png">ROF tiles</a>, increasing crit damage, or <a href="https://i.imgur.com/0zS0ta0.png">kiting away one of the dolls</a> assumed to be on her tiles will reduce/remove her advantage over G41.
+</p>
+<p>
+	Command is still a strong option for ARSMGs.
+	Switching out some equipment as appropriate, we see a relative gain from dolls lucky enough to have a buffed SPEQ and from AR-15:
+</p>
+<div class="figure">
+<img src="images/g41-standard/set1-command-day.jpg" width="100%"/>
+</div>
 
-				<p>Thanks to main character syndrome and a neural upgrade, ST AR-15 tops the charts for almost any time.
-					Besides her, the type sisters quickly claim their lead after their skills activate, and hold it until 6-8 seconds when G41 catches back up.</p>
+<p>
+	RO's neural upgrade is coming soon, so it's reasonable to expect some ROF tiles in your ARSMGs:
+</p>
+<div class="figure">
+	<img src="images/g41-standard/set1.1-artillery-day.jpg" width="49%"/>
+	<img src="images/g41-standard/set1.1-command-day.jpg" width="49%"/>
+</div>
+<p>
+	As expected, G36/AR-15/G11 drop off a bit due to their high base/in-skill ROF.
+	This won't apply as much for G11 post-mod, as she gets a SPEQ that gives her extra FP and crit damage instead of ROF (reducing overcap when paired with ROF tiles).
+	G36 goes completely flat in the right example as she just barely makes it to the ROF cap pre-skill ( \( \lfloor(76+25)*1.15\rfloor=116 \) ), so her skill2 makes no difference and her skill1 lines up perfectly with G41/M4's.
+</p>
+<p>
+	Another popular configuration is to pair UMP45 with M4A1.
+	M4 can't exactly buff herself, so I'll put R5 in her place:
+</p>
+<div class="figure">
+	<img src="images/g41-standard/set1.2-artillery-day.jpg" width="49%"/>
+	<img src="images/g41-standard/set1.2-command-day.jpg" width="49%"/>
+</div>
+<p>
+	All this crit rate means STAR can go back to her mod SPEQ, and it looks like she and G41 like this configuration a lot.
+</p>
 
-				<p>AN-94's passive isn't accounted for here, which will give her an edge early on and when her skill is on cooldown.
-				This can up to double her DPS outside of her skill, and should be kept in mind for non-boss encounters.
-				Note that her curve before 6 seconds is almost identical to AK-12's, and is hidden under it.</p>
+<p>
+	Continuing to generate all these variant charts for other sets of ARs would take a while, so here are some more generic cases with new dolls:
+</p>
+<div class="figure">
+	<img src="images/g41-standard/set2.0-artillery-day.jpg" width="100%"/>
+</div>
+<p>And with Command:</p>
+<div class="figure">
+	<img src="images/g41-standard/set2.0-command-day.jpg" width="100%"/>
+</div>
+<ul>
+	<li>For typical ARSMG battle durations (6-12s), AK-12 is now much worse than G41.</li>
+	<li>MDR does quite nicely, especially with lower crit auras. Her partial ROF selfbuff means she'll do worse, relatively, as you add ROF tiles (similarly to G36 earlier).</li>
+	<li>TAR-21 doesn't lose ground when switching to Command, but she wasn't great to begin with.</li>
+</ul>
+<span class="anchor" id="night"></span>
+<h2>Nighttime<sup><small><a href="#night">&#35;</a></small></sup></h2>
+<p>
+	Chips are generally awesome at day, but they become even better at night - PEQs are almost mandatory, so crits are less valuable to start with.
+	Let's see how some night ARs stack up.
+</p>
+<div class="figure">
+	<img src="images/g41-standard/set3.0-artillery-night.jpg" width="100%"/>
+</div>
+<!-- AS Val gets a VFL here as it's only *barely* worse than an EOT and I'm lazy. -->
+<p>
+	Interestingly, ARs care about crits so little here that G41's SPEQ is suboptimal compared to a chip.
+	It technically has a higher FP bonus, which helps against armor, but that's not a scenario you should be using G41 for anyways.
+	With appropriate equipment G41 is solidly above AR-15, but below the night specialists as long as their skills get a chance to go off.
+	If you weren't <a href="tkb-408">already convinced</a>, TKB is very lackluster here for a 5-star night specialist.
+</p>
+<div class="figure">
+	<img src="images/g41-standard/set3.0-command-night.jpg" width="100%"/>
+</div>
+<p>
+	Crit damage auras only benefit AR-15 and AS Val here.
+	AR-15 does gain enough to be preferable over G41 at any timeframe, assuming no armor (where she'll drop off much faster).
+	TKB moves up by maybe a percentage point or two.
+</p>
+<p>
+	Note that I'm assuming 100% uptime on AS Val here.
+	You may need to kite Python a little bit to delay some stacks.
+</p>
+<span class="anchor" id="comments"></span>
+<h2>Other Comments<sup><small><a href="#comments">&#35;</a></small></sup></h2>
 
-				<p>FNC's 3 star statline and skill multiplier make it hard for her to keep up with the rest.</p>
+<p>
+	Most of the dolls here aren't all that meta - RFHG continues to dominate that landscape.
+	Upcoming ranking events are unlikely to call for anything far beyond M4A1/G11/416.
+	416 and M4's cannon mode aren't covered here as there's no reasonable way to plot AOE on a chart like this.
+	Similar deal with G11's mod and it's HP percentage-based damage.
+</p>
 
-				<!-- <p>EM-2's skill is a little tricky to include with how these are calculated. According to <a href="https://gfl.matsuda.tips/combatsim/">a simulator</a>, she maxes out at a 24.7% net increase 8 seconds in that quickly drops to 12.8% with G41's next shot and continues to fall from there (passing back below around 10.5 seconds).</p> -->
+<p>
+	Your dolls probably aren't in echelons all by themselves (unless it's some cheap farm route), so other skills and tilebuffs will change how things work out.
+	Add a Fervor talent for even more fun. Some ARs will have better or worse tilebuffs themselves for your frontline.
+	Enemy stats will also vary per encounter.
+	These plots use the average total damage per time interval.
+	Critical hits, different number of frames between attacks, accuracy rolls, and so on will make the percent difference vary per combat.
+	The frame timings of each attack may also cause slight differences with simulators.
+	Think of this as a more general/average relationship. 
+</p>
 
-				<div class="figure">
-				<img src="https://i.imgur.com/B6Dq6TD.png" width="100%"/>
-				</div>
+<p>
+	Old (pre-chip) version of this page <a href="g41-standard-legacy.html">is here</a>.
+</p>
 
-				<p>Here's some more ARs, still at day.
-				Sopmod is charted without her grenade considered.
-				That's a big omission, but it at least shows what her direct-fire DPS looks like.
-				RFB's results look rather lackluster, but her backline targeting is often invaluable.
-				G36 is mod3 with 2 dolls on her tiles. All relevant SPEQs are equipped and fully enhanced.
-				Keep in mind that AUG/Angelica don't benefit as much from ROF buffs, so they will see slightly lower relative performance with tanks that buff ROF of your whole backline (UMP9, X95, etc).
-				Other ROF buffers may bring themselves to or close to the ROF cap as well.</p>
+<p>
+	Bonus representation - to see about where these plots converge to over very long periods, here are some example semilog plots going up to 10000 seconds:
+</p>
+<div class="figure">
+	<img src="images/g41-standard/sl2.0-artillery-day.jpg" width="49%"/>
+	<img src="images/g41-standard/sl2.0-command-day.jpg" width="49%"/>
+</div>
 
-				<span class="anchor" id="night"></span>
-<h2>Nighttime<sup><small><a href="g41-standard.html#night">&#35;</a></small></sup></h2>
+<p>
+	In a sense, chips make ARSMG teambuilding super annoying.
+	So many dolls have the potential to be strong, but are incredibly sensitive to a number of conditions (crit rate/crit damage/ROF buffs, mostly).
+	Dolls will want to change equipment at different times, changing their relative performance.
+</p>
 
-				<div class="figure">
-				<img src="images/g41-standard/plot-night.png" width="100%"/>
-				</div>
+<p>
+	... Does it count as a "bright side" that almost all remotely competitively viable ARs have chip-replacement SPEQs with no crit damage penalty, so you're free to just VFL+SPEQ?
+</p>
+<!--
+	Bonus rant-take:
+	I think chips are rather bad design-wise.
+	If you want to make ARs more viable, consider:
+	a) stop printing busted rifles - how on earth are ARs supposed to compete with Type88 or Kord?
+	b) stop inflating armor to unreachable levels
+	c) put dangerous enemies in the front for once - AR targeting is god-awful against most nodes.
+	d) Give buffs that apply similarly across the class, and aren't disproportionately affected by common tile/fairy setups.
+	.... * Exo slot item that majorly increases crit damage, to go all-in on fighting unarmored?
+	.... * Just stick to the +FP?
+	.... * Buff HV ammo?
+	e) stop designing nodes of like 3 tough enemies for grape to slaughter and have larger encounters (s.t. RF ROF is a hindrance), disclaimer, needs various piercers to be un-released
+	Chips end up making optimized teambuilding rely way harder on external calculators while also making half the class even more irrelevant.
+-->
 
-				<p>At night, dolls put on their PEQs, AN-94 is swapped out for Groza (OTs-14), and FNC for AS Val (mod3 w/ Fervor + Python skill2 uptime).
-				Between dolls that went straight from a critscope to PEQ, little changes relative to each other.
-				As the type sisters lose their SPEQ, they drop down a good amount.</p>
-
-				<p>AR-15 gets a significant advantage as she keeps her critscope, and AK-12 goes down a little bit as her critical rate buff is less valuable.
-				While Groza never beats out AR-15 here, keep in mind that this is considering a 0-armor target.
-				If you want to know how armor changes matters, <a href="ar-night-armor.html">head on over here</a> for my analysis.
-				As long as the fight goes past 6-7 seconds, she performs very well compared to the rest of the ARs here.</p>
-
-				<p>Being able to equip a critscope at night is insane, especially for AS Val.
-				To bring in some field examples, here's two runs against the low evasion dummy (~14-15 evasion) with AS Val and G41 buffed by Python:</p>
-
-				<div class="figure">
-				<img src="images/g41-standard/new-Para.png" width="49.8%"/> <img src="images/g41-standard/new-Warrior.png" width="49.8%"/>
-				</div>
-				<center>
-					<em>
-						Left: Fervor Parachute fairy, AS Val dealing 123% more damage. Right: Fervor Warrior (no skill), AS Val dealing 48% more damage. 100k dummy HP in both cases.
-					</em>
-				</center>
-
-				The Para fairy and Python buffing crit chance/damage make AS Val even more impressive, considering her night damage is projected to be about 60% above G41's by the earlier plot 15 seconds in.
-				On the other hand, she almost exactly matches up with the prediction with a Warrior fairy (50% net increase 20s in), where Python's crit tiles helping AS Val are likely offset by the accuracy aura boosting G41.
-
-				<h2>Keep in mind...</h2>
-
-				<p>Your dolls probably aren't in echelons all by themselves (unless it's some cheap farm route), so other skills and tilebuffs will change how things work out.
-					Add a Fervor talent for even more fun.
-				Some ARs will have better or worse tilebuffs themselves for your frontline.</p>
-
-				<p>Enemy stats will also vary per encounter.</p>
-
-				<p>When in doubt, you can always use <a href="https://gfl.matsuda.tips/combatsim/">a combat simulator</a> to get the specifics.</p>
-
-				<p>These plots use the average total damage per time interval.
-					Critical hits, different number of frames between attacks, accuracy rolls, and so on will make the percent difference vary per combat.
-					The frame timings of each attack may also cause slight differences with simulators.
-					Think of this as a more general average relationship.
-				</p>
-
-				<p>G41, TAR-21, and the type sisters (at day) have their SPEQs equipped and fully enhanced/calibrated in these charts. AR-15 uses her SPEQ+crit scope at day, PEQ+crit scope at night.</p>
-
-			<span class="anchor" id="ads"></span>
+<span class="anchor" id="ads"></span>
 <h2>More like this</h2>
 	<section class="tiles">	
 		<a href="fairy-talents">
@@ -144,12 +227,12 @@ gtag('config', 'G-805N997DPC');
 			</div>
 		</a>
 		
-		<a href="hanyangle">
+		<a href="2v3ar">
 			<div class="gallery">
-			  <div class="gallerypic">
-				<img src="images/icon/hanyangle.jpg" width="33%" height="400">
-				<div class="gallerypicdesc"><b>Type88: Formation and Skins</b><br/>Performance analysis</div>
-			  </div>
+				<div class="gallerypic">
+				<img src="images/icon/2v3ar.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Are 2 ARs or 3 ARs Better?</b><br/>Does it matter?</div>
+				</div>
 			</div>
 		</a>
 </section>
