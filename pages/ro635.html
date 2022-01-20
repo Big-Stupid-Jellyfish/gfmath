@@ -1,0 +1,403 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+function calculate() {
+    var eva1 = parseInt(document.getElementById("eva1").value),
+		acc1 = parseInt(document.getElementById("acc1").value),
+		stacks1 = parseInt(document.getElementById("stacks1").value),
+		base_dodge = eva1 / (acc1 + eva1),
+		p_stack = Math.min(0.2+0.1*stacks1,1),
+		final_hit_rate = base_dodge + (1-base_dodge) * p_stack * base_dodge,
+		ehp = 1040 / (1-final_hit_rate)
+		ehp_improvement = (1-base_dodge) / (1-final_hit_rate);
+
+	document.getElementById("base_chance").innerHTML = Math.round(base_dodge*100) + "%";
+    document.getElementById("final_chance").innerHTML = Math.round(final_hit_rate*100) + "%";
+	document.getElementById("final_ehp").innerHTML = Math.round(ehp) + " EHP";
+	document.getElementById("final_ehp_improvement").innerHTML = Math.round((ehp_improvement-1)*100) + "%";
+}
+</script>
+<title>RO635's Second Chance - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>RO635's Second Chance</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-January-20</em></center>
+
+<p>
+	RO635 will be getting a mod with the release of Dual Randomness on the 25th, and her second skill is quite interesting:
+</p>
+<blockquote><p><strong>Righteous Judgment</strong> ICD 0s/CD 0s</p>
+	<p>
+		Whenever taking damage that is below the maximum HP of a single Dummy, there is a 20% chance of gaining an additional evasion check against that instance of damage.
+		A successful evasion check negates that instance of damage.
+		Every stack of damage/accuracy/<strong>rate of fire</strong>/move speed reduction or Seal of the Avenger present on the attacker increases the chance of gaining the additional evasion check by 10%.
+		When Mental Deterrence is active, self attacks apply Seal of the Avenger to targets.
+	</p>
+</blockquote>
+<p>
+	A few corrections/technical notes:
+	while not mentioned in the original translation, ROF debuffs contribute to her passive.
+	Multiple stacks of the same debuff improve its activation chance.
+	The +10%/stack is additive, not multiplicative.
+	Her skill is sometimes claimed to be a flat chance to ignore incoming damage - <a href="https://youtu.be/FwyUeVT3rpY">this is not the case</a> (as you may have guessed, I lifted all these findings from Randomqwerty).
+</p>
+<p>
+	So: RO635 has a passive chance to negate any incoming damage she would have taken, <em>including surehit attacks</em>.
+	The dummy HP restriction isn't too bad, as she has 208 HP/link and reduces enemy damage with her active - not much outside of Dreamer and Destroyer hit for more than that.
+</p>
+<p>
+	While the text itself is fairly straightforward (setting aside the omissions), making sense of what this actually does for you is less trivial.
+	Battle conditions tend to be rather dynamic, so there's no single value we can assign to this ability.
+	Let's do a little math, run through a few generic-ish cases, and get a feel for how much this does.
+	Surehit attacks are on the rare side, so we'll largely set consideration of those aside and instead look at how much it improves Ro's normal tanking abilities.
+</p>
+<h2>Contents<sup><small><a href="#">&#35;</a></small></sup></h2>
+<ul>
+	<li><a href="#skill">Dodge Chance</a></li>
+	<li><a href="#visuals">Visualizations</a></li>
+	<li><a href="#comparison">By Comparison</a></li>
+	<li><a href="#conclusion">Conclusion</a></li>
+	<li><a href="#surehit">Extra: Surehit attacks</a></li>
+</ul>
+<span class="anchor" id="skill"></span>
+<h2>Dodge Chance<sup><small><a href="#skill">&#35;</a></small></sup></h2>
+<p>
+	Before getting into things, make sure you've read up on <a href="evasion">how evasion works and what EHP is</a>.
+	I'll be pulling a few concepts from there and assume you're familiar with them going forward.
+</p>
+<p>
+	To start, let's incorporate her passive to get Ro's real chance to dodge an attack.
+	The general idea:
+</p>
+
+$$ \text{P(actually dodges)} = \text{P(normally dodges)} + \text{P(would get hit)} \cdot \text{P(passive triggers)} \cdot \text{P(extra eva check works)}$$
+
+<p>
+	With \(D\) debuffs on the enemy, this expands to:
+</p>
+
+$$ \text{P(actually dodges)} = \frac{\text{EVA}}{\text{EVA}+\text{ACC}} + \frac{\text{ACC}}{\text{EVA}+\text{ACC}} \cdot \mathrm{min}(0.2+0.1\text{D},1) \cdot \frac{\text{EVA}}{\text{EVA}+\text{ACC}}$$
+
+<p>
+	If we're willing to not intentionally plug in bad values of \(D\) (such that it'd go above 100%), this can be compacted to
+</p>
+
+$$ \text{P(actually dodges)} = \frac{\text{EVA}(\text{ACC}(0.1\text{D}+1.2)+\text{EVA})}{(\text{ACC}+\text{EVA})^2} $$
+
+<p>
+	<!-- Too long to plug into your calculator? You can try some values for yourself: -->
+	Too long to plug into your calculator? Feel free to borrow mine:
+</p>
+<center>
+	<table style="width:auto">
+	  <tr>
+		<th>Ro's EVA</th>
+		<th>Enemy ACC</th>
+		<th>Debuff stacks</th>
+	  </tr>
+	  <tr>
+		<td><input id="eva1" type="text" value=136></input><br></td>
+		<td><input id="acc1" type="text" value=100></input><br></td>
+		<td><input id="stacks1" type="text" value=2></input><br></td>
+	  </tr>
+	</table>
+
+	<button type="button small" onclick="calculate()">Calculate</button>
+
+	<table style="width:auto">
+	  <tr>
+		<th>Base dodge chance</th>
+		<th>Final dodge chance</th>
+		<th>Effective HP</th>
+		<th>EHP increase from passive</th>
+	  </tr>
+	  <tr>
+		<td id="base_chance">?%</td>
+		<td id="final_chance">?%</td>
+		<td id="final_ehp">? EHP</td>
+		<td id="final_ehp_improvement">?%</td>
+	  </tr>
+	</table>
+</center>
+
+<p>
+	(<a href="https://pengupengupengu.github.io/gflmaps/">Find enemy stats on GFLMaps</a>.)
+</p>
+
+<p>Against surehit enemies, the initial dodge has probability 0% and enemies would initially hit her 100% of the time, so the formula is much simpler:</p>
+
+$$ \text{P(actually dodges)} = \text{P(passive triggers)} \cdot \text{P(extra eva check works)}$$
+$$ \text{P(actually dodges)} = \mathrm{min}(0.2+0.1D,1) \cdot \frac{\text{EVA}}{\text{EVA}+\text{ACC}}$$
+
+<p>
+	I think you can work that one out for yourself.
+	She won't dodge all that many of these unless you're stacking lots of debuffs.
+</p>
+
+<span class="anchor" id="visuals"></span>
+<h2>Visualizations<sup><small><a href="#visuals">&#35;</a></small></sup></h2>
+<p>
+	Math and equations can be fun, but they don't always give us a very intuitive sense of how this works out in typical situations.
+	Let's start off simple, plotting Ro's dodge chance given a fixed amount of evasion on her end, variable enemy accuracy, and any number of debuffs:
+</p>
+<div class="figure">
+	<img src="images/ro635/ro-noskill-dodging.png" width="49%"/>
+	<img src="images/ro635/ro-skill-dodging.png" width="49%"/>
+</div>
+<p>
+	If a 58.4% EVA buff sounds weird, I'm using a 32% aura (Para/Command) and a 20% tile (HS2000/Grizzly/HP-35, many AR tiles are similar) to get that number.
+	Exact values will vary by team.
+	Her active skill increases her evasion and decreases enemy accuracy - with those affects pre-applied (on top of that 58% buff), see the right chart.
+</p>
+<p>
+	"Baseline" is without her passive applied at all.
+	Keep in mind that Ro's skill applies two debuffs to enemies plus possible Seals.
+	The in-skill lines with 0 or 1 stacks are only kept in for visual consistency with the first plot. <!-- and because it means less plot tweaking :) -->
+</p>
+
+<p>
+	But dodge chance isn't always what really matters.
+	Let's chart her effective HP under the same conditions.
+</p>
+<div class="figure">
+	<img src="images/ro635/ro-noskill-ehp.png" width="49%"/>
+	<img src="images/ro635/ro-skill-ehp.png" width="49%"/>
+</div>
+<p>
+	Note that these charts don't take her 25% damage reduction effect into account.
+	While her skill is active, that will naturally also increase her EHP.
+</p>
+<p>
+	EHP grows a lot with low enemy accuracy, so this uses a logarithmic y-axis.
+	Not too useful, is it?
+	We can see it grows with more debuff stacks and shrinks as enemy acc grows, but that much was already obvious.
+	Here's something better (in my opinion) - the percentage increase in EHP Ro's passive skill provides.
+</p>
+
+<div class="figure">
+	<img src="images/ro635/ro-noskill-ehp-increase.png" width="100%"/>
+</div>
+<p>
+	We can read values much better off this.
+	With no debuffs applied, her passive is never more than a 25% increase in EHP.
+	With three, it's never less than a 25% increase (and often more than a 50% boost).
+</p>
+<div class="figure">
+	<img src="images/ro635/ro-skill-ehp-increase.png" width="100%"/>
+</div>
+<p>
+	As Ro's evasion grows, her passive becomes more valuable.
+	It still takes some significant debuff stacking to go above a 100% EHP increase, but it's clearly doing a lot.
+</p>
+
+<span class="anchor" id="comparison"></span>
+<h2>By Comparison<sup><small><a href="#comparison">&#35;</a></small></sup></h2>
+<p>
+	Knowing how Ro does relative to herself can be useful, but it doesn't help us much if we want to know if it's time to replace Suomi (hint: it's long overdue).
+	Let's take that EHP increase chart, add her pre-passive line back in for reference, and get some ballpark comparisons to other dodgy SMGs.
+</p>
+<div class="figure">
+	<img src="images/ro635/compare-noskill-ehp.png" width="100%"/>
+</div>
+<p>
+	When non-CMS skills are off, Ro's passive is clearly amazing.
+	Even C-MS falls behind once Ro gets a second debuff stack, or even with just one against particularly accurate enemies.
+</p>
+
+<div class="figure">
+	<img src="images/ro635/compare-skill-ehp.png" width="100%"/>
+</div>
+<p>
+	With active skills applied, only MP7 and Suomi can somewhat keep up with Ro's base form.
+	While MP7 and Suomi are a bit lower for in-skill EHP and lack a passive, they do have significantly better uptime (5/8 vs 5/12), so this still isn't a 1:1 comparison.
+</p>
+<p>
+	Ro applies two debuffs with her skill for free, so there's little need to mind her first few lines.
+	UMP45 may look terrible here, but keep in mind that she's not made to be an EVA buffer.
+	The hope with her is that excellent tiles and an initial slow effect let you finish off the enemies before you even get to making EVA checks.
+</p>
+<p>
+	<!-- Enemy accuracies below 30 were cut to make the more relevant ranges of the chart easier to distinguish. -->
+	Keep in mind that skill uptime variations and changes in incoming damage over time make any theoretical chart like this at least somewhat wrong.
+	But one thing is clear - Ro mod is much better than any previous evasive SMG at tanking, <em>almost</em> regardless of the circumstances.
+</p>
+
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+
+<p>
+	This isn't exactly a full review or evaluation of Ro's mod - there's plenty of aspects not covered here.
+	If that's what you want, you can rest assured that she's very strong and worth upgrading at least to mod2.
+</p>
+<p>
+	If you want to see how worthwhile her mod3 SPEQ is, try adding and removing it from the calculator above.
+	Just be sure to calculate its additive bonus before multiplicative tile/skill/aura buffs.
+	I'd usually expect it to give ~5% more EHP.
+	<!-- If you're starting out, there will be higher priority mods, depending heavily on the situation/what's released/upcoming content. -->
+</p>
+<p>
+	To get a sense of how many debuff stacks you're applying, I'd recommend recording a battle or two and carefully tracking skills through the battle.
+	This will vary by enough by team/enemy for it to be hard to give a general range.
+	Alternatively, if you're willing to test, just see if Ro tanks well enough for your performance requirements and make adjustments to the echelon accordingly.
+</p>
+
+<!--
+	And if anyone tries to tell you "its ultimately all rng" feel free to dismiss that as well as anything else they try to tell you about probability :]
+	If the enemy is making so few attacks that her variance is high:
+	a) they likely have more FP than Ro's link HP so her passive is irrelevant anyways
+	b) just reset lol
+	c) Understanding the probability distribution and average results is still meaningful. Consider two games:
+	---- You flip a coin, heads you win $3, tails you lose $1
+	---- You roll a d6, on a 6 you win $4, anything else you lose $1
+	Whichever you pick, you can play it 20 times. Which game is better? Or are they both just RNG?
+-->
+
+<span class="anchor" id="surehit"></span>
+<h2>Extra: Surehit attacks<sup><small><a href="#surehit">&#35;</a></small></sup></h2>
+
+<p>
+	Ro's modskill works out to be a very nice EHP boost against normal attacks.
+	That's great, but you're probably still interested in what makes it unique - the ability to negate surehit damage.
+	To help maintain your wonder at this feature, please temporarily keep your mind free from any thoughts relating to the existence of HP shields, force shields, kiting, the Taunt dummy, and retreating.
+</p>
+<p>
+	First, her actual dodge chance by stack count and enemy accuracy:
+</p>
+<div class="figure">
+	<img src="images/ro635/surehit-noskill-dodging.png" width="49%"/>
+	<img src="images/ro635/surehit-skill-dodging.png" width="49%"/>
+</div>
+<p>
+	And the EHP gain from her passive:
+</p>
+<div class="figure">
+	<img src="images/ro635/surehit-noskill-ehp.png" width="49%"/>
+	<img src="images/ro635/surehit-skill-ehp.png" width="49%"/>
+</div>
+<p>
+	Still a respectable boost percentage-wise, but keep in mind your starting EHP is much worse.
+	Ro's performance vs surehit attacks is strictly equal or worse than her performance against a non-surehit with the same accuracy stat, without her mod skill.
+	In most cases, you're still getting hit at least half the time.
+	The lines for other SMGs are flat as their EHP is just their regular HP - enemy accuracy is no longer a factor.
+</p>
+<p>
+	And as this is something you're less likely to pay attention to, here's a few arbitrary accuracy stats of common surehit enemies:
+</p>
+<center>
+	<table style="width:auto">
+	  <tr>
+		<th>Enemy</th>
+		<th>ACC</th>
+	  </tr>
+	  <tr>
+		<td>Core 8 Doppelsoldner</td>
+		<td>44-47</td>
+	  </tr>
+	  <tr>
+		<td>Core 8 SWAP Jaeger</td>
+		<td>179-189</td>
+	  </tr>
+	  <tr>
+		<td>Core 8 Uhlan</td>
+		<td>124-126</td>
+	  </tr>
+	  <tr>
+		<td>Core 8 Jaguar</td>
+		<td>356-357</td>
+	  </tr>
+	  <tr>
+		<td>Core 8 Minotaurus</td>
+		<td>47</td>
+	  </tr>
+	  <tr>
+		<td>Singularity ranking Typhons</td>
+		<td>408</td>
+	  </tr>
+	</table>
+</center>
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<!-- <a href="tkb-408">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/tkb-408.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>TKB-408 Analysis</b><br/>Critical night focus</div>
+		  </div>
+		</div>
+	</a> -->
+
+	<a href="pp-19">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/pp-19.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Testing PP-19's mod</b><br/>Compared to Uzi & Vector</div>
+		  </div>
+		</div>
+	</a>
+	
+	<a href="chips">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/chips.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>AR #2 Chip Full Analysis</b><br/>Scope pairs, DPS comparison</div>
+		  </div>
+		</div>
+	</a>
+</section>
+</div>
+
+
+<footer id="footer">
+	<div class="inner">
+		<ul class="copyright">
+			<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+		</ul>
+	</div>
+</footer>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
