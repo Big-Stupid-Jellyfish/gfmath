@@ -14,6 +14,56 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-805N997DPC');
 </script>
+<script>
+	function cDPS(base_dmg,crit_rate,crit_dmg,armor,ap,acc,eva,rof) {
+		var crit_rate = Math.min(crit_rate,1),
+			normal_dmg = base_dmg,
+			post_armor = Math.max(normal_dmg - Math.max(armor-ap,-2),1),
+			actual_crit_dmg = post_armor * crit_dmg,
+			real_shot_dmg = post_armor * (1-crit_rate) + actual_crit_dmg * crit_rate,
+			capped_rof = Math.min(rof,120),
+			frames_per_attack = Math.floor(1500/capped_rof),
+			attacks_sec = 30 / frames_per_attack,
+			hit_rate = acc / (acc + eva),
+			dps = real_shot_dmg * attacks_sec * hit_rate * 5;
+	
+		return dps;
+	}
+	function calculate() {
+		var vfl_cc = (parseFloat(document.getElementById('vfl_cc').value)/100),
+			eot_acc = parseFloat(document.getElementById('eot_acc').value),
+			eot_fp = parseFloat(document.getElementById('eot_fp').value),
+			eot_rof = parseFloat(document.getElementById('eot_rof').value),
+			iti_acc = parseFloat(document.getElementById('iti_acc').value),
+			iti_rof = parseFloat(document.getElementById('iti_rof').value),
+			chip_fp = parseFloat(document.getElementById('chip_fp').value),
+			chip_rof = parseFloat(document.getElementById('chip_rof').value),
+			base_rof = parseFloat(document.getElementById('base_rof').value),
+			tile_cr = (parseFloat(document.getElementById('tile_cr').value)/100)+1,
+			tile_rof = (parseFloat(document.getElementById('tile_rof').value)/100)+1,
+			fairy_cd = (parseFloat(document.getElementById('fairy_cd').value)/100)+1,
+			vfl_empty = cDPS(75,(0.2+vfl_cc)*tile_cr,1.5*fairy_cd,0,0,60,15,Math.floor(base_rof*tile_rof)),
+			vfl_chip = cDPS(75+chip_fp,(0.2+vfl_cc)*tile_cr,1.0*fairy_cd,0,0,60,15,Math.floor((base_rof+chip_rof)*tile_rof)),
+			eot_chip = cDPS(75+chip_fp+eot_fp,(0.2)*tile_cr,1.0*fairy_cd,0,0,60+eot_acc,15,Math.floor((base_rof+chip_rof+eot_rof)*tile_rof)),
+			iti_chip = cDPS(75+chip_fp,(0.2)*tile_cr,1.0*fairy_cd,0,0,60+iti_acc,15,Math.floor((base_rof+chip_rof+iti_rof)*tile_rof));
+
+		if (vfl_empty > Math.max(vfl_chip,eot_chip,iti_chip)) {
+			document.getElementById("answer").innerHTML = "Use optical scope + empty slot.";
+		} else if (vfl_chip > Math.max(vfl_empty,eot_chip,iti_chip)) {
+			document.getElementById("answer").innerHTML = "Use optical scope + chip.";
+		} else if (eot_chip > Math.max(vfl_empty,vfl_chip,iti_chip)) {
+			document.getElementById("answer").innerHTML = "Use holographic scope + chip.";
+		} else if (iti_chip > Math.max(vfl_empty,vfl_chip,eot_chip)) {
+			document.getElementById("answer").innerHTML = "Use red dot scope + chip.";
+		} else {
+			document.getElementById("answer").innerHTML = "Could not determine scope. Check input and table.";
+		}
+		document.getElementById("vfl_empty").innerHTML = Math.round(vfl_empty);
+		document.getElementById("vfl_chip").innerHTML = Math.round(vfl_chip);
+		document.getElementById("eot_chip").innerHTML = Math.round(eot_chip);
+		document.getElementById("iti_chip").innerHTML = Math.round(iti_chip);
+	}
+</script>
 <meta name="description" content="Girls Frontline, by the numbers">
 <title>AR #2 Chip Full Analysis - GFMath</title>
 <meta charset="utf-8" />
@@ -60,6 +110,7 @@ gtag('config', 'G-805N997DPC');
 	<li><a href="#scopes">Scope selection</a></li>
 	<li><a href="#iti">ITIs</a></li>
 	<li><a href="#night">Night</a></li>
+	<li><a href="#low-rarity">Low-rarity</a></li>
 	<li><a href="#conclusion">Conclusion</a></li>
 </ul>
 
@@ -243,6 +294,194 @@ gtag('config', 'G-805N997DPC');
 	<a href="newquip#rmr">An RMR</a> could be decent on her if you don't have much crit damage and need more accuracy for something weird.
 </p>
 
+<span class="anchor" id="low-rarity"></span>
+<h2>Low-rarity equipment<sup><small><a href="#low-rarity">&#35;</a></small></sup></h2>
+<p>
+	+10, gold, max calibrated chips are awesome.
+	Picking the right scope for them can be difficult to properly min-max, but they're very much worth using.
+	However, new players and unlucky players may not have a full suite of gold equipment ready to go.
+	Low-rarity chips keep the full -50% crit damage penalty and have smaller stat bonuses.
+	Let's see if they can still compete.
+</p>
+<h3>Case 1: Gold scopes/ammo, bad chips</h3>
+<p>
+	Gold chips have a <a href="https://gf-db.github.io/gfdb/gfdb.html?type=equip&id=234&epoch.equip=22.2&sort.equip=[{%22sort_column%22:%22tier%22,%22dir%22:-1}]">~4.3% rate</a> from their IOP Special recipe.
+	While better than <a href="https://gf-db.github.io/gfdb/gfdb.html?type=equip&id=235&epoch.equip=22.2&sort.equip=[{%22sort_column%22:%22tier%22,%22dir%22:-1}]">some equips</a>, it's entirely possible to get unlucky and not craft any for weeks - crafting all 20/week, some 3% of players will still be without <em>any</em> after a month.
+</p>
+<p>
+	To help cover my bases against frame thresholds, here are some gold equipment+low-rarity chip configurations on a two dolls with different ROF stats.
+</p>
+<div class="figure">
+	<img src="images/chips/lt-1-dps-ADS.png" width="49%"/>
+	<img src="images/chips/lt-2-dps-AN-94.png" width="49%"/>
+</div>
+<p>
+	ADS is always better off with an enhanced green chip than an empty slot, but AN-94 almost always prefers a VFL+empty slot.
+	Either way, unenhanced green chips can't compete with a gold VFL.
+	Adding M4A1 and RO mod's tiles:
+</p>
+<div class="figure">
+	<img src="images/chips/lt-3-dps-ADS.png" width="49%"/>
+	<img src="images/chips/lt-4-dps-AN-94.png" width="49%"/>
+</div>
+<p>
+	Now, even ADS doesn't like green chips of any kind.
+</p>
+<p>
+	(Note: as configured, in-skill DPS scales the same as basic DPS - there's no armor or ROF buffs in play.)
+</p>
+
+<p>
+	Let's say we can figure out the scope later, and just want to know if a green chip is optimal at all for a given doll.
+	The big factors are their base ROF, fairy crit aura, ROF tiles, and crit rate tiles.
+	I'll chart the thresholds for varying ROF and crit auras, with additional charts for a typical ROF and crit tile case.
+</p>
+<div class="figure">
+	<img src="images/chips/lt-5-maxgreenchip.png" width="100%"/>
+</div>
+<p>
+	This is the DPS from your best scope pair on a green chip, divided by your DPS from a VFL+empty slot.
+	If you are in a region warmer than the "1" contour line, a gold VFL/exo paired with this chip is better than just a gold VFL.
+</p>
+<p>
+	Enhancing and calibrating green equipment is rather questionable (especially if you have other types of gold as options), so here's two charts with worse chips:
+</p>
+<div class="figure">
+	<img src="images/chips/lt-6-midgreenchip.png" width="49%"/>
+	<img src="images/chips/lt-7-mingreenchip.png" width="49%"/>
+</div>
+<p>
+	The worst green chip here is only sometimes a DPS boost, even with no fairy aura.
+</p>
+<p>
+	ROF tiles will change thresholds:
+	<a href="images/chips/lt-8-rofmaxgreenchip.png">with max chip stats</a>,
+	<a href="images/chips/lt-9-rofmidgreenchip.png">with partially enhanced chip stats</a>,
+	<a href="images/chips/lt-10-rofmingreenchip.png">with unenhanced chip stats</a>.
+	Crit rate tiles will favor VFL/empty setups more:
+	<a href="images/chips/lt-11-crmaxgreenchip.png">with max chip stats</a>,
+	<a href="images/chips/lt-12-crmidgreenchip.png">with partially enhanced chip stats</a>,
+	<a href="images/chips/lt-13-crmingreenchip.png">with unenhanced chip stats</a> (there's no "1" line here because every combination here is worse with a chip).
+</p>
+<h3>Case 2: Low-rarity everything</h3>
+<p>
+	Note: optical/holographic/red dot sights have different names by rarity.
+	I will be using the gold names as shorthand, even for lower-rarity equips.
+	VFL = optical sight = +crit chance, EOT = holographic sight = +acc +dmg -rof, ITI = red dot sight = ++acc -rof.
+</p>
+<p>
+	There are way too many equipment combinations once you start adding blue/green scopes to fit on some 3D chart, so we'll have to go back to the line graphs.
+	These will all use a 30% crit rate tile - if you're using blue equipment but not M4A1, you have bigger problems to address.
+</p>
+<p>
+	ADS & AN-94, unenhanced blue:
+</p>
+<div class="figure">
+	<img src="images/chips/blue-1-dps-ADS.png" width="49%"/>
+	<img src="images/chips/blue-2-dps-AN-94.png" width="49%"/>
+</div>
+<p>
+	
+</p>
+<p>
+	VFL/empty has a solid lead, unless EOTs don't drop you down a frame (where they're then quite close).
+	As the options are nearly identical in AN-94's case, I would recommend a VFL/empty across the board with blue equipment.
+</p>
+<p>
+	ADS & AN-94, unenhanced green:
+</p>
+<div class="figure">
+	<img src="images/chips/blue-3-dps-ADS.png" width="49%"/>
+	<img src="images/chips/blue-4-dps-AN-94.png" width="49%"/>
+</div>
+<p>
+	VFLs officially suck once everything is at least green.
+	VFL/chip is a bit below EOT/chip for the sort of fairies you'd have at this point, so I would recommend an EOT/chip setup.
+</p>
+<p>
+	ADS & AN-94, enhanced green:
+</p>
+<div class="figure">
+	<img src="images/chips/blue-5-dps-ADS.png" width="49%"/>
+	<img src="images/chips/blue-6-dps-AN-94.png" width="49%"/>
+</div>
+<p>
+	An enhanced green ITI gives plenty of acc, which is more valuable on low-level dolls.
+	Frame breakpoints will make that fluctuate a bit.
+	At this point I would still stick to an EOT/chip setup.
+</p>
+<p>
+	Alternatively, you can enter the best stats you have available of each equipment type, your doll's base ROF, and relevant tiles below.
+	Enter percentages as whole numbers, without the % sign (so 48% = 48, 25% = 25).
+</p>
+<center>
+<table style="width:auto">
+	<tr>
+		<th style="text-align: center; vertical-align: middle;">Optical Sight Crit chance</th>
+		<th style="text-align: center; vertical-align: middle;">Red Dot Sight ACC</th>
+		<th style="text-align: center; vertical-align: middle;">Red Dot Sight ROF</th>
+	</tr>
+	<tr>
+		<td><input id="vfl_cc" type="text" value=48 style="text-align: center; vertical-align: middle;"></input><br></td>
+		<td><input id="iti_acc" type="text" value=14 style="text-align: center; vertical-align: middle;"></input><br></td>
+		<td><input id="iti_rof" type="text" value=-4 style="text-align: center; vertical-align: middle;"></input><br></td>
+	</tr>
+	<tr>
+		<th style="text-align: center; vertical-align: middle;">Holographic Sight FP</th>
+		<th style="text-align: center; vertical-align: middle;">Holographic Sight ROF</th>
+		<th style="text-align: center; vertical-align: middle;">Holographic Sight ACC</th>
+	</tr>
+	<tr>
+		<td><input id="eot_fp" type="text" value=8 style="text-align: center; vertical-align: middle;"></input><br></td>
+		<td><input id="eot_rof" type="text" value=-4 style="text-align: center; vertical-align: middle;"></input><br></td>
+		<td><input id="eot_acc" type="text" value=14 style="text-align: center; vertical-align: middle;"></input><br></td>
+	</tr>
+	<tr>
+		<th style="text-align: center; vertical-align: middle;">Chip FP</th>
+		<th style="text-align: center; vertical-align: middle;">Chip ROF</th>
+		<th style="text-align: center; vertical-align: middle;">Base ROF</th>
+	</tr>
+	<tr>
+		<td><input id="chip_fp" type="text" value=15 style="text-align: center; vertical-align: middle;"></input><br></td>
+		<td><input id="chip_rof" type="text" value=25 style="text-align: center; vertical-align: middle;"></input><br></td>
+		<td><input id="base_rof" type="text" value=78 style="text-align: center; vertical-align: middle;"></input><br></td>
+	</tr>
+	<tr>
+		<th style="text-align: center; vertical-align: middle;">Crit tiles</th>
+		<th style="text-align: center; vertical-align: middle;">ROF tiles</th>
+		<th style="text-align: center; vertical-align: middle;">Fairy crit damage aura</th>
+	</tr>
+	<tr>
+		<td><input id="tile_cr" type="text" value=32 style="text-align: center; vertical-align: middle;"></input><br></td>
+		<td><input id="tile_rof" type="text" value=15 style="text-align: center; vertical-align: middle;"></input><br></td>
+		<td><input id="fairy_cd" type="text" value=0 style="text-align: center; vertical-align: middle;"></input><br></td>
+	</tr>
+</table>
+
+	<button type="button small" onclick="calculate()">Calculate</button>
+
+	<h3>DPS results</h3>
+	<table style="width:auto">
+	  <tr>
+		<th>Optical+empty slot</th>
+		<th>Optical+chip</th>
+		<th>Holographic+chip</th>
+		<th>Red dot+chip</th>
+	  </tr>
+	  <tr>
+		<td id="vfl_empty" style="text-align: center; vertical-align: middle;">?</td>
+		<td id="vfl_chip" style="text-align: center; vertical-align: middle;">?</td>
+		<td id="eot_chip" style="text-align: center; vertical-align: middle;">?</td>
+		<td id="iti_chip" style="text-align: center; vertical-align: middle;">?</td>
+	  </tr>
+	</table>
+	<strong><p id="answer"></p></strong>
+</center>
+
+
+<p>
+	For a more exhaustive calculator <a href="chip-calc">see this page</a>.
+</p>
 <span class="anchor" id="conclusion"></span>
 <h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
 <p>
@@ -259,6 +498,10 @@ gtag('config', 'G-805N997DPC');
 	For another way to check equipment options on a per-doll/echelon basis,
 	<a href="https://docs.google.com/spreadsheets/d/14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA/edit#gid=1893982016">this spreadsheet</a> or <a href="chip-calc">this web port</a>
 	may be useful.
+</p>
+<p>
+	If you only have blue equipment, an optical (crit chance, or VFL) scope and an empty slot will remain your best bet.
+	If you have a decent amount of green equipment, a holographic (acc/fp, or EOT) scope and a chip is likely to be optimal.
 </p>
 
 <span class="anchor" id="ads"></span>
