@@ -136,14 +136,18 @@ function calculate() {
 		<th>Base FP</th>
 		<th>Base ROF</th>
 		<th>Base ACC</th>
-		<th>Base Crit rate</th>
-		<th>Target EVA</th>
-		<th>Target Armor</th>
 	  </tr>
 	  <tr>
 		<td><input id="base_fp" type="text" value="55"></input><br></td>
 		<td><input id="base_rof" type="text" value="78"></input><br></td>
 		<td><input id="base_acc" type="text" value="60"></input><br></td>
+	  </tr>
+	  <tr>
+		<th>Base Crit rate</th>
+		<th>Target EVA</th>
+		<th>Target Armor</th>
+	  </tr>
+	  <tr>
 		<td><input id="base_cr" type="text" value="0.2"></input><br></td>
 		<td><input id="enemy_eva" type="text" value="15"></input><br></td>
 		<td><input id="enemy_arm" type="text" value="0"></input><br></td>
@@ -155,16 +159,20 @@ function calculate() {
 		  <th>Net FP buff</th>
 		  <th>Net ROF buff</th>
 		  <th>Net ACC buff</th>
-		  <th>Net Crit rate buff</th>
-		  <th>Net Crit damage buff</th>
 		</tr>
 		<tr>
 		  <td><input id="buff_fp" type="text" value="1"></input><br></td>
 		  <td><input id="buff_rof" type="text" value="1"></input><br></td>
 		  <td><input id="buff_acc" type="text" value="1"></input><br></td>
-		  <td><input id="buff_cr" type="text" value="1"></input><br></td>
-		  <td><input id="buff_cd" type="text" value="1"></input><br></td>
 		</tr>
+		<tr>
+			<th>Net Crit rate buff</th>
+			<th>Net Crit damage buff</th>
+		  </tr>
+		  <tr>
+			<td><input id="buff_cr" type="text" value="1"></input><br></td>
+			<td><input id="buff_cd" type="text" value="1"></input><br></td>
+		  </tr>
 	  </table>
 	<h3>Skills</h3>
 	<table style="width:100%">
@@ -172,18 +180,22 @@ function calculate() {
 		  <th>FP skill</th>
 		  <th>ROF skill</th>
 		  <th>ACC skill</th>
-		  <th>Crit rate skill</th>
-		  <th>Skill duration (s)</th>
-		  <th>Skill cooldown (s)</th>
 		</tr>
 		<tr>
 		  <td><input id="skill_fp" type="text" value="1.75"></input><br></td>
 		  <td><input id="skill_rof" type="text" value="1"></input><br></td>
 		  <td><input id="skill_acc" type="text" value="1"></input><br></td>
-		  <td><input id="skill_cr" type="text" value="1"></input><br></td>
-		  <td><input id="skill_duration" type="text" value="10"></input><br></td>
-		  <td><input id="skill_cd" type="text" value="16"></input><br></td>
 		</tr>
+		<tr>
+			<th>Crit rate skill</th>
+			<th>Skill duration (s)</th>
+			<th>Skill cooldown (s)</th>
+		  </tr>
+		  <tr>
+			<td><input id="skill_cr" type="text" value="1"></input><br></td>
+			<td><input id="skill_duration" type="text" value="10"></input><br></td>
+			<td><input id="skill_cd" type="text" value="16"></input><br></td>
+		  </tr>
 	  </table>
 	<h3>Equipment customization</h3>
 	<table style="width:100%">
@@ -191,24 +203,32 @@ function calculate() {
 		  <th>HV FP</th>
 		  <th>VFL Crit rate</th>
 		  <th>EOT ACC</th>
-		  <th>EOT FP</th>
-		  <th>EOT ROF</th>
-		  <th>ITI ACC</th>
-		  <th>ITI ROF</th>
-		  <th>Chip FP</th>
-		  <th>Chip ROF</th>
 		</tr>
 		<tr>
 		  <td><input id="hv_fp" type="text" value="20"></input><br></td>
 		  <td><input id="vfl_cr" type="text" value="0.48"></input><br></td>
 		  <td><input id="eot_acc" type="text" value="14"></input><br></td>
-		  <td><input id="eot_fp" type="text" value="8"></input><br></td>
-		  <td><input id="eot_rof" type="text" value="-4"></input><br></td>
-		  <td><input id="iti_acc" type="text" value="30"></input><br></td>
-		  <td><input id="iti_rof" type="text" value="-1"></input><br></td>
-		  <td><input id="chip_fp" type="text" value="15"></input><br></td>
-		  <td><input id="chip_rof" type="text" value="25"></input><br></td>
 		</tr>
+		<tr>
+			<th>EOT FP</th>
+			<th>EOT ROF</th>
+			<th>ITI ACC</th>
+		  </tr>
+		  <tr>
+			<td><input id="eot_fp" type="text" value="8"></input><br></td>
+			<td><input id="eot_rof" type="text" value="-4"></input><br></td>
+			<td><input id="iti_acc" type="text" value="30"></input><br></td>
+		  </tr>
+		  <tr>
+			<th>ITI ROF</th>
+			<th>Chip FP</th>
+			<th>Chip ROF</th>
+		  </tr>
+		  <tr>
+			<td><input id="iti_rof" type="text" value="-1"></input><br></td>
+			<td><input id="chip_fp" type="text" value="15"></input><br></td>
+			<td><input id="chip_rof" type="text" value="25"></input><br></td>
+		  </tr>
 	  </table>
 	  <h3>VFL-like SPEQ customization</h3>
 	<table style="width:100%">
