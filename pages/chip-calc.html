@@ -1,0 +1,350 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+
+<script>
+function cDPS(base_dmg,crit_rate,crit_dmg,armor,ap,acc,eva,rof) {
+	var crit_rate = Math.min(crit_rate,1),
+		normal_dmg = base_dmg,
+		post_armor = Math.max(normal_dmg - Math.max(armor-ap,-2),1),
+		actual_crit_dmg = post_armor * crit_dmg,
+		real_shot_dmg = post_armor * (1-crit_rate) + actual_crit_dmg * crit_rate,
+		capped_rof = Math.min(rof,120),
+		frames_per_attack = Math.floor(1500/capped_rof),
+		attacks_sec = 30 / frames_per_attack,
+		hit_rate = acc / (acc + eva),
+		dps = real_shot_dmg * attacks_sec * hit_rate * 5;
+
+	return dps;
+}
+function calculate() {
+	var base_fp = parseFloat(document.getElementById('base_fp').value),
+		base_rof = parseFloat(document.getElementById('base_rof').value),
+		base_acc = parseFloat(document.getElementById('base_acc').value),
+		base_cr = parseFloat(document.getElementById('base_cr').value),
+		enemy_eva = parseFloat(document.getElementById('enemy_eva').value),
+		enemy_arm = parseFloat(document.getElementById('enemy_arm').value),
+		buff_fp = parseFloat(document.getElementById('buff_fp').value),
+		buff_rof = parseFloat(document.getElementById('buff_rof').value),
+		buff_acc = parseFloat(document.getElementById('buff_acc').value),
+		buff_cr = parseFloat(document.getElementById('buff_cr').value),
+		buff_cd = parseFloat(document.getElementById('buff_cd').value),
+		skill_fp = parseFloat(document.getElementById('skill_fp').value),
+		skill_rof = parseFloat(document.getElementById('skill_rof').value),
+		skill_acc = parseFloat(document.getElementById('skill_acc').value),
+		skill_cr = parseFloat(document.getElementById('skill_cr').value),
+		skill_duration = parseFloat(document.getElementById('skill_duration').value),
+		skill_cd = parseFloat(document.getElementById('skill_cd').value),
+		hv_fp = parseFloat(document.getElementById('hv_fp').value),
+		vfl_cr = parseFloat(document.getElementById('vfl_cr').value),
+		eot_acc = parseFloat(document.getElementById('eot_acc').value),
+		eot_fp = parseFloat(document.getElementById('eot_fp').value),
+		eot_rof = parseFloat(document.getElementById('eot_rof').value),
+		iti_acc = parseFloat(document.getElementById('iti_acc').value),
+		iti_rof = parseFloat(document.getElementById('iti_rof').value),
+		chip_fp = parseFloat(document.getElementById('chip_fp').value),
+		chip_rof = parseFloat(document.getElementById('chip_rof').value),
+		speqvfl_fp = parseFloat(document.getElementById('speqvfl_fp').value),
+		speqvfl_cd = parseFloat(document.getElementById('speqvfl_cd').value),
+		speqvfl_acc = parseFloat(document.getElementById('speqvfl_acc').value),
+		vfl_exo_basic = cDPS((base_fp+hv_fp+speqvfl_fp)*buff_fp,(base_cr+vfl_cr)*buff_cr,(1.5+speqvfl_cd)*buff_cd,enemy_arm,15.0,(base_acc+speqvfl_acc)*buff_acc,enemy_eva,Math.floor(base_rof*buff_rof)),
+		vfl_exo_skill = cDPS((base_fp+hv_fp+speqvfl_fp)*buff_fp*skill_fp,(base_cr+vfl_cr)*buff_cr*skill_cr,(1.5+speqvfl_cd)*buff_cd,enemy_arm,15.0,(base_acc+speqvfl_acc)*buff_acc*skill_acc,enemy_eva,Math.floor(base_rof*buff_rof*skill_rof)),
+		vfl_exo_avg = vfl_exo_basic * (skill_cd - skill_duration) / skill_cd + vfl_exo_skill * skill_duration / skill_cd,
+		vfl_chip_basic = cDPS((base_fp+hv_fp+speqvfl_fp+chip_fp)*buff_fp,(base_cr+vfl_cr)*buff_cr,(1.0+speqvfl_cd)*buff_cd,enemy_arm,15.0,(base_acc+speqvfl_acc)*buff_acc,enemy_eva,Math.floor((base_rof+chip_rof)*buff_rof)),
+		vfl_chip_skill = cDPS((base_fp+hv_fp+speqvfl_fp+chip_fp)*buff_fp*skill_fp,(base_cr+vfl_cr)*buff_cr*skill_cr,(1.0+speqvfl_cd)*buff_cd,enemy_arm,15.0,(base_acc+speqvfl_acc)*buff_acc*skill_acc,enemy_eva,Math.floor((base_rof+chip_rof)*buff_rof*skill_rof)),
+		vfl_chip_avg = vfl_chip_basic * (skill_cd - skill_duration) / skill_cd + vfl_chip_skill * skill_duration / skill_cd,
+		eot_chip_basic = cDPS((base_fp+hv_fp+eot_fp+chip_fp)*buff_fp,(base_cr)*buff_cr,1.0*buff_cd,enemy_arm,15.0,(base_acc+eot_acc)*buff_acc,enemy_eva,Math.floor((base_rof+chip_rof+eot_rof)*buff_rof)),
+		eot_chip_skill = cDPS((base_fp+hv_fp+eot_fp+chip_fp)*buff_fp*skill_fp,(base_cr)*buff_cr*skill_cr,1.0*buff_cd,enemy_arm,15.0,(base_acc+eot_acc)*buff_acc*skill_acc,enemy_eva,Math.floor((base_rof+chip_rof+eot_rof)*buff_rof*skill_rof)),
+		eot_chip_avg = eot_chip_basic * (skill_cd - skill_duration) / skill_cd + eot_chip_skill * skill_duration / skill_cd,
+		iti_chip_basic = cDPS((base_fp+hv_fp+chip_fp)*buff_fp,(base_cr)*buff_cr,1.0*buff_cd,enemy_arm,15.0,(base_acc+iti_acc)*buff_acc,enemy_eva,Math.floor((base_rof+chip_rof+iti_rof)*buff_rof)),
+		iti_chip_skill = cDPS((base_fp+hv_fp+chip_fp)*buff_fp*skill_fp,(base_cr)*buff_cr*skill_cr,1.0*buff_cd,enemy_arm,15.0,(base_acc+iti_acc)*buff_acc*skill_acc,enemy_eva,Math.floor((base_rof+chip_rof+iti_rof)*buff_rof*skill_rof)),
+		iti_chip_avg = iti_chip_basic * (skill_cd - skill_duration) / skill_cd + iti_chip_skill * skill_duration / skill_cd;
+
+	document.getElementById("vfl_exo_basic").innerHTML = Math.round(vfl_exo_basic);
+	document.getElementById("vfl_exo_skill").innerHTML = Math.round(vfl_exo_skill);
+	document.getElementById("vfl_exo_avg").innerHTML = Math.round(vfl_exo_avg);
+	document.getElementById("vfl_chip_basic").innerHTML = Math.round(vfl_chip_basic);
+	document.getElementById("vfl_chip_skill").innerHTML = Math.round(vfl_chip_skill);
+	document.getElementById("vfl_chip_avg").innerHTML = Math.round(vfl_chip_avg);
+	document.getElementById("eot_chip_basic").innerHTML = Math.round(eot_chip_basic);
+	document.getElementById("eot_chip_skill").innerHTML = Math.round(eot_chip_skill);
+	document.getElementById("eot_chip_avg").innerHTML = Math.round(eot_chip_avg);
+	document.getElementById("iti_chip_basic").innerHTML = Math.round(iti_chip_basic);
+	document.getElementById("iti_chip_skill").innerHTML = Math.round(iti_chip_skill);
+	document.getElementById("iti_chip_avg").innerHTML = Math.round(iti_chip_avg);
+}
+</script>
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>#2 Processor Chip Calculator - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+	<h1>#2 Processor Chip Calculator</h1>
+</header>
+
+<center><em>By BigStupidJellyfish | 2022-January-22</em></center>
+
+<p>
+	The <a href="chips">#2 Processor chip</a> is rather annoying to evaluate in typical ARSMG echelons, with various combinations of ROF tiles/crit tiles/crit auras.
+	You can form a few general ideas about it, but factors like ROF tiles, crit tiles, and frame breakpoints can be hard to predict the impact of.
+	I made <a href="https://docs.google.com/spreadsheets/d/14xV50MSMBFGgN75E-Gy10WtzACb_KZdpxRKCYQ6FDQA/edit#gid=1893982016">this spreadsheet</a> not too long ago to provide a very specific way of computing equipment options,
+	where you can enter a doll's stats, all fairy auras/tiles in the echelon, their own skill, and get an estimation of the performance of each reasonable equipment option.
+</p>
+
+<p>
+	Spreadsheets can be annoying to work with, and even I don't end up using that sheet much.
+	Here's a web port of that sheet, hopefully a bit easier to access/mess around with.
+	I've pre-filled some fairly reasonable values to work off of.
+	Some additional notes about number entry are included at the bottom.
+	The original spreadsheet also has numerous comments.
+</p>
+<center>
+	<h3>Base stats (not including equipment)</h3>
+	<table style="width:100%">
+	  <tr>
+		<th>Base FP</th>
+		<th>Base ROF</th>
+		<th>Base ACC</th>
+		<th>Base Crit rate</th>
+		<th>Target EVA</th>
+		<th>Target Armor</th>
+	  </tr>
+	  <tr>
+		<td><input id="base_fp" type="text" value="55"></input><br></td>
+		<td><input id="base_rof" type="text" value="78"></input><br></td>
+		<td><input id="base_acc" type="text" value="60"></input><br></td>
+		<td><input id="base_cr" type="text" value="0.2"></input><br></td>
+		<td><input id="enemy_eva" type="text" value="15"></input><br></td>
+		<td><input id="enemy_arm" type="text" value="0"></input><br></td>
+	  </tr>
+	</table>
+	<h3>Tiles and passive buffs</h3>
+	<table style="width:100%">
+		<tr>
+		  <th>Net FP buff</th>
+		  <th>Net ROF buff</th>
+		  <th>Net ACC buff</th>
+		  <th>Net Crit rate buff</th>
+		  <th>Net Crit damage buff</th>
+		</tr>
+		<tr>
+		  <td><input id="buff_fp" type="text" value="1"></input><br></td>
+		  <td><input id="buff_rof" type="text" value="1"></input><br></td>
+		  <td><input id="buff_acc" type="text" value="1"></input><br></td>
+		  <td><input id="buff_cr" type="text" value="1"></input><br></td>
+		  <td><input id="buff_cd" type="text" value="1"></input><br></td>
+		</tr>
+	  </table>
+	<h3>Skills</h3>
+	<table style="width:100%">
+		<tr>
+		  <th>FP skill</th>
+		  <th>ROF skill</th>
+		  <th>ACC skill</th>
+		  <th>Crit rate skill</th>
+		  <th>Skill duration (s)</th>
+		  <th>Skill cooldown (s)</th>
+		</tr>
+		<tr>
+		  <td><input id="skill_fp" type="text" value="1.75"></input><br></td>
+		  <td><input id="skill_rof" type="text" value="1"></input><br></td>
+		  <td><input id="skill_acc" type="text" value="1"></input><br></td>
+		  <td><input id="skill_cr" type="text" value="1"></input><br></td>
+		  <td><input id="skill_duration" type="text" value="10"></input><br></td>
+		  <td><input id="skill_cd" type="text" value="16"></input><br></td>
+		</tr>
+	  </table>
+	<h3>Equipment customization</h3>
+	<table style="width:100%">
+		<tr>
+		  <th>HV FP</th>
+		  <th>VFL Crit rate</th>
+		  <th>EOT ACC</th>
+		  <th>EOT FP</th>
+		  <th>EOT ROF</th>
+		  <th>ITI ACC</th>
+		  <th>ITI ROF</th>
+		  <th>Chip FP</th>
+		  <th>Chip ROF</th>
+		</tr>
+		<tr>
+		  <td><input id="hv_fp" type="text" value="20"></input><br></td>
+		  <td><input id="vfl_cr" type="text" value="0.48"></input><br></td>
+		  <td><input id="eot_acc" type="text" value="14"></input><br></td>
+		  <td><input id="eot_fp" type="text" value="8"></input><br></td>
+		  <td><input id="eot_rof" type="text" value="-4"></input><br></td>
+		  <td><input id="iti_acc" type="text" value="30"></input><br></td>
+		  <td><input id="iti_rof" type="text" value="-1"></input><br></td>
+		  <td><input id="chip_fp" type="text" value="15"></input><br></td>
+		  <td><input id="chip_rof" type="text" value="25"></input><br></td>
+		</tr>
+	  </table>
+	  <h3>VFL-like SPEQ customization</h3>
+	<table style="width:100%">
+		<tr>
+		  <th>VFL SPEQ FP</th>
+		  <th>VFL SPEQ Crit damage</th>
+		  <th>VFL SPEQ ACC</th>
+		</tr>
+		<tr>
+		  <td><input id="speqvfl_fp" type="text" value="0"></input><br></td>
+		  <td><input id="speqvfl_cd" type="text" value="0"></input><br></td>
+		  <td><input id="speqvfl_acc" type="text" value="0"></input><br></td>
+		</tr>
+	  </table>
+
+	<button type="button small" onclick="calculate()">Calculate</button>
+
+	<h3>Results</h3>
+	<table style="width:auto">
+		<tr>
+		  <th>Equipment option</th>
+		  <th>Basic DPS</th>
+		  <th>In-skill DPS</th>
+		  <th>Uptime-averaged DPS</th>
+		</tr>
+		<tr>
+			<td>VFL+empty slot</td>
+			<td id="vfl_exo_basic">?</td>
+			<td id="vfl_exo_skill">?</td>
+			<td id="vfl_exo_avg">?</td>
+		</tr>
+		<tr>
+			<td>VFL+Chip</td>
+			<td id="vfl_chip_basic">?</td>
+			<td id="vfl_chip_skill">?</td>
+			<td id="vfl_chip_avg">?</td>
+		</tr>
+		<tr>
+			<td>EOT+Chip</td>
+			<td id="eot_chip_basic">?</td>
+			<td id="eot_chip_skill">?</td>
+			<td id="eot_chip_avg">?</td>
+		</tr>
+		<tr>
+			<td>ITI+Chip</td>
+			<td id="iti_chip_basic">?</td>
+			<td id="iti_chip_skill">?</td>
+			<td id="iti_chip_avg">?</td>
+		</tr>
+	</table>
+</center>
+<span class="anchor" id="notes"></span>
+<h2>Additional notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<p>
+	<strong>Theoretical DPS numbers, from a damage simulator or not, don't always correspond well to real performance.</strong>
+	For best results, test your teams.
+</p>
+<p>
+	Base stats: enter the base stat, including affection, without equipment/fairies/tiles.
+	Example: with no equipment, my ADS has 50+5 FP. Enter 55.
+	Example: with maxed HV ammo equipped, my ADS has 70+5 FP. Enter 55, or enter 75 and change the "HV FP" field later to 0.
+	Crit rate should be entered as a decimal, so 0.2 for most ARs and 0.3 for RFB/Angelica/AUG/Medusa/ACR.
+</p>
+<p>
+	Tiles and passive buffs: enter the net multiplier from all these. "1" corresponds to no net buff, "1.75" corresponds to a 75% buff.
+	Example: UMP45 tiles and a 5* Damage II Artillery fairy means a passive FP buff of 1.2 (UMP45) * 1.15 (D2) * 1.55 (Artillery) = 2.139 and a 30% crit rate tile.
+	Enter 2.139 in the "Net FP buff" field and 1.3 in the "Net Crit rate buff" field.
+</p>
+<p>
+	Skills: enter the skill multiplier from the AR's own skill.
+	Same deal as above - a 75% selfbuff should be entered as a 1.75 multiplier.
+	If you want other skills and factors accounted for, you're far outside of simple web calculator territory and a <a href="https://hycdes.com/pages/GFT_Echelon.html">damage sim</a> is recommended.
+</p>
+<p>
+	Equipment customization: I've pre-filled typical values for max calibration/enhancement gold equipment.
+	If you want to check numbers with other tiers, edit values as appropriate.
+</p>
+<p>
+	SPEQ customization: a few SPEQs, like what RFB, MDR, and G36 have, are like a VFL with some bonus stats.
+	Use these to add in these stats and consider the "VFL+X" fields to mean "SPEQ+X."
+	In RFB's case, the bonus crit damage should be entered as "0.18".
+</p>
+<p>
+	If there are any issues with this calculator, please don't hesitate to let me know.
+</p>
+
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+	<section class="tiles">	
+	
+		<a href="newquip">
+			<div class="gallery">
+			  <div class="gallerypic">
+				<img src="images/icon/newquip.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>New Doll Equipment</b><br/>First thoughts, #2 Chip analysis</div>
+			  </div>
+			</div>
+		</a>
+
+		<a href="eot-xps3">
+			<div class="gallery">
+				<div class="gallerypic">
+				<img src="images/icon/eot-xps3.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>EOT XPS3 Analysis</b><br/>416 scope comparison</div>
+				</div>
+			</div>
+		</a>
+
+<!-- <a href="newquip">
+	<div class="gallery">
+	  <div class="gallerypic">
+		<img src="images/icon/newquip.jpg" width="33%" height="400">
+		<div class="gallerypicdesc"><b>New Doll Equipment</b><br/>First thoughts, #2 Chip analysis</div>
+	  </div>
+	</div>
+</a> -->
+</section>
+	
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+				<li>BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
