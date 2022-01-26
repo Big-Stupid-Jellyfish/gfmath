@@ -74,6 +74,8 @@ function calculate() {
 	Multiple stacks of the same debuff improve its activation chance.
 	The +10%/stack is additive, not multiplicative.
 	Her skill is sometimes claimed to be a flat chance to ignore incoming damage - <a href="https://youtu.be/FwyUeVT3rpY">this is not the case</a> (as you may have guessed, I lifted all these findings from Randomqwerty).
+	Only one check is made against AOE attacks that inflict damage per link - if it is successful, all damage is negated.
+	Examples: Doppelsoldner grenade, Smasher aura.
 </p>
 <p>
 	So: RO635 has a passive chance to negate any incoming damage she would have taken, <em>including surehit attacks</em>.
@@ -270,6 +272,7 @@ $$ \text{P(actually dodges)} = \mathrm{min}(0.2+0.1D,1) \cdot \frac{\text{EVA}}{
 <p>
 	Ultimately, Ro's bassive skill provides an absolutely massive EHP boost, and its 100% uptime puts her easily above any other evasion-based SMG in the game at the moment.
 	It doesn't even take a whole pile of debuffs to get going - one or two extra debuffs is already worth a lot in most cases, and her active skill covers even that for a decent period.
+	Of course, this doesn't make her immortal or anything. Hydras will still annihilate her, bring SGs for Judge, and so on.
 </p>
 <p>
 	If you want to see how worthwhile her mod3 SPEQ is, try adding and removing it from the calculator above.
