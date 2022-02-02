@@ -71,10 +71,11 @@ function calculate() {
 <p>
 	A few corrections/technical notes:
 	while not mentioned in the original translation, ROF debuffs contribute to her passive.
+	Other debuff types do not have an effect here (vulnerability, fire, and so on).
 	Multiple stacks of the same debuff improve its activation chance.
-	The +10%/stack is additive, not multiplicative.
+	The +10%/stack is additive, not multiplicative - the recheck will happen 100% of the time with 8 qualifying debuffs applied.
 	Her skill is sometimes claimed to be a flat chance to ignore incoming damage - <a href="https://youtu.be/FwyUeVT3rpY">this is not the case</a> (as you may have guessed, I lifted all these findings from Randomqwerty).
-	Only one check is made against AOE attacks that inflict damage per link - if it is successful, all damage is negated.
+	Only one check is made against attacks that deal link-based damage - if it is successful, all damage is negated.
 	Examples: Doppelsoldner grenade, Smasher aura.
 </p>
 <p>
