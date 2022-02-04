@@ -1,0 +1,461 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>Skill Levels - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+	<h1>Skill Levels</h1>
+</header>
+
+<center><em>By BigStupidJellyfish | 2022-February-04</em></center>
+
+<p>
+	The main feature that makes each doll interesting (or boring) is their skill.
+	I'd be very cautious of an analysis that spends most of its time talking about the specific stat values of a doll, perhaps with an exception for nitpicking between otherwise identical selfbuffers, like when comparing Lee vs M14 vs R93 vs SRS vs...
+</p>
+<p>
+	You can invest training data to level up skills, which will generally improve multiple aspects of it:
+</p>
+<ul>
+	<li>Skill duration</li>
+	<li>Skill multipliers</li>
+	<li>Skill cooldown</li>
+</ul>
+<p>
+	Here's a very basic example:
+</p>
+<center><div class="figure">
+	<img src="images/skill-levels/whats-a-skill-easy.png" width="100%"/>
+</div></center>
+<p>
+	Note that ICD is not affected.
+	Especially as the game goes on, more complicated skills have been introduced with less straightforward improvements:
+</p>
+<center><div class="figure">
+	<img src="images/skill-levels/whats-a-skill-hard.png" width="100%"/>
+</div></center>
+<p>
+	Skill CD goes from 20 to 16s, erosion's debuffs are doubled and its duration increases, the chance of applying erosion doubles, the 100% erosion rate after the active continues for 2 seconds longer, and the 5-stack effect deals twice as much damage and stuns for 0.9 seconds longer.
+</p>
+<p>
+	Trying to compare the performance of all skill levels of something like this is already giving me a headache, so we'll stick to typical buff/selfbuff skills.
+</p>
+
+<span class="anchor" id="dps"></span>
+<h2>Effect on DPS<sup><small><a href="#dps">&#35;</a></small></sup></h2>
+<p>
+	Let's go back to the simpler DPS skills.
+	Adding more skill levels is obviously better, but you don't get that much data from simulations and going to the shop <a href="energy-packages">can get expensive</a>.
+	So how much are you really getting out of each skill level?
+	Is that advanced data really worth it?
+</p>
+<p>
+	Here's the cumulative damage output of a certain doll, at all skill levels, compared to no skill use.
+</p>
+<center><div class="figure">
+	<img src="images/skill-levels/g41-basic.png" width="100%"/>
+</div></center>
+<p>
+	They're all equivalent before 4 seconds, start out similarly (as the pre-skill damage is still most of their output), and diverge over time (as in-skill damage starts to dominate).
+	Compared to not using G41's skill, anything is clearly a major improvement.
+	To better look between the skill levels, let's normalize around her SL1 performance instead.
+</p>
+<center><div class="figure">
+	<img src="images/skill-levels/g41-noreference.png" width="100%"/>
+</div></center>
+<p>
+	At its peak, a SL8 G41 will have dealt about 21% more damage than a SL1 one.
+	At SL10, she gets up to +29% damage dealt (~7% more than at SL8).
+	A 7% increase in damage is debatable in value, but it's hard to ignore a 20%+ DPS boost.
+	Clearly, skilling DPS dolls is worthwhile - this increase is comparable to the offensive aura of a midrange 5-star fairy.
+</p>
+<p>
+	The lines flatten out a little more over longer time periods:
+</p>
+<center><div class="figure">
+	<img src="images/skill-levels/g41-long-basic.png" width="49%"/>
+	<img src="images/skill-levels/g41-long-noreference.png" width="49%"/>
+</div></center>
+
+<p>
+	It's also worth considering that skill levels get more expensive as you go on.
+	For normal dolls,
+</p>
+<center>
+	<table style="width:auto; text-align:center;">
+		<thead>
+			<tr>
+			  <th>Skill level</th>
+			  <th>Basic Data</th>
+			  <th>Intermediate Data</th>
+			  <th>Advanced Data</th>
+			  <th>Energy needed</th>
+			  <th>Gems needed</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <td>1</td>
+			  <td></td>
+			  <td></td>
+			  <td></td>
+			  <td></td>
+			  <td>0</td>
+			</tr>
+			<tr>
+			  <td>2</td>
+			  <td>100</td>
+			  <td></td>
+			  <td></td>
+			  <td>0.457</td>
+			  <td>3.0</td>
+			</tr>
+			<tr>
+			  <td>3</td>
+			  <td>200</td>
+			  <td></td>
+			  <td></td>
+			  <td>0.913</td>
+			  <td>6.1</td>
+			</tr>
+			<tr>
+			  <td>4</td>
+			  <td>300</td>
+			  <td></td>
+			  <td></td>
+			  <td>1.370</td>
+			  <td>9.1</td>
+			</tr>
+			<tr>
+			  <td>5</td>
+			  <td></td>
+			  <td>120</td>
+			  <td></td>
+			  <td>2.424</td>
+			  <td>16.2</td>
+			</tr>
+			<tr>
+			  <td>6</td>
+			  <td></td>
+			  <td>200</td>
+			  <td></td>
+			  <td>4.040</td>
+			  <td>26.9</td>
+			</tr>
+			<tr>
+			  <td>7</td>
+			  <td></td>
+			  <td>300</td>
+			  <td></td>
+			  <td>6.061</td>
+			  <td>40.4</td>
+			</tr>
+			<tr>
+			  <td>8</td>
+			  <td></td>
+			  <td>400</td>
+			  <td></td>
+			  <td>8.081</td>
+			  <td>53.9</td>
+			</tr>
+			<tr>
+			  <td>9</td>
+			  <td></td>
+			  <td></td>
+			  <td>200</td>
+			  <td>11.321</td>
+			  <td>75.5</td>
+			</tr>
+			<tr>
+			  <td>10</td>
+			  <td></td>
+			  <td></td>
+			  <td>300</td>
+			  <td>16.981</td>
+			  <td>113.2</td>
+			</tr>
+			<tr>
+			  <td>Total</td>
+			  <td>600</td>
+			  <td>1020</td>
+			  <td>500</td>
+			  <td>51.648</td>
+			  <td>344.3</td>
+			</tr>
+		  </tbody>
+		  </table>
+</center>
+<p>
+	And, looking at the uptime-averaged (long-term) DPS, we can do something like this:
+</p>
+<center>
+	<table style="width:auto; text-align:center;">
+		<tr>
+			<th>Skill level</th>
+			<th>Average DPS</th>
+			<th>% DPS gain/additional gems spent</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>944</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>963</td>
+			<td>0.67%</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>986</td>
+			<td>0.39%</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>1008</td>
+			<td>0.25%</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>1034</td>
+			<td>0.16%</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>1064</td>
+			<td>0.11%</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>1095</td>
+			<td>0.072%</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>1127</td>
+			<td>0.054%</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>1176</td>
+			<td>0.058%</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>1222</td>
+			<td>0.035%</td>
+		</tr>
+	</table>
+</center>
+<p>
+	Uneven multiplier scaling makes it slightly rocky, but the overall trend is clear.
+	Later skill levels improve your overall damage output by less, relative to the investment of energy/gems.
+	Visually:
+</p>
+<center><div class="figure">
+	<img src="images/skill-levels/g41-gemefficiency.png" width="100%"/>
+</div></center>
+<p>
+	Of course, different dolls will have different scalings on their skill level.
+	Creating such charts is a bit outside the scope of a single writeup, so we'll just assume for now that most dolls follow similar trends.
+</p>
+<p>
+	For one last point of reference, here's a typical HG buff skill (25% buff, 8s duration, 12s ICD at SL10):
+</p>
+<center><div class="figure">
+	<img src="images/skill-levels/hgbuffs.png" width="100%"/>
+</div></center>
+<p>
+	This is the average DPS buff rather than the in-skill effect.
+	For example, at SL10 the calculation looks like <code>(1.25 buff * 8s/12s uptime) + (1.0 buff * 4s/12s remaining time) = 16.7% average buff</code>.
+</p>
+<!-- values at intermediate skill levels are linearly interpolated here, so it's *slightly* wrong. Shouldn't change conclusions though. -->
+<p>
+	And a similar trend is seen when looking at the gain in average DPS increase, relative to gem expense:
+</p>
+<center><div class="figure">
+	<img src="images/skill-levels/hgbuffefficiency.png" width="100%"/>
+</div></center>
+<p>
+	<em>y</em>-scaling is rather arbitrary.
+</p>
+<!-- <center>
+	<table style="width:auto; text-align:center;">
+		<tr>
+			<th>Skill level</th>
+			<th>Average DPS</th>
+			<th>Incremental gem-equivalent expense</th>
+			<th>DPS gain/additional gems spent</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>1.0000</td>
+			<td>0</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>1.0191</td>
+			<td>3</td>
+			<td>6.29</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>1.0442</td>
+			<td>6</td>
+			<td>4.11</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>1.0676</td>
+			<td>9</td>
+			<td>2.57</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>1.0944</td>
+			<td>16</td>
+			<td>1.66</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>1.1266</td>
+			<td>27</td>
+			<td>1.19</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>1.1591</td>
+			<td>40</td>
+			<td>0.81</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>1.1930</td>
+			<td>54</td>
+			<td>0.63</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>1.2447</td>
+			<td>75</td>
+			<td>0.68</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>1.2941</td>
+			<td>113</td>
+			<td>0.44</td>
+		</tr>
+	</table>
+</center> -->
+<span class="anchor" id="sfx"></span>
+<h2>Special Effects<sup><small><a href="#sfx">&#35;</a></small></sup></h2>
+<p>
+	A few dolls get to notable breakpoints, gain an extra effect, or get more/less value than you'd expect at certain skill levels.
+	For an incomplete list:
+</p>
+<ul>
+	<li>Parachute gets infinite range at SL10, which is absolutely vital to many of its uses. Also, good luck taking debuffed battles at SL1 with a 90% penalty to your stats.</li>
+	<li>Illumination grants 1 extra node of vision at SL3 and a second extra node at SL10.</li>
+	<li>G11 goes from 2->3 hits/attack at SL9</li>
+	<li>Python's active gets a 100% chance to trigger at SL10, improving consistency.</li>
+	<li>Carcano M91/38's active will always trigger her shot at SL10. It's not too likely to be a problem around SL8 as she'll probably have gotten at least something from her passive, but she's used so much for this to be worthwhile.</li>
+	<li>NTW mod needs to kill each enemy for her chain shots, so maxing her skills makes her more likely to continue to chain.</li>
+	<li>VSK goes from 2->3 double hit attacks at SL9.</li>
+	<li>ROF buffers may barely get to another frame, getting an unexpectedly large DPS increase. Others may get no frame improvement, gaining nothing. This varies enough by echelon/doll/situation to not be particularly worth considering.</li>
+	<li>PPK goes from a 5% FP/25% CR buff at SL1 to 9% FP/34% CR at SL9 and 10% FP/35% CR at SL10. The crit rate is usually excessive and the FP gain is marginal, so spending more than a little basic data on PPK is probably a waste.</li>
+	<li>If you don't need the accuracy, Hunting Impulse MGs will generally empty their magazine at 5 seconds (more if there's walk time) so leveling their skill past ~SL3-5 (3s ICD+~2-3s duration) is less useful.</li>
+	<li>M200/SSG3000 may get an extra skillshot with the last few levels (with some variation based on CDR tiles), making them more worthwhile.</li>
+</ul>
+
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	For once, common wisdom is mostly on the mark.
+	As such, there's not much to add here.
+	Just to be safe, though:
+</p>
+<ul>
+	<li>Skills are the key factor that makes dolls worthwhile.</li>
+	<li>Leveling skills makes them do this better.</li>
+	<li>The DPS improvement at higher skill levels does not scale with their increased data cost, reducing their value. In most cases, you can stop around SL7-8.</li>
+	<li>You should still take the dolls you use most to SL10, plus some other special cases. You'll get at least some advanced data from events/<a href="campaign-rewards">campaigns</a>, and more DPS is better.</li>
+</ul>
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="px4">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/px4.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Everything to know about Px4 Storm</b><br/>Myths, math, buffs, and more</div> <!-- Skill analysis -->
+		  </div>
+		</div>
+	</a>
+
+	<a href="manual-labor">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/manual-labor.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Rico Skill Analysis</b><br/>Force manual vs Autoskill</div>
+		  </div>
+		</div>
+	</a>
+
+</section>
+	
+	<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+	
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	
+	</body>
+	</html>
