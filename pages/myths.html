@@ -40,10 +40,7 @@ gtag('config', 'G-805N997DPC');
 	<h1>Common Myths & Misconceptions</h1>
 </header>
 
-
-
-
-<center><em>By BigStupidJellyfish | Last updated 2021-December-30</em></center>
+<center><em>By BigStupidJellyfish | Last updated 2022-February-06</em></center>
 
 <p>Girls' Frontline is not exactly the most transparent game out there with regards to its mechanics.
 There are few good ways to get information in-game, and players will often have to turn to guides and resources made by other players to figure out what's going on.</p>
@@ -72,6 +69,8 @@ There may be <em>some</em> opinion here and there, but I will try to keep this a
 	<li><a href="#sl8acr">SL8, ACR, and team comp sacrifices</a></li>
 	<li><a href="#px4-sl">DPS loss with Px4 Storm?</a></li>
 	<li><a href="#kouji">Kouji's active skill</a></li>
+	<li><a href="#assault">Assault on Shield fairies</a></li>
+	<li><a href="#oathbonus">Oaths give a +5% stat bonus</a></li>
 </ul>
 
 <span class="anchor" id="hr"></span>
@@ -80,7 +79,7 @@ There may be <em>some</em> opinion here and there, but I will try to keep this a
 <p><strong>Status:</strong> false.</p>
 
 <p>There is no detectable minimum hit rate for either your own dolls or your enemies.
-The general formula [hit rate = acc/(acc+eva)] works for any accuracy and any evasion.
+The general formula <code>hit rate = acc/(acc+eva)</code> works for any accuracy and any evasion.
 10 base accuracy + night + no PEQ vs 210 evasion target dummy? Expect to hit 0.47% of your shots.
 Bring surehit when fighting Patrollers, although with decent accuracy buffs most rifles would hit more than 3% of their shots anyways (but still not nearly enough to be practical).</p>
 
@@ -762,6 +761,219 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 	For bigger DPS numbers than what Kouji gives, use almost any fairy.
 </p>
 
+<span class="anchor" id="assault"></span>
+<h2>Assault can be a good talent for Shield fairy<sup><small><a href="#assault">&#35;</a></small></sup></h2>
+<p><strong>Status:</strong> it's a terrible talent.</p>
+
+<p>
+	Assault is an AR-specific talent that increases damage by 10% and rate of fire by 8%.
+	On average, this sounds like an 18.8% net DPS buff which is a bit higher than Damage II.
+	I've previously been fairly positive towards the idea of <a href="aim">aim</a> on dupes of fairies (Para/Illu/Taunt), so why the difference?
+</p>
+<p>
+	Assault is terrible for a few reasons:
+</p>
+<ul>
+	<li>Chips put most ARs quite close to the ROF cap. The ROF component is much more likely to be wasted.</li>
+	<ul>
+		<li>Some very strong maintanks like <a href="ro635">RO635</a> have ROF tiles, making this even worse.</li>
+	</ul>
+	<li>Molotov/grenadier SMGs can contribute significant amounts of damage, much more than most HGs would in RFHGs. Assault doesn't buff these, making it worse.</li>
+	<li>ARs value FP significantly more than ROF - their ROF is already good (especially with chips), it helps grenade damage, and increasing FP makes them not as hopeless against somewhat armored enemies.</li>
+</ul>
+<p>
+	Don't put Assault on any fairy, including Shield.
+</p>
+<p>
+	Note that at low fairy rarities, no talent triggers enough to be reliable.
+	It's fine to raise a fairy with Assault, but waiting for a better talent would be better and if that's not possible I'd strongly advise calibrating it at some point.
+</p>
+
+<p>
+	<em>(Assault is technically okay on an M4 exodia-type team, but that's a super niche scenario to dedicate an entire fairy and a specific talent to.)</em>
+</p>
+
+<span class="anchor" id="oathbonus"></span>
+<h2>Oaths give a +5% stat bonus<sup><small><a href="#oathbonus">&#35;</a></small></sup></h2>
+<p>
+	Here's what oaths do:
+</p>
+<ol>
+	<li>Increase affection cap from 100 to 150, or 100 to 200 if mod3.</li>
+	<ul>
+		<li>90-139 affection: +5% to base FP/ACC/EVA (rounds up)</li>
+		<li>140-189 affection: +10% to base FP/ACC/EVA (rounds up)</li>
+		<li>190-200 affection: +15% to base FP/ACC/EVA (rounds up)</li>
+	</ul>
+	<li>Gives double XP <em>after</em> modding from all sources (battles, CRs, autobattles).</li>
+	<li>Reduces repair time by 30%.</li>
+	<li>Adds an extra voice line when set as adjutant (may also be unlocked with some costumes).</li>
+</ol>
+<p>
+	However, point 1 is not as straightforward as it may seem.
+	This stat bonus is applied to the base stat, before <em>any</em> other modifiers are applied.
+	Critically, equipment is applied after that and before the various multiplicative sources (auras/talents/tiles/skills).
+</p>
+<p>
+	In short, dolls that have large additive bonuses to these stats from equipment will see much less benefit from oaths.
+	Let's run some numbers with various ARs:
+</p>
+<center>
+<table style="width:auto; text-align:center;">
+	<tr>
+		<td></td>
+		<td colspan="3">G41 (VFL/SPEQ)</td>
+		<td colspan="3">ADS (EOT/Chip)</td>
+		<td colspan="3">FNC (EOT/Chip)</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>Normal</td>
+		<td>Oathed</td>
+		<td>Increase</td>
+		<td>Normal</td>
+		<td>Oathed</td>
+		<td>Increase</td>
+		<td>Normal</td>
+		<td>Oathed</td>
+		<td>Increase</td>
+	</tr>
+	<tr>
+		<td>Base FP</td>
+		<td>50</td>
+		<td>50</td>
+		<td>0.0%</td>
+		<td>50</td>
+		<td>50</td>
+		<td>0.0%</td>
+		<td>51</td>
+		<td>51</td>
+		<td>0.0%</td>
+	</tr>
+	<tr>
+		<td>With Affection</td>
+		<td>53</td>
+		<td>55</td>
+		<td>3.8%</td>
+		<td>53</td>
+		<td>55</td>
+		<td>3.8%</td>
+		<td>54</td>
+		<td>57</td>
+		<td>5.6%</td>
+	</tr>
+	<tr>
+		<td>With HV ammo</td>
+		<td>73</td>
+		<td>75</td>
+		<td>2.7%</td>
+		<td>73</td>
+		<td>75</td>
+		<td>2.7%</td>
+		<td>74</td>
+		<td>77</td>
+		<td>4.1%</td>
+	</tr>
+	<tr>
+		<td>With accessory/doll slot equip</td>
+		<td>98</td>
+		<td>100</td>
+		<td>2.0%</td>
+		<td>96</td>
+		<td>98</td>
+		<td>2.1%</td>
+		<td>97</td>
+		<td>100</td>
+		<td>3.1%</td>
+	</tr>
+</table>
+</center>
+<p>
+	Mod3 dolls get a bit more affection with an oath, but they experience a similar effect and see less of a benefit than you'd expect:
+</p>
+<center>
+	<table style="width:auto; text-align:center;">
+		<tr>
+			<td></td>
+			<td colspan="3">AR-15 (<a href="star-buffs">Reworked SPEQs</a>)</td>
+			<td colspan="3">AS Val (VFL/Chip)</td>
+			<td colspan="3">G11 (VFL/SPEQ)</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>Normal</td>
+			<td>Oathed</td>
+			<td>Increase</td>
+			<td>Normal</td>
+			<td>Oathed</td>
+			<td>Increase</td>
+			<td>Normal</td>
+			<td>Oathed</td>
+			<td>Increase</td>
+		</tr>
+		<tr>
+			<td>Base FP</td>
+			<td>50</td>
+			<td>50</td>
+			<td>0.0%</td>
+			<td>43</td>
+			<td>43</td>
+			<td>0.0%</td>
+			<td>48</td>
+			<td>48</td>
+			<td>0.0%</td>
+		</tr>
+		<tr>
+			<td>With Affection</td>
+			<td>53</td>
+			<td>58</td>
+			<td>9.4%</td>
+			<td>46</td>
+			<td>50</td>
+			<td>8.7%</td>
+			<td>51</td>
+			<td>56</td>
+			<td>9.8%</td>
+		</tr>
+		<tr>
+			<td>With HV ammo</td>
+			<td>88</td>
+			<td>93</td>
+			<td>5.7%</td>
+			<td>70</td>
+			<td>74</td>
+			<td>5.7%</td>
+			<td>71</td>
+			<td>76</td>
+			<td>7.0%</td>
+		</tr>
+		<tr>
+			<td>With accessory/doll slot equip</td>
+			<td>103</td>
+			<td>108</td>
+			<td>4.9%</td>
+			<td>85</td>
+			<td>89</td>
+			<td>4.7%</td>
+			<td>91</td>
+			<td>96</td>
+			<td>5.5%</td>
+		</tr>
+	</table>
+</center>
+<p>
+	This also applies to SMGs - take C-MS, for example. She has 75 base EVA, an a T-Exo+Suppressor adds +45.
+	The 5/10% bonus from affection only applies to ~60% of her effective base evasion.
+	Not to mention that the gain in EHP from a percent EVA buff is <a href="evasion">strictly less than that percentage buff</a>.
+</p>
+<p>
+	It's not all doom and gloom, though.
+	Rifles and MGs have minimal, if any, additive FP bonuses and will benefit from oaths about as you'd expect.
+	The accuracy can be nice, but isn't a big deal (on the order of an extra 1-3% improvement, hardly something you'd notice).
+</p>
+<p>
+	<em>(You could also argue that an oath is really more like a (1.1/1.05)=+4.76% stat boost, but that's a very minor distinction and we can approximately pair that off with affection bonuses rounding up.)</em>
+</p>
 <span class="anchor" id="ads"></span>
 <h2>More like this</h2>
 	<section class="tiles">	
@@ -806,7 +1018,7 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 	<footer id="footer">
 		<div class="inner">
 			<ul class="copyright">
-				<li>BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+				<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
 			</ul>
 		</div>
 	</footer>
