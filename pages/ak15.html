@@ -1,0 +1,482 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>AK-15 Analysis - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Monitoring your Anger: AK-15 Analysis</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-February-12</em></center>
+
+
+<blockquote>
+	<p><strong>Eye of the White Mastiff</strong> ICD 6s/CD 8s</p>
+	<p>
+		Passive: Attacks have a 15% chance to cause <strong>Rage</strong>, which lasts for 3 seconds.
+		While <strong>Rage</strong> is active, every normal attack deals an instance of 40% extra damage.
+	</p>
+	<p>
+		Active: Activates <em>Eye of the White Mastiff</em> and <strong>monitors</strong> all enemies.
+		Attacks on <strong>monitored</strong> enemies raise self firepower, accuracy, and critical chance by 40%, and being attacked by a <strong>monitored</strong> enemy raises self evade by 40%.
+		<strong>Monitoring</strong> lasts for 6 seconds.
+		While the skill is in effect, gain 5 stacks of <strong>Strain</strong> every 2 seconds, with each group of <strong>monitored</strong> enemies adding 1 stack of <strong>Strain</strong> per 2 seconds.
+		At 24 stacks of <strong>Strain</strong>, <em>Eye of the White Mastiff</em> drops in effectiveness and clears all <strong>Strain</strong> stacks, inflicting a 20% decrease in ROF and accuracy for 5 seconds.
+		This debuff can coexist with <strong>Monitoring</strong>, but the skill cannot be ractivated while the debuff is in effect.
+	</p>
+</blockquote>
+	
+<p>
+	Well, that's quite the wall of text.
+	Three keywords, passive & active components, and all sorts of conditionals.
+	The simple explanation is that AK-15 has a passive RNG DPS buff, and an active multi-stat buff with a penalty against sufficiently large groups.
+</p>
+<p>
+	That's better, but doesn't address the key overall question - how good is AK-15, and how does she compare to standard options?
+	Let's investigate.
+</p>	
+
+<!-- <center><div class="figure">
+	<img src="images/arisaka/4shiki1.png" width="100%"/>
+</div></center> -->
+
+<span class="anchor" id="rage"></span>
+<h2>About Rage<sup><small><a href="#rage">&#35;</a></small></sup></h2>
+<p>
+	Let's set aside her active component for a moment and look into Rage a bit more.
+	Multiplying the proc chance (15%) by its damage increase (+0.4x) doesn't quite work out - it covers multiple attacks with one trigger, and may happen at the very end of some timeframe, not granting the full effect.
+</p>
+<p>
+	To guard against some <a href="https://www.youtube.com/watch?v=AxKMzZ1HogQ">PKP-style disaster</a>, a quick observation of ~80 attacks shows a ~15% proc rate for Rage.
+	The skill description seems fine, and it rolls once per volley (not once per dummy).
+	However, it appears that she cannot trigger additional instances of Rage nor extend the duration of an active one - at 14f, every Rage lasts 6 attacks (<a href="https://www.youtube.com/watch?v=qUsxhW4Wu0o">demonstration</a>), and for 7 attacks at 12f (<a href="https://www.youtube.com/watch?v=KGYr_iiFgx8">demonstration</a>).
+	The odds of not triggering rage during any of the 6 remaining attacks, in theory extending the duration, is moderately small (~38%).
+	That many Rages of the exact same length would be almost impossible if they could refresh its duration.
+	The initial attack of each Rage may come up slightly faster than her normal attacks, but it appears to not be any faster than the ROF cap (12f) and is not an important detail as she can use a chip.
+	Her normal ROF is only slightly below that.
+</p>
+<p>
+	To help you get an idea of how this works out, let's run a simulation for a short battle (&lt;6 seconds):
+</p>
+<center><div class="figure">
+	<img src="images/ak15/preSkillDamage.png" width="100%"/>
+</div></center>
+<p>
+	Here, I've plotted AK-15's total relative damage output, with 0% corresponding to no increase over her base damage (no triggers).
+	At most, her total DPS can be boosted by 40% - this would happen if all her attacks were done in Rage.
+	Crit/acc/damage variance RNG is ignored for simplicity and is not relevant here.
+	The spike towards the middle corresponds to a full duration Rage trigger.
+	Lower values are relatively unlikely as they'd need a single trigger towards the end of the time period, and none before that.
+</p>
+<!-- I suspect her attack after rage cannot also be a 'rage' attack, making 40% impossible. Its probability is low enough anyways I think we can discard this potential factor. -->
+<p>
+	<a href="images/ak15/preSkillDamageFast.png">ROF tiles don't affect things much</a>.
+	Don't pick SMGs specifically to buff AK-15's ROF.
+	They'd be a little nicer if you could refresh the duration mid-Rage, but it doesn't work like that.
+</p>
+<p>
+	For a longer view, let's do the same thing over 60 seconds:
+</p>
+<center><div class="figure">
+	<img src="images/ak15/long-preSkillDamage.png" width="100%"/>
+</div></center>
+<p>
+	Predictably, the overall effects of this passive stabilize over long periods of time.
+	As before, there's <a href="images/ak15/long-preSkillDamageFast.png">no significant change with a ROF tile</a>.
+	Note that my program makes a few simplifying assumptions, and real battle conditions will vary.
+</p>
+<p>
+	Fun fact: the extra shots from Rage arrive ~3 frames (0.1s) after her normal bullets.
+</p>
+<p>
+	In short: there will be some variation in shorter fights, but overall you're fine to think of this as a passive +15-20% damage or so with synergy against Orthrus and anti-synergy against armored enemies.
+</p>
+<span class="anchor" id="strain"></span>
+<h2>About Strain<sup><small><a href="#strain">&#35;</a></small></sup></h2>
+<p>
+	(True) strain is the sum of the incremental elongations divided by the current gauge length at load \(P\), or
+</p>
+$$ \varepsilon = \int_{l_0}^l \frac{dl}{l} = \ln \frac{l}{l_0} $$
+<p>
+	...wait, wrong type of strain.
+	Sorry.
+	The strain relevant to this investigation is a stack-based component of AK-15's active skill, which builds up faster with more enemies on the field and debuffs her once it hits 24 stacks.
+	<!-- It's easy enough to say that AK-15 will perform better against bosses or small groups because of this, but let's look a little deeper. -->
+</p>
+<p>
+	No matter what, AK-15 gains 5 stacks every 2 seconds - over her 6-second duration, this happens 3 times.
+	Each group of enemies increases that gain by 1.
+	Let's do a basic footage review (<a href="https://www.youtube.com/watch?v=UgvEKsL5tXw">video reference</a>) against a dummy to be certain on the timings:
+</p>
+<center>
+<table style="width:auto;">
+<tr>
+<th style="text-align:center;">Time</th>
+<th style="text-align:center;">Difference</th>
+<th>Event</th>
+<th>Current stack count</th>
+</tr>
+<tr>
+<td style="text-align:center;">6.00s</td>
+<td style="text-align:center;">-</td>
+<td>Skill activates</td>
+<td>X0</td>
+</tr>
+<tr>
+<td style="text-align:center;">8.03s</td>
+<td style="text-align:center;">2.03s</td>
+<td>Stacks increase</td>
+<td>X7</td>
+</tr>
+<tr>
+<td style="text-align:center;">10.00s</td>
+<td style="text-align:center;">1.97s</td>
+<td>Stacks increase</td>
+<td>X13</td>
+</tr>
+<tr>
+<td style="text-align:center;">11.97s</td>
+<td style="text-align:center;">1.97s</td>
+<td>Stacks increase</td>
+<td>X19</td>
+</tr>
+<tr>
+<td style="text-align:center;">12.03s</td>
+<td style="text-align:center;">0.06s</td>
+<td>Stacks decrease</td>
+<td>X18</td>
+</tr>
+<tr>
+<td style="text-align:center;">14.20s</td>
+<td style="text-align:center;">2.17s</td>
+<td>Skill activates for the second time, stacks increase</td>
+<td>X19</td>
+</tr>
+<tr>
+<td style="text-align:center;">16.23s</td>
+<td style="text-align:center;">2.03s</td>
+<td>Stacks increase</td>
+<td>X25</td>
+</tr>
+<tr>
+<td style="text-align:center;">16.57s</td>
+<td style="text-align:center;">0.34s</td>
+<td>Debuff arrows appear, stacks zero out</td>
+<td>X0</td>
+</tr>
+<tr>
+<td style="text-align:center;">18.20s</td>
+<td style="text-align:center;">1.63s</td>
+<td>Stacks increase</td>
+<td>X7</td>
+</tr>
+<tr>
+<td style="text-align:center;">20.17s</td>
+<td style="text-align:center;">1.97s</td>
+<td>Stacks increase</td>
+<td>X13</td>
+</tr>
+<tr>
+<td style="text-align:center;">20.23s</td>
+<td style="text-align:center;">0.06s</td>
+<td>Stacks decrease</td>
+<td>X12</td>
+</tr>
+<tr>
+<td style="text-align:center;">21.60s</td>
+<td style="text-align:center;">1.37s</td>
+<td>Debuff arrows vanish (5.03s after they appear)</td>
+<td>X12</td>
+</tr>
+<tr>
+<td style="text-align:center;">22.40s</td>
+<td style="text-align:center;">0.80s</td>
+<td>Skill activates for the third time, stacks increase</td>
+<td>X13</td>
+</tr>
+<tr>
+<td style="text-align:center;">24.43s</td>
+<td style="text-align:center;">2.03s</td>
+<td>Stacks increase</td>
+<td>X19</td>
+</tr>
+</table>
+</center>
+<p>
+	...and I feel I know less about her skill than before I did that.
+	Its text implies it would increase by 6 (5 base + 1 drone), but the first instance jumps to 7.
+	Sometimes, when she gains stacks, it goes down by one a few frames after - but her skill provides no mechanism for decreasing stacks unless hitting 25 and zeroing out.
+	On skill activations, except the first, AK-15 gains one stack.
+</p>
+<p>
+	Beyond the questionable description/implementation, enemy count varies enough by time and by encounter that there's not much we can conclude about this component.
+	Getting debuffed in the last few seconds may not matter, or maybe it does and a Brute slips by that otherwise would have been killed.
+	Enemy count could be high at the start, but maybe 416's grenade clears out enough of them that it's no problem.
+	Perhaps we can investigate this a little better once (if) Mica fixes their skill description/implementation.
+</p>
+<p>
+	It's worth mentioning that she doesn't gain Strain until 8s - sufficiently fast grenades can therefore help clear out some mobs and reduce AK-15's load.
+	ROF frames and travel distance will make things vary, but 416's grenade for example is likely to impact between 7.2-7.7s in and will generally beat out AK-15's first Strain check.
+</p>
+<p>
+	If we set aside the weird behaviors above and assume enemy count remains the same over battle (both risky assumptions), we'd be looking at something like this:
+</p>
+<center>
+	<table style="width:auto; text-align:center;">
+		<tr>
+			<th>Enemy group count</th>
+			<th>Strain per interval</th>
+			<th>Estimated overload time</th>
+		</tr>
+		<tr>
+			<td>1/2</td>
+			<td>6/7</td>
+			<td>16s</td>
+		</tr>
+		<tr>
+			<td>3/4/5/6</td>
+			<td>8/9/10/11</td>
+			<td>12s</td>
+		</tr>
+		<tr>
+			<td>7-18</td>
+			<td>12-23</td>
+			<td>10s</td>
+		</tr>
+		<tr>
+			<td>19+</td>
+			<td>24+</td>
+			<td>8s</td>
+		</tr>
+	</table>
+</center>
+<p>
+	Keep in mind that AK-15 works based off "enemy groups," not links.
+	For example:
+</p>
+<center><div class="figure">
+	<img src="images/ak15/links.jpg" width="100%"/>
+</div></center>
+<p>
+	Of course, if fighting these enemies, you'll hopefully have killed at least some of them before her first stacks of strain come in.
+</p>
+<!-- 7.60 7.67 7.27 -->
+<span class="anchor" id="equip"></span>
+<h2>Equipment<sup><small><a href="#equip">&#35;</a></small></sup></h2>
+<p>
+	Picking AR equipment <a href="chips">can be a little tricky</a> nowadays.
+	Luckily, it's rather easy for AK-15.
+	EOTs have a tendency to put AK-15 on a slower frame, so she almost always prefers a VFL:
+</p>
+<center><div class="figure">
+	<img src="images/ak15/scope-skill.png" width="100%"/>
+</div></center>
+<p>
+	Without the 40% crit rate buff from her active, she likes EOTs <em>slightly</em> more than she did before, but still not much:
+</p>
+<center><div class="figure">
+	<img src="images/ak15/scope-noskill.png" width="100%"/>
+</div></center>
+<p>
+	See also: <a href="newquip">an overview of all the new equipment pieces</a> or <a href="chip-calc">this chip calculator</a>.
+</p>
+<span class="anchor" id="dps"></span>
+<h2>DPS Comparison<sup><small><a href="#dps">&#35;</a></small></sup></h2>
+<p>
+	To justify not considering strain, let's look at shorter battles for these damage-over-time comparisons.
+	I'll chart a line for a 15% & 20% average DPS boost from Rage, depending on how lucky you feel.
+</p>
+<center><div class="figure">
+	<img src="images/ak15/dot-artillery.png" width="49%"/>
+	<img src="images/ak15/dot-command.png" width="49%"/>
+</div></center>
+<p>
+	AK-15 has excellent DPS early on, but starts to drop down once the ARs with 4s ICDs get their skills up.
+	Her active isn't enough to recover, and she is about on-par with G41 (with CT SPEQ) from ~5 seconds onwards.
+	With crit-oriented fairies, the chip penalty is felt more and AK-15/AN-94 are somewhat worse off.
+</p>
+<center><div class="figure">
+	<img src="images/ak15/dot-artillery-crit.png" width="49%"/>
+	<img src="images/ak15/dot-command-crit.png" width="49%"/>
+</div></center>
+<p>
+	With M4A1's crit tiles, AR-15 gets a double boost - her mod SPEQ has a solid crit damage buff, and her own skill damage improves.
+	The ARs with SPEQs in place of chips similarly like this case a little more.
+	We won't think too hard on how M4 is benefitting from her own tiles here.
+</p>
+<center><div class="figure">
+	<img src="images/ak15/dot-artillery-rof.png" width="49%"/>
+	<img src="images/ak15/dot-command-rof.png" width="49%"/>
+</div></center>
+<p>
+	Here's a set with RO mod's ROF/ACC tiles applied.
+	No major changes.
+</p>
+<p>
+	G11's skill 2 is entirely ignored in this chart, hence the "worst case" descriptor.
+	How much it helps will vary by enemy, but even as-is I think her line makes a strong point.
+	Her mod3 SPEQ is rather absurd.
+</p>
+<p>
+	These comparisons are against some of the absolute best ARs out there.
+	To see how some others stack up on the same G41 scale, see <a href="g41-standard">my charts here</a>.
+	AK-15 tends not to fall below G41 by more than ~5% under these assumptions, so she compares favorably to the vast majority of ARs.
+</p>
+
+<span class="anchor" id="performance"></span>
+<h2>Performance Comparison<sup><small><a href="#performance">&#35;</a></small></sup></h2>
+<p>
+	AK-15's unusual skill means all these theoretical calculations apply to real combat even less well than they usually would, so I'd hardly be doing her justice without at least some field testing.
+</p>
+<div class="figure">
+	<img src="images/ak15/test152.png" width="100%"/>
+</div>
+<p>
+	A fairly consistent ordering of AK-15 &gt; AR-15 &gt; G41 (clear time); AR-15 &gt; AK-15 &gt; G41 (damage contribution) can be seen.
+	Damage taken is similar across ARs tested.
+	Note that AR-15 is oathed, giving her a ~5% performance edge over her unoathed self.
+	AK-15 would compare a bit better in that case.
+	G41's oath is <a href="myths#oathbonus">fairly trivial</a>.
+</p>
+<p>
+	Before you get too excited, remember G11 has a mod now:
+</p>
+<div class="figure">
+	<img src="images/ak15/test153.png" width="100%"/>
+</div>
+<p>
+	AK-15 looks a little better than AN-94 (with her tiles likely a significant factor), with apparently similar consistency.
+	Either way, G11 does <em>much</em> better.
+</p>
+<p>
+	Extra: <a href="images/ak15/test151.png">an example on why you shouldn't load your test teams up with superbuffed grenadiers.</a>
+	PP-19 and 416 dealt ~30% of the damage each, leaving very little for the rest of the team and making it hard for AK-15's performance to be distinguished.
+</p>
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	AK-15 is a strong single-target AR with an emphasis on single-target.
+	While not on the level of the absolute top-tier ARs, I would consider her to be preferable over many of the decent 5-star selfbuffers.
+	Her excellent tiles for DPS SMGs make her prefer <a href="2v3ar">positions 4</a> and 7 in standard ARSMGs, and her RNG skill components do not appear to be a significant problem.
+</p>
+<h3>Example Echelons</h3>
+<p>
+	Standard disclaimer: teams should be built as needed according to the circumstances of specific maps and enemies.
+	Do not blindly copy-and-paste teams.
+	With that in mind, here are some not-entirely-awful ideas to illustrate where AK-15 can be used.
+</p>
+<center><div class="figure">
+	<img src="images/ak15/teamex1.png" width="40%"/>
+	<img src="images/ak15/teamex2.png" width="40%"/>
+</div></center>
+<p>
+	Left: UMP45, PP-19, AK-15, 416 mod, G41. A backup day ARSMG if your AR team is all occupied.
+	Right: MP5 mod, Lusa, AR-15, M4A1, AK-15. A more defensive/boss-oriented ARSMG with an acceptable Centaurus/Orthrus matchup.
+</p>
+<center><div class="figure">
+	<img src="images/ak15/teamex3.png" width="40%"/>
+	<img src="images/ak15/teamex4.png" width="40%"/>
+</div></center>
+<p>
+	Left: RO635, P22, AK-15, Python, AS Val. Night ARSMG.
+	Right: C-MS, Uzi mod, AK-15, M4A1, Zas M21.
+</p>
+<span class="anchor" id="notes"></span>
+<h2>Other notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<p>
+	AK-15 will get a mod, but probably not for at least a year from the time of writing.
+	This page is purely looking at her base form.
+</p>
+<p>
+	She was part of an old record CE stack I found, beating out the previous NTW/KSVK stack by a few hundred CE:
+</p>
+<div class="figure">
+	<img src="images/ce/ump40-redux.jpg" width="100%"/>
+</div>
+<p>
+	It's since <a href="ce">been replaced</a> by SLAP MGHG, AR modspam, and all sorts of coalition stacks.
+</p>
+<p>
+	There's no limit on how much Strain can increase in one go:
+</p>
+<center><div class="figure">
+	<img src="images/ak15/nightmare37.jpg" width="80%"/>
+</div></center>
+<center><em>5 stacks+(155 links/(5 links/group))*1 stack/group + 1 mystery stack = 37 stacks.</em></center>
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="g41-standard">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/g41-standard.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>AR Damage over time</b><br/>Comparing direct-fire damage output</div>
+		  </div>
+		</div>
+	</a>
+	
+	<a href="ro635">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/ro635.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>RO635's Second Chance</b><br/>Passive analysis</div>
+		  </div>
+		</div>
+	</a>
+</section>
+</div>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
