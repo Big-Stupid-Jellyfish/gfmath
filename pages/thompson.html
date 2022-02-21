@@ -1,0 +1,424 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>Thompson, Force Shields, and EHP - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Thompson, Force Shields, and EHP</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-February-20</em></center>
+
+<!-- <p>
+	Alternatively: "In defense of Thompson"
+</p> -->
+
+<blockquote>
+	<p><strong>Force Shield (5★)</strong> ICD 8s/CD 16s</p>
+	<p>
+		Create a shield with 9999 HP to block incoming damage for 4 seconds.
+	</p>
+</blockquote>
+	
+<p>
+	Today, we're talking about a group of SMGs that all have this skill.
+	They started seeing use around the SC era, with Dog/Archer battles lasting long enough to justify the 8s ICD and with attacks strong enough to need force shields to survive.
+	PL increased their usage even more, with RFSMG formations working against most new enemy groups.
+</p>
+<p>
+	There are three force shielders currently available: MP5 mod, G36c, and Thompson.
+	Most people would tell you that there's a rather strict ordering of these: MP5 mod is the best, G36c is okay, and Thompson is the worst.
+	I'd like to dispute that view, and look a little deeper into Thompson.
+	Note that I'll be assuming it's already been decided that a force shielder is needed, so RO mod/EVA buffers/smoke grenadiers and all that won't be considered.
+</p>
+
+<!-- MP5 non-mod doesn't exist, i.e., is not even worth mentioning. -->
+
+<span class="anchor" id="stats"></span>
+<h2>Stats<sup><small><a href="#stats">&#35;</a></small></sup></h2>
+<p>
+	As all dolls we're talking about today share the same skill 1, it's time to dive straight in to the usually-irrelevant details.
+</p>
+<center>
+<table style="width:auto;">
+<tr>
+<th>Doll</th>
+<th>HP</th>
+<th>EVA</th>
+<th>Tile stats</th>
+<th>Tile position</th>
+<th>Post-shield buff</th>
+</tr>
+<tr>
+<td>MP5 mod (both SPEQs)</td>
+<td>905</td>
+<td>148</td>
+<td>45% ACC, 20% CR (AR+RF)</td>
+<td>1, 7 from 5</td>
+<td>20-73% EVA for 8 seconds</td>
+</tr>
+<tr>
+<td>G36c</td>
+<td>1015</td>
+<td>114</td>
+<td>10% FP, 8% ROF (AR)</td>
+<td>1, 4, 7 from 5</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Thompson (SPEQ)</td>
+<td>1190</td>
+<td>109</td>
+<td>12% FP, 15% EVA (AR)</td>
+<td>1, 7 from 5</td>
+<td>-</td>
+</tr>
+</table>
+</center>
+<p>
+	A few things to note:
+</p>
+<ul>
+	<li>MP5 has the lowest HP among force shielders, but her EVA is significantly higher.</li>
+	<li>While Thompson's base EVA is low, the large additive bonuses from exos/suppressors make the final difference between her & G36c minor.</li>
+	<li>EVA stats alone do not tell you much about survivability - <a href="evasion">read more about that here</a>.</li>
+	<li>MP5 mod is the only one with an EVA buff after her force shield expires, and the only one with RF tiles.</li>
+</ul>
+
+<span class="anchor" id="ehp"></span>
+<h2>Effective HP<sup><small><a href="#ehp">&#35;</a></small></sup></h2>
+<p>
+	We have the stats, so let's transform that into a more useful comparison: EHP.
+	For a few levels of enemy accuracy:
+</p>
+<center>
+<table style="width:auto; text-align:center;">
+<tr>
+	<th></th>
+	<th colspan="2">Low (20) ACC</th>
+	<th colspan="2">Moderate (60) ACC</th>
+	<th colspan="2">High (180) ACC</th>
+</tr>
+<tr>
+<th style="text-align:center;">Doll</th>
+<th style="text-align:center;">EHP</th>
+<th style="text-align:center;">With +100% EVA buff</th>
+<th style="text-align:center;">EHP</th>
+<th style="text-align:center;">With +100% EVA buff</th>
+<th style="text-align:center;">EHP</th>
+<th style="text-align:center;">With +100% EVA buff</th>
+</tr>
+<tr>
+<td>MP5 mod (pre-skill)</td>
+<td>7602</td>
+<td>14299</td>
+<td>3137</td>
+<td>5370</td>
+<td>1649</td>
+<td>2393</td>
+</tr>
+<tr>
+<td>MP5 mod (3 stacks skill 2)</td>
+<td>12477</td>
+<td>24050</td>
+<td>4762</td>
+<td>8620</td>
+<td>2191</td>
+<td>3477</td>
+</tr>
+<tr>
+<td>G36c</td>
+<td>6801</td>
+<td>12586</td>
+<td>2944</td>
+<td>4872</td>
+<td>1658</td>
+<td>2301</td>
+</tr>
+<tr>
+<td>Thompson</td>
+<td>7675</td>
+<td>14161</td>
+<td>3352</td>
+<td>5514</td>
+<td>1911</td>
+<td>2631</td>
+</tr>
+</table>
+</center>
+<p>
+	Looks like Thompson's HP advantage does a decent job making up for the somewhat lower advantage.
+	It's hard to compete with MP5's skill 2, but Thompson easily beats G36c and looks similar to MP5 mod.
+	Alternatively, as a line:
+</p>
+<center><div class="figure">
+	<img src="images/thompson/ehp-chartnormal.png" width="100%"/>
+</div></center>
+<center><div class="figure">
+	<img src="images/thompson/ehp-chartbuffed.png" width="100%"/>
+</div></center>
+<!-- <p>
+	To be fair, I'm comparing Thompson to MP5 pre-skill 2.
+	In longer fights with it, MP5 is far better.
+	However, I can hardly compare Thompson to G36c - Thompson's EHP is always better!
+</p> -->
+<p>
+	To find out how little accuracy enemies would need to have for G36c to take the lead, it's time for some algebra:
+</p>
+$$ \text{Thompson EHP} < \text{G36c EHP} \text{ happens if } \frac{1190}{\frac{\text{ACC}}{\text{ACC}+109}} < \frac{1015}{\frac{\text{ACC}}{\text{ACC}+114}} $$
+$$ \frac{1190}{\frac{\text{ACC}}{\text{ACC}+109}} - \frac{1015}{\frac{\text{ACC}}{\text{ACC}+114}} < 0$$
+$$ \frac{175(\text{ACC}+46)}{\text{ACC}} < 0$$
+$$ \frac{\text{ACC}+46}{\text{ACC}} < 0 $$
+$$ \text{ACC} \in (-46,0) $$
+<p>
+	Oh my.
+	You may have a tough time finding enemies with accuracy <em>that</em> low.
+	Perhaps that should have been expected - G36c's evasion advantage (+4.56%) is never more than a 4.56% average EHP improvement, but Thompson has a 17.2% base HP lead.
+	And while Thompson has a 31% HP lead over MP5, MP5's 36% EVA advantage can cancel that out (even more easily with her 135% EVA advantage under skill 2).
+</p>
+<p>
+	Note that EVA is less useful the lower it gets (see: SGs), so Thompson will perform better by this metric under para debuffs and against high-ACC enemies.
+</p>
+<span class="anchor" id="complications"></span>
+<h2>Complications<sup><small><a href="#complications">&#35;</a></small></sup></h2>
+<p>
+	EHP isn't a perfect metric, even if it is far better than just looking at HP/EVA stats.
+	The two main factors that may change your judgment are link protection and resetting.
+	Let's go over both of those briefly.
+</p>
+<h3>Link protection</h3>
+<p>
+	Thompson's large HP pool can work to her benefit or detriment.
+	It's possible for a high-damage attack to consistently knock a link of G36c/MP5, but need two shots to do the same to Thompson - this would significantly improve her survivability, as her base HP would be effectively double that of the others.
+	On the other hand, some other amount of damage may be enough to knock a link off of any of them in the same number of hits, making her base HP effectively the same.
+	Using a moderately accurate approximation of link protection, here's a comparison of the number of attacks each force shielder can survive, by enemy FP:
+</p>
+<center><div class="figure">
+	<img src="images/thompson/fp-chart.png" width="100%"/>
+</div></center>
+<center><em>Note the vertical logarithmic scale! It's essential to separate the lines, but be careful when reading values off this chart.</em></center>
+<p>
+	While G36c (yellow) is almost entirely below Thompson's (purple) line, she comes out ever so slightly ahead around 150 enemy FP and when approaching 300 FP.
+	And while Thompson could be considered to have more EHP than MP5 mod (pre-skill 2), they trade places quite often.
+	At one point, just past 200 enemy FP, Thompson almost touches MP5's max-EVA stack line.
+</p>
+<p>
+	Keep in mind that few enemy groups are made up of only one enemy type.
+	Mixing in various low-damage mooks will make things even more complicated.
+</p>
+<p>
+	<em>
+		(Note that 5 attacks survivable/6 attacks taken is essentially the worst possible case: 5 to kill all links, 1 for heavy damage protection (which isn't accounted for here). This also ignores grenades and other link-based attacks.)
+	</em>
+</p>
+<h3>Resetting</h3>
+<p>
+	Some ranking fights will follow a kiting pattern along these lines:
+</p>
+<ol>
+	<li>At the start of the battle, kite force shielder to 4 (swapping with HG)</li>
+	<li>Send 1 HG up front, and retreat just before they get shot.</li>
+	<li>Send the other HG up front, and retreat just before they get shot.</li>
+	<li>Move force shielder up, with 1-2s left on their skill CD.</li>
+	<li>Hope the enemy misses their shots until you can trigger the force shield.</li>
+	<li>Hope most of the enemies die before the force shield expires.</li>
+</ol>
+<p>
+	In this case, a particularly dedicated ranker may wish to reset step 5 many times until almost all or every shot misses in that narrow window.
+	Then, your tank would take no damage at all - their HP is then irrelevant, and the only thing that matters is their chance of entirely evading those volleys.
+</p>
+<p>
+	Starting off simple, the chance to dodge a "volley" of one attack is just their normal dodge chance - \( \frac{\text{EVA}}{\text{ACC}+\text{EVA}} \):
+</p>
+<center><div class="figure">
+	<img src="images/thompson/immunity-1.png" width="100%"/>
+</div></center>
+<center><em>Right: each doll's dodge chance, divided by G36c's. At 50 ACC, MP5 is ~10% more likely to dodge the shot than G36c is.</em></center>
+<p>
+	Thompson's EVA is only marginally below G36c's, so she doesn't scale much worse.
+	However, it becomes a bigger detriment if looking to entirely dodge more complete volleys:
+</p>
+<center><div class="figure">
+	<img src="images/thompson/immunity-5.png" width="100%"/>
+</div></center>
+
+<center><div class="figure">
+	<img src="images/thompson/immunity-10.png" width="100%"/>
+</div></center>
+<p>
+	Surprise, surprise.
+	If you want to reset until you take 0 hits, the option with far more evasion gets <em>really</em> good (relatively).
+</p>
+<p>
+	On the other hand, factors to keep in mind:
+</p>
+<ul>
+	<li>
+		Trying to dodge 10+ shots quickly becomes infeasible, even with substantial resetting, for anything not named MP5+skill 2.
+		If you're resetting a fight for the 30<sup>th</sup> time over nothing but EVA rolls you're doing something very wrong.
+	</li>
+	<li>
+		Thompson can, over time, tolerate a few more hits than the other SMGs can.
+		This is what EHP represents, and is more useful to consider if you're not aiming for absolute perfection.
+	</li>
+</ul>
+<span class="anchor" id="tiles"></span>
+<h2>Tiles<sup><small><a href="#tiles">&#35;</a></small></sup></h2>
+<p>
+	In RFSMG teams, MP5 obviously wins the tile game - her crit rate/acc tiles can be considered in the range of a 10-30% DPS boost, with a fair amount of variance depending on if you're para debuffed/have other crit rate & acc sources/are in a night battle.
+	Both G36c and Thompson give rifles nothing.
+</p>
+<p>
+	In ARSMGs, G36c has a decent edge - 10% FP and 8% ROF is a ~19% average DPS increase.
+	While ARs need ROF much less now that they can use chips, they're unlikely to already be at the cap and thus can still benefit from 8% ROF.
+	Thompson's 12% FP starts off weaker, and missing the tile behind her doesn't exactly help fix that.
+	Weighing this tile difference against Thompson's EHP advantage would require significant testing, will vary by case, and is a bit outside the scope of this writeup.
+</p>
+<span class="anchor" id="speq"></span>
+<h2>On Thompson's SPEQ<sup><small><a href="#speq">&#35;</a></small></sup></h2>
+<p>
+	These numbers include Thompson's login SPEQ (February 2022 on EN).
+	Its EVA buff is only a little above a normal T-Exo's, and the overall numbers don't change much without it.
+	As is typical with these login SPEQs, Thompson also gets a passive addition to her skill:
+</p>
+<blockquote>
+	<p>
+		[EQ Passive]: When equipped with "Thompson Exoskeleton", increase damage and critical hit rate based on percentage of HP lost. Additionally, targets will be Taunted while skill is active.
+	</p>
+</blockquote>
+<p>
+	Don't get too excited.
+</p>
+<ol>
+	<li>You can effectively "taunt" enemies by moving Thompson into the front.</li>
+	<li>
+		The damage and crit buffs are totally irrelevant. SMGs should be moving instead of attacking, have bad damage stats to begin with, and are going to be losing links against anything hard enough to be worth thinking about.
+		Losing links makes your damage fall off a cliff, even with a skill buffing it somewhat.
+	</li>
+</ol>
+<p>
+	The only real benefit to her SPEQ is its +5 EVA.
+	It's never more than a ~5% EHP increase, so it's hardly mandatory.
+	T-Exos work fine.
+</p>
+<!-- <span class="anchor" id="future"></span>
+<h2>The Future<sup><small><a href="#future">&#35;</a></small></sup></h2> -->
+
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+
+<p>
+	There's enough weirdness and other mechanics involved in evasion and survivability that there's never really one singular answer.
+	Nevertheless, I think there's more value to Thompson's kit than what a naive look at her EVA stat may tell you.
+	She may not be able to compete with MP5 mod, but there are a decent range of cases where Thompson will do significantly better than G36c.
+</p>
+<p>
+	Note that this is all based on a context of reasonably high-end gameplay and difficult encounters, for players with well-developed armories.
+	I do not recommend Thompson as a beginner tank. Use RO635 for that, and maybe raise MP5 on the side for later.
+</p>
+<p>
+	G36c will get a mod eventually, giving her a kit unlike any other SMG.
+	An upgrade for Thompson isn't entirely out of the question, but I wouldn't hold your breath.
+	While Thompson may perform a bit better than G36c in current situations, G36c may be the better long-term pick.
+</p>
+<p>
+	As always, for best results, test your teams.
+</p>
+<span class="anchor" id="notes"></span>
+<h2>Minor notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<p>
+	MP5 and G36c (to a very minor extent) get more value out of HP shields, most commonly from P22.
+	It's a flat amount of temporary HP, which lasts longer with higher evasion.
+</p>
+<p>
+	Having more base evasion makes EVA buffs slightly more effective.
+	It's not a particularly big deal - some of the tables/charts above include values with a 100% EVA buff from external sources and the relative ordering doesn't change much.
+</p>
+<p>
+	Did you know that a very small number of attacks can ignore force shields?
+</p>
+<center><div class="figure">
+	<img src="images/thompson/uhlan.jpg" width="100%"/>
+</div></center>
+<!-- Don't build this team yourself... -->
+<p>
+	Can't wait to assimilate some Uhlans for myself.
+</p>
+
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="ro635">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/ro635.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>RO635's Second Chance</b><br/>Passive analysis</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="sub2k">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/sub2k.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>SUB-2000 Analysis</b><br/>DPS at low rarities</div>
+		  </div>
+		</div>
+	</a>
+</section>
+</div>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
