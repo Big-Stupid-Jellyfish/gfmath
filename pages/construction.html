@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>Anchored Construction - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+	<h1>Anchored Construction and Probabilities</h1>
+</header>
+
+<center><em>By BigStupidJellyfish | 2022-February-26</em></center>
+
+<span class="anchor" id="nc"></span>
+<h2>Normal Construction<sup><small><a href="#nc">&#35;</a></small></sup></h2>
+
+<p>
+	Most probabilities to do with doll crafting can be done in one line on a calculator.
+	You can find per-craft probabilities on <a href="https://gf-db.github.io/gfdb/index.html">gfdb</a>, though don't be fooled by odd voodoos with tiny sample sizes - the true rate could easily be two or three standard deviations below the mean listed.
+	For some reference numbers, I'll assume a <a href="https://gf-db.github.io/gfdb/gfdb.html?type=tdoll&id=95&epoch.tdoll=98.0&sort.tdoll=[{%22sort_column%22:%22total%22,%22dir%22:1}]">0.78% rate for Type88</a> (neglecting CR).
+	Probability math is generally easier using a scale of 0 (0%) to 1 (100%), so 0.78% would be 0.0078.
+</p>
+
+<p>
+	Letting \( p \) be the rate of your doll of interest,
+</p>
+<ul>
+	<li>The chance of you getting a doll on any specific roll is \( p \) (example: 0.78% or 0.0078).</li>
+	<li>The chance of you not getting a doll on any specific roll is \( 1-p \) (example: 99.22%).</li>
+	<li>The chance of you not getting a doll in \( n \) rolls is \( (1-p)^n \) (example, 100 rolls: 0.9922^100=45.7%).</li>
+	<li>The chance of you getting at least one copy in \( n \) rolls is \( 1-(1-p)^n \) (example, 200 rolls: 1-0.9922^200=79.1%).</li>
+</ul>
+<p>
+	It's important to keep in mind that dice have no memory.
+	Suppose you've crafted for Type88 199 times with no success.
+	The probability of getting her on your next roll is still 0.78%, not 79.1%.
+	The probability of getting at least one in the <em>next</em> 200 rolls (for 399 total rolls) is 79.1%.
+	If you still haven't gotten her: that's rather unlucky (will happen to ~4.4% of people), but the odds of getting her on each successive craft remains 0.78%<!-- in the next 200 rolls after that remains 79.1%-->.
+</p>
+<p>
+	Some visual examples using a decent 5-star rate:
+</p>
+<div class="figure">
+<img src="images/construction/merciless-ex.png" width="100%"/>
+</div>
+<p>
+	Left: This how many people will have gotten their first drop on exactly craft \( x \).
+	Right: by \( x \) crafts, the percent of people who will have already gotten the doll (the cumulative distribution).
+	Not pictured: the probability of getting a copy of the doll (not necessarily the first) on craft \( x \) - it would be a flat line, with a height corresponding to its rate per craft.
+</p>
+<p>
+	A little over half the players will have gotten this doll within 200 crafts, but there's a long tail - some 7% of players still haven't seen one by 600 crafts, and there would be some people out past 1000 crafts with no luck.
+</p>
+<span class="anchor" id="ac"></span>
+<h2>Anchored Construction<sup><small><a href="#ac">&#35;</a></small></sup></h2>
+<p>
+	Introduced with the 2.08 client, anchored construction adds a sort of pity system.
+	Per introductory rateup event, you can pick one doll.
+	You start off with some small percent chance to get them, but with each failed craft it increases by a set increment.
+	While the increment is small enough to take a long time to reach 100%, your odds of succeeding before that vastly increase (imagine once it gets to 50% - how many of those in a row can you realistically fail?).
+	In other words, pay no mind to the number of crafts it would take to reach a 100% per-craft chance or, in some cases, the lower pity cap.
+</p>
+
+<p>
+	For comparison, taking the same base rate as above and adding an arbitrary increment:
+</p>
+<div class="figure">
+<img src="images/construction/anchored-ex.png" width="100%"/>
+</div>
+<p>
+	Note the tremendous shift in x-scale to make this readable.
+</p>
+<p>So anchored constructions massively improve your odds. Now, virtually everyone has gotten their target in under 100 crafts, with most of them doing so in 40-60.</p>
+
+<p>
+	You can only use anchored construction on one doll per batch, and this feature is only available with new releases.
+	It's generally preferable to save anchored construction for last if the pools overlap - you could get one doll while crafting for another.
+	To minimize resources costs, use it on rarer/more expensive dolls (MGs, not HGs).
+</p>
+<span class="anchor" id="f2022"></span>
+<h2>New Dolls: February 2022<sup><small><a href="#m2022">&#35;</a></small></sup></h2>
+<p>
+	The doll batch released on February 22 (RPK-203, SIG MCX, FX-05, AR-57, and PPD-40) was the first time on EN we got to use this system.
+	Following are the probability charts for each anchored construction option, alongside charts for their in-rateup standard crafting chances.
+</p>
+<h3>RPK-203</h3>
+<div class="figure">
+<img src="images/construction/rpk-batch-RPK-203-anchored.png" width="100%"/>
+</div>
+<div class="figure">
+<img src="images/construction/rpk-batch-RPK-203-normal.png" width="100%"/>
+</div>
+<h3>SIG MCX</h3>
+<div class="figure">
+<img src="images/construction/rpk-batch-MCX-anchored.png" width="100%"/>
+</div>
+<div class="figure">
+<img src="images/construction/rpk-batch-MCX-normal.png" width="100%"/>
+</div>
+<h3>FX-05</h3>
+<p>
+	(Pending...)
+</p>
+<h3>AR-57</h3>
+<p>
+	(Pending...)
+</p>
+<h3>PPD-40</h3>
+<p>
+	(Pending...)
+</p>
+<h3>Recommendations</h3>
+<p>
+	As the most expensive and generally most useful doll in the batch, I would generally recommend starting by using anchored construction on RPK.
+	The other dolls can be rolled for afterwards, or as targets for daily constructions.
+	It's even possible to get them while rolling for RPK.
+</p>
+<!-- <span class="anchor" id="hc"></span>
+<h2>Heavy Doll Construction<sup><small><a href="#hc">&#35;</a></small></sup></h2>
+
+<span class="anchor" id="ahc"></span>
+<h2>Anchored Heavy Doll Construction<sup><small><a href="#ahc">&#35;</a></small></sup></h2> -->
+
+<span class="anchor" id="notes"></span>
+<h2>Notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<ul>
+	<li>Compared to official recipes (some combination of 400/400/100 and 200 parts), 400/400/91/30 and its permutations appears to have near-identical rates. 170 parts/craft will add up over time, especially when crafting decent amounts of fairies, so I recommend the cheaper one.</li>
+	<li>No other voodoo recipes have strong evidence supporting their use.</li>
+	<li>If you have many recipes that have lots of variability (low sample size voodoos) and sort them by mean rate, the top ones are going to be the momentarily lucky ones. It's unlikely for their true rate to even match the displayed mean - one or two standard deviations below that is much more plausible.</li>
+	<li>Fairies are generally more important than dolls. Don't waste all your resouces crafting for a useless trophy when you could be developng fairies that make your best teams even stronger.</li>
+	<li>A true core mask is given out with each major event and during the anniversary, which you can exchange for any craftable 5-star doll. This is best saved for shotguns (LTLX) due to their high cost, though it may be justifiable to use on an exceptionally rare, highly meta-relevant doll (Carcano M91/38).</li>
+</ul>
+
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+	<section class="tiles">	
+		<a href="gacha">
+			<div class="gallery">
+			  <div class="gallerypic">
+				<img src="images/icon/gacha-bcc.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Black Cards & Completionism</b><br/>Costume gacha analysis</div>
+			  </div>
+			</div>
+		</a>
+		
+		<a href="sfstats">
+			<div class="gallery">
+				<div class="gallerypic">
+				<img src="images/icon/sfstat.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>SF Size and Keycode stats</b><br/>(experimentally)</div>
+				</div>
+			</div>
+		</a>
+		
+		<!-- <a href="hanyangle">
+			<div class="gallery">
+			  <div class="gallerypic">
+				<img src="images/icon/hanyangle.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Type88: Formation and Skins</b><br/>Performance analysis</div>
+			  </div>
+			</div>
+		</a> -->
+</section>
+	
+	<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+	
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	
+	</body>
+	</html>
