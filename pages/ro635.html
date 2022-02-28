@@ -24,11 +24,15 @@ function calculate() {
 		base_dodge = eva1 / (acc1 + eva1),
 		p_stack = Math.min(0.2+0.1*stacks1,1),
 		final_hit_rate = base_dodge + (1-base_dodge) * p_stack * base_dodge,
-		ehp = 1040 / (1-final_hit_rate)
-		ehp_improvement = (1-base_dodge) / (1-final_hit_rate);
+		ehp = 1040 / (1-final_hit_rate),
+		ehp_improvement = (1-base_dodge) / (1-final_hit_rate),
+		eff_eva = -(acc1 * final_hit_rate)/(final_hit_rate - 1),
+		eff_eva_imp = (eff_eva / eva1)-1;
+
 
 	document.getElementById("base_chance").innerHTML = Math.round(base_dodge*100) + "%";
     document.getElementById("final_chance").innerHTML = Math.round(final_hit_rate*100) + "%";
+	document.getElementById("eff_eva").innerHTML = Math.round(eff_eva)  + " (+" + Math.round(eff_eva_imp*100) + "%)";
 	document.getElementById("final_ehp").innerHTML = Math.round(ehp) + " EHP";
 	document.getElementById("final_ehp_improvement").innerHTML = Math.round((ehp_improvement-1)*100) + "%";
 }
@@ -145,12 +149,14 @@ $$ \text{P(actually dodges)} = \frac{\text{EVA}(\text{ACC}(0.1\text{D}+1.2)+\tex
 	  <tr>
 		<th>Base dodge chance</th>
 		<th>Final dodge chance</th>
+		<th>Effective EVA</th>
 		<th>Effective HP</th>
 		<th>EHP increase from passive</th>
 	  </tr>
 	  <tr>
 		<td id="base_chance">?%</td>
 		<td id="final_chance">?%</td>
+		<td id="eff_eva">? (+?%)</td>
 		<td id="final_ehp">? EHP</td>
 		<td id="final_ehp_improvement">?%</td>
 	  </tr>
