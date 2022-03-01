@@ -237,7 +237,7 @@ This isn't as much as the general T-doll rateup where many rates are doubled, bu
 <p>These numbers don't account for the +2 damage from piercing armor, but that doesn't significantly change the range of damage values or the conclusion.
 After a number of attempts I did not observe any numbers outside the expected range for one layer of K5's skill.</p>
 
-<p>The inconsistency between this and Px4's skill is odd, but hey: it's Mica.</p>
+<!-- <p>The inconsistency between this and Px4's skill is odd, but hey: it's Mica.</p> -->
 
 <span class="anchor" id="mandatory"></span>
 <h2>X is needed for Y<sup><small><a href="#mandatory">&#35;</a></small></sup></h2>
@@ -436,7 +436,8 @@ Even with it, Thompson usually has a higher effective HP.
 MP5's SPEQ is a substantial upgrade, but she has lots to offer even without it.</p>
 
 <p>That doesn't mean Thompson is actually the best force shielder - this metric entirely neglects MP5's second skill, which will boost her survivability after her shield expires.
-It's also worth keeping in mind tile differences - in a RFSMG echelon, MP5's tiles will significantly increase her value compared to other shield SMGs that only buff ARs.</p>
+It's also worth keeping in mind tile differences - in a RFSMG echelon, MP5's tiles will significantly increase her value compared to other shield SMGs that only buff ARs.
+For even more stuff about force shielders (especially Thompson), <a href="thompson">check this page out</a>.</p>
 
 <p>
 	I expect this would be a relatively minor effect, but it's also worth mentioning that shield HP (P22/HS2000/Shield fairy) helps dolls with higher evasion more.
@@ -560,6 +561,7 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 		<li>One obvious case of this is with SL8. In normal RFHG echelons, she may appear to underperform by a little when compared to the other rifle.
 			This is expected, and a good sign - her tiles give the other rifle an extra 10% damage, so they will do a bit more relative damage. <!-- Good sign assuming they're expected to deal about equal damage otherwise. -->
 		</li>
+		<li>Similarly, Ribeyrolles is never going to be topping a damage chart. On its own, the chart won't show you how much her buffs are contributing.</li>
 	</ul>
 	<li>It counts damage <em>inflicted</em>. A few implications of that:</li>
 	<ul>
@@ -574,8 +576,8 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 		</li>
 	</ul>
 	<li>Battle conditions are very dynamic, so a snapshot at any given time doesn't say much about the whole battle or other battles.</li>
-	<li>Not all damage is created equal - taking out some Doppels is much more important than cleaning up a few Strelets in front.
-		On the other hand, chip damage against that same doppel is worthless if Grape snipes it shortly after.
+	<li>Not all damage is created equal - taking out Doppels is much more important than cleaning up a few Strelets in front.
+		On the other hand, partial damage against that same doppel is worthless if Grape snipes it shortly after.
 	</li>
 	<li>RNG. Damage variance, crits, accuracy, random targeting, kiting variations, and so on all contribute to making battle outcomes vary significantly.</li>
 	<li>Differences may not be significant.
@@ -587,6 +589,11 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 	<li>
 		Enemy shields and other weird mechanics (looking at you, Orthrus) aren't always represented well.
 	</li>
+	<ul>
+		<li>One particularly odd note: the in-battle damage chart appears not to count damage dealt to HP shields, but the endscreen in Target Practice does.
+			The two can therefore be at odds with each other at times.
+		</li>
+	</ul>
 </ul>
 
 <!-- <p>
@@ -602,7 +609,7 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 
 
 <span class="anchor" id="twentyfive"></span>
-<h2>With the upcoming #2 chip, use VFLs if fairy crit damage >25% and EOTs otherwise<sup><small><a href="#twentyfive">&#35;</a></small></sup></h2>
+<h2>With the upcoming #2 chip, use VFLs if fairy crit damage &gt;25% and EOTs otherwise<sup><small><a href="#twentyfive">&#35;</a></small></sup></h2>
 <!-- TODO: remove "upcoming" when these actually get released -->
 
 <p><strong>Status:</strong> false.</p>
@@ -688,6 +695,7 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 </p>
 <ol>
 	<li>Accuracy is less useful the more of it you have. You can read more about that <a href="evasion#acc">over here</a>. Rifles generally have a lot of accuracy.</li>
+	<li>The DPS loss from reduced accuracy cannot exceed the percentage loss in accuracy (and it only matches as enemy evasion grows arbitrarily high). 20% lower ACC is never more than 20% less average damage.</li>
 	<li>Good handguns often include even more accuracy: 60% from Calico, Px4 Storm, and SAA; 50% from P22 and Clear. Many useful fairies also give big accuracy buffs (Warrior 80%, Taunt 58%).</li>
 	<li>
 		Type88 has an absurdly strong skill set that few other rifles can match.
@@ -710,8 +718,8 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 	Consider two options:
 </p>
 <ol>
-	<li>Use a normal buffing HG on position 5, with tiles that give a ~30% DPS buff to both rifles and a skill that adds ~25% more DPS.</li>
-	<li>Replace that HG with some SMG, losing those buffs and giving SL8 an additional 5% FP from her skill.</li>
+	<li>Use a normal buffing HG on position 5, with tiles that give a permanent ~30% DPS buff to both rifles and a skill that adds ~25% more DPS.</li>
+	<li>Replace that HG with some SMG, losing those buffs and giving just SL8 5% FP during her active.</li>
 </ol>
 <p>
 	In that case, there <em>could</em> be some merit to using a SMG if you need more tanking and Twin/Taunt/Beach aren't options.
@@ -751,7 +759,7 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 <p>
 	Damage vulnerability is calculated after armor, and MG firing speed is not affected by reload speed.
 	The debuffs are therefore relatively minor on MGSG echelons that have sufficient armor.
-	For an empirical test, see the rightmost set of tests here:
+	For an empirical test, see the rightmost set here:
 </p>
 <center>
 <div class="figure">
@@ -766,7 +774,7 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 <p>
 	It's important to keep in mind that the skill not always being bad does not mean it's good.
 	Kouji's active is only acceptable in specific echelons, and her aura is awful.
-	For big DPS numbers, just use Command/Para/Warrior/Beach/Combo/etc.
+	For the biggest DPS numbers, just use Command/Para/Warrior/Beach/Combo/etc.
 	For bigger DPS numbers than what Kouji gives, use almost any fairy.
 </p>
 
