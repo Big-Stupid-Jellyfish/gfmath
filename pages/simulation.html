@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>The Problem with Damage Simulators - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>The Problem with Damage Simulators</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-February-28</em></center>
+
+<blockquote>
+	<!-- <p><strong>Shared Vengeance</strong> ICD 1s/CD 1s</p> -->
+	<p>
+		When a measure becomes a target, it ceases to be a good measure.
+	</p>
+</blockquote>
+<center><em>-Goodhart's law</em></center>
+
+<p>
+	Girls' Frontline has a lot of dolls, with all sorts of unique mechanics, skills, tile combinations, and more to influence combat.
+	To provide people with better ways of understanding how echelons perform and craft stronger formations, a few online damage simulators were developed.
+	The only reasonably current/functional sim is <a href="https://hycdes.com/pages/GFT_Echelon.html">Hycdes</a>, but before that there was also the Brainlets damage sim (at some point picked up by Matsuda, and eventually abandoned.)
+	Either way, they work in a similar fashion - place some dolls in formation, edit their equipment and fairy, define enemy stats, and get some damage-over-time numbers.
+</p>
+<center>
+<div class="figure">
+	<img src="images/simulation/sim-team.png" width="60%"/>
+</div>
+<div class="figure">
+	<img src="images/simulation/sim-results.png" width="60%"/>
+</div><em>An example setup.</em></center>
+<p>
+	I get the feeling that, for a lot of people, these results are considered an important part of building and evaluating teams.
+	Today, I'd like to talk about the limitations such sims face - any such program, in fact.
+	While Hycdes is the only currently usable damage simulator I can reference, this is not a matter exclusive to it.
+</p>
+<span class="anchor" id="sanity"></span>
+<h2>Sanity Check<sup><small><a href="#sanity">&#35;</a></small></sup></h2>
+<p>
+	Starting with an easy question: do these simulators get the right numbers at all?
+	The closest in-game setup I can think of to a simulator is an echelon of dolls with no special skills, against a lone Target Practice dummy.
+	We can compare the actual clear times against the time a damage simulator lists to deal that much damage, and see if they line up.
+</p>
+<p>
+	Damage variance, accuracy/crit RNG, and walk time differences will mean getting an exact match is unlikely, no matter how accurate the simulator is.
+	You can click the "100x average" button in Hycdes several times and see a bit of variance even after taking that many trials, or "Run Once" for even more variation.
+	Longer battles will help reduce the influence of these factors.
+</p>
+
+<div class="figure">
+	<img src="images/simulation/basic-dummy.png" width="100%"/>
+</div>
+<p>
+	Results look pretty good. There is a minor difference with the walk times: with the dolls in a forward F formation, they appear to begin damaging the dummy almost immediately.
+	The usual start-of-battle lag makes it difficult to measure exactly how much time this takes, especially as battle seems to begin before the loading screen even starts to open.
+	This experiment was done back when we still had the brainlets sim, which showed 0.43s passing before the first bit of damage is dealt.
+	The "adjusted prediction" subtracts that difference, and the average measured performance seems to consistently fall inbetween the two.
+</p>
+<p>
+	We can also look at its numbers in reference to hand calculations.
+	Using my typical methods for calculating DPS, results are within 1-2% of Hycdes' 100-run averages.
+</p>
+<div class="figure">
+	<img src="images/simulation/g41-handcalcs.png" width="100%"/>
+</div>
+<p>
+	That's far smaller a difference than anything that could reasonably be detected in normal combat.
+	(To further simplify the scenario, a large delay was added to G41's skill so that it's effectively turned off.)
+</p>
+<p>
+	You'll have to take my word for it now, but the Brainlets sim was also accurate enough in this regard.
+</p>
+<span class="anchor" id="sf"></span>
+<h2>Midgame SF<sup><small><a href="#sf">&#35;</a></small></sup></h2>
+<p><em>(Note: the following, and previous, tests are lifted from an earlier draft of this writeup before chips were implemented. Exact values will vary, but the same principles still apply.)</em></p>
+<p>
+	So, we can expect reasonably accurate numbers from a damage simulator when everything we're doing lines up with its assumptions.
+	Let's add some difficulty and replace the stationary dummy with some real enemies.
+	They fight back, have far more dummies, and will get weaker as you kill their links.
+	We're still using basic direct-fire dolls and aren't kiting.
+</p>
+
+<div class="figure">
+	<img src="images/simulation/analysis-10-1.png" width="100%"/>
+</div>
+
+<p>
+	Problems show up rather quickly.
+	Overkill, link protection, and so on will make enemies take longer to kill.
+	AN-94's skill has a passive component the simulator doesn't model, so she should perform better in practice.
+	Despite that, real clear times were 15-20% slower than the simulator prediction across the board (whereas if AN-94's skill was the dominant factor we'd expect to clear faster in practice).
+</p>
+<div class="figure">
+	<img src="images/simulation/chart-10-1.png" width="100%"/>
+</div>
+<p>
+	While the simulator cannot give any sort of estimate of this, I've also charted the damage taken against each enemy to the right.
+	This is often a much more important metric than clear time.
+</p>
+
+<p>
+	Let's replace AN-94 with CZ2000 to see if we get any better predictions, and swap out the enemies for a new roster from 10-3E.
+</p>
+<div class="figure">
+	<img src="images/simulation/analysis-10-3E.png" width="100%"/>
+</div>
+
+<div class="figure">
+	<img src="images/simulation/chart-10-3E.png" width="100%"/>
+</div>
+<p>
+	Still mostly in the 15-20% error range.
+	The estimate for id1586 was a bit closer (-11%), but that's also with a fairly wild evasion value plugged in - there's a lot of Guards with 0 evasion, and some Scouts with 80 evasion.
+	Taking the HP-weighted average evasion is not <em>awful</em>, but it's certainly not accurate.
+	It's entirely possible this estimate is simply bad in the opposite direction so the estimate is moved closer to the true time.
+</p>
+
+<span class="anchor" id="from-bad-to-worse"></span>
+<h2>From bad to worse<sup><small><a href="#from-bad-to-worse">&#35;</a></small></sup></h2>
+<p>
+	Damage simulators start having issues even in the simplest possible real battles.
+	Combat in Girls' Frontline goes much farther than that.
+</p>
+<h3>Grenades</h3>
+<p>
+	Suppose you want to use 416 mod in your ARSMG.
+	She launches a grenade 6 seconds in, doing 16x damage to each link it hits.
+	A simulator will assume some arbitrary number of enemy links here, and multiply that by 16 and report that as its damage.
+</p>
+<p>
+	Now, consider whatever enemy group you're up against.
+	Suppose it's something like this:
+</p>
+<div class="figure">
+	<img src="images/simulation/random-enemies.png" width="100%"/>
+</div>
+<p>
+	How many enemies will 416's grenade hit?
+	You could say that there are 3+4 5-linked enemies, but you'll obviously have killed at <em>least</em> some of the brutes.
+	But what if there's one partially-linked Brute left, and it takes the whole grenade?
+	What if you kill that Brute just in time and her grenade instead deletes every single Striker?
+</p>
+<p>
+	Either way, those enemies pictured have at most 1140 HP/link.
+	With no external buffs and all SPEQs, 416 has 111 FP. Her grenade will deal on average 1776 damage per link, already massively overkilling whatever it does hit.
+	But damage simulators don't know this, and will tell you that every FP buff you add to 416 will continue sending her grenade damage higher and higher.
+</p>
+<p>
+	Incidentally, as her grenade will always kill anything it hits in that example, we know her second skill will trigger a secondary explosion.
+	Damage simulators, again, don't know this.
+	They might offer you a toggle box to choose between that effect and the damage amp option, but in many cases the result isn't guaranteed.
+	(And how much is the damage sim helping you if you need to carefully check the mechanics of each individual fight to configure it?)
+</p>
+<p>
+	This is one of the larger sources of error that cause damage simulators to assign bigger numbers to 2AR1HG backlines over 3AR ones, despite the latter <a href="2v3ar">typically performing better in actual combat</a>.
+</p>
+<h3>Piercing</h3>
+<p>
+	It is completely impossible for damage simulators to <em>ever</em> give you even vaguely accurate numbers corresponding to the performance of dolls with piercing skills: Type88 mod, 4 Shiki, Kord, and so on.
+	Kiting pattern variations, hitbox spaghetti, varying enemy ranges and starting positions, and so much more mean the number of enemies pierced each fight is only discoverable through observation and testing.
+</p>
+<h3>Targeting</h3>
+<p>
+	When shooting a single infinite-health dummy, there's hardly a way to distinguish different targeting types.
+	They clearly matter, however - <a href="augelica">AUG tends to do better than Angelica (pre-chip)</a> from her random spray, despite a theoretical DPS disadvantage.
+	Liu's targeting modes can <a href="glue">significantly change your results</a>.
+	ARSMG teams tend to suffer against Guard/Jaeger comps as the Jaegers have plenty of time to rip your SMGs apart.
+</p>
+<p>
+	Targeting matters, and theoretical damage numbers don't tell you about this.
+</p>
+<h3>Other Skillshots</h3>
+<p>
+	The utility of skillshots is highly dependent on two factors:
+</p>
+<ol>
+	<li>The value of the target they hit</li>
+	<li>If they successfully take out that target</li>
+</ol>
+<p>
+	How helpful damage charts are here should be rather obvious.
+</p>
+<h3>Conditional Skills</h3>
+<p>
+	G11 mod gains damage based on the max HP of what she shoots.
+	This obviously can vary wildly by encounter, and even throughout the fight against mixed groups.
+	Simulators cannot assign any sort of generally applicable value to this.
+</p>
+<p>
+	Uzi's flames spread to nearby enemies.
+	How many?
+	Simulators don't know.
+</p>
+<p>
+	NTW needs to kill enemies with each skill shot to chain them.
+	Mosin gets FP/ROF boosts depending on how and when she kills them.
+</p>
+<p>
+	Stechkin reduces the EVA of low-HP enemies.
+</p>
+<p>
+	G3's grenade gets different effects based on what % HP enemies have left.
+</p>
+<p>
+	SVCh gets FP buffs by switching targets.
+</p>
+<p>
+	AK-Alfa does more damage to enemies in front of her.
+</p>
+<p>
+	<a href="ak15">AK-15</a> strains herself more against larger groups.
+</p>
+<p>
+	Desert Eagle makes specific enemies vulnerable and prioritizes them.
+</p>
+<p>
+	QBU has an explosive active and does another whenever she attacks the same target thrice.
+</p>
+<p>
+	Grape does 45x damage to a non-elite, almost certainly massive overkill. (But very effective!)
+</p>
+<p>
+	I could go on and on scrolling through my armory, but hopefully you get the idea.
+	None of these skill mechanics can be decently represented by damage simulators.
+	The numbers it gives you when you do put these dolls in becomes pretty much nonsense.
+</p>
+<h3>Non-offensive skills</h3>
+<p>
+	A damage simulator will tell you that <a href="px4">Px4 Storm</a> is almost always better than P22.
+	Ranking usage statistics make it clear players don't feel the same way.
+	The EVA & shield buffs are really good, but damage simulators can't assign any value to those.
+</p>
+<p>
+	Damage sims can't tell you anything remotely useful if trying to decide between UMP45, UMP9, or RO635 as your main tank.
+</p>
+<p>
+	ADS has a halfhearted grenade, but isn't really a damage dealer.
+	How good are her debuffs when compared to a normal selfbuffer?
+</p>
+<p>
+	Does Welrod reduce the overall damage you take, or would a buffer be better?
+</p>
+<p>
+	How much does M950A's slow field help?
+	Her MS buff?
+</p>
+<p>
+	Does some echelon have enough armor/other buffs for M500's shieldspam to be enough to survive?
+</p>
+<p>
+	Damage simulators tell you about damage (rather poorly).
+	Damage matters, but is a far cry away from everything involved in proper teambuilding.
+</p>
+<span class="anchor" id="enemies"></span>
+<h2>Enemies<sup><small><a href="#enemies">&#35;</a></small></sup></h2>
+<p>
+	The enemies you face also don't always map on that well to damage results.
+	Many bosses have iframes, making them immortal for periods of time.
+	Orthrus care a lot about your initial damage, and then about how many hits per second you can get out.
+	No single enemy statline can be assigned in a simulator to a Hydra/Cyclops mob.
+	Patrollers are best countered with manual skill control, and surehit burst attacks.
+	Minotaurus require kiting to evade their tasers, and alternate between their normal mode and a mode where they take 80% less damage.
+</p>
+<span class="anchor" id="spaghetti"></span>
+<h2>Spaghetti<sup><small><a href="#spaghetti">&#35;</a></small></sup></h2>
+<p>
+	Damage simulators are made by players of the game, not developers.
+	There are a lot of weird behaviors that border on bugs in actual combat.
+	Said behaviors have no guarantees of being properly implemented, and can be a big deal in the end result.
+</p>
+<p>
+	Did you know that Webley's buff applies two frames after most HG skills would?
+	This makes it able to apply its CDR even to skills that activate momentarily afterwards.
+	Your guess is as good as mine as to if that is accurately programmed in.
+</p>
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	Damage simulators are at best a questionable measurement of a team's offensive capabilities.
+	They can be mildly useful when handled with extreme caution, but have many ways to lead you far astray.
+	<!-- However, they face a large number of limitations and absolutely cannot be relied on as a primary teambuilding guide. -->
+</p>
+<p>
+	<em>Please</em> take any damage simulator results for a full echelon with a grain of salt.
+	I would not consider it even remotely convincing evidence of any teambuilding-related idea.
+	Almost any analysis I do relies heavily on some mix of hand calculations and data from combat in Target Practice, and it's for a reason - almost nothing a damage simulator outputs is helpful to me.
+	At least hand calculations let me be very careful and aware of the assumptions I make, and how the results are interpreted.
+</p>
+<p>
+	Average skill complexity is on a clear upwards trajectory - these issues are only getting more and more severe.
+	Many modern echelons are already 4 or 5/5 on dolls not even remotely well approximated by a damage simulator.
+</p>
+<p>
+	Proper analysis depends on all sorts of methods and variables so it's hard to give a singular answer on what to use instead.
+	A basic napkin calculation may be all you need in some cases.
+	In others, even hundreds of test runs would fall short of proper support.
+</p>
+<!-- <span class="anchor" id="notes"></span>
+<h2>Minor notes<sup><small><a href="#notes">&#35;</a></small></sup></h2> -->
+
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="myths">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/myths.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Common Myths</b><br/>Mechanical misconceptions</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="pp-19">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/pp-19.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Testing PP-19's mod</b><br/>Compared to Uzi & Vector</div>
+		  </div>
+		</div>
+	</a>
+</section>
+</div>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
