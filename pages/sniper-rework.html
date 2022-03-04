@@ -1,0 +1,414 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>The New Sniper Fairy - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>The New Sniper Fairy</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-March-03</em></center>
+
+<p>
+	Four fairies got their <a href="https://twitter.com/GirlsFrontlineE/status/1497101420792717313">skills reworked recently</a>, though Defense has been delayed to the 2.09 client.
+	Perhaps we'll go over the others later, but for now, let's just look at this shiny new Sniper fairy skill:
+</p>
+<blockquote>
+	<p><strong>Sniper Command</strong> Skill Cost: 1 Fairy Command</p>
+	<p>
+		Every 3 seconds, fire a sniper shot at the enemy unit with the highest HP, dealing damage that equals 15% of their maximum HP and inflicting 20% vulnerability on them, lasting for 5 seconds.
+		Damage dealt to units below 50% health is doubled.
+		Baseline sniper shot damage is capped at 20000.
+	</p>
+</blockquote>
+
+<p>
+	Previously, it fired a single shot dealing 20000 damage at SL10, which would land ~10.3 seconds into battle.
+	This was incredibly disappointing, and most sensible players took it as parachute fodder.
+	Not being such a person, I happened to raise one a while back.
+	Now, let's test it out and see how bad of a decision that was, ultimately.
+</p>
+<p>
+	Just by reading its skill, a few things come to mind:
+</p>
+<ul>
+	<li>It's more effective against smaller groups (there's a higher chance your dolls are shooting the vulnerable ones)</li>
+	<li>It's more effective against high-HP enemies. Its damage caps at 20000 for enemies with more than \( \frac{20{,}000}{15\%} = 133{,}333 \text{ HP} \).</li>
+	<li>With a shot delay of 3 seconds and a vulnerability duration of 5 seconds, it can maintain 100% uptime against a single target.</li>
+	<li>While it helps the Sniper deal more damage, highest HP targeting often isn't that great. It's likely to prioritize non-threatening tanky frontliners (Guards/Aegis) over deadly backlines (Centaurus/Jaegers/Cerynitis).</li>
+	<li>Against standard mobs, expect single instances of damage to be disappointing due to link protection. See also: <a href="https://i.imgur.com/zUxZ8uL.png">Dreamer's abysmal performance</a> as support in 8-2 SF dragging.</li>
+	<!-- <li>The vulnerability debuff can?cannot stack with itself.</li> -->
+	<!-- <li>You may get a little more value out of dolls that target the highest-HP enemies (unless the sniper shot makes them no longer have the most).</li> -->
+</ul>
+<span class="anchor" id="functionality"></span>
+<h2>Functional details<sup><small><a href="#functionality">&#35;</a></small></sup></h2>
+<!-- Damage variance? Damage cap vs vulnerability? Vulnerability stacking? Shot timings? -->
+<p>
+	As skill descriptions tend to be at least a little ambiguous, some other details on its skill:
+</p>
+<ul>
+	<li>As usual for fairies (see also: Artillery, Airstrike), there isn't any damage variance.</li>
+	<li>The vulnerability effect does not stack. <a href="https://i.imgur.com/sKVg8N3.png">See a test of that here</a>. Subsequent sniper shots are affected by its previously applied vulnerability, however.</li>
+	<li>Against a stationary dummy, its first shots arrived at: 3.67s, 6.67s, 9.67, and so on. There is some bullet travel time but each shot arrives exactly 3 seconds apart.</li>
+	<li>Damage is indeed based on maximum HP, rather than per-link HP. It will also do its maximum damage against a 5-linked enemy with 26,667 HP/link or more.</li>
+	<li>It's not that great at math - against a 100,000 HP dummy it should do 15%*100,000 = 15,000 damage, but instead we see:</li>
+</ul>
+<div class="figure">
+	<img src="images/sniper-rework/rounding.png" width="100%"/>
+</div>
+<ul>
+	<li>Same deal with its vulnerability applied:</li>
+</ul>
+<div class="figure">
+	<img src="images/sniper-rework/rounding2.png" width="100%"/>
+</div>
+<ul>
+	<li>While its shots are capped at 20,000 damage, the vulnerability effect lets it go slightly higher (but now we have -1 damage instead of +1 for whatever reason, maybe something floating point related?):</li>
+</ul>
+<div class="figure">
+	<img src="images/sniper-rework/cap.png" width="100%"/>
+</div>
+<ul>
+	<li>The doubled damage below 50% health is subject to the same cap:</li>
+</ul>
+<div class="figure">
+	<img src="images/sniper-rework/cap2.png" width="100%"/>
+</div><center><em>This is once again the 100,000 HP dummy - 15001 damage normally, 18001 with vulnerability. It was below 50% HP, and the damage is clearly still capped.</em></center>
+<ul>
+	<li>It is affected by HP-35's vulnerability, and they stack: 20,000*1.2*1.08*1.18=30585.6, which rounds down to 30585 damage:</li>
+</ul>
+<div class="figure">
+	<img src="images/sniper-rework/vulnerability.png" width="100%"/>
+</div><center><em>It working doesn't mean it's a killer team combination, though.</em></center>
+
+<span class="anchor" id="aura"></span>
+<h2>Aura<sup><small><a href="#aura">&#35;</a></small></sup></h2>
+<p>
+	Sniper's aura was not changed (36% crit damage, 88% ACC, 28% EVA, 15% armor at 5 stars), so the usual applies.
+	It's not particularly great, but could be worse.
+	It's typically in the range of a 35-50% net DPS buff, or up to ~70% when its accuracy is particularly valuable.
+	<a href="https://docs.google.com/spreadsheets/d/1NqGWi8WF-sh-Eb6x-dCi3KvkYHRIkG5WCch2tuQahgc/edit#gid=738821234">You can see some more comparisons with other fairies here</a>.
+</p>
+<p>
+	If you aren't using its new active skill, there are much better options.
+</p>
+
+<span class="anchor" id="dps"></span>
+<h2>DPS Estimation<sup><small><a href="#dps">&#35;</a></small></sup></h2>
+<p>
+	Combining flat damage and vulnerability all in our heads gets a bit tricky, so let's run a few simple tests with real teams and fake enemies to get some ballpark estimations of how much its active skill contributes.
+	First, with a generic RFHG echelon (Rico/Lee/Calico/P22/5-7), 5* Fervor Sniper:
+</p>
+<center>
+	<table style="width:auto; text-align:center;">
+		<tr>
+			<th style="text-align:center;">Dummy HP</th>
+			<th style="text-align:center;">EVA</th>
+			<th style="text-align:center;">Avg. clear time (no active)</th>
+			<th style="text-align:center;">Avg. clear time (active)</th>
+			<th style="text-align:center;">Est. DPS (no active)</th>
+			<th style="text-align:center;">Est. DPS (active)</th>
+		</tr>
+		<tr>
+			<td>500,000</td>
+			<td>84</td>
+			<td>30.08</td> <!-- 30.40 30.27 29.57 -->
+			<td>21.14</td> <!-- 20.90 21.63 20.90 -->
+			<td>16622</td>
+			<td>23648 (+42%)</td>
+		</tr>
+		<tr>
+			<td>500,000</td>
+			<td>14</td>
+			<td>26.03</td> <!-- 26.23 25.97 25.90 -->
+			<td>19.18</td> <!-- 19.20 19.20 19.13 -->
+			<td>19206</td>
+			<td>26073 (+36%)</td>
+		</tr>
+		<tr>
+			<td>200,000</td>
+			<td>70</td>
+			<td>14.36</td> <!-- 14.2 14.67 14.20 -->
+			<td>10.20</td> <!-- 10.20 10.20 10.20 -->
+			<td>13931</td>
+			<td>19608 (+41%)</td>
+		</tr>
+		<tr>
+			<td>200,000</td>
+			<td>12</td>
+			<td>12.75</td> <!-- 12.43 12.73 13.10 -->
+			<td>10.17</td> <!-- 10.20 10.10 10.20 -->
+			<td>15682</td>
+			<td>19672 (+25%)</td>
+		</tr>
+		<tr>
+			<td>100,000</td>
+			<td>210</td>
+			<td>9.99</td> <!-- 10.10 10.10 9.77 -->
+			<td>7.20</td> <!-- 7.20 7.20 7.20 -->
+			<td>10010</td>
+			<td>13889 (+39%)</td>
+		</tr>
+	</table>
+</center>
+
+<p>
+	For a little variety, the same dummy set with an ARSMG (STAR/M4/G11/RO/Dorothy):
+</p>
+<center>
+	<table style="width:auto; text-align:center;">
+		<tr>
+			<th style="text-align:center;">Dummy HP</th>
+			<th style="text-align:center;">EVA</th>
+			<th style="text-align:center;">Avg. clear time (no active)</th>
+			<th style="text-align:center;">Avg. clear time (active)</th>
+			<th style="text-align:center;">Est. DPS (no active)</th>
+			<th style="text-align:center;">Est. DPS (active)</th>
+		</tr>
+		<tr>
+			<td>500,000</td>
+			<td>84</td>
+			<td>43.06</td> <!-- 43.23 43.23 42.73 -->
+			<td>25.96</td> <!-- 25.93 25.73 26.23 -->
+			<td>11611</td>
+			<td>19258 (+66%)</td>
+		</tr>
+		<tr>
+			<td>500,000</td>
+			<td>14</td>
+			<td>33.58</td> <!-- 33.27 33.57 33.90 -->
+			<td>22.30</td> <!-- 22.30 22.30 22.30 -->
+			<td>14890</td>
+			<td>22422 (+51%)</td>
+		</tr>
+		<tr>
+			<td>200,000</td>
+			<td>70</td>
+			<td>19.19</td> <!-- 18.67 18.90 20.00 -->
+			<td>12.32</td> <!-- 10.80 12.87 13.30 -->
+			<td>10422</td>
+			<td>16229 (+56%)</td>
+		</tr>
+		<tr>
+			<td>200,000</td>
+			<td>12</td>
+			<td>14.34</td> <!-- 14.27 14.43 14.33 -->
+			<td>10.30</td> <!-- 10.30 10.30 10.30 -->
+			<td>13944</td>
+			<td>19417 (+39%)</td>
+		</tr>
+		<tr>
+			<td>100,000</td>
+			<td>210</td>
+			<td>13.67</td> <!-- 13.47 14.00 13.53 -->
+			<td>8.85</td> <!-- 9.07 8.50 8.97 -->
+			<td>7317</td>
+			<td>11304 (+54%)</td>
+		</tr>
+	</table>
+</center>
+<p>
+	If we arbitrarily assume Sniper gives +40% DPS or so from its aura and +40% from its skill, that's a net ~96% DPS increase against lone, high-HP targets - about on the level of a Parachute fairy.
+	It should perform much better than midrange statsticks like Artillery, at the cost of fairy commands.
+</p>
+
+<span class="anchor" id="testing"></span>
+<h2>Combat Testing<sup><small><a href="#testing">&#35;</a></small></sup></h2>
+<p>
+	Boss battles make up a relatively small percentage of battles in Girls' Frontline.
+	Let's run some more practical tests against everyday foes, and see how its performance compares to more standard fairy picks.
+</p>
+<h3>Round 1</h3>
+<p>
+	Testing 5-star fairies with strong teams runs the risk of all options returning with next to no damage taken, so I'll include some not-so-impressive dolls.
+</p>
+<center><div class="figure">
+	<img src="images/sniper-rework/sniper-test-1.png" width="100%"/>
+</div><em>Beach's pushback meant the team often had to walk to the last Doppel, lengthening clear times.</em></center>
+<p>
+	Times are not zero-scaled to make differences readable - all were in a relatively similar 14-15 second range.
+	If you'd like all these charts with 0-scaled clear times, see <a href="https://imgur.com/a/AUxSi46">this album</a>.
+</p>
+<p>
+	Not <em>fantastic</em> - Sniper was one of the slower fairies, and took more damage than most.
+	Then again, those results are about on the level of Artillery's.
+</p>
+<p>
+	Note that Artillery/Sand Dancer/Defense were tested without their actives.
+	To minimize confounding variables the Artillery tested had Fervor (but is unskilled), while my skilled Artillery has Damage II.
+	Its skill is near-useless anyways.
+	Strategy fairies don't work in target saving.
+	The latter two are just included to give more moderate auras some representation.
+	Clearly, Defense was often not quite enough to stop the Doppels before their grenades start flying (some results extend off the graph to keep other fairies readable - one run took 1139 damage!).
+</p>
+<h3>Round 2</h3>
+<p>
+	That was a lot of test runs, so in the interest of time and variety I'll cut out a few fairies on the following tests:
+</p>
+<ul>
+	<li>Command is basically just Parachute but marginally worse.</li>
+	<li>Sand Dancer/Defense, while decent proxies for fairies with weaker auras, aren't exactly being fairly represented.</li>
+</ul>
+<p>
+	So, with "only" five fairies to test per configuration:
+</p>
+<center><div class="figure">
+	<img src="images/sniper-rework/sniper-test-2.png" width="100%"/>
+</div><em>Sniper and Artillery at the "bottom," this time.</em></center>
+<p>
+	A HG was swapped for RO to not completely die vs the Gunners, and with how few buffs were going around the ROF from Warrior was greatly appreciated.
+	Beach wasn't able to make the encounter 0-damage, but it alongside Para & Warrior had a clear advantage.
+</p>
+<p>
+	Running a similar set of tests to the dummy ones <a href="#dps">earlier</a> indicates Sniper's active provided only a ~10% DPS boost here (on top of the aura).
+	<!-- I'd do the same for the first set but I unequipped some dolls before remembering to and have no clue what the exo/flare calibration was on each HG. -->
+</p>
+<h3>Round 3</h3>
+<center><div class="figure">
+	<img src="images/sniper-rework/sniper-test-3.png" width="100%"/>
+</div><em>A small part of the sniper whisker got covered up by the echelon screenshot - it's basically the same as Artillery's.</em></center>
+<p>
+	Beach/Parachute/Warrior performed similarly well, and Sniper was around the level of Artillery.
+</p>
+<p>
+	Sniper's active was only a ~5% DPS boost this time - no individual mob lasted long with or without its vulnerability applied.
+</p>
+<h3>Keep in mind...</h3>
+<p>
+	Taunt and Twin fairies were not included in the testing - this is because they tend to influence teambuilding too much for direct comparisons, even if they are potent options.
+	For example, consider your classic Theater Uhlan battle.
+	With a Taunt fairy, you're free to just throw a normal 2RF3HG echelon at it.
+	Without, you may want to use some M500-LTLX-Python echelon to block their attacks.
+	Trying to compare clear times/damage taken between these will get you nowhere.
+</p>
+<p>
+	But if you're already willing to spend fairy commands, there's a good chance Taunt/Twin will let you clear fights with much less damage taken than any of these.
+</p>
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	The rework made Sniper less of an embarrassment to the fairy pool, and there's now some merit to raising one.
+	Somewhat approximately, I'd say it performs at about the level of an Artillery fairy in normal fights (at the cost of commands), and can reach the level of a Command/Para fairy against single targets.
+</p>
+<p>
+	However, long term, I don't see it standing out much from stuff like Warrior/Fury/Airstrike.
+	It doesn't appear to <em>exceed</em> Command/Para in damage output, and has no particularly unique utility.
+	I'd be inclined to recommend still using it as fodder - they can help you get your Sand Dancer to 5* (which has confirmed future competitive use and its own unique niche), and once you have a 5* Parachute or two the damage from Sniper's active isn't anything that impressive.
+</p>
+<!-- <p>
+	Then again, that might be a bit too high of a standard. Warrior/Fury/Airstrike similarly don't see much use by that point.
+</p> -->
+<p>
+	As always, for maximum fairy DPS, raise a Combo.
+	You'll probably never use it, but it's at least a nice flex.
+</p>
+<center><div class="figure">
+	<img src="images/sniper-rework/combo.png" width="12%"/>
+</div><em>Probably not worth it, actually.</em></center>
+
+<p>
+	If you really must raise a Sniper, I strongly recommend waiting until you pull one with Fervor and raising that.
+	Aside from being <a href="fairy-talents">a generally awesome talent</a>, Sniper only starts to perform in longer (boss-type) battles where Fervor has a huge advantage.
+</p>
+<span class="anchor" id="notes"></span>
+<h2>Minor notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+
+<p>
+	Sniper is theoretically a little nicer if there's lots of walk time involved - its shots contribute more damage relative to your dolls.
+	This really doesn't matter.
+</p>
+<p>
+	Vulnerability lets your HOCs do more damage, but if you're using sniper it's hopefully against high-HP low-link enemies which HOCs don't do much to anyways.
+</p>
+<p>
+	RO635's mod skill only works off of the debuffs specifically listed (plus ROF), so there's no interaction there.
+</p>
+<p>
+	I have to wonder why Barrier didn't get a rework - it was surely even worse than Sniper's old state.
+	Or perhaps they're saving it for a batch where they adjust auras as well?
+</p>
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="simulation">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/simulation.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>The Problem with Damage Simulators</b><br/>On real performance and models of it</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="fairy-talents">
+		<div class="gallery">
+			<div class="gallerypic">
+				<img src="images/icon/fairy-talents.jpg" alt="" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Picking Fairy Talents</b><br/>Fervor versus Damage II</div>
+			</div>
+		</div>
+	</a>
+	<!-- <a href="manual-labor">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/manual-labor.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Rico Skill Analysis</b><br/>Force manual vs Autoskill</div>
+		  </div>
+		</div>
+	</a> -->
+</section>
+</div>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
