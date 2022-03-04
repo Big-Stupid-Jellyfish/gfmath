@@ -40,7 +40,7 @@ gtag('config', 'G-805N997DPC');
 	<h1>TKB-408 Analysis</h1>
 </header>
 
-<center><em>By BigStupidJellyfish | 2021-September-08 | Last updated 2021-December-16</em></center>
+<center><em>By BigStupidJellyfish | 2021-September-08 | Last updated 2022-March-04</em></center>
 
 <p>TKB-408 is a 5-star AR originally released in the point event "Maples by the Bridge."
 She has a rather atypical night-oriented skill:</p>
@@ -54,6 +54,8 @@ If there are more than 3 different gun types present, increase crit rate by 30% 
 <p>If you just want to know if she's good or not: she's rather bad.
 Classic night ARs (OTs-14) are almost always going to perform better, and even those see limited use nowadays considering all the better options out there.
 If you want the details, read on.</p>
+
+<p><em>(Update, 2022-March-04: These charts have been reworked to include all relevant <a href="newquip">new equipment pieces</a> and <a href="star-buffs">ST AR-15's SPEQ adjustments</a>.)</em></p>
 
 <span class="anchor" id="dps"></span>
 <h2>Direct-fire DPS<sup><small><a href="#dps">&#35;</a></small></sup></h2>
@@ -75,23 +77,50 @@ TKB does ~23% more DPS with her skill but it ends 20% faster, ignoring ICD.</p>
 
 <p>That looks a bit closer, but now we've downgraded a shiny new night specialist AR to the level of an ancient bog-standard AR.</p>
 
+<!-- These numbers calced before chips. Relative numbers don't change much so this is left as-is. -->
+
+<span class="anchor" id="chip"></span>
+<h2>#2 Processor<sup><small><a href="#chip">&#35;</a></small></sup></h2>
+
+<p>
+	The <a href="chips">#2 Processor chip</a> is a significant boost to most ARs, increasing FP and ROF in exchange for critical damage.
+	While it's clearly amazing for most ARs at night (you aren't critting much with PEQs on), TKB's crit damage buff may make it less clear.
+	Let's see:
+	<!-- If you're still determined to use TKB for some reason, you may wonder if it's worth it on her because of her crit component. -->
+</p>
+<div class="figure">
+<img src="images/tkb-408/chip.png" width="100%"/>
+</div>
+<p>
+	So yes, chips are still very much worth it on her.
+	Note that this barely below the expected increase for a PEQ+Chip over a PEQ/Exo on a normal selfbuffer - TKB does not crit much at night, so the critical damage component of her skill is rather minor.
+	<!-- The damage-over-time charts earlier were all done pre-chip, but dolls like OTs-14, AS Val, G41, and such can beneft as much or more from them so TKB's relative position isn't any better.
+	See <a href="g41-standard#night">over here</a> for some updated charts that include TKB. -->
+</p>
+
 <span class="anchor" id="dot"></span>
 <h2>Damage over time<sup><small><a href="#dot">&#35;</a></small></sup></h2>
 
-<p>Let's look at her damage contribution relative to some other ARs over time (<a href="g41-standard">like in this earlier writeup</a>).
-This can be useful to see how much of an impact her ICD and skill duration has on her overall damage output.
-Starting with no tiles/other buffs, TKB in the orange:</p>
+<p>
+	Let's look at her damage contribution relative to some other ARs over time (<a href="g41-standard">like in this writeup</a>).
+	This can be useful to see how much of an impact her ICD and skill duration has on her overall damage output.
+	Starting with no tiles/other buffs, TKB in the orange:
+</p>
 
 <div class="figure">
 <img src="images/tkb-408/dot-night.png" width="100%"/>
 </div>
 
-<p>AS Val is assumed to have FP buff uptime from Python+a Fervor fairy, although the actual FP buffs are not applied here to keep the model simple.</p>
+<p>
+	AS Val is assumed to have FP buff uptime from Python+a Fervor fairy, although the actual FP buffs are not applied here to keep the model simple.
+</p>
 
-<p>It's worth mentioning that OTs-14 has a bit higher ROF (75 vs 72) but fires <a href="https://docs.google.com/spreadsheets/d/1k74SCGGMHtwbl8gmTaETLsa8t12A7dWdj0V1tjdMD4Y/edit">on the same frame</a>, causing her to lag behind a bit here when combined with her lower base damage.
-Many ROF buffs will put OTs-14 on a higher frame than TKB, significantly improving her relative DPS.
-<a href="images/tkb-408/dot-night-rof.png">One example with +15% ROF</a>: TKB is now essentially always worse than OTs-14.
-AR-15 and Angelica also go down a bit relatively as they can't benefit from ROF in-skill.</p>
+<p>
+	It's worth mentioning that OTs-14 has a bit higher ROF (100 vs 97 ROF with chips, 15f) but fires <a href="https://docs.google.com/spreadsheets/d/1k74SCGGMHtwbl8gmTaETLsa8t12A7dWdj0V1tjdMD4Y/edit">on the same frame</a>, causing her to lag behind a bit at the start when combined with her lower base damage.
+	Many ROF buffs will put OTs-14 on a higher frame than TKB, significantly improving her relative DPS.
+	<a href="images/tkb-408/dot-night-rof.png">One example with +10% ROF</a>: TKB is now essentially always worse than OTs-14.
+	<!-- AR-15 and Angelica also go down a bit relatively as they can't benefit from ROF in-skill. -->
+</p>
 
 <p>
 	For the full list of (somewhat practical) tiles and if they help OTs-14 more:
@@ -109,13 +138,22 @@ AR-15 and Angelica also go down a bit relatively as they can't benefit from ROF 
 </div>
 <p>I could resize the chart to fit AS Val but I think this gets the point across.</p>
 
-<p>So: TKB may have a slight advantage over OTs-14 in very short battles (<6 seconds) and long ones (>12 seconds) when no ROF buffs are involved.
+<p>Going even further gives similar results:</p>
+<div class="figure">
+<img src="images/tkb-408/dot-night-crits.png" width="100%"/>
+</div>
+
+<p>So: TKB may have a slight advantage over OTs-14 in very short battles (&lt;6 seconds) when no ROF buffs are involved.
 However, she does not come close to the top night ARs and at best is ~10% better than generic stuff like G41.
 The slightly improved skill duration vs typical night ARs is not worth the cost to its strength.</p>
 
-<p>Note that these charts smooth out each doll's DPS.
-Depending on which exact frame you check in a given battle, the relative numbers will fluctuate if one doll's shot just connected and the other's is still in flight, or when one of the million different random factors of real battles comes into play.
-Some ARs may also get an extra shot in at the end of their skill, or fall barely short of one, which will change relative numbers a bit as well.</p>
+<p>
+	Note that these charts smooth out each doll's DPS.
+	Depending on which exact frame you check in a given battle, the relative numbers will fluctuate if one doll's shot just connected and the other's is still in flight, or when one of the million different random factors of real battles comes into play.
+	Some ARs may also get an extra shot in at the end of their skill, or fall barely short of one, which will change relative numbers a bit as well.
+	They show the cumulative, relative damage output at each moment - not the instantaneous DPS.
+	Reading a value at 6 seconds will tell you that, once six seconds have passed, each doll will have dealt overall some percent more or less damage than the reference.
+</p>
 
 <span class="anchor" id="armor"></span>
 <h2>Damage against armor<sup><small><a href="#armor">&#35;</a></small></sup></h2>
@@ -135,23 +173,6 @@ Varying FP buffs will shift the x-axis around but overall trends would be simila
 Using uptime-averaged DPS or something similar has its own problems though as almost all ARs will be totally blocked by armor out-of-skill and few fights last multiple skill cycles.</p>
 
 <p>WA2000 included for reference. Don't use ARs to fight Hydras.</p>
-
-<span class="anchor" id="chip"></span>
-<h2>#2 Processor<sup><small><a href="#chip">&#35;</a></small></sup></h2>
-
-<p>
-	The <a href="chips">#2 Processor chip</a> is a significant boost to most ARs, increasing FP and ROF in exchange for critical damage.
-	If you're still determined to use TKB for some reason, you may wonder if it's worth it on her because of her crit component.
-</p>
-<div class="figure">
-<img src="images/tkb-408/chip.png" width="100%"/>
-</div>
-<p>
-	So yes, it is.
-	Note that this barely below the expected increase for a PEQ+Chip compared to a PEQ/Exo on a normal selfbuffer - TKB does not crit much at night, so the critical damage component of her skill is rather minor.
-	The damage-over-time charts earlier were all done pre-chip, but dolls like OTs-14, AS Val, G41, and such can beneft as much or more from them so TKB's relative position isn't any better.
-	See <a href="g41-standard#night">over here</a> for some updated charts that include TKB.
-</p>
 
 <span class="anchor" id="conclusion"></span>
 <h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
@@ -190,8 +211,8 @@ I do not recommend trying to build teams around that component of her skill.
 An out-of-place RF/MG/SG will hurt echelon performance far more than a minor crit rate buff on a subpar AR would help.
 It's a similar deal to SL8 - missing out on a HG's 30%+ tiles and 25%+ DPS buff skill for 5% damage on 1 RF is an awful trade.</p>
 
-<p>Charts here are without affection bonuses.
-Having max affection/oaths may slightly change the exact percentages, but it won't be anything major.</p>
+<!-- <p>Charts here are without affection bonuses.
+Having max affection/oaths may slightly change the exact percentages, but it won't be anything major.</p> -->
 
 <p>
 	<!-- Any possible Galil mod interactions aren't covered as we don't have her mod on EN yet and I'm not sure of the viability of such setups in general. -->
@@ -201,7 +222,7 @@ Having max affection/oaths may slightly change the exact percentages, but it won
 
 <p>
 	Speaking of the future, as a new AR without a popular following, TKB is less likely to receive a SPEQ or neural upgrade in the future.
-	Crit synergy in general will be less interesting for ARs once we get the <a href="newquip#2chip">#2 Chip</a> equipment.
+	<!-- Crit synergy in general will be less interesting for ARs once we get the <a href="newquip#2chip">#2 Chip</a> equipment. -->
 </p>
 
 <span class="anchor" id="formations"></span>
