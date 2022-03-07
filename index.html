@@ -41,6 +41,63 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-805N997DPC');
 </script>
+<script>
+	filterSelection("all")
+	function filterSelection(c) {
+	  var x, i;
+	  x = document.getElementsByClassName("gallery");
+	  if (c == "all") c = "";
+	  for (i = 0; i < x.length; i++) {
+		w3RemoveClass(x[i], "show");
+		if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+	  }
+	}
+	
+	function w3AddClass(element, name) {
+	  var i, arr1, arr2;
+	  arr1 = element.className.split(" ");
+	  arr2 = name.split(" ");
+	  for (i = 0; i < arr2.length; i++) {
+		if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+	  }
+	}
+	
+	function w3RemoveClass(element, name) {
+	  var i, arr1, arr2;
+	  arr1 = element.className.split(" ");
+	  arr2 = name.split(" ");
+	  for (i = 0; i < arr2.length; i++) {
+		while (arr1.indexOf(arr2[i]) > -1) {
+		  arr1.splice(arr1.indexOf(arr2[i]), 1);     
+		}
+	  }
+	  element.className = arr1.join(" ");
+	}
+	
+	// Add active class to the current button (highlight it)
+	var btnContainer = document.getElementById("myBtnContainer");
+	var btns = btnContainer.getElementsByClassName("btn");
+	for (var i = 0; i < btns.length; i++) {
+	  btns[i].addEventListener("click", function(){
+		var current = document.getElementsByClassName("active");
+		current[0].className = current[0].className.replace(" active", "");
+		this.className += " active";
+	  });
+	}
+</script>
+<style>
+.gallery {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+</style>
 <title>GFMath</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -50,7 +107,7 @@ gtag('config', 'G-805N997DPC');
 <link rel="icon" type="image/png" sizes="16x16" href="pages/images/icon/ads-16.png">
 <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
-<body class="is-preload">
+<body class="is-preload" onload="filterSelection('all')">
 
 <!-- Wrapper -->
 <div id="wrapper">
@@ -108,18 +165,9 @@ gtag('config', 'G-805N997DPC');
 		</div>
 		</section>
 
-<section class="tiles">
-	<!-- <a href="pages/construction">
-		<div class="gallery">
-		  <div class="gallerypic">
-			<img src="pages/images/icon/construction.jpg" width="33%" height="400">
-			<div class="gallerypicdesc"><b>Anchored Construction</b><br/>Rate comparisons</div>
-		  </div>
-		</div>
-	</a> -->
-
+<section class="tiles"> <!-- New/extras have all tags... hacky workaround, but it works. -->
 	<a href="pages/sniper-rework">
-		<div class="gallery">
+		<div class="gallery gen solo arsmg rfhg mgsg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/sniper-rework.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>The New Sniper Fairy</b><br/>Reworked skill testing</div>
@@ -128,7 +176,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 
 	<a href="pages/glue">
-		<div class="gallery">
+		<div class="gallery gen solo arsmg rfhg mgsg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/glue.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>General Liu</b><br/>Analysis & testing</div>
@@ -137,7 +185,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 
 	<a href="pages/simulation">
-		<div class="gallery">
+		<div class="gallery gen solo arsmg rfhg mgsg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/simulation.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>The Problem with Damage Simulators</b><br/>On real performance and models of it</div>
@@ -171,78 +219,23 @@ gtag('config', 'G-805N997DPC');
 			<div class="gallerypicdesc"><b>Skill Levels</b><br/>What changes, and what's worth it</div>
 		  </div>
 		</div>
-	</a>
-
-	<a href="pages/star-buffs">
-		<div class="gallery">
-		  <div class="gallerypic">
-			<img src="pages/images/icon/star-buffs.jpg" width="33%" height="400">
-			<div class="gallerypicdesc"><b>STAR's new SPEQs</b><br/>Upcoming SPEQ rebalance review</div>
-		  </div>
-		</div>
-	</a>
-
-	<a href="pages/chip-calc">
-		<div class="gallery">
-		  <div class="gallerypic">
-			<img src="pages/images/icon/chip-calc.jpg" width="33%" height="400">
-			<div class="gallerypicdesc"><b>AR #2 Chip Calculator</b><br/>Equipment estimator</div>
-		  </div>
-		</div>
-	</a>
-
-	<a href="pages/ro635">
-		<div class="gallery">
-		  <div class="gallerypic">
-			<img src="pages/images/icon/ro635.jpg" width="33%" height="400">
-			<div class="gallerypicdesc"><b>RO635's Second Chance</b><br/>Passive analysis</div>
-		  </div>
-		</div>
-	</a>
-
-	 <a href="pages/g41-standard">
-		<div class="gallery">
-		  <div class="gallerypic">
-			<img src="pages/images/icon/g41-standard.jpg" width="33%" height="400">
-			<div class="gallerypicdesc"><b>AR Damage over time</b><br/>Post-chip rewrite</div>
-		  </div>
-		</div>
-	</a> -->
-
-	<!-- <a href="pages/arisaka">
-		<div class="gallery">
-		  <div class="gallerypic">
-			<img src="pages/images/icon/arisaka.jpg" width="33%" height="400">
-			<div class="gallerypicdesc"><b>Arisaka AP rounds</b><br/>4 Shiki SPEQ testing</div>
-		  </div>
-		</div>
-	</a> -->
-	
-	<!-- <a href="pages/chips">
-		<div class="gallery">
-		  <div class="gallerypic">
-			<img src="pages/images/icon/chips.jpg" width="33%" height="400">
-			<div class="gallerypicdesc"><b>AR #2 Chip Full Analysis</b><br/>Scope pairs, DPS comparison</div>
-		  </div>
-		</div>
-	</a> -->
-	
-	<!-- <a href="pages/pp-19">
-		<div class="gallery">
-		  <div class="gallerypic">
-			<img src="pages/images/icon/pp-19.jpg" width="33%" height="400">
-			<div class="gallerypicdesc"><b>Testing PP-19's mod</b><br/>Compared to Uzi & Vector</div>
-		  </div>
-		</div>
 	</a> -->
 </section>
-
+<!-- gen solo arsmg rfhg -->
 <!-- Two -->
 <section id="two">
 <div class="inner">
 <header class="major">
 	<h2>All Articles</h2>
 </header>
+<div id="myBtnContainer">
+	<button class="btn active" onclick="filterSelection('all')"> Show all</button>
+	<button class="btn" onclick="filterSelection('gen')"> General info</button>
+	<button class="btn" onclick="filterSelection('solo')"> Single doll</button>
+	<button class="btn" onclick="filterSelection('arsmg')"> ARSMG</button>
+	<button class="btn" onclick="filterSelection('rfhg')"> RFHG</button>
+	<button class="btn" onclick="filterSelection('mgsg')"> MGSG</button>
+</div>
 <!-- <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
 <ul class="actions">
 	<li><a href="landing.html" class="button next">Get Started</a></li>
@@ -253,7 +246,7 @@ gtag('config', 'G-805N997DPC');
 <!-- One -->
 <section id="one" class="tiles">
 	<a href="pages/evasion">
-		<div class="gallery">
+		<div class="gallery gen">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/evasion.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Accuracy and Evasion</b><br/>A deep dive</div>
@@ -262,7 +255,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 
 	<a href="pages/construction">
-		<div class="gallery">
+		<div class="gallery gen">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/construction.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Anchored Construction</b><br/>Rate comparisons</div>
@@ -271,7 +264,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 	
 	<a href="pages/chips">
-		<div class="gallery">
+		<div class="gallery arsmg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/chips.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>AR #2 Chip Analysis</b><br/>Scope pairs, DPS comparison</div>
@@ -280,7 +273,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 
 	<a href="pages/chip-calc">
-		<div class="gallery">
+		<div class="gallery arsmg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/chip-calc.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>AR #2 Chip Calculator</b><br/>Equipment estimator</div>
@@ -289,7 +282,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 	
 	<a href="pages/arisaka">
-		<div class="gallery">
+		<div class="gallery solo rfhg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/arisaka.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Arisaka AP rounds</b><br/>4 Shiki SPEQ testing</div>
@@ -298,7 +291,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 
 	<a href="pages/ar-armor-fairy">
-		<div class="gallery">
+		<div class="gallery arsmg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/ar-armor-fairy.jpg" alt="Fairy comparison" width="33%" height="400">
 			<div class="gallerypicdesc"><b>ARs Against Armor, by Fairy</b><br/>Command versus Artillery</div>
@@ -309,7 +302,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/g41-standard">
-		<div class="gallery">
+		<div class="gallery arsmg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/g41-standard.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>AR Damage over time</b><br/>Comparing direct-fire damage output</div>
@@ -320,7 +313,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/2v3ar">
-		<div class="gallery">
+		<div class="gallery gen arsmg">
 			<div class="gallerypic">
 			<img src="pages/images/icon/2v3ar.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Are 2 ARs or 3 ARs Better?</b><br/>Does it matter?</div>
@@ -329,7 +322,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 
 	<a href="pages/augelica">
-		<div class="gallery">
+		<div class="gallery solo arsmg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/augelica.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>AUG and Angelica</b><br/>Random spray vs AR targeting</div>
@@ -340,7 +333,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/gacha">
-		<div class="gallery">
+		<div class="gallery gen">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/gacha-bcc.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Black Cards & Completionism</b><br/>Costume gacha analysis</div>
@@ -351,7 +344,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/x95">
-		<div class="gallery">
+		<div class="gallery solo arsmg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/x95.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Bullying the Weak</b><br/>X95 Equipment & Skill Analysis</div>
@@ -360,7 +353,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 
 	<a href="pages/ce">
-		<div class="gallery">
+		<div class="gallery gen">
 			<div class="gallerypic">
 			<img src="pages/images/icon/ce.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Combat Effectiveness</b><br/>Stacking and what it's worth</div>
@@ -371,7 +364,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/myths">
-		<div class="gallery">
+		<div class="gallery gen">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/myths.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Common Myths</b><br/>Mechanical misconceptions</div>
@@ -382,7 +375,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/core-rates">
-		<div class="gallery">
+		<div class="gallery gen">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/core-rates.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Core Rates</b><br/>on popular farming maps</div>
@@ -391,7 +384,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 	
 	<a href="pages/criticalII">
-		<div class="gallery">
+		<div class="gallery gen rfhg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/crit.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Critical Parachute talents</b><br/>Crit II, Damage II, and debuffs</div>
@@ -413,7 +406,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/8-2">
-		<div class="gallery">
+		<div class="gallery gen">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/8-2.jpg" alt="8-2 Armor requirements" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Destroyer Dragging: 8-2</b><br/>Armor requirements</div>
@@ -424,7 +417,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/smgsg">
-		<div class="gallery">
+		<div class="gallery gen mgsg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/smgsg.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Effective Survival Strategies</b><br/>Durability comparisons</div>
@@ -433,7 +426,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 
 	<a href="pages/energy-packages">
-		<div class="gallery">
+		<div class="gallery gen">
 			<div class="gallerypic">
 			<img src="pages/images/icon/energy-packages.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Energy Package Analysis</b><br/>The best data deals</div>
@@ -444,7 +437,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/eot-xps3">
-		<div class="gallery">
+		<div class="gallery solo arsmg">
 			<div class="gallerypic">
 			<img src="pages/images/icon/eot-xps3.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>EOT XPS3 Analysis</b><br/>416 scope comparison</div>
@@ -455,7 +448,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/shrimp-equip">
-		<div class="gallery">
+		<div class="gallery solo arsmg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/shrimp-equip.jpg" alt="SR-3MP Equipment" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Equipping SR-3MP for any situation</b><br/>DPS optimization</div> <!-- Equipment optimization -->
@@ -464,7 +457,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 
 	<a href="pages/px4">
-		<div class="gallery">
+		<div class="gallery solo rfhg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/px4.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Everything to know about Px4 Storm</b><br/>Myths, math, buffs, and more</div> <!-- Skill analysis -->
@@ -473,7 +466,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 	
 	<a href="pages/glue">
-		<div class="gallery">
+		<div class="gallery solo rfhg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/glue.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>General Liu</b><br/>Analysis & testing</div>
@@ -482,7 +475,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 	
 	<a href="pages/hand-grenades">
-		<div class="gallery">
+		<div class="gallery arsmg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/hand-grenades.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Hand Grenades</b><br/>Experiments vs Molotovs</div>
@@ -493,7 +486,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/daynyang">
-		<div class="gallery">
+		<div class="gallery solo rfhg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/hanyang.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Hanyang at Day</b><br/>Comparisons for general use</div>
@@ -502,7 +495,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 
 	<a href="pages/limited-dolls">
-		<div class="gallery">
+		<div class="gallery gen">
 			<div class="gallerypic">
 			<img src="pages/images/icon/limited-dolls.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Limited Event Dolls</b><br/>and their last-seen dates</div>
@@ -511,7 +504,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 	
 	<a href="pages/ak15">
-		<div class="gallery">
+		<div class="gallery solo arsmg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/ak15.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Monitoring your Anger</b><br/>AK-15 Analysis</div>
@@ -520,7 +513,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 	
 	<a href="pages/ar-night-armor">
-		<div class="gallery">
+		<div class="gallery arsmg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/ar-night-armor.jpg" alt="" width="33%" height="100">
 			<div class="gallerypicdesc"><b>My ARs suck at night, help!</b><br/>AR performance vs armor</div>
@@ -531,7 +524,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/newquip">
-		<div class="gallery">
+		<div class="gallery gen arsmg rfhg mgsg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/newquip.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>New Doll Equipment</b><br/>First thoughts, #2 Chip analysis</div>
@@ -540,7 +533,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 
 	<a href="pages/sniper-rework">
-		<div class="gallery">
+		<div class="gallery solo">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/sniper-rework.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>The New Sniper Fairy</b><br/>Reworked skill testing</div>
@@ -549,7 +542,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 	
 	<a href="pages/campaign-rewards">
-		<div class="gallery">
+		<div class="gallery gen">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/campaigns.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Permanent Campaign Rewards</b><br/>List of rewards, dolls, and value</div>
@@ -560,7 +553,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/fairy-talents">
-		<div class="gallery">
+		<div class="gallery gen arsmg rfhg mgsg">
 			<div class="gallerypic">
 				<img src="pages/images/icon/fairy-talents.jpg" alt="" width="33%" height="400">
 				<div class="gallerypicdesc"><b>Picking Fairy Talents</b><br/>Fervor versus Damage II</div>
@@ -569,7 +562,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 	
 	<a href="pages/simulation">
-		<div class="gallery">
+		<div class="gallery gen arsmg rfhg mgsg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/simulation.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>The Problem with Damage Simulators</b><br/>On real performance and models of it</div>
@@ -578,7 +571,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 
 	<a href="pages/quick-formation">
-		<div class="gallery">
+		<div class="gallery gen arsmg rfhg mgsg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/quick-formation.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Quick Formation</b><br/>Where it goes wrong</div>
@@ -587,7 +580,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 
 	<a href="pages/wa-standard">
-		<div class="gallery">
+		<div class="gallery rfhg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/wa-standard.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>RF Damage over time</b><br/>K31, XM3, and such</div>
@@ -598,7 +591,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/manual-labor">
-		<div class="gallery">
+		<div class="gallery solo rfhg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/manual-labor.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Rico Skill Analysis</b><br/>Force manual vs Autoskill</div>
@@ -607,7 +600,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 
 	<a href="pages/ro635">
-		<div class="gallery">
+		<div class="gallery solo arsmg rfhg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/ro635.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>RO635's Second Chance</b><br/>Passive analysis</div>
@@ -616,7 +609,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 	
 	<a href="pages/sfstats">
-		<div class="gallery">
+		<div class="gallery gen">
 			<div class="gallerypic">
 			<img src="pages/images/icon/sfstat.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>SF Size and Keycode stats</b><br/>Probability estimates and math</div>
@@ -625,7 +618,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 
 	<a href="pages/skill-levels">
-		<div class="gallery">
+		<div class="gallery gen arsmg rfhg mgsg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/skill-levels.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Skill Levels</b><br/>What changes, and what's worth it</div>
@@ -634,7 +627,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 
 	<a href="pages/star-buffs">
-		<div class="gallery">
+		<div class="gallery solo arsmg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/star-buffs.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>STAR's new SPEQs</b><br/>Upcoming SPEQ rebalance review</div>
@@ -643,7 +636,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 	
 	<a href="pages/sub2k">
-		<div class="gallery">
+		<div class="gallery solo arsmg rfhg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/sub2k.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>SUB-2000 Analysis</b><br/>DPS at low rarities</div>
@@ -654,7 +647,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/aim">
-		<div class="gallery">
+		<div class="gallery rfhg">
 			<div class="gallerypic">
 			<img src="pages/images/icon/aim.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Taking Aim</b><br/>(the talent)</div>
@@ -665,7 +658,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/pp-19">
-		<div class="gallery">
+		<div class="gallery solo arsmg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/pp-19.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Testing PP-19's mod</b><br/>Compared to Uzi & Vector</div>
@@ -685,7 +678,7 @@ gtag('config', 'G-805N997DPC');
 	</a> -->
 
 	<a href="pages/thompson">
-		<div class="gallery">
+		<div class="gallery solo arsmg rfhg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/thompson.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Thompson, Force Shields, and EHP</b><br/>Quantifying Durability</div>
@@ -694,7 +687,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 	
 	<a href="pages/tkb-408">
-		<div class="gallery">
+		<div class="gallery solo arsmg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/tkb-408.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>TKB-408 Analysis</b><br/>Critical night focus</div>
@@ -705,7 +698,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/hanyangle">
-		<div class="gallery">
+		<div class="gallery solo rfhg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/hanyangle.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Type88: Formation and Skins</b><br/>Performance analysis</div>
@@ -716,7 +709,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/cms-dps">
-		<div class="gallery">
+		<div class="gallery solo arsmg">
 		  <div class="gallerypic">
 			<img src="pages/images/icon/cms-dps.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Using C-MS for DPS</b><br/>Mode & equipment analysis</div>
@@ -725,7 +718,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 	
 	<a href="pages/vector-vs-uzi">
-		<div class="gallery">
+		<div class="gallery solo arsmg">
 			<div class="gallerypic">
 			<img src="pages/images/icon/vector-vs-uzi.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Vector vs Uzi</b><br/>Which to pick</div>
@@ -736,7 +729,7 @@ gtag('config', 'G-805N997DPC');
 	
 	
 	<a href="pages/dummy">
-		<div class="gallery">
+		<div class="gallery gen">
 			<div class="gallerypic">
 			<img src="pages/images/icon/dummysettings.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>What's in the Dummy?</b><br/>Evasion & Armor settings</div>
@@ -758,7 +751,7 @@ gtag('config', 'G-805N997DPC');
 </section>
 <section class="tiles">
 	<a href="pages/extras">
-		<div class="gallery">
+		<div class="gallery gen solo arsmg rfhg mgsg">
 			<div class="gallerypic">
 			<img src="pages/images/icon/extras.jpg" alt="" width="33%" height="100">
 			<div class="gallerypicdesc"><b>Bonus Content</b><br/>Short pieces, charts, and more</div>
@@ -768,7 +761,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 	
 	<a href="pages/changelog">
-		<div class="gallery">
+		<div class="gallery gen solo arsmg rfhg mgsg">
 			<div class="gallerypic">
 			<img src="pages/images/icon/changelog.jpg" alt="" width="33%" height="100">
 			<div class="gallerypicdesc"><b>Changelog</b><br/>What's new</div>
@@ -777,7 +770,7 @@ gtag('config', 'G-805N997DPC');
 	</a>
 	
 	<a href="pages/terms">
-		<div class="gallery">
+		<div class="gallery gen solo arsmg rfhg mgsg">
 			<div class="gallerypic">
 			<img src="pages/images/icon/terms.jpg" alt="" width="33%" height="100">
 			<div class="gallerypicdesc"><b>Common terms and abbreviations</b><br/>Shorthand explanation</div>
