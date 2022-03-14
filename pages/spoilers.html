@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>Plot Explanations - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Plot Explanations</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-March-14</em></center>
+
+<p>
+	Typically, when I introduce a new type of plot, I try to include a bit of an explanation of how it works.
+	Afterwards, I tend to assume people have already gotten the idea and can be a little brief.
+	That's maybe not the best way of doing things, so I'll go over the common types of plots I use and explain them in greater detail.
+</p>
+
+<span class="anchor" id="box"></span>
+<h2>Box charts<sup><small><a href="#box">&#35;</a></small></sup></h2>
+
+<p>
+	<a href="https://en.wikipedia.org/wiki/Box_plot">Wikipedia</a>.
+	Box plots are used to compare experimental data, typically echelon clear times/damage taken/damage contributions.
+	A typical example:
+</p>
+<center><div class="figure">
+	<img src="images/sniper-rework/sniper-test-2.png" width="100%"/>
+</div><em>Source: <a href="sniper-rework">The New Sniper Fairy</a></em></center>
+<p>
+	With annotations:
+</p>
+<center><div class="figure">
+	<img src="https://i.imgur.com/2CyVSxF.jpg" width="80%"/>
+</div></center>
+<p>
+	Very broadly speaking, if the IQRs of two options does not overlap, it's reasonable to conclude one of them does better/worse than the other.
+	Warrior likely leads to faster clear times than a Para, but Para isn't definitively faster than a Sniper.
+</p>
+
+<span class="anchor" id="plot3"></span>
+<h2>Heatmaps<sup><small><a href="#plot3">&#35;</a></small></sup></h2>
+<p>
+	Useful for analyzing multiple input variables at once, <a href="https://en.wikipedia.org/wiki/Heat_map">heatmaps</a> appear to be one of the bigger challenges for people to understand:
+</p>
+<center><div class="figure">
+	<img src="images/criticalII/debuff.png" width="100%"/>
+</div><em>Source: <a href="criticalII">Critical Parachute Talents</a></em></center>
+<p>
+	The x and y axes are our input variables. Other constants/conditions are explained in the title or surrounding text.
+	For a given combination of, in this case, crit rate and crit damage, you find a color.
+	That color maps onto the colorbar on the right, and gives you a value - here, the DPS advantage from Crit II over Damage II.
+	<a href="https://en.wikipedia.org/wiki/Contour_line">Contour lines</a> are also overlaid to help locate values/identify crossover regions.
+</p>
+<center><div class="figure">
+	<img src="https://i.imgur.com/17hYQCb.jpg" width="100%"/>
+</div><em>An example using MGs under para debuff (try not to actually do that, though).</em></center>
+
+<span class="anchor" id="rcdot"></span>
+<h2>Damage over time<sup><small><a href="#rcdot">&#35;</a></small></sup></h2>
+<center><div class="figure">
+	<img src="images/tkb-408/dot-night-para.png" width="100%"/>
+</div><em>Source: <a href="tkb-408">TKB-408 Analysis</a></em></center>
+<p>
+	These charts plot the cumulative damage output of various dolls, relative to some reference unit (G41 is a popular pick).
+</p>
+<p>
+	Consider this (very narrow) excerpt of a damage sim's damage chart:
+</p>
+<center><div class="figure">
+	<img src="https://i.imgur.com/E12tQ3M.png" width="20%"/>
+</div></center>
+<p>
+	It shows the total damage each doll has done at each time.
+	This can be hard to read and compare between units, so I take a smoothed-out version of that and divide each doll's total damage by the reference.
+</p>
+<p>
+	In the TKB chart, for example, we could say that once the battle has lasted for 11 seconds, 9A-91 will have dealt 60% more damage than G41 would have.
+	AR-15 maintains a constant ~18% lead over G41 until 14 seconds, when G41's skill runs out and STAR's better uptime lets her rise to just above +30% total damage dealt.
+</p>
+<p>
+	This isn't a perfect metric, still - early damage is generally at least somewhat more valuable than later damage, as you can save a lot of HP by killing things before they attack.
+</p>
+
+<span class="anchor" id="shrimp"></span>
+<h2>Scope optimization (I)<sup><small><a href="#shrimp">&#35;</a></small></sup></h2>
+<center><div class="figure">
+	<img src="images/shrimp-equip/shrimp-default.png" width="100%"/>
+</div><em>Source: <a href="shrimp-equip">Equipping SR-3MP for any situation</a></em></center>
+<p>
+	You could consider this as a simplified heatmap - rather than showing exact percentage values, this turns each region into a binary "best equipment."
+	For a given set of conditions, total accuracy buff on Shrimp, and enemy evasion, pick whatever scope the intersection of those lies in.
+</p>
+<span class="anchor" id="vfleot"></span>
+<h2>Scope optimization (II)<sup><small><a href="#vfleot">&#35;</a></small></sup></h2>
+<center><div class="figure">
+	<img src="images/newquip/cdmg-basic.png" width="100%"/>
+</div><em>Source: <a href="chips">AR #2 Chip Full Analysis</a></em></center>
+<p>
+	This one is pretty easy - for a given crit damage aura, compute the DPS of VFL+Chip and EOT+Chip (or whatever other options are being considered).
+	Plot the % increase with VFL+Chip.
+	If the increase is positive, pick VFL.
+	If the increase is negative, VFLs give less DPS and you should use an EOT.
+</p>
+
+
+<!-- <h2>More like this</h2>
+<section class="tiles">
+	<a href="g41-standard">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/g41-standard.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>AR Damage over time</b><br/>Comparing direct-fire damage output</div>
+		  </div>
+		</div>
+	</a>
+	
+	<a href="ro635">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/ro635.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>RO635's Second Chance</b><br/>Passive analysis</div>
+		  </div>
+		</div>
+	</a>
+</section> -->
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
