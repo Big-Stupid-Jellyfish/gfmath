@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+function calculateRF() {
+	var rof1 = parseInt(document.getElementById("rof1").value),
+		rof2 = parseInt(document.getElementById("rof2").value),
+		tiles = parseFloat(document.getElementById("tiles").value),
+		skills11 = parseFloat(document.getElementById("skills11").value),
+		skills12 = parseFloat(document.getElementById("skills12").value),
+		skills2= parseFloat(document.getElementById("skills2").value),
+		skills3= parseFloat(document.getElementById("skills3").value),
+		skills4= parseFloat(document.getElementById("skills4").value),
+		rof = [],
+		effective_rof = [],
+		rof_diff = [],
+		frame_instance = [];
+	rof.push(Math.floor(rof1 * (1+0.01*tiles)));
+	rof.push(Math.floor(rof2 * (1+0.01*tiles)));
+	rof.push(Math.floor(rof1 * (1+0.01*tiles) * (1+0.01*skills11) * (1+0.01*skills2) * (1+0.01*skills3) * (1+0.01*skills4)));
+	rof.push(Math.floor(rof2 * (1+0.01*tiles) * (1+0.01*skills12) * (1+0.01*skills2) * (1+0.01*skills3) * (1+0.01*skills4)));
+
+	for (let i = 0; i < 4; i++) { // for each ROF calc
+		frame_instance.push(Math.floor(1500/Math.min(rof[i],120)));
+		for (let j = 1; j < 1 + rof[i]; j++) { // find effective rof, counting up from 1
+			var j_frame = Math.floor(1500/Math.min(j,116));
+			if (j_frame == frame_instance[i]) { // if this rof gets the same frame, we've found the minimal equivalent
+				effective_rof.push(j);
+				rof_diff.push(rof[i] - effective_rof[i]);
+				break;
+			}
+		}
+	}
+
+	document.getElementById("rof1_base").innerHTML = effective_rof[0] + "<font color='#c23127'>+" + rof_diff[0] + "</font> (" + frame_instance[0] + "f)";
+	document.getElementById("rof1_skill").innerHTML = effective_rof[2] + "<font color='#c23127'>+" + rof_diff[2] + "</font> (" + frame_instance[2] + "f)";
+	document.getElementById("rof2_base").innerHTML = effective_rof[1] + "<font color='#c23127'>+" + rof_diff[1] + "</font> (" + frame_instance[1] + "f)";
+	document.getElementById("rof2_skill").innerHTML = effective_rof[3] + "<font color='#c23127'>+" + rof_diff[3] + "</font> (" + frame_instance[3] + "f)";
+}
+function calculateAR() {
+	var arbase = parseInt(document.getElementById("arbase").value),
+		artiles = parseInt(document.getElementById("artiles").value),
+		arskill = parseFloat(document.getElementById("arskill").value),
+		rof = [],
+		effective_rof = [],
+		rof_diff = [],
+		frame_instance = [];
+	rof.push(Math.floor(arbase * (1+0.01*artiles)));
+	rof.push(Math.floor((arbase+25) * (1+0.01*artiles)));
+	rof.push(Math.floor((arbase+25-4) * (1+0.01*artiles)));
+	rof.push(Math.floor((arbase+25-1) * (1+0.01*artiles)));
+	rof.push(Math.floor(arbase * (1+0.01*artiles) * (1+0.01*arskill)));
+	rof.push(Math.floor((arbase+25) * (1+0.01*artiles) * (1+0.01*arskill)));
+	rof.push(Math.floor((arbase+25-4) * (1+0.01*artiles) * (1+0.01*arskill)));
+	rof.push(Math.floor((arbase+25-1) * (1+0.01*artiles) * (1+0.01*arskill)));
+
+	for (let i = 0; i < 8; i++) { // for each ROF calc
+		frame_instance.push(Math.floor(1500/Math.min(rof[i],120)));
+		for (let j = 1; j < 1 + rof[i]; j++) { // find effective rof, counting up from 1
+			var j_frame = Math.floor(1500/Math.min(j,116));
+			if (j_frame == frame_instance[i]) { // if this rof gets the same frame, we've found the minimal equivalent
+				effective_rof.push(j);
+				rof_diff.push(rof[i] - effective_rof[i]);
+				break;
+			}
+		}
+	}
+
+	document.getElementById("ar_basic").innerHTML = effective_rof[0] + "<font color='#c23127'>+" + rof_diff[0] + "</font> (" + frame_instance[0] + "f)";
+	document.getElementById("ar_vfl").innerHTML = effective_rof[1] + "<font color='#c23127'>+" + rof_diff[1] + "</font> (" + frame_instance[1] + "f)";
+	document.getElementById("ar_eot").innerHTML = effective_rof[2] + "<font color='#c23127'>+" + rof_diff[2] + "</font> (" + frame_instance[2] + "f)";
+	document.getElementById("ar_iti").innerHTML = effective_rof[3] + "<font color='#c23127'>+" + rof_diff[3] + "</font> (" + frame_instance[3] + "f)";
+	document.getElementById("ar2_basic").innerHTML = effective_rof[4] + "<font color='#c23127'>+" + rof_diff[5] + "</font> (" + frame_instance[4] + "f)";
+	document.getElementById("ar2_vfl").innerHTML = effective_rof[5] + "<font color='#c23127'>+" + rof_diff[5] + "</font> (" + frame_instance[5] + "f)";
+	document.getElementById("ar2_eot").innerHTML = effective_rof[6] + "<font color='#c23127'>+" + rof_diff[6] + "</font> (" + frame_instance[6] + "f)";
+	document.getElementById("ar2_iti").innerHTML = effective_rof[7] + "<font color='#c23127'>+" + rof_diff[7] + "</font> (" + frame_instance[7] + "f)";
+
+}
+</script>
+<title>ROF Calculator - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>ROF Calculator</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-March-15</em></center>
+<span class="anchor" id="about"></span>
+<h2>About ROF<sup><small><a href="#about">&#35;</a></small></sup></h2>
+<p>
+	The ROF stat governs how quickly your dolls attack.
+	It's calculated as
+</p>
+
+$$ \text{Final ROF} = \mathrm{min}(\left\lfloor \text{Base ROF} \cdot \text{Sum of tiles} \cdot \text{Product of skills} \cdot \text{Talent} \right\rfloor,120) $$
+
+<p>
+	which is converted into a frame delay (1 frame = 1/30<sup>th</sup> of a second) by:
+</p>
+
+$$ \text{Frame delay} = \left\lfloor \frac{1500}{\text{Final ROF}} \right\rfloor $$
+
+<p>
+	Interestingly, while 120 ROF is the stated cap, 116 is actually the effective cap - ROF values of 116+ all map on to the same frame, and are thus equivalent.
+</p>
+<p>
+	Attacks per second is \( \frac{30 \text{frames/s}}{x \text{frames/attack}} \), or
+</p>
+
+$$ \text{Attacks/sec} = \frac{30}{\left\lfloor \frac{1500}{\text{Final ROF}} \right\rfloor} $$
+
+<p>
+	Notation: \( \lfloor x \rfloor \) is the floor of \( x \) (round down). \(\mathrm{min}(a,b) \) returns the smaller number between \( a \) and \( b \).
+</p>
+
+<p>
+	For a precomputed table of ROF values and some corresponding dolls, <a href="https://docs.google.com/spreadsheets/d/1k74SCGGMHtwbl8gmTaETLsa8t12A7dWdj0V1tjdMD4Y/edit#gid=0">this sheet may be helpful</a>.
+	Note that it's quite old at this point, and is missing many newer dolls and chip considerations.
+</p>
+<span class="anchor" id="rfhg"></span>
+<h2>RFHGs<sup><small><a href="#rfhg">&#35;</a></small></sup></h2>
+<p>
+	Rifles have low base ROF, so RFHGs tend to include plenty of ROF buffs.
+</p>
+<center>
+	<table style="width:auto; text-align: center; vertical-align: middle;">
+	  <tr>
+		<th style="text-align: center; vertical-align: middle;"></th>
+		<th style="text-align: center; vertical-align: middle;">Doll 1</th>
+		<th style="text-align: center; vertical-align: middle;">Doll 2</th>
+	  </tr>
+	  <tr>
+		<td style="text-align: center; vertical-align: middle;">Base ROF (w/ equipment)</td>
+		<td style="text-align: center; vertical-align: middle;"><input id="rof1" type="text" value=34  style="text-align: center; vertical-align: middle;"></input><br></td>
+		<td style="text-align: center; vertical-align: middle;"><input id="rof2" type="text" value=37  style="text-align: center; vertical-align: middle;"></input><br></td>
+	  </tr>
+	  <tr>
+		<td style="text-align: center; vertical-align: middle;">Tiles (%)</td>
+		<td colspan="2" style="text-align: center; vertical-align: middle;"><input id="tiles" type="text" value=32  style="text-align: center; vertical-align: middle;"></input><br></td>
+	  </tr>
+	  <tr>
+		<td style="text-align: center; vertical-align: middle;">Individual skills</td>
+		<td style="text-align: center; vertical-align: middle;"><input id="skills11" type="text" value=65  style="text-align: center; vertical-align: middle;"></input><br></td>
+		<td style="text-align: center; vertical-align: middle;"><input id="skills12" type="text" value=75  style="text-align: center; vertical-align: middle;"></input><br></td>
+	  </tr>
+	  <tr>
+		<td style="text-align: center; vertical-align: middle;">Global skill 1 (%)</td>
+		<td colspan="2" style="text-align: center; vertical-align: middle;"><input id="skills2" type="text" value=28  style="text-align: center; vertical-align: middle;"></input><br></td>
+	  </tr>
+	  <tr>
+		<td style="text-align: center; vertical-align: middle;">Global skill 2 (%)</td>
+		<td colspan="2" style="text-align: center; vertical-align: middle;"><input id="skills3" type="text" value=10  style="text-align: center; vertical-align: middle;"></input><br></td>
+	  </tr>
+	  <tr>
+		<td style="text-align: center; vertical-align: middle;">Global skill 3 (%)</td>
+		<td colspan="2" style="text-align: center; vertical-align: middle;"><input id="skills4" type="text" value=0  style="text-align: center; vertical-align: middle;"></input><br></td>
+	  </tr>
+	</table>
+
+	<button type="button small" onclick="calculateRF()">Calculate</button>
+
+	<table style="width:auto; margin-top: 25px;">
+	  <tr>
+		<th>Condition</th>
+		<th>Doll 1</th>
+		<th>Doll 2</th>
+	  </tr>
+	  <tr>
+		<td>Base ROF</td>
+		<td id="rof1_base">?</td>
+		<td id="rof2_base">?</td>
+	  </tr>
+	  <tr>
+		<td>In-skill ROF</td>
+		<td id="rof1_skill">?</td>
+		<td id="rof2_skill">?</td>
+	  </tr>
+	</table>
+</center>
+
+<p>
+	Warning: while excess ROF is colored red, this is largely to help separate it and to match the now-defunct Brainlets sim's display style.
+	Do not try and "optimize" this away.
+	It does not inherently hurt performance.
+	You should only be concerned if you're going <em>significantly</em> over the ROF cap (something like 116+15).
+</p>
+<span class="anchor" id="arsmg"></span>
+<h2>ARSMGs<sup><small><a href="#arsmg">&#35;</a></small></sup></h2>
+<p>
+	The above calculator works with ARSMGs, but perhaps more interesting to them are frame differences between sight options and how close they get to the ROF cap with chips.
+	You can use <a href="chip-calc">this calculator</a> for overall DPS optimization, or the following one for a quick look at the frames you'll end up on.
+</p>
+<center>
+	<table style="width:auto; text-align: center; vertical-align: middle;">
+	  <tr>
+		<th style="text-align: center; vertical-align: middle;">Base ROF (no equipment)</th>
+		<th style="text-align: center; vertical-align: middle;">ROF tiles (%)</th>
+		<th style="text-align: center; vertical-align: middle;">ROF skill (%)</th>
+	  </tr>
+	  <tr>
+		<td style="text-align: center; vertical-align: middle;"><input id="arbase" type="text" value=78 style="text-align: center; vertical-align: middle;"></input><br></td>
+		<td style="text-align: center; vertical-align: middle;"><input id="artiles" type="text" value=15  style="text-align: center; vertical-align: middle;"></input><br></td>
+		<td style="text-align: center; vertical-align: middle;"><input id="arskill" type="text" value=0  style="text-align: center; vertical-align: middle;"></input><br></td>
+	  </tr>
+	</table>
+
+	<button type="button small" onclick="calculateAR()">Calculate</button>
+
+	<table style="width:auto; margin-top: 25px;">
+	  <tr>
+		<th></th>
+		<th>Basic ROF</th>
+		<th>VFL+Chip</th>
+		<th>EOT+Chip</th>
+		<th>ITI+Chip</th>
+	  </tr>
+	  <tr>
+		<td>Pre-skill</td>
+		<td id="ar_basic">?</td>
+		<td id="ar_vfl">?</td>
+		<td id="ar_eot">?</td>
+		<td id="ar_iti">?</td>
+	  </tr>
+	  <tr>
+		<td>In-skill</td>
+		<td id="ar2_basic">?</td>
+		<td id="ar2_vfl">?</td>
+		<td id="ar2_eot">?</td>
+		<td id="ar2_iti">?</td>
+	  </tr>
+	</table>
+</center>
+
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="skill-levels">
+		<div class="gallery gen">
+		  <div class="gallerypic">
+			<img src="images/icon/skill-levels.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Skill Levels</b><br/>What changes, and what's worth it</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="aim">
+		<div class="gallery rfhg calc">
+			<div class="gallerypic">
+			<img src="images/icon/aim.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Taking Aim</b><br/>(the talent)</div>
+			</div>
+		</div>
+	</a>
+</section>
+</div>
+
+
+<footer id="footer">
+	<div class="inner">
+		<ul class="copyright">
+			<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+		</ul>
+	</div>
+</footer>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
