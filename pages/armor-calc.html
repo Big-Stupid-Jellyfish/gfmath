@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+function calculateArmReq() {
+	var efp = parseInt(document.getElementById("efp").value),
+		enemycat = parseInt(document.getElementById("enemycat").value);
+
+	if (enemycat == 2) {
+		no_flash = Math.ceil(efp)-1;
+		flash =  Math.ceil(efp)-3;
+	} else if (enemycat == 3) {
+		no_flash = Math.ceil(efp/2)-1;
+		flash =  Math.ceil(efp/2)-3;
+	} else {
+		no_flash = Math.ceil(efp*1.15)-1;
+		flash =  Math.ceil(efp*1.15)-3;
+	}
+
+	document.getElementById("id_arm_1").innerHTML = no_flash;
+	document.getElementById("id_arm_2").innerHTML = flash;
+}
+function calculateArmA() {
+	var c1_armor_base = parseInt(document.getElementById("c1_armor_base").value),
+	c1_tiles = 1+0.01*parseInt(document.getElementById("c1_tiles").value),
+	c1_aura = 1+0.01*parseInt(document.getElementById("c1_aura").value),
+	c1_talent = parseInt(document.getElementById("c1_talent").value),
+	c1_skills = 1+0.01*parseInt(document.getElementById("c1_skills").value);
+
+	if (c1_talent == 2) {
+		talent_mult = 1.08;
+	} else if (c1_talent == 3) {
+		talent_mult = 1.10;
+	} else {
+		talent_mult = 1.0;
+	}
+
+	document.getElementById("c1").innerHTML = "<strong><font color='#a0c9e5'>You'll have " + Math.floor(Math.ceil(c1_armor_base * c1_aura) * c1_tiles * c1_skills * talent_mult) + " armor.</font></strong>";
+}
+function calculateArmB() {
+	var c2_armor_base = parseInt(document.getElementById("c2_armor_base").value),
+	c2_tiles = 1+0.01*parseInt(document.getElementById("c2_tiles").value),
+	c2_talent = parseInt(document.getElementById("c2_talent").value),
+	c2_skills = 1+0.01*parseInt(document.getElementById("c2_skills").value);
+
+	if (c2_talent == 2) {
+		talent_mult = 1.08;
+	} else if (c2_talent == 3) {
+		talent_mult = 1.10;
+	} else {
+		talent_mult = 1.0;
+	}
+
+	document.getElementById("c2").innerHTML = "<strong><font color='#a0c9e5'>You'll have " + Math.floor(c2_armor_base * c2_tiles * c2_skills * talent_mult) + " armor.</font></strong>";
+}
+</script>
+<title>Armor Calculator - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Armor Calculator</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-March-16</em></center>
+
+<span class="anchor" id="armor"></span>
+<h2>Armor calculator<sup><small><a href="#armor">&#35;</a></small></sup></h2>
+<h3>Variable fairy aura</h3>
+<center><div class="figure">
+	<img src="images/armor-calc/no-fairy.png" width="75%"/>
+</div><em>Here, your base armor would be 33.</em></center>
+<ul>
+	<li>Base armor, including equipment, with no fairy equipped: <input id="c1_armor_base" type="text" value=33  style="text-align: center; vertical-align: middle; width:25%;"></input></li>
+</ul>
+<ul>
+	<li>Total armor tiles (%): <input id="c1_tiles" type="text" value=30  style="text-align: center; vertical-align: middle; width:25%;"></input></li>
+</ul>
+<ul>
+	<li>Armor aura under consideration (%): <input id="c1_aura" type="text" value=11.4  style="text-align: center; vertical-align: middle; width:25%;"></input></li>
+</ul>
+<ul>
+	<li>Product of any skills (%): <input id="c1_skills" type="text" value=0  style="text-align: center; vertical-align: middle; width:25%;"></input></li>
+</ul>
+<ul>
+	<li>															<div class="col-12">
+		<select id="c1_talent" style="width:25%;">
+			<option value="0">- Talent -</option>
+			<option value="2">Armor I</option>
+			<option value="2">Sturdy</option>
+			<option value="3">Armor II</option>
+			<option value="1">Anything else</option>
+		</select>
+	</div>
+</li>
+</ul>
+
+<button type="button small" onclick="calculateArmA()">Calculate</button>
+<font size="5"><p id="c1"></p></font>
+
+<h3>With fairy equipped</h3>
+<center><div class="figure">
+	<img src="images/armor-calc/with-fairy.png" width="75%"/>
+</div><em>Here, your base armor would be 38.</em></center>
+<ul>
+	<li>Base armor, including equipment, with fairy aura: <input id="c2_armor_base" type="text" value=38  style="text-align: center; vertical-align: middle; width:25%;"></input></li>
+</ul>
+<ul>
+	<li>Total armor tiles (%): <input id="c2_tiles" type="text" value=15  style="text-align: center; vertical-align: middle; width:25%;"></input></li>
+</ul>
+<ul>
+	<li>Product of any skills (%): <input id="c2_skills" type="text" value=0  style="text-align: center; vertical-align: middle; width:25%;"></input></li>
+</ul>
+<ul>
+	<li>															<div class="col-12">
+		<select id="c2_talent" style="width:25%;">
+			<option value="0">- Talent -</option>
+			<option value="2">Armor I</option>
+			<option value="2">Sturdy</option>
+			<option value="3">Armor II</option>
+			<option value="1">Anything else</option>
+		</select>
+	</div>
+</li>
+</ul>
+
+<button type="button small" onclick="calculateArmB()">Calculate</button>
+<font size="5"><p id="c2"></p></font>
+
+<span class="anchor" id="req"></span>
+<h2>Armor requirement calculator<sup><small><a href="#req">&#35;</a></small></sup></h2>
+<p>
+	Against enemies with low to moderate amounts of damage, it's possible to stack your armor high enough to reduce all attacks to 1 - or even to 0 with flashbangs!
+	To help set your goals, here's an armor requirement calculator.
+	Just enter in the enemy's FP (<a href="https://pengupengupengu.github.io/gflmaps/#campaign=6006&mission=648">look that up here</a>), and note the enemy type if applicable (visual reference: <a href="https://iopwiki.com/images/b/b9/Judge_S.png">Judge</a>, <a href="https://iopwiki.com/images/3/35/Pyxis_S.png">Pyxis</a>).
+</p>
+<ul>
+	<li><input id="efp" type="text" value=40  style="text-align: center; vertical-align: middle; width:25%;"></input></li>
+</ul><ul>
+	<li>															<div class="col-12">
+		<select id="enemycat" style="width:25%;">
+			<option value="0">- Enemy type -</option>
+			<option value="2">Judge</option>
+			<option value="3">Pyxis</option>
+			<option value="1">Anything else</option>
+			<!-- <option value="1">Human Resources</option> -->
+		</select>
+	</div>
+</li>
+</ul>
+
+<button type="button small" onclick="calculateArmReq()">Calculate</button>
+
+<table style="width:auto; margin-top: 25px;">
+	<tr>
+		<th>Equip</th>
+		<th>Ideal armor</th>
+	</tr>
+	  <tr>
+		<td>No Flash</td>
+		<td id="id_arm_1">?</td>
+	  </tr>
+	  <tr>
+		<td>Flash</td>
+		<td id="id_arm_2">?</td>
+	  </tr>
+	</table>
+</center>
+
+<p>
+	Keep in mind that some enemies may have skills, armor piercing, or other effects that complicate matters.
+	At least in the case of AP, just add their AP stat to the armor requirement.
+</p>
+
+<span class="anchor" id="equations"></span>
+<h2>Equations used<sup><small><a href="#equations">&#35;</a></small></sup></h2>
+<p>
+	Maximum enemy damage, assuming no AP, is
+</p>
+$$ \text{Max damage} = \left\lceil \text{Base FP} \cdot 1.15 \right\rceil $$
+<p>
+	due to 15% damage variance.
+	Judge has no damage variance, and does half damage initially.
+	Pyxis have no damage variance, and deal half damage.
+	The calculator above accounts for those mechanics, and assumes you've entered the FP stats as listed on GFLMaps.
+	Armor is calculated as
+</p>
+$$ \text{Final armor} = \left\lfloor \left\lceil (\text{Base armor} + \text{equipment}) \cdot \text{Fairy aura} \right\rceil \cdot \text{Sum of tiles} \cdot \text{Product of skills} \cdot \text{Talent} \right\rfloor $$
+<p>
+	\( \lfloor x \rfloor \) is \( x \), rounded down.
+	\( \lceil x \rceil \) is \( x \), rounded up.
+</p>
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="rof-calc">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/rof-calc.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Rate of Fire Calculator</b><br/>Optimize your RFHGs and ARSMGs</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="skill-levels">
+		<div class="gallery gen">
+		  <div class="gallerypic">
+			<img src="images/icon/skill-levels.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Skill Levels</b><br/>What changes, and what's worth it</div>
+		  </div>
+		</div>
+	</a>
+</section>
+
+
+<footer id="footer">
+	<div class="inner">
+		<ul class="copyright">
+			<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+		</ul>
+	</div>
+</footer>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
