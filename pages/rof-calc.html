@@ -237,7 +237,7 @@ function calculateAR() {
 	It's calculated as
 </p>
 
-$$ \text{Final ROF} = \mathrm{min}(\left\lfloor \text{Base ROF} \cdot \text{Sum of tiles} \cdot \text{Product of skills} \cdot \text{Talent} \right\rfloor,120) $$
+$$ \text{Final ROF} = \mathrm{min}(\left\lfloor (\text{Base ROF}+\text{Equipment}) \cdot \text{Sum of tiles} \cdot \text{Product of skills} \cdot \text{Talent} \right\rfloor,120) $$
 
 <p>
 	which is converted into a frame delay (1 frame = 1/30<sup>th</sup> of a second) by:
@@ -268,11 +268,19 @@ $$ \text{Attacks/sec} = \frac{30}{\left\lfloor \frac{1500}{\text{Final ROF}} \ri
 <span class="anchor" id="ads"></span>
 <h2>More like this</h2>
 <section class="tiles">
-	<a href="skill-levels">
+	<!-- <a href="skill-levels">
 		<div class="gallery gen">
 		  <div class="gallerypic">
 			<img src="images/icon/skill-levels.jpg" width="33%" height="400">
 			<div class="gallerypicdesc"><b>Skill Levels</b><br/>What changes, and what's worth it</div>
+		  </div>
+		</div>
+	</a> -->
+	<a href="armor-calc">
+		<div class="gallery gen solo arsmg rfhg mgsg calc">
+		  <div class="gallerypic">
+			<img src="images/icon/armor-calc.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Armor Calculator</b><br/>Optimize your MGSGs</div>
 		  </div>
 		</div>
 	</a>
