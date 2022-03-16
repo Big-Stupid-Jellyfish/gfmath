@@ -85,7 +85,7 @@ function calculateAR() {
 	document.getElementById("ar_vfl").innerHTML = effective_rof[1] + "<font color='#E5857F'>+" + rof_diff[1] + "</font> (" + frame_instance[1] + "f)";
 	document.getElementById("ar_eot").innerHTML = effective_rof[2] + "<font color='#E5857F'>+" + rof_diff[2] + "</font> (" + frame_instance[2] + "f)";
 	document.getElementById("ar_iti").innerHTML = effective_rof[3] + "<font color='#E5857F'>+" + rof_diff[3] + "</font> (" + frame_instance[3] + "f)";
-	document.getElementById("ar2_basic").innerHTML = effective_rof[4] + "<font color='#E5857F'>+" + rof_diff[5] + "</font> (" + frame_instance[4] + "f)";
+	document.getElementById("ar2_basic").innerHTML = effective_rof[4] + "<font color='#E5857F'>+" + rof_diff[4] + "</font> (" + frame_instance[4] + "f)";
 	document.getElementById("ar2_vfl").innerHTML = effective_rof[5] + "<font color='#E5857F'>+" + rof_diff[5] + "</font> (" + frame_instance[5] + "f)";
 	document.getElementById("ar2_eot").innerHTML = effective_rof[6] + "<font color='#E5857F'>+" + rof_diff[6] + "</font> (" + frame_instance[6] + "f)";
 	document.getElementById("ar2_iti").innerHTML = effective_rof[7] + "<font color='#E5857F'>+" + rof_diff[7] + "</font> (" + frame_instance[7] + "f)";
@@ -256,6 +256,8 @@ $$ \text{Attacks/sec} = \frac{30}{\left\lfloor \frac{1500}{\text{Final ROF}} \ri
 
 <p>
 	Notation: \( \lfloor x \rfloor \) is the floor of \( x \) (round down). \(\mathrm{min}(a,b) \) returns the smaller number between \( a \) and \( b \).
+	Skills activating/ending cause the entire stat to be recalculated - for example, M4A1's cannon ROF debuff is multiplied with HG buffs regardless of when they're applied.
+	Her ROF is not capped at 120 and then reduced to 30% of that.
 </p>
 
 <p>
