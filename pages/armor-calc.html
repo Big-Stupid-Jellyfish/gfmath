@@ -32,8 +32,8 @@ function calculateArmReq() {
 		flash =  Math.ceil(efp*1.15)-3;
 	}
 
-	document.getElementById("id_arm_1").innerHTML = no_flash;
-	document.getElementById("id_arm_2").innerHTML = flash;
+	document.getElementById("id_arm_1").innerHTML = no_flash + "+";
+	document.getElementById("id_arm_2").innerHTML = flash + "+";
 }
 function calculateArmA() {
 	var c1_armor_base = parseInt(document.getElementById("c1_armor_base").value),
