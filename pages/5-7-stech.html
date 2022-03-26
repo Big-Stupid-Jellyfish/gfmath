@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>Five-Seven and Stechkin - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Five-Seven and Stechkin</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-March-26</em></center>
+
+<p>
+	Rifles have dominated the meta for some two years, so hopefully you're familiar with how RFHGs work at this point.
+	They get high damage, low ROF, backline targeting, AP, and overall kill things quite well.
+</p>
+<p>
+	There are plenty of solid position 4 buffers - aside from the titular dolls, we notably have Python, Grizzly, SAA, Clear, and K5.
+	But all those are largely FP-focused, ignoring Clear's tiles.
+	If you want to shoot fast, options past Five-Seven and Stechkin get really questionable.
+</p>
+<p>
+	So, is one of these better than the other?
+	Are there good reasons to use Five-Seven over Stechkin? Stechkin over Five-Seven?
+	Let's investigate.
+</p>
+<span class="anchor" id="situation"></span>
+<h2>The Situation<sup><small><a href="#situation">&#35;</a></small></sup></h2>
+<center>
+	<table style="width:auto; text-align:center;">
+		<tr>
+			<th style="text-align:center;">Attribute</th>
+			<th style="text-align:center;">Stechkin mod</th>
+			<th style="text-align:center;">Five-Seven</th>
+		</tr>
+		<tr>
+			<td>Tiles</td>
+			<td>16% FP/24% ROF</td>
+			<td>30% ROF/20% Crit Rate</td>
+		</tr>
+		<tr>
+			<td>Tile shape</td>
+			<td>1,2,7,8 from 4</td>
+			<td>1,2,7,8 from 4</td>
+		</tr>
+		<tr>
+			<td>Skill</td>
+			<td>25% ROF/4% FP (with SPEQ)</td>
+			<td>20% ROF/20% Crit Rate</td>
+		</tr>
+		<tr>
+			<td>Extra effects</td>
+			<td>50% EVA debuff to enemies &lt;30% HP</td>
+			<td>-</td>
+		</tr>
+	</table>
+</center>
+<p>
+	How much that evasion debuff helps is rather arguable - many enemies below 30% HP don't need anywhere near all 5 shots from a rifle to land for them to die.
+	We'll set that aside for now.
+</p>
+<span class="anchor" id="calculations"></span>
+<h2>Calculations<sup><small><a href="#calculations">&#35;</a></small></sup></h2>
+<p>
+	ROF frames are a bit too variable to generalize, so let's assume that an X% ROF buff results in an X% DPS buff.
+	Feel free <a href="rof-calc">to calculate</a> whether or not either one of them gets your specific team combination to a better frame independently.
+	Other tiles are also ignored - them being additive can slightly change relative numbers, but it's not a big deal.
+</p>
+<p>
+	Your crit damage seems like an obvious variable - the more crit damage, the more you'd like Five-Seven.
+	Let's plot both of them and see how this works out.
+</p>
+<center><div class="figure">
+	<img src="images/5-7-stech/standard-rfhgs.png" width="100%"/>
+</div></center>
+<p>
+	Grizzly (without SPEQ) included to have a reference with typical buffers, even if she's all FP.
+	While the crit rate looks to be a solid bonus over such dolls, Stechkin has an even bigger lead both in- and out-of-skill.
+	Five-Seven's relative standing improves slightly as your crit damage increases, but not by enough to close that gap.
+</p>
+<p>
+	There's also the classic Px4/Five-Seven combo:
+</p>
+<center><div class="figure">
+	<img src="images/5-7-stech/px4-rfhgs.png" width="100%"/>
+</div></center>
+<p>
+	The pre-skill lines are the exact same, but Five-Seven's active becomes much more valuable when Px4's skill is applied.
+	Now, with skills up, Five-Seven is always preferable.
+</p>
+<p>
+	When para debuffed, you can also get more use of Five-Seven's crit rate:
+</p>
+<center><div class="figure">
+	<img src="images/5-7-stech/debuffed-rfhgs.png" width="100%"/>
+</div></center>
+<p>
+	But it's not as big of a deal as when you're using Px4.
+</p>
+<span class="anchor" id="testing"></span>
+<h2>Testing<sup><small><a href="#testing">&#35;</a></small></sup></h2>
+<p>
+	It seems reasonable to prefer Stechkin over Five-Seven, and Five-Seven over typical (FP) buffers in most cases.
+	To get a better sense of how much these decisions really matter, let's run a few tests.
+	Up for consideration:
+</p>
+<ol>
+	<li>Stechkin (high-spec: mod3, oathed, SL10/10, Night SPEQ)</li>
+	<li>Stechkin (med-spec: mod1, SL10, Night SPEQ)</li>
+	<li>Five-Seven</li>
+	<li>Grizzly (no SPEQ)</li>
+</ol>
+<p>
+	Grizzly makes for a decent baseline buffer reference, and allows a comparison between FP/ROF buffs.
+</p>
+
+<h3>Soft targets</h3>
+<center><div class="figure">
+	<img src="images/5-7-stech/HG-test-1.png" width="100%"/>
+</div></center>
+<p>
+	The Scouts/SWAP Prowlers are quite weak (360-960 HP/link), but testing against the 5277 HP/link zombies shows a similar pattern also in line with our expectations: Stechkin mod &gt; Five-Seven &gt; Grizzly.
+	Stechkin's mod skill/oath stats don't appear to have a major effect.
+</p>
+<h3>Armored targets</h3>
+<center><div class="figure">
+	<img src="images/5-7-stech/HG-test-2.png" width="100%"/>
+</div></center>
+<p>
+	Results are a little odd - against the first group with regular Nemeums, Five-Seven/Stechkin performed almost identically.
+	Swapping for Grizzly seemed slower, but took less damage.
+</p>
+<p>
+	In the second, Five-Seven/Grizzly lagged behind by time.
+	But looking at damage received, all options were similar except for Grizzly, who was much worse.
+</p>
+<span class="anchor" id="eva"></span>
+<h2>About that EVA debuff...<sup><small><a href="#eva">&#35;</a></small></sup></h2>
+<p>
+	A full investigation of Stechkin's modskill would better fit on its own page, but I don't believe it adds any particular value here.
+	Let's talk about why, briefly.
+</p>
+<center><div class="figure">
+	<img src="images/5-7-stech/low-hp.png" width="50%"/>
+</div></center>
+<p>
+	For reference, here's an archer below 30% HP. I ended up having to record this fight and go back frame-by-frame to actually capture an image, as it died almost immediately after.
+	Specifically: it received this damage at 11.37s, was brought down to just a sliver at 11.67s, and died at 11.83s.
+	These guys are pretty beefy, too - the ones pictured had 1831 HP/link.
+</p>
+<p>
+	Suppose you were using an echelon of WA2000/some RF/Stechkin/Grizzly/P22/Beach fairy - a standard ROF-based RFHG.
+	WA2000 would deal in the range of ~640 damage per bullet, or ~1480 on a crit (which would be most of the time). <!-- under various equipment/talent/affection assumptions... real numbers will vary. -->
+	The Centaurus has at most 2746 HP remaining, so just 2/5 bullets from a single attack would usually suffice to kill it.
+	Reducing its evasion technically makes that a little more probable, but hitting 2/5 bullets isn't hard to begin with.
+</p>
+<p>
+	Point is - low-HP targets are relatively easy for rifles to kill.
+	Reducing their evasion won't do much.
+</p>
+<p>
+	(Worth keeping in mind that it makes damage simulator numbers with Stechken even less reliable <a href="simulation">than they'd normally be</a>, as they have no way of determining when enemies would be at low HP in addition to the ideas mentioned above.)
+</p>
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	Should you prefer Stechkin over Five-Seven?
+	In most cases, yeah.
+	Is Five-Seven bad?
+	Not at all.
+	Her tiles are significantly stronger than most pos-4 options, and ROF is almost always preferred over FP in RFHGs.
+</p>
+
+<p>
+	Keep in mind that ROF is not helpful for MGs, and using either of these in an ARSMG is a dreadful idea for several reasons.
+	Everything here is to be interpreted in the context of RFHG/RFSMG/RFSG formations.
+</p>
+<span class="anchor" id="notes"></span>
+<h2>Minor notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<p>
+	While I was working on this, Grizzly's login SPEQ came out.
+	It's not included in the lines or tests.
+	It boosts her in-skill line up to ~75%, though direct comparisons between her and Five-Seven/Stechkin remain questionable due to their different roles.
+	Think more of it as representing a "30% buff tile+25% buff skill" doll.
+</p>
+<p>
+	Despite the thumbnail, you certainly shouldn't avoid pairing Stechkin with crit damage dolls/fairies.
+	She'll still do great.
+</p>
+<p>
+	Testing did not include anything with Px4 Storm. I'd expect Five-Seven to improve a fair bit more in such teams.
+</p>
+<span class="anchor" id="m4ex"></span>
+<h2>Extra: M4 Exodia<sup><small><a href="#m4ex">&#35;</a></small></sup></h2>
+<p>
+	M4's SPEQ adjustment helps her shoot a lot faster, so you might wonder if it's possible to overcap on ROF in exodia-style formations.
+	Not exactly related to these two dolls specifically, but here's a table of popular HG combinations with M4 and the resulting ROF.
+	Pre-skill ROF is not counted as it's (a) obviously far over cap with anything more than a single ROF tile, and (b) irrelevant for this type of comp.
+</p>
+<center>
+	<table style="width:100%">
+	  <tr>
+		<th>Doll 1</th>
+		<th>Doll 2</th>
+		<th>Doll 3</th>
+		<th>Doll 4</th>
+		<th>Total tiles</th>
+		<th>Skills</th>
+		<th>Final ROF</th>
+	  </tr>
+	  <tr>
+		<td>Webley</td>
+		<td>Calico</td>
+		<td>(FP HG)</td>
+		<td>Stechkin</td>
+		<td>1.76</td>
+		<td>1.28*1.25*1.22</td>
+		<td>103 (101+2, 14f)</td>
+	  </tr>
+	  <tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Five-Seven</td>
+		<td>1.82</td>
+		<td>1.28*1.20*1.22</td>
+		<td>102 (101+1, 14f)</td>
+	  </tr>
+	  <tr>
+		<td></td>
+		<td></td>
+		<td>Grizzly (SPEQ)</td>
+		<td>Stechkin</td>
+		<td>1.76</td>
+		<td>1.28*1.25*1.22*1.08</td>
+		<td>111 (108+3, 13f)</td>
+	  </tr>
+	  <tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Five-Seven</td>
+		<td>1.82</td>
+		<td>1.28*1.20*1.22*1.08</td>
+		<td>110 (108+2, 13f)</td>
+	  </tr>
+	  <tr>
+		<td></td>
+		<td></td>
+		<td>UMP9</td>
+		<td>Stechkin</td>
+		<td>1.91</td>
+		<td>1.28*1.25*1.22</td>
+		<td>111 (108+3, 13f)</td>
+	  </tr>
+	  <tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Five-Seven</td>
+		<td>1.97</td>
+		<td>1.28*1.20*1.22</td>
+		<td>110 (108+2, 13f)</td>
+	  </tr>
+	  <tr>
+		<td></td>
+		<td></td>
+		<td>El Clear</td>
+		<td>Stechkin</td>
+		<td>2.06</td>
+		<td>1.28*1.25*1.22</td>
+		<td>120 (116+4, 12f)</td>
+	  </tr>
+	  <tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Five-Seven</td>
+		<td>2.12</td>
+		<td>1.28*1.20*1.22</td>
+		<td>119 (116+3, 12f)</td>
+	  </tr>
+	  <tr>
+		<td></td>
+		<td>LTLX/other</td>
+		<td>FP HG/other</td>
+		<td>Stechkin</td>
+		<td>1.44</td>
+		<td>1.25*1.22</td>
+		<td>65 (63+2, 23f)</td>
+	  </tr>
+	  <tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Five-Seven</td>
+		<td>1.50</td>
+		<td>1.20*1.22</td>
+		<td>65 (63+2, 23f)</td>
+	  </tr>
+	</table>
+</center>
+<p>
+	When stacking lots of ROF tiles, Stechkin having more of a skill emphasis means her total ROF buff is marginally higher.
+	However, it does not appear to actually result in faster shooting in any of these common formations.
+</p>
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="thompson">
+		<div class="gallery solo arsmg rfhg">
+		  <div class="gallerypic">
+			<img src="images/icon/thompson.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Thompson, Force Shields, and EHP</b><br/>Quantifying Durability</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="webley">
+		<div class="gallery gen solo arsmg rfhg mgsg calc">
+		  <div class="gallerypic">
+			<img src="images/icon/webley.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>To Lead or to Follow?</b><br/>Webley skill mode analysis</div>
+		  </div>
+		</div>
+	</a>
+</section>
+</div>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
