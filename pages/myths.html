@@ -75,6 +75,9 @@ There may be <em>some</em> opinion here and there, but I will try to keep this a
 	<li><a href="#talent-lowrarity">Damage II/Fervor at low rarities</a></li>
 	<li><a href="#base-stats">Base stats matter</a></li>
 	<li><a href="#disuse">X is bad because I haven't used them lately</a></li>
+	<li><a href="#rofchips">ALL ARs should get chips, even ROF buffers</a></li>
+	<li><a href="#mgeva">MGs and 0-EVA enemies</a></li>
+	<li><a href="#svdspeq">SVD's SPEQ</a></li>
 </ul>
 
 <span class="anchor" id="hr"></span>
@@ -1136,6 +1139,66 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 
 <p>
 	Not to mention - if you personally haven't used the doll in ages, how can you really comment on their performance?
+	Basic hand calculations can show Ak 5 to be a better version of FNC, but many dolls have quirks and mechanics that need more than that to properly evaluate.
+</p>
+<span class="anchor" id="rofchips"></span>
+<h2>ALL ARs should get chips, even ROF buffers<sup><small><a href="#rofchips">&#35;</a></small></sup></h2>
+<p><strong>Status:</strong> not all ARs should get chips.</p>
+<p>
+	First: it is true that, for many default-ish damage simulator conditions, ROF ARs get slightly bigger numbers with EOT or VFL+Chip setups instead of a VFL+empty slot.
+	However:
+</p>
+<ol>
+	<li>Default-ish damage simulator conditions are not necessarily well-aligned with actual gameplay conditions.</li>
+	<li>This is largely carried by pre-skill DPS and short timeframes. If you care that much about pre-skill DPS, use something with a much shorter ICD or a passive.</li>
+	<li>This advantage will erode quite quickly once you insert the doll into real echelons. You'll probably end up with at least some combination of ROF/crit rate tiles and a crit damage aura (have you seen <a href="ro635">RO's mod?</a> Beach fairy? M4A1?), which make chips much less attractive on ROF buffers.</li>
+</ol>
+<span class="anchor" id="mgeva"></span>
+<h2>MGs should only be used against 0-EVA enemies<sup><small><a href="#mgeva">&#35;</a></small></sup></h2>
+<p><strong>Status:</strong> if only we could be so lucky.</p>
+<p>
+	MGSG echelons have two main uses nowadays: armorstacking and gunboating.
+</p>
+<p>
+	The core principle of armorstacking is getting to some armor threshold, turning some exceptionally nasty fights into largely AFK/0-damage ones.
+	Fights that require (or strongly prefer) armorstacking to clear have no particular reason to be comprised of enemies with 0 evasion.
+	SWAP SF, Gunners, Zombies, Pyxis/Prowlers, and such are relatively typical of such encounters.
+	And last time I checked, some of those have pretty good evasion stats.
+</p>
+<p>
+	Gunboats forgo SGs entirely and focus on raw MG DPS.
+	This is more likely to be put against large hordes of 0-EVA armored enemies, so VFLs would be typical there.
+</p>
+<p>
+	While RMRs aren't the definitive new MG equip, they certainly have a use.
+</p>
+<p>
+	(If you are immune to every single attack from some enemy group, your exact DPS may not matter much. SWAP Jaegers and Gladiator slams can still make optimizing your MG DPS useful.)
+</p>
+
+<span class="anchor" id="svdspeq"></span>
+<h2>SVD's SPEQ makes her better against high armor<sup><small><a href="#svdspeq">&#35;</a></small></sup></h2>
+<p><strong>Status:</strong> it's a damage boost, but rifles <em>really</em> do not care about armor!</p>
+<p>
+	SVD's login SPEQ deals an extra instance of damage against armored enemies equal to 10% of her FP, ignoring armor.
+	It can crit.
+	Let's try running some numbers.
+</p>
+<p>
+	Suppose SVD is buffed to 400 FP, 195 AP, 100% crit rate, and a 200% crit damage multiplier - nothing too crazy.
+	99.9% of enemies have 226 armor or less - let's take that as a realistic worst case.
+</p>
+<ul>
+	<li>On her own, SVD will deal (400-(226-195))*2=738 average damage.</li>
+	<li>With her SPEQ, she'd deal (400-(226-195)+0.1*400)*2=818 average damage (+10.8%)</li>
+	<li>With a regular 10% FP buff, she'd deal (1.1*400-(226-195))*2=818 average damage (+10.8%)</li>
+</ul>
+<p>
+	It should be clear how these formulas can be rearranged.
+	It is equivalent to a straight FP buff against armored enemies - nice, but it doesn't revolutionize her role.
+</p>
+<p>
+	See also: <a href="hydras">this myth about high armor in general</a>.
 </p>
 <span class="anchor" id="ads"></span>
 <h2>More like this</h2>
