@@ -21,12 +21,15 @@ function calculateArmReq() {
 	var efp = parseInt(document.getElementById("efp").value),
 		enemycat = parseInt(document.getElementById("enemycat").value);
 
-	if (enemycat == 2) {
+	if (enemycat == 2) { // Judge - no variance, full damage
 		no_flash = Math.ceil(efp)-1;
 		flash =  Math.ceil(efp)-3;
-	} else if (enemycat == 3) {
+	} else if (enemycat == 3) { // Pyxis - half damage, no variance
 		no_flash = Math.ceil(efp/2)-1;
 		flash =  Math.ceil(efp/2)-3;
+	} else if (enemycat == 4) { // SWAP Dragoon - double damage with shield up
+		no_flash = Math.ceil(efp*1.15*2)-1;
+		flash =  Math.ceil(efp*1.15*2)-3;
 	} else {
 		no_flash = Math.ceil(efp*1.15)-1;
 		flash =  Math.ceil(efp*1.15)-3;
@@ -171,6 +174,7 @@ function calculateArmB() {
 			<option value="0">- Enemy type -</option>
 			<option value="2">Judge</option>
 			<option value="3">Pyxis</option>
+			<option value="4">SWAP Dragoon</option>
 			<option value="1">Most/generic enemies</option>
 			<!-- <option value="1">Human Resources</option> -->
 		</select>
