@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>Dorothy Analysis - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Dorothy Analysis</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-April-16</em></center>
+<p>
+	<em>This is part of a series covering the VA-11 Hall-A dolls. <a href="valhalla">You can go back to the overview here</a>.</em>
+</p>
+<span class="anchor" id="intro"></span>
+<h2>Introduction<sup><small><a href="#intro">&#35;</a></small></sup></h2>
+<blockquote>
+	<div class="row">
+		<div class="col-9 col-12-small">
+			<p><strong>Secret Modifications</strong> ICD 1s/CD 2s</p>
+			<p>
+				Press to toggle between Nano-Camo and MIRD-113.
+			</p>
+			<p>
+				MIRD-113: When activated, increase self damage by 100% and decrease the accuracy of all allies in the same column by 40% but increase their evasion by 80%.
+			</p>
+			<p>
+				Nano-Camo: When activated, increase self evasion by 100% and decrease the evasion of all allies in the same column by 40% but increase their accuracy by 80%.
+			</p>
+			<p>
+				When Dorothy is in the center row, she activates Nano-Camo by default and MIRD-113 otherwise.
+			</p>
+			<p>
+				Favorite Drink: When buffed by a Piano Woman, reduce the debuff effect of her skill by 50%.
+			</p>
+		</div>
+		<div class="col-3 col-12-small">
+			<center><div class="figure">
+				<img src="images/valhalla/dorothy.png" width="80%"/>
+			</div><em>Buffs RF, AR: 15% FP, 25% ACC</em></center>
+		</div>
+	</div>
+</blockquote>
+<p>
+	These abilities cannot trigger Python's passive, not that that would have been a good idea.
+</p>
+<p>
+	Dorothy essentially has an offtank mode that also buffs the EVA of your maintank, and a maintank mode that debuffs the EVA of your offtank.
+	Dorothy's selfbuff is permanent, but her buff to fellow SMGs in the column needs them to stay in place.
+	This can make using her as an EVA buffer somewhat tricky, as kiting your maintank alone into the front column would lose them Dorothy's buff.
+</p>
+
+<!-- <span class="anchor" id="details"></span>
+<h2>Skill Details<sup><small><a href="#details">&#35;</a></small></sup></h2>
+ <p>
+	Dorothy's buffs appear to be reapplied every 1.2 seconds, so it will quickly disappear if you move the recipient SMG out of her column.
+	Similarly, if you keep Dorothy constantly moving there may be some downtime.
+	She only needs to stop for a moment to reapply this, so it's not a big problem.
+</p> -->
+<span class="anchor" id="tank"></span>
+<h2>As a Tank<sup><small><a href="#tank">&#35;</a></small></sup></h2>
+<p>
+	To get a general frame of reference, let's work out how much EHP Dorothy and some other popular SMG options have under typical conditions.
+</p>
+<center>
+	<table style="width:auto">
+		<tr>
+			<th>Doll</th>
+			<th>EHP vs low (20) ACC</th>
+			<th>EHP vs high (100) ACC</th>
+		</tr>
+		<tr>
+			<td>Dorothy</td>
+			<td style="text-align:center;">12936</td>
+			<td style="text-align:center;">3291</td>
+		</tr>
+		<tr>
+			<td>C-MS</td>
+			<td style="text-align:center;">10388</td>
+			<td style="text-align:center;">2818</td>
+		</tr>
+		<tr>
+			<td>UMP45</td>
+			<td style="text-align:center;">7361</td>
+			<td style="text-align:center;">2252</td>
+		</tr>
+		<tr>
+			<td>RO635 (passive only; 0 debuffs)</td>
+			<td style="text-align:center;">9825</td>
+			<td style="text-align:center;">2774</td>
+		</tr>
+		<tr>
+			<td>RO635 (passive only; 2 debuffs)</td>
+			<td style="text-align:center;">12455</td>
+			<td style="text-align:center;">3190</td>
+		</tr>
+		<tr>
+			<td>RO635 (with active; 2 debuffs)</td>
+			<td style="text-align:center;">30526</td>
+			<td style="text-align:center;">6949</td>
+		</tr>
+		<tr>
+			<td>Suomi (pre-skill)</td>
+			<td style="text-align:center;">7480</td>
+			<td style="text-align:center;">2376</td>
+		</tr>
+		<tr>
+			<td>Suomi (in-skill)</td>
+			<td style="text-align:center;">17050</td>
+			<td style="text-align:center;">4290</td>
+		</tr>
+		<!-- <tr>
+			<td>Suomi (uptime-averaged)</td>
+			<td style="text-align:center;">13461</td>
+			<td style="text-align:center;">3572</td>
+		</tr> -->
+	</table>
+</center>
+<p>
+	Ro's active skill uptime isn't fantastic, but as you can see, <a href="ro635">she gets a little crazy</a>.
+	However, if our standard of comparison is set so high that only the very top modded protagonists are acceptable, we can conclude almost all of our analyses by saying the doll in question is worthless.
+</p>
+<p>
+	While Dorothy can't compete with RO mod and can't match EVA selfbuffers while their skills are active, she's looking pretty good.
+	100% skill uptime and more EHP than C-MS is worth noting.
+</p>
+<p>
+	I would usually recommend using Dorothy in this role.
+	Just be mindful of the EVA debuff on your offtank, and try not to let them take many bullets.
+</p>
+<span class="anchor" id="offtank"></span>
+<h2>As a Shrimp<sup><small><a href="#offtank">&#35;</a></small></sup></h2>
+<p>
+	Dorothy's tiles are a bit of a problem here.
+	Whether she stands on position 2 or 8, Dorothy only hits your center AR with her tiles.
+	AR DPS tends to be better than SMG DPS, especially past the first battle, so offtanks like SR-3MP and X95 are starting at an advantage by total echelon damage output.
+</p>
+<p>
+	One arbitrary, rough comparison:
+</p>
+<center><div class="figure">
+	<img src="images/valhalla/ot-damage.png" width="100%"/>
+</div><em>Dorothy's own damage output was lower and backline DPS suffered. Note that M4's SPEQ rework is not implemented here.</em></center>
+<p>
+	This isn't the full story, as her EVA buff to the maintank could be valuable enough to make up for a little lower DPS.
+	But it's not a super exciting option either.
+</p>
+
+<p>
+	In this mode, to maximize your DPS, I would generally recommend equipping her with a chip, HP ammo, and an ITI.
+	EOTs drop her down a frame and would only be preferred if you happen to have excessive accuracy buffs or are fighting unarmed ELIDs.
+</p>
+<center><div class="figure">
+	<img src="images/valhalla/dorothy-chip.png" width="100%"/>
+</div><em>ROF tiles can change things a bit, but <a href="chips">you shouldn't be using AK-12 either way</a>.</em></center>
+<span class="anchor" id="history"></span>
+<h2>Historical Uses<sup><small><a href="#history">&#35;</a></small></sup></h2>
+<ul>
+	<li>
+		Dorothy has sometimes seen use in Theater, especially in the first few to support C-MS against the Brute+SWAP Striker mob.
+	</li>
+	<li>
+		Dorothy was part of a Gustav-killing ARSMG on foreign servers in SC ranking, although the typical EN strategy became gunboating due to vision changes/bug fixes.
+		In that team, she was used as an offtank to support the main tank and put in a good amount of damage.
+	</li>
+</ul>
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	Direct-fire SMGs are not a very useful archetype and RO's mod puts any other EVA tank to shame.
+	Dorothy is certainly not at the top of the SMG list, but her flexibility makes her a worthwhile tool to have in case it comes up.
+	In fact, you could use her to buff RO's EVA even higher!
+	<strong>Recommended with low priority.</strong>
+</p>
+<span class="anchor" id="notes"></span>
+<h2>Minor Notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<ul>
+	<li>
+		HG tiles offer much more than 15% FP, and they have DPS-boosting skills as well. Dorothy is not a replacement for a buffing HG in RFHGs.
+		She can be used if you really need an EVA tank for some situation, but you are making a sacrifice in buffs.
+	</li>
+	<li>
+		Dorothy is not dupeworthy, if you got one last time.
+		A second copy would purely be for collection/flex.
+	</li>
+</ul>
+
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="valhalla">
+		<div class="gallery gen solo arsmg rfhg mgsg calc">
+		  <div class="gallerypic">
+			<img src="images/icon/valhalla.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>VA-11 Hall-A Collab Doll Analysis</b><br/>An updated perspective</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="shrimp-equip">
+		<div class="gallery solo arsmg">
+		  <div class="gallerypic">
+			<img src="images/icon/shrimp-equip.jpg" alt="SR-3MP Equipment" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Equipping SR-3MP for any situation</b><br/>DPS optimization</div> <!-- Equipment optimization -->
+		  </div>
+		</div>
+	</a>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
