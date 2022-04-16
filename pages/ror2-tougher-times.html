@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>Risk of Rain 2: Tougher Times - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Risk of Rain 2: Tougher Times</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-April-16</em></center>
+
+<p>
+	Tougher Times is a common item in Risk of Rain 2.
+	It gives you a chance to completely ignore each instance of damage, with higher stack counts improving the odds.
+</p>
+<center><div class="figure">
+	<img src="https://gamepedia.cursecdn.com/riskofrain2_gamepedia_en/3/39/Tougher_Times.png" width="20%"/>
+</div><em></em></center>
+<p>
+	Specifically, the chance to ignore damage is:
+</p>
+$$ P(\text{dodge}) = 1 - \left( \frac{1}{0.15n+1} \right) $$
+<p>
+	for \( n \) stacks.
+	Some example values:
+</p>
+<center>
+	<table style="width:auto; text-align:center;">
+		<tr>
+			<th>Count</th>
+			<th>Dodge chance</th>
+		</tr>
+		<tr>
+			<td>0</td>
+			<td>0%</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>13.04%</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>23.08%</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>31.03%</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>42.86%</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>60.0%</td>
+		</tr>
+	</table>
+</center>
+<p>
+	The <em>percentage value increase</em> starts at 13.04% and diminishes with each Tougher Times collected, approaching a 100% dodge chance as \( n \) grows arbitrarily large.
+	This isn't a great metric, though - not all percentages are created equal.
+	Consider a baseline 1000 HP, 0% dodge chance.
+	Adding a 1% chance to ignore damage only slightly improves your survivability.
+	But if you have a 98% dodge chance, adding "just" 1% to that doubles how many hits you can take on average.
+	Another 1% makes you immortal.
+	See also: <a href="evasion">evasion and EHP in Girls' Frontline</a>.
+	This can be calculated as
+</p>
+$$ \mathrm{EHP} = \frac{\mathrm{HP}}{\mathrm{Enemy~hit~rate}} = \frac{\mathrm{HP}}{1-\mathrm{Dodge~chance}} $$
+<p>
+	Let's plug the previous expression for Tougher Times in.
+</p>
+$$ \mathrm{EHP} = \frac{\mathrm{HP}}{1-\left( 1 - \left( \frac{1}{0.15n+1} \right) \right)} = \frac{\mathrm{HP}}{\left( \frac{1}{0.15n+1} \right)} = \mathrm{HP} \times ( 0.15n+1 )$$
+<p>
+	Graphically:
+</p>
+<center><div class="figure">
+	<img src="https://i.imgur.com/Pcw1O7U.png" width="100%"/>
+</div><em></em></center>
+<p>
+	In other words: your effective HP increases linearly with the number of Tougher Times you have.
+	At the same time, linear increases are less useful as you stack them higher and higher, in terms of the net effect.
+	Similar case as almost any common item.
+	Consider the gain in EHP from adding a single Tougher Time, by your total count:
+</p>
+$$ \mathrm{EHP~increase} = \frac{\mathrm{HP} \times ( 0.15n+1 )}{\mathrm{HP} \times ( 0.15(n-1)+1 )} = \frac{0.15n+1}{0.15(n-1)+1} = \frac{3}{3n+17}+1$$
+<center><div class="figure">
+	<img src="https://i.imgur.com/3eOj7xq.png" width="100%"/>
+</div><em></em></center>
+<p>
+	The first one is indeed a 15% gain in EHP, but the overall percentage increase drops off after.
+	(This is all about <em>average</em> performance, of course. Against particularly high-damage attacks variance will be much higher.)
+</p>
+
+
+<!-- <span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="thompson">
+		<div class="gallery solo arsmg rfhg">
+		  <div class="gallerypic">
+			<img src="images/icon/thompson.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Thompson, Force Shields, and EHP</b><br/>Quantifying Durability</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="webley">
+		<div class="gallery gen solo arsmg rfhg mgsg calc">
+		  <div class="gallerypic">
+			<img src="images/icon/webley.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>To Lead or to Follow?</b><br/>Webley skill mode analysis</div>
+		  </div>
+		</div>
+	</a>
+</section> -->
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
