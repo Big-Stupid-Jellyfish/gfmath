@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>Jill Analysis - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Jill Analysis</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-April-16</em></center>
+<p>
+	<em>This is part of a series covering the VA-11 Hall-A dolls. <a href="valhalla">You can go back to the overview here</a>.</em>
+</p>
+<span class="anchor" id="intro"></span>
+<h2>Introduction<sup><small><a href="#intro">&#35;</a></small></sup></h2>
+<blockquote>
+	<div class="row">
+		<div class="col-9 col-12-small">
+			<p><strong>Mixing Time</strong> ICD 6s/CD 16s</p>
+			<p>
+				During battle, Jill takes 3 seconds to mix different drinks depending upon her equipment.
+				Each drink grants a different buff to her echelon.
+			</p>
+			<p>
+				Jill cannot attack.
+				Each point of Jill's base damage stat grants herself 1% skill cooldown reduction (does not affect initial cooldown time), max 30%.
+			</p>
+			<p>
+				Menu:
+			</p>
+			<ul>
+				<li><strong>Big Beer:</strong> Increase SG armor by 20% and damage and accuracy by 30% for 8 seconds.</li>
+				<li><strong>Brandtini:</strong> Increase MG damage and accuracy by 25% for 8 seconds.</li>
+				<li><strong>Piano Woman:</strong> Increase the front column's evasion by 60% and the other positions' damage by 20% for 8 seconds.</li>
+				<li><strong>Moonblast:</strong> Increase all allies' rate of fire by 22% for 8 seconds.</li>
+				<li><strong>Bleeding Jane:</strong> Increase RF and AR crit rate by 25% and 60% of the crit rate over the cap becomes additional crit damage for 8 seconds.</li>
+				<li><strong>Fringe Weaver:</strong> Increase all allies' damage by 35% for 5 seconds. After the skill effect ends, become drunk and decrease damage and accuracy by 15% for 3 seconds.</li>
+				<li><strong>Sugar Rush:</strong> Increase all allies' damage by 18% for 8 seconds.</li>
+			</ul>
+		</div>
+		<div class="col-3 col-12-small">
+			<center><div class="figure">
+				<img src="images/valhalla/jill.png" width="80%"/>
+			</div><em>Buffs all: 40% FP, 40% ACC</em></center>
+		</div>
+	</div>
+</blockquote>
+<p>
+	While it's broken down into sections, Jill's position as the doll with the longest skill description has yet to be properly challenged.
+	Her tiles make her suited to positions 4/5 in typical RFHGs, position 4 in ARSMGs (generally <a href="2v3ar">not recommended</a>, especially with her extended ICD), and position 5 in MGSGs.
+</p>
+
+<span class="anchor" id="timing"></span>
+<h2>Timing<sup><small><a href="#timing">&#35;</a></small></sup></h2>
+<p>
+	A 9 second ICD (6s+3s mixing) and 16s cooldown sounds scary.
+	Let's run the numbers and see how that works out with her own CDR and that given by RF tiles.
+	I'm assuming Jill is at max level, and thus is receiving the full benefit from her FP=CDR component.
+	Her excellent tiles for dragging should make that easy enough.
+</p>
+<center>
+	<table style="width:auto; text-align:center;">
+		<tr>
+			<th style="text-align:center;">CDR tiles</th>
+			<th style="text-align:center;">ICD</th>
+			<th style="text-align:center;">Cooldown</th>
+			<th style="text-align:center;">Uptime %</th>
+		</tr>
+		<tr>
+			<td>0%</td>
+			<td>8.93 s</td>
+			<td>11.20 s</td>
+			<td>71.4%</td>
+		</tr>
+		<tr>
+			<td>15% (1 4★ RF)</td>
+			<td>8.10 s</td>
+			<td>9.53 s</td>
+			<td>83.9%</td>
+		</tr>
+		<tr>
+			<td>18% (1 5★ RF)</td>
+			<td>7.93 s</td>
+			<td>9.20 s</td>
+			<td>86.9%</td>
+		</tr>
+		<tr>
+			<td>20% (1 6★ RF)</td>
+			<td>7.80 s</td>
+			<td>8.97 s</td>
+			<td>89.2%</td>
+		</tr>
+		<tr>
+			<td>30% (2 4★+ RFs)</td>
+			<td>7.20 s</td>
+			<td>7.87 s</td>
+			<td>100%</td>
+		</tr>
+	</table>
+</center>
+<p>
+	Uptime % assumes her typical 8-second duration.
+	Interestingly, Jill can maintain 100% uptime on her active when capped on CDR tiles.
+	Exact frames will vary by configuration, so take these as somewhat approximate.
+	For reference, a typical HG (6s ICD, 8s duration, 12s CD):
+</p>
+<center>
+	<table style="width:auto; text-align:center;">
+		<tr>
+			<th style="text-align:center;">CDR tiles</th>
+			<th style="text-align:center;">ICD</th>
+			<th style="text-align:center;">Cooldown</th>
+			<th style="text-align:center;">Uptime %</th>
+		</tr>
+		<tr>
+			<td>0%</td>
+			<td>6 s</td>
+			<td>12 s</td>
+			<td>66.7%</td>
+		</tr>
+		<tr>
+			<td>15% (1 4★ RF)</td>
+			<td>5.10 s</td>
+			<td>10.20 s</td>
+			<td>78.4%</td>
+		</tr>
+		<tr>
+			<td>18% (1 5★ RF)</td>
+			<td>4.92 s</td>
+			<td>9.84 s</td>
+			<td>81.3%</td>
+		</tr>
+		<tr>
+			<td>20% (1 6★ RF)</td>
+			<td>4.80 s</td>
+			<td>9.60 s</td>
+			<td>83.3%</td>
+		</tr>
+		<tr>
+			<td>30% (2 4★+ RFs)</td>
+			<td>4.20 s</td>
+			<td>8.40 s</td>
+			<td>95.2%</td>
+		</tr>
+	</table>
+</center>
+<span class="anchor" id="cumulative-damage"></span>
+<h2>Cumulative Damage<sup><small><a href="#cumulative-damage">&#35;</a></small></sup></h2>
+<p>
+	Jill has stronger-than-typical tiles but a slower-than-typical skill.
+	In a similar vein to <a href="g41-standard">these AR cumulative damage charts</a>, let's do a few for HG buffs.
+</p>
+<center><div class="figure">
+	<img src="images/valhalla/jill-cdps-1.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Jill's longer ICD leads to less overlap with RF actives, <a href="images/valhalla/jill-cdps-2.png">hurting her relative performance a bit more</a>.
+</p>
+<p>
+	With 30% CDR tiles:
+</p>
+<center><div class="figure">
+	<img src="images/valhalla/jill-cdps-3.png" width="100%"/>
+</div><em></em></center>
+<p>
+	When applying these buffs to a typical RF, <a href="images/valhalla/jill-cdps-4.png">performance once again drops a little</a>.
+</p>
+<p>
+	Piano Woman's EVA buff can't be included on a chart like this, so it's left with just its 20% multiplier.
+	Jill's accuracy tiles and flexible skill options often allow you to edge out some more performance than what these graphs illustrate.
+	Grizzly's login SPEQ (8% ROF in-skill) makes her a reasonably tough standard, so all-in-all this doesn't look too bad for Jill.
+	Either way, if not heavily min-maxing, Jill definitely prefers faster fights where her tiles can carry more.
+</p>
+<span class="anchor" id="mixes"></span>
+<h2>Mix Options<sup><small><a href="#mixes">&#35;</a></small></sup></h2>
+<h3>Big Beer</h3>
+<p>
+	A 20% armor buff is only a little above most MG tiles, with only partial uptime.
+	This drink has no particular use.
+</p>
+<h3>Brandtini</h3>
+<p>
+	This is good in MGSG echelons on the second volley+, particularly if you're expecting evasive enemies.
+	Jill can act as a straight upgrade over K5 here.
+	But that's a rather niche scenario to begin with.
+</p>
+<h3>Piano Woman</h3>
+<p>
+	Piano Woman offers slightly a slightly smaller offensive buff in exchange for a significant frontline EVA buff.
+	Recommended for ARSMG-style echelons.
+</p>
+<h3>Moonblast</h3>
+<p>
+	Jill can buff ROF with Moonblast, at the cost of a 4-star multiplier (22%).
+	Usable in RFHG-style echelons, but it's terrible in ARSMGs/MGSGs.
+</p>
+<h3>Bleeding Jane</h3>
+<p>
+	This is Jill's most interesting drink.
+	By stacking loads of crit rate buffs (Fury Fairy, PPK, Five-Seven), this drink converts all that into more damage than it has any right to.
+</p>
+<p>
+	Some example numbers:
+</p>
+<center>
+	<table style="width:auto; text-align:center;">
+		<tr>
+			<th style="text-align:center;">Crit source(s)</th>
+			<th style="text-align:center;">Uncapped crit chance</th>
+			<th style="text-align:center;">Final crit damage buff</th>
+		</tr>
+		<tr>
+			<td>Python/Contender (tiles)</td>
+			<td>\( 88\%\cdot1.2\cdot1.25=132\% \)</td>
+			<td>19.2%</td>
+		</tr>
+		<tr>
+			<td>Five-Seven</td>
+			<td>\( 88\%\cdot1.3\cdot1.2\cdot1.25=171\% \)</td>
+			<td>42.6%</td>
+		</tr>
+		<tr>
+			<td>PPK</td>
+			<td>\( 88\%\cdot1.16\cdot1.35\cdot1.25=172\% \)</td>
+			<td>43.2%</td>
+		</tr>
+		<tr>
+			<td>Five-Seven+PPK</td>
+			<td>\( 88\%\cdot1.46\cdot1.35\cdot1.2\cdot1.25=260\% \)</td>
+			<td>96%</td>
+		</tr>
+		<tr>
+			<td>Five-Seven+PPK+Crit II Fury</td>
+			<td>\( 88\%\cdot1.46\cdot1.35\cdot1.2\cdot1.25\cdot1.5\cdot1.25=487\% \)</td>
+			<td>232%</td>
+		</tr>
+	</table>
+</center>
+<p>
+	While it's not worth using without any special support (as then you're barely getting anything more than a minor crit rate buff), it doesn't take much to produce worthwhile numbers.
+</p>
+<p>
+	That said, I don't believe it <a href="https://reddit.com/r/girlsfrontline/comments/ojazqj/weekly_commanders_lounge_july_13_2021/h57ftu1/">particularly exceeds</a> other high-end RFHG options.
+	I don't recommend completely distorting your echelon around this one interaction.
+	<!-- Don't raise a Crit II Fury Fairy unless you're willing to spend a <em>lot</em> of resources for a meme. -->
+	Crit II is not a good talent in other contexts (outside of <em>maybe</em> <a href="criticalII">debuffed para fights</a>).
+	I may dive deeper into this option later. If so, it'll be linked here.
+</p>
+<h3>Fringe Weaver</h3>
+<p>
+	A straight upgrade over Sugar Rush, Fringe Weaver boasts a spectacular multiplier... until the debuff kicks in.
+	That may sound scary, but this is a solid option in short-medium length fights and the debuff isn't <em>that</em> bad.
+</p>
+<h3>Sugar Rush</h3>
+<p>
+	While FP buffs are cool, the low multiplier on this means you should almost always be able to find a better drink.
+</p>
+<span class="anchor" id="history"></span>
+<h2>Historical Uses<sup><small><a href="#history">&#35;</a></small></sup></h2>
+<ul>
+	<li>
+		Jill often sees use in gunboat echelons across multiple rankings.
+		Her tiles let her fit into many of their odd arrangements with a massive buff, pre-6s damage is valued much more, and the accuracy helps when your deathstack is more than just Nemeums/Aegis.
+		Contender was a common replacement for newer players, and Python/M1895 mod are other typical HGs used.
+	</li>
+	<li>
+		Jill was used in an <a href="https://www.youtube.com/watch?v=DoIcSlQVx28">M200 exodia</a> for the Showdown at Habanera speedrun (Fringe Weaver).
+	</li>
+</ul>
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	HGs are easy to recommend - as long as their skill does something useful, they're probably good.
+	Jill's skill does a lot of things, some of which no other doll can replicate.
+	While she shouldn't be crammed in just any echelon, she's <strong>highly recommended.</strong>
+	Make sure not to miss her.
+</p>
+<p>
+	Her most notable drinks are:
+</p>
+<ul>
+	<li>Piano Woman (ARSMGs)</li>
+	<li>Bleeding Jane (RFHGs/crit memes)</li>
+	<li>Fringe Weaver (highest straight FP multiplier, solid overall numbers)</li>
+</ul>
+<span class="anchor" id="notes"></span>
+<h2>Minor Notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<ul>
+	<li>Jill is by far the best dupe candidate from this collab, if you got one from last time. Still nowhere near mandatory.</li>
+	<li>She has a <em>lot</em> of SPEQs. At least storage is cheap (120 gems for 20).</li>
+	<li>Jill can't move when mixing her drinks. Be mindful of this when kiting. In intensive fights, it may be worth switching her skill to manual to ensure it doesn't stop her in a bad position.</li>
+	<li>Jill doesn't attack, which is a slight downside in RFHG echelons against softer enemies. It's not a big deal, especially considering how hard fights tend to need lots of kiting anyways.</li>
+</ul>
+<span class="anchor" id="example-echelons"></span>
+<h2>Example Echelons<sup><small><a href="#example-echelons">&#35;</a></small></sup></h2>
+<p>
+	Standard disclaimer: teams should be built as needed according to the circumstances of specific maps and enemies.
+	Do not blindly copy-and-paste teams.
+	With that in mind, here are some not-entirely-awful ideas to illustrate where Jill can be used.
+</p>
+<div class="row">
+	<div class="col-6 col-12-small">
+		<center><div class="figure">
+			<img src="https://i.imgur.com/1A15Epn.png" width="100%"/>
+		</div><em>RFHG: R93/Five-Seven/Liu, Jill/P22. Bleeding Jane.</em></center>
+	</div>
+	<div class="col-6 col-12-small">
+		<center><div class="figure">
+			<img src="https://i.imgur.com/negWS6W.png" width="100%"/>
+		</div><em>Kordboat: M1895 CB/Python/Kord, Jill/P22. Fringe Weaver, most likely.</em></center>
+	</div>
+</div>
+<div class="row">
+	<div class="col-6 col-12-small">
+		<center><div class="figure">
+			<img src="https://i.imgur.com/gAUpIDE.png" width="100%"/>
+		</div><em>MGSG: PKP/RPK-230/Kord, Jill, LTLX. Brandtini/Fringe Weaver.</em></center>
+	</div>
+	<div class="col-6 col-12-small">
+		<center><div class="figure">
+			<img src="https://i.imgur.com/uthodTz.png" width="100%"/>
+		</div><em>RFHG: Rico/Jill/Carcano M91/38, SAA/PPK. Bleeding Jane.</em></center>
+	</div>
+</div>
+
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="valhalla">
+		<div class="gallery gen solo arsmg rfhg mgsg calc">
+		  <div class="gallerypic">
+			<img src="images/icon/valhalla.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>VA-11 Hall-A Collab Doll Analysis</b><br/>An updated perspective</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="manual-labor">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/manual-labor.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Rico Skill Analysis</b><br/>Force manual vs Autoskill</div>
+		  </div>
+		</div>
+	</a>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
