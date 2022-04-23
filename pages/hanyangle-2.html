@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<meta name="description" content="Girls Frontline, by the numbers">
+<title>Type88: Additional Hitbox Testing - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+	<h1>Type88: Additional Hitbox Testing</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-April-23</em></center>
+
+<p>
+	While overall performance differences between Type88's skins are <a href="hanyangle">clearly nothing to worry about</a>, some concern may remain:
+	the laser visuals of Type88's Christmas skin are obviously different, and there are some scenarios like ranking where every little bit matters.
+	Let's look into some different cases and see if there is any situation in which there is a functional difference between skins.
+</p>
+<p>
+	Note that kiting in actual battles will leave enemies in slightly different relative positions depending on exactly when and how you move your dolls.
+	We can only reasonably compare skins when the setup is <em>exactly</em> the same - at that point, an observed difference could only be because of the skin.
+</p>
+
+<span class="anchor" id="basic-dummy"></span>
+<h2>Basic dummy<sup><small><a href="#basic-dummy">&#35;</a></small></sup></h2>
+
+<p>
+	The Customized Target dummy provides a consistent target, but it can't be moved around much.
+	Comparing Type88's Christmas & base skin, however, identical results can be observed:
+</p>
+<ul>
+	<li>If you let the team walk up to the dummy normally, either skin option will miss the dummy from 5 but hit on all other positions.</li>
+	<li>With a range extension (other doll in the front), either skin option will miss the dummy from 3 but hit on all other positions.</li>
+</ul>
+<p>
+	<a href="https://www.youtube.com/watch?v=zXUF3brRe0Q">Video demonstration here</a>.
+	Note that the laser visuals remain separated from the actual hit logic - Type88's Christmas lasers are often flying completely over the dummy but still dealing damage.
+</p>
+
+<span class="anchor" id="real-enemies"></span>
+<h2>Real enemies<sup><small><a href="#real-enemies">&#35;</a></small></sup></h2>
+
+<p>
+	The dummy only allows for checking 18 angles consistently - 9 positions, range extension or no extension.
+	Let's take some real enemies and check more cases.
+	I'll be following this procedure:
+</p>
+<ol>
+	<li>Pick an enemy group that can be easily gotten down to a lone enemy/has little clutter.</li>
+	<li>Block it in a consistent location (without kiting) and kill/ignore other enemies.</li>
+	<li>Use Type88's Christmas skin, and see if she hits it from each position.</li>
+	<ul>
+		<li>If she does miss it from any position, check that same situation with her base skin.</li>
+		<li>If she always hits it, note the case and move on.</li>
+	</ul>
+</ol>
+<center>
+<table style="width:100%; text-align:center;">
+	<tr>
+		<th style="text-align:center;">id</th>
+		<th style="text-align:center;">Remaining Enemy</th>
+		<th style="text-align:center;">Stopped by a doll on position</th>
+		<th style="text-align:center;">"Miss" positions (Xmas)</th>
+		<th style="text-align:center;">"Miss" positions (Base)</th>
+	</tr>
+	<tr>
+		<td>950046</td>
+		<td>Drone x1</td>
+		<td><img src="images/hanyangle/Pos5.png" style="height:1.5em;"/></td>
+		<td><img src="images/hanyangle/Pos5.png" style="height:1.5em;"/></td>
+		<td><img src="images/hanyangle/Pos5.png" style="height:1.5em;"/></td>
+	</tr>
+	<tr>
+		<td>950046</td>
+		<td>Drone x1</td>
+		<td><img src="images/hanyangle/Pos6.png" style="height:1.5em;"/></td>
+		<td><img src="images/hanyangle/Pos3.png" style="height:1.5em;"/></td>
+		<td><img src="images/hanyangle/Pos3.png" style="height:1.5em;"/></td>
+	</tr>
+	<tr>
+		<td>51</td>
+		<td>Scout x1</td>
+		<td><img src="images/hanyangle/Pos5.png" style="height:1.5em;"/></td>
+		<td>-</td>
+		<td>N/A</td>
+	</tr>
+	<tr>
+		<td>51</td>
+		<td>Scout x1</td>
+		<td><img src="images/hanyangle/Pos6.png" style="height:1.5em;"/></td>
+		<td>-</td>
+		<td>N/A</td>
+	</tr>
+	<tr>
+		<td>950031</td>
+		<td>Manticore x2</td>
+		<td><img src="images/hanyangle/Pos5.png" style="height:1.5em;"/></td>
+		<td>-</td>
+		<td>N/A</td>
+	</tr>
+	<tr>
+		<td>950031</td>
+		<td>Manticore x2</td>
+		<td><img src="images/hanyangle/Pos6.png" style="height:1.5em;"/></td>
+		<td>-</td>
+		<td>N/A</td>
+	</tr>
+	<tr>
+		<td>950034</td>
+		<td>Hydra x4</td>
+		<td><img src="images/hanyangle/Pos5.png" style="height:1.5em;"/></td>
+		<td>-</td>
+		<td>N/A</td>
+	</tr>
+	<tr>
+		<td>950034</td>
+		<td>Hydra x4</td>
+		<td><img src="images/hanyangle/Pos6.png" style="height:1.5em;"/></td>
+		<td>-</td>
+		<td>N/A</td>
+	</tr>
+	<tr>
+		<td>950026</td>
+		<td>Gunner x2</td>
+		<td><img src="images/hanyangle/Pos5.png" style="height:1.5em;"/></td>
+		<td><img src="images/hanyangle/Pos7.png" style="height:1.5em;"/></td>
+		<td><img src="images/hanyangle/Pos7.png" style="height:1.5em;"/></td>
+	</tr>
+	<tr>
+		<td>950026</td>
+		<td>Gunner x2</td>
+		<td><img src="images/hanyangle/Pos6.png" style="height:1.5em;"/></td>
+		<td><img src="images/hanyangle/Pos8.png" style="height:1.5em;"/></td>
+		<td><img src="images/hanyangle/Pos8.png" style="height:1.5em;"/></td>
+	</tr>
+	<tr>
+		<td>950011</td>
+		<td>Jaeger x2</td>
+		<td><img src="images/hanyangle/Pos5.png" style="height:1.5em;"/></td>
+		<td>-</td>
+		<td>N/A</td>
+	</tr>
+	<tr>
+		<td>950011</td>
+		<td>Jaeger x2</td>
+		<td><img src="images/hanyangle/Pos6.png" style="height:1.5em;"/></td>
+		<td>-</td>
+		<td>N/A</td>
+	</tr>
+	<tr>
+		<td>551</td>
+		<td>Nemeum x1</td>
+		<td><img src="images/hanyangle/Pos5.png" style="height:1.5em;"/></td>
+		<td>-</td>
+		<td>N/A</td>
+	</tr>
+	<tr>
+		<td>551</td>
+		<td>Nemeum x1</td>
+		<td><img src="images/hanyangle/Pos6.png" style="height:1.5em;"/></td>
+		<td>-</td>
+		<td>N/A</td>
+	</tr>
+	<tr>
+		<td>559</td>
+		<td>Nemeum x1</td>
+		<td><img src="images/hanyangle/Pos5.png" style="height:1.5em;"/></td>
+		<td>-</td>
+		<td>N/A</td>
+	</tr>
+	<tr>
+		<td>559</td>
+		<td>Nemeum x1</td>
+		<td><img src="images/hanyangle/Pos6.png" style="height:1.5em;"/></td>
+		<td>-</td>
+		<td>N/A</td>
+	</tr>
+	<tr>
+		<td>49</td>
+		<td>Scarecrow x1</td>
+		<td><img src="images/hanyangle/Pos5.png" style="height:1.5em;"/></td>
+		<td><img src="images/hanyangle/Pos5.png" style="height:1.5em;"/></td>
+		<td><img src="images/hanyangle/Pos5.png" style="height:1.5em;"/></td>
+	</tr>
+	<tr>
+		<td>49</td>
+		<td>Scarecrow x1</td>
+		<td><img src="images/hanyangle/Pos6.png" style="height:1.5em;"/></td>
+		<td><img src="images/hanyangle/Pos6.png" style="height:1.5em;"/></td>
+		<td><img src="images/hanyangle/Pos6.png" style="height:1.5em;"/></td>
+	</tr>
+	<tr>
+		<td>82</td>
+		<td>Vespid x1</td>
+		<td><img src="images/hanyangle/Pos5.png" style="height:1.5em;"/></td>
+		<td><img src="images/hanyangle/Pos58.png" style="height:1.5em;"/></td>
+		<td><img src="images/hanyangle/Pos58.png" style="height:1.5em;"/></td>
+	</tr>
+	<tr>
+		<td>82</td>
+		<td>Vespid x1</td>
+		<td><img src="images/hanyangle/Pos6.png" style="height:1.5em;"/></td>
+		<td><img src="images/hanyangle/Pos679.png" style="height:1.5em;"/></td>
+		<td><img src="images/hanyangle/Pos679.png" style="height:1.5em;"/></td>
+	</tr>
+	<tr>
+		<td>749</td>
+		<td>Manticore x1</td>
+		<td><img src="images/hanyangle/Pos5.png" style="height:1.5em;"/></td>
+		<td>-</td>
+		<td>N/A</td>
+	</tr>
+	<tr>
+		<td>749</td>
+		<td>Manticore x1</td>
+		<td><img src="images/hanyangle/Pos6.png" style="height:1.5em;"/></td>
+		<td>-</td>
+		<td>N/A</td>
+	</tr>
+</table>
+</center>
+<p>
+	While not all positions were able to be checked in each encounter (going to the front would often switch her to melee mode), we can see that the overall number of "miss" positions is small.
+	We can also observe that they did not differ by skin - with almost 200 angles/positions checked!
+</p>
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+
+<p>
+	I see no evidence of a functional difference between Type88's skins.
+	In any situation where her Christmas skin missed an enemy, she continued to miss it without.
+	Considering the number of cases checked, I think the probability of one existing at all is slim.
+</p>
+<p>
+	<em>Please</em> - seek more evidence before believing a years-old KR forum post.
+	Make sure your experiments are <em>repeatable</em> and <em>conclusive</em>.
+	Her hitboxes are janky, but you don't have to assign that jank to random unrelated variables.
+</p>
+
+<!-- If there is some range/enemy combination I missed, where they can be consistently shown to function differently, please do send me a video demonstration. -->
+
+<span class="anchor" id="416"></span>
+<h2>Extra: 416<sup><small><a href="#416">&#35;</a></small></sup></h2>
+
+<p>
+	Another common claim of skin weirdness comes from 416's Children's Day skin.
+	The usual statement is that 416's grenade impacts 1 frame earlier with that skin compared to her default.
+	But is that really the case?
+</p>
+<p>
+	Let's look at the first frame damage numbers appear each way:
+</p>
+<center><div class="figure">
+	<img src="images/hanyangle/416-cat.png" width="80%"/>
+</div><em>Video: <a href="https://www.youtube.com/watch?v=CDPHs4rricg">https://www.youtube.com/watch?v=CDPHs4rricg</a></em></center>
+<center><div class="figure">
+	<img src="images/hanyangle/416-dress.png" width="80%"/>
+</div><em>Video: <a href="https://www.youtube.com/watch?v=mnBLYI0xuBg">https://www.youtube.com/watch?v=mnBLYI0xuBg</a></em></center>
+<p>
+	Verdict: probably also false.
+</p>
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+	<section class="tiles">	
+		<a href="myths">
+			<div class="gallery gen">
+			  <div class="gallerypic">
+				<img src="images/icon/myths.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Common Myths</b><br/>Mechanical misconceptions</div>
+			  </div>
+			</div>
+		</a>
+		
+		<a href="8-2">
+			<div class="gallery gen">
+			  <div class="gallerypic">
+				<img src="images/icon/8-2.jpg" alt="8-2 Armor requirements" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Destroyer Dragging: 8-2</b><br/>Armor requirements</div>
+			  </div>
+			</div>
+		</a>
+		
+		<!-- <a href="manual-labor">
+			<div class="gallery">
+			  <div class="gallerypic">
+				<img src="images/icon/manual-labor.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Rico Skill Analysis</b><br/>Force manual vs Autoskill</div>
+			  </div>
+			</div>
+		</a> -->
+</section>
+	
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
