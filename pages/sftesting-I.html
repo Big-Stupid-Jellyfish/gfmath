@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script>
+	function calculate() {
+		var eva1 = parseInt(document.getElementById("eva1").value),
+			acc1 = parseInt(document.getElementById("acc1").value),
+			stacks1 = parseInt(document.getElementById("stacks1").value),
+			base_dodge = eva1 / (acc1 + eva1),
+			shields = 72 + (stacks1 / 100) * (2 * 6 * 30 / 13),
+			shield_ehp = shields / (1-base_dodge);
+
+		document.getElementById("base_chance").innerHTML = Math.round(base_dodge*100) + "%";
+		document.getElementById("shields").innerHTML = Math.round(shields) + " Shields/sec";
+		document.getElementById("shield_ehp").innerHTML = Math.round(shield_ehp) + " SHP/sec";
+	}
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>Testing SF I - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Testing SF I</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-April-29</em></center>
+
+<p>
+	<em>
+		(Note: this originally started out as some sort of Alchemist analysis.
+		Due to the very large scope of such a project, a lack of previous work to build on, and my own PA armory limitations, I've decided to cut that down into some more general topics/tests of interest.
+		So if you're wondering about the Alchemist focus, that'd be it...)
+	</em>
+</p>
+<!-- <p>
+	Alchemist, the nth ringleader to release in Protocol Assimilation and the boss of Chapter 6, has gotten quite the reputation.
+	Her PA form is commonly claimed to be near-immortal, and most would agree she's by far the strongest ringleader out there - don't save your Aid Commissions.
+</p>
+<p>
+	I'd like to look a bit more into her abilities, with two main objectives:
+</p>
+<ul>
+	<li>Get a better understanding of what exactly she does and how she stacks up to other ringleaders.</li>
+	<li>
+		Get a better understanding of teambuilding with her, which mooks to add, what enemies she's best/worst at, and other factors to consider.
+		As this is my first project focusing on SF, I'll also look into some general coalition teambuilding ideas.
+	</li>
+</ul>
+<p>
+	As with any ringleader, Alchemist has all sorts of stats and four wordy skills.
+	I could take half this page reciting them to you, but thankfully, everything's in the in-game index:
+</p>
+<div class="figure">
+	<img src="images/alchemy/info-lookup.png" width="100%"/>
+</div>
+<center><em>(No idea what I'm saving the index rewards for.)</em></center>
+<p>
+	Numbers assume level 100, no affection bonuses.
+	My investigation assumes no petal bonuses are applied.
+	Keep in mind that coalition stats are not easy to compare with Griffin stats - ringleaders and manticores have 1 link, coalition units have all sorts of weird skills, they have no fairies, and usually nowhere near as many buff skills in play.
+	For even more stats and customization, see <a href="https://docs.google.com/spreadsheets/d/1TYKbdjuOdOMsvaaIduWW_8FF0tm27BjwKbC4uggl1wE/edit?usp=sharing">this sheet</a>.
+</p> -->
+<span class="anchor" id="basic-questions"></span>
+<h2>Alchemist: Basic Questions<sup><small><a href="#basic-questions">&#35;</a></small></sup></h2>
+<h3>Iframes</h3>
+<p>
+	Alchemist's first skill notes that "Alchemist is invincible while the skill is being performed."
+	It has a 12-second cooldown, so I'm inclined to wonder how long these attacks last.
+	If they take longer than 12 seconds to exectue, she should remain permanently invincible, after all.
+	<!-- Furthermore, can you delay these attacks by kiting her? -->
+</p>
+
+<p>
+	Test at level 1 (44 ROF, 0.88 attacks/sec): Alchemist's skill activates at 13.27s. She touches down after making her attacks at 15.43s (2.16s later), and receives an attack (taking damage) at 15.83s.
+</p>
+<p>
+	Test at level 90 (104 ROF, 2.14 attacks/sec): Alchemist's skill activates at 16.77s. She touches down at 18.93s (2.16s later), and receives an attack (taking damage) at 19.40s.
+</p>
+<p>
+	Conclusion: there's no trickery where you can get a permanently invincible Alchemist by keeping her at a low level.
+	Her skill has a fixed delay between its attacks, and they come much faster than her normal attacks.
+</p>
+<h3>More Iframes</h3>
+<p>
+	To have a consistent reference, I looked for the first frame where Alchemist touched the ground in the tests above.
+	This isn't necessarily when her invincibility ends - it could go on for a bit, or it could have worn off already.
+	To test this, I'll run her against a few high-volume enemies and see when damage numbers start appearing.
+	The previous tests put an upper bound on this at 2.56s and 2.63s, respectively.
+</p>
+<p>
+	The SWAP SF stack from Theater 5/6's Core 8 is an easy pick for lots of incoming fire.
+	Here, her skill activates at 6.00s, taking no damage from a bullet 1 frame away.
+	She lands at 8.17s (+2.17s), stays immune for a moment, and first takes damage at 8.67s (+2.67s total).
+</p>
+<p>
+	Running it again: skill at 6.07s, touchdown at 8.23s (+2.16s), damage at 9.00s (+2.93s)
+</p>
+<p>
+	So there's some variability, but her skill seems to last for about 2.5 seconds, giving it ~20% uptime.
+</p>
+<h3>Shields per Second</h3>
+<p>
+	Next question.
+	Alchemist has several ways of generating shields, with all sorts of conditionals attached.
+	How much shielding does she actually generate?
+	How much does her evasion help those shields?
+</p>
+<p>
+	Alchemist generates shields from:
+</p>
+<ol>
+	<li>Attacking targets marked with "Organism." (6 points, for 18 seconds, no stack limit). A mark of "Organism" is inflicted whenever Alchemist scores a critical hit. Her base crit rate is 40%/attack.</li>
+	<li>Being in Defense Mode (6% of max HP every second (72 points at lv100), for 5 seconds)</li>
+</ol>
+<p>
+	At level 100, Alchemist has 111 ROF (13f, 2.308 attacks/second).
+	Let's start by assuming every attack Alchemist makes is on a target affected by Organism.
+	In that case, she'll gain, on average, 2 hits/attack \(\times\) 2.308 attacks/second \(\times\) 6 shield HP/hit = 27.7 shield HP/second.
+</p>
+<p>
+	This will rather simply scale down by whatever percent of her attacks are not on marked enemies.
+	Performance will of course be weaker against larger/low HP hordes - good luck getting a second attack in against Dinergates - but easily hits this number against bosses.
+</p>
+<p>
+	So Alchemist can generate 72-100 shield HP/second, depending on how many attacks she can get in on marked targets.
+	She has between 162-173 EVA (lv90-100, no petals) which goes a long way to extending these:
+</p>
+<center>
+	<table style="width:auto">
+	  <tr>
+		<th>Alchemist's EVA</th>
+		<th>Enemy ACC</th>
+		<th>Percent of attacks on marked targets</th>
+	  </tr>
+	  <tr>
+		<td><input id="eva1" type="text" value=173></input><br></td>
+		<td><input id="acc1" type="text" value=100></input><br></td>
+		<td><input id="stacks1" type="text" value=80></input><br></td>
+	  </tr>
+	</table>
+
+	<button type="button small" onclick="calculate()">Calculate</button>
+
+	<table style="width:auto; margin-top: 25px;">
+	  <tr>
+		<th>Dodge chance</th>
+		<th>Raw shield generation</th>
+		<th>Effective shield HP</th>
+	  </tr>
+	  <tr>
+		<td id="base_chance">?%</td>
+		<td id="shields">? Shields/sec</td>
+		<td id="shield_ehp">? SHP/sec</td>
+	  </tr>
+	</table>
+</center>
+<p>
+	Shield HP can also stack up while executing her active or while enemies are walking.
+	No singular value can represent how much shield HP she generates fight-to-fight, or how much that helps her.
+</p>
+<!-- Her double attacks have separate crit rolls, and thus should count as two attacks for the purpose of inflicting "Organism."
+</p>
+<center><div class="figure">
+	<img src="images/alchemy/split-crits.png" width="80%"/>
+</div></center> -->
+<!-- <p></p> -->
+<span class="anchor" id="dps"></span>
+<h2>Ringleader DPS<sup><small><a href="#dps">&#35;</a></small></sup></h2>
+<p>
+	Alchemist is allegedly all about defense and tanking.
+	You may still be interested in how much damage she can deal, so let's run a few tests
+	against a single target (target practice dummy), with varying health. Some ringleaders are oathed and have a ~5% penalty applied to balance results.
+	A lv1 XS Jaguar was used to eliminate any walk time while not dealing a significant amount of damage.
+</p>
+<center><div class="figure">
+	<img src="images/sftesting-I/ringleader-dpschart.png" width="100%"/>
+</div></center>
+<p>
+	There are a <em>lot</em> of factors that will mess things up, so these are very imprecise.
+	This certainly doesn't establish some threshold like "Hunter>Alchemist for enemy HP>X points."
+	However, it does give us the sense that Alchemist can deal respectable single-target damage compared to some other ringleaders.
+</p>
+<p>
+	Let's do one more against a decent group - the 56x Strelet mob from Theater 1-4 Core 8.
+</p>
+<center><div class="figure">
+	<img src="images/sftesting-I/ringleader-barstrelets.png" width="100%"/>
+</div></center>
+<p>
+	Once again, these are extremely rough.
+	Notable takeaways:
+</p>
+<ul>
+	<li>Intruder's summoned dinergate waves don't suddenly become super OP at dealing damage when fighting groups.</li>
+	<li>Destroyer's AOE seemed much better than Architect's here, different than their <a href="8-2#architect">8-2 performance</a>.</li>
+	<li>Alchemist's shields worked very well. Any damage taken came from the run-up. After that, her shields never went below half. Even Destroyer with the ~10s clear took much more damage.</li>
+	<li>You shouldn't deploy ringleaders alone. These results don't necessarily map onto real combat results all that well (you can tank with Manticores, get AOE from Jaguars/Manticores, add single-target DPS with Nemeums, and so on).</li>
+</ul>
+<span class="anchor" id="manticore"></span>
+<!-- <h2>Tankier than a Manticore?<sup><small><a href="#manticore">&#35;</a></small></sup></h2>
+<p>
+	Manticores have a very nice combination of evasion, armor, offensive capabilities, and resistance to link-based damage.
+	If you're not fighting Dreamer, they're a very easy default option.
+	Let's take the following contrived formation and attempt to make some reasonably fair comparison between their tanking performance and Alchemist's.
+</p>
+<center>
+	<table style="width:auto">
+		<tr>
+			<td>DPS (Nemeum)</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>DPS (Nemeum)</td>
+			<td>Manticore OR Alchemist</td>
+			<td>Manticore OR Alchemist</td>
+		</tr>
+		<tr>
+			<td>DPS (Jaeger)</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+</center>
+<p>
+	Whichever is up for tanking duty goes in the front, and the other sits behind. This should keep the team's offensive output similar between tests.
+	(Switching 2x Manticore/Nemeum/Alchemist in back for 1x Manticore 1x Alchemist in front/Nemeum/Nemeum/Jaeger would start to become a very different comparison with the big DPS changes, for example.)
+</p>
+<span class="anchor" id="feats"></span>
+<h2>Feats of Strength<sup><small><a href="#feats">&#35;</a></small></sup></h2> -->
+
+<span class="anchor" id="jaeums"></span>
+<h2>Jaegers and Nemeums<sup><small><a href="#jaeums">&#35;</a></small></sup></h2>
+<p>
+	Jaegers are a basic DPS unit with 4 cost, backline targeting, and a skillshot.
+	Nemeums are a basic DPS unit with 6 cost, frontline targeting, and bonus damage based on target HP/building stacks.
+	Let's run them against some different Target Practice dummy settings to see how they stack up.
+</p>
+<center><div class="figure">
+	<img src="images/sftesting-I/jaeum-dpschart.png" width="100%"/>
+</div></center>
+<p>
+	Alchemist's tiles give machines 9% ROF and ACC.
+	Assuming the accuracy is negligible and ignoring frame weirdness, this favors Nemeums a little more:
+</p>
+<center><div class="figure">
+	<img src="images/sftesting-I/jaeum-dpschart-alch.png" width="100%"/>
+</div></center>
+<p>
+	Note that <a href="augelica">frontline targeting isn't always the greatest</a>, so Jaegers may still be preferred for their backline targeting.
+	Their skillshots may also be useful, and these charts assume the Nemeum is never switching targets (benefitting more from their first skill).
+</p>
+<!-- <span class="anchor" id="skilltext"></span>
+<h2>Full Skill Text<sup><small><a href="#skilltext">&#35;</a></small></sup></h2>
+<p>
+	For reference, here are all four of Alchemist's skills (<4 petals):
+</p>
+<blockquote><p><strong>Terminus</strong> ICD 6s/CD 12s</p>
+	<p>
+	  Passive: When in Defense Mode, Alchemist gains extra attack range and her regular attacks consist of two volleys that deal 0.5x damage.
+	  When not in Defense Mode, she gains 50% critical chance and her attacks inflict two instance of 0.5x melee damage that cannot miss.
+	</p>
+	<p>
+		Active: After activating the skill, perform 9 attacks on random enemy units.
+		Each attack inflicts two instances of 1.3x guaranteed damage that can score critical hits and marks them with "Organism."
+		Alchemist is invincible while the skill is being performed.
+	</p>
+</blockquote>
+<blockquote><p><strong>Quantitative Activation</strong> ICD 3s/CD 8s</p>
+	<p>
+	  Passive: Critical hits inflict the "Organism" mark.
+	</p>
+	<p>
+		Active: Increase self damage by 30%, evasion by 100%, and critical damage by 30% for 4 seconds.
+	</p>
+</blockquote>
+<blockquote><p><strong>Organism</strong> ICD 0s/CD 0s</p>
+	<p>
+	  At all times, attacking targets with the "Organism" mark makes them take 1.1x damage,  while granting Alchemist a 6-point shield for 18 seconds, which stacks without limit.
+	  The "Organism" mark persists for 9 seconds.
+	</p>
+</blockquote>
+<blockquote><p><strong>Gravity Unravel</strong> ICD 0s/CD 0s</p>
+	<p>
+	  When not in Defense Mode, raise all friendly units' move speed by 100% every 6 seconds.
+	  The buff lasts for 3 seconds and diminishes rapidly.
+	  When in defense mode, gain a shield with a value equal to 6% of max HP every 1 second, lasting for 5 seconds.
+	</p>
+</blockquote> -->
+
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="8-2">
+		<div class="gallery gen">
+		  <div class="gallerypic">
+			<img src="images/icon/8-2.jpg" alt="8-2 Armor requirements" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Destroyer Dragging: 8-2</b><br/>Armor requirements</div>
+		  </div>
+		</div>
+	</a>
+	
+	<a href="sfstats">
+		<div class="gallery gen">
+			<div class="gallerypic">
+			<img src="images/icon/sfstat.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>SF Size and Keycode stats</b><br/>Probability estimates and math</div>
+			</div>
+		</div>
+	</a>
+	
+	
+</section>
+</div>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
