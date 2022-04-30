@@ -37,6 +37,8 @@ function calculateArmReq() {
 
 	document.getElementById("id_arm_1").innerHTML = no_flash + "+";
 	document.getElementById("id_arm_2").innerHTML = flash + "+";
+	document.getElementById("id_arm_3").innerHTML = (flash-2) + "+";
+	document.getElementById("id_arm_4").innerHTML = (flash-5) + "+";
 }
 function calculateArmA() {
 	var c1_armor_base = parseInt(document.getElementById("c1_armor_base").value),
@@ -71,6 +73,11 @@ function calculateArmB() {
 
 	document.getElementById("c2").innerHTML = "<strong><font color='#a0c9e5'>You'll have " + Math.floor(c2_armor_base * c2_tiles * c2_skills * talent_mult) + " armor.</font></strong>";
 }
+window.onload = function() {
+	calculateArmA();
+	calculateArmB();
+	calculateArmReq();
+};
 </script>
 <title>Armor Calculator - GFMath</title>
 <meta charset="utf-8" />
@@ -103,31 +110,32 @@ function calculateArmB() {
 	<img src="images/armor-calc/no-fairy.png" width="100%"/>
 </div><em>Here, your base armor would be 33.</em></center>
 <ul>
-	<li>Base armor, including equipment, with no fairy equipped: <input id="c1_armor_base" type="text" value=33  style="text-align: center; vertical-align: middle; width:25%;"></input></li>
+	<li>Base armor, including equipment, with no fairy equipped: <input id="c1_armor_base" type="text" value=33  style="text-align: center; vertical-align: middle; width:25%;" oninput="calculateArmA()"></input></li>
 </ul>
 <ul>
-	<li>Total armor tiles (%): <input id="c1_tiles" type="text" value=30  style="text-align: center; vertical-align: middle; width:25%;"></input></li>
+	<li>Total armor tiles (%): <input id="c1_tiles" type="text" value=30  style="text-align: center; vertical-align: middle; width:25%;" oninput="calculateArmA()"></input></li>
 </ul>
 <ul>
-	<li>Armor aura under consideration (%): <input id="c1_aura" type="text" value=11.4  style="text-align: center; vertical-align: middle; width:25%;"></input></li>
+	<li>Armor aura under consideration (%): <input id="c1_aura" type="text" value=11.4  style="text-align: center; vertical-align: middle; width:25%;" oninput="calculateArmA()"></input></li>
 </ul>
 <ul>
-	<li>Product of any skills (%): <input id="c1_skills" type="text" value=0  style="text-align: center; vertical-align: middle; width:25%;"></input></li>
+	<li>Product of any skills (%): <input id="c1_skills" type="text" value=0  style="text-align: center; vertical-align: middle; width:25%;" oninput="calculateArmA()"></input></li>
 </ul>
 <ul>
-	<li>															<div class="col-12">
-		<select id="c1_talent" style="width:auto;">
-			<option value="0">- Talent -</option>
-			<option value="2">Armor I</option>
-			<option value="2">Sturdy</option>
-			<option value="3">Armor II</option>
-			<option value="1">Anything else</option>
-		</select>
-	</div>
-</li>
+	<li>
+		<div class="col-12">
+			<select id="c1_talent" style="width:auto;" oninput="calculateArmA()">
+				<option value="0">- Talent -</option>
+				<option value="2">Armor I</option>
+				<option value="2">Sturdy</option>
+				<option value="3">Armor II</option>
+				<option value="1">Anything else</option>
+			</select>
+		</div>
+	</li>
 </ul>
 
-<button type="button small" onclick="calculateArmA()">Calculate</button>
+<!-- <button type="button small" onclick="calculateArmA()">Calculate</button> -->
 <font size="5"><p id="c1"></p></font>
 
 <h3>With fairy equipped</h3>
@@ -135,17 +143,18 @@ function calculateArmB() {
 	<img src="images/armor-calc/with-fairy.png" width="100%"/>
 </div><em>Here, your base armor would be 38. This number already factors in your fairy aura, but not talent/tiles/skills.</em></center>
 <ul>
-	<li>Base armor, including equipment, with fairy aura: <input id="c2_armor_base" type="text" value=38  style="text-align: center; vertical-align: middle; width:25%;"></input></li>
+	<li>Base armor, including equipment, with fairy aura: <input id="c2_armor_base" type="text" value=38  style="text-align: center; vertical-align: middle; width:25%;" oninput="calculateArmB()"></input></li>
 </ul>
 <ul>
-	<li>Total armor tiles (%): <input id="c2_tiles" type="text" value=15  style="text-align: center; vertical-align: middle; width:25%;"></input></li>
+	<li>Total armor tiles (%): <input id="c2_tiles" type="text" value=15  style="text-align: center; vertical-align: middle; width:25%;" oninput="calculateArmB()"></input></li>
 </ul>
 <ul>
-	<li>Product of any skills (%): <input id="c2_skills" type="text" value=0  style="text-align: center; vertical-align: middle; width:25%;"></input></li>
+	<li>Product of any skills (%): <input id="c2_skills" type="text" value=0  style="text-align: center; vertical-align: middle; width:25%;" oninput="calculateArmB()"></input></li>
 </ul>
 <ul>
-	<li>															<div class="col-12">
-		<select id="c2_talent" style="width:auto;">
+	<li>
+		<div class="col-12">
+		<select id="c2_talent" style="width:auto;" oninput="calculateArmB()">
 			<option value="0">- Talent -</option>
 			<option value="2">Armor I</option>
 			<option value="2">Sturdy</option>
@@ -156,7 +165,7 @@ function calculateArmB() {
 </li>
 </ul>
 
-<button type="button small" onclick="calculateArmB()">Calculate</button>
+<!-- <button type="button small" onclick="calculateArmB()">Calculate</button> -->
 <font size="5"><p id="c2"></p></font>
 
 <span class="anchor" id="req"></span>
@@ -168,36 +177,45 @@ function calculateArmB() {
 	and note the enemy type if applicable (visual reference: <a href="https://iopwiki.com/images/b/b9/Judge_S.png">Judge</a>, <a href="https://iopwiki.com/images/3/35/Pyxis_S.png">Pyxis</a>, <a href="https://static.tvtropes.org/pmwiki/pub/images/girls_frontline_dragoon_swap.png">SWAP Dragoon</a>).
 </p>
 <ul>
-	<li><input id="efp" type="text" value=40  style="text-align: center; vertical-align: middle; width:25%;"></input></li>
+	<li><input id="efp" type="text" value=40  style="text-align: center; vertical-align: middle; width:25%;" oninput="calculateArmReq()"></input></li>
 </ul><ul>
-	<li>															<div class="col-12">
-		<select id="enemycat" style="width:auto;">
-			<option value="0">- Enemy type -</option>
-			<option value="2">Judge</option>
-			<option value="3">Pyxis</option>
-			<option value="4">SWAP Dragoon</option>
-			<option value="1">Most/generic enemies</option>
-			<!-- <option value="1">Human Resources</option> -->
-		</select>
-	</div>
-</li>
+	<li>
+		<div class="col-12">
+			<select id="enemycat" style="width:auto;" oninput="calculateArmReq()">
+				<option value="0">- Enemy type -</option>
+				<option value="2">Judge</option>
+				<option value="3">Pyxis</option>
+				<option value="4">SWAP Dragoon</option>
+				<option value="1">Most/generic enemies</option>
+				<!-- <option value="1">Human Resources</option> -->
+			</select>
+		</div>
+	</li>
 </ul>
 
-<button type="button small" onclick="calculateArmReq()">Calculate</button>
+<!-- <button type="button small" onclick="calculateArmReq()">Calculate</button> -->
 
-<table style="width:auto; margin-top: 25px;">
-	<tr>
-		<th>Equip</th>
-		<th>Ideal armor</th>
-	</tr>
-	  <tr>
-		<td>No Flash</td>
-		<td id="id_arm_1">?</td>
-	  </tr>
-	  <tr>
-		<td>Flash</td>
-		<td id="id_arm_2">?</td>
-	  </tr>
+	<table style="width:auto; margin-top: 25px;">
+		<tr>
+			<th>Equip</th>
+			<th>Ideal armor</th>
+		</tr>
+		<tr>
+			<td>No Flash</td>
+			<td id="id_arm_1">?</td>
+		</tr>
+		<tr>
+			<td>Flash</td>
+			<td id="id_arm_2">?</td>
+		</tr>
+		<tr>
+			<td>M26-MASS</td>
+			<td id="id_arm_3">?</td>
+		</tr>
+		<tr>
+			<td>M26-MASS+Flash</td>
+			<td id="id_arm_4">?</td>
+		</tr>
 	</table>
 </center>
 

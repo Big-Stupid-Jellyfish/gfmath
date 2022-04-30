@@ -17,7 +17,34 @@ gtag('config', 'G-805N997DPC');
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+	function calculate() {
+		var eva1 = parseInt(document.getElementById("eva1").value),
+			acc1 = parseInt(document.getElementById("acc1").value),
+			hp1 = parseInt(document.getElementById("hp1").value),
+			eva2 = parseInt(document.getElementById("eva2").value),
+			hp2 = parseInt(document.getElementById("hp2").value),
+			dodge_1 = eva1 / (acc1 + eva1),
+			dodge_2 = eva2 / (acc1 + eva2),
+			ehp_1 = hp1 / (1-dodge_1),
+			ehp_2 = hp2 / (1-dodge_2),
+			ehp_delta = (ehp_2/ehp_1)-1;
+		
+		if(ehp_delta > 0) {
+			sgn = "+";
+		} else {
+			sgn = "";
+		}
 
+		document.getElementById("dodge_1").innerHTML = Math.round(dodge_1*100) + "%";
+		document.getElementById("dodge_2").innerHTML = Math.round(dodge_2*100) + "%";
+		document.getElementById("ehp_1").innerHTML = Math.round(ehp_1) + " EHP";
+		document.getElementById("ehp_2").innerHTML = Math.round(ehp_2) + " EHP (" + sgn + Math.round(ehp_delta*100) + "%)";
+	}
+	window.onload = function() {
+  		calculate();
+	};
+</script>
 <meta name="description" content="Girls Frontline, by the numbers">
 <title>Accuracy and Evasion - GFMath</title>
 <meta charset="utf-8" />
@@ -43,7 +70,7 @@ gtag('config', 'G-805N997DPC');
 <header class="major">
 	<h1>Accuracy and Evasion</h1>
 </header>
-<center><em>By BigStupidJellyfish | 2021-November-25</em></center>
+<center><em>By BigStupidJellyfish | 2021-November-25 | Updated 2022-April-30</em></center>
 
 <h2>Contents<sup><small><a href="#">&#35;</a></small></sup></h2>
 <ul>
@@ -146,6 +173,52 @@ $$ \mathrm{EHP} = \frac{\mathrm{HP}}{\mathrm{Enemy~hit~rate}} = \frac{\mathrm{HP
 <p>
 	Effective HP is very nice to work with: twice the EHP, twice the survivability, twice as good. It also lets you compare units with significantly different HP/EVA distributions.
 </p>
+
+<p>
+	If you'd like to play around with this a bit, here's a calculator:
+</p>
+<center>
+	<table style="width:auto" align="center">
+		<tr>
+			<th style="text-align: center;">Doll</th>
+			<th style="text-align: center;">HP</th>
+			<th style="text-align: center;">Final EVA</th>
+			<th style="text-align: center;">Enemy ACC</th>
+		</tr>
+		<tr>
+			<td style="text-align: center; vertical-align: middle;">Doll #1</td>
+			<td><input class="hp1" id="hp1" type="text" value=1100 style="text-align: center; vertical-align: middle;" oninput="calculate()"></input><br></td>
+			<td><input id="eva1" type="text" value=290 style="text-align: center; vertical-align: middle;" oninput="calculate()"></input><br></td>
+			<td><input id="acc1" type="text" value=80 style="text-align: center; vertical-align: middle;" oninput="calculate()"></input><br></td>
+		</tr>
+		<tr>
+			<td style="text-align: center; vertical-align: middle;">Doll #2</td>
+			<td><input id="hp2" type="text" value=990 style="text-align: center; vertical-align: middle;" oninput="calculate()"></input><br></td>
+			<td><input id="eva2" type="text" value=330 style="text-align: center; vertical-align: middle;" oninput="calculate()"></input><br></td>
+			<td></td>
+		</tr>
+	</table>
+
+	<!-- <button type="button" onclick="calculate()">Calculate</button> -->
+
+	<table style="width:auto; margin-top: 25px;">
+		<tr>
+			<th>Doll</th>
+			<th>Dodge chance</th>
+			<th>EHP</th>
+		</tr>
+		<tr>
+			<td>Doll #1</td>
+			<td id="dodge_1">?%</td>
+			<td id="ehp_1">? EHP</td>
+		</tr>
+		<tr>
+			<td>Doll #2</td>
+			<td id="dodge_2">?%</td>
+			<td id="ehp_2">? EHP</td>
+		</tr>
+	</table>
+</center>
 
 <span class="anchor" id="applications"></span>
 <h2>Applications<sup><small><a href="#applications">&#35;</a></small></sup></h2>
