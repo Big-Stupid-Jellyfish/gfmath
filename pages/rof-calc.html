@@ -17,6 +17,10 @@ gtag('config', 'G-805N997DPC');
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
+function strip(number) {
+    return (parseFloat(number).toPrecision(12));
+}
+
 function calculateRF() {
 	var rof1 = parseInt(document.getElementById("rof1").value),
 		rof2 = parseInt(document.getElementById("rof2").value),
@@ -30,10 +34,10 @@ function calculateRF() {
 		effective_rof = [],
 		rof_diff = [],
 		frame_instance = [];
-	rof.push(Math.floor(rof1 * (1+0.01*tiles)));
-	rof.push(Math.floor(rof2 * (1+0.01*tiles)));
-	rof.push(Math.floor(rof1 * (1+0.01*tiles) * (1+0.01*skills11) * (1+0.01*skills2) * (1+0.01*skills3) * (1+0.01*skills4)));
-	rof.push(Math.floor(rof2 * (1+0.01*tiles) * (1+0.01*skills12) * (1+0.01*skills2) * (1+0.01*skills3) * (1+0.01*skills4)));
+	rof.push(Math.floor(strip(rof1 * (1+0.01*tiles))));
+	rof.push(Math.floor(strip(rof2 * (1+0.01*tiles))));
+	rof.push(Math.floor(strip(rof1 * (1+0.01*tiles) * (1+0.01*skills11) * (1+0.01*skills2) * (1+0.01*skills3) * (1+0.01*skills4))));
+	rof.push(Math.floor(strip(rof2 * (1+0.01*tiles) * (1+0.01*skills12) * (1+0.01*skills2) * (1+0.01*skills3) * (1+0.01*skills4))));
 
 	for (let i = 0; i < 4; i++) { // for each ROF calc
 		frame_instance.push(Math.floor(1500/Math.min(rof[i],120)));
@@ -60,14 +64,14 @@ function calculateAR() {
 		effective_rof = [],
 		rof_diff = [],
 		frame_instance = [];
-	rof.push(Math.floor(arbase * (1+0.01*artiles)));
-	rof.push(Math.floor((arbase+25) * (1+0.01*artiles)));
-	rof.push(Math.floor((arbase+25-4) * (1+0.01*artiles)));
-	rof.push(Math.floor((arbase+25-1) * (1+0.01*artiles)));
-	rof.push(Math.floor(arbase * (1+0.01*artiles) * (1+0.01*arskill)));
-	rof.push(Math.floor((arbase+25) * (1+0.01*artiles) * (1+0.01*arskill)));
-	rof.push(Math.floor((arbase+25-4) * (1+0.01*artiles) * (1+0.01*arskill)));
-	rof.push(Math.floor((arbase+25-1) * (1+0.01*artiles) * (1+0.01*arskill)));
+	rof.push(Math.floor(strip(arbase * (1+0.01*artiles))));
+	rof.push(Math.floor(strip((arbase+25) * (1+0.01*artiles))));
+	rof.push(Math.floor(strip((arbase+25-4) * (1+0.01*artiles))));
+	rof.push(Math.floor(strip((arbase+25-1) * (1+0.01*artiles))));
+	rof.push(Math.floor(strip(arbase * (1+0.01*artiles) * (1+0.01*arskill))));
+	rof.push(Math.floor(strip((arbase+25) * (1+0.01*artiles) * (1+0.01*arskill))));
+	rof.push(Math.floor(strip((arbase+25-4) * (1+0.01*artiles) * (1+0.01*arskill))));
+	rof.push(Math.floor(strip((arbase+25-1) * (1+0.01*artiles) * (1+0.01*arskill))));
 
 	for (let i = 0; i < 8; i++) { // for each ROF calc
 		frame_instance.push(Math.floor(1500/Math.min(rof[i],120)));
