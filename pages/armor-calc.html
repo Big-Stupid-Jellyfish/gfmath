@@ -35,10 +35,10 @@ function calculateArmReq() {
 		flash =  Math.ceil(efp*1.15)-3;
 	}
 
-	document.getElementById("id_arm_1").innerHTML = no_flash + "+";
-	document.getElementById("id_arm_2").innerHTML = flash + "+";
-	document.getElementById("id_arm_3").innerHTML = (flash-2) + "+";
-	document.getElementById("id_arm_4").innerHTML = (flash-5) + "+";
+	document.getElementById("id_arm_1").innerHTML = Math.max(no_flash,0) + "+";
+	document.getElementById("id_arm_2").innerHTML = Math.max(flash,0) + "+";
+	document.getElementById("id_arm_3").innerHTML = Math.max((flash-2),0) + "+";
+	document.getElementById("id_arm_4").innerHTML = Math.max((flash-5),0) + "+";
 }
 function calculateArmA() {
 	var c1_armor_base = parseInt(document.getElementById("c1_armor_base").value),
