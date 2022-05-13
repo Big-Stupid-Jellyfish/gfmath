@@ -17,6 +17,9 @@ gtag('config', 'G-805N997DPC');
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
+function strip(number) {
+    return (parseFloat(number).toPrecision(12));
+}
 function calculateArmReq() {
 	var efp = parseInt(document.getElementById("efp").value),
 		enemycat = parseInt(document.getElementById("enemycat").value);
@@ -55,7 +58,7 @@ function calculateArmA() {
 		talent_mult = 1.0;
 	}
 
-	document.getElementById("c1").innerHTML = "<strong><font color='#a0c9e5'>You'll have " + Math.floor(Math.ceil(c1_armor_base * c1_aura) * c1_tiles * c1_skills * talent_mult) + " armor.</font></strong>";
+	document.getElementById("c1").innerHTML = "<strong><font color='#a0c9e5'>You'll have " + Math.floor(strip(Math.ceil(strip(c1_armor_base * c1_aura)) * c1_tiles * c1_skills * talent_mult)) + " armor.</font></strong>";
 }
 function calculateArmB() {
 	var c2_armor_base = parseInt(document.getElementById("c2_armor_base").value),
@@ -71,7 +74,7 @@ function calculateArmB() {
 		talent_mult = 1.0;
 	}
 
-	document.getElementById("c2").innerHTML = "<strong><font color='#a0c9e5'>You'll have " + Math.floor(c2_armor_base * c2_tiles * c2_skills * talent_mult) + " armor.</font></strong>";
+	document.getElementById("c2").innerHTML = "<strong><font color='#a0c9e5'>You'll have " + Math.floor(strip(c2_armor_base * c2_tiles * c2_skills * talent_mult)) + " armor.</font></strong>";
 }
 window.onload = function() {
 	calculateArmA();
