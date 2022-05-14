@@ -116,6 +116,7 @@ gtag('config', 'G-805N997DPC');
 <header id="header" class="alt">
 <a href="index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
 <nav></nav>
+
 <a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
 </header>
 <!-- Banner -->
@@ -127,7 +128,55 @@ gtag('config', 'G-805N997DPC');
 <div class="content">
 	
 	<!-- <p>Game mechanics, teambuilding, optimization, and similar fun stuff.<br>Contact: /u/BigStupidJellyfish_ or BigStupidJellyfish#6974. GF EN UID: 538721.</p> -->
-<p>Girls' Frontline game mechanics, teambuilding, optimization, mythbusting, and similar fun stuff.<br>Contact: /u/BigStupidJellyfish_ or BigStupidJellyfish#6974. GF EN UID: 538721. <a href="https://forms.gle/gBwRPAgLNYxrpsBS8">Submit feedback/report an error</a>.</p>
+<p>
+	Girls' Frontline game mechanics, teambuilding, optimization, mythbusting, and similar fun stuff.<br>Contact: /u/BigStupidJellyfish_ or BigStupidJellyfish#6974. GF EN UID: 538721. <a href="https://forms.gle/gBwRPAgLNYxrpsBS8">Submit feedback/report an error</a>.
+</p>
+
+<script async src="https://cse.google.com/cse.js?cx=97e3527e53fe07881"></script>
+<!-- Search box form -->
+<form id="cse-search-box-form-id">
+	<!-- This is the input searc box -->
+	<input type="text" id="cse-search-input-box-id" size="25" autocomplete="off" width="50%"/>
+	<!-- This is the search button -->
+	<input type="submit" value="Site Search"/>
+</form>
+<!-- End of search box form -->
+
+<!-- REQUIRED: Attach the Google branding watermark to your search box. -->
+<!-- WARNING: Branding attachment should be after transliteration -->
+<!-- Set the "form" URL parameter to the id of the form containing the input
+		search box.
+	Set the "inputbox" URL parameter to the name or id of the query textbox.
+		'q' will be used if it's not specified.
+	Set the "lang" URL parameter to localize the branding for a specific
+		language. Find the list of supported languages at
+		http://developers.google.com/custom-search/docs/ref_languages.html
+-->
+
+<script src="//www.google.com/cse/brand?form=cse-search-box-form-id&inputbox=cse-search-input-box-id" nonce="Lt-EynffqXn5Piaw1p4BPw">
+</script>
+<!-- End of Google branding watermark -->
+
+
+  <!-- Element code snippet -->
+  <script nonce="Lt-EynffqXn5Piaw1p4BPw">
+	function executeQuery(evt) {
+	  evt.preventDefault();
+	  var input = document.getElementById('cse-search-input-box-id');
+	  var element = google.search.cse.element.getElement('searchresults-only0');
+	  if (input.value == '') {
+		element.clearAllResults();
+	  } else {
+		element.execute(input.value);
+	  }
+	  return false;
+	}
+  
+	document.getElementById('cse-search-box-form-id').addEventListener('submit', executeQuery);
+  </script>
+  
+  <!-- Place this tag where you want the search results to render. -->
+  <div class="gcse-searchresults-only"></div>
 
 	<!-- <ul class="actions">
 		<li><a href="#one" class="button next scrolly">Get Started</a></li>
