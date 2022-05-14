@@ -1,0 +1,286 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>VSK & Time of Day - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>VSK & Time of Day</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-May-15</em></center>
+
+<span class="anchor" id="skill"></span>
+<h2>Skill Details<sup><small><a href="#skill">&#35;</a></small></sup></h2>
+<blockquote><p><strong>Double Alert</strong> ICD 5s/CD 8s</p>
+	<p>
+		When this skill is activated, <del>transfer</del> [add] 20% of accuracy to damage for 5 seconds.
+		The first 3 attacks after this skill is activated deal two instances of damage.
+	</p>
+</blockquote>
+<p>
+	It's rather important to understand a doll's skill before analyzing them.
+	However, we run into an issue straight away: how VSK's accuracy-to-damage conversion works isn't clear.
+</p>
+<p>
+	The in-game TL says it "transfers" 20% of her accuracy. But other translations say she just "gains" damage equal to 20% of her accuracy.
+	So, does she debuff her accuracy?
+</p>
+<p>
+	Also, what value of her accuracy does it take?
+	Is it her base stat?
+	With fairy aura/tiles/buff skills?
+	Is that increase affected by FP buffs, or is it a flat amount?
+	How about at night?
+</p>
+<p>
+	(There are a few even more minor questions you could ask but those start getting super difficult to test for.)
+</p>
+<h3>Accuracy transfer</h3>
+<p>
+	VSK's skill says it "transfers 20% of [her] accuracy to damage" when active.
+	However, unofficial translations say nothing about a transfer.
+	Further testing indicates her accuracy remains the same in-skill.
+	It is likely  her EN skill description was mistranslated (<a href="ro635">not</a> <a href="pp-19">like</a> <a href="arisaka">that</a> <a href="https://old.reddit.com/r/girlsfrontline/comments/tsx05y/monthly_qa/i2uqhxu/">hasn't</a> happened before).
+</p>
+<center><div class="figure">
+	<img src="https://cdn.discordapp.com/attachments/453784246515925003/974745125383180338/unknown.png" width="75%"/>
+</div><em><a href="https://www.youtube.com/watch?v=FcADbjoPynI">Video source</a>. Note also the <a href="https://cdn.discordapp.com/attachments/453784246515925003/974655819851374612/unknown.png">lack of debuff arrows</a>.</em></center>
+
+<h3>FP buffing</h3>
+<p>
+	<em>Note: in this section, some numbers are slightly rounded/simplified. Damage values and ranges may be off by ~1. Should still be precise enough to determine VSK's math.</em>
+</p>
+<center><div class="figure">
+	<img src="images/vsk/base-stats.png" width="33%"/>
+</div><em></em></center>
+<p>
+	If VSK is completely on her own, there's only really one way her damage could be calculated.
+	We expect her in-skill FP to be <code>140+(0.2*83)=156.6</code>, or 136-183 damage after variance.
+</p>
+<center><div class="figure">
+	<img src="images/vsk/damage-basic.jpg" width="100%"/>
+</div><em>Checks out.</em></center>
+<p>
+	Okay. Here's another question. Is this damage boosted by crits?
+	We now have two possibilities: <code>[140+(0.2*83)]*1.75≈274 [235-318]</code>, or <code>140*1.75+(0.2*83)≈261 [224-303]</code>.
+	With a VFL/cape/Five-Seven, we now see:
+</p>
+<center><div class="figure">
+	<img src="images/vsk/damage-crits.jpg" width="100%"/>
+</div><em>So her acc-to-damage buff is applied before the crit multiplier.</em></center>
+<span class="anchor" id="data"></span>
+<p>
+	Next question.
+	Does the same apply to damage buffs?
+	Looking at her non-crits and adding a 5-star Damage II artillery (140 FP without aura, 217 with), there are three options:
+	<code>[217+(0.2*83)]*1.15=268.64 [231-311]</code> (acc damage is increased by skills/talents, but not aura), <code>217*1.15+(0.2*83)=226.15 [229-309]</code> (acc damage is not affected by FP skills/talents), or <code>[140+(0.2*83)]*1.55*1.15=279.14 [240-324]</code> (acc damage is affected by aura/skills/talents).
+	The first two are uncomfortably close, so if we can rule out case 3 we'll switch to a different test.
+</p>
+<center><div class="figure">
+	<img src="images/vsk/damage-aura.jpg" width="100%"/>
+</div><em>Case 3 doesn't seem to work.</em></center>
+
+<div class="row">
+	<div class="col-10 col-12-small">
+		<p>
+			Her accuracy buff at the very least isn't affected by your fairy FP aura.
+			This isn't ideal, as it means it's a smaller % buff the stronger your fairy is (think SVCh).
+			Now the only question is if skills/talents/tiles can apply to the acc buff.
+		</p>
+		<p>
+			With the pictured tile setup (no fairy), we're looking at either <code>[140+(0.2*83*2.3)]*1.88=334.98 [287-388]</code> or <code>140*1.88+(0.2*83*2.3)=301.38 [259-349]</code>.
+		</p>
+		<p>
+			And the results:
+		</p>
+	</div>
+	<div class="col-2 col-12-small">
+		<center><div class="figure">
+			<img src="images/vsk/big-tiles.png" width="100%"/>
+		</div><em></em></center>
+	</div>
+</div>
+<center><div class="figure">
+	<img src="images/vsk/damage-tiles.jpg" width="100%"/>
+</div><em></em></center>
+<p>
+	We're seeing too many small numbers for FP tiles/skills to be applied to her acc increase.
+	VSK's damage in-skill can therefore be roughly thought of as <code>[(base FP*aura*FP skills/tiles/talent)+(0.2*acc*acc aura/tiles/skills)]*crit damage</code>.
+	These findings are consistent with <a href="https://gall.dcinside.com/mgallery/board/view?id=micateam&no=1566400">a KR investigation</a>.
+	<em>(Note: I'm lumping tiles/skills together as they are, based on my previous tests, calculated/recalculated in the same step all other skills/talents/effects are.)</em>
+</p>
+<h3>Night</h3>
+<p>
+	VSK is said to be less effective at night because her acc-to-damage buff uses her post-night penalty acc.
+	For now, let's just verify this is the case.
+	We'll talk about the impact of this later.
+</p>
+<p>
+	With the same tile setup as above, we have either <code>140*1.88+(0.2*83*2.3)=301.38 [259-349]</code> or <code>140*1.88+(0.2*83*2.3*0.1)=267.02 [229-310]</code> damage.
+</p>
+<center><div class="figure">
+	<img src="images/vsk/damage-night.jpg" width="100%"/>
+</div><em></em></center>
+<p>
+	As claimed, the night penalty does reduce her acc-to-damage conversion. It's adding an incredible 3-4 damage here.
+</p>
+<span class="anchor" id="skill-analysis"></span>
+<h2>Skill Analysis<sup><small><a href="#skill-analysis">&#35;</a></small></sup></h2>
+<p>
+	Before you go and scrap VSK due to her acc-based selfbuff not scaling with FP buffs, let's go over some example daytime numbers.
+</p>
+<ul>
+	<li>In a completely base state, VSK goes from 140 to 156.6 damage - a 12% increase.</li>
+	<li>With Calico/P22/Stechkin and no fairy, VSK goes from 204.4 to 239.26 damage - a 17% increase. With skills active, it drops to a 13% net increase.</li>
+	<li>Adding a 5-star Artillery fairy to that changes these conditions to a 11% and 8.5% increase, respectively</li>
+</ul>
+<p>
+	So - I would estimate it as a 5-20% damage increase.
+	No matter what, it's nothing incredible.
+	Acc tiles push it towards the upper end of that, FP buffs lower its effective increase.
+	This doesn't mean it's bad to buff FP - it just means her acc-based buff is worth less consideration.
+</p>
+<p>
+	There's also the other component of her active - the first 3 attacks (at SL9+) each skill activation deal two instances of damage.
+	(Technically, it's like a second attack that comes 5 frames after, but that's splitting hairs.)
+</p>
+<!-- <ul>
+	<li>With no ROF buffs, VSK gets 4 attacks off total per skill activation - making this a 75% effective DPS buff.</li>
+	<li>With just M950A, VSK gets 6 attacks off total per skill activation - making this a 50% effective DPS buff.</li>
+	<li>With M950A and Stechkin, VSK gets 9 or 10 attacks off total per skill activation - making this a 30-33% effective DPS buff.</li> Last shot fires while active, but runs out mid-flight. In that test Stech's skill was delayed a few frames - could make the difference up depending on kiting & such.
+</ul> -->
+<p>
+	During the first few shots after activation, VSK has an effective 100% skill multiplier, plus any accuracy conversion.
+	This makes her quite strong in battles that last for 6-9 seconds.
+	You could interpret this as VSK preferring FP buffs (to maximize each of the doubled attacks), but I don't necessarily think this outweighs the built-in preference rifles have for ROF.
+	Rather than endlessly speculating and crunching numbers, let's run some tests and see how VSK actually does compared to other rifles - at night and at day.
+</p>
+<span class="anchor" id="data"></span>
+<h2>The Data<sup><small><a href="#data">&#35;</a></small></sup></h2>
+<center><div class="figure">
+	<img src="images/vsk/vsk-test-1.png" width="100%"/>
+</div><em></em></center>
+<p>
+	This is about as high as you can get for accuracy buffs without making any really dumb teambuilding decisions.
+</p>
+<p>
+	WA2000 was selected as a generic selfbuffer, who is likely to have an advantage here due to the lower amount of HG ROF buffers.
+	VSK's performance looked solid at day, but seemed to drop a bit when switching to a night battle.
+	Liu and WA2000 performed similarly to each other.
+	Keep in mind that damage dealt statistics are <a href="myths#dmgchart">difficult to compare</a> between rifles.
+</p>
+<p>
+	Px4 Storm works nicely with VSK on paper - lots of acc from her tiles, and crit damage from her skill.
+	Round 2, with SL8 as the common pair:
+</p>
+<center><div class="figure">
+	<img src="images/vsk/vsk-test-2.png" width="100%"/>
+</div><em>Note that SL8's tiles mean we expect most rifle's damage dealt to be higher than hers.</em></center>
+<p>
+	These zombies got a bit trickier at night - they have 22 EVA, and this echelon only had Px4's tiles for accuracy.
+	VSK performed similarly to R93 at day, but fell behind at night.
+	VSK's echelon even wiped a few times (those are the upper end of the damage taken chart, with 1920 total team HP).
+	SVCh's surehit did not seem important, as she was somewhat worse than R93 either way.
+</p>
+<center><div class="figure">
+	<img src="images/vsk/vsk-test-3.png" width="100%"/>
+</div><em></em></center>
+<p>
+	While you'd expect SRS to get better and VSK to get worse at night, it doesn't seem like a big deal here.
+	These Strelets have 36 EVA (Doppels 10), but VSK didn't lose much ground relative to Rico when switching to night.
+	Echelon damage taken inscreased dramatically, but that's only because one doppel would get an autoattack grenade or two off against SRS/VSK - its guaranteed linksplash damage inflates damage taken, after only a slight slowdown in kill speed.
+</p>
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	VSK-94 seems to trail a little behind the top selfbuffing rifles (e.g., Liu/R93/Rico/Type88), but her performance is overall solid.
+	Despite her accuracy component being less effective at night, its impact is relatively minor and she can still do well - especially if you can find a use for her frontloaded/bursty double shots.
+</p>
+<p>
+	Is VSK the new meta rifle?
+	Not at all.
+	But she's a reasonable option, with some interesting quirks.
+	If specifically targeting 6-9 second fights or otherwise benefitting from her doubled attacks, she can be quite powerful.
+</p>
+<span class="anchor" id="notes"></span>
+<h2>Minor notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<ul>
+	<li>VSK has a <a href="https://streamable.com/sc7utz">unique firing sound</a>. No impact on gameplay, of course, but it's neat.</li>
+	<li>As mentioned earlier, Px4 is nice to pair with VSK due to the accuracy bonus scaling with crit damage. It's sort of the same situation as with Liu, though - other options (P22) may still be preferable if you need what they offer (frontline shielding).</li>
+</ul>
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="thompson">
+		<div class="gallery solo arsmg rfhg">
+		  <div class="gallerypic">
+			<img src="images/icon/thompson.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Thompson, Force Shields, and EHP</b><br/>Quantifying Durability</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="webley">
+		<div class="gallery gen solo arsmg rfhg mgsg calc">
+		  <div class="gallerypic">
+			<img src="images/icon/webley.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>To Lead or to Follow?</b><br/>Webley skill mode analysis</div>
+		  </div>
+		</div>
+	</a>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
