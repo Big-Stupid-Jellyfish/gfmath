@@ -4011,3 +4011,8 @@ footer .copyright {
 	margin-top:-3.25em; /* this is again negative value of the height of your header */
 	visibility:hidden;
  }
+/* input#cse-search-input-box-id */
+.searchbox {
+    background-color: #242943!important;
+	color: white;
+}
