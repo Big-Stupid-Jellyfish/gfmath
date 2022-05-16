@@ -4012,7 +4012,8 @@ footer .copyright {
 	visibility:hidden;
  }
 /* input#cse-search-input-box-id */
+/* #242943 for typical background */
 .searchbox {
-    background-color: #242943!important;
+    background-color: #31375B!important;
 	color: white!important;
 }
