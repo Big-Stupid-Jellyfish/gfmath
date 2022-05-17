@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>Fairy Talent Frequencies - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Fairy Talent Frequencies</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-May-17</em></center>
+
+<span class="anchor" id="situation"></span>
+<h2>The Situation<sup><small><a href="#situation">&#35;</a></small></sup></h2>
+<p>
+	If you have some random game system and little information, it's reasonable to start out by assuming it is uniformly distributed.
+	However, we have sufficient evidence to reject this null hypothesis in a number of systems within Girls' Frontline:
+	<a href="https://gf-db.github.io/gfdb/gfdb.html?type=tdoll_recipe&mp=91&ammo=400&mre=400&part=30&tier=0&epoch.tdoll=115.0&sort.tdoll_recipe=[{%22sort_column%22:%22*%22,%22dir%22:1},{%22sort_column%22:%22class%22,%22dir%22:-1},{%22sort_column%22:%22mean%20%%22,%22dir%22:1}]">T-Doll production</a> (e.g., not all 5-star ARs are equally likely),
+	<a href="sfstats">SF unit size, coalition drill outcomes</a>,
+	and <a href="https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i4czmyf/">bingo</a> come to mind.
+</p>
+<p>
+	Now, let's look at fairy talents.
+	Setting aside flex talents only available from ranking events, we have:
+</p>
+<div class="row">
+	<div class="col-3 col-12-small">
+		<p>
+			"Stat I" talents (5):
+		</p>
+		<ol>
+			<li>Damage I</li>
+			<li>Accuracy I</li>
+			<li>Evasion I</li>
+			<li>Armor I</li>
+			<li>Critical I</li>
+		</ol>
+	</div>
+	<div class="col-3 col-12-small">
+		<p>
+			"Stat II" talents (5):
+		</p>
+		<ol>
+			<li>Damage II</li>
+			<li>Accuracy II</li>
+			<li>Evasion II</li>
+			<li>Armor II</li>
+			<li>Critical II</li>
+		</ol>
+	</div>
+	<div class="col-3 col-12-small">
+		<p>
+			Class-specific talents (6):
+		</p>
+		<ol>
+			<li>Charge</li>
+			<li>Assault</li>
+			<li>Aim</li>
+			<li>Sturdy</li>
+			<li>Suppression</li>
+			<li>Keen</li>
+		</ol>
+	</div>
+	<div class="col-3 col-12-small">
+		<p>
+			Fervor (1):
+		</p>
+		<ol>
+			<li>Fervor</li>
+		</ol>
+	</div>
+</div>
+<p>
+	It is left as an exercise for the reader to verify this sums to 17.
+</p>
+<p>
+	If you've been crafting your fairies properly, you'll have seen at least some of all of these.
+	But "feeling" like it's been a while since you rolled a good talent is a far cry from having strong evidence against a uniform talent distribution.
+</p>
+<p>
+	To save you the effort and time it takes to collect large amounts of data, I've been noting all fairy craft data/talent calibrations for a while (and gotten some more from others doing the same).
+	Let's see what we've got.
+</p>
+<span class="anchor" id="data"></span>
+<h2>The Data<sup><small><a href="#data">&#35;</a></small></sup></h2>
+<p>
+	Graphically,
+</p>
+<center><div class="figure">
+	<img src="https://i.imgur.com/EJSbGZE.png" width="100%"/>
+</div><em></em></center>
+<p>
+	This combines talent data from production and calibration.
+	When split:
+</p>
+<center><div class="figure">
+	<img src="https://i.imgur.com/oMVi5fz.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Note that the calibration side is particularly rough due to a limited sample size.
+	But we can still see the same trend and ballpark numbers on each side.
+	There isn't sufficient evidence to suggest they work differently.
+</p>
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	Talents are clearly not uniformly distributed.
+	Gold talents appear at a notably lower rate than white talents.
+	Class-specific talents may show up a little less than "Stat I" talents.
+</p>
+<p>
+	My current best guess as to the true rates are:
+</p>
+<center>
+	<table style="width:auto; text-align:center;">
+		<tr>
+			<th style="text-align:center;">Category</th>
+			<th style="text-align:center;">Estimated rate</th>
+			<th style="text-align:center;">Plausible range</th>
+		</tr>
+		<tr>
+			<td>Stat I</td>
+			<td>7.5% per</td>
+			<td>6.6-8.1%</td>
+		</tr>
+		<tr>
+			<td>Stat II/Fervor</td>
+			<td>4% per</td>
+			<td>3.7-4.8%</td>
+		</tr>
+		<tr>
+			<td>Class-specific</td>
+			<td>6% per</td>
+			<td>5.7-6.9%</td>
+		</tr>
+	</table>
+</center>
+<p>
+	If lumping "Stat I" and class-specific talents together, it would average out to around this:
+</p>
+<center>
+	<table style="width:auto; text-align:center;">
+		<tr>
+			<th style="text-align:center;">Category</th>
+			<th style="text-align:center;">Estimated rate</th>
+			<th style="text-align:center;">Plausible range</th>
+		</tr>
+		<tr>
+			<td>Stat I/Class-specific</td>
+			<td>7% per</td>
+			<td>6.5-7.1%</td>
+		</tr>
+		<tr>
+			<td>Stat II/Fervor</td>
+			<td>4% per</td>
+			<td>3.7-4.8%</td>
+		</tr>
+	</table>
+</center>
+<p>
+	It seems likely that fairy talents assigned from production and fairy calibration use the same underlying system (and have the same rates) for talents.
+	The plausible ranges above are listed with 95% confidence.
+</p>
+<p>
+	See also: <a href="https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_raising_paras.md">para raising strategies</a>, <a href="https://github.com/markhydroxyl/GFL-notes/blob/main/tls/nga_hec_logis.md">optimized HEC logistics</a>.
+	Many thanks to those who contributed their own talent data.
+</p>
+<span class="anchor" id="notes"></span>
+<h2>Minor notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<ul>
+	<li>It is occasionally claimed that you should space out your calibrations in time to "get a better RNG seed." There is no reason to believe this unless provided a <em>repeatable</em> demonstration showing significantly better outcomes than what you would otherwise expect - which hasn't been done yet. Similar deal with the vodoo bingo strategies you'll hear.</li>
+	<li>This <em>does not</em> mean you should avoid raising 500x4 fairies with Damage II/Fervor. Realistically you'd be saving ~1 fairy from matching talents - something beyond trivial in the long run, and nowhere near enough to justify the extra calibration cost later on to fix the talent. A slightly lower proc rate won't kill you either (if talent mattered that much, calibrating low-rarity fairies to Damage I would be the only reasonable course of action).</li>
+	<li>I assume Fervor fits into the "Stat II" class of talent. Getting a decent sample on a single talent is far harder than with groups of talents, so it'll be a long while before I have enough evidence to confidently say if the rates are actually the same or not.</li>
+	<li>Ultimately, the main takeaway: expect calibration feeding to be a bit more painful than you previously thought, and I wish your resources the best of luck if you decide you need exactly one specific gold talent.</li>
+</ul>
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="fairy-reviews">
+		<div class="gallery gen">
+		  <div class="gallerypic">
+			<img src="images/icon/fairy-reviews.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Fairy Reviews</b><br/>General commentary and fairy information</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="sniper-rework">
+		<div class="gallery solo">
+		  <div class="gallerypic">
+			<img src="images/icon/sniper-rework.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>The New Sniper Fairy</b><br/>Reworked skill testing</div>
+		  </div>
+		</div>
+	</a>
+
+	<!-- <a href="fairy-talents">
+		<div class="gallery gen arsmg rfhg mgsg">
+			<div class="gallerypic">
+				<img src="images/icon/fairy-talents.jpg" alt="" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Picking Fairy Talents</b><br/>Fervor versus Damage II</div>
+			</div>
+		</div>
+	</a> -->
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
