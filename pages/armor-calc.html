@@ -225,7 +225,7 @@ window.onload = function() {
 <p>
 	Keep in mind that some enemies may have skills, armor piercing, or other effects that complicate matters.
 	At least in the case of AP, just add their AP stat to the armor requirement.
-	SGs can survive even with less armor than listed, though they will die faster.
+	SGs can survive even with less armor than listed, but they will die faster.
 </p>
 
 <span class="anchor" id="equations"></span>
@@ -238,6 +238,7 @@ $$ \text{Max damage} = \left\lceil \text{Base FP} \cdot 1.15 \right\rceil $$
 	due to 15% damage variance.
 	Judge has no damage variance, and does half damage initially.
 	Pyxis have no damage variance, and deal half damage.
+	Almost all other enemies have damage variance as described above.
 	The calculator above accounts for those mechanics, and assumes you've entered the FP stats as listed on GFLMaps.
 	Armor is calculated as
 </p>
