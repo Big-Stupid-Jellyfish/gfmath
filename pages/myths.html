@@ -1206,6 +1206,9 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 	It is equivalent to a straight FP buff against armored enemies - nice, but it doesn't revolutionize her role.
 </p>
 <p>
+	In other words: <code>(1.0*FP - (Armor - AP))*Crit damage + (0.1*FP)*Crit damage = (1.1*FP - (Armor - AP))*Crit damage</code>.
+</p>
+<p>
 	See also: <a href="hydras">this myth about high armor in general</a>.
 </p>
 
@@ -1248,7 +1251,7 @@ You'd want at least some FP buffs, but that's true for any team.</p>
 	This is calculated as \( \mathrm{EHP}=\frac{\mathrm{HP}}{\text{Enemy hit rate}}=\frac{\mathrm{HP}}{1-\text{Dodge chance}} \).
 	An evasion buff can be evaluated in terms of the resulting increase in EHP, or \( \text{survivability increase} = \frac{\text{New EHP}}{\text{Old EHP}} = \frac{\frac{\mathrm{HP}}{\text{New enemy hit rate}}}{\frac{\mathrm{HP}}{\text{Old enemy hit rate}}} = \frac{\text{Old hit rate}}{\text{New hit rate}} \).
 	In other words, supposing a buff x, \( \text{survivability increase} = \frac{\frac{\mathrm{ACC}}{\mathrm{ACC}+\mathrm{EVA}}}{\frac{\mathrm{ACC}}{\mathrm{ACC}+x\cdot\mathrm{EVA}}} = \frac{\mathrm{ACC}+x\cdot\mathrm{EVA}}{\mathrm{ACC}+\mathrm{EVA}}\).
-	An x% buff increases, approaching a x% EHP increase, as your evasion grows relative to enemy accuracy.
+	An x% buff increases in value, approaching a x% EHP increase, as your evasion grows relative to enemy accuracy.
 	<a href="images/evasion/survivalincrease.png">Example chart of this relationship</a>.
 </p>
 <p>
