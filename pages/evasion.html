@@ -116,7 +116,8 @@ $$ \text{Hit rate}~(\%) = \frac{\text{ACC}}{\text{ACC}+\text{EVA}} \times 100\% 
 	<img src="images/evasion/hitrate3d.png" width="100%"/>
 </div>
 <p>
-	Find where your accuracy & the enemy's evasion meet, and the color is your chance of each bullet hitting (warmer = more likely to hit, the reverse also works for the odds you'll get hit).
+	Find where your accuracy & the enemy's evasion meet, and the color is your chance of each bullet hitting.
+	Warmer colors = more likely to hit, the reverse also works for the odds you'll get hit.
 	Dodge chance is simply 1 minus the hit rate, or EVA/(EVA+ACC).
 </p>
 <p>
@@ -162,7 +163,7 @@ $$ \mathrm{EHP} = \frac{\mathrm{HP}}{\mathrm{Enemy~hit~rate}} = \frac{\mathrm{HP
 </div>
 </center> -->
 <p>
-	Let's move away from talking about evasion and hit rates, and introduce another number: effective HP (or EHP for short).
+	Let's move away from talking about evasion and hit rates, and introduce another number: effective HP, or EHP for short.
 	Consider a particularly bad shotgun with 1000 HP and 0 evasion.
 	All attacks made will hit, so once enemies fire off 1000 damage you'll die.
 	Now, suppose instead that shotgun had a bit more evasion, just enough to match that enemy's accuracy.
@@ -431,10 +432,10 @@ $$ \mathrm{Survivability~increase} = \frac{\mathrm{New~EHP}}{\mathrm{Old~EHP}} =
 </div>
 
 <p>
-	If you start with 0 evasion, evasion buffs obviously don't help you at all (0*anything=0).
+	If you start with 0 evasion, evasion buffs obviously don't help you at all - 0*anything=0.
 	With low base evasion, you gain very little survivability from this - there's not much of a difference between getting hit 98% of the time and 95% of the time.
 	As your base evasion increases, the gain from this buff will increase, approaching a +100% EHP improvement for +100% EVA, +80% EHP for 80% EVA, and so on.
-	If you want a bit more proof this does cap out: supposing some constant enemy accuracy <em>a</em> (and a 100% EVA buff),
+	If you want a bit more proof this does cap out: supposing some constant enemy accuracy <em>a</em> and a 100% EVA buff,
 </p>
 $$ \lim\limits_{\mathrm{EVA}\to\infty} \frac{\frac{a}{a+\mathrm{EVA}}}{\frac{a}{a+2\cdot\mathrm{EVA}}} = \lim\limits_{\mathrm{\mathrm{EVA}}\to\infty} \frac{a+2\cdot\mathrm{EVA}}{a+\mathrm{EVA}} = 2 $$
 <!-- <center>
@@ -460,7 +461,7 @@ $$ \lim\limits_{\mathrm{EVA}\to\infty} \frac{\frac{a}{a+\mathrm{EVA}}}{\frac{a}{
 <p>
 	Guess which one reduces damage better<sup>2</sup>.
 	Welrod was benched for a reason many moons ago when <a href="px4">Px4 Storm</a> was released.
-	A number of especially scary attacks are surehit, and no amount of evasion will save you (unless you're ROmod).
+	A number of especially scary attacks are surehit, and no amount of evasion will save you (unless you're <a href="ro635">RO mod</a>).
 </p>
 
 <p>
@@ -527,7 +528,7 @@ $$ \lim\limits_{\mathrm{EVA}\to\infty} \frac{\frac{a}{a+\mathrm{EVA}}}{\frac{a}{
 
 <p>
 	Here's the average DPS increase a few common accuracy buffs give, by your starting accuracy, against a 15-evasion enemy.
-	If your base acc is double their evasion (30 acc), even a 100% acc buff is reduced to a 20% DPS increase.
+	If your base acc is double their evasion, even a 100% acc buff is reduced to a 20% DPS increase.
 	Past 70 accuracy and this buff is only 1/10th as strong.
 </p>
 
@@ -547,8 +548,10 @@ $$ \mathrm{DPS~increase} = \frac{\mathrm{New~hit~rate}}{\mathrm{Old~hit~rate}} $
 <p>
 	If you ever wanted to know why SRS isn't very popular at day, this is it.
 	She has a 60% FP/40% ACC selfbuff, and vs typical 15 evasion stuff that 40% acc is in the range of a 5% DPS boost given her 87 base ACC.
-	A 1.6*1.05=68% net DPS buff isn't awful, but typical 5-stars have a 75% multiplier (and it's even less if you have other accuracy sources).
-	At night, she does better: 8 accuracy vs 15 evasion means a ~25% DPS boost from that same acc component, for a ~2x net skill DPS boost (but even then, there are other options like M200/Type88/4 Shiki/heavy acc tiles).
+	A 1.6*1.05=68% net DPS buff isn't awful, but typical 5-stars have a 75% multiplier.
+	It's even less if you have other accuracy sources.
+	At night, she does better: 8 accuracy vs 15 evasion means a ~25% DPS boost from that same acc component, for a ~2x net skill DPS boost.
+	But even then, there are other options like M200/Type88/4 Shiki/heavy acc tiles.
 </p>
 
 <p>
@@ -588,8 +591,9 @@ $$ \mathrm{DPS~increase} = \frac{\mathrm{New~hit~rate}}{\mathrm{Old~hit~rate}} $
 </div>
 <p>
 	Here are the odds of all shots connecting from a given volley (5 dummies).
-	The x-axis has been expanded to better show the trend, as otherwise even with 100 accuracy you'd only oneshot a 15-evasion enemy ~50% of the time (as (100/(100+15))^5=49.7%).
-	Oneshot probability increases much more linearly with typical accuracy values (80-100 for rifles, before buffs), suggesting that accuracy is more useful to buff if you're fighting low-HP enemies (of course, ROF even more so in many situations):
+	The x-axis has been expanded to better show the trend, as otherwise even with 100 accuracy you'd only oneshot a 15-evasion enemy ~50% of the time: (100/(100+15))^5=49.7%.
+	Oneshot probability increases much more linearly with typical accuracy values - 80-100 for rifles, before buffs - suggesting that accuracy is more useful to buff if you're fighting low-HP enemies.
+	Of course, ROF is even more valuable in many such situations.
 </p>
 
 <div class="figure">
@@ -630,7 +634,7 @@ $$ \mathrm{HOC~hit~rate~(\%)} = \mathrm{max}\left(\frac{\mathrm{Precision}\div 8
 </p>
 
 <p>
-	So: low-precision HOCs (2B14, M2) may run up against the 40% floor against enemies with 50+ EVA or so.
+	So: low-precision HOCs like 2B14 and M2 may run up against the 40% floor against enemies with 50+ EVA or so.
 	More precise ones will stay above it until a bit past 80 EVA.
 	In most cases, you can expect your HOCs to hit 70-80% of the time.
 </p>
