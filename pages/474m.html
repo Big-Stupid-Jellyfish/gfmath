@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>AK-47 with 74M - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>AK-47 with 74M</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-May-29</em></center>
+
+<p>
+	AK-74M is expected to release next month as a new craftable doll, with an interesting skill:
+</p>
+<blockquote>
+	<p><strong>Katyusha</strong> ICD 0s/CD 0s</p>
+	<p>
+		T-Dolls in the echelon carrying an [AK] are enhanced;
+		<ul>
+			<li>[AK-74M]: All T-Dolls wielding an AK in the echelon gain 5% damage and rate of fire.</li>
+			<li>[AK-47]: "Raid Focus" damage and accuracy buffs are swapped.</li>
+			<li>[AK-74U]: "Repulsive Response" is buffed to a passive.</li>
+			<li>[AK-12]: "Eye of the Snow Wolf" grants an additional 35% critical hit damage while it is active.</li>
+			<li>[AK-15]: Attacks will always trigger her "Anger" effect.</li>
+			<li>[AK-Alfa]: Has perfect accuracy when targeting enemy units in front of her.</li>
+		</ul>
+	</p>
+</blockquote>
+<p>
+	There's a whole lot to consider there, so for now let's just look at her interaction with AK-47.
+	After all, AW+ has finally been announced for Q3 per Q&A - maybe AK-47's scope SPEQ and this is enough to be worth considering.
+</p>
+<blockquote>
+	<p><strong>Strike Focus</strong> ICD 5s/CD 8s</p>
+	<p>
+		Increase damage by 35% and accuracy by 100% for 5 seconds.
+	</p>
+</blockquote>
+<p>
+	This skill is the main reason why AK-47 has never been recommended, with poor DPS stats as the nail in the coffin.
+	A 35% multiplier is simply terrible even by 3-star standards, and the accuracy buff mostly just brings her accuracy back to normal levels.
+</p>
+<p>
+	But switching that to a 100% FP multiplier, plus 44% crit damage from her best scope, has a shot at being worth something.
+</p>
+
+<span class="anchor" id="introduction"></span>
+<h2>DPS calculations<sup><small><a href="#introduction">&#35;</a></small></sup></h2>
+<p>
+	AK-47's scope favors crit builds, which are generally better for ARSMGs anyways.
+	Let's look at the in- and out-of-skill DPS of her and a few other options, assuming a Parachute fairy without talent.
+</p>
+<center>
+	<table style="width:auto;">
+		<tr>
+			<th>Configuration</th>
+			<th>Basic DPS</th>
+			<th>In-skill DPS</th>
+		</tr>
+		<tr>
+			<td>AK-47 (VFL+Chip)</td>
+			<td>1050.1</td>
+			<td>1656.6</td>
+		</tr>
+		<tr>
+			<td>AK-47 (SPEQ+Chip)</td>
+			<td>1395.9</td>
+			<td>2202.1</td>
+		</tr>
+		<tr>
+			<td>AK-47 (AK-74M, VFL+Chip)</td>
+			<td>1471.7</td>
+			<td>3181.4</td>
+		</tr>
+		<tr>
+			<td>AK-47 (AK-74M, SPEQ+Chip)</td>
+			<td>2029.4</td>
+			<td>4387.0</td>
+		</tr>
+		<tr>
+			<td>G41 (VFL+SPEQ)</td>
+			<td>1476.3</td>
+			<td>2583.4</td>
+		</tr>
+		<tr>
+			<td>G41 (AUG, VFL+SPEQ)</td>
+			<td>1709.6</td>
+			<td>2991.9</td>
+		</tr>
+		<tr>
+			<td>G41 (M4A1, VFL+SPEQ)</td>
+			<td>2014.1</td>
+			<td>3524.6</td>
+		</tr>
+	</table>
+</center>
+<p>
+	AK-47's SPEQ alone is clearly not enough to make her useful.
+	However, pairing that with AK-74M appears to bring her DPS to a similar range as G41 (+M4A1 & SPEQ), one of the <a href="g41-standard">better "boring" direct-fire DPS ARs</a>.
+</p>
+<p>
+	We have a lead, but we're a bit short of a full argument.
+	Let's go deeper.
+</p>
+<span class="anchor" id="limitations"></span>
+<h2>Damage over time<sup><small><a href="#limitations">&#35;</a></small></sup></h2>
+<p>
+	AK-74M's tiles aren't <em>too</em> far off from M4's, so let's suppose our third AR doesn't care either way.
+	First, we'll chart the relative cumulative damage over time from G41 & AK-74M with support, and then add the support AR DPS to see how much it affects things (M4A1 is pretty good on her own!).
+</p>
+<center><div class="figure">
+	<img src="images/474m/ak474m-separate.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Lining up with the DPS table above, we see AK-47 start out with marginally better DPS.
+	Once her skill activates 5 seconds in, she quickly catches up.
+	From ~7 seconds onwards, ignoring one minor dip, AK-47 keeps a decent advantage over G41.
+</p>
+<p>
+	However, the support AR's damage is concerning.
+	We expect G41 & AK-47 to outperform M4/74M as they're getting fairly substantial tiles, but AK-74M is <em>really</em> far down.
+	She has her own permanent 5% FP & ROF buff, but that's a far cry from M4A1's 75% selfbuff (and crazy mod3 SPEQ).
+</p>
+<p>
+	Now, the same chart but adding G41 & M4's numbers as well as 47 & 74M's:
+</p>
+<center><div class="figure">
+	<img src="images/474m/ak474m-combined.png" width="100%"/>
+</div><em></em></center>
+<p>
+	AK-74M's DPS drags down the team, and G41+M4A1 have better performance no matter how long the battle goes on for.
+</p>
+
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	It looks like AK-47 can deal a surprising amount of damage when you have everything set up right.
+	However, if your third AR isn't getting <em>amazing</em> value out of AK-74M, it seems to still be a net negative for echelon DPS compared to standard options.
+	Even those "standard options" pale in comparison to the very top meta ARs (e.g., G11/416 mods), though those are a bit harder to plot on a graph like this.
+</p>
+<p>
+	This only sort of works at day, and AK-47's tiles aren't helpful (not that those are a major consideration).
+	It ultimately looks better than <a href="sub2k">SUB-2000-based echelons</a>, at least - those waste an entire echelon's worth of data for absolutely no performance return.
+</p>
+<span class="anchor" id="notes"></span>
+<h2>Notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<ul>
+	<li>
+		Field testing, as always, will be helpful once these toys actually arrive on EN. Theoretical calculations <a href="simulation">only get you so far</a>.
+	</li>
+	<li>
+		As you may have noticed from the table earlier, AK-47's SPEQ is a necessary part to keep her somewhat competitive. This will not work at night.
+	</li>
+	<li>
+		While concerns over low accuracy are often <a href="myths#hanyangacc">unfounded</a>, AK-47's accuracy is actually bad - 37 at lv100, with 100 affection.
+		Her out-of-skill DPS will suffer more than her competitors if your enemies have somewhat more evasion than typical, if you're not running dolls/fairies that give accuracy.
+	</li>
+</ul>
+<center><div class="figure">
+	<img src="images/474m/eva-ak474m-separate.png" width="100%"/>
+</div><em>Now, even setting aside 74M's contribution, she struggles to keep up with G41 in &lt;15s fights.</em></center>
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="ak15">
+		<div class="gallery solo arsmg">
+		  <div class="gallerypic">
+			<img src="images/icon/ak15.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Monitoring your Anger</b><br/>AK-15 Analysis</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="tkb-408">
+		<div class="gallery solo arsmg">
+		  <div class="gallerypic">
+			<img src="images/icon/tkb-408.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>TKB-408 Analysis</b><br/>Critical night focus</div>
+		  </div>
+		</div>
+	</a>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
