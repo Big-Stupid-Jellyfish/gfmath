@@ -14,6 +14,26 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-805N997DPC');
 </script>
+<script>
+function myFunction() {
+  var x = document.getElementById("tableID");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+  var y = document.getElementById("tableDate");
+  if (y.style.display === "none") {
+    y.style.display = "block";
+  } else {
+    y.style.display = "none";
+  }
+} 
+function toggleInit() {
+  var y = document.getElementById("tableDate");
+    y.style.display = "none";
+} 
+</script>
 <meta name="description" content="Girls Frontline, by the numbers">
 <title>Limited Event Dolls - GFMath</title>
 <meta charset="utf-8" />
@@ -39,6 +59,7 @@ gtag('config', 'G-805N997DPC');
 <header class="major">
 	<h1>Limited Event Dolls</h1>
 </header>
+<body class="is-preload" onload="toggleInit()">
 <center><em>By BigStupidJellyfish | Last updated 2022-June-01</em></center>
 
 <p>
@@ -57,13 +78,15 @@ gtag('config', 'G-805N997DPC');
 	They will all be rerun in time, even if some are forgotten for extended periods.
 </p>
 
-<table>
+<button onclick="myFunction()">Toggle sort (ID/Date)</button>
+<div id="tableID">
+<table width="100%">
 <tr><th>Doll</th><th>Rarity</th><th>Class</th><th>Last event farmable</th><th>Approximate date</th></tr>
 <tr><td>AK-74U</td><td>★★★★★</td><td>SMG</td><td>Freaky Pandemic</td><td>2021-October</td></tr>
 <tr><td>AUG</td><td>★★★★★</td><td>AR</td><td>My Devil's Frontline</td><td>2021-November</td></tr>
 <tr><td>SPP-1</td><td>★★★★</td><td>HG</td><td>The Photo Studio Mystery</td><td>2021-March</td></tr>
 <tr><td>UMP40</td><td>★★★★</td><td>SMG</td><td>The Photo Studio Mystery</td><td>2022-March</td></tr>
-<tr><td>OTs-14</td><td>★★★★★</td><td>AR</td><td>Dual Randomness</td><td>2022-June</td></tr>
+<tr><td>OTs-14</td><td>★★★★★</td><td>AR</td><td>Far Side of the Sea</td><td>2022-June</td></tr>
 <tr><td>PP-19</td><td>★★★★</td><td>SMG</td><td>VA-11 Hall-A</td><td>2022-May</td></tr>
 <tr><td>Five-Seven</td><td>★★★★★</td><td>HG</td><td>The Photo Studio Mystery</td><td>2022-March</td></tr>
 <tr><td>M1887</td><td>★★★★★</td><td>SG</td><td>Glory Day</td><td>2021-August</td></tr>
@@ -82,7 +105,7 @@ gtag('config', 'G-805N997DPC');
 <tr><td>Cx4 Storm</td><td>★★★★</td><td>SMG</td><td>One Coin Short</td><td>2022-January</td></tr>
 <tr><td>M82A1</td><td>★★★★★</td><td>RF</td><td>Far Side of the Sea</td><td>2021-July</td></tr>
 <tr><td>JS 9</td><td>★★★★★</td><td>SMG</td><td>Dual Randomness</td><td>2022-February</td></tr>
-<tr><td>HS2000</td><td>★★★★★</td><td>HG</td><td>A Snowy Night Capriccio</td><td>2022-June</td></tr>
+<tr><td>HS2000</td><td>★★★★★</td><td>HG</td><td>Far Side of the Sea</td><td>2022-June</td></tr>
 <tr><td>KSVK</td><td>★★★★</td><td>RF</td><td>Freaky Pandemic</td><td>2021-October</td></tr>
 <tr><td>Lewis</td><td>★★★★★</td><td>MG</td><td>One Coin Short</td><td>2022-January</td></tr>
 <tr><td>PM-9</td><td>★★★★★</td><td>SMG</td><td>(Introduction: point event)</td><td>2021-March</td></tr>
@@ -99,7 +122,51 @@ gtag('config', 'G-805N997DPC');
 <tr><td>PM1910</td><td>★★★★</td><td>MG</td><td>(Introduction: Dual Randomness)</td><td>2022-February</td></tr>
 <tr><td>TKB-408</td><td>★★★★★</td><td>AR</td><td>(Introduction: point event)</td><td>2021-September</td></tr>
 </table>
-
+</div>
+<div id="tableDate">
+<table width="100%">
+<tr><th>Doll</th><th>Rarity</th><th>Class</th><th>Last event farmable</th><th>Approximate date</th></tr>
+<tr><td>AUG Para</td><td>★★★★★</td><td>SMG</td><td>Far Side of the Sea</td><td>2022-June</td></tr>
+<tr><td>OTs-14</td><td>★★★★★</td><td>AR</td><td>Far Side of the Sea</td><td>2022-June</td></tr>
+<tr><td>HS2000</td><td>★★★★★</td><td>HG</td><td>Far Side of the Sea</td><td>2022-June</td></tr>
+<tr><td>PP-19</td><td>★★★★</td><td>SMG</td><td>VA-11 Hall-A</td><td>2022-May</td></tr>
+<tr><td>M1895 CB</td><td>★★★★</td><td>MG</td><td>VA-11 Hall-A</td><td>2022-May</td></tr>
+<tr><td>R5</td><td>★★★★★</td><td>AR</td><td>VA-11 Hall-A</td><td>2022-May</td></tr>
+<tr><td>Five-Seven</td><td>★★★★★</td><td>HG</td><td>The Photo Studio Mystery</td><td>2022-March</td></tr>
+<tr><td>UMP40</td><td>★★★★</td><td>SMG</td><td>The Photo Studio Mystery</td><td>2022-March</td></tr>
+<tr><td>ACR</td><td>★★★★★</td><td>AR</td><td>The Photo Studio Mystery</td><td>2022-March</td></tr>
+<tr><td>Webley</td><td>★★★★★</td><td>HG</td><td>The Photo Studio Mystery</td><td>2022-March</td></tr>
+<tr><td>Ballista</td><td>★★★★★</td><td>RF</td><td>The Photo Studio Mystery</td><td>2022-March</td></tr>
+<tr><td>Desert Eagle</td><td>★★★★★</td><td>HG</td><td>Dual Randomness</td><td>2022-February</td></tr>
+<tr><td>JS 9</td><td>★★★★★</td><td>SMG</td><td>Dual Randomness</td><td>2022-February</td></tr>
+<tr><td>DSR-50</td><td>★★★★★</td><td>RF</td><td>Dual Randomness</td><td>2022-February</td></tr>
+<tr><td>VHS</td><td>★★★★★</td><td>AR</td><td>(Introduction: Dual Randomness)</td><td>2022-February</td></tr>
+<tr><td>PM1910</td><td>★★★★</td><td>MG</td><td>(Introduction: Dual Randomness)</td><td>2022-February</td></tr>
+<tr><td>R93</td><td>★★★★★</td><td>RF</td><td>One Coin Short</td><td>2022-January</td></tr>
+<tr><td>Cx4 Storm</td><td>★★★★</td><td>SMG</td><td>One Coin Short</td><td>2022-January</td></tr>
+<tr><td>Lewis</td><td>★★★★★</td><td>MG</td><td>One Coin Short</td><td>2022-January</td></tr>
+<tr><td>Honey Badger</td><td>★★★★</td><td>SMG</td><td>A Snowy Night Capriccio</td><td>2021-December</td></tr>
+<tr><td>HMG21</td><td>★★★★★</td><td>MG</td><td>A Snowy Night Capriccio</td><td>2021-December</td></tr>
+<tr><td>AUG</td><td>★★★★★</td><td>AR</td><td>My Devil's Frontline</td><td>2021-November</td></tr>
+<tr><td>CZ2000</td><td>★★★★</td><td>AR</td><td>Butterfly in a Cocoon</td><td>2021-October</td></tr>
+<tr><td>Gr SL8</td><td>★★★★★</td><td>RF</td><td>Butterfly in a Cocoon</td><td>2021-October</td></tr>
+<tr><td>KSVK</td><td>★★★★</td><td>RF</td><td>Freaky Pandemic</td><td>2021-October</td></tr>
+<tr><td>TAC-50</td><td>★★★★★</td><td>RF</td><td>Freaky Pandemic</td><td>2021-October</td></tr>
+<tr><td>AK-74U</td><td>★★★★★</td><td>SMG</td><td>Freaky Pandemic</td><td>2021-October</td></tr>
+<tr><td>TKB-408</td><td>★★★★★</td><td>AR</td><td>(Introduction: point event)</td><td>2021-September</td></tr>
+<tr><td>M1887</td><td>★★★★★</td><td>SG</td><td>Glory Day</td><td>2021-August</td></tr>
+<tr><td>SRS</td><td>★★★★★</td><td>RF</td><td>Glory Day</td><td>2021-August</td></tr>
+<tr><td>M82A1</td><td>★★★★★</td><td>RF</td><td>Far Side of the Sea</td><td>2021-July</td></tr>
+<tr><td>Lusa</td><td>★★★★★</td><td>SMG</td><td>(Introduction: keycard event)</td><td>2021-June</td></tr>
+<tr><td>CZ75</td><td>★★★★★</td><td>HG</td><td>Special Rescue event</td><td>2021-June</td></tr>
+<tr><td>SPP-1</td><td>★★★★</td><td>HG</td><td>The Photo Studio Mystery</td><td>2021-March</td></tr>
+<tr><td>KLIN</td><td>★★★★</td><td>SMG</td><td>The Photo Studio Mystery</td><td>2021-March</td></tr>
+<tr><td>JS05</td><td>★★★★★</td><td>RF</td><td>The Photo Studio Mystery</td><td>2021-March</td></tr>
+<tr><td>PM-9</td><td>★★★★★</td><td>SMG</td><td>(Introduction: point event)</td><td>2021-March</td></tr>
+<tr><td>ART556</td><td>★★★★★</td><td>AR</td><td>A Snowy Night Capriccio</td><td>2020-December</td></tr>
+<tr><td>PM-06</td><td>★★★★★</td><td>SMG</td><td>(Introduction: point event)</td><td>2020-October</td></tr>
+</table>
+</div>
 <p>
 	While not exactly part of the same pool, some dolls that will become available in permanent campaigns still show up in farming events until then (and sometimes even after).
 	After all, it can take a while for the campaigns to be updated.
