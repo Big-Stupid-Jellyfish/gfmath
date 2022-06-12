@@ -41,7 +41,7 @@ gtag('config', 'G-805N997DPC');
 </header>
 
 <!-- <center><em>By BigStupidJellyfish | 2021-January-08</em></center> -->
-<center><em>By BigStupidJellyfish | Last updated 2022-May-18</em></center>
+<center><em>By BigStupidJellyfish | Last updated 2022-June-12</em></center>
 
 <p>
 	<em>
@@ -58,7 +58,7 @@ gtag('config', 'G-805N997DPC');
 <p>SF unit sizes are not uniformly distributed, and instead follow a sort of bell-shaped curve.
 Below are the frequencies of each size from my pulls:</p>
 <div class="figure">
-<img src="https://i.imgur.com/T4VoABQ.png" width="100%"/>
+<img src="https://i.imgur.com/cjIw6aj.png" width="100%"/>
 </div>
 <!-- <p>Assuming equal odds for L/S and XL/XS, I would estimate the true odds to be something like:</p> -->
 <p>
@@ -77,32 +77,32 @@ Below are the frequencies of each size from my pulls:</p>
 	<tr>
 		<td>Extra Small</td>
 		<td>2%</td>
-		<td>1.18%</td>
-		<td>2.24%</td>
+		<td>1.21%</td>
+		<td>2.22%</td>
 	</tr>
 	<tr>
 		<td>Small</td>
 		<td>18%</td>
-		<td>16.62%</td>
-		<td>19.83%</td>
+		<td>16.38%</td>
+		<td>19.38%</td>
 	</tr>
 	<tr>
 		<td>Medium</td>
 		<td>60%</td>
-		<td>57.09%</td>
-		<td>61.18%</td>
+		<td>57.92%</td>
+		<td>61.76%</td>
 	</tr>
 	<tr>
 		<td>Large</td>
 		<td>16%</td>
-		<td>14.97%</td>
-		<td>18.06%</td>
+		<td>14.76%</td>
+		<td>17.65%</td>
 	</tr>
 	<tr>
 		<td>Extra Large</td>
 		<td>4%</td>
-		<td>3.68%</td>
-		<td>5.41%</td>
+		<td>3.66%</td>
+		<td>5.27%</td>
 	</tr>
 	
 	<!-- <tr>
@@ -118,7 +118,7 @@ Below are the frequencies of each size from my pulls:</p>
 	My current suspicion is that sizes are binned into groups of [20% XL & L], [60% M], and [20% XS & S] with XL getting a bit more and XS getting a bit less of that 20%.
 </p>
 
-<p>So far I <a href="https://i.imgur.com/JOC4jMQ.png">see no good evidence</a> to suggest the true rate varies by base rarity (i.e. for 1 or 2 star mooks).</p>
+<p>So far I <a href="https://i.imgur.com/Du7cFh5.png">see no good evidence</a> to suggest the true rate varies by base rarity (i.e. for 1 or 2 star mooks).</p>
 
 <!-- <p>
 	The low frequency makes it difficult to be confident, but it currently looks plausible for XL units to be more common than XS ones.
@@ -142,8 +142,8 @@ Below are the frequencies of each size from my pulls:</p>
 </p>
 <p>
 	I do not currently have enough data to get a firm estimate on the shiny rate.
-	As of last update, I have 13 shinies from 2220 total pulls (0.59% rate).
-	The true rate could plausibly be anywhere from 0.31-0.94% based on this.
+	As of last update, I have 14 shinies from 2503 total pulls (0.56% rate).
+	The true rate could plausibly be anywhere from 0.31-0.89% based on this.
 </p>
 
 <p>
@@ -156,12 +156,12 @@ Below are the frequencies of each size from my pulls:</p>
 <h2>Coalition Drill: Decoding Practice rates<sup><small><a href="#decoding">&#35;</a></small></sup></h2>
 
 <div class="figure">
-<img src="https://i.imgur.com/hHC7zrt.png" width="100%"/>
+<img src="https://i.imgur.com/U0jfIfH.png" width="100%"/>
 </div>
 <p>
 	The chances of getting Basic/Advanced Training Keycodes are also not even.
 	The true rate is commonly claimed to be 25%, but this is not the case.
-	Advanced keycodes are given out between 29.2-33.6% of the time, with 95% confidence.
+	Advanced keycodes are given out between 29.1-33.3% of the time, with 95% confidence.
 	If I had to pick an exact number, I'd currently be most comfortable putting it at 30% (a 2.33:1 ratio).
 </p>
 <!--My personal results are shown above, which indicate a 25% advanced rate is very likely.</p> No more! -->
@@ -215,6 +215,159 @@ Below are the frequencies of each size from my pulls:</p>
 	It is virtually impossible to have a surplus of advanced keycodes, unless you spend gems for more in packages, leave SF skills partially leveled, or don't plan to level a significant amount of SF.
 </p>
 
+<span class="anchor" id="caps"></span>
+<h2>Captures & Failures<sup><small><a href="#caps">&#35;</a></small></sup></h2>
+<h3>Capture probability</h3>
+<p>
+	2-star coalition units have a stated 50% capture chance, ringleaders 25%.
+</p>
+<center>
+	<table style="width:auto; text-align:center;">
+		<tr>
+			<th style="text-align:center;"></th>
+			<th style="text-align:center;">Stated rate</th>
+			<th style="text-align:center;">Observed rate</th>
+			<th style="text-align:center;">Captures</th>
+			<th style="text-align:center;">Failures</th>
+		</tr>
+		<tr>
+			<td>2-star</td>
+			<td>50%</td>
+			<td>49.68% (44-55%)</td>
+			<td>154</td>
+			<td>156</td>
+		</tr>
+		<tr>
+			<td>3-star</td>
+			<td>25%</td>
+			<td>25.00% (12-40%)</td>
+			<td>9</td>
+			<td>27</td>
+		</tr>
+	</table>
+</center>
+<p>
+	It's hard to get a good sample size on ringleader capture attempts, but it seems very likely the stated rates are accurate.
+	Ranges are listed with 95% confidence.
+</p>
+<h3>Failure rewards</h3>
+<p>
+	When you fail to capture a coalition unit, you get some resources as a sort of pity.
+	The potential rewards are:
+</p>
+<center>
+	<table style="width:auto; text-align:center;">
+		<tr>
+			<th style="text-align:center;"></th>
+			<th style="text-align:center;" colspan="3">2-star</th>
+			<th style="text-align:center;" colspan="3">Ringleader</th>
+		</tr>
+		<tr>
+			<th style="text-align:center;">Item</th>
+			<th style="text-align:center;">Tier 1</th>
+			<th style="text-align:center;">Tier 2</th>
+			<th style="text-align:center;">Tier 3</th>
+			<th style="text-align:center;">Tier 1</th>
+			<th style="text-align:center;">Tier 2</th>
+			<th style="text-align:center;">Tier 3</th>
+		</tr>
+		<tr>
+			<td>Manpower</td>
+			<td>400</td>
+			<td>500</td>
+			<td>800</td>
+			<td>500</td>
+			<td>800</td>
+			<td>1000</td>
+		</tr>
+		<tr>
+			<td>Ammo</td>
+			<td>400</td>
+			<td>500</td>
+			<td>800</td>
+			<td>500</td>
+			<td>800</td>
+			<td>1000</td>
+		</tr>
+		<tr>
+			<td>MRE</td>
+			<td>400</td>
+			<td>500</td>
+			<td>800</td>
+			<td>500</td>
+			<td>800</td>
+			<td>1000</td>
+		</tr>
+		<tr>
+			<td>Parts</td>
+			<td>300</td>
+			<td>400</td>
+			<td>500</td>
+			<td>400</td>
+			<td>500</td>
+			<td>800</td>
+		</tr>
+		<tr>
+			<td>Battery</td>
+			<td>30</td>
+			<td>40</td>
+			<td>50</td>
+			<td>40</td>
+			<td>60</td>
+			<td>80</td>
+		</tr>
+		<tr>
+			<td>SFCR</td>
+			<td>80</td>
+			<td>100</td>
+			<td>120</td>
+			<td>100</td>
+			<td>200</td>
+			<td>300</td>
+		</tr>
+		<tr>
+			<td>Petri</td>
+			<td>80</td>
+			<td>100</td>
+			<td>120</td>
+			<td>100</td>
+			<td>200</td>
+			<td>300</td>
+		</tr>
+		<tr>
+			<td>Basic Keycodes</td>
+			<td>80</td>
+			<td>100</td>
+			<td>120</td>
+			<td>100</td>
+			<td>200</td>
+			<td>300</td>
+		</tr>
+		<tr>
+			<td>Advanced Keycodes</td>
+			<td>50</td>
+			<td>80</td>
+			<td>120</td>
+			<td>100</td>
+			<td>150</td>
+			<td>200</td>
+		</tr>
+	</table>
+</center>
+<ul>
+	<li>The odds of getting each reward tier are not uniform, and seem to have a 25-37.5-37.5% split (tier 1-2-3). Current experimental rates: 58 (26.9%)/81 (37.5%)/77 (35.6%).</li>
+	<li>These rewards can be reasonably put into 5 groups, and each group has a ~20% rate. These are:</li>
+	<ol>
+		<li>Basic resources (MP/Ammo/Rations/Parts); observed 19.9% rate</li>
+		<li>Batteries; observed 21.8% rate</li>
+		<li>SFCRs; observed 18.1% rate</li>
+		<li>Keycodes; observed 18.5% rate (~3.5:1 basic:advanced ratio)</li>
+		<li>Petri dishes; observed 21.8% rate</li>
+	</ol>
+</ul>
+<p>
+	based on 216 samples.
+</p>
 <span class="anchor" id="ads"></span>
 <h2>More like this</h2>
 	<section class="tiles">	
