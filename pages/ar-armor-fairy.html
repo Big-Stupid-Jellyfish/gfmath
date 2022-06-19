@@ -14,7 +14,8 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-805N997DPC');
 </script>
-<meta name="description" content="Girls Frontline, by the numbers">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <title>ARs Against Armor - Fairy Edition - GFMath</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -37,66 +38,131 @@ gtag('config', 'G-805N997DPC');
 <section>
 <div class="inner">
 <header class="major">
-	<h1 id="ars-against-armor---fairy-edition">ARs Against Armor - Fairy Edition</h1>
+<h1>ARs Against Armor - Fairy Edition</h1>
 </header>
-				<center><em>By BigStupidJellyfish | 2020-October-09</em></center>
-				<p>For the plots alone, see <a href="https://imgur.com/a/eHTCl5u" class="uri">this album</a>.</p>
-				<p>Many night missions in story and events have a nice mix of SF armor, unarmored, and bosses. With the fog of war and random movement, you'll often need a team that can handle all of these. With their ability to wield PEQs and having good survivability, ARSMG squads are a common pick.</p>
-				<p>So, you get your night ARSMG team put together and are ready to deploy - but what fairy do you use? Command is normally the best for DPS, but PEQs hurt your crit rate and crit damage is less useful against high armor. These plots show at what level of armor Command falls off relative to Artillery, or what exactly &quot;high armor&quot; is for ARs.</p>
-				<div class="figure">
-				<img src="https://i.imgur.com/ygbedIZ.png"  width="100%"/>
+<center><em>By BigStupidJellyfish | 2022-May-19</em></center>
 
-				</div>
-				<p>With the base 20% crit rate most ARs have at night, Artillery will pretty much always be better than command at 0 armor (although the difference starts small - in the range of 5%). As armor increases, command drops off more and more.</p>
-				<p>On the other hand, a few ARs (AR-15, Sopmod, AS Val) can use a critscope and still manage to hit their enemies. In that case, without armor, Command is substantially better. Without major FP buffs, Artillery starts to look good past 100 armor. With AS Val, Command is basically always preferred due to her high damage buff.</p>
-				<div class="figure">
-				<img src="https://i.imgur.com/YIICra8.png"  width="100%"/>
+<p>
+	<em>This is a rewrite of an old piece - <a href="ar-armor-fairy-legacy">see here for the original</a>.</em>
+</p>
 
-				</div>
-				<p>At day, ROF ARs in this configuration start to prefer Artillery around 100 armor wile FP-based ARs can last until 140-200 armor. Keep in mind that, while Artillery may be better than Command versus 200 armor, that's high enough armor that ARs probably aren't the right tool for that job anyways. More FP buffers beyond UMP45 will also extend the viability of command.</p>
-				<p>Comments:</p>
-				<p>All fairies are assumed to be 5* with Damage 1 as a sort of middle ground talent. In-skill DPS only as no AR is doing anything pre-skill to armor (6P62 isn't real). M1911 mod is included for her potential use in cheap farming/early night chapters. Sopmod's curve should be taken with a grain of salt - her grenade damage is usually more important than her direct-fire damage, and that's not affected at all by crit damage buffs. I'm using Command and Artillery here as they're the big basic straight DPS fairies. Things get more complicated when accuracy comes into play or the many fairy skills. A <a href="https://gfl.matsuda.tips/combatsim/">combat sim</a> will be the most helpful for specific optimizations - these plots are intended to give you a general idea of how armor affects fairy choice.</p>
+<p>
+	If you want a fairy that gives you lots of stats, and don't feel like paying fairy commands, Artillery and Command are obvious options.
+	Parachute, too, if you've been doing your heavy equipment crafts properly.
+</p>
+<p>
+	Artillery is quite straightforward with its 55% FP boost, while Command/Para split it into 36% FP and 36/40% crit damage, respectively.
+	These crit-oriented fairies have a clear advantage in RFHG echelons, given their high natural crit rate.
+	But ARs, especially with <a href="chips">the #2 processor chip</a>, make things less one-sided.
+	Crit multipliers go off of the post-armor damage, making them less valuable.
+	Let's run the numbers and see what happens.
+</p>
+<p>
+	<!-- While VFL+Chip+Command/Para equipment setups are typically better than EOT+Chip+Artillery ones, this gets less clear once enemies start getting armor. -->
+</p>
+<span class="anchor" id="day"></span>
+<h2>Day<sup><small><a href="#day">&#35;</a></small></sup></h2>
+<center><div class="figure">
+	<img src="images/ar-armor-fairy/daytime-standard.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Sending out our ARs with nothing but a fairy & standard equipment, we can see two main categories.
+	Run-of-the-mill ARs (FP selfbuffers with chips) prefer the straight FP from ~50-70 armor onwards, while those lucky enough to get SPEQs can stick it out until ~150 armor or so.
+	Multihit ARs (AN-94, G11) fall down a bit faster than the rest.
+</p>
+<p>
+	However, it's rare for ARs to be completely on their own like that.
+	Adding nothing but M4A1's tilebuffs:
+</p>
+<center><div class="figure">
+	<img src="images/ar-armor-fairy/daytime-m4.png" width="100%"/>
+</div><em>The extra FP reduces the impact of armor (stretching the lines right), and crit rate favors Command a bit more (shifting the lines up).</em></center>
+<p>
+	Now, Artillery is only possibly worth considering past 130 armor - and for dolls with chip-replacement SPEQs, even Hydras are better fought with Para.
+	Going even farther, <a href="https://i.imgur.com/OfrGLtZ.png">here's the same chart but also adding in Grizzly's tiles/skill</a>.
+</p>
+<span class="anchor" id="night"></span>
+<h2>Night<sup><small><a href="#night">&#35;</a></small></sup></h2>
+<center><div class="figure">
+	<img src="images/ar-armor-fairy/night-standard.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Fun (i.e., VFLs) is banned at night for most dolls.
+	Now, unless you have written permission to use one, it's Artillery all the way.
+	Even semi-crit-oriented ARs like 9A-91 with SPEQs and TKB remain below the 0% line.
+</p>
+<p>
+	<a href="images/ar-armor-fairy/night-m4.png">With M4A1 tiles</a>: Para gets a marginal use case against low-armor enemies, but it's not a very significant change.
+</p>
 
-				<span class="anchor" id="ads"></span>
+<span class="anchor" id="cnclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	Command/Parachute fairies are better than Artillery for daytime AR DPS - even against reasonable armor levels.
+	EOT+Chip setups remain overrated.
+	If you're looking at some Minotaurus or Uhlan swarm and considering switching your fairy, switch your echelon instead to a more suitable archetype.
+</p>
+<p>
+	On the other hand, at night, Artillery should be your go-to.
+	Command/Para is only worthwhile if using AS Val/STAR/Sopmod - or if you need to parachute somewhere, of course.
+</p>
+<p>
+	Other notes:
+</p>
+<ul>
+	<li>If you don't have a parachute done yet, (a) get moving - 2.09 career quest rewards give you less of an excuse than ever!, and (b) <a href="https://imgur.com/a/AZUQD01">here's some plots with Command instead</a>.</li>
+	<li>
+		This doesn't consider active skills or other benefits fairies can offer (like acc/eva auras).
+		It's very rare for your fairy selection to be purely between Command/Para/Artillery.
+	</li>
+	<li>
+		To see how much armor a given enemy has, you can always check <a href="https://pengupengupengu.github.io/gflmaps/#campaign=6006&mission=648">GFLMaps</a>.
+		For a general summary:
+	</li>
+</ul>
+<center><div class="figure">
+	<img src="images/newquip/armor-reference.png" width="100%"/>
+</div><em></em></center>
+<span class="anchor" id="ads"></span>
 <h2>More like this</h2>
-				<section class="tiles">	
-					<a href="shrimp-equip">
-						<div class="gallery">
-						  <div class="gallerypic">
-							<img src="images/icon/shrimp-equip.jpg" alt="SR-3MP Equipment" width="33%" height="400">
-							<div class="gallerypicdesc"><b>Equipping SR-3MP for any situation</b><br/>DPS optimization</div> <!-- Equipment optimization -->
-						  </div>
-						</div>
-					</a>
-					
-					<a href="newquip">
-						<div class="gallery">
-						  <div class="gallerypic">
-							<img src="images/icon/newquip.jpg" width="33%" height="400">
-							<div class="gallerypicdesc"><b>New Doll Equipment</b><br/>First thoughts, #2 Chip analysis</div>
-						  </div>
-						</div>
-					</a>
-			</section>
-				
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="copyright">
+<section class="tiles">
+	<a href="fairy-reviews">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/fairy-reviews.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Fairy Reviews</b><br/>General commentary and fairy information</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="newquip">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/newquip.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>New Doll Equipment</b><br/>First thoughts, #2 Chip analysis</div>
+		  </div>
+		</div>
+	</a>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
 		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
-				</div>
-				
-				<!-- Scripts -->
-				<script src="assets/js/jquery.min.js"></script>
-				<script src="assets/js/jquery.scrolly.min.js"></script>
-				<script src="assets/js/jquery.scrollex.min.js"></script>
-				<script src="assets/js/browser.min.js"></script>
-				<script src="assets/js/breakpoints.min.js"></script>
-				<script src="assets/js/util.js"></script>
-				<script src="assets/js/main.js"></script>
-				
-				</body>
-				</html>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
