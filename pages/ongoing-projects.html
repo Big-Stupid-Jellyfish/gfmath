@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>Ongoing Projects - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Ongoing Projects</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-June-23</em></center>
+
+<p>
+	Science can be a slow process.
+	There are a number of systems in Girls' Frontline I'm actively tracking, in the hopes of better understanding their rates and inner workings.
+</p>
+<p>
+	As these are a bit scattered throughout my articles, this page will serve as a dedicated list of all such projects.
+	I welcome any and all data from other players, too, to help speed things up and get more accurate estimates.
+	If you wish to contribute, don't hesitate to reach out: /u/BigStupidJellyfish_ or BigStupidJellyfish#6974 on discord.
+	If you don't have an account for either of those, my <a href="https://forms.gle/gBwRPAgLNYxrpsBS8">feedback form</a> is also open.
+</p>
+<span class="anchor" id="core-rates"></span>
+<h2>Core rates<sup><small><a href="#core-rates">&#35;</a></small></sup></h2>
+<p>
+	<a href="core-rates">Page link</a>.
+</p>
+<p>
+	After seeing various incorrect numbers thrown about for the core rates on different farming maps (and wasting ~2k runs on 11-5 because of an alleged 0.55 core rate), I've been compiling core and limited drop rates.
+	If you've farmed any particular map a lot and use GFAlarm, please do send me your <code>Username_UID_rescued_doll.csv</code> file.
+</p>
+<span class="anchor" id="sfstats"></span>
+<h2>Protocol Assimilation data<sup><small><a href="#sfstats">&#35;</a></small></sup></h2>
+<p>
+	<a href="sfstats">Page link</a>.
+</p>
+<p>
+	I'm tracking info on coalition unit sizes, shininess, and decoding practice keycode rates.
+	With more data, I'd like to more precisely nail down XL/XS/shiny rates, and get keycode rates to sub-1% accuracy.
+</p>
+<p>
+	Preferred submission format example (unit info):
+</p>
+<center>
+	<table style="width:auto;">
+		<tr>
+			<th>Unit name</th>
+			<th>Size</th>
+			<th>Shiny</th>
+			<th>Rarity</th>
+		</tr>
+		<tr>
+			<td>Striker</td>
+			<td>S</td>
+			<td>0</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>Manticore</td>
+			<td>M</td>
+			<td>0</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>Vespid</td>
+			<td>XL</td>
+			<td>1</td>
+			<td>1</td>
+		</tr>
+	</table>
+</center>
+<p>
+	Shiny is 0 (not shiny) or 1 (shiny). Rarity is the base rarity - 1 or 2. Ringleaders are excluded.
+</p>
+<p>
+	Preferred submission format example (keycodes): <code>0,1,0,1,0,0,0,0</code> (or any similar string/table/spreadsheet). 0 = basic keycodes, 1 = advanced keycodes.
+</p>
+<span class="anchor" id="talent-data"></span>
+<h2>Fairy talent rates - production & calibration<sup><small><a href="#talent-data">&#35;</a></small></sup></h2>
+<p>
+	<a href="talent-data">Page link</a>.
+</p>
+<p>
+	Not all talents are equally likely, both in calibration and production.
+	I'd like to figure out exactly how common each one is, and what categories exist.
+</p>
+<p>
+	Preferred submission format example:
+</p>
+<center>
+	<table style="width:auto;">
+		<tr>
+			<th>Fairy name (production)</th>
+			<th>Resulting talent</th>
+			<th>Fairy name (calibration)</th>
+			<th>Resulting talent</th>
+		</tr>
+		<tr>
+			<td>Sniper</td>
+			<td>Accuracy I</td>
+			<td>Parachute</td>
+			<td>Keen</td>
+		</tr>
+		<tr>
+			<td>Fury</td>
+			<td>Critical I</td>
+			<td>Parachute</td>
+			<td>Keen</td>
+		</tr>
+		<tr>
+			<td>Command</td>
+			<td>Armor II</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+</center>
+<p>
+	If you are using an updated version of GFAlarm, it now saves fairy talents from production (but not calibration).
+	A copy of its <code>Name_UID_production.csv</code> file would also work.
+	Keep in mind that, if you get back-to-back talents of the same name in calibration, they should be recorded as separate entries.
+</p>
+<span class="anchor" id="construction"></span>
+<h2>2.09 off-target anchored production rates<sup><small><a href="#construction">&#35;</a></small></sup></h2>
+<p>
+	<a href="construction#newplayer">Page link</a>.
+</p>
+<p>
+	I'm investigating whether or not the 4/5* drop rates are significantly different here than in normal crafting.
+	If you'd like to contribute your data, <a href="https://forms.gle/ZS56gLMC9WU675mt9">please do check out this form</a>.
+	If you already did your crafting and forgot your results, but have GFAlarm saving production data, results are saved in the production csv under <code>WISH-NORMAL</code>.
+</p>
+<span class="anchor" id="8-2"></span>
+<h2>SF dragging<sup><small><a href="#8-2">&#35;</a></small></sup></h2>
+<p>
+	<a href="8-2">Page link</a>.
+</p>
+<p>
+	I'm collecting data on the effectiveness of different SF HOC support combinations on 8-2.
+	Assuming friend supports in SC get fixed eventually, that + Alina will make this mostly obsolete.
+	The data recording process is a bit troublesome, so I'm mostly just mentioning this here for completeness.
+</p>
+<span class="anchor" id="comments"></span>
+<h2>Comments<sup><small><a href="#comments">&#35;</a></small></sup></h2>
+<p>
+	These pages will be periodically updated (1-2 times a month) as my data collection grows.
+</p>
+<p>
+	Data submissions must be newly acquired - for example, going back through one's existing fairy armory and reporting the talents will give a biased sample.
+	Fairies with useful talents are more likely to be kept, and fairies with matching ones may have been fed into paras.
+</p>
+<!-- <span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="ak15">
+		<div class="gallery solo arsmg">
+		  <div class="gallerypic">
+			<img src="images/icon/ak15.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Monitoring your Anger</b><br/>AK-15 Analysis</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="tkb-408">
+		<div class="gallery solo arsmg">
+		  <div class="gallerypic">
+			<img src="images/icon/tkb-408.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>TKB-408 Analysis</b><br/>Critical night focus</div>
+		  </div>
+		</div>
+	</a>
+</section> -->
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
