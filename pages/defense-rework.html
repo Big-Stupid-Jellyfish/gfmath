@@ -1,0 +1,341 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>The New Defense Fairy - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>The New Defense Fairy</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-June-29</em></center>
+
+<p>
+	Four fairies got their <a href="https://twitter.com/GirlsFrontlineE/status/1497101420792717313">skills reworked recently</a>, though Defense ended up delayed until a week after the 2.09 client update.
+	Perhaps we'll go over the last two later (<a href="sniper-rework">see here for more on the Sniper changes</a>), but for now, let's just look at this shiny new Defense fairy skill:
+</p>
+<blockquote>
+	<p><strong>Temporary Protection</strong> Skill Cost: 2 Fairy Commands</p>
+	<p>
+		At the start of the battle, T-Dolls on the front row gain a buff that reduces 60% of their damage intake.
+		The damage intake reduction will gradually diminish to 0 over the course of 30 seconds.
+		While the buff is in effect, units are immune to one instance of damage that would cause them to lose a Dummy. 
+	</p>
+</blockquote>
+<p>
+	Previously, Defense fairy was a strategy fairy whose skill reduced echelon damage taken by 30% for the first 20 seconds each battle, lasting 1 turn.
+</p>
+
+<!-- <span class="anchor" id="link-protection"></span>
+<h2>Link Protection<sup><small><a href="#link-protection">&#35;</a></small></sup></h2> -->
+<span class="anchor" id="details"></span>
+<h2>Details<sup><small><a href="#details">&#35;</a></small></sup></h2>
+<p>
+	While it's easy to read both skills and call Defense a "worse Shield," there are a few interesting functional differences.
+</p>
+<h3>Link Splash</h3>
+<p>
+	Most AOE attacks in the game, both your own and your enemies, deal damage to each enemy link.
+	A visual demonstration:
+</p>
+<!-- <center><div class="figure">
+	<img src="images/defense-rework/link-splash.png" width="100%"/>
+</div><em></em></center> -->
+<div class="row">
+	<div class="col-4 col-12-small">
+		<center><div class="figure">
+			<img src="images/defense-rework/link-splash-1.png" width="100%"/>
+		</div><em></em></center>
+	</div>
+	<div class="col-4 col-12-small">
+		<center><div class="figure">
+			<img src="images/defense-rework/link-splash-2.png" width="100%"/>
+		</div><em></em></center>
+	</div>
+	<div class="col-4 col-12-small">
+		<center><div class="figure">
+			<img src="images/defense-rework/link-splash-3.png" width="100%"/>
+		</div><em></em></center>
+	</div>
+</div>
+<p>
+	HP shields allow your dolls to be treated as 1 link, making these attacks less threatening.
+	Wherever these come up (and can't be avoided through other means), Shield has a huge advantage.
+</p>
+<h3>Link Protection</h3>
+<p>
+	In some cases, the immunity to link loss can be better than an extended link (like what Shield provides, excepting AOE effects) - although you have to dig deep to come up with such scenarios.
+</p>
+<p>
+	Let's review how link protection works, taking Five-Seven as an example.
+	When fully leveled and linked, she has 315 HP.
+	Divided up between her 5 links gets you 63 HP/link.
+</p>
+<center><div class="figure">
+	<img src="images/defense-rework/link-protection.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Suppose you sent her alone against 7-4N's Dreamer. There, with her 245 FP (211-284 after variance), you might expect each shot should take away more than half her health.
+	This doesn't happen due to <a href="https://gfl.matsuda.tips/post/linkprotection">link protection</a> - a mechanic that essentially separates each link's HP, so overflow damage to one link doesn't get passed on to the rest.
+	When at full health like this, the maximum damage Five-Seven can take from a single bullet, excepting special mechanics, is 63.
+	If she took a few minor hits before this, say, 20 total damage, she would take no more than 43 damage.
+	(The damage numbers <em>displayed</em> do not factor this in - Dreamer will still "hit" for ~250 damage even if less HP is subtracted in the end.)
+</p>
+<center><div class="figure">
+	<img src="images/defense-rework/link-protection-2.png" width="100%"/>
+</div><em></em></center>
+<p>
+	HP shields, like those provided from the Shield fairy, are very nice against linksplash attacks as they let you be treated as 1 link.
+	But overflow damage is passed on to your actual HP.<!--, as long as you aren't a SWAP Aegis. -->
+	Even with the 30% damage reduction from a SL10 shield fairy, Five-Seven would receive no actual protection against these Dreamer attacks.
+	Dreamer would deal at minimum ~148 damage, which is over Five-Seven's 63 link HP + 63 shield HP.
+</p>
+<p>
+	On the other hand, Defense would be able to save a link one time, fully negating one of Dreamer's hits.
+	This is still just a theoretical difference - things like Shield's FP buff may be worth more either way.
+	There's also the fact that Defense's &lt;60% damage reduction effect also doesn't help - reducing Dreamer's damage to ~86 is still more than 63.
+</p>
+<h3>Skill mechanics</h3>
+<center><div class="figure">
+	<img src="images/defense-rework/link-protection-3.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Contrary to the skill's wording, the first "protection" from Defense's active leaves the current link alive with 1 HP, as seen above.
+	You still take damage equal to 1 less than the active link's remaining HP.
+	In some sense, it's the bullet after that that is actually blocked due to link protection.
+</p>
+<p>
+	(Dreamer's skills modify her damage at certain points throughout the battle - this is why she's hitting for ~100 above despite having much more FP than that.)
+</p>
+<p>
+	The lock also doesn't appear until your echelon stops moving, which can make things a little weird against some versions of Dreamer.
+</p>
+<h3>Defusal</h3>
+<p>
+	The link protection does work against black/red goliaths, but with a few caveats:
+</p>
+<ul>
+	<li>It stops the damage from one explosion. 3+ beans in one node is a fairly common sight.</li>
+	<ul>
+		<li>As Defense still lets the active link drop to 1 HP, a full-HP SMG used for a defusal like this will end up with 80.1% HP. It doesn't make them completely immune to the bean.</li>
+	</ul>
+	<li>
+		The explosions hit all remaining echelon members in reasonable cases, and Defense only protects the front column.
+		You'd need to retreat your other dolls beforehand if you want them to live.
+	</li>
+	<li>
+		Force shielders, SWAP Aegis, and G36c mod in the future are likely to give better results anyways.
+	</li>
+	<li>Losing a link in the fight, before tanking the explosion, wastes the buff. At least 2.09 added a button to restart the fight.</li>
+</ul>
+<span class="anchor" id="aura"></span>
+<h2>Aura<sup><small><a href="#aura">&#35;</a></small></sup></h2>
+<p>
+	Defense's aura was not changed (22% damage, 80% EVA, 20% armor at 5 stars), so the usual applies.
+	It's rather bad - low FP and no crit damage hurts its damage potential, and other fairies do about as well on the armor/eva front with fewer sacrifices (Shield, Zodiac, Auspicious, Sand Dancer).
+	<a href="https://docs.google.com/spreadsheets/d/1NqGWi8WF-sh-Eb6x-dCi3KvkYHRIkG5WCch2tuQahgc/edit#gid=738821234">You can see more DPS comparisons with other fairies here</a>.
+</p>
+
+<span class="anchor" id="testing"></span>
+<h2>Combat Testing<sup><small><a href="#testing">&#35;</a></small></sup></h2>
+<p>
+	On one hand, it's nice having skills a little deeper than "buff stat by x% for y seconds."
+	On the other, it's a bit bothersome when 99% of new content requires all sorts of combat testing to get a proper idea of how much it actually does.
+</p>
+<p>
+	Not only does the DR% from Defense degrade over time, but enemy damage output varies over time and with each matchup - so we're stuck in Target Saving. Again.
+	We'll be comparing a few different fairies, each with their skill on and off, to determine (a) how much of an impact the actives have relative to the fairy's base performance, and (b) where Defense stands relative to other options.
+</p>
+<h3>Round 1</h3>
+<p>
+	While the actual event was about as fun as watching paint dry, Theater 7 was useful for introducing all sorts of "fun" enemy IDs to play with.
+	Major events/chapters tend to lean either on the weak side (so any echelon+5-star fairy easily wins) or on the "needs interaction" side (Minotaurus/Centaurus/...).
+	Neither of those play nicely with more automated data collection, and I'm not about to kite the same fight, consistently, 100 times in a row.
+</p>
+<center><div class="figure">
+	<img src="images/defense-rework/defense-1.png" width="100%"/>
+</div><em></em></center>
+<p>
+	This encounter went about to the limit of Defense's duration, and total damage was decreased by ~25% when enabling its active.
+	One factor hurting Defense was the low per-enemy damage - 16 FP at most, excepting the one set of Vespids.
+	Its link protection mechanic provided almost no mitigation.
+</p>
+<p>
+	Due to the low enemy pressure, with Shield's skill enabled, damage taken took a nosedive and dropped by ~95%.
+	It almost could be 0-damage if the fight was a bit faster and stopped before 20 seconds.
+	Taunt wasn't able to block everything (sometimes surviving to the end), but still cut damage by ~40%.
+</p>
+<p>
+	Note that the Taunt dummy's positioning affects HOC targeting, walk times, and Type88's lasers, to make things a little more complicated.
+	It would often make the lone SWAP Vespid stop outside of echelon range, requiring some extra walking towards the end and increasing clear time.
+</p>
+<h3>Round 2</h3>
+<p>
+	So. In easier fights, Defense is plainly bad.
+	The flat amounts of HP from Shield or Taunt are far more valuable than a % reduction and protection from 1 weak attack.
+	Let's move to an extreme opposite case: Dreamer.
+	Trying to kite each battle exactly the same and dodge her lasers sounds like a nightmare, so we'll take her nicer 7-6 form which doesn't do that and go with a scuffed 5HG formation so Deagle doesn't just instantly delete her.
+</p>
+<center><div class="figure">
+	<img src="images/defense-rework/defense-2.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Defense and Shield had a similar effect on damage taken, reducing it by ~45-50% each.
+	As Shield includes a FP component to its skill, you could say that between their <em>defensive</em> skill components, Defense was better.
+	While Command ended the fights much faster, its lower EVA aura approximately canceled out that advantage and it did no better than Defense/Shield without their actives.
+</p>
+<h3>Round 3</h3>
+<p>
+	Let's see... need some more enemies that make your tanks sad.
+	Of course - Gunners!
+</p>
+<p>
+	We'll borrow from Theater 7 again, so they have real meaty stats.
+	For comparison, 12-2 Gunners have 1990 HP/50 FP/55 EVA. These guys have 4320 HP/69 FP/90 EVA.
+</p>
+<center><div class="figure">
+	<img src="images/defense-rework/defense-3.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Skill effects on damage taken:
+</p>
+<ul>
+	<li>Defense: -35%</li>
+	<li>Shield: -50% (-30% vs Defense's skill)</li>
+	<li>Taunt: -25% (+20% vs Defense's skill)</li>
+</ul>
+<p>
+	<!-- Considering the high EVA in play, Shield/Taunt's accuracy was likely helpful for clear time. -->
+	While Shield still takes first place, the Taunt dummy ended up not doing as much as Defense here.
+</p>
+
+<h3>Round 4</h3>
+<p>
+	Let's take some more aggressive SF and see what happens.
+</p>
+<center><div class="figure">
+	<img src="images/defense-rework/defense-4.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Skill effects on damage taken:
+</p>
+<ul>
+	<li>Defense: -35%</li>
+	<li>Shield: -30% (+0% vs Defense's skill)</li>
+	<li>Beach: -30% (+20% vs Defense's skill)</li>
+</ul>
+<p>
+	As was the case vs Dreamer, Shield and Defense are about tied for damage taken.
+	Beach was a bit less helpful here than you may expect - about half the Strikers lock on before its wave, and kept firing throughout.
+</p>
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	Defense fairy's skill effects are maximized when you're looking at:
+</p>
+<ul>
+	<li>Large amounts of damage, early on in a fight</li>
+	<li>Relatively high per-shot damage, but not so high the DR% is ineffective (approx. &gt;1.5x tank HP/link)</li>
+</ul>
+<p>
+	However, even in these conditions, it does not offer an exceptional amount of damage mitigation.
+	In the tests above, it at most tied with Shield.
+</p>
+<p>
+	Those "Defense-specialized" situations also happen to be perfect for retreat kiting.
+	You can take no damage from SWAP Dragoons if you have a few HGs to send up front, and then retreat once they fire.
+	Defense won't help you with that - increasing DPS is much handier, as that minimizes how many volleys you need to dodge.
+</p>
+<p>
+	There are ultimately a few neat things Defense does and feeding duplicates into itself is possibly worth more than the 10-15 XP you'd get in another fairy, but it's a close call.
+	Expensive recipes are something you generally want to spend the bare minimum on to get parachutes and bail afterwards.
+	Either way, no need to rush.
+</p>
+<p>
+	Defense rework #2 when?
+</p>
+<span class="anchor" id="notes"></span>
+<h2>Minor notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<ul>
+	<li>For general fairy commentary, <a href="fairy-reviews">see my page here</a>.</li>
+	<li>Damage reduction is applied after armor, so this isn't very useful in MGSG echelons.</li>
+	<li>With the power of 2.09 Defense Drill, all fairies tested had Fervor.</li>
+	<li>As usual, these types of tests somewhat overvalue defensive skills. In real combat, kiting significantly decreases the amount of time sitting there taking hits. If you have some way of kiting a fight that takes no damage, Defense is obviously useless. Don't bring this against Hydras, for multiple reasons.</li>
+	<li>Sand Dancer would be another interesting point of comparison, but Target Practice support is needed to collect good data.</li>
+</ul>
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="sniper-rework">
+		<div class="gallery solo">
+		  <div class="gallerypic">
+			<img src="images/icon/sniper-rework.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>The New Sniper Fairy</b><br/>Reworked skill testing</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="aim">
+		<div class="gallery rfhg calc">
+			<div class="gallerypic">
+			<img src="images/icon/aim.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Taking Aim</b><br/>(the talent)</div>
+			</div>
+		</div>
+	</a>
+</section>
+</div>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
