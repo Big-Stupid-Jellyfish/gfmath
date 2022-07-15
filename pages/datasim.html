@@ -1,0 +1,286 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>Data Simulation - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Data Simulation</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-July-15</em></center>
+
+<h2>Contents<sup><small><a href="#">&#35;</a></small></sup></h2>
+<ul>
+	<li><a href="#intro">Basic information</a></li>
+	<li><a href="#setup">Setup</a></li>
+	<li><a href="#basic">Basic Training</a></li>
+	<li><a href="#intermediate">Intermediate Training</a></li>
+	<li><a href="#advanced">Advanced Training</a></li>
+	<li><a href="#notes">Notes</a></li>
+</ul>
+<span class="anchor" id="intro"></span>
+<h2>Introduction<sup><small><a href="#intro">&#35;</a></small></sup></h2>
+<p>
+	Training data is one of the most vital resources in Girls' Frontline, used to increase <a href="skill-levels">skill levels</a>.
+	It is primarily acquired through Data Mode, in Combat Simulation - a timegated resource.
+	There, you must kill a dummy with a custom-built echelon in as little time as possible.
+	The faster the time, the higher the reward.
+</p>
+<p>
+	Here, I'll go over some good formations for each level, and their expected data yields.
+</p>
+<span class="anchor" id="setup"></span>
+<h2>Setup<sup><small><a href="#setup">&#35;</a></small></sup></h2>
+<h3>Equipment</h3>
+<p>
+	The dummy has 10000/20000/40000 HP for basic/intermediate/advanced training, and 0 armor/evasion across the board.
+	It doesn't attack, so your only goal is to deal as much damage as possible.
+	The best equipment to use is as follows:
+</p>
+<center><div class="figure">
+	<img src="images/datasim/equipment.png" width="100%"/>
+</div><em></em></center>
+<p>
+	In most cases, prefer SPEQs over these equipment pieces.
+	Notable exceptions:
+</p>
+<ul>
+	<li>Defender prefers a VFL over her SPEQ</li>
+	<li>AP SPEQs that offer &lt;10 FP are worse than Sniper ammo</li>
+	<li>Ammo boxes aren't needed for the fastest times, but are important insurance for slower teams. M1918's SPEQ there has a damage penalty and is thus worse for speed.</li>
+	<li>Many MG scope SPEQs are better than an RMR, but worse than a VFL vs 0 evasion.</li>
+</ul>
+<p>
+	SMGs generally shouldn't be used, but would use a chip/HP ammo/EOT.
+</p>
+<h3>Formation</h3>
+<p>
+	Don't use normal echelon formations in datasim.
+	You have two priorities:
+</p>
+<ol>
+	<li>Optimize tile coverage for damage output</li>
+	<li>Have your DPS as close as possible to the dummy to reduce bullet travel time:</li>
+</ol>
+<center><div class="figure">
+	<img src="https://i.imgur.com/uLfNytg.png" width="100%"/>
+</div><em>Bullet travel times by grid position</em></center>
+<p>
+	It's sort of like coalition drill formations, but with better doll selection.
+	For example:
+</p>
+<center><div class="figure">
+	<img src="images/datasim/position.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Having your ARs in the <em>very</em> front would be even better, but Mk23's tiles are likely to save more than 2 frames. P22 (would be moved to position 3) and Contender can both work, although as neither should get to activate their skills, Contender is generally preferred for her crit tiles.
+	More formation examples further down.
+</p>
+<h3>Dolls</h3>
+<p>
+	These battles, hopefully, end very quickly.
+	Many dolls won't even get to activate their skills.
+	Dolls with good base stats and fast-activating or passive skills are ideal.
+	Even if your team is slow, the dummy only has 1 link - don't use grenadiers like 416 or Sopmod.
+</p>
+<p>
+	Some dolls want unusual skill settings:
+</p>
+<ul>
+	<li>While Kord typically wants to be on manual, she should be set to auto for datasim. This immediately puts her into assault (+FP) mode rather than piercing (-FP).</li>
+	<li>RPK-203 should also be set to autoskill, to immediately go into burst mode.</li>
+</ul>
+<span class="anchor" id="basic"></span>
+<h2>Basic Training<sup><small><a href="#basic">&#35;</a></small></sup></h2>
+<center><div class="figure">
+	<img src="images/datasim/yields-basic.png" width="100%"/>
+</div><em>Data yields by time.</em></center>
+
+<p>
+	The basic dummy can be oneshot with rifles.
+	Typical comp is (Jill or Contender)/Python/M1895 mod/HS.50/(Mosin-Nagant or high-FP RF: <a href="images/datasim/basic-0.17-2.png">DSR, IWS, etc</a>).
+	Time is 0.17s if your rifles are enough, 0.20s if it's left barely alive and a HG finishes the target - 219 data either way.
+</p>
+<center><div class="figure">
+	<img src="images/datasim/basic-0.17-1.png" width="100%"/>
+</div><em></em></center>
+
+<p>
+	While slightly slower, various Defender comps also easily get 219 data:
+</p>
+<center><div class="figure">
+	<img src="images/datasim/basic-0.27-1.png" width="33%"/>
+	<img src="images/datasim/basic-0.27-2.png" width="33%"/>
+	<img src="images/datasim/basic-0.33-1.png" width="33%"/>
+</div><em></em></center>
+
+<p>
+	Python/Nagant revolver are an excellent combo, and using them plus 3 MGs with solid upfront damage gets you a safe 218:
+</p>
+<center><div class="figure">
+	<img src="images/datasim/basic-0.93-1.png" width="49%"/>
+	<img src="images/datasim/basic-1.07-1.png" width="49%"/>
+</div><em>MGs used left: PK, PKP, M2HB. Right: this will get 218 data with good equips/skill levels, 217 with some parts suboptimal.</em></center>
+
+<p>An older, but still reasonable, echelon takes 4 MGs with first-volley skills, 1 HG (Contender/Python/Jill/P22, ideally).</p>
+
+<span class="anchor" id="intermediate"></span>
+<h2>Intermediate Training<sup><small><a href="#intermediate">&#35;</a></small></sup></h2>
+<center><div class="figure">
+	<img src="images/datasim/yields-int.png" width="100%"/>
+</div><em>Data yields by time.</em></center>
+<p>
+	For 99 intermediate data, you'll want Defender:
+</p>
+<center><div class="figure">
+	<img src="images/datasim/int-0.90-1.png" width="49%"/>
+	<img src="images/datasim/int-0.93-1.png" width="49%"/>
+</div><em>Preferred MGs: M1918 mod, RPK-203, Kord, PKP.</em></center>
+<p>
+	0.60s is possible with HS.50, but needs oaths and is generally not worth the effort.
+</p>
+<p>
+	Python/Nagant/3MG safely gets 98 intermediate, as do 1HG4MG echelons:
+</p>
+
+<center><div class="figure">
+	<img src="images/datasim/int-1.43-1.png" width="49%"/>
+	<img src="images/datasim/int-1.67-1.png" width="49%"/>
+</div><em>MGs used here are PK/PKP/M2HB/MG5.</em></center>
+<p>
+	Python/Nagant echelons even work when using <a href="images/datasim/int-1.90-1.png">nonsensical MGs</a>.
+</p>
+
+<span class="anchor" id="advanced"></span>
+<h2>Advanced Training<sup><small><a href="#advanced">&#35;</a></small></sup></h2>
+<center><div class="figure">
+	<img src="images/datasim/yields-adv.png" width="100%"/>
+</div><em>Data yields by time.</em></center>
+<p>
+	54 advanced data is technically achievable, needing clear times below ~2.0s, but needs all sorts of oaths/RNG.
+	53 is much simpler, as most MG/HG echelons will get you there.
+</p>
+
+<center><div class="figure">
+	<img src="images/datasim/adv-2.20-1.png" width="49%"/>
+	<img src="images/datasim/adv-2.23-1.png" width="49%"/>
+</div><em></em></center>
+<p>
+	Reusing intermediate teams works:
+</p>
+<center><div class="figure">
+	<img src="images/datasim/adv-2.87-1.png" width="49%"/>
+	<img src="images/datasim/adv-2.97-1.png" width="49%"/>
+</div><em></em></center>
+
+<p>
+	Some MG/HG "gunboats":
+</p>
+<center><div class="figure">
+	<img src="images/datasim/adv-3.13-1.png" width="49%"/>
+	<img src="images/datasim/adv-3.37-1.png" width="49%"/>
+</div><em></em></center>
+
+<span class="anchor" id="notes"></span>
+<h2>Notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<ul>
+	<li>
+		Some cheated times may be removed from the in-game leaderboards every half-decade or so.
+		In other words, there are plenty of cheated times up on the leaderboard.
+		I would not take a team from there unless it is also shown here or has a number (~5+) of high-level players (~lv150+) using it.
+	</li>
+	<li>
+		If you use GFAlarm, you can test echelons by adding ids <code>10004,10005,10006</code> to target saving.
+	The customized target is positioned farther back and will report different times.
+	</li>
+	<li>
+		Some of the fastest leaderboard times may need oaths, but it's not necessary or even recommended for getting the max or near max amounts of data.
+	</li>
+	<li>
+		RNG is somewhat fixed in data sims - try moving dolls around in formation or in echelon order to shake things up if you're just short of a threshold.
+	</li>
+	<li>
+		Due to RNG (damage variance, crits), you may not get exactly the same times as in the images above, even if using the same dolls.
+		Most of the 3/4MG echelons did not use sniper ammo in those screenshots to be conservative; the Defender/RF/top-tier ones did.
+	</li>
+	<li>
+		See <a href="energy-packages">this page</a> for evaluations of data packages in the store, in case this isn't enough data.
+		Since 2.09, you're typically best off buying extra energy once a day and waiting for a 2x simulation yield event, though.
+	</li>
+</ul>
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="fairy-reviews">
+		<div class="gallery gen fairy">
+		  <div class="gallerypic">
+			<img src="images/icon/fairy-reviews.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Fairy Reviews</b><br/>General commentary and fairy information</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="simulation">
+		<div class="gallery gen arsmg rfhg mgsg">
+		  <div class="gallerypic">
+			<img src="images/icon/simulation.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>The Problem with Damage Simulators</b><br/>On real performance and models of it</div>
+		  </div>
+		</div>
+	</a>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
