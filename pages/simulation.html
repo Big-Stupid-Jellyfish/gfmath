@@ -40,7 +40,7 @@ gtag('config', 'G-805N997DPC');
 <header class="major">
 <h1>The Problem with Damage Simulators</h1>
 </header>
-<center><em>By BigStupidJellyfish | 2022-February-28 | Updated 2022-June-06</em></center>
+<center><em>By BigStupidJellyfish | 2022-February-28 | Updated 2022-July-22</em></center>
 
 <!-- <blockquote>
 	<p>
@@ -336,6 +336,15 @@ gtag('config', 'G-805N997DPC');
 <p>
 	Even worse, while simple to discover through regular testing, SVCh's skill is implemented <a href="https://old.reddit.com/r/girlsfrontline/comments/vrsp23/weekly_commanders_lounge_july_05_2022/if05cy9/">completely incorrectly</a>.
 	And that's not even considering her FP-buff-on-kill.
+</p>
+<p>
+	Hycdes will tell you that your dolls first deal damage 0.00 seconds in.
+	The brainles damage sim will tell you that G41 first deals damage 0.63 seconds in, and WA2000 takes 1.23s.
+	These are both completely wrong, and these incorrect offsets means all future shots are also marked at incorrect times.
+	Even ignoring how walk time exists and will vary by case, dolls have at least a 1-frame startup period and bullets have travel time.
+	They do not wait for their full ROF-based frame delay to shoot.
+	If there's no walk time, damage will start from ~0.13-0.30 seconds in.
+	(See <a href="datasim#frames">over here</a> for some examples/details on this subject. Usually not a big deal, but it (a) shows yet another area they get wrong, and (b) can lead to certain shots being improperly buffed or not buffed by various skills.)
 </p>
 <span class="anchor" id="conclusion"></span>
 <h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
