@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>Fedorov Avtomat - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Fedorov Avtomat</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-July-23</em></center>
+
+<!-- <span class="anchor" id="charts"></span>
+<h2>Charts<sup><small><a href="#charts">&#35;</a></small></sup></h2> -->
+<blockquote><p><strong>Matryoshka Tactics</strong> ICD 0s/CD 5s</p>
+	<p>
+		Passive: When affected by a damage/rate of fire/evasion/accuracy/critical chance buff, reduce remaining cooldown time by 20%.
+		This effect can trigger a maximum of 1 time per skill cooldown period.
+	</p>
+	<p>
+		Active: Permanently increase self damage by 10%.
+		The third time <strong>and each time afterwards</strong> this skill is used, increase attack speed by 15%.
+		The fifth time <strong>and each time afterwards</strong> this skill is used, increase accuracy by 30%.
+		This skill can be used a maximum of 6 times <strong>and each buff stacks additively</strong>.
+	</p>
+</blockquote>
+<p>
+	Okay, we needed to add in a bit of text for this to make sense (<a href="https://www.youtube.com/watch?v=fz9jN-ntYb8">test here showing ROF stacking</a>).
+	Now that that's settled, we have a pretty unique AR here.
+	She's clearly geared towards long fights, building up to a 100% uptime 60% FP/60% ROF/60% ACC buff after 20-25 seconds - far beyond the 4-star "standard" of ~65% more DPS with ~62.5% uptime.
+</p>
+<p>
+	There are two big things I'd like to figure out:
+</p>
+<ol>
+	<li>How long does it take for Fedorov to catch up to or exceed typical ARs in total damage?</li>
+	<li>How big of a problem is the ROF selfbuff, and how does that interact with chips?</li>
+</ol>
+<p>
+	As usual, we can turn to our "relative cumulative damage" chart style.
+	The one good non-crit fairy (Shield) is focused on short fights, so I'll assume a high crit aura for all of these.
+	Numbers may change a little bit if using something like Taunt/Desert, but it's not a huge deal.
+	I'm also assuming no buffs are coming in mid-battle.
+	Fervor or a buffing HG will adjust her lines ever so slightly left, but it's once again minor.
+	The buffs are only on the <em>remaining</em> cooldown time of that skill cycle, and don't stack.
+</p>
+<p>
+	First, with just a para fairy:
+</p>
+<center><div class="figure">
+	<img src="images/fedorov/fedorov-para.png" width="100%"/>
+</div><em></em></center>
+<ul>
+	<li>Fedorov clearly prefers a chip. Even after she reaches max stacks at 25 seconds, it has a clear advantage over an exo.</li>
+	<li>Despite the 0-second ICD, 10-20% FP is not enough to make Fedorov a fast-acting AR. She starts to be worth considering if targeting fights 35 seconds or longer.</li>
+</ul>
+<p>
+	M4A1 is a good AR, and her tiles push us a little more towards crits:
+</p>
+<center><div class="figure">
+	<img src="images/fedorov/fedorov-para-m4.png" width="100%"/>
+</div><em></em></center>
+<ul>
+	<li>We still like chips, but now you're looking at 50s+ for Fedorov to be worth consideration. Adding crit rate hurts her when compared to SPEQ ARs that get to keep their 150% crit damage base (but not, of course, compared to other standard chipped ARs).</li>
+</ul>
+<p>
+	There's also RO635, and her 15% ROF tiles cause chips to overcap a bit more:
+</p>
+<center><div class="figure">
+	<img src="images/fedorov/fedorov-para-ro.png" width="100%"/>
+</div><em></em></center>
+<p>
+	We see a similar "viability crossover" to the first case at ~35s, but this time a VFL+exo/empty slot just barely looks to catch up 60 seconds in.
+</p>
+<p>
+	Finally, let's combine RO635 and M4:
+</p>
+<center><div class="figure">
+	<img src="images/fedorov/fedorov-para-ro-m4.png" width="100%"/>
+</div><em></em></center>
+<p>
+	In this case, Fedorov's "viability crossover" is about aligned with her switch to preferring no chip - both around 40 seconds in.
+</p>
+
+<p>
+	We can also quick check two quick cases with a non-crit damage fairy and confirm she prefers chips more in those cases:
+</p>
+<center><div class="figure">
+	<img src="images/fedorov/fedorov-arty.png" width="49%"/>
+	<img src="images/fedorov/fedorov-arty-ro-m4.png" width="49%"/>
+</div><em></em></center>
+<p>
+	Fedorov gains a bit of ground relative to the other ARs, but this isn't territory you really want to be in either way.
+</p>
+<p>
+	And if you're looking <em>really</em> long-term, <a href="https://imgur.com/a/8o7ZNnr">here's all the same para charts</a> but going up to 10,000 seconds in semilog plots.
+	Note that, in the first two cases, chips <em>always</em> maintain a lead. There's no hidden 200-second crossover.
+	Interestingly, in the first case (just para), Fedorov does manage to barely out-scale STAR past ~100 seconds.
+</p>
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	Within the realm of mortal ARs (i.e., those not named AR-15/G11/416/...), Fedorov has potential use in boss-style fights that last ~40 seconds or more.
+	In such scenarios, she prefers to use a chip unless:
+</p>
+<ul>
+	<li>You have a significant crit damage aura, and:</li>
+	<ul>
+		<li>You have ROF tiles on her, and are looking at a 60s+ long fight, or:</li>
+		<li>You have ROF & crit rate tiles on her</li>
+	</ul>
+</ul>
+<p>
+	If you don't have strong crit-oriented fairies, stick to an EOT/chip.
+</p>
+<p>
+	Her tiles rather uniquely buff both HGs & SMGs. This doesn't change her usage.
+</p>
+<p>
+	Regardless, there's little need for ARs, we have some truly busted mods to compete for that corner, and there aren't many boss fights that long which also ask for an ARSMG.
+	She has some interesting ideas, but you do not need to raise Fedorov.
+</p>
+
+<!-- To add: when she releases -->
+<!-- <span class="anchor" id="example-echelons"></span>
+<h2>Example Echelons<sup><small><a href="#example-echelons">&#35;</a></small></sup></h2>
+<p>
+	Standard disclaimer: teams should be built as needed according to the circumstances of specific maps and enemies.
+	Do not blindly copy-and-paste teams.
+	With that in mind, here are some not-entirely-awful ideas to illustrate where Fedorov can be used.
+</p>
+<div class="row">
+	<div class="col-6 col-12-small">
+		<center><div class="figure">
+			<img src="https://i.imgur.com/BtP6diA.png" width="100%"/>
+		</div><em>Stella/Stechkin/R93, M950A/P22.</em></center>
+	</div>
+	<div class="col-6 col-12-small">
+		<center><div class="figure">
+			<img src="https://i.imgur.com/zyrReT4.png" width="100%"/>
+		</div><em>Type88/Five-Seven/Stella, Px4 Storm/El Clear.</em></center>
+	</div>
+</div> -->
+
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="474m">
+		<div class="gallery solo arsmg">
+		  <div class="gallerypic">
+			<img src="images/icon/474m.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>AK-47 with 74M</b><br/>DPS Comparison</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="sniper-rework">
+		<div class="gallery fairy">
+		  <div class="gallerypic">
+			<img src="images/icon/sniper-rework.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>The New Sniper Fairy</b><br/>Reworked skill testing</div>
+		  </div>
+		</div>
+	</a>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
