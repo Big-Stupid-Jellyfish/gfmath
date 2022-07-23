@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>SVCh - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>SVCh</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-July-23</em></center>
+
+<blockquote>
+	<p><strong>Sugary Response</strong> ICD 5s/CD 8s</p>
+	<p>
+		Passive: When changing attack targets, increase self damage by 10% for 5 seconds, stacking up to 4 times.
+	</p>
+	<p>
+		Active: Within 5 seconds of skill activation, each Dummy's attack deals a fixed 150-point damage that ignores enemy evasion, armor, and <strong>HP</strong> shields.
+		This effect is <del>multiplied</del> <strong>doubled</strong> against targets with multiple Dummy-Links.
+	</p>
+</blockquote>
+<p>
+	A few notes on how this works:
+</p>
+<ul>
+	<li>As SVCh has 5 links, her active deals 5 instances of 150 damage (versus 1 link) or 300 (versus 2+ links).</li>
+	<li>It is affected by damage amplification, but not by FP/crit buffs.</li>
+	<li>While it ignores HP shields, it is affected by the Orthrus skill that reduces incoming damage to 1.</li>
+	<li>It is not able to bypass force shields. You still need HOCs.</li>
+	<li>Her passive skill is <a href="https://youtu.be/TGa7ML1DM1g">multiplicative</a>.</li>
+	<li>Ignoring armor <a href="myths#hydras">really doesn't matter</a>.</li>
+</ul>
+<p>
+	Some other references for the above are compiled <a href="https://old.reddit.com/r/girlsfrontline/comments/vrsp23/weekly_commanders_lounge_july_05_2022/if05cy9/">here</a>.
+	Incidentally, that's also my motivation for writing this - the only existing analysis I've seen relies heavily on Hycdes damage numbers, and that program completely fails to implement her skill properly.
+	Hopefully we can correct that today.
+</p>
+<span class="anchor" id="dps"></span>
+<h2>DPS calculations<sup><small><a href="#dps">&#35;</a></small></sup></h2>
+<p>
+	Setting aside her passive for now as that gets a little tricky, there's an obvious question on her active component: how much of a DPS boost does it provide?
+	It's a fixed 150/300x5 damage, which will be more or less valuable depending on how much damage her attacks would normally do.
+	Typical selfbuffers boost their ROF or FP by 75%, so we'd like her to get near or above that threshold.
+	A few general ideas we can note:
+</p>
+<ul>
+	<li>Adding more FP and crit buffs will make the fixed damage less significant</li>
+	<li>It will scale with ROF normally</li>
+	<li>Higher enemy evasion will make it more useful; higher accuracy will make it less useful</li>
+</ul>
+<p>
+	Let's pick a few common accuracy/crit buff levels and chart the DPS increase as a function of enemy evasion/total FP buffs.
+	The top chart in each image assumes a multi-linked target, the bottom is for a single-linked target.
+</p>
+<center><div class="figure">
+	<img src="images/svch/svch-day-standard.png" width="100%"/>
+</div><em></em></center>
+<p>
+	For a few reference values:
+</p>
+<ul>
+	<li>A 5-star Damage II Para provides a 56.4% FP buff.</li>
+	<li>A single FP HG provides 30% FP from tiles, 62.5% total FP with their skill active.</li>
+	<li>Using two, (e.g., Grizzly & P22) provides a 60% FP buff from tiles, or 150% with their skills active.</li>
+	<li>Add the above para to that for a 291% FP buff.</li>
+	<li>A max-stack Fervor Combo goes up to a 163% FP buff on its own, not to mention its insane 306% acc buff.</li>
+	<li>SVCh's passive gives up to a 46.41% FP buff.</li>
+</ul>
+<p>
+	With proper fairies, most reasonable RFHGs are looking at a 150%+ net FP buff with skills up.
+</p>
+<p>
+	In the above case, with a good amount of acc/crit, SVCh's active only competes with typical 4/5-star selfbuffers given a 50% or less net FP buff from other sources.
+	More typically, it'd be comparable to a 2-star selfbuffer or worse.
+	Single targets naturally make her worse off, and she's always short of a standard skill.
+</p>
+<p>
+	Variations:
+</p>
+<ul>
+	<li>
+		<a href="images/svch/svch-day-blank.png">With no crit aura/acc tiles</a>.
+		Now, SVCh fares better and her active's equivalent multiplier is respectable up to around a 150% net FP buff against non-bosses/solo enemies.
+	</li>
+	<li>
+		<a href="images/svch/svch-night.png">At night</a>.
+		Even with acc/crit damage buffs in place, the surehit component is huge.
+		SVCh's active could broadly be considered on par with most selfbuffers, with a significant advantage if the enemy has more than 20 evasion or so.
+	</li>
+</ul>
+
+<span class="anchor" id="passive"></span>
+<h2>Passive<sup><small><a href="#passive">&#35;</a></small></sup></h2>
+<p>
+	SVCh gains damage when she changes attack targets, including her first shot.
+	How much this helps will obviously vary by encounter.
+</p>
+<p>
+	While that's a true statement, it's also not very informative.
+	I'll record a few battles, painstakingly count her triggers in each, and estimate some "average buff" numbers.
+	To avoid false alarms I'll use HGs that don't buff FP and fairies without a damage talent/skill (so "FP UP" is only displayed from her passive).
+</p>
+<center>
+	<table style="width:auto;">
+		<tr>
+			<th>id</th>
+			<th>Contents</th>
+			<th>Duration</th>
+			<th>Triggers</th>
+			<th>Avg passive buff</th>
+		</tr>
+		<tr>
+			<td>20075</td>
+			<td>Scarecrow x1 Executioner x1 Hunter x1 Destroyer x1 Destroyer x1 Alchemist x1</td>
+			<td>12.87s</td>
+			<td>5</td>
+			<td>21%</td>
+		</tr>
+		<tr>
+			<td>336334</td>
+			<td>Gladiator x2 Gunner x15</td>
+			<td>10.30s</td>
+			<td>5</td>
+			<td>25%</td>
+		</tr>
+		<tr>
+			<td>336609</td>
+			<td>Minotaurus x3 Cerynitis x15</td>
+			<td>18.07s</td>
+			<td>6</td>
+			<td>19%</td>
+		</tr>
+		<tr>
+			<td>2691</td>
+			<td>Strelet x20 Doppelsöldner x4</td>
+			<td>13.37s</td>
+			<td>6</td>
+			<td>23%</td>
+		</tr>
+		<tr>
+			<td>317972</td>
+			<td>Strelet x14 Uhlan x2</td>
+			<td>27.23s</td>
+			<td>9</td>
+			<td>17%</td>
+		</tr>
+	</table>
+</center>
+<p>
+	Videos are available for reference on <a href="https://www.youtube.com/playlist?list=PLU8EQs89zdxZBq9S4CXDGxtPRAuw_kZdr">this playlist</a>.
+	Bosses weren't tested here as, assuming they don't have adds you'd retarget SVCh to, they give you nothing but the one stack at battle start and thus make her passive largely irrelevant.
+</p>
+<p>
+	This is a pretty approximate method, so don't take this as set in stone.
+	Feel free to run your own tests.
+	But it looks reasonable to call it a 20%-ish average FP buff in non-boss battles - even in fights with a few high-HP enemies like the Minotaurus.
+</p>
+<p>
+	We can use these numbers to modify our acceptable threshold in the previous section - for example, assuming a 20% average boost from her passive, a <code>1.75/1.2=1.46=46%</code> effective selfbuff from her active would make her about equivalent to a standard buffer, plus bonus value when her skill's on cooldown.
+	Alignment with other buffs, target order, overkill, and similar factors make these numbers all rather approximate.
+</p>
+<span class="anchor" id="testing"></span>
+<h2>Testing<sup><small><a href="#testing">&#35;</a></small></sup></h2>
+<p>
+	That's a lot of numbers, and they make SVCh look viable enough.
+	However, there's enough weirdness going on that we really have to run some combat tests.
+</p>
+<h3>Strelets & Gunners</h3>
+<p>
+	QLZ was used at night to make the fight more manageable - Gunners have a <em>lot</em> of evasion.
+</p>
+<center><div class="figure">
+	<img src="images/svch/svch-1.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Compared to Lee, Liu did a bit better at day but worse at night - as expected, considering how her clones scale worse with reduced accuracy.
+	SVCh performed similarly to Lee either way.
+	And far above any of those is a proper piercing rifle.
+	Type88 easily doubled their damage output, regardless of the time of day.
+</p>
+<h3>SWAP SF</h3>
+<p>
+	Sand Dancer fairy used at day; Combo+QLZ+M2 at night.
+</p>
+<center><div class="figure">
+	<img src="images/svch/svch-2.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Lee clearly wasn't fantastic, with slower clear times and more damage taken.
+	NTW and SVCh looked quite close at both day and night - and given their relative cost, I'd have to hand this one to SVCh.
+</p>
+<h3>Zombie repost</h3>
+<p>
+	SVCh also made it into one round of testing <a href="vsk#data">with VSK</a> earlier.
+	Let's pull it back up for reference:
+</p>
+<center><div class="figure">
+	<img src="images/vsk/vsk-test-2.png" width="100%"/>
+</div><em></em></center>
+<p>
+	She looks slightly worse than VSK at day, but slightly better at night.
+	R93 had an advantage either way.
+</p>
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	The ultimate problem I have with SVCh is this - her skill implies a specialization in a few different areas.
+	However, there are basically always better options in each of those.
+</p>
+<ul>
+	<li>SVCh is not a Patroller-killing specialist, because M200/M4A1/NTW/Desert Eagle do it better.</li>
+	<li>SVCh is not an anti-swarm/mob specialist, because Type88/4 Shiki/416/Sopmod/Liu/Stella do it better.</li>
+	<li>SVCh is not a great "DPS" specialist like R93 or Pink/Python comps, because she scales less well with several common buff types, does worse against bosses, and makes the most of her passive against weak enemies.</li>
+	<li>SVCh is not an anti-Orthrus or force shield specialist, because her skill simply doesn't work that way.</li>
+</ul>
+<p>
+	This leaves SVCh as a "general use" rifle with a potentially handy kit that gets less value from FP and crit buffs.
+	She has decent final performance and works as a selfbuffer, but doesn't bring anything all that unique to the table.
+	I would recommend her the most for non-boss night battles, where her effective selfbuff is better than most rifles.
+	She favors ROF-buffing HGs more than usual, and as such should generally be paired with a FP buffer to avoid overcapping.
+</p>
+<span class="anchor" id="notes"></span>
+<h2>Notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<ul>
+	<li>SVCh does a bit better early on when your equipment/fairies are lacking. However, that is more a reason to improve your equipment/fairies than invest in a random unit that sort of benefits from your poor situation.</li>
+	<li>SVCh not scaling as well <em>does not</em> mean you should avoid FP buffers entirely. Think back to <a href="glue">General Liu</a>, and also note the ROF cap and the fact that only Webley even approaches being a strong off-side ROF buffer.</li>
+	<li>Rifle tiles are not very important, so I haven't mentioned them.</li>
+</ul>
+<span class="anchor" id="example-echelons"></span>
+<h2>Example Echelons<sup><small><a href="#example-echelons">&#35;</a></small></sup></h2>
+<p>
+	Standard disclaimer: teams should be built as needed according to the circumstances of specific maps and enemies.
+	Do not blindly copy-and-paste teams.
+	With that in mind, here are some not-entirely-awful ideas to illustrate where SVCh can be used.
+</p>
+<div class="row">
+	<div class="col-6 col-12-small">
+		<center><div class="figure">
+			<img src="images/svch/team-ex-1.png" width="100%"/>
+		</div><em>SVCh, Rico, Stechkin, M950A, P22.</em></center>
+	</div>
+	<div class="col-6 col-12-small">
+		<center><div class="figure">
+			<img src="images/svch/team-ex-2.png" width="100%"/>
+		</div><em>SVCh, Type88, Five-Seven, Px4 Storm, M950A.</em></center>
+	</div>
+</div>
+
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="defense-rework">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/defense-rework.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>The New Defense Fairy</b><br/>Reworked skill testing</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="webley">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/webley.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>To Lead or to Follow?</b><br/>Webley skill mode analysis</div>
+		  </div>
+		</div>
+	</a>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
