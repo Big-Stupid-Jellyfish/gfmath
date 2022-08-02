@@ -68,14 +68,14 @@ function calculate() {
 	<p>
 		Whenever taking damage that is below the maximum HP of a single Dummy, there is a 20% chance of gaining an additional evasion check against that instance of damage.
 		A successful evasion check negates that instance of damage.
-		Every stack of damage/accuracy/<strong>rate of fire</strong>/move speed reduction or Seal of the Avenger present on the attacker increases the chance of gaining the additional evasion check by 10%.
+		Every stack of damage/accuracy/rate of fire/move speed reduction or Seal of the Avenger present on the attacker increases the chance of gaining the additional evasion check by 10%.
 		When Mental Deterrence is active, self attacks apply Seal of the Avenger to targets.
 	</p>
 </blockquote>
 <p>
 	A few corrections/technical notes:
-	while not mentioned in the original translation, ROF debuffs contribute to her passive.
-	Other debuff types do not have an effect here (vulnerability, fire, and so on).
+	<!-- while not mentioned in the original translation, ROF debuffs contribute to her passive. --> <!-- Fixed as of 2022-07-26 -->
+	other debuff types do not have an effect here (vulnerability, fire, and so on).
 	Multiple stacks of the same debuff improve its activation chance.
 	The +10%/stack is additive, not multiplicative - the recheck will happen 100% of the time with 8 qualifying debuffs applied.
 	Her skill is sometimes claimed to be a flat chance to ignore incoming damage - <a href="https://youtu.be/FwyUeVT3rpY">this is not the case</a> (as you may have guessed, I lifted all these findings from Randomqwerty).
