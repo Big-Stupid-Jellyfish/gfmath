@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>Mobbing with Type56R - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Mobbing with Type56R</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-August-14</em></center>
+
+<blockquote>
+	<div class="row">
+		<div class="col-6 col-12-small">
+			<p><strong>Guerilla Focus</strong> ICD 5s/CD 8s</p>
+			<p>
+				Increase self damage by 65% and self move speed by 5 points for 5 seconds.
+			</p>
+		</div>
+		<div class="col-6 col-12-small">
+			<p><strong>Glorious Release</strong> ICD 0s/CD 0s</p>
+			<p>
+				Prioritize attacking units with fewer Dummies.
+				Increase critical damage by 10% <strong>additively</strong> for every Dummy out of 5 that the target is missing.
+				Also, the first shot made after moving does <del>multiplied</del> <strong>doubled</strong> damage.
+				This effect can occur once every 3 seconds.
+			</p>
+		</div>
+	</div>
+</blockquote>
+<p>
+	Notes:
+</p>
+<ul>
+	<li>The crit damage stacks up to 40% against single-linked enemies. This bonus does not require them to have damaged/missing links, and is calculated as <code>(5-x)*10%</code> for <code>x</code> current links.</li>
+	<li>As seen with <a href="svch">SVCh</a>, multiplied = doubled.</li>
+</ul>
+<center><div class="figure">
+	<img src="images/mobbing-with-56r/damage-verification.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Released alongside Mirror Stage, Type56R has rather obvious use against bosses and other single-linked threats like Doppelsoldners, Uhlans, and Minotaurus.
+	How much her skill 2 helps against mob-type groups filled with 5-linked enemies is less clear.
+	Let's run some tests to see if she holds up as a solid generalist or if she should be kept in reserve for specific scenarios.
+</p>
+<span class="anchor" id="mobbing"></span>
+<h2>Mobbing<sup><small><a href="#mobbing">&#35;</a></small></sup></h2>
+<p>
+	Note that, to be as fair as possible given my account, I'll only be testing my oathed rifles.
+	This gives modded rifles a slight edge when compared to purely non-oath performance, due to their increased affection cap.
+</p>
+<center><div class="figure">
+	<img src="images/mobbing-with-56r/56r1.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Not a good start - Type56R lagged behind by every metric.
+	She was also the only one to consistently contribute less damage than the fixed rifle - Rico, in this case.
+	While Type88 rather obviously blew past the others, R93/M14/WA2000 all had a solid advantage.
+</p>
+<center><div class="figure">
+	<img src="images/mobbing-with-56r/56r2.png" width="100%"/>
+</div><em></em></center>
+<p>
+	This node posed a problem for Type56R - the more dangerous Nemeums are 4-linked, while the SWAP Aegis have 2-3 links.
+	Other rifles focus the Nemeums better, reducing damage taken.
+</p>
+<center><div class="figure">
+	<img src="images/mobbing-with-56r/56r5.png" width="100%"/>
+</div><em>No flash shells and slightly insufficient armor stacking so we can estimate the number of shots taken.</em></center>
+<p>
+	This one is a bit less depressing, but she still only about ties with M14.
+	R93 has a solid advantage.
+</p>
+<span class="anchor" id="bossing"></span>
+<h2>Single target, single link<sup><small><a href="#bossing">&#35;</a></small></sup></h2>
+<h3>Bosses</h3>
+<p>
+	Let's also take a moment to check on her specialty.
+	First, let's see her in-skill DPS vs R93 (para fairy, 15 EVA, no HGs):
+</p>
+<center>
+	<table style="width:auto;">
+		<tr>
+			<th>Doll</th>
+			<th>0 stacks</th>
+			<th>1 stack</th>
+			<th>2 stacks</th>
+			<th>3 stacks</th>
+			<th>4 stacks</th>
+		</tr>
+		<tr>
+			<td>R93</td>
+			<td>2253</td>
+			<td>2446</td>
+			<td>2761</td>
+			<td>2952</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>Type56R</td>
+			<td>2021</td>
+			<td>2212</td>
+			<td>2404</td>
+			<td>2595</td>
+			<td>2786</td>
+		</tr>
+	</table>
+</center>
+<p>
+	Type56R doesn't look that crazy here, and while her passive doesn't need to build up, they both get full uptime soon enough.
+	M14 mod would have 2695 DPS under the same conditions, but with 5/8 uptime (~2300 uptime-averaged DPS).
+	We can see a similar result by taking a standard RFHG against a dummy for 300 seconds:
+</p>
+<center><div class="figure">
+	<img src="images/mobbing-with-56r/vsr93.png" width="49%"/>
+	<img src="images/mobbing-with-56r/vsm14.png" width="49%"/>
+</div><em>Left: Type56R performs ~7% worse than R93. Right: Type56R and M14 are about equal here.</em></center>
+<p>
+	As all rifles are oathed, Type56R and M14 have a ~5% built-in mod affection advantage.
+	I'm assuming a low-armor enemy, so Type56R will gain some ground against higher armor enemies like Doppels/Uhlans due to her SPEQ.
+</p>
+<p>
+	<a href="images/mobbing-with-56r/vsmore.png">Another example with less HGs and more rifles.</a> Other rifles using AP ammo, so Type56R's SPEQ boosts her a bit. WA2000 with MS SPEQ.
+	R93 has a slight edge (~6%) over Type56R, though both have a solid lead over M14/WA2000.
+</p>
+<h3>Mixed Formations</h3>
+<center><div class="figure">
+	<img src="images/mobbing-with-56r/56r3.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Naturally, Grape is overpowered against enemies that seem like they should be elite but aren't.
+	Type56R also did well, and was a bit more consistent in taking out a Gladiator before its slam than the typical selfbuffers.
+</p>
+<p>
+	HS.50 was helpful in taking out the gladiators early, but needed to reload shortly after leaving the gunners for Kar.
+	This echelon wastes a fair amount of ROF on HS.50 and wasn't built with her in mind, so that's to be expected.
+</p>
+<center><div class="figure">
+	<img src="images/mobbing-with-56r/56r4.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Type56R is also quite effective against some of the "fun" new Paradeus enemies.
+	Here, she was able to kill the Visjnoe before its buff removal.
+	Other selfbuffers were not fast enough and suffered greatly.
+</p>
+<p>
+	Turning autoskill off until the cleanse passes helped slightly with R93, but the fight remained painful.
+</p>
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	Type56R's performance was a bit disappointing, honestly.
+	The usual community opinion seems to be that she's a top-tier generalist rifle, but that has only held in bossing/single-link scenarios.
+	If her targeting isn't providing some specific function, I'd be inclined to pick one of the usual generalists instead.
+</p>
+<p>
+	But, against bosses and various single-linked threats, Type56R is an excellent rifle.
+	Her DPS is competitive with R93, and she's even better when you want something picked off quickly.
+</p>
+
+<span class="anchor" id="notes"></span>
+<h2>Notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<ul>
+	<li>Type56R's first shot does double damage, making her nice for certain <a href="datasim">Data Sampling formations</a>.</li>
+	<li>If you like to micro, you may be able to boost her a bit more with some well-timed wiggles. Other kiting requirements, user error, and such make this hard to quantify but it is an option.</li>
+	<li>She prioritizes enemies with less links, which could be a good thing (against a Doppel hidden among Strelets) or a bad thing (trying to take out some Cerynitis behind a Minotaurus to keep your Taunt alive).</li>
+	<li>As always, rifle tile differences introduce some minor variance in the test results.</li>
+</ul>
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="glue">
+		<div class="gallery solo rfhg">
+		  <div class="gallerypic">
+			<img src="images/icon/glue.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>General Liu</b><br/>Analysis & testing</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="manual-labor">
+		<div class="gallery solo rfhg">
+		  <div class="gallerypic">
+			<img src="images/icon/manual-labor.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Rico Skill Analysis</b><br/>Force manual vs Autoskill</div>
+		  </div>
+		</div>
+	</a>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
