@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>Night vision on rifles!? - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Night vision on rifles!?</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-August-27</em></center>
+
+<p>
+	The next big client update, hopefully releasing on EN before 2023, <a href="https://old.reddit.com/r/girlsfrontline/comments/wxj3py/client_30_whats_new/">includes reworks for some often-forgotten accuracy-focused HGs</a>.
+	Rather than providing accuracy buffs from their skills, they instead give partial night vision.
+</p>
+<p>
+	For a quick refresher (<a href="evasion">or for a long one</a>),
+</p>
+$$ \text{Hit rate}~(\%) = \frac{\text{ACC}}{\text{ACC}+\text{EVA}} \times 100\% $$
+<p>
+	and
+</p>
+$$ \mathrm{ACC}_{\mathrm{Night}} = \left\lfloor \mathrm{ACC} \cdot (1 - 0.9 \cdot(1 - \mathrm{PEQ~correction})) \right\rfloor $$
+<p>
+	We can also solve for the effective accuracy buff a PEQ gives, setting aside rounding parameters:
+</p>
+$$ \mathrm{ACC}_{\mathrm{Increase}} = \frac{\mathrm{ACC} \cdot (1 - 0.9 \cdot(1 - \mathrm{PEQ}))}{\mathrm{ACC} \cdot 0.1} = 9 \cdot \mathrm{PEQ} + 1 $$
+<p>
+	so a 0% PEQ is equivalent to a 1.0x accuracy multiplier, a 50% PEQ is a 5.5x accuracy multiplier (450% buff), and a 100% PEQ is a 10x accuracy multiplier (900% buff).
+	Relative to your post-night-penalty acc, that is.
+	Compared to your day accuracy, anything below a 100% PEQ is at least some sort of loss. <!-- we do NOT talk about rounding here -->
+</p>
+<p>
+	Recognizing that DPS is proportional to your hit rate, we can generate plots showing the DPS increase various levels of night vision offer, for various evasion/accuracy stat combinations.
+	As insurance against any major adjustments/tweaks, I'll still keep these charts somewhat general.
+	The expected changes: P38's skill reduces night penalty by 50%. C96 reduces the night penalty by 70% (unmodded) or 90% (modded). Illumination's active reduces the night penalty by 10%.
+	Keep in mind that the dolls discussed are more than just this one skill.
+	<!-- Rounding is ignored to keep the charts smooth.
+	We don't need to get that specific. -->
+</p>
+<p>
+	First, against a fairly "standard" 15 EVA:
+</p>
+<center><div class="figure">
+	<img src="images/rf-nvg/nvg-vs-15.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Even 50% night vision gets you most of the way there, offering at least a 40% DPS increase for reasonable levels of accuracy buffing.
+	If you're only getting acc from P38/C96's tiles, it's more like a 60-80% DPS increase.
+</p>
+<p>
+	Paradeus enemies (Strelets, Gunners) and SWAP SF can get a bit dodgier. As always, you can check stats on specific maps <a href="https://pengupengupengu.github.io/gflmaps/">using GFLMaps</a>.
+	Versus 40 EVA:
+</p>
+<center><div class="figure">
+	<img src="images/rf-nvg/nvg-vs-40.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Night vision becomes far more useful as evasion scales up. Here, odds are good these flare skills are at least doubling your DPS.
+</p>
+<p>
+	At 60 EVA, numbers continue to inflate:
+</p>
+<center><div class="figure">
+	<img src="images/rf-nvg/nvg-vs-60.png" width="100%"/>
+</div><em></em></center>
+
+
+<!-- <center>
+	<table style="width:auto;">
+		<tr>
+			<th>Configuration</th>
+			<th>Typical Accuracy</th>
+		</tr>
+		<tr>
+			<td>Typical rifles</td>
+			<td>80-90</td>
+		</tr>
+		<tr>
+			<td>+P38 tiles</td>
+			<td>125-140</td>
+		</tr>
+		<tr>
+			<td>+P22 & M950A</td>
+			<td>170-190</td>
+		</tr>
+		<tr>
+			<td>+P22 & C96</td>
+			<td>185-210</td>
+		</tr>
+		<tr>
+			<td>+P22 & C96 & Illu</td>
+			<td>260-290</td>
+		</tr>
+	</table>
+</center> -->
+
+<p>
+	These are some big DPS increases, but don't necessarily answer how good this is compared to surehit options.
+	To help compare, here are the actual hit rates you end up with:
+</p>
+<center><div class="figure">
+	<img src="images/rf-nvg/hr-vs-15.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Even 50% night vision gets you to a respectable 80-90% hit chance, at which point surehit options are necessarily no more than a 25% DPS increase.
+</p>
+<center><div class="figure">
+	<img src="images/rf-nvg/hr-vs-60.png" width="100%"/>
+</div><em></em></center>
+<p>
+	It's a bit dodgier against highly evasive enemies, but C96 mod at least gets you to a respectable 75%+ hit rate.
+	Keep in mind that most surehit options work very differently from standard dolls (M200, SSG3000, AS Val, 4 Shiki,...), so there's no easy 1:1 comparison or calculation for when you should switch to that.
+</p>
+
+<a href="images/rf-nvg/hr-vs-40.png">See here for the middle chart</a>.
+
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	These adjustments look very promising for flare HGs.
+	Even partial night penalty reduction is a massive effective accuracy boost, and standard rifles will benefit greatly.
+	How much accuracy you're getting from tiles/auras introduce a lot of variance, as does enemy evasion, but you're reasonably looking at a 40-150% DPS increase from the skills.
+</p>
+<p>
+	Illumination's active is <em>less</em> impactful, but 10% night vision is still often more than it sounds. This can reasonably be a 15-40% DPS increase.
+</p>
+<p>
+	This doesn't necessarily make them universal, though - other HGs may offer special utility (like M950A's speed boost/slow field or P22's shields), surehit dolls are always an option for evasive enemies, and there's not <em>that much</em> night content at the moment.
+</p>
+<p>
+	If you already have your basics and intermediates covered, though, it may be worth raising some of these on the side.
+</p>
+
+<span class="anchor" id="notes"></span>
+<h2>Notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<ul>
+	<li>ARs can equip PEQs themselves, so we don't need to worry there.
+		If you need MGs and aren't only facing 0-EVA enemies, just use Nova.</li>
+	<li>
+		Accuracy and evasion seems to be a rather poorly understood mechanic by much of the community.
+		I strongly recommend a careful reading of <a href="evasion">my overview of it</a>.
+		You may also want to check out a few myths on related topics: <a href="myths#hr">1</a>, <a href="myths#hanyangacc">2</a>, <a href="myths#eva">3</a>.
+	</li>
+	<li>
+		Flare HGs pre-3.0 weren't exactly "useless," although I'm not calling them "great" either.
+	</li>
+	<ul>
+		<li>Their skills don't completely negate the night penalty, as new players tend to expect them to.</li>
+		<li>Accuracy buffs on rifles at night can be useful.</li>
+		<li>Broadly speaking, Type59 and SPP-1's EVA debuffs provide(d) similar or better effective accuracy buffs while having better tiles/more flexibility.</li>
+	</ul>
+	<li>
+		Accuracy, unlike evasion, has diminishing returns.
+		The DPS increase from additional accuracy buffs shrinks as your accuracy increases.
+		It's unlikely for it to make sense to stack multiple dedicated acc buffers in the same team.
+		Don't use P38+C-96+Illu all at once.
+		Even <em>if</em> it made sense on paper, it would almost surely make <em>even more</em> sense to swap your DPS for surehit options and rebuild accordingly.
+	</li>
+</ul>
+
+
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="arisaka">
+		<div class="gallery">
+		  <div class="gallerypic">
+			<img src="images/icon/arisaka.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Arisaka AP rounds</b><br/>4 Shiki SPEQ testing</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="svch">
+		<div class="gallery solo rfhg">
+		  <div class="gallerypic">
+			<img src="images/icon/svch.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>SVCh</b><br/>Performance testing</div>
+		  </div>
+		</div>
+	</a>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
