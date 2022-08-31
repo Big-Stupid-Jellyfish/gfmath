@@ -40,7 +40,7 @@ gtag('config', 'G-805N997DPC');
 <header class="major">
 <h1>Fairy Talent Frequencies</h1>
 </header>
-<center><em>By BigStupidJellyfish | 2022-May-17 | Updated 2022-August-02</em></center>
+<center><em>By BigStupidJellyfish | 2022-May-17 | Updated 2022-August-31</em></center>
 
 <span class="anchor" id="situation"></span>
 <h2>The Situation<sup><small><a href="#situation">&#35;</a></small></sup></h2>
@@ -111,7 +111,9 @@ gtag('config', 'G-805N997DPC');
 </p>
 <p>
 	To save you the effort and time it takes to collect large amounts of data, I've been noting all fairy craft data/talent calibrations for a while (and gotten some more from others doing the same).
-	Let's see what we've got.
+	Perhaps more importantly, <a href="https://gf-db.github.io/gfdb/index.html">gf-db</a> has tracked 6574305 talents from crafting.
+	Slightly more than what I can manage on my own.
+	Let's see what it looks like.
 </p>
 <span class="anchor" id="data"></span>
 <h2>The Data<sup><small><a href="#data">&#35;</a></small></sup></h2>
@@ -119,15 +121,15 @@ gtag('config', 'G-805N997DPC');
 	Graphically,
 </p>
 <center><div class="figure">
-	<img src="https://i.imgur.com/ak1kOAQ.png" width="100%"/>
+	<img src="https://i.imgur.com/iFl1Usm.png" width="100%"/>
 </div><em></em></center>
 <p>
 	We see quite a lot of Stat I talents, and not too many Stat II/Fervor talents.
-	This combines talent data from production and calibration.
-	When split:
+	<!-- This combines talent data from production and calibration. -->
+	From user-recorded submissions, we can also check calibration data and see a similar distribution:
 </p>
 <center><div class="figure">
-	<img src="https://i.imgur.com/mKt0bF3.png" width="100%"/>
+	<img src="https://i.imgur.com/mbhCpMM.png" width="100%"/>
 </div><em></em></center>
 <p>
 	Note that the calibration side is particularly rough due to a limited sample size.
@@ -140,9 +142,11 @@ gtag('config', 'G-805N997DPC');
 	Talents are clearly not uniformly distributed.
 	Gold talents appear at a notably lower rate than white talents.
 	Class-specific talents show up a little less than "Stat I" talents.
+	Rates do not vary per talent within each group.
 </p>
 <p>
-	My current best guess as to the true rates are:
+	<!-- My current best guess as to the true rates are: -->
+	The true rates appear to be:
 </p>
 <center>
 	<table style="width:auto; text-align:center;">
@@ -153,18 +157,18 @@ gtag('config', 'G-805N997DPC');
 		</tr>
 		<tr>
 			<td>Stat I</td>
-			<td>7.5% per, 37.5% total</td>
-			<td>7.1-8.0% per</td>
+			<td>7.77% per, 38.9% total</td>
+			<td>7.767-7.782% per</td>
 		</tr>
 		<tr>
 			<td>Stat II/Fervor</td>
-			<td>4.17% per, 25% total</td>
-			<td>3.6-4.3% per</td>
+			<td>3.88% per, 23.3% total</td>
+			<td>3.876-3.883% per</td>
 		</tr>
 		<tr>
 			<td>Class-specific</td>
-			<td>6.25% per, 37.5% total</td>
-			<td>5.9-6.6% per</td>
+			<td>6.31% per, 37.8% total</td>
+			<td>6.300-6.313% per</td>
 		</tr>
 	</table>
 </center>
@@ -192,6 +196,7 @@ gtag('config', 'G-805N997DPC');
 </center> -->
 <p>
 	It seems likely that fairy talents assigned from production and fairy calibration use the same underlying system (and have the same rates) for talents.
+	Interestingly, the true rates do not appear to land on any particularly nice numbers - for example, a "25% gold talent rate" or an "8.0% individual Stat I talent rate" are completely implausible.
 	The plausible ranges above are listed with 95% confidence.
 </p>
 <p>
@@ -203,8 +208,8 @@ gtag('config', 'G-805N997DPC');
 <ul>
 	<li>It is occasionally claimed that you should space out your calibrations in time to "get a better RNG seed." There is no reason to believe this unless provided a <em>repeatable</em> demonstration showing significantly better outcomes than what you would otherwise expect - which hasn't been done yet. Similar deal with the vodoo bingo strategies you'll hear.</li>
 	<li>This <em>does not</em> mean you should avoid raising 500x4 fairies with Damage II/Fervor. Realistically you'd be saving ~1 fairy from matching talents - something beyond trivial in the long run, and nowhere near enough to justify the extra calibration cost later on to fix the talent. A slightly lower proc rate won't kill you either (if talent mattered that much, calibrating low-rarity fairies to Damage I would be the only reasonable course of action).</li>
-	<li>I assume Fervor fits into the "Stat II" class of talent. Getting a decent sample on a single talent is far harder than with groups of talents, so it'll be a long while before I have enough evidence to confidently say if the rates are actually the same or not.</li>
-	<li>Similarly, I currently believe talents within each class are uniformly distributed. It'll be a while before we can be sure, though.</li>
+	<!-- <li>I assume Fervor fits into the "Stat II" class of talent. Getting a decent sample on a single talent is far harder than with groups of talents, so it'll be a long while before I have enough evidence to confidently say if the rates are actually the same or not.</li> -->
+	<!-- <li>Similarly, I currently believe talents within each class are uniformly distributed. It'll be a while before we can be sure, though.</li> -->
 	<li>Ultimately, the main takeaway: expect calibration feeding to be a bit more painful than you previously thought, and I wish your resources the best of luck if you decide you need exactly one specific gold talent.</li>
 </ul>
 <span class="anchor" id="ads"></span>
