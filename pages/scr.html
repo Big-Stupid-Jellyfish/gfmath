@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>SCR - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>SCR</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2022-September-03</em></center>
+<blockquote>
+	<div class="row">
+		<div class="col-9 col-12-small">
+			<p><strong>Combined Propellant</strong> ICD 4s/CD 8s</p>
+			<p>
+				Defaults to using Light Arms at the start of battle. Once the skill is activated, switches to using Tactical Arms for regular attacks. Each regular attack expends 1 round of Tactical Ammo and when they are all gone, switch back to Light Arms.
+			</p>
+			<p>
+				When using Light Arms, every damage, attack speed, evasion, accuracy, move speed, critical chance or critical damage buff will add 5 rounds of Tactical Ammo. Each type of buff can only add Tactical Ammo once per skill activation.
+			</p>
+			<p>
+				When this skill is not on cooldown, gain an extra 1 points of Tactical Ammo per second and record the number of extra rounds. This amount accumulates and once the skill ends, this amount will be added to the amount of Tactical Ammo upon switching back to Light Arms.
+			</p>
+			<p>
+				When using Tactical Arms: all regular attacks automatically hit and deal 80% extra damage. The amount of Tactical Ammo does not increase.
+			</p>
+		</div>
+		<div class="col-3 col-12-small">
+			<center><div class="figure">
+				<img src="images/scr/SCR.png" width="80%"/>
+			</div><em>Buffs SMG: 25% EVA</em></center>
+		</div>
+	</div>
+</blockquote>
+
+<p>
+	It's easy enough to write off SCR at a glance - her 80% selfbuff is hardly better than the standard 75%, surehit isn't <em>that</em> helpful against most enemies, and switching modes causes SCR to stop shooting, reducing her DPS.
+</p>
+<p>
+	Also, her skill description is way too long.
+</p>
+<p>
+	However, we should verify that these generalities are actually true.
+	Your standard hit rate, how much time the switches take, and how often the switches happen will influence if such a skill is a DPS loss or gain.
+	Decent-sounding ideas can turn out <a href="thompson">completely false</a> once you run the numbers, so it's good to be cautious.
+</p>
+<p>
+	Note that, ultimately, SCR should be thought of and used as a weird selfbuffer.
+	Any results that depend on effort-intensive manual skill control, complex calculations, or bizarre echelon building priorities should be discarded.
+	She's not exactly someone you'll be using for para-debuffed ranking fights where such things could be worth considering.
+</p>
+
+<span class="anchor" id="chips"></span>
+<h2>Chips?<sup><small><a href="#chips">&#35;</a></small></sup></h2>
+<p>
+	SCR's skill works by giving her a specific number of shots.
+	Increasing ROF is therefore <em>slightly</em> weaker on her, as it doesn't increase the number of tactical arms attacks.
+	Does this make chips not worthwhile?
+</p>
+<p>
+	Here's one easy test.
+	We set up SCR in a somewhat chip-unfavorable environment (M4A1 tiles + Parachute aura), throw her against a dummy for 300 seconds each way, and see how she does in each.
+	This gives us:
+</p>
+<center><div class="figure">
+	<img src="images/scr/usechips-L.png" width="49%"/>
+	<img src="images/scr/usechips-R.png" width="49%"/>
+</div><em>Claes to keep M4A1 in normal mode. 300 seconds. Fervor Para. 24 EVA to get some use out of SCR's skill.</em></center>
+<p>
+	With a chip, she does 34% more damage than R5 and 24% more damage than M4A1.
+	Without a chip, she does 8% less damage than R5 and 15% less damage than M4A1.
+</p>
+<p>
+	So yeah, she still should use a chip.
+	<!-- Perhaps more interesting is the major advantage SCR accrued over both M4A1 and R5 there.
+	Let's dig a little deeper into that. -->
+</p>
+<span class="anchor" id="dps"></span>
+<h2>DPS<sup><small><a href="#dps">&#35;</a></small></sup></h2>
+<p>
+	Typical ARs-vs-unarmored encounters involve ~60 accuracy ARs (maybe ~100 with some tiles/auras) vs 15 EVA.
+	This puts you at an 80-87% hit rate, so surehit improves DPS by ~15-25%.
+	Combining this with her 80% selfbuff means her skill improves average DPS by 107-125%, worse with heavy acc auras/tiles and better versus evasive enemies.
+</p>
+<p>
+	A standard selfbuff skill increases damage by 75%, with 10/16 uptime.
+	Their long-term (uptime-averaged) unit damage would be <code>[10*1.75+(16-10)*1]/16=1.4688</code>
+</p>
+<p>
+	Being a bit pessimistic, this would become <code>[x*2.07+y*1+z*0]/8=?</code> for SCR, where from left to right we have the time per skill activation spent with tactical arms/light arms/switching.
+	If this exceeds 1.4688, SCR should do better than such a selfbuffer.
+</p>
+<p>
+	This is simplest to figure out by transforming it into the number of attacks made each way.
+	Recording a few simple cases and counting shots:
+</p>
+<center>
+	<table style="width:auto;">
+		<tr>
+			<th>Configuration</th>
+			<th>1st activation</th>
+			<th>2nd activation</th>
+			<th>3rd activation</th>
+			<th>4th activation</th>
+			<th>Average</th>
+		</tr>
+		<tr>
+			<td>VFL+Chip</td>
+			<td>1.201-1.265</td>
+			<td>1.201-1.265</td>
+			<td>1.323-1.397</td>
+			<td>1.327-1.412</td>
+			<td>1.263-1.335</td>
+		</tr>
+		<tr>
+			<td>EOT+Chip</td>
+			<td>1.080-1.125</td>
+			<td>1.214-1.281</td>
+			<td>1.214-1.281</td>
+			<td>1.281-1.359</td>
+			<td>1.197-1.262</td>
+		</tr>
+		<tr>
+			<td>VFL+Chip+Fervor fairy</td>
+			<td>1.516-1.632</td>
+			<td>1.075-1.118</td>
+			<td>1.327-1.412</td>
+			<td>1.264-1.338</td>
+			<td>1.296-1.375</td>
+		</tr>
+		<tr>
+			<td>VFL+Chip+P22+Damage II fairy</td>
+			<td>1.516-1.632</td>
+			<td>1.075-1.118</td>
+			<td>1.642-1.779</td>
+			<td>1.138-1.191</td>
+			<td>1.343-1.430</td>
+		</tr>
+	</table>
+</center>
+<p>
+	The ranges above cover a 107-125% effective skill DPS boost.
+	Buffs are clearly rather important for SCR.
+	On her own, her effective DPS buff started off questionable, and while it seemed to climb over time, was still lacking by the ~40 seconds mark.
+	Adding a fairy talent and/or a buffing HG, while not fixing every skill cycle, pushed at least some of her activations ahead of standard selfbuffers.
+	<!-- In the most extreme case tested (3rd skill activation with P22 & a Damage II fairy), SCR fired 13 tactical ammo volleys and 1 light arms volley in one skill activation, while "missing out" on 3 attacks due to her mode switching. -->
+</p>
+
+<p>
+	Now, to ground ourselves a bit better (and save myself the headache of coming up with a full computational description of her skill), let's run some empirical relative cumulative damage tests.
+	I'll note her relative damage every 0.5s under a few conditions and plot it below, relative to R5.
+	As each line is taken from a single run, rather than being a theoretical average, expect these to be rockier.
+	Particularly the numbers in the first few seconds.
+</p>
+<center><div class="figure">
+	<img src="images/scr/scr-basic.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Not exactly great.
+	But this is comparing them in a complete vacuum.
+	Let's start re-introducing these dolls to society with a Fervor para fairy and check another level of enemy evasion.
+</p>
+<center><div class="figure">
+	<img src="images/scr/scr-fervor-para.png" width="100%"/>
+</div><em></em></center>
+<p>
+	This looks a little more reasonable.
+	Once things settle down ~8 seconds in, SCR ranges from ~15% worse than R5 to 15% better, depending on how evasive the dummy was.
+	For good measure, let's do one more run with Grizzly also supporting.
+</p>
+<center><div class="figure">
+	<img src="images/scr/scr-fervor-para-grizzly.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Better performance against high evasion, but Grizzly's buffs weren't enough for SCR to surpass R5 across the board.
+</p>
+<p>
+	High-resolution long-term data is a pain to collect, so let's try a more simplified comparison for that:
+</p>
+<center><div class="figure">
+	<img src="images/scr/arcomp-L.png" width="49%"/>
+	<img src="images/scr/arcomp-R.png" width="49%"/>
+</div><em>Left: 300 seconds. Fervor Para. 24 EVA. Right: 18 EVA and a Taunt fairy. Note: the oaths give STAR/G41 a <a href="myths#oathbonus">slight (2-5%)</a> advantage. </em></center>
+<p>
+	The final numbers unfortunately aren't the whole story, as SCR sometimes took a <em>while</em> to catch up to G41.
+	For example, in the left setup, taking notes every 10 seconds:
+</p>
+<center><div class="figure">
+	<img src="images/scr/scr-longterm.png" width="100%"/>
+</div><em></em></center>
+<p>
+	In a way, I'm reminded of <a href="fedorov">Fedorov</a> here.
+</p>
+<span class="anchor" id="night"></span>
+<h2>Night<sup><small><a href="#night">&#35;</a></small></sup></h2>
+<p>
+	The nature of SCR's skill could lead to comparisons with AS Val.
+	Can she use a VFL at night?
+</p>
+<center><div class="figure">
+	<img src="images/scr/night-L.png" width="49%"/>
+	<img src="images/scr/night-R.png" width="49%"/>
+</div><em>Left: VFL, right: PEQ. 24 EVA, Effectively a 333,333 HP dummy.</em></center>
+<p>
+	It's technically not a disaster, with her dealing about the same amount of damage each way, but it looks entirely uninteresting.
+	If you want to use an AR specifically for night battles, which generally isn't necessary, AS Val and 9A-91 are much better picks.
+	9A-91 did not have her DD SPEQ in these tests, but is using her login SPEQ.
+</p>
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	It seems Mica was quite cautious when designing SCR.
+	She fulfills her role as a "selfbuffer but with some surehit" acceptably, and has a decent chance at outperforming generic selfbuffers in favorable conditions (decent amount of buffs, high evasion).
+	However, in more typical conditions, she falls behind by 10-20%.
+</p>
+<p>
+	There's also the matter of competition.
+	It's nice enough for SCR that she can outperform R5 from time to time, but:
+</p>
+<ul>
+	<li>She doesn't have a SPEQ like G41, and will scale somewhat worse in echelons with crit auras/tiles</li>
+	<li>She isn't M4A1 mod/G11 mod/416 mod, and those are about all the ARs you need to deploy for most content.</li>
+</ul>
+<p>
+	While she's not quite as disastrous as the typical community opinion seems to claim, she isn't able to distinguish herself well enough from the crowd of ARs to earn a recommendation.
+	If you truly do need surehit, you might first wish to consider (in no particular order) M200, SSG3000, Sniper fairy, AS Val mod, AK-Alfa, 4 Shiki, G11 mod, 416 mod, M4 SOPMOD II mod, NTW mod, M4A1 mod, and/or Rico.
+</p>
+
+<!-- <span class="anchor" id="notes"></span>
+<h2>Notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<ul>
+	<li>As a selfbuffing 5-star AR, I've been largely comparing SCR to other selfbuffing 5-star ARs. It should go without saying that G11/416/M4A1 remain the top ARs, and are about all you'll use in most rankings.</li>
+</ul> -->
+
+
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="fedorov">
+		<div class="gallery solo arsmg">
+		  <div class="gallerypic">
+			<img src="images/icon/fedorov.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Fedorov Avtomat</b><br/>Timeframe analysis & charting</div>
+		  </div>
+		</div>
+	</a>
+
+
+	<a href="svch">
+		<div class="gallery solo rfhg">
+		  <div class="gallerypic">
+			<img src="images/icon/svch.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>SVCh</b><br/>Performance testing</div>
+		  </div>
+		</div>
+	</a>
+</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
