@@ -60,6 +60,9 @@ function calculate() {
 		speqvfl_fp = parseFloat(document.getElementById('speqvfl_fp').value),
 		speqvfl_cd = parseFloat(document.getElementById('speqvfl_cd').value),
 		speqvfl_acc = parseFloat(document.getElementById('speqvfl_acc').value),
+		c_chip_fp = parseFloat(document.getElementById('c_chip_fp').value),
+		c_chip_rof = parseFloat(document.getElementById('c_chip_rof').value),
+		c_chip_cd = parseFloat(document.getElementById('c_chip_cd').value),
 		vfl_exo_basic = cDPS((base_fp+hv_fp+speqvfl_fp)*buff_fp,(base_cr+vfl_cr)*buff_cr,(1.5+speqvfl_cd)*buff_cd,enemy_arm,15.0,(base_acc+speqvfl_acc)*buff_acc,enemy_eva,Math.floor(base_rof*buff_rof)),
 		vfl_exo_skill = cDPS((base_fp+hv_fp+speqvfl_fp)*buff_fp*skill_fp,(base_cr+vfl_cr)*buff_cr*skill_cr,(1.5+speqvfl_cd)*buff_cd,enemy_arm,15.0,(base_acc+speqvfl_acc)*buff_acc*skill_acc,enemy_eva,Math.floor(base_rof*buff_rof*skill_rof)),
 		vfl_exo_avg = vfl_exo_basic * (skill_cd - skill_duration) / skill_cd + vfl_exo_skill * skill_duration / skill_cd,
@@ -71,7 +74,10 @@ function calculate() {
 		eot_chip_avg = eot_chip_basic * (skill_cd - skill_duration) / skill_cd + eot_chip_skill * skill_duration / skill_cd,
 		iti_chip_basic = cDPS((base_fp+hv_fp+chip_fp)*buff_fp,(base_cr)*buff_cr,1.0*buff_cd,enemy_arm,15.0,(base_acc+iti_acc)*buff_acc,enemy_eva,Math.floor((base_rof+chip_rof+iti_rof)*buff_rof)),
 		iti_chip_skill = cDPS((base_fp+hv_fp+chip_fp)*buff_fp*skill_fp,(base_cr)*buff_cr*skill_cr,1.0*buff_cd,enemy_arm,15.0,(base_acc+iti_acc)*buff_acc*skill_acc,enemy_eva,Math.floor((base_rof+chip_rof+iti_rof)*buff_rof*skill_rof)),
-		iti_chip_avg = iti_chip_basic * (skill_cd - skill_duration) / skill_cd + iti_chip_skill * skill_duration / skill_cd;
+		iti_chip_avg = iti_chip_basic * (skill_cd - skill_duration) / skill_cd + iti_chip_skill * skill_duration / skill_cd,
+		vfl_c_chip_basic = cDPS((base_fp+hv_fp+speqvfl_fp+c_chip_fp)*buff_fp,(base_cr+vfl_cr)*buff_cr,(1.5+c_chip_cd+speqvfl_cd)*buff_cd,enemy_arm,15.0,(base_acc+speqvfl_acc)*buff_acc,enemy_eva,Math.floor((base_rof+c_chip_rof)*buff_rof)),
+		vfl_c_chip_skill = cDPS((base_fp+hv_fp+speqvfl_fp+c_chip_fp)*buff_fp*skill_fp,(base_cr+vfl_cr)*buff_cr*skill_cr,(1.5+c_chip_cd+speqvfl_cd)*buff_cd,enemy_arm,15.0,(base_acc+speqvfl_acc)*buff_acc*skill_acc,enemy_eva,Math.floor((base_rof+c_chip_rof)*buff_rof*skill_rof)),
+		vfl_c_chip_avg = vfl_c_chip_basic * (skill_cd - skill_duration) / skill_cd + vfl_c_chip_skill * skill_duration / skill_cd;
 
 	document.getElementById("vfl_exo_basic").innerHTML = Math.round(vfl_exo_basic);
 	document.getElementById("vfl_exo_skill").innerHTML = Math.round(vfl_exo_skill);
@@ -85,6 +91,9 @@ function calculate() {
 	document.getElementById("iti_chip_basic").innerHTML = Math.round(iti_chip_basic);
 	document.getElementById("iti_chip_skill").innerHTML = Math.round(iti_chip_skill);
 	document.getElementById("iti_chip_avg").innerHTML = Math.round(iti_chip_avg);
+	document.getElementById("vfl_c_chip_basic").innerHTML = Math.round(vfl_c_chip_basic);
+	document.getElementById("vfl_c_chip_skill").innerHTML = Math.round(vfl_c_chip_skill);
+	document.getElementById("vfl_c_chip_avg").innerHTML = Math.round(vfl_c_chip_avg);
 }
 </script>
 <meta name="description" content="Girls Frontline, by the numbers">
@@ -113,7 +122,7 @@ function calculate() {
 	<h1>#2 Processor Chip Calculator</h1>
 </header>
 
-<center><em>By BigStupidJellyfish | 2022-January-22 | Updated 2022-May-12</em></center>
+<center><em>By BigStupidJellyfish | 2022-January-22 | Updated 2022-October-26</em></center>
 
 <p>
 	The <a href="chips">#2 Processor chip</a> is rather annoying to evaluate in typical ARSMG echelons, with various combinations of ROF tiles/crit tiles/crit auras.
@@ -229,6 +238,16 @@ function calculate() {
 			<td><input id="chip_fp" type="text" value="15"></input><br></td>
 			<td><input id="chip_rof" type="text" value="25"></input><br></td>
 		  </tr>
+		  <tr>
+			<th>Concentrated Chip FP</th>
+			<th>Concentrated Chip ROF</th>
+			<th>Concentrated Chip CD</th>
+		  </tr>
+		  <tr>
+			<td><input id="c_chip_fp" type="text" value="10"></input><br></td>
+			<td><input id="c_chip_rof" type="text" value="-10"></input><br></td>
+			<td><input id="c_chip_cd" type="text" value="0.30"></input><br></td>
+		  </tr>
 	  </table>
 	  <h3>VFL-like SPEQ customization</h3>
 	<table style="width:100%">
@@ -277,6 +296,12 @@ function calculate() {
 			<td id="iti_chip_basic">?</td>
 			<td id="iti_chip_skill">?</td>
 			<td id="iti_chip_avg">?</td>
+		</tr>
+		<tr>
+			<td>VFL+Concentrated Chip</td>
+			<td id="vfl_c_chip_basic">?</td>
+			<td id="vfl_c_chip_skill">?</td>
+			<td id="vfl_c_chip_avg">?</td>
 		</tr>
 	</table>
 </center>
