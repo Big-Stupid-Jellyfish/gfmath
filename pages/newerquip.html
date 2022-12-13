@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<meta name="description" content="Girls Frontline, by the numbers">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>New Doll Equipment: Wave 2 - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+	<h1>New Doll Equipment: Wave 2</h1>
+	<!-- <h1>New Doll Equipment: First Impressions</h1> -->
+</header>
+
+<center><em>By BigStupidJellyfish | 2022-December-13 | DRAFT</em></center>
+
+<!-- 
+	1. Bipod (MG-Doll): Accuracy +10, Movement Speed -2, Reload -2 seconds
+	2. Rangefinder (RF-Doll): Firepower +10, ICD reduction -80%
+	3. Flashlight (RF, MG cannot be worn - night battle equipment): Evasion +5, echelon's night vision +10%
+	4. Choke (SG-Accessory): Ammo Capacity +5, Accuracy +10
+	5. Focus chip (SMG, AR chip): Firepower +10, RoF -10, Critical Damage +30%
+ -->
+
+<!-- <p>Several new equipment pieces were recently announced on foreign servers.
+There are some interesting ideas in them, but let's see if they are worth your time.</p>
+
+<p>Important note: it may be quite a while before they are available to craft on EN. Don't get too excited. No date has been confirmed.</p> -->
+
+<p>
+	<em>(2021-12-14 update): Rather unexpectedly, these equipment pieces have been released on EN.
+	A number of <a href="https://media.discordapp.net/attachments/443533099632951306/857458294863953930/2021-06-23_20_12_49.png">SPEQ balance adjustments</a> were also released accordingly.
+	Good luck in your crafting.</em>
+</p>
+
+<p>
+	Seven new equipment pieces have been introduced, with something to offer for every class.
+	Let's go over them one-by-one and see if they are worth your resources.
+</p>
+<div class="figure">
+<img src="https://i.redd.it/d31zqs5ek4w91.jpg" width="100%"/>
+</div>
+<center><em>Teaser/announcement image.</em></center>
+
+<h2>Table of Contents</h2>
+<ul>
+	<li><a href="#bipod">HD100 Bipod</a></li>
+	<li><a href="#lrf">M200X LRF</a></li>
+	<li><a href="#light">SureFire Tactical Light</a></li>
+	<li><a href="#choke">Mk0 Multipurpose Choke</a></li>
+	<li><a href="#3chip">Concentrated Chip</a></li>
+</ul>
+
+<span class="anchor" id="bipod"></span>
+<h2>HD100 Bipod<sup><small><a href="#bipod">&#35;</a></small></sup></h2>
+<p>Equippable by MG. Replaces ammo box.
+Stats at maximum calibration/enhancement: +10 ACC, -2 MS, -2s Reload time.</p>
+<p>
+	Standard MG reload speed is <code>floor((4+200/ROF)*30)</code>. With this applied, it'd become <code>floor((2+200/ROF)*30)</code>.
+	This of course is not helpful for short (first-volley) battles or on (near) infinite magazine MGs like RPK-203/M1895 CB/MG338, aside from the bit of accuracy.
+</p>
+<p>
+	For a simplistic start, let's set aside skills and assume a very long battle.
+</p>
+<p>
+	A MG firing cycle with n rounds consists of n-1 delays between attacks (typically 10 frames, <a href="datasim#frames">but not always</a>) and one reload.
+	If we take the total number of attacks made in this cycle, and divide that by the length of the cycle in frames, we can get the long-term average attack rate.
+	Current MGs have a base capacity of 8-11 rounds, so plotting the new bipod in the solid lines and ammo boxes in dashed lines:
+</p>
+<div class="figure">
+	<img src="images/newerquip/mg-box-by-rof-split.png" width="100%"/>
+</div>
+<center><em>Solid lines: the new bipod. Dashed lines: the old ammo box. Higher is better.</em></center>
+	
+<p>
+	This might be easier to interpret if we take the relative attack rate, or the attack rate with a bipod divided by the attack rate with a box.
+	Values above 1 mean the bipod should be preferred, values below 1 prefer the box. Note that the +acc from the bipod may make it slightly better (shifting the lines up) if you need accuracy.
+</p>
+<div class="figure">
+	<img src="images/newerquip/mg-box-by-rof.png" width="100%"/>
+</div>
+<center><em>Line above one: the new bipod is preferred. Below: the old ammo box is preferred.</em></center>
+<p>
+	As you may have been able to predict, MGs with smaller ammo capacities benefit more from ammo boxes.
+	11-ammo MGs always (<em>by this metric</em>) prefer the new bipod.
+</p>
+<p>
+	Doll skills and battle circumstances make this hard to turn into a general recommendation, however.
+	Some dolls get an enhanced shot every few bullets.
+	Ammo boxes will be a bit more or less valuable depending on how that lines up.
+	Second-volley MG skills tend to have an 8-second ICD, which depending on ammo count/walk time may be more or less compatible with these options.
+</p>
+<p>
+	As a bonus, for MGs like Lewis who apply a multiplicative reduction to their own reload speed, the bipod subtraction happens after - giving it a much larger effective boost.
+</p>
+
+<p>
+	The +acc provides roughly a ~6-8% extra edge in favor of the bipod for (reasonably) low-accuracy scenarios, 2-5% with some more RMRs/acc tiles.
+	This makes the bipod a fairly safe pick across the board, even for something like an 80-ROF/8-capacity MG, but isn't revolutionary as RMRs/flares/Nova remain options.
+</p>
+<!-- <p>Recommended recipes: IOP Special (~4.4%), 150x4 (~0.6%), 210/210/50/110 (~0.85%). <a href="https://gf-db.github.io/gfdb/gfdb.html?type=equip&id=224&epoch.equip=22.4&sort.equip=[{%22sort_column%22:%22tier%22,%22dir%22:-1},{%22sort_column%22:%22stdev%20%%22,%22dir%22:-1}]">Craft data from gf-db</a>.</p> -->
+
+<span class="anchor" id="lrf"></span>
+<h2>M200X LRF<sup><small><a href="#lrf">&#35;</a></small></sup></h2>
+<p>Equippable by certain RFs. Replaces capes.
+Stats at maximum calibration/enhancement: +10 FP, -80% ICD.</p>
+
+<p>
+	This is going to super depend on the dolls in question, and the encounters you're using them in.
+	ICD reduction could be great if there's something you need to take out faster, but on the other hand it's not helpful if that thing doesn't get in range until ~10 seconds in.
+	Classic bamboo rifles like Springfield and Mosin-Nagant also still must suffer with the reality that they are not Carcano M91/38/Kar98k mod/a selfbuffer/Type88/Type56R (depending on the scenario).
+</p>
+<p>
+	As these are only equippable by whitelisted dolls, this is likely to get weaker over time - your guess is as good as mine as to whether Mica will remember to enable this for newly released dolls.
+	Their track record hasn't always been great.
+</p>
+
+<span class="anchor" id="light"></span>
+<h2>SureFire Tactical Light<sup><small><a href="#light">&#35;</a></small></sup></h2>
+<p>Equippable by AR/SMG/HG/SG. Replaces scope.
+Stats at maximum calibration/enhancement: +5 EVA, +10% Echelon Night Vision.</p>
+
+<p>
+	ARs can already get full night vision, so there's no point to this on supporting HGs/SMGs in ARSMGs.
+	For RFHGs/MGSGs, there's competition:
+</p>
+<ul>
+	<li><a href="rf-nvg">Post-3.0 flare HGs</a> offer much more night vision, though with partial uptime. This is where the tactical light is likely to see the most use, though, as you're likely to want the utility other HGs offer and rifles don't need <em>that</em> much night vision to get respectable hit rates.</li>
+	<li>For MGs, Nova gives more than enough acc post night penalty for reasonable scenarios. Partial night vision on MGs isn't sufficient to make them appealing against evasive enemies.</li>
+</ul>
+
+<span class="anchor" id="choke"></span>
+<h2>Mk0 Multipurpose Choke<sup><small><a href="#choke">&#35;</a></small></sup></h2>
+<p>Equippable by SG. Replaces scope.
+Stats at maximum calibration/enhancement: +5 magazine size, +10 ACC.</p>
+<p>
+	SGs tend to have low magazine sizes (3-7 on most), so this significantly improves their shooting uptime.
+	This also reduces the chance of their skill coming up while reloading, and not activating until the reload finishes or you jiggle them.
+	Considering ITI/VFL/EOTs are just moderate DPS adjustments, and most SGs are here for utility over DPS, this should be a nice improvement in most cases.
+</p>
+<span class="anchor" id="3chip"></span>
+<h2>Concentrated Chip<sup><small><a href="#3chip">&#35;</a></small></sup></h2>
+<p>Equippable by AR/SMG. Replaces exo/processor chip.
+Stats at maximum calibration/enhancement: +10 FP, -10 ROF, +30% crit damage.</p>
+
+<p>
+	In case AR equipment wasn't annoying enough to optimize already, there's now a sort of reverse chip that subtracts ROF in exchange for adding crit damage.
+</p>
+<p>
+	Let's start out with some broad charts, and see how they compete with chips normally.
+	The first charts will plot
+</p>
+$$ \text{Relative DPS} = \frac{\text{DPS w/ VFL+Concentrated Chip}}{\mathrm{max}( \text{VFL+Exo},\text{VFL+Chip},\text{EOT+Chip} )} $$
+<p>
+	as a function of various stats.
+	Values greater than 1 mean the concentrated chip is the best equipment option, values below 1 mean previous options are preferred (and <a href="chips">old logic</a> applies).
+	Each chart corresponds to a fixed crit chance (from tiles), and variable crit damage (from fairies)+base ROF stat.
+</p>
+<!-- PLOTS -->
+<div class="figure">
+	<img src="images/newerquip/broad-0cc.png" width="100%"/>
+</div>
+<center><em>Given generic AR statlines, and no crit tiles, these only seem to be worthwhile on dolls with a particularly high ROF stat. There aren't many of these.</em></center>
+<div class="figure">
+	<img src="images/newerquip/broad-32cc.png" width="100%"/>
+</div>
+<center><em>With some crit tiles, these now are typically preferred on ARs (as long as you have some sort of crit aura).</em></center>
+<p>
+	Note how the contours are largely vertical - this means the value of this new chip doesn't vary much with your crit damage aura.
+	As we saw a big shift going from no crit tiles to 32%, we <em>could</em> make some charts with that as an axis, but there realistically aren't that many other cases for your AR crit buffs to care about.
+</p>
+<p>
+	Let's also think about ROF buffers.
+	The following charts use fixed crit chance/crit damage combinations, and variable ROF stats/ROF buff percentages.
+</p>
+<!-- PLOTS -->
+<div class="figure">
+	<img src="images/newerquip/rof-0cc-0cd.png" width="100%"/>
+</div>
+<center><em>As seen above, with no crit tiles, it takes a good bit of ROF for these to be attractive. Many ROF selfbuffers will prefer these outright, but they were in a pretty bad spot before.</em></center>
+<div class="figure">
+	<img src="images/newerquip/rof-32cc-24cd.png" width="100%"/>
+</div>
+<center><em>Adding some crit chance helps a lot. Once again, we can see most ARs (~75+ ROF) liking the new chip. Crit damage aura is an awfully small factor here - try spotting the difference <a href="images/newerquip/rof-32cc-40cd.png">with this chart for para fairies</a>.</em></center>
+<!-- <p>
+	Typical ROF buffers (ACR, Type97) buff ROF by 50%. With a 15% tile, that's a 72.5% net buff.
+</p> -->
+<p>
+	Finally, let's do some damage-over-time comparisons for a few specific dolls of interest.
+</p>
+<div class="figure">
+	<img src="images/newerquip/g41-1.png" width="100%"/>
+</div>
+<div class="figure">
+	<img src="images/newerquip/g41-2.png" width="100%"/>
+</div>
+<p>
+	Even with the crit damage penalty on #2 chips, VFL+Chip combinations (and a focus on crits) used to win out over EOT/Chip/FP-focused builds.
+	The concentrated chip has a moderate edge in such scenarios, even on FP-buffing ARs.
+	It also is compatible with ROF buffers, allowing them to compete again.
+</p>
+<p>
+	The concentrated chip appears to save AR equipment optimization: you're now safe to just use a VFL, HV ammo, and this new thing.
+	ROF overcapping is much less of a concern.
+	I'd only consider the chip for some specific silly farming setup, or if you're actually just fighting dinergates.
+	(Though it'll still generally be optimal on FP buffers, if you have no crit tiles.)
+</p>
+<p>
+	You can also check specific cases <a href="chip-calc">with this calculator</a>.
+	This gains some extra value on fixed-ROF dolls (AUG/Angelica/SAR) as the penalty won't affect their in-skill DPS, but that doesn't necessarily make them better than other ARs.
+	As usual, dolls that have a SPEQ will generally prefer it over any of these options.
+</p>
+<span class="anchor" id="speqs"></span>
+<h2>SPEQ buffs<sup><small><a href="#speqs">&#35;</a></small></sup></h2>
+<p>
+	No SPEQ adjustments to line up with these new equipment pieces have been announced yet.
+	Details will be added here if anything comes up.
+</p>
+
+<span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+	<section class="tiles">	
+		<a href="gacha">
+			<div class="gallery">
+			  <div class="gallerypic">
+				<img src="images/icon/gacha-bcc.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Black Cards & Completionism</b><br/>Costume gacha analysis</div>
+			  </div>
+			</div>
+		</a>
+		
+		<a href="evasion">
+			<div class="gallery">
+			  <div class="gallerypic">
+				<img src="images/icon/evasion.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>Accuracy and Evasion</b><br/>A deep dive</div>
+			  </div>
+			</div>
+		</a>
+<!-- 		
+		<a href="chips">
+			<div class="gallery">
+			  <div class="gallerypic">
+				<img src="images/icon/chips.jpg" width="33%" height="400">
+				<div class="gallerypicdesc"><b>AR #2 Chip Full Analysis</b><br/>Scope pairs, DPS comparison</div>
+			  </div>
+			</div>
+		</a> -->
+</section>
+	
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
