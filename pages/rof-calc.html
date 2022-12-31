@@ -72,8 +72,10 @@ function calculateAR() {
 	rof.push(Math.floor(strip((arbase+25) * (1+0.01*artiles) * (1+0.01*arskill))));
 	rof.push(Math.floor(strip((arbase+25-4) * (1+0.01*artiles) * (1+0.01*arskill))));
 	rof.push(Math.floor(strip((arbase+25-1) * (1+0.01*artiles) * (1+0.01*arskill))));
+	rof.push(Math.floor(strip((arbase-10) * (1+0.01*artiles))));
+	rof.push(Math.floor(strip((arbase-10) * (1+0.01*artiles) * (1+0.01*arskill))));
 
-	for (let i = 0; i < 8; i++) { // for each ROF calc
+	for (let i = 0; i < 10; i++) { // for each ROF calc
 		frame_instance.push(Math.floor(1500/Math.min(rof[i],120)));
 		for (let j = 1; j < 1 + rof[i]; j++) { // find effective rof, counting up from 1
 			var j_frame = Math.floor(1500/Math.min(j,116));
@@ -93,7 +95,8 @@ function calculateAR() {
 	document.getElementById("ar2_vfl").innerHTML = effective_rof[5] + "<font color='#E5857F'>+" + rof_diff[5] + "</font> (" + frame_instance[5] + "f)";
 	document.getElementById("ar2_eot").innerHTML = effective_rof[6] + "<font color='#E5857F'>+" + rof_diff[6] + "</font> (" + frame_instance[6] + "f)";
 	document.getElementById("ar2_iti").innerHTML = effective_rof[7] + "<font color='#E5857F'>+" + rof_diff[7] + "</font> (" + frame_instance[7] + "f)";
-
+	document.getElementById("ar_focus").innerHTML = effective_rof[8] + "<font color='#E5857F'>+" + rof_diff[8] + "</font> (" + frame_instance[8] + "f)";
+	document.getElementById("ar2_focus").innerHTML = effective_rof[9] + "<font color='#E5857F'>+" + rof_diff[9] + "</font> (" + frame_instance[9] + "f)";
 }
 </script>
 <title>ROF Calculator - GFMath</title>
@@ -213,9 +216,10 @@ function calculateAR() {
 	  <tr>
 		<th></th>
 		<th>Basic ROF</th>
-		<th>VFL+Chip</th>
-		<th>EOT+Chip</th>
-		<th>ITI+Chip</th>
+		<th>VFL+#2 Chip</th>
+		<th>EOT+#2 Chip</th>
+		<th>ITI+#2 Chip</th>
+		<th>VFL+Focus Chip</th>
 	  </tr>
 	  <tr>
 		<td>Pre-skill</td>
@@ -223,6 +227,7 @@ function calculateAR() {
 		<td id="ar_vfl">?</td>
 		<td id="ar_eot">?</td>
 		<td id="ar_iti">?</td>
+		<td id="ar_focus">?</td>
 	  </tr>
 	  <tr>
 		<td>In-skill</td>
@@ -230,6 +235,7 @@ function calculateAR() {
 		<td id="ar2_vfl">?</td>
 		<td id="ar2_eot">?</td>
 		<td id="ar2_iti">?</td>
+		<td id="ar2_focus">?</td>
 	  </tr>
 	</table>
 </center>
