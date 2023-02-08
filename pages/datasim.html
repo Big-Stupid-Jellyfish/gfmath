@@ -40,7 +40,7 @@ gtag('config', 'G-805N997DPC');
 <header class="major">
 <h1>Data Simulation</h1>
 </header>
-<center><em>By BigStupidJellyfish | 2022-July-15 | Last updated 2022-July-26</em></center>
+<center><em>By BigStupidJellyfish | 2022-July-15 | Last updated 2023-February-08</em></center>
 
 <h2>Contents<sup><small><a href="#">&#35;</a></small></sup></h2>
 <ul>
@@ -53,7 +53,9 @@ gtag('config', 'G-805N997DPC');
 	<li><a href="#frames">"Fun" with Frames</a></li>
 </ul>
 <p>
-	<em>(2022-12-15 WARNING): With the 3.0 client update, the game appears to be adding an extra frame to reported times. You may experience 0.03s slower times than described below, but data rewards shouldn't be significantly affected by this.</em>
+	<em>(2022-12-15 WARNING): With the 3.0 client update, the game appears to be adding an extra frame to reported times.
+		You may experience 0.03s slower times than described below, but data rewards shouldn't be significantly affected by this.
+		(<a href="https://i.imgur.com/j7tdAyL.png">Some tests here, read bottom-to-top.</a>)</em>
 </p>
 <span class="anchor" id="intro"></span>
 <h2>Introduction<sup><small><a href="#intro">&#35;</a></small></sup></h2>
@@ -84,8 +86,9 @@ gtag('config', 'G-805N997DPC');
 <ul>
 	<li>Defender prefers buckshot over her SPEQ</li>
 	<li>AP SPEQs that offer &lt;10 FP are worse than Sniper ammo</li>
-	<li>Ammo boxes aren't needed for the fastest times, but are important insurance for slower teams. M1918's SPEQ there has a damage penalty and is thus worse for speed.</li>
+	<li>Ammo boxes aren't needed for the fastest times, but are important insurance for slower teams. It sucks to be just barely short on damage and be forced to wait for your MGs to reload. M1918's SPEQ there has a damage penalty and is thus worse for speed.</li>
 	<li>Many MG scope SPEQs are better than an RMR, but worse than a VFL vs 0 evasion.</li>
+	<li>ARs receiving crit rate tiles (e.g., from M4A1), likely prefer a <a href="newerquip#3chip">VFL+HV ammo+Focus chip</a> loadout.</li>
 </ul>
 <p>
 	It's possible for generic SGs to do more damage with slugs, but you shouldn't be using those for datasim anyways.
@@ -133,7 +136,17 @@ gtag('config', 'G-805N997DPC');
 <center><div class="figure">
 	<img src="images/datasim/yields-basic.png" width="100%"/>
 </div><em>Data yields by time.</em></center>
-
+<center><div class="figure">
+	<img src="images/datasim/rhino-basic.png" width="100%"/>
+</div><em></em></center>
+<p>
+	Released with the Fixed Point boxes, Rhino allows for record times in all sims.
+	Due to the post-3.0 frame delay, her basic time (which would be 0.13s before) only ties the pre-3.0 0.17s rifle time.
+	As it's random what multiplier Rhino will start with, expect 1-10 tries to get this time.
+	Try shuffling doll echelon & tile positions (keeping tile buffs optimized and DPS dolls as close as possible) to get a different RNG seed.
+	After getting your leaderboard time, it's best to switch to some other more consistent echelon - if Rhino rolls low, you'll often get below max data.
+	Oath requirements have not been tested. You may want one on Rhino to reduce RNG.
+</p>
 <p>
 	The basic dummy can be oneshot with rifles, with the fastest legitimate time being 0.17s.
 	Typical comp is (Jill or Contender)/(Contender or Python)/M1895 mod/HS.50/(Mosin-Nagant or high-FP RF: <a href="images/datasim/basic-0.17-2.png">DSR, IWS, etc</a>).
@@ -168,6 +181,13 @@ gtag('config', 'G-805N997DPC');
 	<img src="images/datasim/yields-int.png" width="100%"/>
 </div><em>Data yields by time.</em></center>
 <center><div class="figure">
+	<img src="images/datasim/rhino-int.png" width="100%"/>
+</div><em></em></center>
+<p>
+	For Intermediate and above, Rhino allows for a time faster than even the pre-3.0 echelons.
+	Oath requirements have not been tested. You may want one on Rhino/HS.50/Type56R to reduce RNG.
+</p>
+<center><div class="figure">
 	<img src="images/datasim/int-0.27.png" width="100%"/>
 </div><em></em></center>
 <p>
@@ -176,8 +196,8 @@ gtag('config', 'G-805N997DPC');
 	If you don't have some of these dolls oathed, I'd recommend some of the following Defender comps for a safer 99.
 </p>
 <p>
-	The current fastest legitimate time on EN is 0.27s.
-	Other Defender-based teams also work well for maximum rewards:
+	<!-- The current fastest legitimate time on EN is 0.27s. -->
+	<!-- Other Defender-based teams also work well for maximum rewards: -->
 </p>
 <center><div class="figure">
 	<img src="images/datasim/int-0.90-1.png" width="49%"/>
@@ -203,8 +223,14 @@ gtag('config', 'G-805N997DPC');
 <center><div class="figure">
 	<img src="images/datasim/yields-adv.png" width="100%"/>
 </div><em>Data yields by time.</em></center>
+<center><div class="figure">
+	<img src="images/datasim/rhino-adv.png" width="100%"/>
+</div><em></em></center>
 <p>
-	Kolibri, released as a clear reward in Mirror Stage, enables some faster comps:
+	Oath requirements have not been tested. You may want one on Rhino/RPK-203 to reduce RNG.
+</p>
+<p>
+	Some previous (and more consistent) comps enabled by Kolibri from Mirror Stage:
 </p>
 <center><div class="figure">
 	<img src="images/datasim/advanced-1.97.png" width="49%"/>
