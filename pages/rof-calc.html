@@ -121,7 +121,7 @@ function calculateAR() {
 <header class="major">
 <h1>ROF Calculator</h1>
 </header>
-<center><em>By BigStupidJellyfish | 2022-March-15 | Updated 2022-December-31</em></center>
+<center><em>By BigStupidJellyfish | 2022-March-15 | Updated 2023-July-06</em></center>
 
 <span class="anchor" id="rfhg"></span>
 <h2>RFHGs<sup><small><a href="#rfhg">&#35;</a></small></sup></h2>
@@ -242,6 +242,20 @@ function calculateAR() {
 
 <p>
 	See <a href="https://docs.google.com/spreadsheets/d/1pA0eA4GU6RK8BBSKetx4a1ULeKzUcSVzRiNBU7880Mw/edit?usp=sharing">this spreadsheet</a> for a precomputed table.
+</p>
+<span class="anchor" id="mgsg"></span>
+<h2>MGSGs<sup><small><a href="#mgsg">&#35;</a></small></sup></h2>
+<p>
+	MG and SG ROF works a bit differently.
+	MGs fire at a fixed rate (<a href="datasim#frames">which varies by doll - see "MG ROF subsection here</a>) - typically equivalent to 150 ROF, or 10 frames per attack.
+	Their ROF stat influences their reload speed, as described <a href="newerquip#bipod">here</a>.
+	It is not worth buffing MG ROF.
+</p>
+<p>
+	SGs typically take 2.16s (65f) to reload, plus 0.5s (15f) times their magazine capacity - <a href="images/misc/sg-reload-frames.png">see tests here</a>.
+	It is sometimes stated to be 1.5s+0.5s/bullet, but this is not the case.
+	Some SGs have skills that alter this.
+	SG ROF acts like normal, but is capped at 60.
 </p>
 <span class="anchor" id="about"></span>
 <h2>About ROF<sup><small><a href="#about">&#35;</a></small></sup></h2>
