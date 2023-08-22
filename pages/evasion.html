@@ -144,6 +144,7 @@ $$ \mathrm{ACC}_{\mathrm{Night}} = \left\lfloor \mathrm{ACC} \cdot (1 - 0.9 \cdo
 <!-- Disclaimer: this chart made without the floor function, to make it smoother. With floor, it's just slightly bumpier (uglier) without really giving more information. -->
 <p>
 	And you can probably see why calibrating gold PEQs isn't recommended: hit rate barely improves at that point, assuming your base accuracy is significantly above your target evasion.
+	If you don't care about min-maxing theater CE, even green PEQs are good enough for most purposes.
 </p>
 
 <p>
@@ -225,7 +226,7 @@ $$ \mathrm{EHP} = \frac{\mathrm{HP}}{\mathrm{Enemy~hit~rate}} = \frac{\mathrm{HP
 <h2>Applications<sup><small><a href="#applications">&#35;</a></small></sup></h2>
 
 <p>
-	I've been collecting some data on the damage taken from 8-2 drag runs.
+	I've been collecting some data on the damage taken from <a href="8-2"></a>8-2 SF drag runs</a>.
 	The following chart shows the estimated number of total attacks the maintank took, by support configuration.
 	Using one or two Architects significantly reduced the number of attacks that need to be tanked, lowering damage and speeding the grind up.
 </p>
@@ -236,7 +237,8 @@ $$ \mathrm{EHP} = \frac{\mathrm{HP}}{\mathrm{Enemy~hit~rate}} = \frac{\mathrm{HP
 </center>
 <p>
 	Repairing your maintank can be a pain, so it would be nice if you could last the whole run without doing so.
-	If you have <a href="8-2">sufficient armor</a>, you can reduce all damage to 1, and getting more EHP than expected attacks taken should allow you to survive without any repairs.
+	If you have sufficient armor, you can reduce all damage to 1.
+	Getting more EHP than the number of expected attacks taken should allow you to survive without any repairs.
 	Let's say you have a friend or two with Architect support and assume you want to be able to survive 8k attacks.
 	All spawns there have 20 accuracy, which makes this much easier.
 	A few examples:
@@ -392,7 +394,7 @@ Here's the same table with 143 enemy accuracy.</p>
 </p>
 
 <p>
-	You may have noticed that the Defend chip gave rather substantial survivability increases, even with a Manticore whose base evasion was ~4x the enemy's accuracy.
+	You may have noticed that the Defend chip in the SF examples above gave rather substantial survivability increases, even with a Manticore whose base evasion was ~4x the enemy's accuracy.
 	This is not some trick or fluke.
 </p>
 
@@ -444,7 +446,7 @@ $$ \lim\limits_{\mathrm{EVA}\to\infty} \frac{\frac{a}{a+\mathrm{EVA}}}{\frac{a}{
 </div>
 </center> -->
 <p>
-	(You can similarly show that an accuracy buff can never provide a larger DPS increase than the buff itself, i.e., a 100% ACC buff is <em>at its absolute best</em> a 100% DPS buff.)
+	(You can similarly show that an accuracy buff can never provide a larger DPS increase than the buff itself, i.e., a 100% ACC buff is <em>at its absolute best</em> a 100% DPS buff - which happens when your accuracy is near 0/enemy evasion is extremely large.)
 </p>
 <span class="anchor" id="danya"></span>
 <h2>Still, don't use IDW<sup><small><a href="#danya">&#35;</a></small></sup></h2>
@@ -452,31 +454,29 @@ $$ \lim\limits_{\mathrm{EVA}\to\infty} \frac{\frac{a}{a+\mathrm{EVA}}}{\frac{a}{
 <p>
 	This shows that increasing evasion can do <em>something</em>, and there are no literal "diminishing returns" (if anything, it's the opposite).
 	This does not show that this thing is useful, or that it is better than other things you could be doing (like increasing damage).
-	Consider two options:
+	Consider two theoretical options:
 </p>
 <ol>
 	<li>Increase your SMG maintank's evasion by 300%, massively boosting their survivability against weaker enemies</li>
 	<li>Increase your backline's DPS by 300%, killing all enemies before they get even a single attack off</li>
 </ol>
 <p>
-	Guess which one reduces damage better<sup>2</sup>.
+	Guess which one is more likely to reduce your damage taken better.
 	Welrod was benched for a reason many moons ago when <a href="px4">Px4 Storm</a> was released.
-	A number of especially scary attacks are surehit, and no amount of evasion will save you (unless you're <a href="ro635">RO mod</a>).
+	A number of especially scary attacks are surehit, and no amount of evasion will save you then (unless you're <a href="ro635">RO mod</a>).
+	It's also possible to cover survivability through other means, like with the skill of a <a href="fairy-reviews#shield">Shield Fairy</a>.
 </p>
 
 <p>
 	(If you don't care about minimizing damage and only need to win the fight, past some point you'll have enough evasion to get to the end anyways and further evasion buffs don't affect that outside of a minor consistency boost.
-	This could be viewed as proper 'diminishing returns,' but I don't think this is a relevant perspective for most content.)
+	This could be viewed as proper 'diminishing returns,' but I don't think this is a relevant perspective for most stuff outside of coalition drills.)
 	<!-- Additive increases to evasion are also a smaller percentage increase the bigger your base stat, but that's not a relevant consideration. Equip T-Exos because you tank better with them, not because they're >x% better than X-Exos. -->
 </p>
 
-<p>
-	<sup>2</sup>: In most cases. There are no absolute rules here, considering the incredibly wide range of encounters and echelons out there.
-</p>
 <h3>Experiment: Killing Strelets</h3>
 
 <p>
-	Starting with a team skeleton of G41, Type95, and C-MS, let's try killing a Strelet mob and see how it works for varying offensive/defensive combinations.
+	Starting with a team skeleton of G41, Type95, and C-MS, let's try killing a Strelet mob and see how it works for varying combinations of three offensive/defensive buffs.
 	To fill out the rest of the team, I'll use:
 </p>
 <ul>
@@ -506,7 +506,7 @@ $$ \lim\limits_{\mathrm{EVA}\to\infty} \frac{\frac{a}{a+\mathrm{EVA}}}{\frac{a}{
 </div>
 
 <p>
-	The teams with 0 or 1 defensive picks performed similarly well, but after that adding more debuffs and evasion seemed counterproductive - not only did fight time increase dramatically, but the damage taken also increased.
+	The teams with 0 or 1 defensive picks performed similarly well, but after that adding more enemy debuffs and party evasion was counterproductive - not only did fight time increase dramatically, but the damage taken also increased.
 </p>
 
 <p>
@@ -558,6 +558,7 @@ $$ \mathrm{DPS~increase} = \frac{\mathrm{New~hit~rate}}{\mathrm{Old~hit~rate}} $
 	On the other hand, accuracy tends to be given in much larger amounts.
 	It's easy enough to get 100-150% acc from tiles, and another 60% or so from a fairy.
 	At night, rifles will have more around 10 base accuracy, so they gain much more from accuracy buffs.
+	This is nowhere near 1:1 with the same % damage buff, but it can be a respectable bonus.
 </p>
 
 <span class="anchor" id="exodia"></span>
