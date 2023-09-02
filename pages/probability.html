@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>There is no conspiracy to probability - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>There is no conspiracy to probability</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2023-September-02</em></center>
+
+<p>
+	You're 60 runs into farming a doll in the newest event.
+	Out of fairy commands, you disable your Rescue Fairy.
+	Two runs later, the doll drops.
+	Does Rescue Fairy make you less likely to get limited drops?
+</p>
+<p>
+	You decide to save up your bingo tickets until the end of the event, but when you spend them you end up getting a whole bunch of duplicates and don't get many calibration tickets afterwards.
+	Should you have spent them over a larger time interval to "even out" your RNG seed?
+</p>
+<p>
+	Is the capture chance of 2* units something lower than 50%?
+	It feels like you're always failing.
+</p>
+<p>
+	You got a whole bunch of 5-star dolls from the latest anchored production.
+	Does it boost the rates of more than just the target?
+</p>
+<p>
+	You've been losing a whole bunch of coin flips in a digital card game, but after switching your deck you start winning them.
+	Does the game change your luck based on the deck?
+	Does it give you better or worse hands, too, based on the deck?
+	Is it more likely to have you draw a card you only run 1 of?
+</p>
+<p>
+	Are you less likely to get the thing you desire if you <em>really</em> want it?
+</p>
+<p>
+	No. No. No. No. There is no conspiracy behind random chance, and your perception of what's "fair" is probably far off from it.
+</p>
+<p>
+	One question to consider before you go and post your bad luck experience online, insisting that the game's rigged against you: assuming fair odds, how many players would experience similar or worse luck every day/week?
+</p>
+<span class="anchor" id="farm"></span>
+<h2>Example: Farming<sup><small><a href="#farm">&#35;</a></small></sup></h2>
+<p>
+	Suppose, arbitrarily, a 4-check farming route with a 0.5% chance per check.
+	You're 300 runs in (1200 checks), with no luck.
+	Other people are posting about getting it in 20 runs.
+	Sounds crazy, right?
+	That's about a <a href="https://www.wolframalpha.com/input?i=binomial+probability+calculator&assumption=%7B%22F%22%2C+%22BinomialProbabilities%22%2C+%22x%22%7D+-%3E%220%22&assumption=%7B%22F%22%2C+%22BinomialProbabilities%22%2C+%22n%22%7D+-%3E%224*300%22&assumption=%7B%22F%22%2C+%22BinomialProbabilities%22%2C+%22p%22%7D+-%3E%22.005%22">0.25% chance of being this unlucky!</a>
+</p>
+<p>
+	But, while it's dying, Girls Frontline is currently maintaining around <a href="https://gf-db.github.io/charts/charts.html?data=distinct_userid">10k daily logins</a>.
+	Suppose, approximately, 80% of those are people at least somewhat engaged with the game.
+	50% of those are playing the event.
+	50% of those are trying to farm for the dolls.
+	There are 3 dolls to farm.
+	That's 2000 people farming for 3 dolls each, or 6000 total farming sessions.
+	We'd expect about 15 farm sessions to go at least that bad.
+	Sucks to be in that position, but it's not evidence of malfunction.
+</p>
+<p>
+	And beyond that - this isn't the only event to farm dolls in.
+	Between major and minor events, there's somewhere around 10 per year.
+	If you need to farm two dolls per event, that's 20 farming sessions - and at least some of those will be relatively unlucky.
+</p>
+<p>
+	(Although there's no good data on this for GFL, it is technically possible for games to implement a pity system, removing the chance of outliers like this.
+	This exercise assumes there is no such system, as there is no evidence suggesting the existence of one.)
+</p>
+<span class="anchor" id="reasoning"></span>
+<h2>Example: Post-hoc reasoning<sup><small><a href="#reasoning">&#35;</a></small></sup></h2>
+<p>
+	It's new doll batch time. You do hundreds of rolls, aiming to get the 5-star.
+</p>
+<p>
+	Along the way, you get a bunch of G11s.
+	You even <a href="https://gf-db.github.io/gfdb/gfdb.html?type=tdoll_recipe&mp=100&ammo=400&mre=400&part=200&tier=0&epoch.tdoll=139.0&sort.tdoll_recipe=[{%22sort_column%22:%22*%22,%22dir%22:1},{%22sort_column%22:%22mean%20%%22,%22dir%22:-1}]">check GFDB</a>, but see she's one of the rarer dolls. Did her rate get boosted accidentally?
+</p>
+<p>
+	There's a big problem with that: you're trying to find a pattern based on already observed data.
+	People are very good at seeing patterns, even when there aren't any.
+	While the probability of getting this number of G11s may be low, the probability of getting <em>some</em> doll a "suspicious" number of times is far higher.
+	Form your hypothesis, <em>then</em> test.
+	Don't collect data and then go hunting for a conclusion.
+</p>
+<span class="anchor" id="sf"></span>
+<h2>Example: Coalition RNG<sup><small><a href="#sf">&#35;</a></small></sup></h2>
+<p>
+	The banner's almost over, and it's time to dump resources for a ringleader.
+	You've got plenty of impulses saved, but only 2-star units are displayed.
+	Many attempts later, you end up with far more failures than captures.
+	Thinking back through the month, you note that you also had terrible luck on 2-stars the whole banner.
+	Was it rigged?
+</p>
+<p>
+	Those attempts are not the whole sample.
+	This (probably) isn't your first SF banner, nor is it your last.
+	If you dump impulses on 10 banners per year, it's not even slightly odd to have luck in the bottom 5% on one of them.
+</p>
+<p>
+	One of my bigger wastes of time, as far as my GFL data collection projects have gone, was the one on <a href="sfstats#caps">2 and 3-star SF capture rates</a>.
+	The stated rate is accurate, it's easily confirmed with a remotely decent sample size, and yet people will endlessly doubt the system for no other reason than that they "feel" like they've been unlucky.
+</p>
+<span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	The next time you have an (un)fortunate experience with probability, please reconsider immediately going online and claiming tricks.
+	Think about if the event really was as notable, or unlikely, as it seemed. If possible, try designing (and running) some tests to pin things down.
+	Almost no person claiming bad coin flip luck has ever posted a sample size above 20, and no consideration is given to the total game count until that small sample.
+</p>
+<span class="anchor" id="notes"></span>
+<h2>Notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<ul>
+	<li>
+		Most of the examples here are from GFL, but they apply to pretty much any game with random elements.
+	</li>
+	<li>
+		It is, of course, technically possible for a developer to add many of the conspiracies described above to a game.
+		But, in most cases (and especially when not talking about scummy mobile games), they haven't.
+		Almost all accusations completely lack foundation and should be given absolutely zero consideration.
+	</li>
+	<li>
+		By comparing the results of a large number of bingo participants to its <a href="https://old.reddit.com/r/girlsfrontline/comments/twps7w/weekly_commanders_lounge_april_05_2022/i4czmyf/?context=3">expected completion time given fair odds</a>, we can conclude its implementation in GFL is somehow rigged.
+		But, given the lack of any demonstrated "strategy" to get better-than-usual results, it's more likely that it just drops the chance of getting new numbers across the board.
+		No action on your end will help.
+	</li>
+	<li><a href="https://www.youtube.com/watch?v=tP-Ipsat90c">This video</a> may also be interesting.</li>
+</ul>
+
+<!-- Footer -->
+<footer id="footer">
+	<div class="inner">
+		<ul class="copyright">
+	<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+		</ul>
+	</div>
+</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
