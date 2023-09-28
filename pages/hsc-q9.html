@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>Major Q9 - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Major Q9</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2023-September-28</em></center>
+
+<p>
+	<em>
+		Heroscape is a tabletop war game released in 2004 and discontinued in 2008. <a href="https://en.wikipedia.org/wiki/Heroscape">Wikipedia</a>, <a href="https://www.heroscapers.com/community/blog.php?u=2">fan site</a>.
+		Attack dice show a skull 50% of the time. Defense dice show a shield 33% of the time. Each excess skull rolled counts as one wound.
+		Disclaimer: I'm not particularly aware of any existing theory/math for this game.
+		Topics like this may have been covered in the past.
+		This is just something I got interested in doing for myself, in my own style.
+	</em>
+</p>
+
+<blockquote>
+	<p><strong>Queglix Gun Special Attack</strong> Range 6. Attack 1, 2, or 3.</p>
+	<p>
+		Major Q9 starts each turn with 9 attack dice.
+		Choose any figure within range and attack by rolling 1, 2, or 3 attack dice.
+		Major Q9 may keep making special attacks with 1, 2, or 3 attack dice until he has rolled all 9 attack dice.
+		Major Q9 may target the same or different figures with each attack.
+	</p>
+</blockquote>
+<p>
+	Major Q9's special attack has a decent degree of flexibility, allowing you to split your dice into 4 different reasonable schemes.
+	But which one's best, and when?
+	Should you ever just use his basic attack?
+	<a href="https://imgur.com/jWcmMPi">The full card of the unit in question.</a>
+</p>
+<p>
+	First, let's look at the average damage dealt by his attack options, versus variable enemy defense.
+</p>
+<center><div class="figure">
+	<img src="images/hsc-q9/q9modes.png" width="100%"/>
+</div></center>
+<p>
+	Assuming no weird special abilities are in play, things are quite simple: use the Queglix Gun, 3x3.
+	The only exception is if you have height advantage, and the enemy has 8 or more defense.
+</p>
+<p>
+	However, this is assuming all your attacks are against an infinite-health target.
+	That's fine enough versus heroes, but squads should be considered separately - they all have 1 life, so anything more than 1 wound is always wasted.
+</p>
+<center><div class="figure">
+	<img src="images/hsc-q9/q9modesSquads.png" width="100%"/>
+</div></center>
+<p>
+	Unsurprisingly, 1x9 is now best at low defense values. At 2 defense, 1x9/2x4+1x1/2x3+3x1 are all effectively equal.
+	(Their average squads killed at that point are respectively ~2.00/2.00/1.96.)
+	At 3 defense and beyond, 3x3 is best.
+	Even with height advantage, normal attacks are never worth it against squads.
+</p>
+
+<p>
+	Extreme height and other uncommon buffs are not accounted for.
+	You can probably imagine about where the line would fall if you add another die to his regular attacks.
+</p>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
