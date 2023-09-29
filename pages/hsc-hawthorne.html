@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>Sir Hawthorne - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Sir Hawthorne</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2023-September-28</em></center>
+
+<p>
+	<em>
+		Heroscape is a tabletop war game released in 2004 and discontinued in 2008. <a href="https://en.wikipedia.org/wiki/Heroscape">Wikipedia</a>, <a href="https://www.heroscapers.com/community/blog.php?u=2">fan site</a>.
+		Attack dice show a skull 50% of the time. Defense dice show a shield 33% of the time. Each excess skull rolled counts as one wound.
+		Disclaimer: I'm not particularly aware of any existing theory/math for this game.
+		Topics like this may have been covered in the past.
+		This is just something I got interested in doing for myself, in my own style.
+	</em>
+</p>
+
+<blockquote>
+	<p><strong>Blind Rage Special Attack</strong> Range 1. Attack 3.</p>
+	<p>
+		If Sir Hawthorne rolls at least 2 skulls with his Blind Rage Special Attack, Sir Hawthorne may attack again with his Blind Rage Special Attack.
+		Sir Hawthorne may continue attacking with his Blind Rage Special Attack until he rolls fewer than 2 skulls.
+	</p>
+</blockquote>
+<p>
+	<a href="https://vignette.wikia.nocookie.net/heroscape/images/c/c9/Sir_hawthorne_card.jpg">Unit card.</a>
+</p>
+<p>
+	Compared to his basic attack with 4 dice, it's not immediately apparent which attack to go with.
+	You have a 50% chance of getting <em>at least</em> one extra attack in, but each one is weaker.
+	(And while there's a fair bit of variance, this works out to an average of two attacks per turn.)
+	Simulation time:
+</p>
+<center><div class="figure">
+	<img src="images/hsc-hawthorne/hawthorne-hero.png" width="100%"/>
+</div></center>
+<p>
+	Blind Rage is effectively always better than his basic attack.
+	If he has height, use regular attacks against heroes with 3 or more defense.
+	If you have two extra attack dice, always use his normal attack against heroes (unless of course some other ability interacts unfavorably with it).
+</p>
+<p>
+	Against squads, there's no benefit to overkill. As for how much this helps Blind Rage:
+</p>
+<center><div class="figure">
+	<img src="images/hsc-hawthorne/hawthorne-squad.png" width="100%"/>
+</div></center>
+<p>
+	This makes his Blind Rage much stronger, and now +1 die is only enough against 6+ defense enemies.
+	Even +2 dice only make his regular attack worthwhile for 5+ defense.
+</p>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
