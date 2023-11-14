@@ -30,6 +30,7 @@ function calculateRF() {
 		skills2= parseFloat(document.getElementById("skills2").value),
 		skills3= parseFloat(document.getElementById("skills3").value),
 		skills4= parseFloat(document.getElementById("skills4").value),
+		rf_cap = parseFloat(document.getElementById("rf_cap").value),
 		rof = [],
 		effective_rof = [],
 		rof_diff = [],
@@ -40,9 +41,9 @@ function calculateRF() {
 	rof.push(Math.floor(strip(rof2 * (1+0.01*tiles) * (1+0.01*skills12) * (1+0.01*skills2) * (1+0.01*skills3) * (1+0.01*skills4))));
 
 	for (let i = 0; i < 4; i++) { // for each ROF calc
-		frame_instance.push(Math.floor(1500/Math.min(rof[i],120)));
+		frame_instance.push(Math.floor(1500/Math.min(rof[i],rf_cap))); //120
 		for (let j = 1; j < 1 + rof[i]; j++) { // find effective rof, counting up from 1
-			var j_frame = Math.floor(1500/Math.min(j,116));
+			var j_frame = Math.floor(1500/Math.min(j,rf_cap)); //116
 			if (j_frame == frame_instance[i]) { // if this rof gets the same frame, we've found the minimal equivalent
 				effective_rof.push(j);
 				rof_diff.push(rof[i] - effective_rof[i]);
@@ -60,6 +61,7 @@ function calculateAR() {
 	var arbase = parseInt(document.getElementById("arbase").value),
 		artiles = parseInt(document.getElementById("artiles").value),
 		arskill = parseFloat(document.getElementById("arskill").value),
+		ar_cap = parseFloat(document.getElementById("ar_cap").value),
 		rof = [],
 		effective_rof = [],
 		rof_diff = [],
@@ -76,9 +78,9 @@ function calculateAR() {
 	rof.push(Math.floor(strip((arbase-10) * (1+0.01*artiles) * (1+0.01*arskill))));
 
 	for (let i = 0; i < 10; i++) { // for each ROF calc
-		frame_instance.push(Math.floor(1500/Math.min(rof[i],120)));
+		frame_instance.push(Math.floor(1500/Math.min(rof[i],ar_cap)));
 		for (let j = 1; j < 1 + rof[i]; j++) { // find effective rof, counting up from 1
-			var j_frame = Math.floor(1500/Math.min(j,116));
+			var j_frame = Math.floor(1500/Math.min(j,ar_cap));
 			if (j_frame == frame_instance[i]) { // if this rof gets the same frame, we've found the minimal equivalent
 				effective_rof.push(j);
 				rof_diff.push(rof[i] - effective_rof[i]);
@@ -121,7 +123,7 @@ function calculateAR() {
 <header class="major">
 <h1>ROF Calculator</h1>
 </header>
-<center><em>By BigStupidJellyfish | 2022-March-15 | Updated 2023-July-06</em></center>
+<center><em>By BigStupidJellyfish | 2022-March-15 | Updated 2023-November-13</em></center>
 
 <span class="anchor" id="rfhg"></span>
 <h2>RFHGs<sup><small><a href="#rfhg">&#35;</a></small></sup></h2>
@@ -160,6 +162,10 @@ function calculateAR() {
 	  <tr>
 		<td style="text-align: center; vertical-align: middle;">Global skill 3 (%)</td>
 		<td colspan="2" style="text-align: center; vertical-align: middle;"><input id="skills4" type="text" value=0  style="text-align: center; vertical-align: middle;"></input><br></td>
+	  </tr>
+	  <tr>
+		<td style="text-align: center; vertical-align: middle;">ROF Cap</td>
+		<td colspan="2" style="text-align: center; vertical-align: middle;"><input id="rf_cap" type="text" value=120 style="text-align: center; vertical-align: middle;"></input><br></td>
 	  </tr>
 	</table>
 
@@ -202,11 +208,13 @@ function calculateAR() {
 		<th style="text-align: center; vertical-align: middle;">Base ROF (no equipment)</th>
 		<th style="text-align: center; vertical-align: middle;">ROF tiles (%)</th>
 		<th style="text-align: center; vertical-align: middle;">ROF skill (%)</th>
+		<th style="text-align: center; vertical-align: middle;">ROF Cap</th>
 	  </tr>
 	  <tr>
 		<td style="text-align: center; vertical-align: middle;"><input id="arbase" type="text" value=78 style="text-align: center; vertical-align: middle;"></input><br></td>
 		<td style="text-align: center; vertical-align: middle;"><input id="artiles" type="text" value=15  style="text-align: center; vertical-align: middle;"></input><br></td>
 		<td style="text-align: center; vertical-align: middle;"><input id="arskill" type="text" value=0  style="text-align: center; vertical-align: middle;"></input><br></td>
+		<td style="text-align: center; vertical-align: middle;"><input id="ar_cap" type="text" value=120  style="text-align: center; vertical-align: middle;"></input><br></td>
 	  </tr>
 	</table>
 
