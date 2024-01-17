@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<!--
+Forty by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-805N997DPC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-805N997DPC');
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<title>Master Duel crafting is rigged* - GFMath</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="icon" sizes="180x180" href="images/icon/ads-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon/ads-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/icon/ads-16.png">
+<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<a href="../index" class="logo"><strong>GFMath</strong> <span>Detailed GFL analysis</span></a>
+<nav></nav>
+<a href="https://www.youtube.com/c/BigStupidJellyfish" class="logo"><strong>Youtube</strong></a>
+</header>
+<div id="main" class="alt">
+<section>
+<div class="inner">
+<header class="major">
+<h1>Master Duel crafting is rigged*</h1>
+</header>
+<center><em>By BigStupidJellyfish | 2024-January-17</em></center>
+
+<span class="anchor" id="numbers"></span>
+<h2>The Numbers<sup><small><a href="#numbers">&#35;</a></small></sup></h2>
+<p>
+	If you click on the "odds" button displayed next to a pack, and scroll down to the bottom, you can find this table of glossy/royal chances:
+</p>
+<div class="figure">
+	<img src="images/glossy/rates.png" width="100%"/>
+</div>
+<p>
+	Tentatively, we may assume these to be accurate for cards pulled from packs.
+	There would likely be legal trouble otherwise, and I don't particularly care to crawl through masses of pack opening videos.
+	But what about crafting?
+	As far as I can tell, rates there are not disclosed anywhere in-game.
+</p>
+<div class="figure">
+	<img src="images/glossy/craftmenu.png" width="100%"/>
+</div>
+<p>
+	We might assume this to be the same as the rate from packs - that would be reasonable enough.
+	But why assume when you can test?
+	While SR/URs are too expensive to spam craft, I've been collecting my own data recently when trying to get glossy playsets of some random N/R cards.
+	It looks something like this:
+</p>
+<center>
+	<table style="width:auto;">
+		<tr>
+			<th>Card</th>
+			<th>Rarity</th>
+			<th>Start count</th>
+			<th>End count</th>
+			<th>Glossy rate</th>
+		</tr>
+		<tr>
+			<td>Lifeless Leaffish</td>
+			<td>R</td>
+			<td>0/0/-</td>
+			<td>33/3/-</td>
+			<td>3/33</td>
+		</tr>
+		<tr>
+			<td>Shif, Fairy of the Ghoti</td>
+			<td>R</td>
+			<td>3/0/-</td>
+			<td>97/2/-</td>
+			<td>2/94</td>
+		</tr>
+		<tr>
+			<td>Gold Pride - Roller Baller</td>
+			<td>N</td>
+			<td>2/0/-</td>
+			<td>146/3/-</td>
+			<td>3/144</td>
+		</tr>
+	</table>
+</center>
+<p>
+	... and so on.
+</p>
+<p>
+	In total, 878 craft attempts resulted in 31 glossy N/R cards - a 3.5% rate.
+	The true glossy rate is almost surely (with 99% confidence) at least 2.2% but no more than 5.6%.
+	Expect ~30 crafts per glossy, or ~100 for a playset - ~2000 N/R dust after refunds.
+	It's possible for SR/UR cards to have odds more in line with the stated rates from packs, but I would be very suspicious based on these results.
+</p>
+<p>
+	Be careful when spending your dust, and be even more careful when deciding whether or not to spend your dollars.
+</p>
+<!-- <span class="anchor" id="conclusion"></span>
+<h2>Conclusion<sup><small><a href="#conclusion">&#35;</a></small></sup></h2>
+<p>
+	
+</p> -->
+
+<span class="anchor" id="notes"></span>
+<h2>Notes<sup><small><a href="#notes">&#35;</a></small></sup></h2>
+<p>
+	Some people, when it comes to probability, like to come up with increasingly bizarre justifications on what influences the result.
+	Maybe you get better odds if you craft exactly on the hour, with a left-hand mouse.
+	Maybe you get worse odds if you have at least 3 royal rare cards in the archetype.
+	Without evidence these are equally worthless, but I will head off one variation - the batch size does not appear to matter.
+	It's a somewhat smaller sample (and more annoying to collect), but my experimental glossy rate for N/R cards is about the same whether 3 are crafted at once or only 1
+	(10/212 glossy with batch size 1, reject a 10% glossy rate with p&lt;0.02).
+</p>
+<p>
+	This article is likely to be periodically updated as I craft more glossy cards, and can better narrow down the true rate.
+</p>
+<p>
+	I have also started collecting data on UR/SR crafts, but that will take much longer to get a respectable sample.
+	If you would like to contribute, feel free to message me.
+	Most critically, any submitted data must be decided as "data to submit" <em>before</em> the crafting takes place.
+</p>
+<!-- <span class="anchor" id="ads"></span>
+<h2>More like this</h2>
+<section class="tiles">
+	<a href="ak15">
+		<div class="gallery solo arsmg">
+		  <div class="gallerypic">
+			<img src="images/icon/ak15.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>Monitoring your Anger</b><br/>AK-15 Analysis</div>
+		  </div>
+		</div>
+	</a>
+
+	<a href="tkb-408">
+		<div class="gallery solo arsmg">
+		  <div class="gallerypic">
+			<img src="images/icon/tkb-408.jpg" width="33%" height="400">
+			<div class="gallerypicdesc"><b>TKB-408 Analysis</b><br/>Critical night focus</div>
+		  </div>
+		</div>
+	</a>
+</section> -->
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<ul class="copyright">
+		<li>Content: BigStupidJellyfish</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
