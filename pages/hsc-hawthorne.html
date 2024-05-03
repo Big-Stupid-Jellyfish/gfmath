@@ -40,7 +40,7 @@ gtag('config', 'G-805N997DPC');
 <header class="major">
 <h1>Sir Hawthorne</h1>
 </header>
-<center><em>By BigStupidJellyfish | 2023-September-28</em></center>
+<center><em>By BigStupidJellyfish | 2023-September-28 | Last updated 2024-May-03</em></center>
 
 <p>
 	<em>
@@ -51,6 +51,9 @@ gtag('config', 'G-805N997DPC');
 		This is just something I got interested in doing for myself, in my own style.
 	</em>
 </p>
+
+<span class="anchor" id="blindrage"></span>
+<h2>Blind Rage<sup><small><a href="#blindrage">&#35;</a></small></sup></h2>
 
 <blockquote>
 	<p><strong>Blind Rage Special Attack</strong> Range 1. Attack 3.</p>
@@ -85,6 +88,40 @@ gtag('config', 'G-805N997DPC');
 <p>
 	This makes his Blind Rage much stronger, and now +1 die is only enough against 6+ defense enemies.
 	Even +2 dice only make his regular attack worthwhile for 5+ defense.
+</p>
+
+<span class="anchor" id="stab"></span>
+<h2>Stab in the Back<sup><small><a href="#stab">&#35;</a></small></sup></h2>
+
+<blockquote>
+	<p><strong>Stab in the Back</strong></p>
+	<p>
+		After you take a turn with Sir Hawthorne, you must roll the 20-sided die.
+		If you roll a 1, choose an opponent.
+		That opponent now controls Sir Hawthorne.
+		Remove any order markers on this Army Card, then give the card to that opponent.
+	</p>
+</blockquote>
+
+<p>
+	Sir Hawthorne's other ability is a bit simpler, but we can still generate a useful chart out of it.
+	On any given turn, of course, he has a 5% chance to betray you.
+	But, when forming a long-term plan that involves multiple moves, how much risk is there?
+</p>
+<p>
+	The chance of him <em>not</em> betryaing you \( n \) times is \( 0.95^n \).
+	So the chance of at least one betrayal is \( 1 - 0.95^n \), or visually:
+</p>
+
+<center><div class="figure">
+	<img src="images/hsc-hawthorne/hawthorne-stabintheback.png" width="100%"/>
+</div></center>
+
+<p>
+	For example, a 10-turn mission has about a 40% chance of failing somewhere along the way.
+	Of course, if you make it to turn 9, it's still only a 5% chance for each following move to result in betrayal.
+	The dice have no memory, no matter how much it might feel like they do.
+	Try to avoid activating him too often either way.
 </p>
 
 <!-- Footer -->
