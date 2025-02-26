@@ -40,7 +40,7 @@ gtag('config', 'G-805N997DPC');
 <header class="major">
 <h1>Master Duel crafting is rigged*</h1>
 </header>
-<center><em>By BigStupidJellyfish | 2024-January-17 | Last updated 2024-September-27</em></center>
+<center><em>By BigStupidJellyfish | 2024-January-17 | Last updated 2025-February-25</em></center>
 
 <span class="anchor" id="numbers"></span>
 <h2>The N/R Numbers<sup><small><a href="#numbers">&#35;</a></small></sup></h2>
@@ -102,8 +102,8 @@ gtag('config', 'G-805N997DPC');
 	... and so on.
 </p>
 <p>
-	In total, 3972 craft attempts resulted in 204 glossy N/R cards - a 5.1% rate.
-	The true glossy rate is almost surely (with 99% confidence) at least 4.3% but no more than 6.1%.
+	In total, 4709 craft attempts resulted in 245 glossy N/R cards - a 5.2% rate.
+	The true glossy rate is almost surely (with 99% confidence) at least 4.4% but no more than 6.1%.
 	5.00% is a reasonable guess for the true rate.
 	Expect ~20 crafts per glossy, or ~60 for a playset - ~1200 N/R dust after refunds.
 	The low rate means variance is relatively high, however.
@@ -117,14 +117,14 @@ gtag('config', 'G-805N997DPC');
 </p> -->
 <h2>The SR/UR Numbers<sup><small><a href="#numbers">&#35;</a></small></sup></h2>
 <p>
-	It takes an incredible amount of data to get a solid read on royal rates (as they're expected to be in the 1% range, I'd feel more comfortable with 5000+ samples), but glossy SR/URs are a bit more doable.
-	From my data so far, 2767 SR/UR crafts resulted in 136 glossy cards (4.9%), and 25 royals (0.9%).
-	We can't say much about the royal rate yet - it may be anywhere around 0.5-1.5%.
+	It takes an incredible amount of data to get a solid read on royal rates (as they're expected to be in the 1% range, I'd feel more comfortable with 10000+ samples), but glossy SR/URs are a bit more doable.
+	From my data so far, 6131 SR/UR crafts resulted in 293 glossy cards (4.8%), and 58 royals (0.95%).
+	We can't say much about the royal rate yet - it may be anywhere around 0.6-1.3%.
 	1.00% is a somewhat reasonable guess, but I'm not sure I'd trust Konami to be that "fair."
 	But this is more than enough to conclude the SR/UR glossy rate does <em>not</em> match the stated 9% odds from packs (p&lt;0.00001).
-	With 99% confidence, the true SR/UR glossy rate is between 3.9% and 6.1%.
+	With 99% confidence, the true SR/UR glossy rate is between 4.1% and 5.5%.
 	Comparing with the N/R data, it seems fairly likely crafting in general has a 5.00% rate of giving a glossy finish.
-	No significant difference has been detected between SR and UR rates (with 1846 and 921 crafts, respectively).
+	No significant difference has been detected between SR and UR rates (with 4137 and 1994 crafts, respectively).
 </p>
 <p>
 	If I had to take a wild guess, I'd say the overall probabilities currently look like:
@@ -188,6 +188,13 @@ gtag('config', 'G-805N997DPC');
 	(10/212 glossy with batch size 1, reject a 10% glossy rate with p&lt;0.02).
 	Boost generation similarly shows no difference in odds.
 </p>
+<p>
+	It should be obvious at this point, but these results are far beyond what "poor luck" could explain.
+	Most tests with this data will give p-values below many software packages' machine epsilon.
+	For a more precise example, a result as extreme as the latest UR+SR glossy data (294 of 6131) would have a <a href="https://www.wolframalpha.com/input?i=binomial+probability&assumption=%7B%22F%22%2C+%22BinomialProbabilities%22%2C+%22x%22%7D+-%3E%22295%22&assumption=%7B%22F%22%2C+%22BinomialProbabilities%22%2C+%22n%22%7D+-%3E%226131%22&assumption=%7B%22C%22%2C+%22binomial+probability%22%7D+-%3E+%7B%22Formula%22%2C+%22dflt%22%7D&assumption=%7B%22F%22%2C+%22BinomialProbabilities%22%2C+%22p%22%7D+-%3E%220.09%22">probability of occurring, given a 9% glossy rate, of ~3.7e-36</a>.
+	Things <em>that</em> unlikely simply do not happen.
+	<!-- Of course, another explanation would be that I'm screwing up the data collection somehow. But obviously I don't believe that to be the case, and I'd hope you'd have at least a little trust in me. :) -->
+</p>
 <!-- <p>
 	This article is likely to be periodically updated as I craft more glossy cards, and can better narrow down the true rate.
 </p> -->
@@ -196,6 +203,11 @@ gtag('config', 'G-805N997DPC');
 	If you would like to contribute, feel free to message me.
 	I'll periodically update this page as my sample size improves.
 	Most critically, any submitted data must be decided as "data to submit" <em>before</em> the crafting takes place.
+</p>
+<p>
+	I have done some testing on glossy rates from packs.
+	Unsurprisingly, these do align with the stated in-game odds (9-10% depending on rarity).
+	Not much to say there, there would likely be legal trouble in certain areas if they were lying about that, as gems are a paid currency.
 </p>
 <!-- <span class="anchor" id="ads"></span>
 <h2>More like this</h2>
